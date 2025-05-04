@@ -132,8 +132,6 @@ export '/event_fold/event_page_add3_bet/event_page_add3_bet_widget.dart'
     show EventPageAdd3BetWidget;
 export '/admin_fold/mods_fold/mod_team_notifs_list/mod_team_notifs_list_widget.dart'
     show ModTeamNotifsListWidget;
-export '/ranks_fold/rank_typsters_page/rank_typsters_page_widget.dart'
-    show RankTypstersPageWidget;
 export '/event_fold/my_teams_list_events/my_teams_list_events_widget.dart'
     show MyTeamsListEventsWidget;
 export '/public_fold/search_users_list/search_users_list_widget.dart'
@@ -220,3 +218,11 @@ export '/admin_fold/admin_event_fold/modif_rank_pilotes/modif_rank_pilotes_widge
     show ModifRankPilotesWidget;
 export '/ranks_fold/rank_page_my_enterprise/rank_page_my_enterprise_widget.dart'
     show RankPageMyEnterpriseWidget;
+export '/event_fold/event_page_compo/event_page_compo_widget.dart'
+    show EventPageCompoWidget;
+export '/event_fold/leagu_events_list/leagu_events_list_widget.dart'
+    show LeaguEventsListWidget;
+export '/event_fold/leagu_events_list_add2_bet/leagu_events_list_add2_bet_widget.dart'
+    show LeaguEventsListAdd2BetWidget;
+export '/event_fold/leagu_events_list_add3_bet/leagu_events_list_add3_bet_widget.dart'
+    show LeaguEventsListAdd3BetWidget;

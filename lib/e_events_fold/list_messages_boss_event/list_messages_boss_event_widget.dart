@@ -5,14 +5,16 @@ import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/users_fold/copy_text/copy_text_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
 import 'list_messages_boss_event_model.dart';
 export 'list_messages_boss_event_model.dart';
@@ -525,29 +527,79 @@ class _ListMessagesBossEventWidgetState
                                           children: [
                                             Text(
                                               dateTimeFormat(
-                                                  "d/M/y",
-                                                  listMessagesBossEventEventsRecord
-                                                      .date!),
+                                                "d/M/y",
+                                                listMessagesBossEventEventsRecord
+                                                    .date!,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(2.0, 0.0, 2.0, 0.0),
                                               child: Text(
-                                                '-',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'pkaa8voy' /* - */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             Text(
@@ -561,22 +613,68 @@ class _ListMessagesBossEventWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(2.0, 0.0, 2.0, 0.0),
                                               child: Text(
-                                                ':',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'x6tay408' /* : */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             Text(
@@ -590,8 +688,30 @@ class _ListMessagesBossEventWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ],
@@ -766,8 +886,29 @@ class _ListMessagesBossEventWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -775,12 +916,31 @@ class _ListMessagesBossEventWidgetState
                                     },
                                   ),
                                   Text(
-                                    '-',
+                                    FFLocalizations.of(context).getText(
+                                      'r94ellit' /* - */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                   StreamBuilder<TeamsRecord>(
@@ -827,8 +987,29 @@ class _ListMessagesBossEventWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -866,8 +1047,27 @@ class _ListMessagesBossEventWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -890,8 +1090,27 @@ class _ListMessagesBossEventWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -913,66 +1132,313 @@ class _ListMessagesBossEventWidgetState
                                       builder: (context) => Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                    AddDateForEEventWidget
-                                                        .routeName,
-                                                    queryParameters: {
-                                                      'eventRef':
-                                                          serializeParam(
-                                                        widget.eventRef,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'eTeamRef':
-                                                          serializeParam(
-                                                        currentUserDocument
-                                                            ?.eteamRef,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-                                                },
-                                                text: 'Proposer une date',
-                                                options: FFButtonOptions(
-                                                  height: 30.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ug76m8mn' /* Proposer une date */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
+                                                      .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          25.0),
                                                 ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'xeq7shy3' /* Suggest a date */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'jpayb8l3' /* Schlagen Sie
+ein Datum vor */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'fnph0iwy' /* Sugerir una fecha */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '6hjsj4mb' /* Suggerisci
+una data */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'brh3bn2j' /* Sugira uma data */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  AddDateForEEventWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'eventRef': serializeParam(
+                                                      widget.eventRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'eTeamRef': serializeParam(
+                                                      currentUserDocument
+                                                          ?.eteamRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .check_circle_outline_rounded,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                                ),
+                                                size: 50.0,
                                               ),
                                             ),
                                           ),
@@ -986,66 +1452,313 @@ class _ListMessagesBossEventWidgetState
                                       builder: (context) => Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                    AddDateForEEventWidget
-                                                        .routeName,
-                                                    queryParameters: {
-                                                      'eventRef':
-                                                          serializeParam(
-                                                        widget.eventRef,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'eTeamRef':
-                                                          serializeParam(
-                                                        currentUserDocument
-                                                            ?.eteamRef,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-                                                },
-                                                text: 'Proposer une date',
-                                                options: FFButtonOptions(
-                                                  height: 30.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vo5yxcao' /* Proposer une date */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
+                                                      .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          25.0),
                                                 ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '2emg87al' /* Suggest a date */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'dmshbn0p' /* Schlagen Sie
+ein Datum vor */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'bbussodi' /* Sugerir una fecha */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vknclcln' /* Suggerisci
+una data */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'd203xrqp' /* Sugira uma data */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  AddDateForEEventWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'eventRef': serializeParam(
+                                                      widget.eventRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'eTeamRef': serializeParam(
+                                                      currentUserDocument
+                                                          ?.eteamRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .check_circle_outline_rounded,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                                ),
+                                                size: 50.0,
                                               ),
                                             ),
                                           ),
@@ -1065,7 +1778,7 @@ class _ListMessagesBossEventWidgetState
                                       builder: (context) => Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Align(
                                             alignment:
@@ -1104,21 +1817,29 @@ class _ListMessagesBossEventWidgetState
                                                   );
                                                 }
                                                 List<TeamEventsRecord>
-                                                    buttonTeamEventsRecordList =
+                                                    iconTeamEventsRecordList =
                                                     snapshot.data!;
                                                 // Return an empty Container when the item does not exist.
                                                 if (snapshot.data!.isEmpty) {
                                                   return Container();
                                                 }
-                                                final buttonTeamEventsRecord =
-                                                    buttonTeamEventsRecordList
+                                                final iconTeamEventsRecord =
+                                                    iconTeamEventsRecordList
                                                             .isNotEmpty
-                                                        ? buttonTeamEventsRecordList
+                                                        ? iconTeamEventsRecordList
                                                             .first
                                                         : null;
 
-                                                return FFButtonWidget(
-                                                  onPressed: () async {
+                                                return InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
                                                     await listMessagesBossEventEventsRecord
                                                         .reference
                                                         .update(
@@ -1126,7 +1847,7 @@ class _ListMessagesBossEventWidgetState
                                                       statut: true,
                                                       dateExt: true,
                                                     ));
-                                                    await buttonTeamEventsRecord!
+                                                    await iconTeamEventsRecord!
                                                         .reference
                                                         .delete();
 
@@ -1144,34 +1865,18 @@ class _ListMessagesBossEventWidgetState
                                                       }.withoutNulls,
                                                     );
                                                   },
-                                                  text: 'Valider',
-                                                  options: FFButtonOptions(
-                                                    height: 30.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .success,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    elevation: 0.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            25.0),
+                                                  child: Icon(
+                                                    Icons
+                                                        .check_circle_outline_rounded,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .success,
+                                                    ),
+                                                    size: 40.0,
                                                   ),
                                                 );
                                               },
@@ -1185,15 +1890,41 @@ class _ListMessagesBossEventWidgetState
                                               children: [
                                                 Text(
                                                   dateTimeFormat(
-                                                      "d/M/y",
-                                                      listMessagesBossEventEventsRecord
-                                                          .date!),
+                                                    "d/M/y",
+                                                    listMessagesBossEventEventsRecord
+                                                        .date!,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
@@ -1201,13 +1932,38 @@ class _ListMessagesBossEventWidgetState
                                                       .fromSTEB(
                                                           2.0, 0.0, 2.0, 0.0),
                                                   child: Text(
-                                                    '-',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'kee2dx57' /* - */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1222,8 +1978,30 @@ class _ListMessagesBossEventWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
@@ -1231,13 +2009,38 @@ class _ListMessagesBossEventWidgetState
                                                       .fromSTEB(
                                                           2.0, 0.0, 2.0, 0.0),
                                                   child: Text(
-                                                    ':',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'jr0jhzmq' /* : */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1252,8 +2055,30 @@ class _ListMessagesBossEventWidgetState
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ],
@@ -1261,8 +2086,13 @@ class _ListMessagesBossEventWidgetState
                                           Align(
                                             alignment:
                                                 AlignmentDirectional(-1.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
                                                 await widget.eventRef!.update({
                                                   ...mapToFirestore(
                                                     {
@@ -1280,32 +2110,14 @@ class _ListMessagesBossEventWidgetState
                                                   events: widget.eventRef,
                                                 ));
                                               },
-                                              text: 'Refuser',
-                                              options: FFButtonOptions(
-                                                height: 30.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
+                                              child: Icon(
+                                                Icons.highlight_off_rounded,
+                                                color: valueOrDefault<Color>(
+                                                  currentUserDocument?.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                ),
+                                                size: 40.0,
                                               ),
                                             ),
                                           ),
@@ -1328,7 +2140,7 @@ class _ListMessagesBossEventWidgetState
                                         builder: (context) => Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceEvenly,
                                           children: [
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1368,21 +2180,29 @@ class _ListMessagesBossEventWidgetState
                                                     );
                                                   }
                                                   List<TeamEventsRecord>
-                                                      buttonTeamEventsRecordList =
+                                                      iconTeamEventsRecordList =
                                                       snapshot.data!;
                                                   // Return an empty Container when the item does not exist.
                                                   if (snapshot.data!.isEmpty) {
                                                     return Container();
                                                   }
-                                                  final buttonTeamEventsRecord =
-                                                      buttonTeamEventsRecordList
+                                                  final iconTeamEventsRecord =
+                                                      iconTeamEventsRecordList
                                                               .isNotEmpty
-                                                          ? buttonTeamEventsRecordList
+                                                          ? iconTeamEventsRecordList
                                                               .first
                                                           : null;
 
-                                                  return FFButtonWidget(
-                                                    onPressed: () async {
+                                                  return InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
                                                       await listMessagesBossEventEventsRecord
                                                           .reference
                                                           .update(
@@ -1390,7 +2210,7 @@ class _ListMessagesBossEventWidgetState
                                                         statut: true,
                                                         dateDom: true,
                                                       ));
-                                                      await buttonTeamEventsRecord!
+                                                      await iconTeamEventsRecord!
                                                           .reference
                                                           .delete();
 
@@ -1408,44 +2228,18 @@ class _ListMessagesBossEventWidgetState
                                                         }.withoutNulls,
                                                       );
                                                     },
-                                                    text: 'Valider',
-                                                    options: FFButtonOptions(
-                                                      height: 30.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                    child: Icon(
+                                                      Icons
+                                                          .check_circle_outline_rounded,
                                                       color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .success,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                      elevation: 0.0,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25.0),
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .success,
+                                                      ),
+                                                      size: 40.0,
                                                     ),
                                                   );
                                                 },
@@ -1459,15 +2253,42 @@ class _ListMessagesBossEventWidgetState
                                                 children: [
                                                   Text(
                                                     dateTimeFormat(
-                                                        "d/M/y",
-                                                        listMessagesBossEventEventsRecord
-                                                            .date!),
+                                                      "d/M/y",
+                                                      listMessagesBossEventEventsRecord
+                                                          .date!,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Padding(
@@ -1476,15 +2297,38 @@ class _ListMessagesBossEventWidgetState
                                                             .fromSTEB(2.0, 0.0,
                                                                 2.0, 0.0),
                                                     child: Text(
-                                                      '-',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '08i9xxra' /* - */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Text(
@@ -1498,8 +2342,30 @@ class _ListMessagesBossEventWidgetState
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Padding(
@@ -1508,15 +2374,38 @@ class _ListMessagesBossEventWidgetState
                                                             .fromSTEB(2.0, 0.0,
                                                                 2.0, 0.0),
                                                     child: Text(
-                                                      ':',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dcz0h76m' /* : */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Text(
@@ -1530,8 +2419,30 @@ class _ListMessagesBossEventWidgetState
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ],
@@ -1539,8 +2450,13 @@ class _ListMessagesBossEventWidgetState
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
                                                   await widget.eventRef!
                                                       .update({
                                                     ...mapToFirestore(
@@ -1559,34 +2475,14 @@ class _ListMessagesBossEventWidgetState
                                                     events: widget.eventRef,
                                                   ));
                                                 },
-                                                text: 'Refuser',
-                                                options: FFButtonOptions(
-                                                  height: 30.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          25.0),
+                                                child: Icon(
+                                                  Icons.highlight_off_rounded,
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                  ),
+                                                  size: 40.0,
                                                 ),
                                               ),
                                             ),
@@ -1594,21 +2490,279 @@ class _ListMessagesBossEventWidgetState
                                         ),
                                       ),
                                     ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 0.0),
-                                      child: Text(
-                                        'Discutez avec votre adversaire, prenez le temps de vous organiser avec vos co-équipiers.',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 10.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        if ((valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    '') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'francais'))
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '7rt5a3d4' /* Discutez avec votre adversaire... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                             ),
-                                      ),
+                                          ),
+                                        if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'english') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'american'))
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'f8313rmb' /* Talk to your opponent, take th... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'deutsch')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'sv2211ss' /* Sprechen Sie mit Ihrem Gegner ... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'espanol')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'mofn68zk' /* Habla con tu oponente, tómate ... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'italiano')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9jome8iv' /* Parla con il tuo avversario e ... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'portugues')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'zf4q9oyu' /* Fale com o seu adversário, res... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            ),
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -1618,93 +2772,366 @@ class _ListMessagesBossEventWidgetState
                                 (currentUserDocument?.eteamRef ==
                                     listMessagesBossEventEventsRecord
                                         .teamdomRef))
-                              AuthUserStreamWidget(
-                                builder: (context) => Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: Text(
-                                              'Validez votre composition d\'équipe\navant de valider la date de la confrontation.',
-                                              textAlign: TextAlign.start,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmall
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'pq5h91z4' /* Validez votre composition d'éq... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .warning,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'xgsddb3v' /* Confirm your team lineup
+befor... */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'nml2hge0' /* Validieren Sie Ihre Teamzusamm... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'jnvtutnn' /* Valida la composición de tu eq... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ymjfqvh5' /* Convalida la composizione del ... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'l8q6u2la' /* Valide a composição da sua equ... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  AddPlayersEventPageWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'eventRef': serializeParam(
+                                                      widget.eventRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'myETeamRef':
+                                                        serializeParam(
+                                                      listMessagesBossEventEventsRecord
+                                                          .teamdomRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .bottomToTop,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons.location_history_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                AddPlayersEventPageWidget
-                                                    .routeName,
-                                                queryParameters: {
-                                                  'eventRef': serializeParam(
-                                                    widget.eventRef,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                  'myETeamRef': serializeParam(
-                                                    listMessagesBossEventEventsRecord
-                                                        .teamdomRef,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .bottomToTop,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.location_history_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             if ((listMessagesBossEventEventsRecord.extReady ==
@@ -1712,93 +3139,366 @@ class _ListMessagesBossEventWidgetState
                                 (currentUserDocument?.eteamRef ==
                                     listMessagesBossEventEventsRecord
                                         .teamextRef))
-                              AuthUserStreamWidget(
-                                builder: (context) => Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: Text(
-                                              'Validez votre composition d\'équipe\navant de valider la date de la confrontation.',
-                                              textAlign: TextAlign.start,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmall
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'npzziy9v' /* Validez votre composition d'éq... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .warning,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mghsuyjg' /* Confirm your team lineup
+befor... */
+                                                    ,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yev1v68e' /* Validieren Sie Ihre Teamzusamm... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'j91md5zx' /* Valida la composición de tu eq... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '73qbwcjg' /* Convalida la composizione del ... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '7kk3jt1b' /* Valide a composição da sua equ... */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  AddPlayersEventPageWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'eventRef': serializeParam(
+                                                      widget.eventRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'myETeamRef':
+                                                        serializeParam(
+                                                      listMessagesBossEventEventsRecord
+                                                          .teamextRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .bottomToTop,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons.location_history_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 10.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                AddPlayersEventPageWidget
-                                                    .routeName,
-                                                queryParameters: {
-                                                  'eventRef': serializeParam(
-                                                    widget.eventRef,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                  'myETeamRef': serializeParam(
-                                                    listMessagesBossEventEventsRecord
-                                                        .teamextRef,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .bottomToTop,
-                                                    duration: Duration(
-                                                        milliseconds: 400),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.location_history_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              size: 30.0,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             AuthUserStreamWidget(
@@ -2067,16 +3767,62 @@ class _ListMessagesBossEventWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: '.......................',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'dyrvozcw' /* ....................... */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyLarge
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontStyle,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
@@ -2125,8 +3871,27 @@ class _ListMessagesBossEventWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                           validator: _model
                                               .commFieldTextControllerValidator
@@ -2423,8 +4188,11 @@ class _ListMessagesBossEventWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 valueOrDefault<Color>(
                                                                               columnCommUserUsersRecord.color1,
@@ -2432,6 +4200,10 @@ class _ListMessagesBossEventWidgetState
                                                                             ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2453,22 +4225,39 @@ class _ListMessagesBossEventWidgetState
                                                                             5.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
-                                                                      "relative",
-                                                                      columnCommsTeamMessagesRecord
-                                                                          .dateTime!),
+                                                                    "relative",
+                                                                    columnCommsTeamMessagesRecord
+                                                                        .dateTime!,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  ),
                                                                   maxLines: 1,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2497,11 +4286,102 @@ class _ListMessagesBossEventWidgetState
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
                                                                 ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      15.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              await Clipboard.setData(
+                                                                  ClipboardData(
+                                                                      text: columnCommsTeamMessagesRecord
+                                                                          .text));
+                                                              await showModalBottomSheet(
+                                                                isScrollControlled:
+                                                                    true,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                enableDrag:
+                                                                    false,
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (context) {
+                                                                  return GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          CopyTextWidget(),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ).then((value) =>
+                                                                  safeSetState(
+                                                                      () {}));
+                                                            },
+                                                            child: Icon(
+                                                              Icons
+                                                                  .content_copy_rounded,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              size: 25.0,
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -2641,19 +4521,45 @@ class _ListMessagesBossEventWidgetState
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   playbackDurationTextStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
@@ -2737,16 +4643,29 @@ class _ListMessagesBossEventWidgetState
                                                                         0.0),
                                                             child: Text(
                                                               dateTimeFormat(
-                                                                  "relative",
-                                                                  columnCommsTeamMessagesRecord
-                                                                      .dateTime!),
+                                                                "relative",
+                                                                columnCommsTeamMessagesRecord
+                                                                    .dateTime!,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              ),
                                                               maxLines: 1,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryText,
@@ -2754,6 +4673,14 @@ class _ListMessagesBossEventWidgetState
                                                                         10.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -2788,8 +4715,15 @@ class _ListMessagesBossEventWidgetState
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Montserrat',
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: valueOrDefault<
                                                                             Color>(
                                                                           currentUserDocument
@@ -2799,6 +4733,12 @@ class _ListMessagesBossEventWidgetState
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2871,10 +4811,27 @@ class _ListMessagesBossEventWidgetState
                                                                     context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3007,20 +4964,46 @@ class _ListMessagesBossEventWidgetState
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .fontStyle,
                                                                       ),
                                                               playbackDurationTextStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
                                                                       ),
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'modif_hour_model.dart';
 export 'modif_hour_model.dart';
 
@@ -138,12 +139,27 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   60.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Changer l\'heure',
+                                FFLocalizations.of(context).getText(
+                                  '79v91ftk' /* Changer l'heure */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -193,10 +209,25 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
                                       ),
                                 ),
                                 count: _model.countHourValue ??= 19,
@@ -208,12 +239,27 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                               ),
                             ),
                             Text(
-                              'H',
+                              FFLocalizations.of(context).getText(
+                                'm7vm55ql' /* H */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Container(
@@ -252,10 +298,25 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
                                       ),
                                 ),
                                 count: _model.countMinuteValue ??= 0,
@@ -281,7 +342,9 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                             ));
                             Navigator.pop(context);
                           },
-                          text: 'Valider',
+                          text: FFLocalizations.of(context).getText(
+                            'jclpv5px' /* Valider */,
+                          ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50.0,
@@ -294,9 +357,22 @@ class _ModifHourWidgetState extends State<ModifHourWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).primary,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

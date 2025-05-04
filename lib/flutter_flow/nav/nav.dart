@@ -770,11 +770,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: RankTypstersPageWidget.routeName,
-          path: RankTypstersPageWidget.routePath,
-          builder: (context, params) => RankTypstersPageWidget(),
-        ),
-        FFRoute(
           name: MyTeamsListEventsWidget.routeName,
           path: MyTeamsListEventsWidget.routePath,
           builder: (context, params) => MyTeamsListEventsWidget(),
@@ -1256,6 +1251,66 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: RankPageMyEnterpriseWidget.routeName,
           path: RankPageMyEnterpriseWidget.routePath,
           builder: (context, params) => RankPageMyEnterpriseWidget(),
+        ),
+        FFRoute(
+          name: EventPageCompoWidget.routeName,
+          path: EventPageCompoWidget.routePath,
+          builder: (context, params) => EventPageCompoWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LeaguEventsListWidget.routeName,
+          path: LeaguEventsListWidget.routePath,
+          builder: (context, params) => LeaguEventsListWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LeaguEventsListAdd2BetWidget.routeName,
+          path: LeaguEventsListAdd2BetWidget.routePath,
+          builder: (context, params) => LeaguEventsListAdd2BetWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+            myBetRef: params.getParam(
+              'myBetRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users', 'my_bets'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LeaguEventsListAdd3BetWidget.routeName,
+          path: LeaguEventsListAdd3BetWidget.routePath,
+          builder: (context, params) => LeaguEventsListAdd3BetWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+            myBetRef: params.getParam(
+              'myBetRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users', 'my_bets'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

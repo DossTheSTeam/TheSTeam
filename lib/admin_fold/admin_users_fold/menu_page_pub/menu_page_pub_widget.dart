@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'menu_page_pub_model.dart';
 export 'menu_page_pub_model.dart';
 
@@ -107,8 +108,23 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -179,15 +195,32 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                   ));
                                 },
                                 child: Text(
-                                  'La configuration actuelle de votre profil ne vous permet pas d\'afficher le contenu du menu.\nProceder aux modifications en cliquant sur ce texte',
+                                  FFLocalizations.of(context).getText(
+                                    'a9o8kt7u' /* La configuration actuelle de v... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -242,17 +275,40 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                             12.0, 0.0, 0.0, 0.0),
                                         child: AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            'Nouvelle notification',
+                                            FFLocalizations.of(context).getText(
+                                              '8unaz5a0' /* Nouvelle notification */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelSmall
+                                                            .fontStyle,
+                                                  ),
                                                   color: valueOrDefault<Color>(
                                                     currentUserDocument?.color2,
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
                                                   ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -299,7 +355,19 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           color: valueOrDefault<
                                                               Color>(
                                                             currentUserDocument
@@ -309,6 +377,16 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                 .accent1,
                                                           ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -383,22 +461,45 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Text(
-                                              'Inscrire le pseudo exacte pour créer la fonction de recherche',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'wl1gt68k' /* Inscrire le pseudo exacte pour... */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               maxLines: 2,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 10.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    fontSize: 10.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                    lineHeight: 1.0,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -430,18 +531,43 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                 autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
-                                                  hintText:
-                                                      'Recherche par pseudo',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '9r4j4tav' /* Recherche par pseudo */,
+                                                  ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
@@ -504,7 +630,18 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       color:
                                                           valueOrDefault<Color>(
                                                         currentUserDocument
@@ -514,6 +651,16 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                             .secondaryBackground,
                                                       ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
                                                 validator: _model
                                                     .textControllerValidator
@@ -630,12 +777,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                   false) ==
                                               false)
                                             Text(
-                                              'Menu Sport',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'voh20k11' /* Menu Sport */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .labelLarge
                                                   .override(
-                                                    fontFamily: 'Montserrat',
+                                                    font:
+                                                        GoogleFonts.montserrat(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontStyle,
+                                                    ),
                                                     color:
                                                         valueOrDefault<Color>(
                                                       currentUserDocument
@@ -645,6 +807,16 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           .secondaryText,
                                                     ),
                                                     letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontStyle,
                                                   ),
                                             ),
                                           if (valueOrDefault<bool>(
@@ -652,12 +824,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                   false) ==
                                               true)
                                             Text(
-                                              'Menu E Sport',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'q9f3drru' /* Menu E Sport */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .labelLarge
                                                   .override(
-                                                    fontFamily: 'Montserrat',
+                                                    font:
+                                                        GoogleFonts.montserrat(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .fontStyle,
+                                                    ),
                                                     color:
                                                         valueOrDefault<Color>(
                                                       currentUserDocument
@@ -667,6 +854,16 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           .secondaryText,
                                                     ),
                                                     letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontStyle,
                                                   ),
                                             ),
                                         ],
@@ -717,7 +914,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'La partie ci-dessous est liée aux utilisateurs',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'dygneydj' /* La partie ci-dessous est liée ... */,
+                                                          ),
                                                           textAlign:
                                                               TextAlign.center,
                                                           maxLines: 2,
@@ -725,14 +926,31 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                                 lineHeight: 1.0,
                                                               ),
                                                         ),
@@ -786,19 +1004,40 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Mes paris sportifs',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'q3toq0d2' /* Mes paris sportifs */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -958,7 +1197,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           31.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Liste',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'w4ipcm18' /* Liste */,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -967,14 +1210,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -988,7 +1242,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           5.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes stats',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '9e3qcg9e' /* Mes stats */,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -997,14 +1255,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1064,20 +1333,41 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Classement',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'u6x2izkx' /* Classement */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1237,7 +1527,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           23.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'o5emgsxu' /* Par
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1246,14 +1542,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1267,7 +1574,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           4.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mon\nrésseau',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'yjd6u2q1' /* Mon
+résseau */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1276,14 +1589,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1321,7 +1645,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                       MainAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'La partie ci-dessous est liée aux équipes',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'd862mhwd' /* La partie ci-dessous est liée ... */,
+                                                      ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       maxLines: 2,
@@ -1330,14 +1658,31 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                                 lineHeight: 1.0,
                                                               ),
                                                     ),
@@ -1391,17 +1736,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Equipes',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'iyfqpgva' /* Equipes */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1618,7 +1984,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           6.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'a0idx12m' /* Par
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1627,14 +1999,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1648,7 +2031,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           17.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\néquipes',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '1cozv0kx' /* Mes
+équipes */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1657,21 +2046,36 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
                                                                   ),
                                                                 ),
                                                                 Text(
-                                                                  'Classement',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '6mjibdxp' /* Classement */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -1680,14 +2084,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -1748,17 +2165,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Rencontres',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'q3p22zn5' /* Rencontres */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1924,7 +2362,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           8.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\ndates',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'mnxhl2qu' /* Par
+dates */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1933,14 +2377,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1954,7 +2409,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\néquipes',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '3tsypd8j' /* Mes
+équipes */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -1963,14 +2424,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -1998,7 +2470,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                     .end,
                                                             children: [
                                                               Text(
-                                                                'Paris sportifs, discussions entre fans',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'jc1s333e' /* Paris sportifs, discussions en... */,
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -2007,8 +2483,15 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -2016,6 +2499,14 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
                                                                       lineHeight:
                                                                           1.0,
                                                                     ),
@@ -2075,17 +2566,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Actualités',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'sx4vdnac' /* Actualités */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -2303,7 +2815,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           7.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'uny0lhlj' /* Par
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -2312,14 +2830,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -2333,7 +2862,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           20.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\néquipes',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '15ap9edu' /* Mes
+équipes */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -2342,14 +2877,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -2363,7 +2909,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\nactus',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'id3xqld1' /* Mes
+actus */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -2372,14 +2924,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -2415,7 +2978,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             8.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'S\'informer, discuter entre fans',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '5wvwkyfo' /* S'informer, discuter entre fan... */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -2424,14 +2991,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -2490,24 +3070,48 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'La partie ci-dessous est liée aux utilisateurs',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'bqul2cpi' /* La partie ci-dessous est liée ... */,
+                                                        ),
                                                         textAlign:
                                                             TextAlign.center,
                                                         maxLines: 2,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              lineHeight: 1.0,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                  lineHeight:
+                                                                      1.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ],
@@ -2558,19 +3162,40 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Mes E Stats',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '98095jqi' /* Mes E Stats */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -2673,7 +3298,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           5.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes stats',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'gic5tw23' /* Mes stats */,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -2682,14 +3311,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -2749,20 +3389,41 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'Classement E Players',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'izzjjid2' /* Classement E Players */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -2922,7 +3583,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           25.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'rt8oqy7d' /* Par
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -2931,21 +3598,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
                                                                   ),
                                                                 ),
                                                                 Text(
-                                                                  'Mon\nréseau',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'hblks7va' /* Mon
+réseau */
+                                                                    ,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -2954,14 +3638,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -2998,7 +3695,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                       MainAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'La partie ci-dessous est liée aux E Teams',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'otxku4kz' /* La partie ci-dessous est liée ... */,
+                                                      ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       maxLines: 2,
@@ -3007,14 +3708,31 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                                 lineHeight: 1.0,
                                                               ),
                                                     ),
@@ -3095,10 +3813,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -3194,7 +3929,10 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             .end,
                                                                     children: [
                                                                       Text(
-                                                                        'Voir mon club',
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'p99liv80' /* Voir mon club */,
+                                                                        ),
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         maxLines:
@@ -3202,10 +3940,15 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Poppins',
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              ),
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               lineHeight: 1.0,
                                                                             ),
                                                                       ),
@@ -3267,17 +4010,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'E Teams',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'l5xgcn1e' /* E Teams */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3495,7 +4259,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           21.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par \nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'k4oqmkm6' /* Par 
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -3504,14 +4274,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -3525,7 +4306,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           7.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\nE Teams',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'hqv9x5pv' /* Mes
+E Teams */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -3534,21 +4321,36 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
                                                                   ),
                                                                 ),
                                                                 Text(
-                                                                  'Classement',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'skkgmozo' /* Classement */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -3557,14 +4359,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -3623,17 +4438,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'E Events',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'bi4nef20' /* E Events */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3799,7 +4635,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           14.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\ndates',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'znubojyu' /* Par
+dates */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -3808,14 +4650,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -3829,7 +4682,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\nE Teams',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '8u5okg1s' /* Mes
+E Teams */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -3838,14 +4697,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -3881,7 +4751,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             8.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'Performances, discussion entre fans',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'z78adbpn' /* Performances, discussion entre... */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -3890,14 +4764,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -3958,17 +4845,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                         );
                                                       },
                                                       child: Text(
-                                                        'E News',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '6uu1k2h3' /* E News */,
+                                                        ),
                                                         maxLines: 1,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -4186,7 +5094,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           6.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Par\nligues',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'ikyezkmy' /* Par
+ligues */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -4195,14 +5109,25 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
@@ -4216,7 +5141,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           24.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Mes\nE Teams',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'yr5x2fjc' /* Mes
+E Teams */
+                                                                      ,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -4225,21 +5156,38 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               10.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                           lineHeight:
                                                                               1.0,
                                                                         ),
                                                                   ),
                                                                 ),
                                                                 Text(
-                                                                  'Mes\nactus',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'jortpbu4' /* Mes
+actus */
+                                                                    ,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -4248,14 +5196,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -4290,7 +5251,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                             8.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'S\'informer, discuter entre fans',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '5qszm474' /* S'informer, discuter entre fan... */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -4299,14 +5264,27 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                         lineHeight:
                                                                             1.0,
                                                                       ),
@@ -4366,15 +5344,39 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                 );
                                               },
                                               child: Text(
-                                                'The S Team',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'i244ju5j' /* The S Team */,
+                                                ),
                                                 maxLines: 1,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                           ),
@@ -4489,7 +5491,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                           MainAxisAlignment.end,
                                                       children: [
                                                         Text(
-                                                          'Sodages ,conseils, \nstratégies, etc..',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'iw1qe4r3' /* Sodages ,conseils, 
+stratégies... */
+                                                            ,
+                                                          ),
                                                           textAlign:
                                                               TextAlign.center,
                                                           maxLines: 2,
@@ -4497,14 +5505,31 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                                 lineHeight: 1.0,
                                                               ),
                                                         ),
@@ -4549,19 +5574,44 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'Dans la partie ci-dessous vous pouvez rejoindre l\'univers E Sport.\nCréer ou rejoindre une E Team, affrontements classés, etc...',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '3mamu8p6' /* Dans la partie ci-dessous vous... */,
+                                                    ),
                                                     textAlign: TextAlign.center,
                                                     maxLines: 3,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                           lineHeight: 1.0,
                                                         ),
                                                   ),
@@ -4599,19 +5649,40 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                       ));
                                                     },
                                                     child: Text(
-                                                      'E Sport',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '9rmt838f' /* E Sport */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -4678,7 +5749,11 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   .end,
                                                           children: [
                                                             Text(
-                                                              'Voir e sport',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '9gffnt4r' /* Voir e sport */,
+                                                              ),
                                                               textAlign:
                                                                   TextAlign
                                                                       .center,
@@ -4687,8 +5762,17 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -4696,6 +5780,14 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                         10.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                     lineHeight:
                                                                         1.0,
                                                                   ),
@@ -4738,19 +5830,44 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'Dans la partie ci-dessous vous pouvez rejoindre l\'univers du Sport.\nActualités, Rencontres, classement des équipes et des parieurs, etc...',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '17uwonhn' /* Dans la partie ci-dessous vous... */,
+                                                    ),
                                                     textAlign: TextAlign.center,
                                                     maxLines: 3,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                           lineHeight: 1.0,
                                                         ),
                                                   ),
@@ -4788,19 +5905,40 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                       ));
                                                     },
                                                     child: Text(
-                                                      'Sport',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'rl0qn0dg' /* Sport */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -4866,7 +6004,13 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                   .end,
                                                           children: [
                                                             Text(
-                                                              'Voir le sport\n',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'oxkt193z' /* Voir le sport
+ */
+                                                                ,
+                                                              ),
                                                               textAlign:
                                                                   TextAlign
                                                                       .center,
@@ -4875,8 +6019,17 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -4884,6 +6037,14 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                                         10.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                     lineHeight:
                                                                         1.0,
                                                                   ),

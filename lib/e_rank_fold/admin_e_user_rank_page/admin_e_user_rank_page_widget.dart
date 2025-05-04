@@ -12,6 +12,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'admin_e_user_rank_page_model.dart';
 export 'admin_e_user_rank_page_model.dart';
 
@@ -464,12 +465,31 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Admin Classement',
+                                        FFLocalizations.of(context).getText(
+                                          'bit0vlly' /* Admin Classement */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -493,34 +513,100 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                             titleStyle: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
                             dayOfWeekStyle: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
                             dateStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             selectedDateStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).success,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
                                 ),
                             inactiveDateStyle: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
+                            locale: FFLocalizations.of(context).languageCode,
                           ),
                           FlutterFlowDropDown<String>(
                             controller: _model.dropESportsValueController ??=
@@ -533,9 +619,15 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                               'esport.war'
                             ]),
                             optionLabels: [
-                              'E Sport Football',
-                              'E Sport Basketball',
-                              'E Sport War'
+                              FFLocalizations.of(context).getText(
+                                's3v8nzyc' /* E Sport Football */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'bw1dhgn2' /* E Sport Basketball */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'jhkbya25' /* E Sport War */,
+                              )
                             ],
                             onChanged: (val) => safeSetState(
                                 () => _model.dropESportsValue = val),
@@ -544,12 +636,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
-                            hintText: 'E Sports',
+                            hintText: FFLocalizations.of(context).getText(
+                              '0j5ev9xs' /* E Sports */,
+                            ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -580,10 +687,18 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                 options: List<String>.from(
                                     ['legende', 'champion', 'pro', 'amateur']),
                                 optionLabels: [
-                                  'Légende',
-                                  'Champion',
-                                  'Pro',
-                                  'Amateur'
+                                  FFLocalizations.of(context).getText(
+                                    'j4emkhum' /* Légende */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'f32x97ca' /* Champion */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '01lmllay' /* Pro */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '5hrz0l69' /* Amateur */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropLigueValue = val),
@@ -592,10 +707,25 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
-                                hintText: 'Ligue',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'p6m8jz7w' /* Ligue */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -624,9 +754,15 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                 ),
                                 options: List<String>.from(['1', '2', '3']),
                                 optionLabels: [
-                                  'Division 1',
-                                  'Division 2',
-                                  'Division 3'
+                                  FFLocalizations.of(context).getText(
+                                    'yaha5wxz' /* Division 1 */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '2p0mu4em' /* Division 2 */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '3b06kt67' /* Division 3 */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropDivisionValue = val),
@@ -635,10 +771,25 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
-                                hintText: 'Divisions',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '599wth4v' /* Divisions */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -724,13 +875,34 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                   columnUsersCount.toString(),
                                                   '0',
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -797,13 +969,34 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                   columnUsersCount.toString(),
                                                   '0',
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             Icon(
@@ -859,21 +1052,6 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                         .primaryBackground,
                                                   ),
                                                 ),
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, 0.0),
-                                                  child: Text(
-                                                    'Pseudo',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
                                               ),
                                               Container(
                                                 width: 55.0,
@@ -925,19 +1103,40 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                         AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
-                                                      'T/F',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2kqymai4' /* T/F */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -965,16 +1164,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Tops',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      't70ft9xi' /* Tops */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1001,16 +1225,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Flops',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'bwxsrwev' /* Flops */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1036,16 +1285,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Mj',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'j91qgt7w' /* Mj */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1085,20 +1359,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       safeSetState(() {});
                                                     },
                                                     child: Text(
-                                                      'Signals',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'enu38srr' /* Signals */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -1125,16 +1420,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Up',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1gsyyqf6' /* Up */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1177,17 +1497,42 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Down',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'mrnsmlms' /* Down */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1213,16 +1558,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Up',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'achahie8' /* Up */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1248,17 +1618,42 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Down',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'j6a9rvqv' /* Down */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1284,16 +1679,41 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Text(
-                                                    'Dernière MAJ',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'syhdqp6s' /* Dernière MAJ */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1438,12 +1858,25 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: columnUsersEarningsScrollUsersRecord
                                                                             .color1,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1481,13 +1914,30 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1525,10 +1975,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1566,10 +2033,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1604,10 +2088,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1642,10 +2143,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1697,10 +2215,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -2221,17 +2756,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       });
                                                                     },
                                                                     child: Text(
-                                                                      'P',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'bffswmk3' /* P */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2288,17 +2834,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       });
                                                                     },
                                                                     child: Text(
-                                                                      'C',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'ea5ottep' /* C */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2345,17 +2902,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'L',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'eaa1v6n4' /* L */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2457,17 +3025,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       });
                                                                     },
                                                                     child: Text(
-                                                                      'A',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'd34wamx9' /* A */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2524,17 +3103,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       });
                                                                     },
                                                                     child: Text(
-                                                                      'P',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '15nvdx6o' /* P */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2583,17 +3173,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'C',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '6dgwdeme' /* C */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2642,17 +3243,36 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                             children: [
                                                               Text(
                                                                 dateTimeFormat(
-                                                                    "d/M/y",
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .eUpdateTime!),
+                                                                  "d/M/y",
+                                                                  columnUsersEarningsScrollUsersRecord
+                                                                      .eUpdateTime!,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ],
@@ -2805,12 +3425,25 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: columnUsersEarningsScrollUsersRecord
                                                                             .color1,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2848,13 +3481,30 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -2892,10 +3542,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -2933,10 +3600,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -2971,10 +3655,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -3009,10 +3710,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -3064,10 +3782,27 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -3550,17 +4285,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'P',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '7nqoy9jt' /* P */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3611,17 +4357,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'C',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'mk2ndnk7' /* C */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3668,17 +4425,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'L',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'fjipwouc' /* L */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3774,17 +4542,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'A',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'c6k8vcjo' /* A */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3835,17 +4614,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'P',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'biuz39m5' /* P */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3894,17 +4684,28 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                                       ));
                                                                     },
                                                                     child: Text(
-                                                                      'C',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'embmi2y5' /* C */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleLarge
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
+                                                                            font:
+                                                                                GoogleFonts.montserrat(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3953,17 +4754,36 @@ class _AdminEUserRankPageWidgetState extends State<AdminEUserRankPageWidget> {
                                                             children: [
                                                               Text(
                                                                 dateTimeFormat(
-                                                                    "d/M/y",
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .eUpdateTime!),
+                                                                  "d/M/y",
+                                                                  columnUsersEarningsScrollUsersRecord
+                                                                      .eUpdateTime!,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ],

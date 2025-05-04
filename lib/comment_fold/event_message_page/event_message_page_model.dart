@@ -6,12 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 
 class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
-  ///  State fields for stateful widgets in this page.
+  ///  Local state fields for this page.
 
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  bool? showComment;
+
+  bool? showAudio;
+
+  bool? showImage;
+
+  bool? showEsportComment;
+
+  bool? showEsportAudio;
+
+  bool? showEsportImage;
+
+  ///  State fields for stateful widgets in this page.
 
   AudioRecorder? audioRecorder1;
   String? audioSport;
@@ -23,11 +32,6 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
   String? Function(BuildContext, String?)? commFieldTextController1Validator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentRef;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
-
   AudioRecorder? audioRecorder2;
   String? audioEsport;
   FFUploadedFile recordedFileBytes2 =
@@ -38,6 +42,15 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
   String? Function(BuildContext, String?)? commFieldTextController2Validator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentEsportRef;
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl1 = '';
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
 
   @override
   void initState(BuildContext context) {}

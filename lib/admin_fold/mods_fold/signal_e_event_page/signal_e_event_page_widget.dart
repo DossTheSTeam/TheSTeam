@@ -6,9 +6,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/users_fold/copy_text/copy_text_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'signal_e_event_page_model.dart';
 export 'signal_e_event_page_model.dart';
 
@@ -481,13 +484,32 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Détails litige',
+                                      FFLocalizations.of(context).getText(
+                                        'iid5tyz5' /* Détails litige */,
+                                      ),
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Montserrat',
+                                            font: GoogleFonts.montserrat(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmall
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -507,14 +529,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
                                 dateTimeFormat(
-                                    "d/M H:mm",
-                                    signalEEventPageMyNotificationsRecord
-                                        .dateTime!),
+                                  "d/M H:mm",
+                                  signalEEventPageMyNotificationsRecord
+                                      .dateTime!,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -599,8 +637,29 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -617,13 +676,28 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
-                                'Dénonce un résultat mal paramétré par l\'autre manager.',
+                                FFLocalizations.of(context).getText(
+                                  'soea8m2h' /* Dénonce un résultat mal paramé... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -640,8 +714,21 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -652,16 +739,31 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Text(
-                                'Mettre une pénalité à la E Team voulant tricher,\nNe pas prendre en compte si\njuste petit défault nombre buts',
+                                FFLocalizations.of(context).getText(
+                                  'rd6xh1yh' /* Mettre une pénalité à la E Tea... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 maxLines: 10,
                                 style: FlutterFlowTheme.of(context)
                                     .labelSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
                                       color:
                                           FlutterFlowTheme.of(context).warning,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -803,10 +905,27 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -885,12 +1004,33 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           },
                                         ),
                                         Text(
-                                          '-',
+                                          FFLocalizations.of(context).getText(
+                                            '1jov6gdk' /* - */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         StreamBuilder<TeamsRecord>(
@@ -998,10 +1138,27 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -1100,19 +1257,44 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Après vérifications ci-dessous...\nCarton Rouge ?',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'vdyzf5ud' /* Après vérifications ci-dessous... */,
+                                                    ),
                                                     textAlign: TextAlign.center,
                                                     maxLines: 3,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .error,
                                                           fontSize: 18.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1125,18 +1307,43 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Si oui, pour quelle E Team ?',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ywtybclj' /* Si oui, pour quelle E Team ? */,
+                                                    ),
                                                     maxLines: 1,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .error,
                                                           fontSize: 18.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -1154,24 +1361,121 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .warning,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 15.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await Clipboard.setData(
+                                                    ClipboardData(
+                                                        text:
+                                                            columnEventEventsRecord
+                                                                .reference.id));
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: CopyTextWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Icon(
+                                                Icons.content_copy_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                size: 25.0,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                         Align(
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
                                           child: Text(
-                                            'Resultat',
+                                            FFLocalizations.of(context).getText(
+                                              'n82j7b82' /* Resultat */,
+                                            ),
                                             maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -1179,13 +1483,36 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
                                           child: Text(
-                                            'Selon E Team ayant paramétré en 1er',
+                                            FFLocalizations.of(context).getText(
+                                              'bc9d307n' /* Selon E Team ayant paramétré e... */,
+                                            ),
                                             maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -1197,14 +1524,39 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Text(
-                                              'Gagnant',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'nxtzrcic' /* Gagnant */,
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -1255,14 +1607,33 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       maxLines: 2,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Montserrat',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .montserrat(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],
@@ -1280,14 +1651,35 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   .eteamDraw,
                                               textAlign: TextAlign.start,
                                               maxLines: 2,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineMedium
+                                                  .override(
+                                                    font:
+                                                        GoogleFonts.montserrat(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineMedium
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                           ),
                                         if (columnEventEventsRecord.seenScore ==
@@ -1327,13 +1719,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -1363,13 +1772,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -1387,26 +1813,64 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                   Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
-                                      'Resultat',
+                                      FFLocalizations.of(context).getText(
+                                        '8qv3slht' /* Resultat */,
+                                      ),
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
                                   Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
-                                      'Selon E Team envoyant la notification actuelle',
+                                      FFLocalizations.of(context).getText(
+                                        'zes657d6' /* Selon E Team envoyant la notif... */,
+                                      ),
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1416,16 +1880,35 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Text(
-                                        'Ci-dessous la photo prouvant sa version.',
+                                        FFLocalizations.of(context).getText(
+                                          'i8425mkt' /* Ci-dessous la photo prouvant s... */,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .warning,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -1436,13 +1919,34 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 10.0),
                                       child: Text(
-                                        'Bien vérifier que les équipes\ncorrespondent avec celles au dessus',
+                                        FFLocalizations.of(context).getText(
+                                          'ipv5cwv0' /* Bien vérifier que les équipes
+... */
+                                          ,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -1504,13 +2008,34 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                               .secondaryBackground,
                                         ),
                                         Text(
-                                          'Changer Résultat',
+                                          FFLocalizations.of(context).getText(
+                                            'sfublk2a' /* Changer Résultat */,
+                                          ),
                                           maxLines: 1,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Divider(
@@ -1526,14 +2051,39 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              'Gagnant de la rencontre ?',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'msiqq4q2' /* Gagnant de la rencontre ? */,
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -1616,10 +2166,23 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1761,7 +2324,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                 AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
-                                                              'Match Nul',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '0ir9wq4t' /* Match Nul */,
+                                                              ),
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
@@ -1770,10 +2337,27 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1946,10 +2530,23 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2068,14 +2665,39 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              'Score',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '8qzqhb6a' /* Score */,
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -2156,12 +2778,25 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2218,10 +2853,17 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                           ),
                                                                       enabledBorder:
                                                                           UnderlineInputBorder(
@@ -2276,10 +2918,21 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
                                                                     textAlign:
                                                                         TextAlign
@@ -2371,12 +3024,25 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2433,10 +3099,17 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                           ),
                                                                       enabledBorder:
                                                                           UnderlineInputBorder(
@@ -2491,10 +3164,21 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
                                                                     textAlign:
                                                                         TextAlign
@@ -2554,8 +3238,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                               .text);
                                                       safeSetState(() {});
                                                     },
-                                                    text:
-                                                        'Valider modifications',
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      'eb7huetn' /* Valider modifications */,
+                                                    ),
                                                     options: FFButtonOptions(
                                                       width: 210.0,
                                                       height: 40.0,
@@ -2582,13 +3269,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: BorderSide(
@@ -2623,14 +3327,39 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  'Gagnant',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'xac6ekur' /* Gagnant */,
+                                                  ),
                                                   maxLines: 1,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2684,10 +3413,27 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
+                                                                  font: GoogleFonts
+                                                                      .montserrat(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -2712,9 +3458,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                             context)
                                                         .headlineMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Montserrat',
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -2756,13 +3523,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -2794,13 +3578,30 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -2886,7 +3687,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .delete();
                                                   context.safePop();
                                                 },
-                                                text: 'Publier le résultat Dom',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'b06qk306' /* Publier le résultat Dom */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width: 350.0,
                                                   height: 50.0,
@@ -2902,11 +3707,33 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(
@@ -3006,7 +3833,10 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                   context.safePop();
                                                 },
                                                 text:
-                                                    'Publier le résultat Draw',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'hppn1hli' /* Publier le résultat Draw */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width: 350.0,
                                                   height: 50.0,
@@ -3022,11 +3852,33 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(
@@ -3124,7 +3976,11 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                       .delete();
                                                   context.safePop();
                                                 },
-                                                text: 'Publier le résultat Ext',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'e4swh254' /* Publier le résultat Ext */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width: 350.0,
                                                   height: 50.0,
@@ -3140,11 +3996,33 @@ class _SignalEEventPageWidgetState extends State<SignalEEventPageWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(

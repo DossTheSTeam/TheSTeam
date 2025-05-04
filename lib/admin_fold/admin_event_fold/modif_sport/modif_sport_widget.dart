@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'modif_sport_model.dart';
 export 'modif_sport_model.dart';
 
@@ -138,12 +139,27 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   50.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Changer de sport',
+                                FFLocalizations.of(context).getText(
+                                  'mhnrzzuo' /* Changer de sport */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -178,14 +194,30 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     'sports.meca'
                                   ]),
                                   optionLabels: [
-                                    'Football',
-                                    'Basketball',
-                                    'Tennis',
-                                    'Hockey',
-                                    'MMA',
-                                    'Boxe',
-                                    'Rugby',
-                                    'Sports Méca.'
+                                    FFLocalizations.of(context).getText(
+                                      'sz1a6eiu' /* Football */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'v89v99do' /* Basketball */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '2mj5pnbz' /* Tennis */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'sx4340a7' /* Hockey */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'dg1mrqn4' /* MMA */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '2haf6jc4' /* Boxe */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'uu0afly5' /* Rugby */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'y2vuov75' /* Sports Méca. */,
+                                    )
                                   ],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropSportValue = val),
@@ -194,10 +226,27 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
-                                  hintText: 'Sports',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    '5ywnx17e' /* Sports */,
+                                  ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -231,7 +280,9 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     ));
                                     Navigator.pop(context);
                                   },
-                                  text: 'Valider',
+                                  text: FFLocalizations.of(context).getText(
+                                    'g1st9770' /* Valider */,
+                                  ),
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 50.0,
@@ -244,10 +295,27 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                     elevation: 2.0,
                                     borderSide: BorderSide(

@@ -3,21 +3,33 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'post_page_widget.dart' show PostPageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class PostPageModel extends FlutterFlowModel<PostPageWidget> {
+  ///  Local state fields for this page.
+
+  bool? showComment;
+
+  bool? showAudio;
+
+  bool? showImage;
+
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  AudioRecorder? audioRecorder;
+  String? audio;
+  FFUploadedFile recordedFileBytes =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
-
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   PostMessagesRecord? commentRef;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

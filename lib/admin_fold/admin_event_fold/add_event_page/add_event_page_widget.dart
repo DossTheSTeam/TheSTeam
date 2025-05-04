@@ -13,6 +13,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'add_event_page_model.dart';
 export 'add_event_page_model.dart';
 
@@ -448,13 +449,30 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Créer une rencontre',
+                                  FFLocalizations.of(context).getText(
+                                    'fhkyy529' /* Créer une rencontre */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -474,51 +492,147 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                         },
                         titleStyle:
                             FlutterFlowTheme.of(context).labelSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
                         dayOfWeekStyle:
                             FlutterFlowTheme.of(context).labelSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
                         dateStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                         selectedDateStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).success,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
                                 ),
                         inactiveDateStyle:
                             FlutterFlowTheme.of(context).labelSmall.override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
                                 ),
+                        locale: FFLocalizations.of(context).languageCode,
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            'Heure',
+                            FFLocalizations.of(context).getText(
+                              'xe73tt7q' /* Heure */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontStyle,
                                 ),
                           ),
                           Text(
-                            'Minute',
+                            FFLocalizations.of(context).getText(
+                              '3hcokkj2' /* Minute */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ],
@@ -560,10 +674,23 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                               count: _model.countHourValue ??= 19,
@@ -575,12 +702,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                             ),
                           ),
                           Text(
-                            'H',
+                            FFLocalizations.of(context).getText(
+                              '9jolq073' /* H */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontStyle,
                                 ),
                           ),
                           Container(
@@ -616,10 +758,23 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                               count: _model.countMinuteValue ??= 0,
@@ -643,12 +798,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 11.0, 0.0, 0.0),
                               child: Text(
-                                'Journée ou\nNom Event',
+                                FFLocalizations.of(context).getText(
+                                  'lz1ai74l' /* Journée ou
+Nom Event */
+                                  ,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -674,12 +846,32 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: '#####',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'oelnwwbn' /* ##### */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -722,8 +914,25 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       textAlign: TextAlign.start,
                                       validator: _model
@@ -738,12 +947,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: Text(
-                                '(facultatif)',
+                                FFLocalizations.of(context).getText(
+                                  '0awga9i0' /* (facultatif) */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -786,14 +1010,30 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                         'sports.meca'
                                       ]),
                                       optionLabels: [
-                                        'Football',
-                                        'Basketball',
-                                        'Tennis',
-                                        'Hockey',
-                                        'MMA',
-                                        'Boxe',
-                                        'Rugby',
-                                        'Sports Méca.'
+                                        FFLocalizations.of(context).getText(
+                                          'uycqofhy' /* Football */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'drfgnwew' /* Basketball */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'mcrgfi6i' /* Tennis */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'z1zcpewo' /* Hockey */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kuuuztnf' /* MMA */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'cy4ejc2w' /* Boxe */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ijz0ct32' /* Rugby */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'rshirdn3' /* Sports Méca. */,
+                                        )
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropSportValue = val),
@@ -802,10 +1042,30 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
-                                      hintText: 'Sports',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '2ctea7db' /* Sports */,
+                                      ),
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -871,40 +1131,108 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           'mx.gp'
                                         ]),
                                         optionLabels: [
-                                          'Premier League',
-                                          'LaLiga',
-                                          'Bundesliga',
-                                          'Serie A',
-                                          'Ligue 1',
-                                          'Autres',
-                                          'Pays Football',
-                                          'NBA',
-                                          'ATP',
-                                          'WTA',
-                                          'Champions League',
-                                          'Europa League',
-                                          'Conference League',
-                                          'glace.nhl',
-                                          'gazon.elite.h',
-                                          'gazon.elite.f',
-                                          'salle.elite.h',
-                                          'salle.elite.f',
-                                          'Mouche',
-                                          'Coq',
-                                          'Plume',
-                                          'Léger',
-                                          'Mi-Moyen',
-                                          'Moyen',
-                                          'Mi-Lourd',
-                                          'Lourd',
-                                          'Autres - France',
-                                          'Super Lourd',
-                                          'Top 14',
-                                          'Pays Rugby',
-                                          'Formule 1',
-                                          'Moto GP',
-                                          'World Superbike',
-                                          'MX GP'
+                                          FFLocalizations.of(context).getText(
+                                            '1v99zhis' /* Premier League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '3fxzoemw' /* LaLiga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '1syqru6h' /* Bundesliga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'o92lhz7w' /* Serie A */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'wfs864xu' /* Ligue 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'yjym4s7f' /* Autres */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'leh9xkgx' /* Pays Football */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'uc9p1i8a' /* NBA */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '67112en7' /* ATP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'tzi4yr2h' /* WTA */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ktyunsm6' /* Champions League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'yivvkwl8' /* Europa League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'qorpz7v5' /* Conference League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '7yk5yp1u' /* glace.nhl */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'njc4ihwi' /* gazon.elite.h */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'gq48juvx' /* gazon.elite.f */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'nwf23mkz' /* salle.elite.h */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'n25qdek2' /* salle.elite.f */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'jvkwaozb' /* Mouche */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '19jvncj0' /* Coq */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '22zpt7wk' /* Plume */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'va4u23ul' /* Léger */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'qq8w36z1' /* Mi-Moyen */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ieq0o337' /* Moyen */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '361zr7et' /* Mi-Lourd */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ket3v7a1' /* Lourd */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'xwluklbx' /* Autres - France */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '8qg1tmh1' /* Super Lourd */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'jal49tll' /* Top 14 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'b010tqlf' /* Pays Rugby */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '8t97n3mq' /* Formule 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'k076bo4n' /* Moto GP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'phdbciya' /* World Superbike */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'gn93zd0e' /* MX GP */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropLigueValue = val),
@@ -913,10 +1241,30 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '67m2vsh4' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1019,14 +1367,39 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         val),
                                                 width: 200.0,
                                                 height: 40.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Teams',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'zvk8sck0' /* Teams */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -1113,16 +1486,35 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               ?.name,
                                                           'teamdom',
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                       ),
                                                       if (_model.eventRef
                                                               ?.reference ==
@@ -1239,8 +1631,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                 safeSetState(
                                                                     () {});
                                                               },
-                                                              text:
-                                                                  'Valider Domicile',
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'v7yv529y' /* Valider Domicile */,
+                                                              ),
                                                               options:
                                                                   FFButtonOptions(
                                                                 width: 130.0,
@@ -1266,8 +1661,15 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -1275,6 +1677,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           16.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -1380,10 +1790,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                              hintText: 'Teams',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'ngon1m40' /* Teams */,
+                                              ),
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1468,9 +1904,31 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Align(
@@ -1527,7 +1985,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           );
                                                         },
                                                         text:
-                                                            'Créer l\'évennement',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'tg22twwi' /* Créer l'évennement */,
+                                                        ),
                                                         options:
                                                             FFButtonOptions(
                                                           width: 130.0,
@@ -1554,8 +2016,17 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1563,6 +2034,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -1613,9 +2092,28 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       Align(
@@ -1684,7 +2182,10 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                               safeSetState(() {});
                                             },
-                                            text: 'Ajouter les pilotes',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '9g3ochfy' /* Ajouter les pilotes */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 40.0,
@@ -1695,18 +2196,38 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
@@ -1759,8 +2280,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                           Column(
@@ -1786,21 +2328,54 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     ),
                                                     options: List<String>.from(
                                                         ['nba']),
-                                                    optionLabels: ['NBA'],
+                                                    optionLabels: [
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2mhoekyk' /* NBA */,
+                                                      )
+                                                    ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
                                                                 .dropLigueBasketValue =
                                                             val),
                                                     width: 180.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'b8bv6scc' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -1850,8 +2425,16 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     options: List<String>.from(
                                                         ['atp', 'wta']),
                                                     optionLabels: [
-                                                      'ATP',
-                                                      'WTA'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'jch2fyv3' /* ATP */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7olg7s26' /* WTA */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -1859,14 +2442,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '2faf0qt9' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -1921,11 +2531,31 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'salle.elite.f'
                                                     ]),
                                                     optionLabels: [
-                                                      'Glace NHL',
-                                                      'Gazon Elite H',
-                                                      'Gazon Elite F',
-                                                      'Salle Elite H',
-                                                      'Salle Elite F'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'h04h01el' /* Glace NHL */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'enar0wl2' /* Gazon Elite H */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '0455t2yg' /* Gazon Elite F */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '6xpgmqlz' /* Salle Elite H */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7rzldj6n' /* Salle Elite F */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -1933,14 +2563,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'ruhiq89y' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -1998,14 +2655,46 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'lourd'
                                                     ]),
                                                     optionLabels: [
-                                                      'Mouche',
-                                                      'Coq',
-                                                      'Plume',
-                                                      'Léger',
-                                                      'Mi-Moyen',
-                                                      'Moyen',
-                                                      'Mi-Lourd',
-                                                      'Lourd'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        's90o0jy2' /* Mouche */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'c4vhj6jp' /* Coq */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'fqctm4dx' /* Plume */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'dj8ou4f4' /* Léger */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'txtcyzdc' /* Mi-Moyen */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'oolhi8o1' /* Moyen */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'f2di3w8r' /* Mi-Lourd */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'v9dhgvsi' /* Lourd */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -2013,14 +2702,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'g2pn6vb3' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2078,14 +2794,46 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'super.lourd'
                                                     ]),
                                                     optionLabels: [
-                                                      'Mouche - 52 kg',
-                                                      'Plume - 57 kg',
-                                                      'Léger - 63 kg',
-                                                      'Mi-Moyen- 69 kg',
-                                                      'Moyen- 75 kg',
-                                                      'Mi-Lourd - 81 kg',
-                                                      'Lourd - 91 kg',
-                                                      'Super Lourd + 91 kg'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'vy9p6e8f' /* Mouche - 52 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'xutkf752' /* Plume - 57 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '8fk0uhna' /* Léger - 63 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7xw28tb2' /* Mi-Moyen- 69 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '5nf64e66' /* Moyen- 75 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'p5om9o3b' /* Mi-Lourd - 81 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'z1vmd6wq' /* Lourd - 91 kg */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'z0rt6948' /* Super Lourd + 91 kg */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -2093,14 +2841,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 50.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'yaga67gl' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2152,8 +2927,16 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'pays.rugby'
                                                     ]),
                                                     optionLabels: [
-                                                      'Top 14',
-                                                      'Pays Rugby'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'caggylrs' /* Top 14 */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'st7v8ghf' /* Pays Rugby */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -2161,14 +2944,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 50.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'svkdsihd' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2222,10 +3032,26 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                       'mx.gp'
                                                     ]),
                                                     optionLabels: [
-                                                      'Formule 1',
-                                                      'Moto GP',
-                                                      'World Superbike',
-                                                      'MX GP'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'eku1fwwc' /* Formule 1 */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'mat4kodf' /* Moto GP */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wm6vy3k8' /* World Superbike */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'qazu84br' /* MX GP */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -2233,14 +3059,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 180.0,
                                                     height: 50.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Ligues',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      't0y3lh4z' /* Ligues */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2352,14 +3205,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'tnpwtso9' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2443,15 +3323,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventBasketRef
                                                             ?.reference ==
@@ -2582,8 +3481,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'kjmtn2hf' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -2610,14 +3512,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -2717,14 +3632,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'ta1lmg1r' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -2808,15 +3750,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventTennisRef
                                                             ?.reference ==
@@ -2947,8 +3908,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'edba452y' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -2975,14 +3939,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -3082,14 +4059,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'eaqssnwd' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3173,15 +4177,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventHockeyRef
                                                             ?.reference ==
@@ -3312,8 +4335,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'hjb02dc3' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -3340,14 +4366,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -3447,14 +4486,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'z5jr6uj2' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3538,15 +4604,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventMMARef
                                                             ?.reference ==
@@ -3677,8 +4762,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'l67oihim' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -3705,14 +4793,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -3812,14 +4913,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'w8ketdyn' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3903,15 +5031,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventBoxeRef
                                                             ?.reference ==
@@ -4042,8 +5189,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'qoew11h5' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -4070,14 +5220,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -4177,14 +5340,41 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                             val),
                                                     width: 200.0,
                                                     height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                    hintText: 'Teams',
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'y9kyi4ag' /* Teams */,
+                                                    ),
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -4268,15 +5458,34 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     if (_model.eventRugbyRef
                                                             ?.reference ==
@@ -4407,8 +5616,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text:
-                                                                'Valider Domicile',
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'ho17s9lk' /* Valider Domicile */,
+                                                            ),
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -4435,14 +5647,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -4496,9 +5721,31 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 if (_model.eventMecaRef
@@ -4589,7 +5836,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           safeSetState(() {});
                                                         },
                                                         text:
-                                                            'Ajouter les pilotes',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'nntackqx' /* Ajouter les pilotes */,
+                                                        ),
                                                         options:
                                                             FFButtonOptions(
                                                           width: 130.0,
@@ -4616,8 +5867,17 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -4625,6 +5885,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -4734,10 +6002,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'd7neyn8a' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -4832,12 +6126,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -4899,8 +6210,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'nlgvn1u6' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -4924,14 +6238,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -5036,10 +6363,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '1mnbjyuf' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -5134,12 +6487,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -5201,8 +6571,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'bv0ycre8' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -5226,14 +6599,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -5338,10 +6724,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'g5da7bzh' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -5436,12 +6848,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -5503,8 +6932,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'ckn869pn' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -5528,14 +6960,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -5640,10 +7085,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    's818rf8o' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -5738,12 +7209,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -5805,8 +7293,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'xplz38w5' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -5830,14 +7321,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -5942,10 +7446,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'p0xt0p59' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -6040,12 +7570,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -6107,8 +7654,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '8ceta7uu' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -6132,14 +7682,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -6244,10 +7807,36 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Teams',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'nqi4m9eh' /* Teams */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -6342,12 +7931,29 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                           Align(
@@ -6409,8 +8015,11 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text:
-                                                                    'Créer l\'évennement',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  '9c7zciyr' /* Créer l'évennement */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -6434,14 +8043,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                   elevation:
                                                                       3.0,

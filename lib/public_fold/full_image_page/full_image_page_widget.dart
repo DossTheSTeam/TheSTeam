@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'full_image_page_model.dart';
 export 'full_image_page_model.dart';
 
@@ -95,7 +96,7 @@ class _FullImagePageWidgetState extends State<FullImagePageWidget> {
                               0.0, 0.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -452,24 +453,81 @@ class _FullImagePageWidgetState extends State<FullImagePageWidget> {
                                         ),
                                       ),
                                     ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        fullImagePageUsersRecord.displayName,
-                                        'NewUser',
-                                      ),
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 6.0, 0.0),
+                                        child: Container(
+                                          width: 35.0,
+                                          height: 35.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            shape: BoxShape.circle,
                                           ),
-                                    ),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25.0),
+                                            child: Image.network(
+                                              fullImagePageUsersRecord.photoUrl,
+                                              width: 300.0,
+                                              height: 200.0,
+                                              fit: BoxFit.fitHeight,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            fullImagePageUsersRecord
+                                                .displayName,
+                                            'NewUser',
+                                          ),
+                                          maxLines: 1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  size: 30.0,
+                                ),
                               ),
                             ],
                           ),

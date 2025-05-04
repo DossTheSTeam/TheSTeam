@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'my_team_list_model.dart';
 export 'my_team_list_model.dart';
 
@@ -104,43 +105,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                       ),
                                     ),
                                   ),
-                                  if (valueOrDefault<bool>(
-                                          currentUserDocument?.helpNav,
-                                          false) ==
-                                      true)
-                                    Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: AuthUserStreamWidget(
-                                        builder: (context) => Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 3.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Menu',
-                                                textAlign: TextAlign.center,
-                                                maxLines: 2,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
                                 ],
                               ),
                               Padding(
@@ -493,70 +457,305 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                         ),
                                       ),
                                     ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          45.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Mes équipes',
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              letterSpacing: 0.0,
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'v7vw8qvm' /* Mes équipes */,
                                             ),
-                                      ),
-                                    ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              '7y04tp3t' /* My teams */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'tjx4nur6' /* Meine teams */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              '80kcmmqt' /* Mis equipos */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'p99v16ng' /* Le mie squadre */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              '4cf2nme0' /* Minhas equipas */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ],
                           ),
-                          if (true /* Warning: Trying to access variable not yet defined. */)
-                            FutureBuilder<List<MyNotificationsRecord>>(
-                              future: queryMyNotificationsRecordOnce(
-                                parent: currentUserReference,
-                                singleRecord: true,
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).accent4,
+                          Container(
+                            width: 50.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                            ),
+                            child: Visibility(
+                              visible:
+                                  true /* Warning: Trying to access variable not yet defined. */,
+                              child: FutureBuilder<List<MyNotificationsRecord>>(
+                                future: queryMyNotificationsRecordOnce(
+                                  parent: currentUserReference,
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  );
-                                }
-                                List<MyNotificationsRecord>
-                                    rowNotifsMyNotificationsRecordList =
-                                    snapshot.data!;
-                                // Return an empty Container when the item does not exist.
-                                if (snapshot.data!.isEmpty) {
-                                  return Container();
-                                }
-                                final rowNotifsMyNotificationsRecord =
-                                    rowNotifsMyNotificationsRecordList
-                                            .isNotEmpty
-                                        ? rowNotifsMyNotificationsRecordList
-                                            .first
-                                        : null;
+                                    );
+                                  }
+                                  List<MyNotificationsRecord>
+                                      rowNotifsMyNotificationsRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final rowNotifsMyNotificationsRecord =
+                                      rowNotifsMyNotificationsRecordList
+                                              .isNotEmpty
+                                          ? rowNotifsMyNotificationsRecordList
+                                              .first
+                                          : null;
 
-                                return Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 10.0, 0.0),
-                                      child: AuthUserStreamWidget(
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      AuthUserStreamWidget(
                                         builder: (context) => InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -589,11 +788,12 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                );
-                              },
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
+                          ),
                         ],
                       ),
                     ),
@@ -716,79 +916,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          19.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir mes\néquipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                                Text(
-                                                                  'Ne plus voir',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 2,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        lineHeight:
-                                                                            1.0,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                         Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -933,79 +1060,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          19.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir mes\néquipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                                Text(
-                                                                  'Ne plus voir',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 2,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        lineHeight:
-                                                                            1.0,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                         Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1186,10 +1240,27 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       .of(context)
                                                                   .labelMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1198,6 +1269,9 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                       Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
                                                         children: [
                                                           Padding(
                                                             padding:
@@ -1368,68 +1442,188 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Row(
+                                                                      1.0, 0.0),
+                                                              child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
                                                                         .end,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            6.0,
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Voir\néquipe',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      maxLines:
-                                                                          2,
+                                                                  if ((valueOrDefault(currentUserDocument?.langage, '') ==
+                                                                              '') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'francais'))
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'zmiymec1' /* Créer une actualité */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                            fontSize:
-                                                                                10.0,
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            lineHeight:
-                                                                                1.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
-                                                                  ),
-                                                                  Text(
-                                                                    'Ecrire une \nactualité',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
+                                                                  if ((valueOrDefault(
+                                                                              currentUserDocument
+                                                                                  ?.langage,
+                                                                              '') ==
+                                                                          'english') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'american'))
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'jcvmif9n' /* Create news */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'deutsch')
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'cyfbvp7r' /* Nachrichten erstellen */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'espanol')
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'r1er9vis' /* Crear noticias */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'italiano')
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '7vwwhnv4' /* Crea notizie */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'portugues')
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'esbzpz9n' /* Criar notícias */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
                                                                 ],
                                                               ),
                                                             ),
@@ -1586,66 +1780,30 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                         context)
                                                                     .labelMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ),
                                                           ],
                                                         ),
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .end,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Enlever de\nmes équipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .start,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                       ],
                                                     ),
                                                     Column(
@@ -1716,57 +1874,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             ),
                                                           ),
                                                         ),
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .end,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          6.0,
-                                                                          3.0,
-                                                                          12.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir équipe',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                       ],
                                                     ),
                                                   ],
@@ -1887,79 +1994,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          19.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir mes\néquipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                                Text(
-                                                                  'Ne plus voir',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 2,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        lineHeight:
-                                                                            1.0,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                         Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2104,79 +2138,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          19.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir mes\néquipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                                Text(
-                                                                  'Ne plus voir',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 2,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        lineHeight:
-                                                                            1.0,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                         Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2268,29 +2229,276 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                           scrollDirection: Axis.horizontal,
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: Container(
-                                                  width: 230.0,
-                                                  height: 40.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                  ),
-                                                  child: Text(
-                                                    'Créer ou intègrer une E Team pour débloquer le contenu',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
+                                                        0.0, 0.0, 20.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    if ((valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                '') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'francais'))
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '6ltzmgh1' /* Créer ou intègrer une E Team
+p... */
+                                                          ,
                                                         ),
-                                                  ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if ((valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'english') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'american'))
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'gnnrn5ts' /* Create or join an E Team
+to un... */
+                                                          ,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'deutsch')
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'oi30w93e' /* Erstellen Sie ein E-Team
+oder ... */
+                                                          ,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'espanol')
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'r1cx6sds' /* Crea o únete a un E Team
+para ... */
+                                                          ,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'italiano')
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'xasjz0v0' /* Crea o unisciti a un E Team
+pe... */
+                                                          ,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'portugues')
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'xahtuley' /* Crie ou junte-se a uma E Team
+... */
+                                                          ,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                  ],
                                                 ),
                                               ),
                                               Column(
@@ -2349,128 +2557,55 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                           ),
                                                         ),
                                                       ),
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            AddETeamPageIUDAdminWidget
-                                                                .routeName,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .rightToLeft,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        400),
-                                                              ),
-                                                            },
-                                                          );
-                                                        },
-                                                        child: FaIcon(
-                                                          FontAwesomeIcons.edit,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 30.0,
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              AddETeamPageIUDAdminWidget
+                                                                  .routeName,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .rightToLeft,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          400),
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .edit,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 30.0,
+                                                          ),
                                                         ),
                                                       ),
                                                     ],
                                                   ),
-                                                  if (valueOrDefault<bool>(
-                                                          currentUserDocument
-                                                              ?.helpNav,
-                                                          false) ==
-                                                      true)
-                                                    Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          19.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                'Rechercher',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                maxLines: 2,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          10.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      lineHeight:
-                                                                          1.0,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            Text(
-                                                              'Créer',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        10.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    lineHeight:
-                                                                        1.0,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
                                                 ],
                                               ),
                                             ],
@@ -2646,47 +2781,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                  if (valueOrDefault<
-                                                                              bool>(
-                                                                          currentUserDocument
-                                                                              ?.helpNav,
-                                                                          false) ==
-                                                                      true)
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.end,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'Menu\nE Team',
-                                                                              textAlign: TextAlign.center,
-                                                                              maxLines: 2,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 10.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    lineHeight: 1.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
                                                                 ],
                                                               ),
                                                               Row(
@@ -2708,12 +2802,19 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                            ),
                                                                             color:
                                                                                 columnTeamsRecord.color1,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2787,47 +2888,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  if (valueOrDefault<
-                                                                              bool>(
-                                                                          currentUserDocument
-                                                                              ?.helpNav,
-                                                                          false) ==
-                                                                      true)
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.end,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                6.0,
-                                                                                3.0,
-                                                                                12.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'voir équipe',
-                                                                              textAlign: TextAlign.center,
-                                                                              maxLines: 2,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 10.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    lineHeight: 1.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
                                                                 ],
                                                               ),
                                                             ],
@@ -2923,54 +2983,18 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Poppins',
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                ),
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                               ),
                                                                         ),
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  if (valueOrDefault<
-                                                                              bool>(
-                                                                          currentUserDocument
-                                                                              ?.helpNav,
-                                                                          false) ==
-                                                                      true)
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.end,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                1.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'Enlever de\nmes équipes',
-                                                                              textAlign: TextAlign.start,
-                                                                              maxLines: 2,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).error,
-                                                                                    fontSize: 10.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    lineHeight: 1.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
                                                                 ],
                                                               ),
                                                               Column(
@@ -3041,47 +3065,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  if (valueOrDefault<
-                                                                              bool>(
-                                                                          currentUserDocument
-                                                                              ?.helpNav,
-                                                                          false) ==
-                                                                      true)
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.end,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                6.0,
-                                                                                3.0,
-                                                                                12.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'voir équipe',
-                                                                              textAlign: TextAlign.center,
-                                                                              maxLines: 2,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 10.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    lineHeight: 1.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
                                                                 ],
                                                               ),
                                                             ],
@@ -3258,67 +3241,29 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
                                                             ),
                                                           ],
                                                         ),
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .end,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Enlever de\nmes équipes',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .start,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                       ],
                                                     ),
                                                     Column(
@@ -3389,57 +3334,6 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                             ),
                                                           ),
                                                         ),
-                                                        if (valueOrDefault<
-                                                                    bool>(
-                                                                currentUserDocument
-                                                                    ?.helpNav,
-                                                                false) ==
-                                                            true)
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .end,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          6.0,
-                                                                          3.0,
-                                                                          12.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'voir équipe',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              10.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          lineHeight:
-                                                                              1.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
                                                       ],
                                                     ),
                                                   ],

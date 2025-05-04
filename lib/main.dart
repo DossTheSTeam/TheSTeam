@@ -9,6 +9,7 @@ import 'backend/push_notifications/push_notifications_util.dart';
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'flutter_flow/internationalization.dart';
 import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
 
 void main() async {
@@ -40,6 +41,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late AppStateNotifier _appStateNotifier;
@@ -89,6 +92,10 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
+  void setLocale(String language) {
+    safeSetState(() => _locale = createLocale(language));
+  }
+
   void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
         FlutterFlowTheme.saveThemeMode(mode);
@@ -100,11 +107,22 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'The S Team sport',
       localizationsDelegates: [
+        FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
+        FallbackMaterialLocalizationDelegate(),
+        FallbackCupertinoLocalizationDelegate(),
       ],
-      supportedLocales: const [Locale('en', '')],
+      locale: _locale,
+      supportedLocales: const [
+        Locale('fr'),
+        Locale('en'),
+        Locale('de'),
+        Locale('es'),
+        Locale('it'),
+        Locale('pt'),
+      ],
       theme: ThemeData(
         brightness: Brightness.light,
         useMaterial3: false,

@@ -10,6 +10,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'list_post_messages_model.dart';
 export 'list_post_messages_model.dart';
 
@@ -101,7 +102,7 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -485,15 +486,278 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                 ),
                                               ),
                                             ),
-                                          Text(
-                                            'Commentaires',
-                                            maxLines: 2,
-                                            style: FlutterFlowTheme.of(context)
-                                                .displaySmall
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  letterSpacing: 0.0,
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'u747lufo' /* Commentaires */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
                                                 ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ghpncopq' /* Comments */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'trfoibp1' /* Kommentare */,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1newjcil' /* Comentarios */,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '7065rn4i' /* Commenti */,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ghbv4fi1' /* Comentários */,
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                            ],
                                           ),
                                         ],
                                       ),
@@ -615,8 +879,27 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ],
@@ -634,42 +917,6 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                   ),
                                 ),
                               ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.helpNav, false) ==
-                                  true)
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 3.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Choisir la ligue',
-                                            textAlign: TextAlign.center,
-                                            maxLines: 3,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  fontSize: 10.0,
-                                                  letterSpacing: 0.0,
-                                                  lineHeight: 1.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
@@ -699,24 +946,56 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                             ''
                                           ]),
                                           optionLabels: [
-                                            'Amateur',
-                                            'Pro',
-                                            'Champion',
-                                            'Légende',
-                                            'Ligues'
+                                            FFLocalizations.of(context).getText(
+                                              'vlizzytk' /* Amateur */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              '6dkannxt' /* Pro */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'd9rqqofy' /* Champion */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'i3rdtk8i' /* Légende */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'ker0igf7' /* Ligues */,
+                                            )
                                           ],
                                           onChanged: (val) => safeSetState(() =>
                                               _model.dropLigueValue1 = val),
                                           width: 250.0,
                                           height: 56.0,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          hintText: 'Ligue',
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'm3zg6pcd' /* Ligue */,
+                                          ),
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -763,24 +1042,56 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                             ''
                                           ]),
                                           optionLabels: [
-                                            'Amateur',
-                                            'Pro',
-                                            'Champion',
-                                            'Légende',
-                                            'E Ligues'
+                                            FFLocalizations.of(context).getText(
+                                              'qqlnt5uo' /* Amateur */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'tmnrlydc' /* Pro */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              '5ccd8pqm' /* Champion */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              's2mzldcs' /* Légende */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'l0tjgs0a' /* E Ligues */,
+                                            )
                                           ],
                                           onChanged: (val) => safeSetState(() =>
                                               _model.dropLigueValue2 = val),
                                           width: 250.0,
                                           height: 56.0,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          hintText: 'Ligue',
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'nu6cp0gz' /* Ligue */,
+                                          ),
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -1001,12 +1312,17 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 ),
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                      fontFamily: 'Montserrat',
+                                                                                      font: GoogleFonts.montserrat(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                      ),
                                                                                       color: valueOrDefault<Color>(
                                                                                         columnSportUsersRecord.color1,
                                                                                         FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1043,8 +1359,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 columnCommsPostMessagesRecord.text,
                                                                                 maxLines: 2,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1106,15 +1427,23 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
-                                                                              "d/M H:mm",
-                                                                              columnCommsPostMessagesRecord.createdTime!),
+                                                                            "d/M H:mm",
+                                                                            columnCommsPostMessagesRecord.createdTime!,
+                                                                            locale:
+                                                                                FFLocalizations.of(context).languageCode,
+                                                                          ),
                                                                           maxLines:
                                                                               1,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Poppins',
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                ),
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1156,8 +1485,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1183,8 +1517,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1210,8 +1549,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1238,8 +1582,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                   ),
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
+                                                                                        font: GoogleFonts.poppins(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
                                                                                         letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1393,12 +1742,17 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 ),
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                      fontFamily: 'Montserrat',
+                                                                                      font: GoogleFonts.montserrat(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                      ),
                                                                                       color: valueOrDefault<Color>(
                                                                                         columnEsportUsersRecord.color1,
                                                                                         FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1435,8 +1789,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                 columnCommsPostMessagesRecord.text,
                                                                                 maxLines: 2,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1498,15 +1857,23 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
-                                                                              "d/M H:mm",
-                                                                              columnCommsPostMessagesRecord.createdTime!),
+                                                                            "d/M H:mm",
+                                                                            columnCommsPostMessagesRecord.createdTime!,
+                                                                            locale:
+                                                                                FFLocalizations.of(context).languageCode,
+                                                                          ),
                                                                           maxLines:
                                                                               1,
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Poppins',
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                ),
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1548,8 +1915,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1575,8 +1947,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1602,8 +1979,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1630,8 +2012,13 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                                                   ),
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
+                                                                                        font: GoogleFonts.poppins(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
                                                                                         letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                       ),
                                                                                 ),
                                                                               ],

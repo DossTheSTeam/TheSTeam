@@ -1,22 +1,21 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/adult_confirmation/adult_confirmation_widget.dart';
+import '/users_fold/color_user/color_user_widget.dart';
 import '/users_fold/delete_my_user_ref/delete_my_user_ref_widget.dart';
 import '/users_fold/e_sport_confirmation/e_sport_confirmation_widget.dart';
 import '/users_fold/enterprise_infos/enterprise_infos_widget.dart';
+import '/users_fold/langage/langage_widget.dart';
+import '/users_fold/number_phone/number_phone_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'my_edit_profil_model.dart';
 export 'my_edit_profil_model.dart';
 
@@ -30,13 +29,10 @@ class MyEditProfilWidget extends StatefulWidget {
   State<MyEditProfilWidget> createState() => _MyEditProfilWidgetState();
 }
 
-class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
-    with TickerProviderStateMixin {
+class _MyEditProfilWidgetState extends State<MyEditProfilWidget> {
   late MyEditProfilModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -54,38 +50,6 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
 
     _model.dateFieldTextController ??= TextEditingController();
     _model.dateFieldFocusNode ??= FocusNode();
-
-    _model.phoneFieldTextController ??= TextEditingController();
-    _model.phoneFieldFocusNode ??= FocusNode();
-
-    animationsMap.addAll({
-      'buttonOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 400.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 400.0.ms,
-            duration: 600.0.ms,
-            begin: Offset(0.0, 60.0),
-            end: Offset(0.0, 0.0),
-          ),
-        ],
-      ),
-    });
-    setupAnimations(
-      animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
-          !anim.applyInitialState),
-      this,
-    );
   }
 
   @override
@@ -479,15 +443,238 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       ),
                                     ),
                                   ),
-                                Text(
-                                  'Modifier mon profil',
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        letterSpacing: 0.0,
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                '') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'francais'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'n14d0faa' /* Modifier mon profil */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
                                       ),
+                                    if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'english') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'american'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            '1mj17rv6' /* Edit my profile */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'deutsch')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            '6bxhpx4d' /* Bearbeiten Sie
+mein Profil */
+                                            ,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'espanol')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ln2p6slp' /* Editar mi perfil */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'italiano')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'or7ztumj' /* Modifica il mio profilo */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'portugues')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'sk72b9tl' /* Editar o meu perfil */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -523,33 +710,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                           ],
                         ),
                       ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Changer de photo',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 10.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                       AuthUserStreamWidget(
                         builder: (context) => Divider(
-                          thickness: 2.0,
+                          thickness: 1.0,
                           color: valueOrDefault<Color>(
                             currentUserDocument?.color2,
                             FlutterFlowTheme.of(context).secondaryBackground,
@@ -557,38 +720,246 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       ),
                       if (currentUserDisplayName == '')
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 30.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                'Pour simplifier, il serait judicieux de choisir le même \"Pseudo\" que celui avec lequel vous jouez réellement\n(A prendre en compte seulement si vous êtes un joueur : Playstation, XBox, Pc)\n(Vous ne pourrez plus changer une fois que vous aurez validé)',
-                                textAlign: TextAlign.center,
-                                maxLines: 7,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '8cy5dhmv' /* Pour simplifier, il serait jud... */,
                                     ),
-                              ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'o25m1m52' /* For simplicity, it's a good id... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'skbi8679' /* Der Einfachheit halber wäre es... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ruh4n63s' /* Para simplificar, sería pruden... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'avzy20f7' /* Per semplicità, sarebbe opport... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '8k9vsrg6' /* Para simplificar, seria sensat... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                              ],
                             ),
                           ),
                         ),
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
-                        child: AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            currentUserDisplayName,
-                            maxLines: 1,
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              currentUserDisplayName,
+                              maxLines: 1,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                            ),
                           ),
                         ),
                       ),
@@ -606,29 +977,449 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Ecrire mon pseudo',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'swvcwtvw' /* Ecrire mon pseudo */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'jiruov4i' /* Write my nickname */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'biknluuo' /* Schreibe meinen Spitznamen */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '66k3yb8z' /* escribe mi apodo */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'fy62cm32' /* Scrivi il mio soprannome */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'nf8403bh' /* Escreve o meu apelido */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
-                                  child: Text(
-                                    'Valider',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'rm7ezpqy' /* Valider */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'utyfii83' /* to validate */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '846kjdov' /* zu validieren */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '56lqnisj' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ebiyha3j' /* convalidare */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '6rf2ftpz' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -654,12 +1445,32 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'Pseudo',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'xke7sf6c' /* ......................... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -702,8 +1513,25 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       maxLength: 15,
                                       validator: _model
@@ -740,7 +1568,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                         ),
                       AuthUserStreamWidget(
                         builder: (context) => Divider(
-                          thickness: 2.0,
+                          thickness: 1.0,
                           color: valueOrDefault<Color>(
                             currentUserDocument?.color2,
                             FlutterFlowTheme.of(context).secondaryBackground,
@@ -749,23 +1577,216 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       ),
                       if (valueOrDefault(currentUserDocument?.familyName, '') ==
                               '')
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 20.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                'Inscrivez votre NOM et Prénom \n(Vous ne pourrez plus changer une fois que vous aurez validé)',
-                                textAlign: TextAlign.center,
-                                maxLines: 6,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'yn83j5is' /* Inscrivez votre NOM et Prénom ... */,
                                     ),
-                              ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '88fye9qa' /* Enter your first and last name... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '9t5v0h8f' /* Geben Sie Ihren Vor- und Nachn... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'v1u2sc9b' /* Ingrese su nombre y apellido 
+... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '7q3w1ngz' /* Inserisci il tuo nome e cognom... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'wh1ai6yk' /* Introduza o seu nome e sobreno... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                              ],
                             ),
                           ),
                         ),
@@ -781,8 +1802,21 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -808,12 +1842,32 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'NOM',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'kdmei178' /* ........................... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -856,8 +1910,25 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       validator: _model
                                           .nameFieldTextController1Validator
@@ -907,29 +1978,449 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Ecrire mon NOM',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'xya4krdt' /* Ecrire mon NOM */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '5p2oumsc' /* Write my NAME */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '4iclhz8r' /* Schreibe meinen NAMEN */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'hy5jot0p' /* Escribe mi NOMBRE */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'gvimsxk5' /* Scrivi il mio NOME */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'd5owu5jy' /* Escreve o meu NOME */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
-                                  child: Text(
-                                    'Valider',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'keey5r0i' /* Valider */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '7gycgtrj' /* to validate */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'c2by2xda' /* zu validieren */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '3ucjg3m0' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'lhemd6hc' /* convalidare */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'bqtix45f' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -948,8 +2439,21 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -975,12 +2479,32 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'Prenom',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'caz3i93i' /* ............... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -1023,8 +2547,25 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       validator: _model
                                           .nameFieldTextController2Validator
@@ -1074,29 +2615,449 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Ecrire mon Prénom',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '5ie0es8a' /* Ecrire mon Prénom */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'jknrwg6d' /* Write my first name */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'gnr56eit' /* Schreibe meinen Vornamen */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'rrap3c8g' /* Escribe mi Nombre */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '90jafhra' /* Scrivi il mio Nome */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '49xxq9cn' /* Escrever o meu primeiro nome */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
-                                  child: Text(
-                                    'Valider',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ujhxybid' /* Valider */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'evk2hbuw' /* to validate */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            't8auvj4x' /* zu validieren */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '4yqq4whl' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'zxq1azkc' /* convalidare */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'w1ftkffx' /* validar */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -1108,20 +3069,227 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                           false)
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Vous devez avoir \n+ de 18 ans pour parier.\nAjoutez votre date d\'anniversaire',
-                              textAlign: TextAlign.center,
-                              maxLines: 3,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).error,
-                                    letterSpacing: 0.0,
-                                    lineHeight: 1.0,
+                            builder: (context) => Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'xxnoowxu' /* Vous devez avoir + de 18 ans p... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
                                   ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'mszjxh7o' /* You must be 18+ to bet.
+
+Add y... */
+                                      ,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'sqh4b83x' /* Das müssen Sie haben  + 18 Jah... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'h1p74u7j' /* Debes tener + 18 años para apo... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'vjd6z6mo' /* Devi averlo + 18 anni per scom... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6cvfujti' /* Deve ter + 18 anos para aposta... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                              ],
                             ),
                           ),
                         ),
@@ -1154,15 +3322,32 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
+                                        5.0, 0.0, 25.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1195,18 +3380,43 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  '+18',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'skh6f7gn' /* +18 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -1239,18 +3449,43 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  '-18',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8dcrgkjm' /* -18 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -1285,12 +3520,32 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: '00/00/0000',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'uua18fd4' /* 00/00/0000 */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -1333,8 +3588,25 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       validator: _model
                                           .dateFieldTextControllerValidator
@@ -1408,16 +3680,226 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Ecrire ma date de naissance',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
+                                      30.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'eboaxnne' /* Ecrire ma date de naissance */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'wmme73sc' /* Write my date of birth */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'iznfupsh' /* Schreibe mein Geburtsdatum */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ciychxgz' /* Escribe mi fecha de nacimiento */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'rylreho2' /* Scrivi la mia data di nascita */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'hd1w38yb' /* Escrever a minha data de nasci... */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -1438,16 +3920,261 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Modifier le paramètre\nlié à votre majorité',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyLarge
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
+                                if (valueOrDefault(
+                                            currentUserDocument?.familyName,
+                                            '') ==
+                                        '')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        if ((valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    '') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'francais'))
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '5s63e809' /* Modifier le paramètre
+lié à vo... */
+                                              ,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'english') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'american'))
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'n4awbt3o' /* Change the setting related 
+to... */
+                                              ,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'deutsch')
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'k8t7oaqu' /* Ändern Sie die Einstellung 
+be... */
+                                              ,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'espanol')
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'szee8mor' /* Cambiar la configuración relac... */,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'italiano')
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              'cta5ye42' /* Cambia l'impostazione relativa... */,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'portugues')
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '13bvowf9' /* Altere a configuração relacion... */,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLarge
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       40.0, 0.0, 0.0, 0.0),
@@ -1502,268 +4229,551 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                           ),
                         ),
                       ),
-                      Text(
-                        'Compétition entre collègues',
-                        maxLines: 2,
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Poppins',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                      Row(
+                      Column(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 0.0, 5.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  valueOrDefault<String>(
-                                    valueOrDefault(
-                                        currentUserDocument?.enterprise, ''),
-                                    'Entreprise non renseignée',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
+                          if ((valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      '') ||
+                              (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'francais'))
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  'pxzxw2p2' /* Compétition entre collègues */,
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                               ),
+                            ),
+                          if ((valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'english') ||
+                              (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'american'))
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  'ds7enas1' /* Competition between colleagues */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          if (valueOrDefault(
+                                  currentUserDocument?.langage, '') ==
+                              'deutsch')
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  '0yxp9y77' /* Konkurrenz zwischen Kollegen */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          if (valueOrDefault(
+                                  currentUserDocument?.langage, '') ==
+                              'espanol')
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  'vfirkukc' /* Competencia entre colegas */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          if (valueOrDefault(
+                                  currentUserDocument?.langage, '') ==
+                              'italiano')
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  'lhbvlrqu' /* Competizione tra colleghi */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          if (valueOrDefault(
+                                  currentUserDocument?.langage, '') ==
+                              'portugues')
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                FFLocalizations.of(context).getText(
+                                  '3h2h03xy' /* Competição entre colegas */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Entreprise non renseignée',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Company not specified',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Firma nicht angegeben',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Empresa no especificada',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Azienda non specificata',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.enterprise,
+                                                  ''),
+                                              'Empresa não especificada',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 25.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: EnterpriseInfosWidget(),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      child: Icon(
+                                        Icons.info_outlined,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color1,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           AuthUserStreamWidget(
-                            builder: (context) => InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        FocusScope.of(context).unfocus();
-                                        FocusManager.instance.primaryFocus
-                                            ?.unfocus();
-                                      },
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: EnterpriseInfosWidget(),
-                                      ),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
-                              },
-                              child: Icon(
-                                Icons.info_outlined,
-                                color: valueOrDefault<Color>(
-                                  currentUserDocument?.color1,
-                                  FlutterFlowTheme.of(context).primaryText,
-                                ),
-                                size: 30.0,
+                            builder: (context) => Divider(
+                              thickness: 1.0,
+                              color: valueOrDefault<Color>(
+                                currentUserDocument?.color2,
+                                FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
                             ),
                           ),
                         ],
-                      ),
-                      AuthUserStreamWidget(
-                        builder: (context) => Divider(
-                          thickness: 2.0,
-                          color: valueOrDefault<Color>(
-                            currentUserDocument?.color2,
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                          ),
-                        ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if (valueOrDefault<bool>(
-                                  currentUserDocument?.player, false) ==
-                              true)
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Text(
-                                    'E sport',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (valueOrDefault<bool>(
-                                  currentUserDocument?.player, false) !=
-                              true)
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await showModalBottomSheet(
-                                        isScrollControlled: true,
-                                        backgroundColor: Colors.transparent,
-                                        enableDrag: false,
-                                        context: context,
-                                        builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: ESportConfirmationWidget(),
-                                            ),
-                                          );
-                                        },
-                                      ).then((value) => safeSetState(() {}));
-                                    },
-                                    child: Text(
-                                      'E sport',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            letterSpacing: 0.0,
-                                            decoration:
-                                                TextDecoration.lineThrough,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (valueOrDefault<bool>(
-                                  currentUserDocument?.player, false) !=
-                              true)
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  40.0, 0.0, 0.0, 0.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            FocusScope.of(context).unfocus();
-                                            FocusManager.instance.primaryFocus
-                                                ?.unfocus();
-                                          },
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ESportConfirmationWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  },
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color1,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.player, false) ==
-                          true)
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Vous participez aux classements E Sport',
-                              textAlign: TextAlign.center,
-                              maxLines: 3,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).success,
-                                    letterSpacing: 0.0,
-                                    lineHeight: 1.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.player, false) ==
-                          false)
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Vous ne participez pas aux classements E Sport',
-                              textAlign: TextAlign.center,
-                              maxLines: 3,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).error,
-                                    letterSpacing: 0.0,
-                                    lineHeight: 1.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      AuthUserStreamWidget(
-                        builder: (context) => Divider(
-                          thickness: 2.0,
-                          color: valueOrDefault<Color>(
-                            currentUserDocument?.color2,
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                          ),
-                        ),
                       ),
                       Padding(
                         padding:
@@ -1777,22 +4787,286 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: Text(
-                                      'Aide à la navigation ',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 6,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        if ((valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    '') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'francais'))
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'lxw4ex1b' /* Aide à la navigation  */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
                                           ),
+                                        if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'english') ||
+                                            (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'american'))
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'k5cxrzrh' /* Navigation help */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'deutsch')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9gg8dov0' /* Navigationshilfe */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'espanol')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ts8enkdf' /* Ayuda de navegación */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'italiano')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'jgpsfri4' /* Aiuto alla navigazione */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'portugues')
+                                          AuthUserStreamWidget(
+                                            builder: (context) => Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'g9rpw6eh' /* Ajuda de navegação */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -1803,31 +5077,296 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                             currentUserDocument?.helpNav,
                                             false) ==
                                         true)
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  13.0, 0.0, 0.0, 0.0),
-                                          child: AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              'Activée',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 6,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            13.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'z91khjck' /* Activée */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
-                                                        fontSize: 12.0,
+                                                        fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                            ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '0assueu5' /* Enabled */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '0jdn2sol' /* Ermöglicht */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3irahgtg' /* Desactivado */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yusfcov2' /* Abilitato */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'npko4stb' /* Habilitado */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -1835,31 +5374,296 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                             currentUserDocument?.helpNav,
                                             false) ==
                                         false)
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  13.0, 0.0, 0.0, 0.0),
-                                          child: AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              'Désactivée',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 6,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            13.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'emyi0eyo' /* Désactivée */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        fontSize: 12.0,
+                                                        fontSize: 10.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                            ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'numxr4i2' /* Disabled */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    't5uehyiv' /* Deaktiviert */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'brgfjbz4' /* Desactivado */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zpl434pu' /* Disabilitato */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'jclrj3v9' /* Desabilitado */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -1950,33 +5754,9 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                           ],
                         ),
                       ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Changer l\'aide à la navigation',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 10.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                       AuthUserStreamWidget(
                         builder: (context) => Divider(
-                          thickness: 2.0,
+                          thickness: 1.0,
                           color: valueOrDefault<Color>(
                             currentUserDocument?.color2,
                             FlutterFlowTheme.of(context).secondaryBackground,
@@ -1985,7 +5765,304 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 5.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'hcq7jn8x' /* Changer la couleur */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'rbtlvwh4' /* Change color */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'zyvk94xm' /* Farbe ändern */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'u6odb8cy' /* Cambiar el color */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '4erg2g4k' /* Cambiare colore */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ib9qagj4' /* Mudar cor */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 25.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ColorUserWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  child: Icon(
+                                    Icons.invert_colors_rounded,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1995,691 +6072,262 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Couleur de base',
-                                  textAlign: TextAlign.center,
-                                  maxLines: 6,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
+                                child: Column(
                                   mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 20.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          setDarkModeSetting(
-                                              context, ThemeMode.light);
-                                        },
-                                        child: Container(
-                                          width: 55.0,
-                                          height: 25.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(25.0),
-                                            shape: BoxShape.rectangle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
+                                    if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                '') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'francais'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Numéro non renseigné',
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                         ),
                                       ),
-                                    ),
+                                    if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'english') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'american'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Number not provided',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'deutsch')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Nummer nicht angegeben',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'espanol')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Número no proporcionado',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'italiano')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Numero non fornito',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'portugues')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          valueOrDefault<String>(
+                                            currentPhoneNumber,
+                                            'Número não fornecido',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
                                   ],
                                 ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 5.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          setDarkModeSetting(
-                                              context, ThemeMode.dark);
-                                        },
-                                        child: Container(
-                                          width: 55.0,
-                                          height: 25.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            borderRadius:
-                                                BorderRadius.circular(25.0),
-                                            shape: BoxShape.rectangle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Changer la couleur de base',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 10.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 20.0, 0.0, 0.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Couleur principale',
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color1,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 20.0, 0.0),
-                              child: FlutterFlowDropDown<String>(
-                                controller: _model.dropColor1ValueController ??=
-                                    FormFieldController<String>(
-                                  _model.dropColor1Value ??= '',
-                                ),
-                                options: List<String>.from([
-                                  '#FFFF00',
-                                  '#00FF00',
-                                  '#FFB6C1',
-                                  '#00FFFF',
-                                  '#6CABDD',
-                                  '#FF00FF',
-                                  '#FF8C00',
-                                  '#FF0000',
-                                  '#9370DB',
-                                  '#0000FF',
-                                  '#3CB371',
-                                  '#008B8B',
-                                  '#008000',
-                                  '#0000CD',
-                                  '#8B008B',
-                                  '#DC143C',
-                                  '#A0522D',
-                                  '#808080',
-                                  '#C0C0C0',
-                                  '#FFD700',
-                                  '#B22222',
-                                  '#860038'
-                                ]),
-                                optionLabels: [
-                                  'Jaune',
-                                  'Vert 1',
-                                  'Rose',
-                                  'Cyan 1',
-                                  'Ciel',
-                                  'Magenta',
-                                  'Orange',
-                                  'Rouge 1',
-                                  'Violet',
-                                  'Bleu 1',
-                                  'Vert 2',
-                                  'Cyan 2',
-                                  'Vert 3',
-                                  'Bleu 2',
-                                  'Magenta 2',
-                                  'Rouge 2',
-                                  'Marron',
-                                  'Gris 2',
-                                  'Gris 1',
-                                  'Gold',
-                                  'Rouge 3',
-                                  'Bordeaux'
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropColor1Value = val),
-                                width: 150.0,
-                                height: 40.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Couleurs',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor: Colors.transparent,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                            ),
-                            if (_model.dropColor1Value != null &&
-                                _model.dropColor1Value != '')
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await currentUserReference!
-                                        .update(createUsersRecordData(
-                                      color1: colorFromCssString(
-                                        _model.dropColor1Value!,
-                                        defaultColor: Colors.black,
-                                      ),
-                                    ));
-                                  },
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: colorFromCssString(
-                                      _model.dropColor1Value!,
-                                      defaultColor: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await currentUserReference!.update({
-                                    ...mapToFirestore(
-                                      {
-                                        'color1': FieldValue.delete(),
-                                      },
-                                    ),
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.delete_forever_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 30.0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 5.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 30.0, 0.0),
-                                    child: Text(
-                                      'Changer la couleur principale',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    child: Text(
-                                      'Valider',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Enlever',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 10.0, 0.0, 0.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Couleur secondaire',
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: valueOrDefault<Color>(
-                                      currentUserDocument?.color2,
-                                      FlutterFlowTheme.of(context).primaryText,
-                                    ),
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 20.0, 0.0),
-                              child: FlutterFlowDropDown<String>(
-                                controller: _model.dropColor2ValueController ??=
-                                    FormFieldController<String>(
-                                  _model.dropColor2Value ??= '',
-                                ),
-                                options: List<String>.from([
-                                  '#FFFF00',
-                                  '#00FF00',
-                                  '#FFB6C1',
-                                  '#00FFFF',
-                                  '#6CABDD',
-                                  '#FF00FF',
-                                  '#FF8C00',
-                                  '#FF0000',
-                                  '#9370DB',
-                                  '#0000FF',
-                                  '#3CB371',
-                                  '#008B8B',
-                                  '#008000',
-                                  '#0000CD',
-                                  '#8B008B',
-                                  '#DC143C',
-                                  '#A0522D',
-                                  '#808080',
-                                  '#C0C0C0',
-                                  '#FFD700',
-                                  '#B22222',
-                                  '#860038'
-                                ]),
-                                optionLabels: [
-                                  'Jaune',
-                                  'Vert 1',
-                                  'Rose',
-                                  'Cyan 1',
-                                  'Ciel',
-                                  'Magenta',
-                                  'Orange',
-                                  'Rouge 1',
-                                  'Violet',
-                                  'Bleu 1',
-                                  'Vert 2',
-                                  'Cyan 2',
-                                  'Vert 3',
-                                  'Bleu 2',
-                                  'Magenta 2',
-                                  'Rouge 2',
-                                  'Marron',
-                                  'Gris 2',
-                                  'Gris 1',
-                                  'Gold',
-                                  'Rouge 3',
-                                  'Bordeaux'
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.dropColor2Value = val),
-                                width: 150.0,
-                                height: 40.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'Couleurs',
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor: Colors.transparent,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                            ),
-                            if (_model.dropColor2Value != null &&
-                                _model.dropColor2Value != '')
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await currentUserReference!
-                                        .update(createUsersRecordData(
-                                      color2: colorFromCssString(
-                                        _model.dropColor2Value!,
-                                        defaultColor: Colors.black,
-                                      ),
-                                    ));
-                                  },
-                                  child: Icon(
-                                    Icons.send_rounded,
-                                    color: colorFromCssString(
-                                      _model.dropColor2Value!,
-                                      defaultColor: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await currentUserReference!.update({
-                                    ...mapToFirestore(
-                                      {
-                                        'color2': FieldValue.delete(),
-                                      },
-                                    ),
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.delete_forever_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 30.0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 5.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 30.0, 0.0),
-                                    child: Text(
-                                      'Changer la couleur secondaire',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    child: Text(
-                                      'Valider',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 10.0,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Enlever',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      AuthUserStreamWidget(
-                        builder: (context) => Divider(
-                          thickness: 2.0,
-                          color: valueOrDefault<Color>(
-                            currentUserDocument?.color2,
-                            FlutterFlowTheme.of(context).secondaryBackground,
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              25.0, 20.0, 0.0, 5.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              valueOrDefault<String>(
-                                currentPhoneNumber,
-                                'Numéro non renseigné',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 5.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 10.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.phoneFieldTextController,
-                                  focusNode: _model.phoneFieldFocusNode,
-                                  autofocus: false,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    hintText: 'Numéro de téléphone',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    errorBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedErrorBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  validator: _model
-                                      .phoneFieldTextControllerValidator
-                                      .asValidator(context),
-                                ),
                               ),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
+                                  0.0, 0.0, 25.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => InkWell(
                                   splashColor: Colors.transparent,
@@ -2687,16 +6335,34 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await currentUserReference!
-                                        .update(createUsersRecordData(
-                                      phoneNumber:
-                                          _model.phoneFieldTextController.text,
-                                    ));
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: NumberPhoneWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
                                   },
                                   child: Icon(
-                                    Icons.send_rounded,
-                                    color: currentUserDocument?.color1,
-                                    size: 24.0,
+                                    Icons.phone_iphone_rounded,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    size: 30.0,
                                   ),
                                 ),
                               ),
@@ -2704,109 +6370,1823 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget>
                           ],
                         ),
                       ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Changer mon numéro',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: Text(
-                                    'Valider',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                       AuthUserStreamWidget(
                         builder: (context) => Divider(
-                          thickness: 2.0,
+                          thickness: 1.0,
                           color: valueOrDefault<Color>(
                             currentUserDocument?.color2,
                             FlutterFlowTheme.of(context).secondaryBackground,
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 50.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                enableDrag: false,
-                                context: context,
-                                builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      FocusScope.of(context).unfocus();
-                                      FocusManager.instance.primaryFocus
-                                          ?.unfocus();
-                                    },
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: DeleteMyUserRefWidget(),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.player, false) ==
+                              true)
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'a5mxln3z' /* E sport */,
                                     ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
-                            },
-                            text: 'Supprimer mon profil',
-                            options: FFButtonOptions(
-                              width: 225.0,
-                              height: 44.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).error,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 17.0,
-                                    letterSpacing: 0.0,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                   ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                width: 2.0,
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(38.0),
                             ),
-                          ).animateOnPageLoad(
-                              animationsMap['buttonOnPageLoadAnimation']!),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.player, false) !=
+                              true)
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: ESportConfirmationWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'gs9iozfd' /* E sport */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.player, false) !=
+                              true)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  40.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ESportConfirmationWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  child: Icon(
+                                    Icons.sports_esports_rounded,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
+                                    ),
+                                    size: 30.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                      if (valueOrDefault<bool>(
+                              currentUserDocument?.player, false) ==
+                          true)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2mkzua0c' /* Vous participez aux classement... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'kx86w3k8' /* You participate in the E Sport... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'j7wx413w' /* Du nimmst an den E-Sport-Rangl... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '45jljgso' /* Participas en los rankings de ... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '1wp4nzyf' /* Partecipi alle classifiche ESp... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '00vosku4' /* Participa no ranking do E Spor... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .success,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      if (valueOrDefault<bool>(
+                              currentUserDocument?.player, false) ==
+                          false)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'wp0iaaub' /* Vous ne participez pas aux cla... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '0t7bpssk' /* You do not participate in the ... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6edfnohh' /* Du nimmst nicht an den E-Sport... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      's4adh2gp' /* No participas en las clasifica... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'tu4dhf3v' /* Non partecipi alla classifica ... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'qhp8ckhb' /* Não participa no ranking do E ... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: LangageWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'gnrdct4w' /* Changer la langue */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'english') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'american'))
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              '8da8ebdo' /* Change the language */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              '116m2aea' /* Die sprache ändern */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'b1blebpg' /* Cambiar el idioma */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'nd6svvw8' /* Cambiar la lingua */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            FFLocalizations.of(context).getText(
+                                              'fp25hggx' /* Mudar o idioma */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 20.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  '') ||
+                                          (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'francais'))
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/France.jpeg',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/usa.jpg',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/Angleterre.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'espanol')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/Espagne.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'italiano')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/Italie.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'deutsch')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/Allemagne.jpeg',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'portugues')
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 1.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: LangageWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                              child: Container(
+                                                width: 35.0,
+                                                height: 35.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    width: 2.0,
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(3.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50.0),
+                                                    child: Image.asset(
+                                                      'assets/images/Portugal.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 1.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 100.0, 0.0, 50.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 1.0, 0.0, 10.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ovjoblz5' /* Supprimer mon profil */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '7etveyxq' /* Delete my profile */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ej97ds8f' /* Mein Profil löschen */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'dc8e7olj' /* eliminar mi perfil */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'hucembln' /* Elimina il mio profilo */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'xgngtxrk' /* Apagar o meu perfil */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 20.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          FocusScope.of(context).unfocus();
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: DeleteMyUserRefWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
+                                },
+                                child: Icon(
+                                  Icons.delete_forever_rounded,
+                                  color: FlutterFlowTheme.of(context).error,
+                                  size: 50.0,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

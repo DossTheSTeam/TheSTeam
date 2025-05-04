@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'moderator_page_model.dart';
 export 'moderator_page_model.dart';
 
@@ -424,13 +425,28 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   ),
                                 ),
                               Text(
-                                'Espace moderateur',
+                                FFLocalizations.of(context).getText(
+                                  'yw81iao8' /* Espace moderateur */,
+                                ),
                                 maxLines: 1,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ],
@@ -481,12 +497,27 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Notifications',
+                                FFLocalizations.of(context).getText(
+                                  '2ak10ayv' /* Notifications */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -519,13 +550,28 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Equipes',
+                            FFLocalizations.of(context).getText(
+                              '7694nrxw' /* Equipes */,
+                            ),
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -540,12 +586,27 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Voir utilisateurs',
+                                FFLocalizations.of(context).getText(
+                                  '3rmm65oi' /* Voir utilisateurs */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -577,13 +638,28 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Discussion Moderateurs',
+                            FFLocalizations.of(context).getText(
+                              '8zaqqmu5' /* Discussion Moderateurs */,
+                            ),
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -632,12 +708,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Voir discussion',
+                                    FFLocalizations.of(context).getText(
+                                      '24bgfvuq' /* Voir discussion */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Montserrat',
+                                          font: GoogleFonts.montserrat(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -679,13 +774,28 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Actualités / Conseils',
+                            FFLocalizations.of(context).getText(
+                              '6rb4uxg5' /* Actualités / Conseils */,
+                            ),
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -734,12 +844,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Ecrire un conseil / stratégie',
+                                    FFLocalizations.of(context).getText(
+                                      'kehc05l9' /* Ecrire un conseil / stratégie */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Montserrat',
+                                          font: GoogleFonts.montserrat(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -794,13 +923,30 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
-                                  'Administrateur',
+                                  FFLocalizations.of(context).getText(
+                                    '3x8yth2u' /* Administrateur */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -813,8 +959,23 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -829,13 +990,32 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Rencontres',
+                                    FFLocalizations.of(context).getText(
+                                      '9bmf5e4j' /* Rencontres */,
+                                    ),
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -851,12 +1031,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Créer une rencontre',
+                                        FFLocalizations.of(context).getText(
+                                          'vt4kcvmq' /* Créer une rencontre */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -890,12 +1089,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Ajouter les cotes',
+                                        FFLocalizations.of(context).getText(
+                                          'tpbc7b51' /* Ajouter les cotes */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -929,12 +1147,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Modifier le statut',
+                                        FFLocalizations.of(context).getText(
+                                          'pvtn141u' /* Modifier le statut */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -968,13 +1205,32 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Equipes',
+                                    FFLocalizations.of(context).getText(
+                                      'q6w30fkn' /* Equipes */,
+                                    ),
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -990,12 +1246,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Créer une équipe',
+                                        FFLocalizations.of(context).getText(
+                                          'zazgnz3q' /* Créer une équipe */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -1029,12 +1304,31 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Modifier une équipe',
+                                        FFLocalizations.of(context).getText(
+                                          '72kkotnw' /* Modifier une équipe */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),

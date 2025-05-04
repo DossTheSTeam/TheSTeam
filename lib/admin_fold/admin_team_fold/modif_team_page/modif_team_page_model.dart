@@ -16,12 +16,6 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   TextEditingController? teamvalueFieldTextController;
   String? Function(BuildContext, String?)?
       teamvalueFieldTextControllerValidator;
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value1;
-  FormFieldController<String>? dropColor1ValueController1;
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value2;
-  FormFieldController<String>? dropColor1ValueController2;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));

@@ -12,6 +12,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'red_card_post_comm_page_model.dart';
 export 'red_card_post_comm_page_model.dart';
 
@@ -481,13 +482,32 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         30.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Appel à la VAR',
+                                      FFLocalizations.of(context).getText(
+                                        '10lqeavs' /* Appel à la VAR */,
+                                      ),
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Montserrat',
+                                            font: GoogleFonts.montserrat(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmall
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -496,36 +516,229 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                             ],
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 20.0, 10.0, 10.0),
-                              child: Text(
-                                'Coupable sous vos yeux d\'une faute grossière.',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                                  10.0, 10.0, 10.0, 10.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '9z83i6gl' /* Coupable sous vos yeux d'une f... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Vous allez mettre un carton rouge à',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '4b28dozz' /* Guilty before your eyes of a s... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'ewsld1f7' /* Vor Ihren Augen schuldig eines... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '8ep55mcb' /* Culpable ante tus ojos de una ... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bcgt20oe' /* Colpevole davanti ai tuoi occh... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'uifv4pi5' /* Culpado diante dos seus olhos ... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
                           ),
@@ -587,8 +800,25 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ],
@@ -604,16 +834,232 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 10.0),
-                              child: Text(
-                                'Pour la raison suivante ',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                                  10.0, 10.0, 10.0, 10.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'tdnywp4e' /* Pour la raison suivante  */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'cntfg8yw' /* For the following reason */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '2atb182r' /* Aus folgendem Grund */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '2lhsjzg9' /* Por la siguiente razón */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '3xj6rj5z' /* Per il seguente motivo */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 10.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'wwi3dxvh' /* Pela seguinte razão */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
                           ),
@@ -629,10 +1075,18 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               'droit.dauteur'
                             ]),
                             optionLabels: [
-                              'Violent',
-                              'Racisme',
-                              'Homophobie',
-                              'Droit d\'auteur'
+                              FFLocalizations.of(context).getText(
+                                'a3ivevo0' /* Violent */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'ilrr8hkv' /* Racisme */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'bsnyfuji' /* Homophobie */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '203tz9zr' /* Droit d'auteur */,
+                              )
                             ],
                             onChanged: (val) =>
                                 safeSetState(() => _model.dropFoulsValue = val),
@@ -641,10 +1095,25 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
-                            hintText: 'Fautes',
+                            hintText: FFLocalizations.of(context).getText(
+                              'ip5wzcuh' /* Fautes */,
+                            ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -672,13 +1141,27 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText:
-                                    'Ajouter un commentaire à mon signalement',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'au18g9w8' /* Ajouter un commentaire à mon s... */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
                                     ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -713,27 +1196,256 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                               validator: _model.textFoulTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 0.0, 10.0),
-                              child: Text(
-                                'Preuves dans le commentaire suivant',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                                  10.0, 10.0, 10.0, 10.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '40kg81rf' /* Preuves dans le commentaire su... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'yhqnnxkj' /* Evidence in the following comm... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'no61ec5f' /* Beweise im folgenden Kommentar */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '2gbig1um' /* Prueba de ello es el siguiente... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'lpzlhi1b' /* Prova nel commento seguente */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 10.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'c0ioimdi' /* Evidência no comentário seguin... */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
                           ),
@@ -747,8 +1459,23 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -756,14 +1483,32 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   dateTimeFormat(
-                                      "d/M H:mm",
-                                      redCardPostCommPagePostMessagesRecord
-                                          .createdTime!),
+                                    "d/M H:mm",
+                                    redCardPostCommPagePostMessagesRecord
+                                        .createdTime!,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -776,14 +1521,216 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                           ),
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Text(
-                              'Après verifications de vos informations, la plateforme procedera à des sanctions avec l\'appui de votre signalement.',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'sz1npww9' /* Après verifications de vos inf... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
                                   ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'iwy0sr5x' /* After verifying your informati... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'y6jl1raf' /* Nach der Überprüfung Ihrer Ang... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'tpgvinbf' /* Luego de verificar tu informac... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'tqyow372' /* Dopo aver verificato le tue in... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'xjskbdy9' /* Após a verificação da sua info... */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                              ],
                             ),
                           ),
                           if (_model.textFoulTextController.text != '')
@@ -791,7 +1738,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               alignment: AlignmentDirectional(0.0, -1.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
+                                    0.0, 20.0, 0.0, 10.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     await MyNotificationsRecord.createDoc(
@@ -828,8 +1775,9 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     );
                                     context.safePop();
                                   },
-                                  text:
-                                      'Confirmer le carton rouge par mon signalement ',
+                                  text: FFLocalizations.of(context).getText(
+                                    'ppyvg1fc' /* Confirmer le carton rouge par ... */,
+                                  ),
                                   options: FFButtonOptions(
                                     width: 350.0,
                                     height: 50.0,
@@ -841,10 +1789,27 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
@@ -861,18 +1826,241 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                               ),
                             ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: Text(
-                                'Merci pour votre aide, par votre action vous maintenez une bonne entente entre les utilisateurs.',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'h4xb28th' /* Merci pour votre aide, par vot... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                     ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '5m5ewe1x' /* Thank you for your help, throu... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '1rdn4e2z' /* Vielen Dank für Ihre Hilfe, du... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'zvbhifdk' /* Gracias por tu ayuda, a través... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '9jg6w59s' /* Grazie per il tuo aiuto, attra... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'kfw0q6f6' /* Obrigado pela sua ajuda, atrav... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ),
                           ),

@@ -7,12 +7,15 @@ import 'package:record/record.dart';
 
 class DiscusionETeamPageModel
     extends FlutterFlowModel<DiscusionETeamPageWidget> {
-  ///  State fields for stateful widgets in this page.
+  ///  Local state fields for this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  bool? showComment;
+
+  bool? showAudio;
+
+  bool? showImage;
+
+  ///  State fields for stateful widgets in this page.
 
   AudioRecorder? audioRecorder;
   String? audioTeam;
@@ -24,6 +27,10 @@ class DiscusionETeamPageModel
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   TeamMessagesRecord? teamMessage;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

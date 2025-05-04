@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'enterprise_infos_model.dart';
 export 'enterprise_infos_model.dart';
 
@@ -104,7 +105,7 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                             15.0, 0.0, 10.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             AuthUserStreamWidget(
                               builder: (context) => InkWell(
@@ -125,36 +126,429 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    80.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Entreprise',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            '') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'francais'))
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'kdahdvyx' /* Entreprise */,
                                       ),
-                                ),
-                              ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'english') ||
+                                    (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'american'))
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'sr8862iy' /* Business */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'deutsch')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        '902q5pz8' /* Geschäft */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'espanol')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'wox8hwtl' /* Negocio */,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'italiano')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        '5ktz4bbd' /* Attività commerciale */,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                if (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'portugues')
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Text(
+                                      FFLocalizations.of(context).getText(
+                                        'cdaxjz8u' /* Negócios */,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                            Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              size: 30.0,
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                        child: Text(
-                          'Découvrez une nouvelle dimension de compétition entre collègues !\n\nVous souhaitez savoir comment vous vous situez par rapport à vos collègues passionnés de sport, de paris  ou e sport ? Indiquez simplement le nom de votre entreprise dans votre profil !\n\nCette fonctionnalité vous offre la possibilité unique de vous mesurer à vos collègues au sein de votre société. Nous tenons à vous garantir que les informations relatives à votre entreprise sont entièrement confidentielles et ne seront en aucun cas divulguées publiquement sur votre profil.\n\nN\'attendez plus, mettez à jour votre profil et lancez la compétition amicale au sein de votre entreprise !',
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelSmall.override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            if ((valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        '') ||
+                                (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'francais'))
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'ir1yf3ft' /* Découvrez une nouvelle dimensi... */,
                                   ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            if ((valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'english') ||
+                                (valueOrDefault(
+                                        currentUserDocument?.langage, '') ==
+                                    'american'))
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zphl8jov' /* Discover a new dimension of co... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            if (valueOrDefault(
+                                    currentUserDocument?.langage, '') ==
+                                'deutsch')
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zktqfxwn' /* Entdecken Sie eine neue Dimens... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            if (valueOrDefault(
+                                    currentUserDocument?.langage, '') ==
+                                'espanol')
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'ncby24l2' /* ¡Descubre una nueva dimensión ... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            if (valueOrDefault(
+                                    currentUserDocument?.langage, '') ==
+                                'italiano')
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'wmuefh7h' /* Scopri una nuova dimensione di... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            if (valueOrDefault(
+                                    currentUserDocument?.langage, '') ==
+                                'portugues')
+                              AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  FFLocalizations.of(context).getText(
+                                    'cdqyse3h' /* Descubra uma nova dimensão de ... */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                          ],
                         ),
                       ),
                       Padding(
@@ -174,12 +568,32 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    hintText: 'Nom de mon entreprise',
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      '106wh7zl' /* ............................. */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
                                         ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
@@ -217,8 +631,23 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
                                   validator: _model
                                       .enterpriseFieldTextControllerValidator

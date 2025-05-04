@@ -211,6 +211,21 @@ class EventsRecord extends FirestoreRecord {
   bool get l2mStatut => _l2mStatut ?? false;
   bool hasL2mStatut() => _l2mStatut != null;
 
+  // "end_image" field.
+  String? _endImage;
+  String get endImage => _endImage ?? '';
+  bool hasEndImage() => _endImage != null;
+
+  // "image_dom" field.
+  String? _imageDom;
+  String get imageDom => _imageDom ?? '';
+  bool hasImageDom() => _imageDom != null;
+
+  // "image_ext" field.
+  String? _imageExt;
+  String get imageExt => _imageExt ?? '';
+  bool hasImageExt() => _imageExt != null;
+
   void _initializeFields() {
     _date = snapshotData['date'] as DateTime?;
     _hour = castToType<int>(snapshotData['hour']);
@@ -251,6 +266,9 @@ class EventsRecord extends FirestoreRecord {
     _first = snapshotData['first'] as String?;
     _podium = snapshotData['podium'] as String?;
     _l2mStatut = snapshotData['l2m_statut'] as bool?;
+    _endImage = snapshotData['end_image'] as String?;
+    _imageDom = snapshotData['image_dom'] as String?;
+    _imageExt = snapshotData['image_ext'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -323,6 +341,9 @@ Map<String, dynamic> createEventsRecordData({
   String? first,
   String? podium,
   bool? l2mStatut,
+  String? endImage,
+  String? imageDom,
+  String? imageExt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -362,6 +383,9 @@ Map<String, dynamic> createEventsRecordData({
       'first': first,
       'podium': podium,
       'l2m_statut': l2mStatut,
+      'end_image': endImage,
+      'image_dom': imageDom,
+      'image_ext': imageExt,
     }.withoutNulls,
   );
 
@@ -412,7 +436,10 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.moins == e2?.moins &&
         e1?.first == e2?.first &&
         e1?.podium == e2?.podium &&
-        e1?.l2mStatut == e2?.l2mStatut;
+        e1?.l2mStatut == e2?.l2mStatut &&
+        e1?.endImage == e2?.endImage &&
+        e1?.imageDom == e2?.imageDom &&
+        e1?.imageExt == e2?.imageExt;
   }
 
   @override
@@ -455,7 +482,10 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.moins,
         e?.first,
         e?.podium,
-        e?.l2mStatut
+        e?.l2mStatut,
+        e?.endImage,
+        e?.imageDom,
+        e?.imageExt
       ]);
 
   @override

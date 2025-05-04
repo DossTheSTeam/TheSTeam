@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'e_team_users_list_model.dart';
 export 'e_team_users_list_model.dart';
 
@@ -537,7 +538,18 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                         context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
                                                       color:
                                                           valueOrDefault<Color>(
                                                         eTeamUsersListTeamsRecord
@@ -547,6 +559,16 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                             .primaryText,
                                                       ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
                                                     ),
                                               ),
                                             ),
@@ -694,8 +716,25 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -891,12 +930,17 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                               ),
                                                                               maxLines: 1,
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Poppins',
+                                                                                    font: GoogleFonts.poppins(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                    ),
                                                                                     color: valueOrDefault<Color>(
                                                                                       columnUsersRecord.color1,
                                                                                       FlutterFlowTheme.of(context).primaryText,
                                                                                     ),
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1075,8 +1119,25 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -1266,9 +1327,14 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                               ),
                                                                               maxLines: 1,
                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    fontFamily: 'Poppins',
+                                                                                    font: GoogleFonts.poppins(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                    ),
                                                                                     color: columnUsersRecord.color1,
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1441,8 +1507,25 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -1634,8 +1717,13 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              fontFamily: 'Poppins',
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),

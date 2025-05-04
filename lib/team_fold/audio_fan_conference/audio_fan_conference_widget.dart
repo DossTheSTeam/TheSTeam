@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'audio_fan_conference_model.dart';
 export 'audio_fan_conference_model.dart';
 
@@ -125,12 +126,29 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Team Name',
+                                  FFLocalizations.of(context).getText(
+                                    'g64h17ei' /* Team Name */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ],
@@ -161,11 +179,26 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                     Align(
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
-                        'Fonction pas encore disponible',
+                        FFLocalizations.of(context).getText(
+                          '4q0bhzz6' /* Fonction pas encore disponible */,
+                        ),
                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Poppins',
+                              font: GoogleFonts.poppins(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
+                              ),
                               color: FlutterFlowTheme.of(context).error,
                               letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontStyle,
                             ),
                       ),
                     ),
@@ -193,12 +226,31 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 5.0, 0.0),
                                   child: Text(
-                                    '0',
+                                    FFLocalizations.of(context).getText(
+                                      'qscftk50' /* 0 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -206,12 +258,31 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Membres connectés',
+                                    FFLocalizations.of(context).getText(
+                                      'gjz1rzrd' /* Membres connectés */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -251,12 +322,29 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'UserPseudo',
+                                  FFLocalizations.of(context).getText(
+                                    'r97pyrt4' /* UserPseudo */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -304,12 +392,31 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 5.0, 0.0),
                                   child: Text(
-                                    '0',
+                                    FFLocalizations.of(context).getText(
+                                      'czywx66g' /* 0 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -317,12 +424,31 @@ class _AudioFanConferenceWidgetState extends State<AudioFanConferenceWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Fans connectés',
+                                    FFLocalizations.of(context).getText(
+                                      'eam829y6' /* Fans connectés */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),

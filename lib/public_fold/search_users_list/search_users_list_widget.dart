@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'search_users_list_model.dart';
 export 'search_users_list_model.dart';
 
@@ -488,24 +489,225 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                           ),
                                         ),
                                       ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Résultat recherche',
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ],
                             ),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          '') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'francais'))
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'tz2ouyrz' /* Résultat  de la recherche */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                              if ((valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'english') ||
+                                  (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'american'))
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2ll51ngk' /* Search result */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                              if (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'deutsch')
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'kl1vr9a6' /* Suchergebnis */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                              if (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'espanol')
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'kv31fl20' /* Resultado de la búsqueda */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                              if (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'italiano')
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'gfvutln9' /* Risultato della ricerca */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                              if (valueOrDefault(
+                                      currentUserDocument?.langage, '') ==
+                                  'portugues')
+                                AuthUserStreamWidget(
+                                  builder: (context) => Text(
+                                    FFLocalizations.of(context).getText(
+                                      'j3x9kpd5' /* Resultado da pesquisa */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                  ),
+                                ),
+                            ],
                           ),
                           Text(
                             valueOrDefault<String>(
@@ -516,8 +718,21 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .displaySmall
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontStyle,
                                 ),
                           ),
                           AuthUserStreamWidget(
@@ -638,23 +853,42 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                                             .displayName,
                                                         'NewUser',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            color:
-                                                                valueOrDefault<
-                                                                    Color>(
-                                                              columnUsersUsersRecord
-                                                                  .color1,
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                            ),
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  columnUsersUsersRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],

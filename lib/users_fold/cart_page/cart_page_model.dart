@@ -11,7 +11,7 @@ class CartPageModel extends FlutterFlowModel<CartPageWidget> {
   // State field(s) for DropMise widget.
   double? dropMiseValue;
   FormFieldController<double>? dropMiseValueController;
-  // Stores action output result for [Backend Call - Create Document] action in ButtonAddBet widget.
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   MyBetsRecord? myBet100Ref;
 
   @override

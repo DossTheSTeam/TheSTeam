@@ -16,23 +16,24 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
   FocusNode? titleFieldFocusNode;
   TextEditingController? titleFieldTextController;
   String? Function(BuildContext, String?)? titleFieldTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl1 = '';
 
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   AudioRecorder? audioRecorder;
   String? audioPost;
   FFUploadedFile recordedFileBytes =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
+
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postRef;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
@@ -46,10 +47,7 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
     titleFieldFocusNode?.dispose();
     titleFieldTextController?.dispose();
 
-    textFieldFocusNode1?.dispose();
+    textFieldFocusNode?.dispose();
     textController2?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController3?.dispose();
   }
 }

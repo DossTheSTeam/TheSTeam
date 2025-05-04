@@ -12,6 +12,7 @@ import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
 import 'add_post_page_model.dart';
 export 'add_post_page_model.dart';
@@ -45,10 +46,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
     _model.titleFieldFocusNode ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
-
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -196,8 +194,25 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -215,8 +230,12 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 options: List<String>.from(
                                     ['appli.conseils', 'bets.conseils']),
                                 optionLabels: [
-                                  'Conseils sur l\'appli',
-                                  'Conseils de parieur'
+                                  FFLocalizations.of(context).getText(
+                                    '0458t3nv' /* Conseils sur l'appli */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'm70v2ixj' /* Conseils de parieur */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropAdviceValue = val),
@@ -225,10 +244,25 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
-                                hintText: 'Catégorie de conseil',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'rx9tg136' /* Catégorie de conseil */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -261,15 +295,43 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
                                     ),
-                                hintText: 'Titre',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'xt8cxiac' /* Titre */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
                                     ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -307,8 +369,21 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                               textAlign: TextAlign.center,
                               maxLines: 2,
@@ -323,13 +398,28 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'Image ?',
+                              FFLocalizations.of(context).getText(
+                                'c60qhilm' /* Image ? */,
+                              ),
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -358,7 +448,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             validateFileFormat(
                                                 m.storagePath, context))) {
                                       safeSetState(
-                                          () => _model.isDataUploading = true);
+                                          () => _model.isDataUploading1 = true);
                                       var selectedUploadedFiles =
                                           <FFUploadedFile>[];
 
@@ -386,16 +476,16 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             .map((u) => u!)
                                             .toList();
                                       } finally {
-                                        _model.isDataUploading = false;
+                                        _model.isDataUploading1 = false;
                                       }
                                       if (selectedUploadedFiles.length ==
                                               selectedMedia.length &&
                                           downloadUrls.length ==
                                               selectedMedia.length) {
                                         safeSetState(() {
-                                          _model.uploadedLocalFile =
+                                          _model.uploadedLocalFile1 =
                                               selectedUploadedFiles.first;
-                                          _model.uploadedFileUrl =
+                                          _model.uploadedFileUrl1 =
                                               downloadUrls.first;
                                         });
                                       } else {
@@ -411,7 +501,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     size: 30.0,
                                   ),
                                 ),
-                                if (_model.uploadedFileUrl != '')
+                                if (_model.uploadedFileUrl1 != '')
                                   Container(
                                     width: 300.0,
                                     height: 175.0,
@@ -426,7 +516,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         borderRadius:
                                             BorderRadius.circular(15.0),
                                         child: Image.network(
-                                          _model.uploadedFileUrl,
+                                          _model.uploadedFileUrl1,
                                           width: 300.0,
                                           height: 200.0,
                                           fit: BoxFit.fitHeight,
@@ -444,7 +534,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               width: 300.0,
                               child: TextFormField(
                                 controller: _model.textController2,
-                                focusNode: _model.textFieldFocusNode1,
+                                focusNode: _model.textFieldFocusNode,
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -452,15 +542,47 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
-                                  hintText: 'Description',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    '3eda9fev' /* Description */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
@@ -498,8 +620,21 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 maxLines: null,
                                 cursorColor:
@@ -513,13 +648,28 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'Audio ?',
+                              FFLocalizations.of(context).getText(
+                                '8oag9o44' /* Audio ? */,
+                              ),
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -644,15 +794,57 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .fontStyle,
                                                     ),
                                             playbackDurationTextStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
                                                     ),
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
@@ -681,14 +873,30 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'Vidéo ? Pas encore disponible',
+                              FFLocalizations.of(context).getText(
+                                'bev76man' /* Vidéo ? */,
+                              ),
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).error,
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -702,20 +910,77 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 30.0),
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        final selectedMedia = await selectMedia(
+                                          isVideo: true,
+                                          mediaSource: MediaSource.videoGallery,
+                                          multiImage: false,
+                                        );
+                                        if (selectedMedia != null &&
+                                            selectedMedia.every((m) =>
+                                                validateFileFormat(
+                                                    m.storagePath, context))) {
+                                          safeSetState(() =>
+                                              _model.isDataUploading2 = true);
+                                          var selectedUploadedFiles =
+                                              <FFUploadedFile>[];
+
+                                          var downloadUrls = <String>[];
+                                          try {
+                                            selectedUploadedFiles =
+                                                selectedMedia
+                                                    .map((m) => FFUploadedFile(
+                                                          name: m.storagePath
+                                                              .split('/')
+                                                              .last,
+                                                          bytes: m.bytes,
+                                                          height: m.dimensions
+                                                              ?.height,
+                                                          width: m.dimensions
+                                                              ?.width,
+                                                          blurHash: m.blurHash,
+                                                        ))
+                                                    .toList();
+
+                                            downloadUrls = (await Future.wait(
+                                              selectedMedia.map(
+                                                (m) async => await uploadData(
+                                                    m.storagePath, m.bytes),
+                                              ),
+                                            ))
+                                                .where((u) => u != null)
+                                                .map((u) => u!)
+                                                .toList();
+                                          } finally {
+                                            _model.isDataUploading2 = false;
+                                          }
+                                          if (selectedUploadedFiles.length ==
+                                                  selectedMedia.length &&
+                                              downloadUrls.length ==
+                                                  selectedMedia.length) {
+                                            safeSetState(() {
+                                              _model.uploadedLocalFile2 =
+                                                  selectedUploadedFiles.first;
+                                              _model.uploadedFileUrl2 =
+                                                  downloadUrls.first;
+                                            });
+                                          } else {
+                                            safeSetState(() {});
+                                            return;
+                                          }
+                                        }
+                                      },
                                       child: Icon(
-                                        Icons.video_camera_back_outlined,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
+                                        Icons.search_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                         size: 30.0,
                                       ),
-                                    ),
-                                    Icon(
-                                      Icons.play_circle_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
                                     ),
                                   ],
                                 ),
@@ -728,8 +993,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                     borderRadius: BorderRadius.circular(18.0),
                                   ),
                                   child: FlutterFlowVideoPlayer(
-                                    path:
-                                        'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
+                                    path: _model.uploadedFileUrl2,
                                     videoType: VideoType.network,
                                     autoPlay: false,
                                     looping: true,
@@ -743,100 +1007,30 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: TextFormField(
-                                      controller: _model.textController3,
-                                      focusNode: _model.textFieldFocusNode2,
-                                      autofocus: false,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        hintText: 'Coller le lien video',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder:
-                                            UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      validator: _model.textController3Validator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.send_rounded,
-                                  color: FlutterFlowTheme.of(context).error,
-                                  size: 30.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'Confirmer',
+                              FFLocalizations.of(context).getText(
+                                '9fh4yowr' /* Confirmer */,
+                              ),
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                             ),
                           ),
@@ -863,7 +1057,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         description:
                                             _model.textController2.text,
                                         createdTime: getCurrentTimestamp,
-                                        image: _model.uploadedFileUrl,
+                                        image: _model.uploadedFileUrl1,
                                         leagueValue:
                                             addPostPageTeamsRecord.leagueValue,
                                         moderator:
@@ -873,6 +1067,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                         sportValue:
                                             addPostPageTeamsRecord.sportValue,
                                         audio: _model.audioPost,
+                                        video: _model.uploadedFileUrl2,
                                       ));
                                       _model.postRef =
                                           PostsRecord.getDocumentFromData(
@@ -885,7 +1080,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                                     _model.textController2.text,
                                                 createdTime:
                                                     getCurrentTimestamp,
-                                                image: _model.uploadedFileUrl,
+                                                image: _model.uploadedFileUrl1,
                                                 leagueValue:
                                                     addPostPageTeamsRecord
                                                         .leagueValue,
@@ -899,6 +1094,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                                     addPostPageTeamsRecord
                                                         .sportValue,
                                                 audio: _model.audioPost,
+                                                video: _model.uploadedFileUrl2,
                                               ),
                                               postsRecordReference);
 
@@ -953,7 +1149,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
 
                                       safeSetState(() {});
                                     },
-                                    text: 'Valider',
+                                    text: FFLocalizations.of(context).getText(
+                                      '4rjyji09' /* Valider */,
+                                    ),
                                     options: FFButtonOptions(
                                       height: 30.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -966,10 +1164,27 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -996,7 +1211,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                               .titleFieldTextController.text,
                                           description:
                                               _model.textController2.text,
-                                          image: _model.uploadedFileUrl,
+                                          image: _model.uploadedFileUrl1,
                                           leagueValue: addPostPageTeamsRecord
                                               .leagueValue,
                                           moderator:
@@ -1009,6 +1224,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                               addPostPageTeamsRecord.sportValue,
                                           foldCategorie: _model.dropAdviceValue,
                                           audio: _model.audioPost,
+                                          video: _model.uploadedFileUrl2,
                                         ),
                                         ...mapToFirestore(
                                           {
@@ -1025,7 +1241,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                               .titleFieldTextController.text,
                                           description:
                                               _model.textController2.text,
-                                          image: _model.uploadedFileUrl,
+                                          image: _model.uploadedFileUrl1,
                                           leagueValue: addPostPageTeamsRecord
                                               .leagueValue,
                                           moderator:
@@ -1038,6 +1254,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                               addPostPageTeamsRecord.sportValue,
                                           foldCategorie: _model.dropAdviceValue,
                                           audio: _model.audioPost,
+                                          video: _model.uploadedFileUrl2,
                                         ),
                                         ...mapToFirestore(
                                           {
@@ -1084,7 +1301,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
 
                                       safeSetState(() {});
                                     },
-                                    text: 'Valider',
+                                    text: FFLocalizations.of(context).getText(
+                                      'aky9oypc' /* Valider */,
+                                    ),
                                     options: FFButtonOptions(
                                       height: 30.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -1097,10 +1316,27 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(

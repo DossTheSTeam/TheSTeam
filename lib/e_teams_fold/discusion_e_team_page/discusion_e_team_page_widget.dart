@@ -8,9 +8,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/users_fold/copy_text/copy_text_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
 import 'discusion_e_team_page_model.dart';
 export 'discusion_e_team_page_model.dart';
@@ -624,8 +627,29 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -754,416 +778,546 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                 thickness: 1.0,
                                 color: discusionETeamPageTeamsRecord.color2,
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 10.0, 5.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
+                              if ((_model.showAudio == true) ||
+                                  (_model.showComment == true) ||
+                                  (_model.showImage == true))
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 5.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if (_model.showImage == true)
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      final selectedMedia =
-                                                          await selectMediaWithSourceBottomSheet(
-                                                        context: context,
-                                                        maxWidth: 1000.00,
-                                                        maxHeight: 1000.00,
-                                                        allowPhoto: true,
-                                                      );
-                                                      if (selectedMedia !=
-                                                              null &&
-                                                          selectedMedia.every((m) =>
-                                                              validateFileFormat(
-                                                                  m.storagePath,
-                                                                  context))) {
-                                                        safeSetState(() => _model
-                                                                .isDataUploading =
-                                                            true);
-                                                        var selectedUploadedFiles =
-                                                            <FFUploadedFile>[];
-
-                                                        var downloadUrls =
-                                                            <String>[];
-                                                        try {
-                                                          selectedUploadedFiles =
-                                                              selectedMedia
-                                                                  .map((m) =>
-                                                                      FFUploadedFile(
-                                                                        name: m
-                                                                            .storagePath
-                                                                            .split('/')
-                                                                            .last,
-                                                                        bytes: m
-                                                                            .bytes,
-                                                                        height: m
-                                                                            .dimensions
-                                                                            ?.height,
-                                                                        width: m
-                                                                            .dimensions
-                                                                            ?.width,
-                                                                        blurHash:
-                                                                            m.blurHash,
-                                                                      ))
-                                                                  .toList();
-
-                                                          downloadUrls =
-                                                              (await Future
-                                                                      .wait(
-                                                            selectedMedia.map(
-                                                              (m) async =>
-                                                                  await uploadData(
-                                                                      m.storagePath,
-                                                                      m.bytes),
-                                                            ),
-                                                          ))
-                                                                  .where((u) =>
-                                                                      u != null)
-                                                                  .map(
-                                                                      (u) => u!)
-                                                                  .toList();
-                                                        } finally {
-                                                          _model.isDataUploading =
-                                                              false;
-                                                        }
-                                                        if (selectedUploadedFiles
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length &&
-                                                            downloadUrls
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length) {
-                                                          safeSetState(() {
-                                                            _model.uploadedLocalFile =
-                                                                selectedUploadedFiles
-                                                                    .first;
-                                                            _model.uploadedFileUrl =
-                                                                downloadUrls
-                                                                    .first;
-                                                          });
-                                                        } else {
-                                                          safeSetState(() {});
-                                                          return;
-                                                        }
-                                                      }
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .image_search_rounded,
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        discusionETeamPageTeamsRecord
-                                                            .color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                          0.0, 0.0, 5.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            _model.showImage =
+                                                                null;
+                                                            safeSetState(() {});
+                                                            safeSetState(() {
+                                                              _model.isDataUploading =
+                                                                  false;
+                                                              _model.uploadedLocalFile =
+                                                                  FFUploadedFile(
+                                                                      bytes: Uint8List
+                                                                          .fromList(
+                                                                              []));
+                                                              _model.uploadedFileUrl =
+                                                                  '';
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.close_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            size: 30.0,
+                                                          ),
+                                                        ),
                                                       ),
-                                                      size: 30.0,
-                                                    ),
+                                                      if (_model.uploadedFileUrl !=
+                                                              '')
+                                                        Container(
+                                                          width: 50.0,
+                                                          height: 40.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    2.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4.0),
+                                                              child:
+                                                                  Image.network(
+                                                                _model
+                                                                    .uploadedFileUrl,
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                    ],
                                                   ),
                                                 ),
-                                                if (_model.uploadedFileUrl !=
-                                                        '')
-                                                  Container(
-                                                    width: 50.0,
-                                                    height: 40.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              6.0),
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsets.all(2.0),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(4.0),
-                                                        child: Image.network(
-                                                          _model
-                                                              .uploadedFileUrl,
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 15.0,
-                                                                10.0, 0.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await startAudioRecording(
-                                                            context,
-                                                            audioRecorder: _model
-                                                                    .audioRecorder ??=
-                                                                AudioRecorder(),
-                                                          );
-                                                        },
-                                                        child: FaIcon(
-                                                          FontAwesomeIcons
-                                                              .microphoneAlt,
-                                                          color: valueOrDefault<
-                                                              Color>(
-                                                            currentUserDocument
-                                                                ?.color1,
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                          ),
-                                                          size: 28.0,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(20.0,
-                                                                15.0, 0.0, 0.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          await stopAudioRecording(
-                                                            audioRecorder: _model
-                                                                .audioRecorder,
-                                                            audioName:
-                                                                'recordedFileBytes',
-                                                            onRecordingComplete:
-                                                                (audioFilePath,
-                                                                    audioBytes) {
-                                                              _model.audioTeam =
-                                                                  audioFilePath;
-                                                              _model.recordedFileBytes =
-                                                                  audioBytes;
-                                                            },
-                                                          );
+                                              if (_model.showAudio == true)
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10.0, 10.0,
+                                                          30.0, 0.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          30.0,
+                                                                          0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await startAudioRecording(
+                                                                    context,
+                                                                    audioRecorder:
+                                                                        _model.audioRecorder ??=
+                                                                            AudioRecorder(),
+                                                                  );
+                                                                },
+                                                                child: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .microphoneAlt,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    discusionETeamPageTeamsRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                  size: 28.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          30.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await stopAudioRecording(
+                                                                    audioRecorder:
+                                                                        _model
+                                                                            .audioRecorder,
+                                                                    audioName:
+                                                                        'recordedFileBytes',
+                                                                    onRecordingComplete:
+                                                                        (audioFilePath,
+                                                                            audioBytes) {
+                                                                      _model.audioTeam =
+                                                                          audioFilePath;
+                                                                      _model.recordedFileBytes =
+                                                                          audioBytes;
+                                                                    },
+                                                                  );
 
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .stop_circle,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    discusionETeamPageTeamsRecord
+                                                                        .color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                  size: 30.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          _model.showAudio =
+                                                              null;
                                                           safeSetState(() {});
                                                         },
                                                         child: Icon(
-                                                          Icons.stop_circle,
-                                                          color: valueOrDefault<
-                                                              Color>(
-                                                            currentUserDocument
-                                                                ?.color1,
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                          ),
+                                                          Icons.close_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
                                                           size: 30.0,
                                                         ),
                                                       ),
-                                                    ),
+                                                    ],
                                                   ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                                ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      if (_model.showComment == true)
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.showComment = null;
+                                            safeSetState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.close_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            size: 30.0,
+                                          ),
                                         ),
-                                      ],
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => TextFormField(
-                                            controller:
-                                                _model.commFieldTextController,
-                                            focusNode:
-                                                _model.commFieldFocusNode,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
+                                      if (_model.showComment == true)
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 8.0, 0.0),
+                                            child: AuthUserStreamWidget(
+                                              builder: (context) =>
+                                                  TextFormField(
+                                                controller: _model
+                                                    .commFieldTextController,
+                                                focusNode:
+                                                    _model.commFieldFocusNode,
+                                                autofocus: false,
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelStyle: FlutterFlowTheme
+                                                          .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
-                                              hintText:
-                                                  '.......................',
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'zj7p4ods' /* ....................... */,
+                                                  ),
+                                                  hintStyle: FlutterFlowTheme
+                                                          .of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
                                                       ),
-                                              enabledBorder:
-                                                  UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: valueOrDefault<Color>(
-                                                    currentUserDocument?.color2,
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                  enabledBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color2,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
-                                                  width: 2.0,
+                                                  focusedBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  errorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      UnderlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 2.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder:
-                                                  UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 2.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                validator: _model
+                                                    .commFieldTextControllerValidator
+                                                    .asValidator(context),
                                               ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                            validator: _model
-                                                .commFieldTextControllerValidator
-                                                .asValidator(context),
+                                          ),
+                                        ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 5.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            var teamMessagesRecordReference =
+                                                TeamMessagesRecord.createDoc(
+                                                    widget.eTeamRef!);
+                                            await teamMessagesRecordReference
+                                                .set({
+                                              ...createTeamMessagesRecordData(
+                                                text: _model
+                                                    .commFieldTextController
+                                                    .text,
+                                                userRef: currentUserReference,
+                                                image: _model.uploadedFileUrl,
+                                                audio: _model.audioTeam,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'date_time': FieldValue
+                                                      .serverTimestamp(),
+                                                },
+                                              ),
+                                            });
+                                            _model.teamMessage =
+                                                TeamMessagesRecord
+                                                    .getDocumentFromData({
+                                              ...createTeamMessagesRecordData(
+                                                text: _model
+                                                    .commFieldTextController
+                                                    .text,
+                                                userRef: currentUserReference,
+                                                image: _model.uploadedFileUrl,
+                                                audio: _model.audioTeam,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'date_time': DateTime.now(),
+                                                },
+                                              ),
+                                            }, teamMessagesRecordReference);
+                                            safeSetState(() {
+                                              _model.commFieldTextController
+                                                  ?.clear();
+                                            });
+
+                                            safeSetState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.send_rounded,
+                                            color: valueOrDefault<Color>(
+                                              discusionETeamPageTeamsRecord
+                                                  .color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
+                                            size: 30.0,
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 5.0, 0.0),
-                                      child: InkWell(
+                                    ],
+                                  ),
+                                ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    if ((_model.showAudio != true) &&
+                                        (_model.showComment != true))
+                                      InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          var teamMessagesRecordReference =
-                                              TeamMessagesRecord.createDoc(
-                                                  widget.eTeamRef!);
-                                          await teamMessagesRecordReference
-                                              .set({
-                                            ...createTeamMessagesRecordData(
-                                              text: _model
-                                                  .commFieldTextController.text,
-                                              userRef: currentUserReference,
-                                              image: _model.uploadedFileUrl,
-                                              audio: _model.audioTeam,
-                                            ),
-                                            ...mapToFirestore(
-                                              {
-                                                'date_time': FieldValue
-                                                    .serverTimestamp(),
-                                              },
-                                            ),
-                                          });
-                                          _model.teamMessage =
-                                              TeamMessagesRecord
-                                                  .getDocumentFromData({
-                                            ...createTeamMessagesRecordData(
-                                              text: _model
-                                                  .commFieldTextController.text,
-                                              userRef: currentUserReference,
-                                              image: _model.uploadedFileUrl,
-                                              audio: _model.audioTeam,
-                                            ),
-                                            ...mapToFirestore(
-                                              {
-                                                'date_time': DateTime.now(),
-                                              },
-                                            ),
-                                          }, teamMessagesRecordReference);
-                                          safeSetState(() {
-                                            _model.commFieldTextController
-                                                ?.clear();
-                                          });
-
+                                          _model.showComment = true;
                                           safeSetState(() {});
                                         },
-                                        child: Icon(
-                                          Icons.send_rounded,
+                                        child: FaIcon(
+                                          FontAwesomeIcons.edit,
                                           color: valueOrDefault<Color>(
                                             discusionETeamPageTeamsRecord
                                                 .color1,
@@ -1173,7 +1327,116 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                           size: 30.0,
                                         ),
                                       ),
-                                    ),
+                                    if (_model.showImage != true)
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          final selectedMedia =
+                                              await selectMediaWithSourceBottomSheet(
+                                            context: context,
+                                            maxWidth: 1000.00,
+                                            maxHeight: 1000.00,
+                                            allowPhoto: true,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() =>
+                                                _model.isDataUploading = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+
+                                              downloadUrls = (await Future.wait(
+                                                selectedMedia.map(
+                                                  (m) async => await uploadData(
+                                                      m.storagePath, m.bytes),
+                                                ),
+                                              ))
+                                                  .where((u) => u != null)
+                                                  .map((u) => u!)
+                                                  .toList();
+                                            } finally {
+                                              _model.isDataUploading = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile =
+                                                    selectedUploadedFiles.first;
+                                                _model.uploadedFileUrl =
+                                                    downloadUrls.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
+                                          }
+
+                                          _model.showImage = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: Icon(
+                                          Icons.image_search_rounded,
+                                          color: valueOrDefault<Color>(
+                                            discusionETeamPageTeamsRecord
+                                                .color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    if ((_model.showComment != true) &&
+                                        (_model.showAudio != true))
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.showAudio = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: FaIcon(
+                                          FontAwesomeIcons.microphoneAlt,
+                                          color: valueOrDefault<Color>(
+                                            discusionETeamPageTeamsRecord
+                                                .color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
                                   ],
                                 ),
                               ),
@@ -1347,8 +1610,17 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     color: valueOrDefault<
                                                                         Color>(
                                                                       rowUserUsersRecord
@@ -1359,6 +1631,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                     ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1378,17 +1658,30 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                       0.0),
                                                           child: Text(
                                                             dateTimeFormat(
-                                                                "relative",
-                                                                columnETeamMessagesTeamMessagesRecord
-                                                                    .dateTime!),
+                                                              "relative",
+                                                              columnETeamMessagesTeamMessagesRecord
+                                                                  .dateTime!,
+                                                              locale: FFLocalizations
+                                                                      .of(context)
+                                                                  .languageCode,
+                                                            ),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1396,6 +1689,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                           ),
                                                         ),
@@ -1507,20 +1808,54 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
                                                                 ),
                                                         playbackDurationTextStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
@@ -1563,14 +1898,101 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           .text,
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await Clipboard.setData(
+                                                            ClipboardData(
+                                                                text:
+                                                                    columnETeamMessagesTeamMessagesRecord
+                                                                        .text));
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    CopyTextWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .content_copy_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 25.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -1618,9 +2040,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                   0.0),
                                                       child: Text(
                                                         dateTimeFormat(
-                                                            "relative",
-                                                            columnETeamMessagesTeamMessagesRecord
-                                                                .dateTime!),
+                                                          "relative",
+                                                          columnETeamMessagesTeamMessagesRecord
+                                                              .dateTime!,
+                                                          locale:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .languageCode,
+                                                        ),
                                                         textAlign:
                                                             TextAlign.start,
                                                         style:
@@ -1628,8 +2055,17 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -1637,6 +2073,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1658,8 +2102,17 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
                                                                 color:
                                                                     valueOrDefault<
                                                                         Color>(
@@ -1671,6 +2124,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -1820,20 +2281,54 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
                                                                 ),
                                                         playbackDurationTextStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
@@ -1876,14 +2371,33 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           .text,
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),

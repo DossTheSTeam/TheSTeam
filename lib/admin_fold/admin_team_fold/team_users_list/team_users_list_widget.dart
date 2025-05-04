@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'team_users_list_model.dart';
 export 'team_users_list_model.dart';
 
@@ -505,8 +506,29 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -522,9 +544,22 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                           teamUsersListTeamsRecord.reference.id,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).warning,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                         ),
                         Column(
@@ -552,8 +587,25 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -743,8 +795,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              fontFamily: 'Montserrat',
+                                                                              font: GoogleFonts.montserrat(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -903,8 +960,25 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -1094,8 +1168,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              fontFamily: 'Montserrat',
+                                                                              font: GoogleFonts.montserrat(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1274,8 +1353,25 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -1465,8 +1561,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              fontFamily: 'Montserrat',
+                                                                              font: GoogleFonts.montserrat(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),

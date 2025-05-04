@@ -5,9 +5,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/users_fold/copy_text/copy_text_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'my_notifs_list_model.dart';
 export 'my_notifs_list_model.dart';
 
@@ -438,59 +441,10 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                     ),
                                   ),
                                 ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Mes notifications',
-                                    style: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ],
                       ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 3.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Supprimer ou faire les actions associées pour enlever la notification',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 2,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          lineHeight: 1.0,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 10.0),
@@ -681,8 +635,15 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
                                                                       color: valueOrDefault<
                                                                           Color>(
                                                                         rowNotifUserUsersRecord
@@ -692,6 +653,14 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                       ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ),
@@ -758,17 +727,44 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     dateTimeFormat(
-                                                        "relative",
-                                                        columnNotifsMyNotificationsRecord
-                                                            .dateTime!),
+                                                      "relative",
+                                                      columnNotifsMyNotificationsRecord
+                                                          .dateTime!,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
+                                                    ),
                                                     textAlign: TextAlign.start,
                                                     maxLines: 2,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -789,12 +785,105 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
                                               ),
+                                              if (columnNotifsMyNotificationsRecord
+                                                          .text !=
+                                                      '')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await Clipboard.setData(
+                                                            ClipboardData(
+                                                                text:
+                                                                    columnNotifsMyNotificationsRecord
+                                                                        .text));
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    CopyTextWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .content_copy_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 25.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
                                               if (columnNotifsMyNotificationsRecord
                                                           .textFouls !=
                                                       '')
@@ -812,14 +901,103 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           .textFouls,
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              if (columnNotifsMyNotificationsRecord
+                                                          .textFouls !=
+                                                      '')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await Clipboard.setData(
+                                                            ClipboardData(
+                                                                text: columnNotifsMyNotificationsRecord
+                                                                    .textFouls));
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    CopyTextWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .content_copy_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 25.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -840,14 +1018,103 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           .textReasons,
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              if (columnNotifsMyNotificationsRecord
+                                                          .textReasons !=
+                                                      '')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await Clipboard.setData(
+                                                            ClipboardData(
+                                                                text: columnNotifsMyNotificationsRecord
+                                                                    .textFouls));
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () {
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    CopyTextWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons
+                                                            .content_copy_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 25.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -965,10 +1232,17 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1090,10 +1364,23 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1213,10 +1500,23 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1349,8 +1649,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: 'Poppins',
+                                                                                  font: GoogleFonts.poppins(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                  ),
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1599,10 +1904,27 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1719,10 +2041,27 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -1849,8 +2188,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: 'Poppins',
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                ),
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -2058,8 +2402,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: 'Poppins',
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                ),
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -2230,16 +2579,42 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   dateTimeFormat(
-                                                      "relative",
-                                                      columnNotifsMyNotificationsRecord
-                                                          .dateTime!),
+                                                    "relative",
+                                                    columnNotifsMyNotificationsRecord
+                                                        .dateTime!,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2260,12 +2635,101 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                           context)
                                                       .labelSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
                                             ),
+                                            if (columnNotifsMyNotificationsRecord
+                                                        .text !=
+                                                    '')
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 15.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await Clipboard.setData(
+                                                          ClipboardData(
+                                                              text:
+                                                                  columnNotifsMyNotificationsRecord
+                                                                      .text));
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  CopyTextWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
+                                                    child: Icon(
+                                                      Icons
+                                                          .content_copy_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      size: 25.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
                                             if (columnNotifsMyNotificationsRecord
                                                         .textFouls !=
                                                     '')
@@ -2284,9 +2748,97 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmall
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
                                                         ),
+                                                  ),
+                                                ),
+                                              ),
+                                            if (columnNotifsMyNotificationsRecord
+                                                        .textFouls !=
+                                                    '')
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 15.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await Clipboard.setData(
+                                                          ClipboardData(
+                                                              text: columnNotifsMyNotificationsRecord
+                                                                  .textFouls));
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  CopyTextWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    },
+                                                    child: Icon(
+                                                      Icons
+                                                          .content_copy_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      size: 25.0,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -2431,10 +2983,21 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             context)
                                                                         .labelSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2509,7 +3072,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                             1.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      'Supprimer ?',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'a5tycec9' /* Supprimer ? */,
+                                                                      ),
                                                                       textAlign:
                                                                           TextAlign
                                                                               .start,
@@ -2517,10 +3084,17 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2586,8 +3160,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                               columnPostPostsRecord.title,
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                    fontFamily: 'Poppins',
+                                                                                    font: GoogleFonts.poppins(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                    ),
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2696,7 +3275,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Text(
-                                                                'Supprimer ?',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'ssfwx0zh' /* Supprimer ? */,
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
@@ -2704,10 +3287,25 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ),
@@ -2787,8 +3385,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              fontFamily: 'Poppins',
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2898,7 +3501,11 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   AlignmentDirectional(
                                                                       1.0, 0.0),
                                                               child: Text(
-                                                                'Supprimer ?',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'vfq1ezoi' /* Supprimer ? */,
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
@@ -2906,10 +3513,25 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ),
@@ -2989,8 +3611,13 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              fontFamily: 'Poppins',
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
                                                                               letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
                                                                       ),
                                                                     ),

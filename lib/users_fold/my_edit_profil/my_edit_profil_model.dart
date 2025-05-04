@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'my_edit_profil_widget.dart' show MyEditProfilWidget;
 import 'package:flutter/material.dart';
@@ -23,16 +22,6 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
   FocusNode? dateFieldFocusNode;
   TextEditingController? dateFieldTextController;
   String? Function(BuildContext, String?)? dateFieldTextControllerValidator;
-  // State field(s) for DropColor1 widget.
-  String? dropColor1Value;
-  FormFieldController<String>? dropColor1ValueController;
-  // State field(s) for DropColor2 widget.
-  String? dropColor2Value;
-  FormFieldController<String>? dropColor2ValueController;
-  // State field(s) for PhoneField widget.
-  FocusNode? phoneFieldFocusNode;
-  TextEditingController? phoneFieldTextController;
-  String? Function(BuildContext, String?)? phoneFieldTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -50,8 +39,5 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
 
     dateFieldFocusNode?.dispose();
     dateFieldTextController?.dispose();
-
-    phoneFieldFocusNode?.dispose();
-    phoneFieldTextController?.dispose();
   }
 }

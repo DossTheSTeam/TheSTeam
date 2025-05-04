@@ -10,7 +10,7 @@ class BossNotifEEventPageIUDAdminModel
     extends FlutterFlowModel<BossNotifEEventPageIUDAdminWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventsRecord? eEventRef;
   // State field(s) for DropReasons widget.
   String? dropReasonsValue;

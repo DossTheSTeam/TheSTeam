@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'mod_team_notifs_list_model.dart';
 export 'mod_team_notifs_list_model.dart';
 
@@ -475,13 +476,32 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Signalements',
+                                      FFLocalizations.of(context).getText(
+                                        'h5fb69bx' /* Signalements */,
+                                      ),
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -553,8 +573,25 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -716,14 +753,33 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                         'NewUser',
                                                       ),
                                                       maxLines: 1,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],
@@ -788,7 +844,11 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                         0.0,
                                                                         10.0),
                                                             child: Text(
-                                                              'veut mettre un carton rouge à',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'iancq22r' /* veut mettre un carton rouge à */,
+                                                              ),
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
@@ -796,10 +856,27 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -943,10 +1020,17 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -976,16 +1060,33 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                             10.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'Vérifier les informations',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'ngzh87y4' /* Vérifier les informations */,
+                                                                  ),
                                                                   maxLines: 1,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Montserrat',
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1072,18 +1173,41 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 5.0),
                                                     child: Text(
-                                                      'Souhaite devenir membre de',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'zrz97un3' /* Souhaite devenir membre de */,
+                                                      ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       maxLines: 2,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Montserrat',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .montserrat(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -1107,10 +1231,27 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ],
@@ -1135,16 +1276,37 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                     10.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Voir la demande en détails',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'lbtj6ofj' /* Voir la demande en détails */,
+                                                          ),
                                                           maxLines: 1,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
+                                                                font: GoogleFonts
+                                                                    .montserrat(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .fontStyle,
+                                                                ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),

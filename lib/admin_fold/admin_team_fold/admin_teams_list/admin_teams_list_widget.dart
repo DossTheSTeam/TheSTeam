@@ -7,6 +7,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'admin_teams_list_model.dart';
 export 'admin_teams_list_model.dart';
 
@@ -120,13 +121,28 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Liste des équipes',
+                                FFLocalizations.of(context).getText(
+                                  '9hoxxp9b' /* Liste des équipes */,
+                                ),
                                 maxLines: 1,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -149,12 +165,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Football',
+                                      FFLocalizations.of(context).getText(
+                                        'ulf35ku4' /* Football */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -177,14 +212,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           'autres.france'
                                         ]),
                                         optionLabels: [
-                                          'Premier League',
-                                          'LaLiga',
-                                          'Bundesliga',
-                                          'Serie A',
-                                          'Ligue 1',
-                                          'Autres',
-                                          'Pays Football',
-                                          'Autres - France'
+                                          FFLocalizations.of(context).getText(
+                                            'g06hdugr' /* Premier League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'duisczrh' /* LaLiga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '4fh081ex' /* Bundesliga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'lr0uqm59' /* Serie A */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '3h6pd5uf' /* Ligue 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'h7ausi40' /* Autres */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '020njb1a' /* Pays Football */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'mgh7nfx9' /* Autres - France */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -198,10 +249,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '0sgu8d6g' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -239,12 +310,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Basketball',
+                                      FFLocalizations.of(context).getText(
+                                        '657bnfe8' /* Basketball */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -256,8 +346,16 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueBasketValue1 ??= '',
                                         ),
-                                        options: List<String>.from(['nba']),
-                                        optionLabels: ['NBA'],
+                                        options: List<String>.from(
+                                            ['nba', 'pays.basket']),
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            '8kpvijyu' /* NBA */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'pl5h3y27' /* Pays Basketball */,
+                                          )
+                                        ],
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropLigueBasketValue1 = val);
@@ -270,10 +368,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '36lgl7io' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -311,12 +429,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Tennis',
+                                      FFLocalizations.of(context).getText(
+                                        'x708p2lu' /* Tennis */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -330,7 +467,14 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         options:
                                             List<String>.from(['atp', 'wta']),
-                                        optionLabels: ['ATP', 'WTA'],
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            'k6il9quz' /* ATP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '9uciof1i' /* WTA */,
+                                          )
+                                        ],
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropLigueTennisValue1 = val);
@@ -343,10 +487,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'd50qt9e7' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -384,12 +548,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Hockey',
+                                      FFLocalizations.of(context).getText(
+                                        'tpwz6mcz' /* Hockey */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -409,11 +592,21 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           'salle.elite.f'
                                         ]),
                                         optionLabels: [
-                                          'Glace NHL',
-                                          'Gazon Elite H',
-                                          'Gazon Elite F',
-                                          'Salle Elite H',
-                                          'Salle Elite F'
+                                          FFLocalizations.of(context).getText(
+                                            'fqp5p2af' /* Glace NHL */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'nufp1qqm' /* Gazon Elite H */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'mabjv43l' /* Gazon Elite F */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'v4w1ujnk' /* Salle Elite H */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '1bqrdmxk' /* Salle Elite F */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() => _model
@@ -427,10 +620,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'lb4dihb0' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -468,12 +681,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'MMA',
+                                      FFLocalizations.of(context).getText(
+                                        '68nsbqps' /* MMA */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -496,14 +728,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           'lourd'
                                         ]),
                                         optionLabels: [
-                                          'Mouche - 57 kg',
-                                          'Coq - 61 kg',
-                                          'Plume - 66 kg',
-                                          'Léger - 70 kg',
-                                          'Mi-Moyen- 77 kg',
-                                          'Moyen- 84 kg',
-                                          'Mi-Lourd - 93 kg',
-                                          'Lourd - 120 kg'
+                                          FFLocalizations.of(context).getText(
+                                            'cy0sv2i2' /* Mouche - 57 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'info2x5m' /* Coq - 61 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'grpassps' /* Plume - 66 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'tfte2x49' /* Léger - 70 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'owkl2p2j' /* Mi-Moyen- 77 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'qo962ce5' /* Moyen- 84 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '0jr0dplw' /* Mi-Lourd - 93 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'x0f0pkkn' /* Lourd - 120 kg */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -517,10 +765,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'hhwdt206' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -558,12 +826,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Boxe',
+                                      FFLocalizations.of(context).getText(
+                                        'k8vqjm6z' /* Boxe */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -586,14 +873,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           'super.lourd'
                                         ]),
                                         optionLabels: [
-                                          'Mouche - 52 kg',
-                                          'Plume - 57 kg',
-                                          'Léger - 63 kg',
-                                          'Mi-Moyen- 69 kg',
-                                          'Moyen- 75 kg',
-                                          'Mi-Lourd - 81 kg',
-                                          'Lourd - 91 kg',
-                                          'Super Lourd + 91 kg'
+                                          FFLocalizations.of(context).getText(
+                                            'xyu5zzb8' /* Mouche - 52 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'zu1snyjl' /* Plume - 57 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'pfql6e68' /* Léger - 63 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ix7x75k3' /* Mi-Moyen- 69 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'dig4om2d' /* Moyen- 75 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'kyzywpdq' /* Mi-Lourd - 81 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'o3507i26' /* Lourd - 91 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '3vtykgfp' /* Super Lourd + 91 kg */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -607,10 +910,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '0vot9r0j' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -648,12 +971,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Rugby',
+                                      FFLocalizations.of(context).getText(
+                                        'khaha7wt' /* Rugby */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -667,7 +1009,14 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         ),
                                         options: List<String>.from(
                                             ['top14', 'pays.rugby']),
-                                        optionLabels: ['Top 14', 'Pays Rugby'],
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            'k86wb19q' /* Top 14 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '30w1a0xm' /* Pays Rugby */,
+                                          )
+                                        ],
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropLigueRugbyValue1 = val);
@@ -680,10 +1029,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'a773blxd' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -721,12 +1090,31 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Sports Méca.',
+                                      FFLocalizations.of(context).getText(
+                                        'u49w1g0l' /* Sports Méca. */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     Padding(
@@ -745,10 +1133,18 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           'mx.gp'
                                         ]),
                                         optionLabels: [
-                                          'Formule 1',
-                                          'Moto GP',
-                                          'World Superbike',
-                                          'MX GP'
+                                          FFLocalizations.of(context).getText(
+                                            '7yy3k24c' /* Formule 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'b5am5nkg' /* Moto GP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'rmq0iiso' /* World Superbike */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'bf48cqe5' /* MX GP */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -762,10 +1158,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '2z3tw9rs' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -811,12 +1227,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Football',
+                                          FFLocalizations.of(context).getText(
+                                            '9xzdsl04' /* Football */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Column(
@@ -845,15 +1282,42 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   'empty'
                                                 ]),
                                                 optionLabels: [
-                                                  'Premier League',
-                                                  'LaLiga',
-                                                  'Bundesliga',
-                                                  'Serie A',
-                                                  'Ligue 1',
-                                                  'Autres',
-                                                  'Pays Football',
-                                                  'Autres - France',
-                                                  'Retirer filtre'
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'pwpvh4im' /* Premier League */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'nyjfiyl6' /* LaLiga */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '0a1823d9' /* Bundesliga */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zp4dlc2c' /* Serie A */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vli3z8gg' /* Ligue 1 */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8ga1q54p' /* Autres */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'f3heptj0' /* Pays Football */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'q0yti2zi' /* Autres - France */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'fx8dm1an' /* Retirer filtre */,
+                                                  )
                                                 ],
                                                 onChanged: (val) =>
                                                     safeSetState(() => _model
@@ -861,14 +1325,39 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                         val),
                                                 width: 180.0,
                                                 height: 40.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Ligues',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'hnfuvpxr' /* Ligues */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -907,12 +1396,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Basketball',
+                                          FFLocalizations.of(context).getText(
+                                            'twmj5uol' /* Basketball */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -926,11 +1436,24 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               _model.dropLigueBasketValue2 ??=
                                                   '',
                                             ),
-                                            options: List<String>.from(
-                                                ['nba', 'empty']),
+                                            options: List<String>.from([
+                                              'nba',
+                                              'pays.basket',
+                                              'empty'
+                                            ]),
                                             optionLabels: [
-                                              'NBA',
-                                              'Retirer filtre'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'dn2qbiqj' /* NBA */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'g0x9awhc' /* Pays Basketball */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'zf9jk8xt' /* Retirer filtre */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -942,10 +1465,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '8rv7q4z9' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -981,12 +1529,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Tennis',
+                                          FFLocalizations.of(context).getText(
+                                            'ri2dg1so' /* Tennis */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1003,9 +1572,18 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             options: List<String>.from(
                                                 ['atp', 'wta', 'empty']),
                                             optionLabels: [
-                                              'ATP',
-                                              'WTA',
-                                              'Retirer filtre'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'u99rmvrr' /* ATP */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'i625sg0m' /* WTA */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'djml2o4m' /* Retirer filtre */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1017,10 +1595,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '74dmtm4p' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1056,12 +1659,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Hockey',
+                                          FFLocalizations.of(context).getText(
+                                            '15oedx7v' /* Hockey */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1084,12 +1708,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               'empty'
                                             ]),
                                             optionLabels: [
-                                              'Glace NHL',
-                                              'Gazon Elite H',
-                                              'Gazon Elite F',
-                                              'Salle Elite H',
-                                              'Salle Elite F',
-                                              'Retirer filtre'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '1v858dyz' /* Glace NHL */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '60xk3b0b' /* Gazon Elite H */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'accgipof' /* Gazon Elite F */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'cd7y8nlu' /* Salle Elite H */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'pijcacx6' /* Salle Elite F */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'igkgwtw8' /* Retirer filtre */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1101,10 +1743,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '9068xyer' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1140,12 +1807,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'MMA',
+                                          FFLocalizations.of(context).getText(
+                                            '4vx40bdc' /* MMA */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1169,14 +1857,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               'lourd'
                                             ]),
                                             optionLabels: [
-                                              'Mouche - 57 kg',
-                                              'Coq - 61 kg',
-                                              'Plume - 66 kg',
-                                              'Léger - 70 kg',
-                                              'Mi-Moyen- 77 kg',
-                                              'Moyen- 84 kg',
-                                              'Mi-Lourd - 93 kg',
-                                              'Lourd - 120 kg'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'fw9gn3hq' /* Mouche - 57 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '0q2x5yec' /* Coq - 61 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '23cy7eea' /* Plume - 66 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'v80nwgk8' /* Léger - 70 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'y4d5xny1' /* Mi-Moyen- 77 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '7ce2m6mz' /* Moyen- 84 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                't1ku0pve' /* Mi-Lourd - 93 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'rz818df4' /* Lourd - 120 kg */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1187,10 +1899,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'zehn9t59' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1226,12 +1963,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Boxe',
+                                          FFLocalizations.of(context).getText(
+                                            'gbwic73u' /* Boxe */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1255,14 +2013,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               'super.lourd'
                                             ]),
                                             optionLabels: [
-                                              'Mouche - 52 kg',
-                                              'Plume - 57 kg',
-                                              'Léger - 63 kg',
-                                              'Mi-Moyen- 69 kg',
-                                              'Moyen- 75 kg',
-                                              'Mi-Lourd - 81 kg',
-                                              'Lourd - 91 kg',
-                                              'Super Lourd + 91 kg'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'g5shnf6t' /* Mouche - 52 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'xcyztbku' /* Plume - 57 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'qm2dmzox' /* Léger - 63 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'b1203c19' /* Mi-Moyen- 69 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'pj9feqfk' /* Moyen- 75 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'b2u7mxo5' /* Mi-Lourd - 81 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'usg9r68p' /* Lourd - 91 kg */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '7l7wz8zr' /* Super Lourd + 91 kg */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1273,10 +2055,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'un02i345' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1312,12 +2119,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Rugby',
+                                          FFLocalizations.of(context).getText(
+                                            'zq19yutx' /* Rugby */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1334,8 +2162,14 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             options: List<String>.from(
                                                 ['top.14', 'pays.rugby']),
                                             optionLabels: [
-                                              'Top 14',
-                                              'Pays Rugby'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'iy93huas' /* Top 14 */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'w1yx5iq8' /* Pays Rugby */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1347,10 +2181,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'gq4s4fju' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1386,12 +2245,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Sports Méca.',
+                                          FFLocalizations.of(context).getText(
+                                            '56xwnq9m' /* Sports Méca. */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -1411,10 +2291,22 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               'mx.gp'
                                             ]),
                                             optionLabels: [
-                                              'Formule 1',
-                                              'Moto GP',
-                                              'World Superbike',
-                                              'MX GP'
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'i9uzz2o8' /* Formule 1 */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9oa5o5yk' /* Moto GP */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'slovdbea' /* World Superbike */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ukrkamdm' /* MX GP */,
+                                              )
                                             ],
                                             onChanged: (val) => safeSetState(
                                                 () => _model
@@ -1425,10 +2317,35 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Poppins',
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
-                                            hintText: 'Ligues',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'ahqs9qf2' /* Ligues */,
+                                            ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -1480,13 +2397,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 29.0),
                                             child: Text(
-                                              'E Sport',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'q4d8ud7s' /* E Sport */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -1495,13 +2437,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 29.0),
                                             child: Text(
-                                              'E Ligue',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '318f7aic' /* E Ligue */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -1510,13 +2477,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 29.0),
                                             child: Text(
-                                              'E Divisions',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '76y5tyv9' /* E Divisions */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -1546,10 +2538,22 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 'empty'
                                               ]),
                                               optionLabels: [
-                                                'E Sport Football',
-                                                'E Sport Basketball',
-                                                'E Sport War',
-                                                'E Sports'
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '3biospea' /* E Sport Football */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'f4tmyzds' /* E Sport Basketball */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'xvuktna7' /* E Sport War */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'y7uwoj0f' /* E Sports */,
+                                                )
                                               ],
                                               onChanged: (val) => safeSetState(
                                                   () => _model
@@ -1560,10 +2564,36 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                              hintText: 'E Sports',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'whpoidy9' /* E Sports */,
+                                              ),
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1605,10 +2635,22 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 'legende'
                                               ]),
                                               optionLabels: [
-                                                'Amateur',
-                                                'Pro',
-                                                'Champion',
-                                                'Légende'
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ihjgqjde' /* Amateur */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '54a78d1d' /* Pro */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'iqt8xj3p' /* Champion */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'a2k4m9gq' /* Légende */,
+                                                )
                                               ],
                                               onChanged: (val) => safeSetState(
                                                   () => _model.dropELigueValue =
@@ -1619,10 +2661,36 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                              hintText: 'E Ligues',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '1211bx2u' /* E Ligues */,
+                                              ),
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1662,7 +2730,20 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               ),
                                               options: List<String>.from(
                                                   ['1', '2', '3']),
-                                              optionLabels: ['1', '2', '3'],
+                                              optionLabels: [
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'mudvs1tx' /* 1 */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '77srgz4m' /* 2 */,
+                                                ),
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '488uhh4n' /* 3 */,
+                                                )
+                                              ],
                                               onChanged: (val) => safeSetState(
                                                   () => _model
                                                           .dropEDivisionsValue =
@@ -1673,10 +2754,36 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                              hintText: 'E Division',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'imvu1tnu' /* E Division */,
+                                              ),
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1814,13 +2921,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1840,10 +2964,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1909,10 +3050,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1925,16 +3083,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'd9kzbd7q' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1958,10 +3137,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -1974,16 +3170,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'd9rte061' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -2002,10 +3219,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     if (columnTeamsModTeamsRecord
@@ -2023,10 +3257,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     Padding(
@@ -2038,16 +3289,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '5l34kwi8' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -2058,25 +3330,67 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     Text(
-                                                      ' pts',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '3jdnzwsq' /*  pts */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -2092,12 +3406,34 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .warning,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2423,13 +3759,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -2441,14 +3794,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                     child: Text(
                                                       columnTeamsAdminTeamsRecord
                                                           .name,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],
@@ -2503,14 +3875,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -2519,15 +3910,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
-                                                      '-',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '50f3jsg8' /* - */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -2542,14 +3956,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -2558,15 +3991,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
-                                                      '-',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '5b42n5iq' /* - */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   if (columnTeamsAdminTeamsRecord
@@ -2579,14 +4035,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   if (columnTeamsAdminTeamsRecord
                                                           .sportValue ==
@@ -2598,14 +4073,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   Padding(
                                                     padding:
@@ -2613,15 +4107,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
-                                                      '-',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'tvled0lk' /* - */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Text(
@@ -2635,18 +4152,65 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   Text(
-                                                    ' pts',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '7a38koqj' /*  pts */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ],
@@ -2659,16 +4223,38 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               child: Text(
                                                 columnTeamsAdminTeamsRecord
                                                     .reference.id,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .warning,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -2961,13 +4547,30 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -2979,14 +4582,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                     child: Text(
                                                       columnETeamsTeamsRecord
                                                           .name,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],
@@ -3057,10 +4679,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3073,16 +4712,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'e8tufiry' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3106,10 +4766,27 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3122,16 +4799,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'o38hm5nm' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3142,14 +4840,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -3160,16 +4877,37 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   10.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '-',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'po94xbtj' /* - */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -3180,25 +4918,67 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             .toString(),
                                                         '0',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                     Text(
-                                                      ' pts',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '715ok31v' /*  pts */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -3217,11 +4997,33 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .warning,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),

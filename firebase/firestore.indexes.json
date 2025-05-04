@@ -491,7 +491,7 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "stsocialapp",
+          "fieldPath": "enterprise",
           "order": "ASCENDING"
         },
         {
@@ -501,15 +501,19 @@
       ]
     },
     {
-      "collectionGroup": "users",
+      "collectionGroup": "events",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "enterprise",
+          "fieldPath": "league_value",
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "earnings_total",
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
           "order": "DESCENDING"
         }
       ]

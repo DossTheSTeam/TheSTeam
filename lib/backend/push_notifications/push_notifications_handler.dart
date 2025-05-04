@@ -357,7 +357,6 @@ final parametersBuilderMap =
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },
       ),
-  'RankTypstersPage': ParameterData.none(),
   'MyTeamsListEvents': ParameterData.none(),
   'SearchUsersList': (data) async => ParameterData(
         allParams: {
@@ -531,6 +530,28 @@ final parametersBuilderMap =
         },
       ),
   'RankPageMyEnterprise': ParameterData.none(),
+  'EventPageCompo': (data) async => ParameterData(
+        allParams: {
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
+        },
+      ),
+  'LeaguEventsList': (data) async => ParameterData(
+        allParams: {
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
+        },
+      ),
+  'LeaguEventsListAdd2Bet': (data) async => ParameterData(
+        allParams: {
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
+          'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+        },
+      ),
+  'LeaguEventsListAdd3Bet': (data) async => ParameterData(
+        allParams: {
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
+          'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

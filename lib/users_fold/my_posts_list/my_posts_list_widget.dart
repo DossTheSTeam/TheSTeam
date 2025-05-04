@@ -7,8 +7,10 @@ import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/delete_my_post/delete_my_post_widget.dart';
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'my_posts_list_model.dart';
 export 'my_posts_list_model.dart';
 
@@ -446,19 +448,237 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                     ),
                                   ),
                                 ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Text(
-                                  'Mon réseau\nd\'actualités',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        fontSize: 26.0,
-                                        letterSpacing: 0.0,
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  if ((valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              '') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'francais'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'yh8w79st' /* Mon réseau
+d'actualités */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
                                       ),
-                                ),
+                                    ),
+                                  if ((valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'english') ||
+                                      (valueOrDefault(
+                                              currentUserDocument?.langage,
+                                              '') ==
+                                          'american'))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'eujvnqua' /* My news
+network */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'deutsch')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'awy58mtg' /* Mein 
+achrichtennetzwerk */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'espanol')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'oyuisue5' /* Mi red
+de noticias */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'italiano')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          'jojbszs0' /* La mia rete
+di notizie */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                  if (valueOrDefault(
+                                          currentUserDocument?.langage, '') ==
+                                      'portugues')
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        FFLocalizations.of(context).getText(
+                                          '5armzr56' /* A minha rede
+de notícias */
+                                          ,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    ),
+                                ],
                               ),
                             ],
                           ),
@@ -622,44 +842,6 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                       ],
                                     ),
                                   ),
-                                  if (valueOrDefault<bool>(
-                                          currentUserDocument?.helpNav,
-                                          false) ==
-                                      true)
-                                    Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: AuthUserStreamWidget(
-                                        builder: (context) => Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Text(
-                                                'Mes\néquipes',
-                                                textAlign: TextAlign.center,
-                                                maxLines: 2,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          lineHeight: 1.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
                                 ],
                               ),
                             ],
@@ -685,18 +867,214 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Suivre des membres de clubs ou créer des actualités\npour accéder au contenu de cette page',
-                                  textAlign: TextAlign.center,
-                                  maxLines: 3,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 10.0,
-                                        letterSpacing: 0.0,
-                                        lineHeight: 1.3,
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                '') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'francais'))
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'x6pv57o8' /* Suivre des membres de clubs ou... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                       ),
+                                    if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'english') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'american'))
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'i9lecn9f' /* Follow club members or create ... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'deutsch')
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'klbjry91' /* Clubmitgliedern folgen oder Ne... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'espanol')
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '0ajimupv' /* Sigue a los miembros del club ... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'italiano')
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '4clakv9i' /* Segui i membri del club o crea... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'portugues')
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'i477an4d' /* Siga os membros do clube ou cr... */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -704,7 +1082,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                         ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: StreamBuilder<List<MyPostsRecord>>(
                           stream: queryMyPostsRecord(
                             queryBuilder: (myPostsRecord) =>
@@ -745,970 +1123,835 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                     builder: (context) => Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 5.0),
-                                          child: StreamBuilder<PostsRecord>(
-                                            stream: PostsRecord.getDocument(
-                                                columnMyPostsMyPostsRecord
-                                                    .posts!),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .accent4,
-                                                      ),
+                                        StreamBuilder<PostsRecord>(
+                                          stream: PostsRecord.getDocument(
+                                              columnMyPostsMyPostsRecord
+                                                  .posts!),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
                                                     ),
                                                   ),
-                                                );
-                                              }
+                                                ),
+                                              );
+                                            }
 
-                                              final columnPostPostsRecord =
-                                                  snapshot.data!;
+                                            final columnPostPostsRecord =
+                                                snapshot.data!;
 
-                                              return Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  if ((columnPostPostsRecord
-                                                              .member ==
-                                                          currentUserReference) ||
-                                                      (currentUserDocument
-                                                                  ?.bests
-                                                                  .toList() ??
-                                                              [])
-                                                          .contains(
-                                                              columnPostPostsRecord
-                                                                  .member))
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      5.0),
-                                                          child: StreamBuilder<
-                                                              TeamsRecord>(
-                                                            stream: TeamsRecord
-                                                                .getDocument(
-                                                                    columnPostPostsRecord
-                                                                        .teamRef!),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        CircularProgressIndicator(
-                                                                      valueColor:
-                                                                          AlwaysStoppedAnimation<
-                                                                              Color>(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .accent4,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-
-                                                              final rowTeamTeamsRecord =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Container(
-                                                                    width: 45.0,
-                                                                    height:
-                                                                        30.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        rowTeamTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitHeight,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          TeamPageWidget
-                                                                              .routeName,
-                                                                          queryParameters:
-                                                                              {
-                                                                            'teamRef':
-                                                                                serializeParam(
-                                                                              rowTeamTeamsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.bottomToTop,
-                                                                              duration: Duration(milliseconds: 600),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Text(
-                                                                        rowTeamTeamsRecord
-                                                                            .name,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: rowTeamTeamsRecord.color1,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Container(
-                                                              width: 350.0,
-                                                              height: 30.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                              ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Text(
+                                            return Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                if ((columnPostPostsRecord
+                                                            .member ==
+                                                        currentUserReference) ||
+                                                    (currentUserDocument?.bests
+                                                                .toList() ??
+                                                            [])
+                                                        .contains(
+                                                            columnPostPostsRecord
+                                                                .member))
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0),
+                                                        child: StreamBuilder<
+                                                            TeamsRecord>(
+                                                          stream: TeamsRecord
+                                                              .getDocument(
                                                                   columnPostPostsRecord
-                                                                      .title,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 1,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            children: [
-                                                              Container(
-                                                                width: 290.0,
-                                                                height: 50.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      EdgeInsets
-                                                                          .all(
-                                                                              5.0),
-                                                                  child: Text(
-                                                                    columnPostPostsRecord
-                                                                        .description,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      PostPageWidget
-                                                                          .routeName,
-                                                                      queryParameters:
-                                                                          {
-                                                                        'postRef':
-                                                                            serializeParam(
-                                                                          columnMyPostsMyPostsRecord
-                                                                              .posts,
-                                                                          ParamType
-                                                                              .DocumentReference,
-                                                                        ),
-                                                                      }.withoutNulls,
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.scale,
-                                                                          alignment:
-                                                                              Alignment.bottomCenter,
-                                                                          duration:
-                                                                              Duration(milliseconds: 600),
-                                                                        ),
-                                                                      },
-                                                                    );
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .remove_red_eye_outlined,
-                                                                    color: valueOrDefault<
-                                                                        Color>(
-                                                                      currentUserDocument
-                                                                          ?.color1,
+                                                                      .teamRef!),
+                                                          builder: (context,
+                                                              snapshot) {
+                                                            // Customize what your widget looks like when it's loading.
+                                                            if (!snapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                child: SizedBox(
+                                                                  width: 50.0,
+                                                                  height: 50.0,
+                                                                  child:
+                                                                      CircularProgressIndicator(
+                                                                    valueColor:
+                                                                        AlwaysStoppedAnimation<
+                                                                            Color>(
                                                                       FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primaryText,
-                                                                    ),
-                                                                    size: 30.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              if (columnPostPostsRecord
-                                                                          .choice1 !=
-                                                                      '')
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        TheSTeamPostPageWidget
-                                                                            .routeName,
-                                                                        queryParameters:
-                                                                            {
-                                                                          'postRef':
-                                                                              serializeParam(
-                                                                            columnMyPostsMyPostsRecord.posts,
-                                                                            ParamType.DocumentReference,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.scale,
-                                                                            alignment:
-                                                                                Alignment.bottomCenter,
-                                                                            duration:
-                                                                                Duration(milliseconds: 600),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .remove_red_eye_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          30.0,
+                                                                          .accent4,
                                                                     ),
                                                                   ),
                                                                 ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
-                                                          child: StreamBuilder<
-                                                              UsersRecord>(
-                                                            stream: UsersRecord
-                                                                .getDocument(
-                                                                    columnPostPostsRecord
-                                                                        .member!),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        CircularProgressIndicator(
-                                                                      valueColor:
-                                                                          AlwaysStoppedAnimation<
-                                                                              Color>(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .accent4,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-
-                                                              final rowMemberUsersRecord =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  if (currentUserReference ==
-                                                                      columnPostPostsRecord
-                                                                          .member)
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            PublicProfilPageWidget.routeName,
-                                                                            queryParameters:
-                                                                                {
-                                                                              'userRef': serializeParam(
-                                                                                columnPostPostsRecord.member,
-                                                                                ParamType.DocumentReference,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.bottomToTop,
-                                                                                duration: Duration(milliseconds: 600),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        },
-                                                                        child:
-                                                                            FaIcon(
-                                                                          FontAwesomeIcons
-                                                                              .userCircle,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            rowMemberUsersRecord.color1,
-                                                                            FlutterFlowTheme.of(context).secondaryText,
-                                                                          ),
-                                                                          size:
-                                                                              25.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  if (currentUserReference ==
-                                                                      columnPostPostsRecord
-                                                                          .member)
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () {
-                                                                                  FocusScope.of(context).unfocus();
-                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                },
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: DeleteMyPostWidget(
-                                                                                    myPostRef: columnMyPostsMyPostsRecord.reference,
-                                                                                  ),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        },
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .delete_forever_rounded,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  if ((currentUserDocument
-                                                                              ?.bests
-                                                                              .toList() ??
-                                                                          [])
-                                                                      .contains(
-                                                                          columnPostPostsRecord
-                                                                              .member))
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            PublicProfilPageWidget.routeName,
-                                                                            queryParameters:
-                                                                                {
-                                                                              'userRef': serializeParam(
-                                                                                columnPostPostsRecord.member,
-                                                                                ParamType.DocumentReference,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.bottomToTop,
-                                                                                duration: Duration(milliseconds: 600),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        },
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .star_rounded,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            rowMemberUsersRecord.color1,
-                                                                            FlutterFlowTheme.of(context).secondaryText,
-                                                                          ),
-                                                                          size:
-                                                                              30.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Ecrit par',
-                                                                      maxLines:
-                                                                          1,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          PublicProfilPageWidget
-                                                                              .routeName,
-                                                                          queryParameters:
-                                                                              {
-                                                                            'userRef':
-                                                                                serializeParam(
-                                                                              columnPostPostsRecord.member,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.bottomToTop,
-                                                                              duration: Duration(milliseconds: 600),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          rowMemberUsersRecord
-                                                                              .displayName,
-                                                                          'NewUser',
-                                                                        ),
-                                                                        maxLines:
-                                                                            1,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: valueOrDefault<Color>(
-                                                                                rowMemberUsersRecord.color1,
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               );
-                                                            },
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      5.0,
-                                                                      10.0,
-                                                                      5.0),
-                                                          child:
-                                                              SingleChildScrollView(
-                                                            scrollDirection:
-                                                                Axis.horizontal,
-                                                            child: Row(
+                                                            }
+
+                                                            final rowTeamTeamsRecord =
+                                                                snapshot.data!;
+
+                                                            return Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
                                                               children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
+                                                                Container(
+                                                                  height: 120.0,
+                                                                  child: Stack(
                                                                     children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .insert_comment_rounded,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          size:
-                                                                              20.0,
-                                                                        ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          columnPostPostsRecord
-                                                                              .numComments
-                                                                              .toString(),
-                                                                          '0',
-                                                                        ),
-                                                                        maxLines:
-                                                                            1,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .favorite_rounded,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          size:
-                                                                              20.0,
-                                                                        ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          columnPostPostsRecord
-                                                                              .numLikes
-                                                                              .toString(),
-                                                                          '0',
-                                                                        ),
-                                                                        maxLines:
-                                                                            1,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .heart_broken_rounded,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          size:
-                                                                              20.0,
-                                                                        ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          columnPostPostsRecord
-                                                                              .numDislikes
-                                                                              .toString(),
-                                                                          '0',
-                                                                        ),
-                                                                        maxLines:
-                                                                            1,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            15.0,
-                                                                        height:
-                                                                            20.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(2.0),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        columnPostPostsRecord
-                                                                            .numRedcards
-                                                                            .toString(),
-                                                                        '0',
-                                                                      ),
-                                                                      maxLines:
-                                                                          1,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
-                                                                            letterSpacing:
+                                                                      if (columnPostPostsRecord.image !=
+                                                                              '')
+                                                                        Align(
+                                                                          alignment: AlignmentDirectional(
+                                                                              -1.0,
+                                                                              -1.0),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                1.0,
                                                                                 0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Container(
+                                                                              width: 78.0,
+                                                                              height: 75.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.cover,
+                                                                                  image: CachedNetworkImageProvider(
+                                                                                    columnPostPostsRecord.image,
+                                                                                  ),
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(10.0),
+                                                                              ),
+                                                                            ),
                                                                           ),
-                                                                    ),
-                                                                  ],
+                                                                        ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            -1.0,
+                                                                            -1.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              80.0,
+                                                                          height:
+                                                                              75.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            image:
+                                                                                DecorationImage(
+                                                                              fit: BoxFit.cover,
+                                                                              image: Image.asset(
+                                                                                'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                                                              ).image,
+                                                                            ),
+                                                                            gradient:
+                                                                                LinearGradient(
+                                                                              colors: [
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).primaryBackground
+                                                                              ],
+                                                                              stops: [
+                                                                                0.0,
+                                                                                0.1,
+                                                                                0.2,
+                                                                                0.35,
+                                                                                0.65,
+                                                                                0.8,
+                                                                                0.9,
+                                                                                1.0
+                                                                              ],
+                                                                              begin: AlignmentDirectional(0.0, -1.0),
+                                                                              end: AlignmentDirectional(0, 1.0),
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(0.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            -1.0,
+                                                                            -1.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              81.0,
+                                                                          height:
+                                                                              75.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            image:
+                                                                                DecorationImage(
+                                                                              fit: BoxFit.cover,
+                                                                              image: Image.asset(
+                                                                                'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                                                              ).image,
+                                                                            ),
+                                                                            gradient:
+                                                                                LinearGradient(
+                                                                              colors: [
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                                FlutterFlowTheme.of(context).primaryBackground
+                                                                              ],
+                                                                              stops: [
+                                                                                0.0,
+                                                                                0.05,
+                                                                                0.1,
+                                                                                0.25,
+                                                                                0.75,
+                                                                                0.9,
+                                                                                0.95,
+                                                                                1.0
+                                                                              ],
+                                                                              begin: AlignmentDirectional(1.0, 0.0),
+                                                                              end: AlignmentDirectional(-1.0, 0),
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(0.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.start,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                60.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                InkWell(
+                                                                                  splashColor: Colors.transparent,
+                                                                                  focusColor: Colors.transparent,
+                                                                                  hoverColor: Colors.transparent,
+                                                                                  highlightColor: Colors.transparent,
+                                                                                  onTap: () async {
+                                                                                    context.pushNamed(
+                                                                                      TeamPageWidget.routeName,
+                                                                                      queryParameters: {
+                                                                                        'teamRef': serializeParam(
+                                                                                          columnPostPostsRecord.teamRef,
+                                                                                          ParamType.DocumentReference,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                    );
+                                                                                  },
+                                                                                  child: Container(
+                                                                                    width: 45.0,
+                                                                                    height: 30.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                                                    ),
+                                                                                    child: ClipRRect(
+                                                                                      borderRadius: BorderRadius.circular(0.0),
+                                                                                      child: Image.network(
+                                                                                        rowTeamTeamsRecord.logo,
+                                                                                        width: 300.0,
+                                                                                        height: 200.0,
+                                                                                        fit: BoxFit.fitHeight,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Container(
+                                                                                  width: 260.0,
+                                                                                  height: 50.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).alternate,
+                                                                                  ),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                                                      children: [
+                                                                                        if (columnPostPostsRecord.choice1 == '')
+                                                                                          Align(
+                                                                                            alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                            child: InkWell(
+                                                                                              splashColor: Colors.transparent,
+                                                                                              focusColor: Colors.transparent,
+                                                                                              hoverColor: Colors.transparent,
+                                                                                              highlightColor: Colors.transparent,
+                                                                                              onTap: () async {
+                                                                                                context.pushNamed(
+                                                                                                  PostPageWidget.routeName,
+                                                                                                  queryParameters: {
+                                                                                                    'postRef': serializeParam(
+                                                                                                      columnMyPostsMyPostsRecord.posts,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                  extra: <String, dynamic>{
+                                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                                      hasTransition: true,
+                                                                                                      transitionType: PageTransitionType.scale,
+                                                                                                      alignment: Alignment.bottomCenter,
+                                                                                                      duration: Duration(milliseconds: 600),
+                                                                                                    ),
+                                                                                                  },
+                                                                                                );
+                                                                                              },
+                                                                                              child: Text(
+                                                                                                columnPostPostsRecord.title,
+                                                                                                textAlign: TextAlign.start,
+                                                                                                maxLines: 2,
+                                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                      font: GoogleFonts.poppins(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                      ),
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        if (columnPostPostsRecord.choice1 != '')
+                                                                                          Align(
+                                                                                            alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                            child: InkWell(
+                                                                                              splashColor: Colors.transparent,
+                                                                                              focusColor: Colors.transparent,
+                                                                                              hoverColor: Colors.transparent,
+                                                                                              highlightColor: Colors.transparent,
+                                                                                              onTap: () async {
+                                                                                                context.pushNamed(
+                                                                                                  TheSTeamPostPageWidget.routeName,
+                                                                                                  queryParameters: {
+                                                                                                    'postRef': serializeParam(
+                                                                                                      columnMyPostsMyPostsRecord.posts,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                  extra: <String, dynamic>{
+                                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                                      hasTransition: true,
+                                                                                                      transitionType: PageTransitionType.scale,
+                                                                                                      alignment: Alignment.bottomCenter,
+                                                                                                      duration: Duration(milliseconds: 600),
+                                                                                                    ),
+                                                                                                  },
+                                                                                                );
+                                                                                              },
+                                                                                              child: Text(
+                                                                                                columnPostPostsRecord.title,
+                                                                                                textAlign: TextAlign.start,
+                                                                                                maxLines: 2,
+                                                                                                style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                      font: GoogleFonts.poppins(
+                                                                                                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                        fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                      ),
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                SingleChildScrollView(
+                                                                              scrollDirection: Axis.horizontal,
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Icon(
+                                                                                            Icons.insert_comment_rounded,
+                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                            size: 20.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                        Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            columnPostPostsRecord.numComments.toString(),
+                                                                                            '0',
+                                                                                          ),
+                                                                                          maxLines: 1,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Icon(
+                                                                                            Icons.favorite_rounded,
+                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                            size: 20.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                        Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            columnPostPostsRecord.numLikes.toString(),
+                                                                                            '0',
+                                                                                          ),
+                                                                                          maxLines: 1,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Icon(
+                                                                                            Icons.heart_broken_rounded,
+                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                            size: 20.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                        Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            columnPostPostsRecord.numDislikes.toString(),
+                                                                                            '0',
+                                                                                          ),
+                                                                                          maxLines: 1,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Container(
+                                                                                            width: 15.0,
+                                                                                            height: 20.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              borderRadius: BorderRadius.circular(2.0),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            columnPostPostsRecord.numRedcards.toString(),
+                                                                                            '0',
+                                                                                          ),
+                                                                                          maxLines: 1,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                ),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                  Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      if (columnPostPostsRecord.description != '')
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Icon(
+                                                                                            Icons.text_fields_outlined,
+                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                            size: 20.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if (columnPostPostsRecord.audio != '')
+                                                                                        Icon(
+                                                                                          Icons.hearing_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 20.0,
+                                                                                        ),
+                                                                                      if (columnPostPostsRecord.video != '')
+                                                                                        Icon(
+                                                                                          Icons.video_collection_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 20.0,
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                StreamBuilder<UsersRecord>(
+                                                                              stream: UsersRecord.getDocument(columnPostPostsRecord.member!),
+                                                                              builder: (context, snapshot) {
+                                                                                // Customize what your widget looks like when it's loading.
+                                                                                if (!snapshot.hasData) {
+                                                                                  return Center(
+                                                                                    child: SizedBox(
+                                                                                      width: 50.0,
+                                                                                      height: 50.0,
+                                                                                      child: CircularProgressIndicator(
+                                                                                        valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                          FlutterFlowTheme.of(context).accent4,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }
+
+                                                                                final rowMemberUsersRecord = snapshot.data!;
+
+                                                                                return Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                  children: [
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                                                                                      child: Text(
+                                                                                        dateTimeFormat(
+                                                                                          "d/M H:mm",
+                                                                                          columnPostPostsRecord.createdTime!,
+                                                                                          locale: FFLocalizations.of(context).languageCode,
+                                                                                        ),
+                                                                                        maxLines: 1,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              font: GoogleFonts.poppins(
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    if (currentUserReference == columnPostPostsRecord.member)
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        child: FaIcon(
+                                                                                          FontAwesomeIcons.userCircle,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    if (currentUserReference == columnPostPostsRecord.member)
+                                                                                      InkWell(
+                                                                                        splashColor: Colors.transparent,
+                                                                                        focusColor: Colors.transparent,
+                                                                                        hoverColor: Colors.transparent,
+                                                                                        highlightColor: Colors.transparent,
+                                                                                        onTap: () async {
+                                                                                          await showModalBottomSheet(
+                                                                                            isScrollControlled: true,
+                                                                                            backgroundColor: Colors.transparent,
+                                                                                            enableDrag: false,
+                                                                                            context: context,
+                                                                                            builder: (context) {
+                                                                                              return GestureDetector(
+                                                                                                onTap: () {
+                                                                                                  FocusScope.of(context).unfocus();
+                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                },
+                                                                                                child: Padding(
+                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                  child: DeleteMyPostWidget(
+                                                                                                    myPostRef: columnMyPostsMyPostsRecord.reference,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ).then((value) => safeSetState(() {}));
+                                                                                        },
+                                                                                        child: Icon(
+                                                                                          Icons.delete_forever_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          size: 30.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    if ((currentUserDocument?.bests.toList() ?? []).contains(columnPostPostsRecord.member))
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        child: Icon(
+                                                                                          Icons.star_rounded,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 25.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          if ((valueOrDefault(currentUserDocument?.langage, '') == '') || (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                '6l5f5heq' /* Ecrit par */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          if ((valueOrDefault(currentUserDocument?.langage, '') == 'english') || (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'dj8qdibe' /* Written by */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          if (valueOrDefault(currentUserDocument?.langage, '') == 'deutsch')
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'kf84rqz7' /* Geschrieben von */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          if (valueOrDefault(currentUserDocument?.langage, '') == 'espanol')
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'hvxm4x3y' /* Escrito por */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          if (valueOrDefault(currentUserDocument?.langage, '') == 'italiano')
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'a3gr6wky' /* Scritto da */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          if (valueOrDefault(currentUserDocument?.langage, '') == 'portugues')
+                                                                                            Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'mv5y3rza' /* Escrito por */,
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    font: GoogleFonts.poppins(
+                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                    ),
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  ),
+                                                                                            ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                    Align(
+                                                                                      alignment: AlignmentDirectional(-1.0, 1.0),
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                        child: InkWell(
+                                                                                          splashColor: Colors.transparent,
+                                                                                          focusColor: Colors.transparent,
+                                                                                          hoverColor: Colors.transparent,
+                                                                                          highlightColor: Colors.transparent,
+                                                                                          onTap: () async {
+                                                                                            context.pushNamed(
+                                                                                              PublicProfilPageWidget.routeName,
+                                                                                              queryParameters: {
+                                                                                                'userRef': serializeParam(
+                                                                                                  columnPostPostsRecord.member,
+                                                                                                  ParamType.DocumentReference,
+                                                                                                ),
+                                                                                              }.withoutNulls,
+                                                                                              extra: <String, dynamic>{
+                                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                                  hasTransition: true,
+                                                                                                  transitionType: PageTransitionType.bottomToTop,
+                                                                                                  duration: Duration(milliseconds: 600),
+                                                                                                ),
+                                                                                              },
+                                                                                            );
+                                                                                          },
+                                                                                          child: Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              rowMemberUsersRecord.displayName,
+                                                                                              'NewUser',
+                                                                                            ),
+                                                                                            maxLines: 1,
+                                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                                  font: GoogleFonts.poppins(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                  ),
+                                                                                                  color: valueOrDefault<Color>(
+                                                                                                    rowMemberUsersRecord.color1,
+                                                                                                    FlutterFlowTheme.of(context).primaryText,
+                                                                                                  ),
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                          ),
+                                                                          Divider(
+                                                                            thickness:
+                                                                                1.0,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ],
+                                                                  ),
                                                                 ),
                                                               ],
-                                                            ),
-                                                          ),
+                                                            );
+                                                          },
                                                         ),
-                                                        Divider(
-                                                          thickness: 1.0,
-                                                          color: valueOrDefault<
-                                                              Color>(
-                                                            currentUserDocument
-                                                                ?.color2,
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryBackground,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                ],
-                                              );
-                                            },
-                                          ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                              ],
+                                            );
+                                          },
                                         ),
                                       ],
                                     ),

@@ -6,6 +6,25 @@ import 'package:flutter/material.dart';
 class ModifEventPageModel extends FlutterFlowModel<ModifEventPageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for ModifOddField widget.
+  FocusNode? modifOddFieldFocusNode;
+  TextEditingController? modifOddFieldTextController;
+  String? Function(BuildContext, String?)? modifOddFieldTextControllerValidator;
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl1 = '';
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
+
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl3 = '';
+
   // State field(s) for ScoreDomField widget.
   FocusNode? scoreDomFieldFocusNode;
   TextEditingController? scoreDomFieldTextController;
@@ -20,6 +39,9 @@ class ModifEventPageModel extends FlutterFlowModel<ModifEventPageWidget> {
 
   @override
   void dispose() {
+    modifOddFieldFocusNode?.dispose();
+    modifOddFieldTextController?.dispose();
+
     scoreDomFieldFocusNode?.dispose();
     scoreDomFieldTextController?.dispose();
 

@@ -29,11 +29,11 @@ class AddETeamPageIUDAdminModel
   // State field(s) for DropColor2 widget.
   String? dropColor2Value;
   FormFieldController<String>? dropColor2ValueController;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   TeamsRecord? eTeamFootRef;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   TeamsRecord? eTeamBasketRef;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   TeamsRecord? eTeamWarRef;
 
   @override

@@ -8,6 +8,7 @@ import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'list_surveys_news_model.dart';
 export 'list_surveys_news_model.dart';
 
@@ -621,123 +622,90 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Row(
+                                                      Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
                                                         children: [
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: Text(
-                                                              columnPostsPostsRecord
-                                                                  .title,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Container(
-                                                            width: 290.0,
-                                                            height: 50.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(5.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  TheSTeamPostPageWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'postRef':
+                                                                        serializeParam(
+                                                                      columnPostsPostsRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .scale,
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .bottomCenter,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              400),
+                                                                    ),
+                                                                  },
+                                                                );
+                                                              },
                                                               child: Text(
                                                                 columnPostsPostsRecord
-                                                                    .description,
-                                                                maxLines: 1,
+                                                                    .title,
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
+                                                                    .labelMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
-                                                            ),
-                                                          ),
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                TheSTeamPostPageWidget
-                                                                    .routeName,
-                                                                queryParameters:
-                                                                    {
-                                                                  'postRef':
-                                                                      serializeParam(
-                                                                    columnPostsPostsRecord
-                                                                        .reference,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .scale,
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .bottomCenter,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            400),
-                                                                  ),
-                                                                },
-                                                              );
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .remove_red_eye_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 30.0,
                                                             ),
                                                           ),
                                                         ],
@@ -747,7 +715,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
-                                                                    0.0,
+                                                                    5.0,
                                                                     10.0,
                                                                     0.0),
                                                         child:
@@ -768,13 +736,48 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          if (columnPostsPostsRecord.description != '')
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              child: Icon(
+                                                                                Icons.text_fields_outlined,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 20.0,
+                                                                              ),
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.audio != '')
+                                                                            Icon(
+                                                                              Icons.hearing_rounded,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 20.0,
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.video != '')
+                                                                            Icon(
+                                                                              Icons.video_collection_rounded,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 20.0,
+                                                                            ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
@@ -805,10 +808,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -820,7 +830,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -857,10 +867,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -872,7 +889,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -909,10 +926,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -958,10 +982,21 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -1086,112 +1121,82 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: Text(
-                                                              columnPostsPostsRecord
-                                                                  .title,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Container(
-                                                            width: 290.0,
-                                                            height: 50.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(5.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  TheSTeamPostPageWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'postRef':
+                                                                        serializeParam(
+                                                                      columnPostsPostsRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .scale,
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .bottomCenter,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              400),
+                                                                    ),
+                                                                  },
+                                                                );
+                                                              },
                                                               child: Text(
                                                                 columnPostsPostsRecord
-                                                                    .description,
-                                                                maxLines: 1,
+                                                                    .title,
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
+                                                                    .labelMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
-                                                            ),
-                                                          ),
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                TheSTeamPostPageWidget
-                                                                    .routeName,
-                                                                queryParameters:
-                                                                    {
-                                                                  'postRef':
-                                                                      serializeParam(
-                                                                    columnPostsPostsRecord
-                                                                        .reference,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .scale,
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .bottomCenter,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            400),
-                                                                  ),
-                                                                },
-                                                              );
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .remove_red_eye_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 30.0,
                                                             ),
                                                           ),
                                                         ],
@@ -1201,7 +1206,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
-                                                                    0.0,
+                                                                    5.0,
                                                                     10.0,
                                                                     0.0),
                                                         child:
@@ -1222,13 +1227,48 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          if (columnPostsPostsRecord.description != '')
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              child: Icon(
+                                                                                Icons.text_fields_outlined,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 20.0,
+                                                                              ),
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.audio != '')
+                                                                            Icon(
+                                                                              Icons.hearing_rounded,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 20.0,
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.video != '')
+                                                                            Icon(
+                                                                              Icons.video_collection_rounded,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 20.0,
+                                                                            ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
@@ -1259,10 +1299,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -1274,7 +1321,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -1311,10 +1358,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -1326,7 +1380,7 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
-                                                                            10.0,
+                                                                            5.0,
                                                                             0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -1363,10 +1417,17 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -1412,10 +1473,21 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
                                                                         ),
                                                                   ),
                                                                 ],

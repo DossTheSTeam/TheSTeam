@@ -8,8 +8,10 @@ import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'list_posts_model.dart';
 export 'list_posts_model.dart';
 
@@ -66,7 +68,7 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -448,15 +450,237 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                     ),
                                   ),
                                 ),
-                              Text(
-                                'Actualités',
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .displaySmall
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    if ((valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                '') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'francais'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'o42q87cv' /* Actualités */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if ((valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'english') ||
+                                        (valueOrDefault(
+                                                currentUserDocument?.langage,
+                                                '') ==
+                                            'american'))
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            '9lmtrinh' /* News */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'deutsch')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'gx1hp6xl' /* Neuigkeiten */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'espanol')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ghy3gc91' /* Noticias */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'italiano')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            'j2khc2cr' /* Notizie */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                            currentUserDocument?.langage, '') ==
+                                        'portugues')
+                                      AuthUserStreamWidget(
+                                        builder: (context) => Text(
+                                          FFLocalizations.of(context).getText(
+                                            '9wedhetg' /* Novidades */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -531,108 +755,10 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                   ),
                                 ],
                               ),
-                              if (valueOrDefault<bool>(
-                                      currentUserDocument?.helpNav, false) ==
-                                  true)
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 3.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 9.0, 0.0),
-                                            child: Text(
-                                              'Mes\néquipes',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 2,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 10.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: Text(
-                                              'Mes\nactus',
-                                              textAlign: TextAlign.center,
-                                              maxLines: 2,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 10.0,
-                                                        letterSpacing: 0.0,
-                                                        lineHeight: 1.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
                             ],
                           ),
                         ],
                       ),
-                      if (valueOrDefault<bool>(
-                              currentUserDocument?.helpNav, false) ==
-                          true)
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 3.0, 0.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Filtrer les actualités par sports et par ligues.',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 3,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          lineHeight: 1.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
                       if (valueOrDefault<bool>(
                               currentUserDocument?.esport, false) ==
                           false)
@@ -665,14 +791,30 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                           'sports.meca'
                                         ]),
                                         optionLabels: [
-                                          'Football',
-                                          'Basketball',
-                                          'Tennis',
-                                          'Hockey',
-                                          'MMA',
-                                          'Boxe',
-                                          'Rugby',
-                                          'Sports Méca.'
+                                          FFLocalizations.of(context).getText(
+                                            'yr462l5o' /* Football */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'gyj0pzl4' /* Basketball */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'q1r6nhef' /* Tennis */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '0wixg118' /* Hockey */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'a3qx4440' /* MMA */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'nirk6ust' /* Boxe */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '67pkborr' /* Rugby */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'lqtsxliy' /* Sports Méca. */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -686,10 +828,30 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Sports',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'pd76owzh' /* Sports */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -768,15 +930,42 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                   ''
                                                 ]),
                                                 optionLabels: [
-                                                  'Premier League',
-                                                  'LaLiga',
-                                                  'Bundesliga',
-                                                  'Serie A',
-                                                  'Ligue 1',
-                                                  'Autres',
-                                                  'Pays Football',
-                                                  'Autres - France',
-                                                  'Ligues'
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'i8tzgxy2' /* Premier League */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'x7zxzviv' /* LaLiga */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yii10666' /* Bundesliga */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8uo6spnp' /* Serie A */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zkevlgzz' /* Ligue 1 */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'z00gmfga' /* Autres */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '2g9rtwv5' /* Pays Football */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'iq5sbjw7' /* Autres - France */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mqk4vsds' /* Ligues */,
+                                                  )
                                                 ],
                                                 onChanged: (val) async {
                                                   safeSetState(() => _model
@@ -788,14 +977,39 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 },
                                                 width: 170.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Ligues',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'frnngwdc' /* Ligues */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -830,7 +1044,16 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 ),
                                                 options: List<String>.from(
                                                     ['nba', '']),
-                                                optionLabels: ['NBA', 'Ligues'],
+                                                optionLabels: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'a48manj3' /* NBA */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zgaox8ad' /* Ligues */,
+                                                  )
+                                                ],
                                                 onChanged: (val) async {
                                                   safeSetState(() => _model
                                                           .dropLigueBasketValue =
@@ -842,14 +1065,39 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 },
                                                 width: 180.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Ligues',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ngxnnf1o' /* Ligues */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -885,9 +1133,18 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 options: List<String>.from(
                                                     ['atp', 'wta', '']),
                                                 optionLabels: [
-                                                  'ATP',
-                                                  'WTA',
-                                                  'Ligues'
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '2cs4chjw' /* ATP */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yy7lmo7o' /* WTA */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '2h37ay39' /* Ligues */,
+                                                  )
                                                 ],
                                                 onChanged: (val) async {
                                                   safeSetState(() => _model
@@ -900,14 +1157,39 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 },
                                                 width: 180.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Ligues',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '3x2sqlxp' /* Ligues */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -949,12 +1231,30 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                   ''
                                                 ]),
                                                 optionLabels: [
-                                                  'Glace NHL',
-                                                  'Gazon Elite H',
-                                                  'Gazon Elite F',
-                                                  'Salle Elite H',
-                                                  'Salle Elite F',
-                                                  'Ligues'
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'xmli3dj1' /* Glace NHL */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8axu9hdj' /* Gazon Elite H */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vi4h2ikj' /* Gazon Elite F */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '9xjzuqnp' /* Salle Elite H */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'u5925zxp' /* Salle Elite F */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '5spd689g' /* Ligues */,
+                                                  )
                                                 ],
                                                 onChanged: (val) async {
                                                   safeSetState(() => _model
@@ -967,14 +1267,39 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                 },
                                                 width: 180.0,
                                                 height: 50.0,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Ligues',
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'kgl1qkuj' /* Ligues */,
+                                                ),
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -1024,15 +1349,42 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                     ''
                                                   ]),
                                                   optionLabels: [
-                                                    'Mouche - 57 kg',
-                                                    'Coq - 61 kg',
-                                                    'Plume - 66 kg',
-                                                    'Léger - 70 kg',
-                                                    'Mi-Moyen- 77 kg',
-                                                    'Moyen- 84 kg',
-                                                    'MI-Lourd - 93 kg',
-                                                    'Lourd - 120 kg',
-                                                    'Ligues'
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ec9jwls3' /* Mouche - 57 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '4w92vpo7' /* Coq - 61 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'uf0qg7hr' /* Plume - 66 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '0a9xr575' /* Léger - 70 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '464v6b98' /* Mi-Moyen- 77 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'dyiacbdb' /* Moyen- 84 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '0v89c6b3' /* MI-Lourd - 93 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'cd0vkqgr' /* Lourd - 120 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '59fed2uq' /* Ligues */,
+                                                    )
                                                   ],
                                                   onChanged: (val) async {
                                                     safeSetState(() => _model
@@ -1049,10 +1401,36 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Ligues',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '9if80k5g' /* Ligues */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -1106,15 +1484,42 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                     'ligues'
                                                   ]),
                                                   optionLabels: [
-                                                    'Mouche - 52 kg',
-                                                    'Plume - 57 kg',
-                                                    'Léger - 63 kg',
-                                                    'Mi-Moyen- 69 kg',
-                                                    'Moyen- 75 kg',
-                                                    'Mi-Lourd - 81 kg',
-                                                    'Lourd - 91 kg',
-                                                    'Super Lourd + 91 kg',
-                                                    'Ligues'
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'i8o3lghl' /* Mouche - 52 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '3y4it68n' /* Plume - 57 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'f42mdtrt' /* Léger - 63 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '6gc876vf' /* Mi-Moyen- 69 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'gl9m64mc' /* Moyen- 75 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'g5l1lbm6' /* Mi-Lourd - 81 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'mohh1bh1' /* Lourd - 91 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'uzib9dqc' /* Super Lourd + 91 kg */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'e3yp530t' /* Ligues */,
+                                                    )
                                                   ],
                                                   onChanged: (val) async {
                                                     safeSetState(() => _model
@@ -1131,10 +1536,36 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Ligues',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'n745tb3c' /* Ligues */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -1182,9 +1613,18 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                     ''
                                                   ]),
                                                   optionLabels: [
-                                                    'Top 14',
-                                                    'Pays Rugby',
-                                                    'Ligues'
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'prk1ws1v' /* Top 14 */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '4kmscg17' /* Pays Rugby */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'id5v9cod' /* Ligues */,
+                                                    )
                                                   ],
                                                   onChanged: (val) async {
                                                     safeSetState(() => _model
@@ -1201,10 +1641,36 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Ligues',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'gvc3baq4' /* Ligues */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -1254,11 +1720,26 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                     ''
                                                   ]),
                                                   optionLabels: [
-                                                    'Formule 1',
-                                                    'Moto GP',
-                                                    'World Superbike',
-                                                    'Moto GP',
-                                                    'Ligues'
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ecyt7f35' /* Formule 1 */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ao47w12q' /* Moto GP */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'mqs9sdh6' /* World Superbike */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'c6x9q41e' /* Moto GP */,
+                                                    ),
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ik0cw4z6' /* Ligues */,
+                                                    )
                                                   ],
                                                   onChanged: (val) async {
                                                     safeSetState(() => _model
@@ -1275,10 +1756,36 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
-                                                  hintText: 'Ligues',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '7nr14tla' /* Ligues */,
+                                                  ),
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -1342,9 +1849,15 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                           'esport.war'
                                         ]),
                                         optionLabels: [
-                                          'E Sport Football',
-                                          'E Sport Basketball',
-                                          'E Sport War'
+                                          FFLocalizations.of(context).getText(
+                                            '420q9502' /* E Sport Football */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '0uojcayc' /* E Sport Basketball */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '6sshgp5x' /* E Sport War */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -1358,10 +1871,30 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'E Sports',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'ucxd963a' /* E Sports */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1418,10 +1951,18 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                           'amateur'
                                         ]),
                                         optionLabels: [
-                                          'Légende',
-                                          'Champion',
-                                          'Pro',
-                                          'Amateur'
+                                          FFLocalizations.of(context).getText(
+                                            '9y5n6o07' /* Légende */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'uml07w3h' /* Champion */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ehhd9fo0' /* Pro */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'gz0xb4xe' /* Amateur */,
+                                          )
                                         ],
                                         onChanged: (val) async {
                                           safeSetState(() =>
@@ -1435,10 +1976,30 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'E Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'j5geqjti' /* E Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1478,499 +2039,421 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                       ),
                       if (_model.showSportFilter != null &&
                           _model.showSportFilter != '')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 5.0, 5.0, 0.0),
-                          child: StreamBuilder<List<PostsRecord>>(
-                            stream: queryPostsRecord(
-                              queryBuilder: (postsRecord) => postsRecord
-                                  .where(
-                                    'league_value',
-                                    isEqualTo: _model.showLigueFilter != ''
-                                        ? _model.showLigueFilter
-                                        : null,
-                                  )
-                                  .where(
-                                    'sport_value',
-                                    isEqualTo: _model.showSportFilter != ''
-                                        ? _model.showSportFilter
-                                        : null,
-                                  )
-                                  .orderBy('created_time', descending: true),
-                              limit: 30,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).accent4,
-                                      ),
+                        StreamBuilder<List<PostsRecord>>(
+                          stream: queryPostsRecord(
+                            queryBuilder: (postsRecord) => postsRecord
+                                .where(
+                                  'league_value',
+                                  isEqualTo: _model.showLigueFilter != ''
+                                      ? _model.showLigueFilter
+                                      : null,
+                                )
+                                .where(
+                                  'sport_value',
+                                  isEqualTo: _model.showSportFilter != ''
+                                      ? _model.showSportFilter
+                                      : null,
+                                )
+                                .orderBy('created_time', descending: true),
+                            limit: 30,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).accent4,
                                     ),
                                   ),
-                                );
-                              }
-                              List<PostsRecord> columnPostsPostsRecordList =
-                                  snapshot.data!;
+                                ),
+                              );
+                            }
+                            List<PostsRecord> columnPostsPostsRecordList =
+                                snapshot.data!;
 
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: List.generate(
-                                    columnPostsPostsRecordList.length,
-                                    (columnPostsIndex) {
-                                  final columnPostsPostsRecord =
-                                      columnPostsPostsRecordList[
-                                          columnPostsIndex];
-                                  return Visibility(
-                                    visible: _model.showSportFilter != null &&
-                                        _model.showSportFilter != '',
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 5.0),
-                                      child: StreamBuilder<TeamsRecord>(
-                                        stream: TeamsRecord.getDocument(
-                                            columnPostsPostsRecord.teamRef!),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent4,
-                                                  ),
-                                                ),
+                            return Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: List.generate(
+                                  columnPostsPostsRecordList.length,
+                                  (columnPostsIndex) {
+                                final columnPostsPostsRecord =
+                                    columnPostsPostsRecordList[
+                                        columnPostsIndex];
+                                return Visibility(
+                                  visible: _model.showSportFilter != null &&
+                                      _model.showSportFilter != '',
+                                  child: StreamBuilder<TeamsRecord>(
+                                    stream: TeamsRecord.getDocument(
+                                        columnPostsPostsRecord.teamRef!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
                                               ),
-                                            );
-                                          }
+                                            ),
+                                          ),
+                                        );
+                                      }
 
-                                          final columnTeamTeamsRecord =
-                                              snapshot.data!;
+                                      final columnTeamTeamsRecord =
+                                          snapshot.data!;
 
-                                          return Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              if (!(currentUserDocument?.blocks
-                                                          .toList() ??
-                                                      [])
-                                                  .contains(
-                                                      columnPostsPostsRecord
-                                                          .member))
-                                                AuthUserStreamWidget(
-                                                  builder: (context) => Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (!columnTeamTeamsRecord
-                                                          .blocks
-                                                          .contains(
-                                                              currentUserReference))
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (!(currentUserDocument?.blocks
+                                                      .toList() ??
+                                                  [])
+                                              .contains(columnPostsPostsRecord
+                                                  .member))
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  if (!columnTeamTeamsRecord
+                                                      .blocks
+                                                      .contains(
+                                                          currentUserReference))
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          height: 93.0,
+                                                          child: Stack(
+                                                            children: [
+                                                              if (columnPostsPostsRecord
+                                                                          .image !=
+                                                                      '')
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          -1.0,
+                                                                          -1.0),
+                                                                  child:
+                                                                      Container(
+                                                                    width: 79.0,
+                                                                    height:
+                                                                        75.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      image:
+                                                                          DecorationImage(
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                        image:
+                                                                            CachedNetworkImageProvider(
+                                                                          columnPostsPostsRecord
+                                                                              .image,
+                                                                        ),
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              10.0),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        -1.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 80.0,
+                                                                  height: 75.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    image:
+                                                                        DecorationImage(
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                      image: Image
+                                                                          .asset(
+                                                                        'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                                                      ).image,
+                                                                    ),
+                                                                    gradient:
+                                                                        LinearGradient(
+                                                                      colors: [
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground
+                                                                      ],
+                                                                      stops: [
+                                                                        0.0,
+                                                                        0.1,
+                                                                        0.2,
+                                                                        0.35,
+                                                                        0.65,
+                                                                        0.8,
+                                                                        0.9,
+                                                                        1.0
+                                                                      ],
+                                                                      begin: AlignmentDirectional(
                                                                           0.0,
-                                                                          10.0,
+                                                                          -1.0),
+                                                                      end: AlignmentDirectional(
+                                                                          0,
+                                                                          1.0),
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        -1.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 81.0,
+                                                                  height: 75.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    image:
+                                                                        DecorationImage(
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                      image: Image
+                                                                          .asset(
+                                                                        'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                                                      ).image,
+                                                                    ),
+                                                                    gradient:
+                                                                        LinearGradient(
+                                                                      colors: [
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground
+                                                                      ],
+                                                                      stops: [
+                                                                        0.0,
+                                                                        0.05,
+                                                                        0.1,
+                                                                        0.25,
+                                                                        0.75,
+                                                                        0.9,
+                                                                        0.95,
+                                                                        1.0
+                                                                      ],
+                                                                      begin: AlignmentDirectional(
+                                                                          1.0,
                                                                           0.0),
-                                                              child: Row(
+                                                                      end: AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0),
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .start,
+                                                                        .spaceBetween,
                                                                 children: [
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
+                                                                            60.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          45.0,
-                                                                      height:
-                                                                          30.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(0.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          columnTeamTeamsRecord
-                                                                              .logo,
-                                                                          width:
-                                                                              300.0,
-                                                                          height:
-                                                                              200.0,
-                                                                          fit: BoxFit
-                                                                              .fitHeight,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  if (!columnTeamTeamsRecord
-                                                                      .blocks
-                                                                      .contains(
-                                                                          currentUserReference))
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            TeamPageWidget.routeName,
-                                                                            queryParameters:
-                                                                                {
-                                                                              'teamRef': serializeParam(
-                                                                                columnTeamTeamsRecord.reference,
-                                                                                ParamType.DocumentReference,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.bottomToTop,
-                                                                                duration: Duration(milliseconds: 600),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        },
-                                                                        child:
-                                                                            Text(
-                                                                          columnTeamTeamsRecord
-                                                                              .name,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                color: valueOrDefault<Color>(
-                                                                                  columnTeamTeamsRecord.color1,
-                                                                                  FlutterFlowTheme.of(context).primaryText,
-                                                                                ),
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    columnPostsPostsRecord
-                                                                        .title,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    maxLines: 2,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Container(
-                                                                  width: 290.0,
-                                                                  height: 50.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            5.0),
-                                                                    child: Text(
-                                                                      columnPostsPostsRecord
-                                                                          .description,
-                                                                      maxLines:
-                                                                          2,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Poppins',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        PostPageWidget
-                                                                            .routeName,
-                                                                        queryParameters:
-                                                                            {
-                                                                          'postRef':
-                                                                              serializeParam(
-                                                                            columnPostsPostsRecord.reference,
-                                                                            ParamType.DocumentReference,
-                                                                          ),
-                                                                        }.withoutNulls,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.scale,
-                                                                            alignment:
-                                                                                Alignment.bottomCenter,
-                                                                            duration:
-                                                                                Duration(milliseconds: 600),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .remove_red_eye_outlined,
-                                                                      color: valueOrDefault<
-                                                                          Color>(
-                                                                        columnTeamTeamsRecord
-                                                                            .color1,
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                      ),
-                                                                      size:
-                                                                          30.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          5.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                              child:
-                                                                  SingleChildScrollView(
-                                                                scrollDirection:
-                                                                    Axis.horizontal,
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.insert_comment_rounded,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 20.0,
-                                                                            ),
-                                                                          ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              columnPostsPostsRecord.numComments.toString(),
-                                                                              '0',
-                                                                            ),
-                                                                            maxLines:
-                                                                                1,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.favorite_rounded,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 20.0,
-                                                                            ),
-                                                                          ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              columnPostsPostsRecord.numLikes.toString(),
-                                                                              '0',
-                                                                            ),
-                                                                            maxLines:
-                                                                                1,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.heart_broken_rounded,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 20.0,
-                                                                            ),
-                                                                          ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              columnPostsPostsRecord.numDislikes.toString(),
-                                                                              '0',
-                                                                            ),
-                                                                            maxLines:
-                                                                                1,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Row(
+                                                                    child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        if (!columnTeamTeamsRecord
+                                                                            .blocks
+                                                                            .contains(currentUserReference))
+                                                                          InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              context.pushNamed(
+                                                                                TeamPageWidget.routeName,
+                                                                                queryParameters: {
+                                                                                  'teamRef': serializeParam(
+                                                                                    columnTeamTeamsRecord.reference,
+                                                                                    ParamType.DocumentReference,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                    hasTransition: true,
+                                                                                    transitionType: PageTransitionType.bottomToTop,
+                                                                                    duration: Duration(milliseconds: 600),
+                                                                                  ),
+                                                                                },
+                                                                              );
+                                                                            },
+                                                                            child:
+                                                                                Container(
+                                                                              width: 45.0,
+                                                                              height: 30.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).alternate,
+                                                                              ),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                                child: Image.network(
+                                                                                  columnTeamTeamsRecord.logo,
+                                                                                  width: 300.0,
+                                                                                  height: 200.0,
+                                                                                  fit: BoxFit.fitHeight,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        Container(
+                                                                          width:
+                                                                              260.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                              children: [
+                                                                                Align(
+                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                  child: InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      context.pushNamed(
+                                                                                        PostPageWidget.routeName,
+                                                                                        queryParameters: {
+                                                                                          'postRef': serializeParam(
+                                                                                            columnPostsPostsRecord.reference,
+                                                                                            ParamType.DocumentReference,
+                                                                                          ),
+                                                                                        }.withoutNulls,
+                                                                                        extra: <String, dynamic>{
+                                                                                          kTransitionInfoKey: TransitionInfo(
+                                                                                            hasTransition: true,
+                                                                                            transitionType: PageTransitionType.scale,
+                                                                                            alignment: Alignment.bottomCenter,
+                                                                                            duration: Duration(milliseconds: 600),
+                                                                                          ),
+                                                                                        },
+                                                                                      );
+                                                                                    },
+                                                                                    child: Text(
+                                                                                      columnPostsPostsRecord.title,
+                                                                                      textAlign: TextAlign.start,
+                                                                                      maxLines: 2,
+                                                                                      style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                            font: GoogleFonts.poppins(
+                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                            ),
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            5.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -1979,66 +2462,208 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                                                               5.0,
                                                                               0.0),
                                                                           child:
-                                                                              Container(
-                                                                            width:
-                                                                                15.0,
-                                                                            height:
-                                                                                20.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              borderRadius: BorderRadius.circular(2.0),
-                                                                            ),
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                child: Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    if (columnPostsPostsRecord.description != '')
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        child: Icon(
+                                                                                          Icons.text_fields_outlined,
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          size: 20.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    if (columnPostsPostsRecord.audio != '')
+                                                                                      Icon(
+                                                                                        Icons.hearing_rounded,
+                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                        size: 20.0,
+                                                                                      ),
+                                                                                    if (columnPostsPostsRecord.video != '')
+                                                                                      Icon(
+                                                                                        Icons.video_collection_rounded,
+                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                        size: 20.0,
+                                                                                      ),
+                                                                                  ],
+                                                                                ),
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.insert_comment_rounded,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  size: 20.0,
+                                                                                ),
+                                                                              ),
+                                                                              Text(
+                                                                                valueOrDefault<String>(
+                                                                                  columnPostsPostsRecord.numComments.toString(),
+                                                                                  '0',
+                                                                                ),
+                                                                                maxLines: 1,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            columnPostsPostsRecord.numRedcards.toString(),
-                                                                            '0',
-                                                                          ),
-                                                                          maxLines:
-                                                                              1,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.favorite_rounded,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  size: 20.0,
+                                                                                ),
                                                                               ),
+                                                                              Text(
+                                                                                valueOrDefault<String>(
+                                                                                  columnPostsPostsRecord.numLikes.toString(),
+                                                                                  '0',
+                                                                                ),
+                                                                                maxLines: 1,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                child: Icon(
+                                                                                  Icons.heart_broken_rounded,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  size: 20.0,
+                                                                                ),
+                                                                              ),
+                                                                              Text(
+                                                                                valueOrDefault<String>(
+                                                                                  columnPostsPostsRecord.numDislikes.toString(),
+                                                                                  '0',
+                                                                                ),
+                                                                                maxLines: 1,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              child: Container(
+                                                                                width: 15.0,
+                                                                                height: 20.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  borderRadius: BorderRadius.circular(2.0),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Text(
+                                                                              valueOrDefault<String>(
+                                                                                columnPostsPostsRecord.numRedcards.toString(),
+                                                                                '0',
+                                                                              ),
+                                                                              maxLines: 1,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    font: GoogleFonts.poppins(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                  ),
+                                                                  Divider(
+                                                                    thickness:
+                                                                        1.0,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnTeamTeamsRecord
+                                                                          .color2,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ),
-                                                            Divider(
-                                                              thickness: 1.0,
-                                                              color:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                columnTeamTeamsRecord
-                                                                    .color2,
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                              ),
-                                                            ),
-                                                          ],
+                                                            ],
+                                                          ),
                                                         ),
-                                                    ],
-                                                  ),
-                                                ),
-                                            ],
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  );
-                                }),
-                              );
-                            },
-                          ),
+                                                      ],
+                                                    ),
+                                                ],
+                                              ),
+                                            ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                );
+                              }),
+                            );
+                          },
                         ),
                       if (_model.showSportFilter == null ||
                           _model.showSportFilter == '')
@@ -2088,15 +2713,298 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Actus, Conseils, Stratégies',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                letterSpacing: 0.0,
-                                              ),
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              ListAdvicesWidget.routeName,
+                                              queryParameters: {
+                                                'teamRef': serializeParam(
+                                                  columnTeamsRecord?.reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'lwbcr4rj' /* Actus, Conseils, Stratégies */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '3jl717ji' /* News, Advice, Strategies */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qywjbx0o' /* Nachrichten, Ratschläge,
+Strat... */
+                                                      ,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'l44pusj2' /* Noticias, consejos,
+Estrategia... */
+                                                      ,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'vwntaaeu' /* Notizie, consigli, strategie */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'j0td1dxc' /* Notícias, Conselhos,
+Estratégi... */
+                                                      ,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Padding(
@@ -2138,15 +3046,292 @@ class _ListPostsWidgetState extends State<ListPostsWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Sondages',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                letterSpacing: 0.0,
-                                              ),
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              ListSurveysNewsWidget.routeName,
+                                              queryParameters: {
+                                                'teamRef': serializeParam(
+                                                  columnTeamsRecord?.reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              if ((valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.langage,
+                                                              '') ==
+                                                          '') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'francais'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'v8nvew6e' /* Sondages */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'english') ||
+                                                  (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      'american'))
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'll22gzev' /* Polls */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'deutsch')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qn906x7w' /* Umfragen */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'espanol')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '2eijqen7' /* Centro */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'italiano')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '85ey9ojs' /* Sondaggi */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'portugues')
+                                                AuthUserStreamWidget(
+                                                  builder: (context) => Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'e9nr36ro' /* Enquetes */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Padding(

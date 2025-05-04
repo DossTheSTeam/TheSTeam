@@ -7,18 +7,20 @@ import 'package:just_audio/just_audio.dart';
 import 'package:record/record.dart';
 
 class EventPageModel extends FlutterFlowModel<EventPageWidget> {
+  ///  Local state fields for this page.
+
+  bool? showComment = false;
+
+  bool? showImage = false;
+
+  bool? showAudio = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CartRecord? cartRef;
-  AudioPlayer? soundPlayer;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
-
   AudioRecorder? audioRecorder;
-  String? audioSport;
+  String? audio;
   FFUploadedFile recordedFileBytes =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for CommField widget.
@@ -27,6 +29,12 @@ class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentRef;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
+  AudioPlayer? soundPlayer;
 
   @override
   void initState(BuildContext context) {}

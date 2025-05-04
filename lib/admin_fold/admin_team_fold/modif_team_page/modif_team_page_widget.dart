@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/e_teams_fold/color_team/color_team_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'modif_team_page_model.dart';
 export 'modif_team_page_model.dart';
 
@@ -199,13 +201,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     50.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Modifs Team',
+                                  FFLocalizations.of(context).getText(
+                                    'zt2zm79e' /* Modifs Team */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -216,68 +235,76 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).warning,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                           ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Text(
-                              'Modifier le nom',
-                              maxLines: 1,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 6.0, 0.0),
+                                child: Container(
+                                  width: 65.0,
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                   ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: Container(
-                                    width: 65.0,
-                                    height: 50.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(3.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(0.0),
-                                        child: Image.network(
-                                          modifTeamPageTeamsRecord.logo,
-                                          width: 300.0,
-                                          height: 200.0,
-                                          fit: BoxFit.scaleDown,
-                                        ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(3.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(0.0),
+                                      child: Image.network(
+                                        modifTeamPageTeamsRecord.logo,
+                                        width: 300.0,
+                                        height: 200.0,
+                                        fit: BoxFit.scaleDown,
                                       ),
                                     ),
                                   ),
                                 ),
-                                Text(
-                                  modifTeamPageTeamsRecord.name,
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: modifTeamPageTeamsRecord.color1,
-                                        letterSpacing: 0.0,
+                              ),
+                              Text(
+                                modifTeamPageTeamsRecord.name,
+                                maxLines: 1,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
-                                ),
-                              ],
-                            ),
+                                      color: modifTeamPageTeamsRecord.color1,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ],
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
@@ -293,12 +320,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'Team Name',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '6inuu7or' /* Team Name */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -340,8 +387,25 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                     validator: _model
                                         .teamNameFieldTextControllerValidator
@@ -355,15 +419,28 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  70.0, 20.0, 0.0, 0.0),
+                                  70.0, 10.0, 0.0, 0.0),
                               child: Text(
                                 modifTeamPageTeamsRecord.value,
                                 maxLines: 1,
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -382,12 +459,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'teamvalue',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '7yjd96sc' /* teamvalue */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -429,8 +526,25 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                     validator: _model
                                         .teamvalueFieldTextControllerValidator
@@ -440,451 +554,201 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 16.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        await widget.teamRef!
-                                            .update(createTeamsRecordData(
-                                          name: _model
-                                              .teamNameFieldTextController.text,
-                                          value: _model
-                                              .teamvalueFieldTextController
-                                              .text,
-                                        ));
-                                        safeSetState(() {
-                                          _model.teamNameFieldTextController
-                                              ?.clear();
-                                          _model.teamvalueFieldTextController
-                                              ?.clear();
-                                        });
-                                      },
-                                      text: 'Valider',
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 16.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await widget.teamRef!
+                                          .update(createTeamsRecordData(
+                                        name: _model
+                                            .teamNameFieldTextController.text,
+                                        value: _model
+                                            .teamvalueFieldTextController.text,
+                                      ));
+                                      safeSetState(() {
+                                        _model.teamNameFieldTextController
+                                            ?.clear();
+                                        _model.teamvalueFieldTextController
+                                            ?.clear();
+                                      });
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'yxw3tuxp' /* Valider */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: 130.0,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              letterSpacing: 0.0,
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
                                             ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .success,
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context)
+                                            color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           Divider(
                             thickness: 2.0,
                             color: modifTeamPageTeamsRecord.color2,
                           ),
-                          Text(
-                            'Changer les couleurs',
-                            maxLines: 1,
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'yk4k8dln' /* Changer les couleurs */,
                                 ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Couleur 1...',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 6,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 20.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropColor1ValueController1 ??=
-                                            FormFieldController<String>(
-                                      _model.dropColor1Value1 ??= '',
-                                    ),
-                                    options: List<String>.from([
-                                      '#FFFF00',
-                                      '#00FF00',
-                                      '#FFB6C1',
-                                      '#00FFFF',
-                                      '#6CABDD',
-                                      '#FF00FF',
-                                      '#FF8C00',
-                                      '#FF0000',
-                                      '#9370DB',
-                                      '#0000FF',
-                                      '#3CB371',
-                                      '#008B8B',
-                                      '#008000',
-                                      '#0000CD',
-                                      '#8B008B',
-                                      '#DC143C',
-                                      '#A0522D',
-                                      '#808080',
-                                      '#C0C0C0',
-                                      '#FFD700',
-                                      '#B22222',
-                                      '#860038'
-                                    ]),
-                                    optionLabels: [
-                                      'Jaune',
-                                      'Vert 1',
-                                      'Rose',
-                                      'Cyan 1',
-                                      'Ciel',
-                                      'Magenta',
-                                      'Orange',
-                                      'Rouge 1',
-                                      'Violet',
-                                      'Bleu 1',
-                                      'Vert 2',
-                                      'Cyan 2',
-                                      'Vert 3',
-                                      'Bleu 2',
-                                      'Magenta 2',
-                                      'Rouge 2',
-                                      'Marron',
-                                      'Gris 2',
-                                      'Gris 1',
-                                      'Gold',
-                                      'Rouge 3',
-                                      'Bordeaux'
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.dropColor1Value1 = val),
-                                    width: 150.0,
-                                    height: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText: 'Couleurs',
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 0.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: false,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await modifTeamPageTeamsRecord.reference
-                                          .update(createTeamsRecordData(
-                                        color1: colorFromCssString(
-                                          _model.dropColor1Value1!,
-                                          defaultColor: Colors.black,
-                                        ),
-                                      ));
-                                    },
-                                    child: Icon(
-                                      Icons.send_rounded,
-                                      color: colorFromCssString(
-                                        _model.dropColor1Value1!,
-                                        defaultColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                maxLines: 1,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
-                                      size: 24.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontStyle,
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await modifTeamPageTeamsRecord.reference
-                                          .update({
-                                        ...mapToFirestore(
-                                          {
-                                            'color1': FieldValue.delete(),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 20.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
                                           },
-                                        ),
-                                      });
-                                    },
-                                    child: Icon(
-                                      Icons.delete_forever_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Couleur 2..',
-                                      textAlign: TextAlign.center,
-                                      maxLines: 6,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ColorTeamWidget(
+                                              teamRef: widget.teamRef!,
+                                            ),
                                           ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  child: Icon(
+                                    Icons.invert_colors_rounded,
+                                    color: valueOrDefault<Color>(
+                                      modifTeamPageTeamsRecord.color1,
+                                      FlutterFlowTheme.of(context).primaryText,
                                     ),
+                                    size: 30.0,
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 20.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropColor1ValueController2 ??=
-                                            FormFieldController<String>(
-                                      _model.dropColor1Value2 ??= '',
-                                    ),
-                                    options: List<String>.from([
-                                      '#FFFF00',
-                                      '#00FF00',
-                                      '#FFB6C1',
-                                      '#00FFFF',
-                                      '#6CABDD',
-                                      '#FF00FF',
-                                      '#FF8C00',
-                                      '#FF0000',
-                                      '#9370DB',
-                                      '#0000FF',
-                                      '#3CB371',
-                                      '#008B8B',
-                                      '#008000',
-                                      '#0000CD',
-                                      '#8B008B',
-                                      '#DC143C',
-                                      '#A0522D',
-                                      '#808080',
-                                      '#C0C0C0',
-                                      '#FFD700',
-                                      '#B22222',
-                                      '#860038'
-                                    ]),
-                                    optionLabels: [
-                                      'Jaune',
-                                      'Vert 1',
-                                      'Rose',
-                                      'Cyan 1',
-                                      'Ciel',
-                                      'Magenta',
-                                      'Orange',
-                                      'Rouge 1',
-                                      'Violet',
-                                      'Bleu 1',
-                                      'Vert 2',
-                                      'Cyan 2',
-                                      'Vert 3',
-                                      'Bleu 2',
-                                      'Magenta 2',
-                                      'Rouge 2',
-                                      'Marron',
-                                      'Gris 2',
-                                      'Gris 1',
-                                      'Gold',
-                                      'Rouge 3',
-                                      'Bordeaux'
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.dropColor1Value2 = val),
-                                    width: 150.0,
-                                    height: 40.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText: 'Couleurs',
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 0.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: false,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 10.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await modifTeamPageTeamsRecord.reference
-                                          .update(createTeamsRecordData(
-                                        color2: colorFromCssString(
-                                          _model.dropColor1Value2!,
-                                          defaultColor: Colors.black,
-                                        ),
-                                      ));
-                                    },
-                                    child: Icon(
-                                      Icons.send_rounded,
-                                      color: colorFromCssString(
-                                        _model.dropColor1Value2!,
-                                        defaultColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                      ),
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await modifTeamPageTeamsRecord.reference
-                                          .update({
-                                        ...mapToFirestore(
-                                          {
-                                            'color2': FieldValue.delete(),
-                                          },
-                                        ),
-                                      });
-                                    },
-                                    child: Icon(
-                                      Icons.delete_forever_rounded,
-                                      color: FlutterFlowTheme.of(context).error,
-                                      size: 30.0,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
+                          ),
+                          Divider(
+                            thickness: 2.0,
+                            color: modifTeamPageTeamsRecord.color2,
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Text(
-                              'Changer le logo',
-                              maxLines: 1,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 0.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'xxodt969' /* Changer le logo */,
+                                  ),
+                                  maxLines: 1,
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
+                                      ),
+                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 6.0, 0.0),
@@ -983,64 +847,77 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 16.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        await widget.teamRef!
-                                            .update(createTeamsRecordData(
-                                          logo: _model.uploadedFileUrl1,
-                                        ));
-                                        context.safePop();
-                                      },
-                                      text: 'Valider',
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 16.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await widget.teamRef!
+                                          .update(createTeamsRecordData(
+                                        logo: _model.uploadedFileUrl1,
+                                      ));
+                                      context.safePop();
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      '6rg9rnq9' /* Valider */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: 130.0,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              letterSpacing: 0.0,
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
                                             ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .success,
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context)
+                                            color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           if ((modifTeamPageTeamsRecord.sportValue !=
                                   'football') &&
@@ -1052,28 +929,49 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Changer la photo de profil',
-                                    maxLines: 1,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
+                                Divider(
+                                  thickness: 2.0,
+                                  color: modifTeamPageTeamsRecord.color2,
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0.0, 0.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'avjvzh9a' /* Changer la
+photo de profil */
+                                          ,
+                                        ),
+                                        maxLines: 2,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 6.0, 0.0),
@@ -1182,69 +1080,88 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 20.0, 0.0, 16.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              await widget.teamRef!
-                                                  .update(createTeamsRecordData(
-                                                profilPicture:
-                                                    _model.uploadedFileUrl2,
-                                              ));
-                                              context.safePop();
-                                            },
-                                            text: 'Valider',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        letterSpacing: 0.0,
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 20.0, 0.0, 16.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await widget.teamRef!
+                                                .update(createTeamsRecordData(
+                                              profilPicture:
+                                                  _model.uploadedFileUrl2,
+                                            ));
+                                            context.safePop();
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'wgk5yj50' /* Valider */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 130.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
                                                       ),
-                                              elevation: 3.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                              hoverColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
-                                              hoverTextColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
                                             ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .success,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -1254,19 +1171,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                           ),
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 0.0),
-                              child: Text(
-                                'Modifs Ligue',
-                                maxLines: 1,
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 0.0,
-                                    ),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'qirq349e' /* Modifs Ligue */,
                               ),
+                              maxLines: 1,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineSmall
+                                        .fontStyle,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -1282,8 +1210,23 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                 ),
                                 Padding(
@@ -1313,7 +1256,7 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               ],
                             ),
                           ),
-                          Column(
+                          Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               if (modifTeamPageTeamsRecord.sportValue ==
@@ -1341,14 +1284,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'autres.france'
                                         ]),
                                         optionLabels: [
-                                          'Premier League',
-                                          'LaLiga',
-                                          'Bundesliga',
-                                          'Serie A',
-                                          'Ligue 1',
-                                          'Autres',
-                                          'Pays Football',
-                                          'Autres - France'
+                                          FFLocalizations.of(context).getText(
+                                            '29i7rjsl' /* Premier League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '4uxnpc50' /* LaLiga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'cfpsr4gw' /* Bundesliga */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ugjgzem8' /* Serie A */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'w46vmttm' /* Ligue 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'u7tc9j9p' /* Autres */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'p3rwg5en' /* Pays Football */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'lssctlsm' /* Autres - France */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueFootValue = val),
@@ -1357,10 +1316,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '8kblo20p' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1420,8 +1399,16 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueBasketValue ??= '',
                                         ),
-                                        options: List<String>.from(['nba']),
-                                        optionLabels: ['NBA'],
+                                        options: List<String>.from(
+                                            ['nba', 'pays.basket']),
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            'e9mat2kd' /* NBA */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'xjv460qg' /* Pays Basketball */,
+                                          )
+                                        ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueBasketValue = val),
                                         width: 200.0,
@@ -1429,10 +1416,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'nayqw56p' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1494,7 +1501,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         ),
                                         options:
                                             List<String>.from(['atp', 'wta']),
-                                        optionLabels: ['ATP', 'WTA'],
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            '4sr8ojjt' /* ATP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '1vsgnku2' /* WTA */,
+                                          )
+                                        ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueTennisValue = val),
                                         width: 200.0,
@@ -1502,10 +1516,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'yryubdk3' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1574,12 +1608,24 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'mouche'
                                         ]),
                                         optionLabels: [
-                                          'Glace NHL',
-                                          'Gazon Elite H',
-                                          'Gazon Elite H',
-                                          'Salle Elite H',
-                                          'salle Elite F',
-                                          'Mouche'
+                                          FFLocalizations.of(context).getText(
+                                            'jfwg3dav' /* Glace NHL */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'y13iitdw' /* Gazon Elite H */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'khg0fsnk' /* Gazon Elite H */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '76ntowz9' /* Salle Elite H */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ahuo7dgr' /* salle Elite F */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'tkqnsc9a' /* Mouche */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueHockeyValue = val),
@@ -1588,10 +1634,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'guqvwu7e' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1661,14 +1727,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'lourd'
                                         ]),
                                         optionLabels: [
-                                          'Mouche',
-                                          'Coq',
-                                          'Plume',
-                                          'Léger',
-                                          'Mi-Moyen',
-                                          'Moyen',
-                                          'Mi-Lourd',
-                                          'Lourd'
+                                          FFLocalizations.of(context).getText(
+                                            '89arnrbj' /* Mouche */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'hhxrye3d' /* Coq */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '5on2789k' /* Plume */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ealb8wmx' /* Léger */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ke72483i' /* Mi-Moyen */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'b3tc7gbi' /* Moyen */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'owpv7ciw' /* Mi-Lourd */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'kddosoxp' /* Lourd */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueMMAValue = val),
@@ -1677,10 +1759,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'eh7zwpjx' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1750,14 +1852,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'super.lourd'
                                         ]),
                                         optionLabels: [
-                                          'Mouche - 52 kg',
-                                          'Plume - 57 kg',
-                                          'Léger - 63 kg',
-                                          'Mi-Moyen- 69 kg',
-                                          'Moyen- 75 kg',
-                                          'Mi-Lourd - 81 kg',
-                                          'Lourd - 91 kg',
-                                          'Super Lourd + 91 kg'
+                                          FFLocalizations.of(context).getText(
+                                            'wxbq2roe' /* Mouche - 52 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'bli8nyqr' /* Plume - 57 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '4r8p7or3' /* Léger - 63 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'akd6z62h' /* Mi-Moyen- 69 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '3p135lmw' /* Moyen- 75 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'rbdbhjcn' /* Mi-Lourd - 81 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'qfsrxmlw' /* Lourd - 91 kg */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'm9eq73zp' /* Super Lourd + 91 kg */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueBoxeValue = val),
@@ -1766,10 +1884,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'ylyp4xse' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1831,7 +1969,14 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         ),
                                         options: List<String>.from(
                                             ['top.14', 'pays.rugby']),
-                                        optionLabels: ['Top 14', 'Pays Rugby'],
+                                        optionLabels: [
+                                          FFLocalizations.of(context).getText(
+                                            'qxywpy43' /* Top 14 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'fzmuq159' /* Pays Rugby */,
+                                          )
+                                        ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueRugbyValue = val),
                                         width: 200.0,
@@ -1839,10 +1984,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '66qvz23z' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1909,10 +2074,18 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'mx.gp'
                                         ]),
                                         optionLabels: [
-                                          'Formule 1',
-                                          'Moto GP',
-                                          'World Superbike',
-                                          'MX GP'
+                                          FFLocalizations.of(context).getText(
+                                            'q8oyoqrf' /* Formule 1 */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'mknt609h' /* Moto GP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '831zlm7y' /* World Superbike */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            '2j8vdm86' /* MX GP */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueMecaValue = val),
@@ -1921,10 +2094,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Ligues',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'b514wezo' /* Ligues */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1984,15 +2177,34 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 0.0),
+                                        0.0, 2.0, 0.0, 0.0),
                                     child: Text(
-                                      'Modifs Coupe',
+                                      FFLocalizations.of(context).getText(
+                                        'md3qgxbz' /* Modifs Coupe */,
+                                      ),
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -2011,8 +2223,25 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -2062,9 +2291,15 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           'conference.league'
                                         ]),
                                         optionLabels: [
-                                          'Champions League',
-                                          'Europa League',
-                                          'Conference League'
+                                          FFLocalizations.of(context).getText(
+                                            'zzaczw7m' /* Champions League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'fldfp0ba' /* Europa League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'sakg2tf1' /* Conference League */,
+                                          )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropFootCupValue = val),
@@ -2073,10 +2308,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
-                                        hintText: 'Coupes',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'sod35i5e' /* Coupes */,
+                                        ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -2134,13 +2389,28 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 10.0),
                               child: Text(
-                                'Modifs Stats Ligue',
+                                FFLocalizations.of(context).getText(
+                                  '7gqwkxky' /* Modifs Stats Ligue */,
+                                ),
                                 maxLines: 1,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -2152,26 +2422,60 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
-                                  'Total Matchs',
+                                  FFLocalizations.of(context).getText(
+                                    'r2q20se3' /* Total Matchs */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
-                                  'Total Points',
+                                  FFLocalizations.of(context).getText(
+                                    'fpue1za9' /* Total Points */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2203,11 +2507,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2236,13 +2559,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'xe4cr4oy' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -2291,8 +2640,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -2350,11 +2720,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2383,13 +2772,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'zp8ydjys' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -2438,8 +2853,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -2496,26 +2932,64 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    'Total Wins',
+                                    FFLocalizations.of(context).getText(
+                                      '8nvpifsv' /* Total Wins */,
+                                    ),
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    'Total Looses',
+                                    FFLocalizations.of(context).getText(
+                                      'pnob69v7' /* Total Looses */,
+                                    ),
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -2548,11 +3022,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2581,13 +3074,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'n1nxgv8l' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -2636,8 +3155,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -2694,11 +3234,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2727,13 +3286,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'z59bt0vf' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -2782,8 +3367,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -2844,13 +3450,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total  Matchs Nul',
+                                        FFLocalizations.of(context).getText(
+                                          'bgx01st4' /* Total  Matchs Nul */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -2881,13 +3506,34 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .labelLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Montserrat',
+                                                        font: GoogleFonts
+                                                            .montserrat(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2918,16 +3564,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      hintText: '00.00',
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'xu56qkav' /* 00.00 */,
+                                                      ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
                                                       enabledBorder:
                                                           UnderlineInputBorder(
@@ -2982,8 +3650,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                     textAlign: TextAlign.center,
                                                     keyboardType:
@@ -3036,13 +3726,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total  L2M',
+                                        FFLocalizations.of(context).getText(
+                                          'uyvl6m2n' /* Total  L2M */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -3072,13 +3781,34 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .labelLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Montserrat',
+                                                        font: GoogleFonts
+                                                            .montserrat(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -3109,16 +3839,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      hintText: '00.00',
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        '39nl39oy' /* 00.00 */,
+                                                      ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .labelMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Poppins',
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
                                                       enabledBorder:
                                                           UnderlineInputBorder(
@@ -3173,8 +3925,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                     textAlign: TextAlign.center,
                                                     keyboardType:
@@ -3235,26 +4009,60 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
-                                  'Total buts mis',
+                                  FFLocalizations.of(context).getText(
+                                    '9cj3umfc' /* Total buts mis */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
                               Align(
                                 alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
-                                  'Total buts pris',
+                                  FFLocalizations.of(context).getText(
+                                    'b05mvue8' /* Total buts pris */,
+                                  ),
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -3287,11 +4095,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -3320,13 +4147,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '7c4tsfyl' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -3375,8 +4228,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -3435,11 +4309,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Montserrat',
+                                                font: GoogleFonts.montserrat(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -3468,13 +4361,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '00.00',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'sgyoenx9' /* 00.00 */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                               enabledBorder:
                                                   UnderlineInputBorder(
@@ -3523,8 +4442,29 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: const TextInputType
@@ -3591,7 +4531,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   ));
                                   context.safePop();
                                 },
-                                text: 'Stats  Ligue à 0',
+                                text: FFLocalizations.of(context).getText(
+                                  'p72q26jl' /* Stats  Ligue à 0 */,
+                                ),
                                 options: FFButtonOptions(
                                   width: 130.0,
                                   height: 40.0,
@@ -3603,10 +4545,25 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                   elevation: 3.0,
                                   borderSide: BorderSide(
@@ -3637,13 +4594,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 10.0),
                                     child: Text(
-                                      'Modifs Stats Coupe',
+                                      FFLocalizations.of(context).getText(
+                                        '0dv4obc0' /* Modifs Stats Coupe */,
+                                      ),
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -3657,13 +4633,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total Matchs',
+                                        FFLocalizations.of(context).getText(
+                                          '4whewtwv' /* Total Matchs */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -3671,13 +4666,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total Points',
+                                        FFLocalizations.of(context).getText(
+                                          'or5ln7gp' /* Total Points */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -3708,17 +4722,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -3748,14 +4783,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'ymzhdb9y' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -3812,8 +4874,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -3873,17 +4957,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -3913,14 +5018,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'm8zwlcsu' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -3977,8 +5109,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -4041,13 +5195,34 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          'Total Wins',
+                                          FFLocalizations.of(context).getText(
+                                            'aodeq538' /* Total Wins */,
+                                          ),
                                           maxLines: 1,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -4055,13 +5230,34 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          'Total Looses',
+                                          FFLocalizations.of(context).getText(
+                                            'mwkmtqj7' /* Total Looses */,
+                                          ),
                                           maxLines: 1,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -4093,17 +5289,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -4133,14 +5350,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '6zpii2s8' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -4197,8 +5441,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -4258,17 +5524,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -4298,14 +5585,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'gh11i3rc' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -4362,8 +5676,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -4431,14 +5767,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             alignment:
                                                 AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
-                                              'Total  Matchs Nul',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'wbvh283u' /* Total  Matchs Nul */,
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -4464,12 +5825,33 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                             context)
                                                         .labelLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Montserrat',
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .success,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -4503,16 +5885,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
-                                                        hintText: '00.00',
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          '3hy0u73n' /* 00.00 */,
+                                                        ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                         enabledBorder:
                                                             UnderlineInputBorder(
@@ -4571,14 +5975,33 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                                       8.0),
                                                         ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
@@ -4633,14 +6056,39 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             alignment:
                                                 AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
-                                              'Total L2M',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '45e0p36e' /* Total L2M */,
+                                              ),
                                               maxLines: 1,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ),
@@ -4666,12 +6114,33 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                             context)
                                                         .labelLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Montserrat',
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .success,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -4705,16 +6174,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
-                                                        hintText: '00.00',
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'ys5chil7' /* 00.00 */,
+                                                        ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
                                                         enabledBorder:
                                                             UnderlineInputBorder(
@@ -4773,14 +6264,33 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                                       8.0),
                                                         ),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
@@ -4845,13 +6355,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total buts mis',
+                                        FFLocalizations.of(context).getText(
+                                          'i63pc9gp' /* Total buts mis */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -4859,13 +6388,32 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        'Total buts pris',
+                                        FFLocalizations.of(context).getText(
+                                          'ekhlkc64' /* Total buts pris */,
+                                        ),
                                         maxLines: 1,
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -4896,17 +6444,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -4936,14 +6505,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'gpkpz6rq' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -5000,8 +6596,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -5061,17 +6679,38 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   '0',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .labelLarge
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .montserrat(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLarge
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .success,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLarge
+                                                                  .fontStyle,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -5101,14 +6740,41 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: '00.00',
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'zbundpta' /* 00.00 */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -5165,8 +6831,30 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                                   textAlign: TextAlign.center,
                                                   keyboardType:
@@ -5237,7 +6925,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         ));
                                         context.safePop();
                                       },
-                                      text: 'Stats  Coupe à 0',
+                                      text: FFLocalizations.of(context).getText(
+                                        '51qikj57' /* Stats  Coupe à 0 */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 130.0,
                                         height: 40.0,
@@ -5251,11 +6941,28 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
                                             ),
                                         elevation: 3.0,
                                         borderSide: BorderSide(
@@ -5285,7 +6992,9 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   await widget.teamRef!.delete();
                                   context.safePop();
                                 },
-                                text: 'Supprimer',
+                                text: FFLocalizations.of(context).getText(
+                                  'u5bsu4iw' /* Supprimer */,
+                                ),
                                 options: FFButtonOptions(
                                   width: 130.0,
                                   height: 40.0,
@@ -5297,10 +7006,25 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                   elevation: 3.0,
                                   borderSide: BorderSide(

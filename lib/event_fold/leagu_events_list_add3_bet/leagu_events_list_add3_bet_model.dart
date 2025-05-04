@@ -1,9 +1,11 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'rank_typsters_page_widget.dart' show RankTypstersPageWidget;
+import 'leagu_events_list_add3_bet_widget.dart'
+    show LeaguEventsListAdd3BetWidget;
 import 'package:flutter/material.dart';
 
-class RankTypstersPageModel extends FlutterFlowModel<RankTypstersPageWidget> {
+class LeaguEventsListAdd3BetModel
+    extends FlutterFlowModel<LeaguEventsListAdd3BetWidget> {
   @override
   void initState(BuildContext context) {}
 

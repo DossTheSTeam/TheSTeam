@@ -8,11 +8,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/users_fold/copy_text/copy_text_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'profil_public_admin_model.dart';
 export 'profil_public_admin_model.dart';
 
@@ -571,7 +574,18 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
                                                 color: valueOrDefault<Color>(
                                                   profilPublicAdminUsersRecord
                                                       .color1,
@@ -579,6 +593,14 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                                       .primaryText,
                                                 ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -591,16 +613,66 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 10.0, 0.0, 30.0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
                           profilPublicAdminUsersRecord.uid,
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).warning,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .fontStyle,
                                   ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await Clipboard.setData(ClipboardData(
+                                text: profilPublicAdminUsersRecord.uid));
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    FocusScope.of(context).unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  },
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: CopyTextWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Icon(
+                            Icons.content_copy_rounded,
+                            color: FlutterFlowTheme.of(context).warning,
+                            size: 25.0,
+                          ),
                         ),
                       ),
                       Padding(
@@ -617,12 +689,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Notifications',
+                                    FFLocalizations.of(context).getText(
+                                      'hmwlbkfy' /* Notifications */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                   FlutterFlowIconButton(
@@ -651,26 +742,67 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   children: [
                                     Text(
                                       dateTimeFormat(
-                                          "d/M/y",
-                                          profilPublicAdminUsersRecord
-                                              .updateTime!),
+                                        "d/M/y",
+                                        profilPublicAdminUsersRecord
+                                            .updateTime!,
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
                                             lineHeight: 1.1,
                                           ),
                                     ),
                                     Text(
-                                      'fin de\nsuspension',
+                                      FFLocalizations.of(context).getText(
+                                        'twd8jddf' /* fin de
+suspension */
+                                        ,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
                                             lineHeight: 1.1,
                                           ),
                                     ),
@@ -706,12 +838,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Arreter mod',
+                                      FFLocalizations.of(context).getText(
+                                        'yqdjlw25' /* Arreter mod */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
                                           ),
                                     ),
                                     FlutterFlowIconButton(
@@ -741,47 +892,6 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     ),
                                   ],
                                 ),
-                              if (profilPublicAdminUsersRecord.stsocialapp ==
-                                  'typster')
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Arreter Typster',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderRadius: 50.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 50.0,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      icon: Icon(
-                                        Icons.money_off_rounded,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 30.0,
-                                      ),
-                                      onPressed: () async {
-                                        await widget.userRef!.update({
-                                          ...mapToFirestore(
-                                            {
-                                              'stsocialapp':
-                                                  FieldValue.delete(),
-                                            },
-                                          ),
-                                        });
-                                      },
-                                    ),
-                                  ],
-                                ),
                             ],
                           ),
                         ),
@@ -792,12 +902,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Ligue - Sport',
+                            FFLocalizations.of(context).getText(
+                              '7nye4kd7' /* Ligue - Sport */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -814,8 +939,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Row(
@@ -826,8 +964,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
                                       ),
                                 ),
                               ],
@@ -874,12 +1027,29 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Paris sportifs',
+                                  FFLocalizations.of(context).getText(
+                                    'egb8eds8' /* Paris sportifs */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
                                       ),
                                 ),
                                 InkWell(
@@ -936,12 +1106,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Bénéfices',
+                              FFLocalizations.of(context).getText(
+                                'qa7lxm5s' /* Bénéfices */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Align(
@@ -959,8 +1144,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -975,13 +1173,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Gagnants',
+                              FFLocalizations.of(context).getText(
+                                'sy7vqoqd' /* Gagnants */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).success,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -996,8 +1209,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1012,13 +1238,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Perdants',
+                              FFLocalizations.of(context).getText(
+                                'izyisid7' /* Perdants */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1033,8 +1274,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1049,12 +1303,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Stock',
+                              FFLocalizations.of(context).getText(
+                                'gq5i6ko4' /* Stock */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Row(
@@ -1072,8 +1341,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                 ),
                                 Padding(
@@ -1121,12 +1405,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Ligue - E Sport',
+                            FFLocalizations.of(context).getText(
+                              'hnhwhq6m' /* Ligue - E Sport */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -1143,8 +1442,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Row(
@@ -1155,8 +1467,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
                                       ),
                                 ),
                               ],
@@ -1172,14 +1499,29 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Total Rencontres',
+                              FFLocalizations.of(context).getText(
+                                '2l60m7ih' /* Total Rencontres */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1194,8 +1536,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1210,14 +1565,29 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Tops/Flops',
+                              FFLocalizations.of(context).getText(
+                                '251t1wue' /* Tops/Flops */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Align(
@@ -1232,8 +1602,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1248,13 +1631,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Tops',
+                              FFLocalizations.of(context).getText(
+                                'b3qzemd6' /* Tops */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).success,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1268,8 +1666,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1284,13 +1695,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Flops',
+                              FFLocalizations.of(context).getText(
+                                't94s5mgh' /* Flops */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1304,8 +1730,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1324,13 +1763,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Cartons',
+                              FFLocalizations.of(context).getText(
+                                'nple591g' /* Cartons */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1345,8 +1799,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1361,13 +1828,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Suspensions',
+                              FFLocalizations.of(context).getText(
+                                'yhzel3og' /* Suspensions */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Montserrat',
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
                                   ),
                             ),
                             Padding(
@@ -1382,8 +1864,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      fontFamily: 'Montserrat',
+                                      font: GoogleFonts.montserrat(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
                                     ),
                               ),
                             ),
@@ -1434,12 +1929,29 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Actualités',
+                                  FFLocalizations.of(context).getText(
+                                    '7qmp2oi8' /* Actualités */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        font: GoogleFonts.montserrat(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .fontStyle,
                                       ),
                                 ),
                                 Column(
@@ -1490,12 +2002,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Réseaux',
+                            FFLocalizations.of(context).getText(
+                              '3uj3k4ca' /* Réseaux */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Montserrat',
+                                  font: GoogleFonts.montserrat(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -1522,8 +2049,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
-                                          fontFamily: 'Montserrat',
+                                          font: GoogleFonts.montserrat(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -1559,8 +2103,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
-                                          fontFamily: 'Montserrat',
+                                          font: GoogleFonts.montserrat(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -1596,8 +2157,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
-                                          fontFamily: 'Montserrat',
+                                          font: GoogleFonts.montserrat(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -1621,12 +2199,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Changer le classement parieur',
+                            FFLocalizations.of(context).getText(
+                              '3b554925' /* Changer le classement parieur */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -1646,10 +2239,18 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               options: List<String>.from(
                                   ['amateur', 'pro', 'champion', 'legende']),
                               optionLabels: [
-                                'Amateur',
-                                'Pro',
-                                'Champion',
-                                'Légende'
+                                FFLocalizations.of(context).getText(
+                                  '0h08u722' /* Amateur */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'dscz40ij' /* Pro */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'r1s5pzaa' /* Champion */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '1u0jeurp' /* Légende */,
+                                )
                               ],
                               onChanged: (val) => safeSetState(
                                   () => _model.dropLigueValue = val),
@@ -1658,10 +2259,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
-                              hintText: 'Ligue',
+                              hintText: FFLocalizations.of(context).getText(
+                                'es0sclu7' /* Ligue */,
+                              ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -1690,12 +2306,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Pro vers Amateur',
+                                        FFLocalizations.of(context).getText(
+                                          '5sei1w0t' /* Pro vers Amateur */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       InkWell(
@@ -1737,13 +2372,38 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Amateur vers Pro',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'g9ce1xn8' /* Amateur vers Pro */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             InkWell(
@@ -1783,13 +2443,38 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Champion vers Pro',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'j5gaferp' /* Champion vers Pro */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             InkWell(
@@ -1835,13 +2520,38 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Pro vers Champion',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'g4lx59oc' /* Pro vers Champion */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             InkWell(
@@ -1881,13 +2591,38 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              ' Legende vers Champion',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'gx5zj0cj' /*  Legende vers Champion */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                             InkWell(
@@ -1927,12 +2662,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Champion vers Legende',
+                                        FFLocalizations.of(context).getText(
+                                          'yoadd8ax' /* Champion vers Legende */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       InkWell(
@@ -1982,9 +2736,15 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               ),
                               options: List<String>.from(['1', '2', '3']),
                               optionLabels: [
-                                'Division 1',
-                                'Division 2',
-                                'Division 3'
+                                FFLocalizations.of(context).getText(
+                                  'lgk237qw' /* Division 1 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'oycolflc' /* Division 2 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'vum24zl0' /* Division 3 */,
+                                )
                               ],
                               onChanged: (val) => safeSetState(
                                   () => _model.dropDivisionValue = val),
@@ -1993,10 +2753,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
-                              hintText: 'Divisions',
+                              hintText: FFLocalizations.of(context).getText(
+                                'w3gfuhyp' /* Divisions */,
+                              ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -2056,12 +2831,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Changer le StatutApp',
+                            FFLocalizations.of(context).getText(
+                              'tkf95d65' /* Changer le StatutApp */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -2078,17 +2868,15 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   FormFieldController<String>(
                                 _model.dropStatutValue ??= '',
                               ),
-                              options: List<String>.from([
-                                'suspendu',
-                                'moderateur',
-                                'administrateur',
-                                'typster'
-                              ]),
+                              options:
+                                  List<String>.from(['suspendu', 'moderateur']),
                               optionLabels: [
-                                'Suspendu',
-                                'Modérateur',
-                                'Administrateur',
-                                'Typster'
+                                FFLocalizations.of(context).getText(
+                                  'ex1tljkq' /* Suspendu */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'u1hw6uvs' /* Modérateur */,
+                                )
                               ],
                               onChanged: (val) => safeSetState(
                                   () => _model.dropStatutValue = val),
@@ -2097,10 +2885,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
-                              hintText: 'Statuts App',
+                              hintText: FFLocalizations.of(context).getText(
+                                '7hbbkz1f' /* Statuts App */,
+                              ),
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:
@@ -2173,12 +2976,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Sport',
+                                        FFLocalizations.of(context).getText(
+                                          '9a4lzdsh' /* Sport */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -2216,8 +3038,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                       count: _model.countControllerValue1 ??= 1,
@@ -2278,12 +3117,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'E Sport',
+                                        FFLocalizations.of(context).getText(
+                                          'i9abjlif' /* E Sport */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -2321,8 +3179,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleLarge
                                             .override(
-                                              fontFamily: 'Montserrat',
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontStyle,
                                             ),
                                       ),
                                       count: _model.countControllerValue2 ??= 1,
@@ -2381,12 +3256,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Changer le Statut Admin Sport',
+                            FFLocalizations.of(context).getText(
+                              'rai3qhuq' /* Changer le Statut Admin Sport */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -2408,11 +3298,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                               'mma'
                             ]),
                             optionLabels: [
-                              'Football',
-                              'Basketball',
-                              'Tennis',
-                              'Hockey',
-                              'MMA'
+                              FFLocalizations.of(context).getText(
+                                'p5a8rksh' /* Football */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'ti0wicyq' /* Basketball */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'wcoulqqn' /* Tennis */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'y9uaqcgy' /* Hockey */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'cbgcrx0g' /* MMA */,
+                              )
                             ],
                             onChanged: (val) =>
                                 safeSetState(() => _model.dropSportValue = val),
@@ -2421,10 +3321,25 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
-                            hintText: 'Sports',
+                            hintText: FFLocalizations.of(context).getText(
+                              'q711cj8s' /* Sports */,
+                            ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -2502,8 +3417,21 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                               ),
                             ],
@@ -2515,12 +3443,27 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'Changer le Statut Testeur',
+                            FFLocalizations.of(context).getText(
+                              'so23zqdx' /* Changer le Statut Testeur */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -2531,13 +3474,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                         children: [
                           if (profilPublicAdminUsersRecord.testor == true)
                             Text(
-                              'Oui',
+                              FFLocalizations.of(context).getText(
+                                'p6069xjr' /* Oui */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).success,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                             ),
                           if (profilPublicAdminUsersRecord.testor == true)
@@ -2562,13 +3520,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                             ),
                           if (profilPublicAdminUsersRecord.testor != true)
                             Text(
-                              'Non',
+                              FFLocalizations.of(context).getText(
+                                'vi0bob06' /* Non */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    font: GoogleFonts.poppins(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).error,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                             ),
                           if (profilPublicAdminUsersRecord.testor != true)
@@ -2612,13 +3585,28 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmall
+                                                  .fontStyle,
+                                        ),
                                         color: valueOrDefault<Color>(
                                           profilPublicAdminUsersRecord.color1,
                                           FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2633,8 +3621,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2649,8 +3652,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2665,8 +3683,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2681,8 +3714,23 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .fontStyle,
                                       ),
                                 ),
                               ),
@@ -2701,12 +3749,33 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 5.0),
                                         child: Text(
-                                          'Date de naissance :',
+                                          FFLocalizations.of(context).getText(
+                                            'g035745f' /* Date de naissance : */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2718,12 +3787,33 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 5.0, 0.0, 5.0),
                                         child: Text(
-                                          '00/00/0000',
+                                          FFLocalizations.of(context).getText(
+                                            '71yz93y6' /* 00/00/0000 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2774,18 +3864,43 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  '+18',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '6movzlaz' /* +18 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2829,18 +3944,43 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
-                                                  '-18',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vivgh8i1' /* -18 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                               ),
@@ -2863,12 +4003,31 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Membre depuis le',
+                                        FFLocalizations.of(context).getText(
+                                          'jpkqp5nr' /* Membre depuis le */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       Padding(
@@ -2876,14 +4035,36 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                             2.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           dateTimeFormat(
-                                              "d/M/y",
-                                              profilPublicAdminUsersRecord
-                                                  .createdTime!),
+                                            "d/M/y",
+                                            profilPublicAdminUsersRecord
+                                                .createdTime!,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ),
@@ -2900,11 +4081,67 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
                                       color:
                                           FlutterFlowTheme.of(context).warning,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
                                     ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 15.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await Clipboard.setData(ClipboardData(
+                                        text:
+                                            profilPublicAdminUsersRecord.uid));
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: CopyTextWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  child: Icon(
+                                    Icons.content_copy_rounded,
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    size: 25.0,
+                                  ),
+                                ),
                               ),
                             ),
                             Padding(
@@ -2919,14 +4156,33 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Supprimer',
+                                      FFLocalizations.of(context).getText(
+                                        'm83ycl6p' /* Supprimer */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),

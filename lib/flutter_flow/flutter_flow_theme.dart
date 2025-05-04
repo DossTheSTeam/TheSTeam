@@ -6,11 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const kThemeModeKey = '__theme_mode__';
+
 SharedPreferences? _prefs;
 
 abstract class FlutterFlowTheme {
   static Future initialize() async =>
       _prefs = await SharedPreferences.getInstance();
+
   static ThemeMode get themeMode {
     final darkMode = _prefs?.getBool(kThemeModeKey);
     return darkMode == null
@@ -182,106 +184,91 @@ class ThemeTypography extends Typography {
   final FlutterFlowTheme theme;
 
   String get displayLargeFamily => 'Montserrat';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get displayLarge => GoogleFonts.montserrat(
         color: theme.primaryText,
         fontWeight: FontWeight.w800,
         fontSize: 30.0,
       );
   String get displayMediumFamily => 'Montserrat';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get displayMedium => GoogleFonts.montserrat(
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
         fontSize: 28.0,
       );
   String get displaySmallFamily => 'Montserrat';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get displaySmall => GoogleFonts.montserrat(
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 26.0,
       );
   String get headlineLargeFamily => 'Montserrat';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get headlineLarge => GoogleFonts.montserrat(
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
         fontSize: 26.0,
       );
   String get headlineMediumFamily => 'Montserrat';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get headlineMedium => GoogleFonts.montserrat(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
   String get headlineSmallFamily => 'Poppins';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get headlineSmall => GoogleFonts.poppins(
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
   String get titleLargeFamily => 'Montserrat';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get titleLarge => GoogleFonts.montserrat(
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
         fontSize: 22.0,
       );
   String get titleMediumFamily => 'Poppins';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get titleMedium => GoogleFonts.poppins(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
   String get titleSmallFamily => 'Poppins';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get titleSmall => GoogleFonts.poppins(
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
   String get labelLargeFamily => 'Montserrat';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Montserrat',
+  TextStyle get labelLarge => GoogleFonts.montserrat(
         color: theme.secondaryText,
         fontWeight: FontWeight.bold,
         fontSize: 18.0,
       );
   String get labelMediumFamily => 'Poppins';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get labelMedium => GoogleFonts.poppins(
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
   String get labelSmallFamily => 'Poppins';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get labelSmall => GoogleFonts.poppins(
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get bodyLargeFamily => 'Poppins';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get bodyLarge => GoogleFonts.poppins(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
   String get bodyMediumFamily => 'Poppins';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get bodyMedium => GoogleFonts.poppins(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
   String get bodySmallFamily => 'Poppins';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Poppins',
+  TextStyle get bodySmall => GoogleFonts.poppins(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 1.0,
@@ -316,38 +303,45 @@ class DarkModeTheme extends FlutterFlowTheme {
 
 extension TextStyleHelper on TextStyle {
   TextStyle override({
+    TextStyle? font,
     String? fontFamily,
     Color? color,
     double? fontSize,
     FontWeight? fontWeight,
     double? letterSpacing,
     FontStyle? fontStyle,
-    bool useGoogleFonts = true,
+    bool useGoogleFonts = false,
     TextDecoration? decoration,
     double? lineHeight,
     List<Shadow>? shadows,
-  }) =>
-      useGoogleFonts
-          ? GoogleFonts.getFont(
-              fontFamily!,
-              color: color ?? this.color,
-              fontSize: fontSize ?? this.fontSize,
-              letterSpacing: letterSpacing ?? this.letterSpacing,
-              fontWeight: fontWeight ?? this.fontWeight,
-              fontStyle: fontStyle ?? this.fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-              shadows: shadows,
-            )
-          : copyWith(
-              fontFamily: fontFamily,
-              color: color,
-              fontSize: fontSize,
-              letterSpacing: letterSpacing,
-              fontWeight: fontWeight,
-              fontStyle: fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-              shadows: shadows,
-            );
+  }) {
+    if (useGoogleFonts && fontFamily != null) {
+      font = GoogleFonts.getFont(fontFamily,
+          fontWeight: fontWeight ?? this.fontWeight,
+          fontStyle: fontStyle ?? this.fontStyle);
+    }
+
+    return font != null
+        ? font.copyWith(
+            color: color ?? this.color,
+            fontSize: fontSize ?? this.fontSize,
+            letterSpacing: letterSpacing ?? this.letterSpacing,
+            fontWeight: fontWeight ?? this.fontWeight,
+            fontStyle: fontStyle ?? this.fontStyle,
+            decoration: decoration,
+            height: lineHeight,
+            shadows: shadows,
+          )
+        : copyWith(
+            fontFamily: fontFamily,
+            color: color,
+            fontSize: fontSize,
+            letterSpacing: letterSpacing,
+            fontWeight: fontWeight,
+            fontStyle: fontStyle,
+            decoration: decoration,
+            height: lineHeight,
+            shadows: shadows,
+          );
+  }
 }
