@@ -3,8 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -1658,70 +1658,6 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0,
-                                                                    4.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            formatNumber(
-                                                              functions
-                                                                  .averageOdd(
-                                                                      valueOrDefault(
-                                                                          currentUserDocument
-                                                                              ?.totalGains,
-                                                                          0.0),
-                                                                      valueOrDefault<
-                                                                          double>(
-                                                                        valueOrDefault(
-                                                                            currentUserDocument?.totalMises,
-                                                                            0.0),
-                                                                        0.0,
-                                                                      )),
-                                                              formatType:
-                                                                  FormatType
-                                                                      .decimal,
-                                                              decimalType:
-                                                                  DecimalType
-                                                                      .periodDecimal,
-                                                            ),
-                                                            '0.0',
-                                                          ),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                              ),
-                                                        ),
-                                                      ),
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
@@ -1963,6 +1899,70 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                                     ),
                                                               ),
                                                           ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0,
+                                                                    4.0),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            formatNumber(
+                                                              functions
+                                                                  .averageOdd(
+                                                                      valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.totalGains,
+                                                                          0.0),
+                                                                      valueOrDefault<
+                                                                          double>(
+                                                                        valueOrDefault(
+                                                                            currentUserDocument?.totalMises,
+                                                                            0.0),
+                                                                        0.0,
+                                                                      )),
+                                                              formatType:
+                                                                  FormatType
+                                                                      .decimal,
+                                                              decimalType:
+                                                                  DecimalType
+                                                                      .periodDecimal,
+                                                            ),
+                                                            '0.0',
+                                                          ),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
                                                       ),
                                                       Divider(

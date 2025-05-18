@@ -3,8 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/copy_text/copy_text_widget.dart';
 import '/users_fold/langage/langage_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -1268,15 +1268,64 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.0),
-                                            child: Image.network(
-                                              containerTeamsRecord.logo,
-                                              width: 300.0,
-                                              height: 200.0,
-                                              fit: BoxFit.fitHeight,
-                                            ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (containerTeamsRecord
+                                                          .profilPicture !=
+                                                      '')
+                                                Container(
+                                                  width: 65.0,
+                                                  height: 50.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            3.0),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.network(
+                                                      containerTeamsRecord
+                                                          .profilPicture,
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                              if (containerTeamsRecord
+                                                          .profilPicture ==
+                                                      '')
+                                                Container(
+                                                  width: 65.0,
+                                                  height: 50.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            3.0),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.network(
+                                                      containerTeamsRecord.logo,
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.fitHeight,
+                                                    ),
+                                                  ),
+                                                ),
+                                            ],
                                           ),
                                         ),
                                       );

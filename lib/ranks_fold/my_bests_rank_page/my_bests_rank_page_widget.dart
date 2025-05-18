@@ -3,8 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/langage/langage_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
@@ -2099,7 +2099,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                         ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 10.0, 0.0, 0.0),
+                                            10.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -2151,7 +2151,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
+                                                          5.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       (currentUserDocument
@@ -2164,230 +2164,261 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .titleMedium
+                                                        .titleSmall
                                                         .override(
                                                           font: GoogleFonts
                                                               .poppins(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMedium
+                                                                    .titleSmall
                                                                     .fontWeight,
                                                             fontStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMedium
+                                                                    .titleSmall
                                                                     .fontStyle,
                                                           ),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleMedium
+                                                                  .titleSmall
                                                                   .fontWeight,
                                                           fontStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleMedium
+                                                                  .titleSmall
                                                                   .fontStyle,
                                                         ),
                                                   ),
                                                 ),
                                               ],
                                             ),
-                                            if (true /* Warning: Trying to access variable not yet defined. */)
-                                              FutureBuilder<
-                                                  List<MyNotificationsRecord>>(
-                                                future:
-                                                    queryMyNotificationsRecordOnce(
-                                                  parent: currentUserReference,
-                                                  singleRecord: true,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent4,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<MyNotificationsRecord>
-                                                      rowNotifsMyNotificationsRecordList =
-                                                      snapshot.data!;
-                                                  // Return an empty Container when the item does not exist.
-                                                  if (snapshot.data!.isEmpty) {
-                                                    return Container();
-                                                  }
-                                                  final rowNotifsMyNotificationsRecord =
-                                                      rowNotifsMyNotificationsRecordList
-                                                              .isNotEmpty
-                                                          ? rowNotifsMyNotificationsRecordList
-                                                              .first
-                                                          : null;
-
-                                                  return Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    0.0,
-                                                                    10.0,
-                                                                    0.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              MyNotifsListWidget
-                                                                  .routeName,
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .rightToLeft,
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          400),
-                                                                ),
-                                                              },
-                                                            );
-                                                          },
-                                                          child: Icon(
-                                                            Icons
-                                                                .notifications_active_outlined,
-                                                            color:
-                                                                valueOrDefault<
-                                                                    Color>(
-                                                              currentUserDocument
-                                                                  ?.color1,
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .accent1,
-                                                            ),
-                                                            size: 40.0,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 0.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  MyProfilSocialWidget
-                                                      .routeName,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .bottomToTop,
-                                                      duration: Duration(
-                                                          milliseconds: 400),
-                                                    ),
-                                                  },
-                                                );
-                                              },
-                                              child: Icon(
-                                                Icons.groups_rounded,
-                                                color: valueOrDefault<Color>(
-                                                  currentUserDocument?.color2,
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
-                                                ),
-                                                size: 30.0,
-                                              ),
-                                            ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  (currentUserDocument?.fans
-                                                              .toList() ??
-                                                          [])
-                                                      .length
-                                                      .toString(),
-                                                  '0',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .fontStyle,
+                                                      30.0, 0.0, 0.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                5.0, 0.0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        (currentUserDocument
+                                                                    ?.fans
+                                                                    .toList() ??
+                                                                [])
+                                                            .length
+                                                            .toString(),
+                                                        '0',
                                                       ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
+                                                      style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .fontStyle,
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                10.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          MyProfilSocialWidget
+                                                              .routeName,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .bottomToTop,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      400),
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons.groups_rounded,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color2,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .success,
+                                                        ),
+                                                        size: 30.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  if (true /* Warning: Trying to access variable not yet defined. */)
+                                                    FutureBuilder<
+                                                        List<
+                                                            MyNotificationsRecord>>(
+                                                      future:
+                                                          queryMyNotificationsRecordOnce(
+                                                        parent:
+                                                            currentUserReference,
+                                                        singleRecord: true,
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent4,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+                                                        List<MyNotificationsRecord>
+                                                            rowNotifsMyNotificationsRecordList =
+                                                            snapshot.data!;
+                                                        // Return an empty Container when the item does not exist.
+                                                        if (snapshot
+                                                            .data!.isEmpty) {
+                                                          return Container();
+                                                        }
+                                                        final rowNotifsMyNotificationsRecord =
+                                                            rowNotifsMyNotificationsRecordList
+                                                                    .isNotEmpty
+                                                                ? rowNotifsMyNotificationsRecordList
+                                                                    .first
+                                                                : null;
+
+                                                        return Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    MyNotifsListWidget
+                                                                        .routeName,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.rightToLeft,
+                                                                        duration:
+                                                                            Duration(milliseconds: 400),
+                                                                      ),
+                                                                    },
+                                                                  );
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .notifications_active_outlined,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    currentUserDocument
+                                                                        ?.color1,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent1,
+                                                                  ),
+                                                                  size: 40.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ),
+                                                ],
                                               ),
                                             ),
                                           ],
+                                        ),
+                                      ),
+                                      Divider(
+                                        thickness: 1.0,
+                                        color: valueOrDefault<Color>(
+                                          currentUserDocument?.color2,
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
                                         ),
                                       ),
                                     ],
@@ -2404,7 +2435,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   0.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
@@ -2473,6 +2504,13 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                 ],
                               ),
                             ),
+                          Divider(
+                            thickness: 1.0,
+                            color: valueOrDefault<Color>(
+                              currentUserDocument?.color2,
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                            ),
+                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
@@ -4563,7 +4601,7 @@ lucros */
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 0.0),
+                                                    0.0, 5.0, 0.0, 20.0),
                                             child: StreamBuilder<
                                                 List<UsersRecord>>(
                                               stream: queryUsersRecord(

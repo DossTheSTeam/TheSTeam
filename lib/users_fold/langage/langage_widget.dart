@@ -101,7 +101,7 @@ class _LangageWidgetState extends State<LangageWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            15.0, 0.0, 10.0, 0.0),
+                            15.0, 0.0, 10.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -162,6 +162,15 @@ class _LangageWidgetState extends State<LangageWidget> {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                      AuthUserStreamWidget(
+                        builder: (context) => Divider(
+                          thickness: 2.0,
+                          color: valueOrDefault<Color>(
+                            currentUserDocument?.color2,
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                          ),
                         ),
                       ),
                       Padding(

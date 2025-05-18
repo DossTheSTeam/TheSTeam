@@ -5,8 +5,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -768,9 +768,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                           -1.0),
                                                                   child:
                                                                       Container(
-                                                                    width: 79.0,
+                                                                    width: 89.0,
                                                                     height:
-                                                                        75.0,
+                                                                        70.0,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
@@ -779,7 +779,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                       image:
                                                                           DecorationImage(
                                                                         fit: BoxFit
-                                                                            .cover,
+                                                                            .fitHeight,
                                                                         image:
                                                                             CachedNetworkImageProvider(
                                                                           columnPostsPostsRecord
@@ -799,8 +799,8 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                         -1.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 80.0,
-                                                                  height: 75.0,
+                                                                  width: 90.0,
+                                                                  height: 70.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     image:
@@ -862,8 +862,8 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                         -1.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 81.0,
-                                                                  height: 75.0,
+                                                                  width: 91.0,
+                                                                  height: 70.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     image:
@@ -929,7 +929,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            75.0,
+                                                                            85.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
@@ -946,7 +946,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                       children: [
                                                                         Container(
                                                                           width:
-                                                                              275.0,
+                                                                              260.0,
                                                                           height:
                                                                               50.0,
                                                                           decoration:
@@ -957,7 +957,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10.0,
+                                                                                5.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
@@ -996,14 +996,14 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                                       columnPostsPostsRecord.title,
                                                                                       textAlign: TextAlign.start,
                                                                                       maxLines: 2,
-                                                                                      style: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             font: GoogleFonts.poppins(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                             ),
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                            fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                           ),
                                                                                     ),
                                                                                   ),

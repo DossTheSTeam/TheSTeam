@@ -3,8 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -683,26 +683,26 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                 maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
+                                                                    .labelSmall
                                                                     .override(
                                                                       font: GoogleFonts
                                                                           .poppins(
                                                                         fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
+                                                                            .labelSmall
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
+                                                                            .labelSmall
                                                                             .fontStyle,
                                                                       ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .labelMedium
+                                                                          .labelSmall
                                                                           .fontWeight,
                                                                       fontStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .labelMedium
+                                                                          .labelSmall
                                                                           .fontStyle,
                                                                     ),
                                                               ),
@@ -1174,26 +1174,26 @@ class _ListSurveysNewsWidgetState extends State<ListSurveysNewsWidget> {
                                                                 maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
+                                                                    .labelSmall
                                                                     .override(
                                                                       font: GoogleFonts
                                                                           .poppins(
                                                                         fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
+                                                                            .labelSmall
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
+                                                                            .labelSmall
                                                                             .fontStyle,
                                                                       ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .labelMedium
+                                                                          .labelSmall
                                                                           .fontWeight,
                                                                       fontStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .labelMedium
+                                                                          .labelSmall
                                                                           .fontStyle,
                                                                     ),
                                                               ),

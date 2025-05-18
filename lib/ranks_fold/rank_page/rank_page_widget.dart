@@ -5,8 +5,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -1170,7 +1170,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Container(
-                                                width: 120.0,
+                                                width: 123.0,
                                                 height: 30.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1183,46 +1183,6 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                  ),
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'larpc6j8' /* Pseudo */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmall
-                                                                  .fontStyle,
-                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -2707,123 +2667,145 @@ lucros */
                                             ],
                                           ),
                                         ),
-                                        StreamBuilder<List<UsersRecord>>(
-                                          stream: queryUsersRecord(
-                                            queryBuilder: (usersRecord) =>
-                                                usersRecord
-                                                    .where(
-                                                      'rank_value',
-                                                      isEqualTo:
-                                                          _model.dropLigueValue,
-                                                    )
-                                                    .where(
-                                                      'division_value',
-                                                      isEqualTo: _model
-                                                          .dropDivisionValue,
-                                                    )
-                                                    .orderBy('earnings_total',
-                                                        descending: true),
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent4,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 20.0),
+                                          child:
+                                              StreamBuilder<List<UsersRecord>>(
+                                            stream: queryUsersRecord(
+                                              queryBuilder: (usersRecord) =>
+                                                  usersRecord
+                                                      .where(
+                                                        'rank_value',
+                                                        isEqualTo: _model
+                                                            .dropLigueValue,
+                                                      )
+                                                      .where(
+                                                        'division_value',
+                                                        isEqualTo: _model
+                                                            .dropDivisionValue,
+                                                      )
+                                                      .orderBy('earnings_total',
+                                                          descending: true),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            }
-                                            List<UsersRecord>
-                                                columnUsersEarningsScrollUsersRecordList =
-                                                snapshot.data!;
+                                                );
+                                              }
+                                              List<UsersRecord>
+                                                  columnUsersEarningsScrollUsersRecordList =
+                                                  snapshot.data!;
 
-                                            return Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: List.generate(
-                                                  columnUsersEarningsScrollUsersRecordList
-                                                      .length,
-                                                  (columnUsersEarningsScrollIndex) {
-                                                final columnUsersEarningsScrollUsersRecord =
-                                                    columnUsersEarningsScrollUsersRecordList[
-                                                        columnUsersEarningsScrollIndex];
-                                                return Visibility(
-                                                  visible:
-                                                      !columnUsersEarningsScrollUsersRecord
-                                                          .blocks
-                                                          .contains(
-                                                              currentUserReference),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Container(
-                                                        width: 120.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: List.generate(
+                                                    columnUsersEarningsScrollUsersRecordList
+                                                        .length,
+                                                    (columnUsersEarningsScrollIndex) {
+                                                  final columnUsersEarningsScrollUsersRecord =
+                                                      columnUsersEarningsScrollUsersRecordList[
+                                                          columnUsersEarningsScrollIndex];
+                                                  return Visibility(
+                                                    visible:
+                                                        !columnUsersEarningsScrollUsersRecord
+                                                            .blocks
+                                                            .contains(
+                                                                currentUserReference),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 123.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1.0, 0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                PublicProfilPageWidget
-                                                                    .routeName,
-                                                                queryParameters:
-                                                                    {
-                                                                  'userRef':
-                                                                      serializeParam(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .reference,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                              );
-                                                            },
-                                                            child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                columnUsersEarningsScrollUsersRecord
-                                                                    .displayName,
-                                                                'NewUser',
-                                                              ),
-                                                              style: FlutterFlowTheme
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  PublicProfilPageWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'userRef':
+                                                                        serializeParam(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              },
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnUsersEarningsScrollUsersRecord
+                                                                      .displayName,
+                                                                  'NewUser',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -2833,70 +2815,67 @@ lucros */
                                                                           .bodyMedium
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: valueOrDefault<
-                                                                        Color>(
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .color1,
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                    ),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: 45.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
+                                                        Container(
+                                                          width: 45.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  1.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                functions
-                                                                    .zeroTo1(
-                                                                        columnUsersEarningsScrollIndex)
-                                                                    .toString(),
-                                                                '1',
-                                                              ),
-                                                              style: FlutterFlowTheme
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  functions
+                                                                      .zeroTo1(
+                                                                          columnUsersEarningsScrollIndex)
+                                                                      .toString(),
+                                                                  '1',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -2906,332 +2885,42 @@ lucros */
                                                                           .bodyMedium
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: valueOrDefault<
-                                                                        Color>(
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .color1,
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                    ),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: 30.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
+                                                        Container(
+                                                          width: 30.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      25.0),
-                                                          child: Image.network(
-                                                            columnUsersEarningsScrollUsersRecord
-                                                                .photoUrl,
-                                                            width: 200.0,
-                                                            height: 200.0,
-                                                            fit: BoxFit
-                                                                .fitHeight,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 85.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .limitOf2Decimal(
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .earningsTotal)
-                                                                  .toString(),
-                                                              '00.00',
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
                                                             ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
                                                           ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .limitOf2Decimal(
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .stock)
-                                                                  .toString(),
-                                                              '900,00',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 65.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        25.0),
+                                                            child:
+                                                                Image.network(
                                                               columnUsersEarningsScrollUsersRecord
-                                                                  .betWin
-                                                                  .toString(),
-                                                              '0',
+                                                                  .photoUrl,
+                                                              width: 200.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit
+                                                                  .fitHeight,
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: 55.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              functions
-                                                                  .averageOdd(
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .totalGains,
-                                                                      columnUsersEarningsScrollUsersRecord
-                                                                          .totalMises)
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Container(
-                                                          width: 65.0,
+                                                        Container(
+                                                          width: 85.0,
                                                           height: 30.0,
                                                           decoration:
                                                               BoxDecoration(
@@ -3252,11 +2941,207 @@ lucros */
                                                               valueOrDefault<
                                                                   String>(
                                                                 functions
-                                                                    .averageGoals(
+                                                                    .limitOf2Decimal(
                                                                         columnUsersEarningsScrollUsersRecord
-                                                                            .totalBets,
+                                                                            .earningsTotal)
+                                                                    .toString(),
+                                                                '00.00',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 95.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                functions
+                                                                    .limitOf2Decimal(
                                                                         columnUsersEarningsScrollUsersRecord
-                                                                            .betWin)
+                                                                            .stock)
+                                                                    .toString(),
+                                                                '900,00',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 65.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnUsersEarningsScrollUsersRecord
+                                                                    .betWin
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 55.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                functions
+                                                                    .averageOdd(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .totalGains,
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .totalMises)
                                                                     .toString(),
                                                                 '0',
                                                               ),
@@ -3300,39 +3185,130 @@ lucros */
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: 65.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
+                                                        Align(
                                                           alignment:
                                                               AlignmentDirectional(
                                                                   0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnUsersEarningsScrollUsersRecord
-                                                                  .clickSTeam
-                                                                  .toString(),
-                                                              '0',
+                                                          child: Container(
+                                                            width: 65.0,
+                                                            height: 30.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
                                                             ),
-                                                            style: FlutterFlowTheme
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  functions
+                                                                      .averageGoals(
+                                                                          columnUsersEarningsScrollUsersRecord
+                                                                              .totalBets,
+                                                                          columnUsersEarningsScrollUsersRecord
+                                                                              .betWin)
+                                                                      .toString(),
+                                                                  '0',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        columnUsersEarningsScrollUsersRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 65.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                                .primaryBackground,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnUsersEarningsScrollUsersRecord
+                                                                    .clickSTeam
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -3342,76 +3318,77 @@ lucros */
                                                                         .bodyMedium
                                                                         .fontStyle,
                                                                   ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: 55.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    1.0),
-                                                          ),
-                                                          border: Border.all(
+                                                        Container(
+                                                          width: 55.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnUsersEarningsScrollUsersRecord
-                                                                  .numPenalities
-                                                                  .toString(),
-                                                              '0',
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      1.0),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnUsersEarningsScrollUsersRecord
+                                                                    .numPenalities
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      columnUsersEarningsScrollUsersRecord
+                                                                          .color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -3421,35 +3398,16 @@ lucros */
                                                                         .bodyMedium
                                                                         .fontStyle,
                                                                   ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    columnUsersEarningsScrollUsersRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                );
-                                              }),
-                                            );
-                                          },
+                                                      ],
+                                                    ),
+                                                  );
+                                                }),
+                                              );
+                                            },
+                                          ),
                                         ),
                                       ],
                                     ),

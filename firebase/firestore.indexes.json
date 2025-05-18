@@ -515,6 +515,10 @@
         {
           "fieldPath": "date",
           "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "hour",
+          "order": "DESCENDING"
         }
       ]
     }

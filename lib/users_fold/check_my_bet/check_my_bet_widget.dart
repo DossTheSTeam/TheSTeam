@@ -431,6 +431,16 @@ aposta */
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
+                                AuthUserStreamWidget(
+                                  builder: (context) => Divider(
+                                    thickness: 2.0,
+                                    color: valueOrDefault<Color>(
+                                      currentUserDocument?.color2,
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                  ),
+                                ),
                                 if (containerMyBetsRecord.statut == true)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(

@@ -356,6 +356,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 2.0,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                              ),
+                            ),
                             if ((valueOrDefault(
                                             currentUserDocument?.langage, '') ==
                                         '') ||

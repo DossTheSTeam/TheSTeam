@@ -464,7 +464,7 @@ final parametersBuilderMap =
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
-  'EteamStats': (data) async => ParameterData(
+  'TeamStats': (data) async => ParameterData(
         allParams: {
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },

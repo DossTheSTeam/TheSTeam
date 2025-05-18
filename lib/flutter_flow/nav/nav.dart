@@ -1079,9 +1079,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: EteamStatsWidget.routeName,
-          path: EteamStatsWidget.routePath,
-          builder: (context, params) => EteamStatsWidget(
+          name: TeamStatsWidget.routeName,
+          path: TeamStatsWidget.routePath,
+          builder: (context, params) => TeamStatsWidget(
             eTeamRef: params.getParam(
               'eTeamRef',
               ParamType.DocumentReference,

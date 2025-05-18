@@ -708,6 +708,9 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                             await containerImagesRecord
                                                                 .reference
                                                                 .delete();
+                                                            await gridViewImagesRecord
+                                                                .reference
+                                                                .delete();
                                                           },
                                                           child: Icon(
                                                             Icons

@@ -3,8 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -1345,6 +1345,8 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(3.0),
                                                                       ),
                                                                       child:
                                                                           ClipRRect(
@@ -1856,6 +1858,10 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          3.0),
                                                             ),
                                                             child: ClipRRect(
                                                               borderRadius:

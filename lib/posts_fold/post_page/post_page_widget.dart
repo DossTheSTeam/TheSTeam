@@ -8,8 +8,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/upload_data.dart';
-import '/team_fold/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/team_fold/audio_member_conference/audio_member_conference_widget.dart';
+import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
+import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
 import '/users_fold/copy_text/copy_text_widget.dart';
 import '/users_fold/delete_my_post/delete_my_post_widget.dart';
 import '/index.dart';
@@ -636,6 +636,10 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      3.0),
                                                         ),
                                                         child: ClipRRect(
                                                           borderRadius:
@@ -661,36 +665,40 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      child: Text(
-                                                        rowTeamTeamsRecord.name,
-                                                        maxLines: 1,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    rowTeamTeamsRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pushNamed(
+                                                            TeamPageWidget
+                                                                .routeName,
+                                                            queryParameters: {
+                                                              'teamRef':
+                                                                  serializeParam(
+                                                                rowTeamTeamsRecord
+                                                                    .reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        child: Text(
+                                                          rowTeamTeamsRecord
+                                                              .name,
+                                                          maxLines: 1,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleSmall
@@ -700,6 +708,27 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                       .titleSmall
                                                                       .fontStyle,
                                                                 ),
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  rowTeamTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
