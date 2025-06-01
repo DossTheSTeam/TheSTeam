@@ -17,6 +17,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'post_message_page_model.dart';
 export 'post_message_page_model.dart';
 
@@ -418,15 +419,17 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioMemberConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioMemberConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -483,15 +486,17 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioFanConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioFanConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -672,22 +677,24 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () {
-                                                        FocusScope.of(context)
-                                                            .unfocus();
-                                                        FocusManager.instance
-                                                            .primaryFocus
-                                                            ?.unfocus();
-                                                      },
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            DeletePostMessageWidget(
-                                                          startedCommRef: widget
-                                                              .startedCommRef!,
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              DeletePostMessageWidget(
+                                                            startedCommRef: widget
+                                                                .startedCommRef!,
+                                                          ),
                                                         ),
                                                       ),
                                                     );
@@ -971,16 +978,21 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: CopyTextWidget(),
+                                          return WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: CopyTextWidget(),
+                                              ),
                                             ),
                                           );
                                         },
@@ -1752,14 +1764,14 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               null;
                                                           safeSetState(() {});
                                                           safeSetState(() {
-                                                            _model.isDataUploading1 =
+                                                            _model.isDataUploading_uploadDataMln =
                                                                 false;
-                                                            _model.uploadedLocalFile1 =
+                                                            _model.uploadedLocalFile_uploadDataMln =
                                                                 FFUploadedFile(
                                                                     bytes: Uint8List
                                                                         .fromList(
                                                                             []));
-                                                            _model.uploadedFileUrl1 =
+                                                            _model.uploadedFileUrl_uploadDataMln =
                                                                 '';
                                                           });
                                                         },
@@ -1771,7 +1783,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           size: 30.0,
                                                         ),
                                                       ),
-                                                      if (_model.uploadedFileUrl1 !=
+                                                      if (_model.uploadedFileUrl_uploadDataMln !=
                                                               '')
                                                         Padding(
                                                           padding:
@@ -1806,7 +1818,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                                 child: Image
                                                                     .network(
                                                                   _model
-                                                                      .uploadedFileUrl1,
+                                                                      .uploadedFileUrl_uploadDataMln,
                                                                   width: 300.0,
                                                                   height: 200.0,
                                                                   fit: BoxFit
@@ -2212,7 +2224,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             .commFieldTextController1
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl1,
+                                                            .uploadedFileUrl_uploadDataMln,
                                                         startedComm: widget
                                                             .startedCommRef,
                                                         moderator:
@@ -2238,7 +2250,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             .commFieldTextController1
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl1,
+                                                            .uploadedFileUrl_uploadDataMln,
                                                         startedComm: widget
                                                             .startedCommRef,
                                                         moderator:
@@ -2404,14 +2416,14 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               null;
                                                           safeSetState(() {});
                                                           safeSetState(() {
-                                                            _model.isDataUploading2 =
+                                                            _model.isDataUploading_uploadDataLrd =
                                                                 false;
-                                                            _model.uploadedLocalFile2 =
+                                                            _model.uploadedLocalFile_uploadDataLrd =
                                                                 FFUploadedFile(
                                                                     bytes: Uint8List
                                                                         .fromList(
                                                                             []));
-                                                            _model.uploadedFileUrl2 =
+                                                            _model.uploadedFileUrl_uploadDataLrd =
                                                                 '';
                                                           });
                                                         },
@@ -2423,7 +2435,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           size: 30.0,
                                                         ),
                                                       ),
-                                                      if (_model.uploadedFileUrl2 !=
+                                                      if (_model.uploadedFileUrl_uploadDataLrd !=
                                                               '')
                                                         Padding(
                                                           padding:
@@ -2458,7 +2470,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                                 child: Image
                                                                     .network(
                                                                   _model
-                                                                      .uploadedFileUrl2,
+                                                                      .uploadedFileUrl_uploadDataLrd,
                                                                   width: 300.0,
                                                                   height: 200.0,
                                                                   fit: BoxFit
@@ -2874,7 +2886,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             .commFieldTextController2
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl2,
+                                                            .uploadedFileUrl_uploadDataLrd,
                                                         startedComm: widget
                                                             .startedCommRef,
                                                         moderator:
@@ -2900,7 +2912,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             .commFieldTextController2
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl2,
+                                                            .uploadedFileUrl_uploadDataLrd,
                                                         startedComm: widget
                                                             .startedCommRef,
                                                         moderator:
@@ -3143,7 +3155,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               m.storagePath,
                                                               context))) {
                                                     safeSetState(() => _model
-                                                            .isDataUploading1 =
+                                                            .isDataUploading_uploadDataMln =
                                                         true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
@@ -3187,7 +3199,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               .map((u) => u!)
                                                               .toList();
                                                     } finally {
-                                                      _model.isDataUploading1 =
+                                                      _model.isDataUploading_uploadDataMln =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -3198,10 +3210,10 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile1 =
+                                                        _model.uploadedLocalFile_uploadDataMln =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl1 =
+                                                        _model.uploadedFileUrl_uploadDataMln =
                                                             downloadUrls.first;
                                                       });
                                                     } else {
@@ -3257,7 +3269,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               m.storagePath,
                                                               context))) {
                                                     safeSetState(() => _model
-                                                            .isDataUploading2 =
+                                                            .isDataUploading_uploadDataLrd =
                                                         true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
@@ -3301,7 +3313,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               .map((u) => u!)
                                                               .toList();
                                                     } finally {
-                                                      _model.isDataUploading2 =
+                                                      _model.isDataUploading_uploadDataLrd =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -3312,10 +3324,10 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile2 =
+                                                        _model.uploadedLocalFile_uploadDataLrd =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl2 =
+                                                        _model.uploadedFileUrl_uploadDataLrd =
                                                             downloadUrls.first;
                                                       });
                                                     } else {

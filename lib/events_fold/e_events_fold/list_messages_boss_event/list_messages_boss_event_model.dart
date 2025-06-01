@@ -9,10 +9,10 @@ class ListMessagesBossEventModel
     extends FlutterFlowModel<ListMessagesBossEventWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataNu8 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataNu8 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataNu8 = '';
 
   AudioRecorder? audioRecorder;
   String? audioBossMessage;

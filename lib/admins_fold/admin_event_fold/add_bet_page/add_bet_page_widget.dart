@@ -11,6 +11,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_bet_page_model.dart';
 export 'add_bet_page_model.dart';
 
@@ -384,17 +385,18 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioMemberConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioMemberConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -469,17 +471,18 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioFanConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioFanConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );

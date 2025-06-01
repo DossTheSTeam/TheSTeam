@@ -357,50 +357,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
                                         FFLocalizations.of(context).getText(
-                                          'e0grgz9e' /* MMA */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                if ((valueOrDefault(
-                                            currentUserDocument?.stsocialapp,
-                                            '') ==
-                                        'administrateur') ||
-                                    (valueOrDefault(
-                                            currentUserDocument
-                                                ?.adminSportvalue,
-                                            '') ==
-                                        'boxe'))
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 26.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'z47p9tkd' /* Boxe */,
+                                          'e0grgz9e' /* Fight */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -651,14 +608,20 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueBasketValue ??= '',
                                         ),
-                                        options: List<String>.from(
-                                            ['nba', 'pays.basket']),
+                                        options: List<String>.from([
+                                          'nba',
+                                          'nations.basket',
+                                          'euro.league'
+                                        ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             '8pbt5edk' /* NBA */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'ksku6vyc' /* Pays Basketball */,
+                                            'ksku6vyc' /* Nations Basketball */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'px8gl8cb' /* Euro League */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
@@ -907,48 +870,18 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                       builder: (context) =>
                                           FlutterFlowDropDown<String>(
                                         controller: _model
-                                                .dropLigueMMAValueController ??=
+                                                .dropLigueFightValueController1 ??=
                                             FormFieldController<String>(
-                                          _model.dropLigueMMAValue ??= '',
+                                          _model.dropLigueFightValue1 ??= '',
                                         ),
-                                        options: List<String>.from([
-                                          'mouche',
-                                          'coq',
-                                          'plume',
-                                          'leger',
-                                          'mi.moyen',
-                                          'moyen',
-                                          'mi.lourd',
-                                          'lourd'
-                                        ]),
+                                        options: List<String>.from(['ufc']),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
-                                            'rq4hyfx5' /* Mouche - 57 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'bo0h13wx' /* Coq - 61 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'pjd8s3rl' /* Plume - 66 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'fhqy2snh' /* Léger - 70 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'shr1057i' /* Mi-Moyen- 77 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '7uvt8efi' /* Moyen- 84 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'kyiod8he' /* Mi-Lourd - 93 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'pcb8we4i' /* Lourd - 120 kg */,
+                                            '21jshawk' /* UFC */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
-                                            _model.dropLigueMMAValue = val),
+                                            _model.dropLigueFightValue1 = val),
                                         width: 180.0,
                                         height: 40.0,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -1007,114 +940,6 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             currentUserDocument
                                                 ?.adminSportvalue,
                                             '') ==
-                                        'boxe'))
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 5.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) =>
-                                          FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropLigueBoxeValueController ??=
-                                            FormFieldController<String>(
-                                          _model.dropLigueBoxeValue ??= '',
-                                        ),
-                                        options: List<String>.from([
-                                          'mouche',
-                                          'plume',
-                                          'leger',
-                                          'mi.moyen',
-                                          'moyen',
-                                          'mi.lourd',
-                                          'lourd',
-                                          'super.lourd'
-                                        ]),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'ckdwgd5k' /* Mouche - 52 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '740jlf8n' /* Plume - 57 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'izdxtf3a' /* Léger - 63 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'vk9zt2t6' /* Mi-Moyen- 69 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'yrm1t0cw' /* Moyen- 75 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'pxm7302d' /* Mi-Lourd - 81 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'cta1m569' /* Lourd - 91 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'knynvxyi' /* Super Lourd + 91 kg */,
-                                          )
-                                        ],
-                                        onChanged: (val) => safeSetState(() =>
-                                            _model.dropLigueBoxeValue = val),
-                                        width: 180.0,
-                                        height: 40.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'enee565i' /* Ligues */,
-                                        ),
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor: Colors.transparent,
-                                        borderWidth: 0.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ),
-                                  ),
-                                if ((valueOrDefault(
-                                            currentUserDocument?.stsocialapp,
-                                            '') ==
-                                        'administrateur') ||
-                                    (valueOrDefault(
-                                            currentUserDocument
-                                                ?.adminSportvalue,
-                                            '') ==
                                         'rugby'))
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -1127,14 +952,20 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueRugbyValue ??= '',
                                         ),
-                                        options: List<String>.from(
-                                            ['top.14', 'pays.rugby']),
+                                        options: List<String>.from([
+                                          'top.14',
+                                          'nations.rugby',
+                                          'other.rugby'
+                                        ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             '0j8r8fzb' /* Top 14 */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '4aufr3hi' /* Pays Rugby */,
+                                            '4aufr3hi' /* Nationss Rugby */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'q5oxljt2' /* Other Rugby */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
@@ -1475,7 +1306,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(0.0),
                                     child: Image.network(
-                                      _model.uploadedFileUrl,
+                                      _model.uploadedFileUrl_uploadDataHbx,
                                       width: 300.0,
                                       height: 200.0,
                                       fit: BoxFit.fitHeight,
@@ -1500,8 +1331,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  safeSetState(
-                                      () => _model.isDataUploading = true);
+                                  safeSetState(() => _model
+                                      .isDataUploading_uploadDataHbx = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
 
@@ -1528,16 +1359,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         .map((u) => u!)
                                         .toList();
                                   } finally {
-                                    _model.isDataUploading = false;
+                                    _model.isDataUploading_uploadDataHbx =
+                                        false;
                                   }
                                   if (selectedUploadedFiles.length ==
                                           selectedMedia.length &&
                                       downloadUrls.length ==
                                           selectedMedia.length) {
                                     safeSetState(() {
-                                      _model.uploadedLocalFile =
+                                      _model.uploadedLocalFile_uploadDataHbx =
                                           selectedUploadedFiles.first;
-                                      _model.uploadedFileUrl =
+                                      _model.uploadedFileUrl_uploadDataHbx =
                                           downloadUrls.first;
                                     });
                                   } else {
@@ -1597,7 +1429,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           ],
                                           onChanged: (val) => safeSetState(() =>
                                               _model.dropFootCupValue = val),
-                                          width: 180.0,
+                                          width: 170.0,
                                           height: 40.0,
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
@@ -1667,7 +1499,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   leagueValue:
                                                       _model.dropLigueFootValue,
                                                   sportValue: 'football',
@@ -1773,7 +1606,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   sportValue: 'basketball',
                                                   leagueValue: _model
                                                       .dropLigueBasketValue,
@@ -1877,7 +1711,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   sportValue: 'tennis',
                                                   leagueValue: _model
                                                       .dropLigueTennisValue,
@@ -1981,7 +1816,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   sportValue: 'hockey',
                                                   leagueValue: _model
                                                       .dropLigueHockeyValue,
@@ -2057,8 +1893,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 ],
                               ),
                             ),
-                          if (_model.dropLigueMMAValue != null &&
-                              _model.dropLigueMMAValue != '')
+                          if (_model.dropLigueFightValue1 != null &&
+                              _model.dropLigueFightValue1 != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
@@ -2066,110 +1902,102 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            await TeamsRecord.collection
-                                                .doc()
-                                                .set(createTeamsRecordData(
-                                                  name: _model
-                                                      .teamNameFieldTextController
-                                                      .text,
-                                                  value: _model
-                                                      .teamvalueFieldTextController
-                                                      .text,
-                                                  adminUser:
-                                                      currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
-                                                  sportValue: 'mma',
-                                                  leagueValue:
-                                                      _model.dropLigueMMAValue,
-                                                  esport: false,
-                                                  points: 0,
-                                                ));
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'olewk1aw' /* Valider MMA */,
-                                          ),
-                                          options: FFButtonOptions(
-                                            width: 180.0,
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
-                                            elevation: 3.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            hoverColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .success,
-                                            hoverTextColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                          ),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropLigueFightValueController2 ??=
+                                          FormFieldController<String>(
+                                        _model.dropLigueFightValue2 ??= '',
                                       ),
-                                    ],
+                                      options: List<String>.from([
+                                        'fly.weight',
+                                        'bantam.weight',
+                                        'feather.weight',
+                                        'light.weight',
+                                        'welter.weight',
+                                        'middle.weight',
+                                        'light.heavy.weight',
+                                        'heavy.weight'
+                                      ]),
+                                      optionLabels: [
+                                        FFLocalizations.of(context).getText(
+                                          '2lg0tkks' /* Fly Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ulbl7imv' /* Bantam Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'u8y7575s' /* Feather Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '250u980n' /* Light Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'zkw5t40j' /* Welter Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'uo1il81h' /* Middle Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'x44vt9en' /* Light Heavy Weight */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0d9uo7qz' /* Heavy Weight */,
+                                        )
+                                      ],
+                                      onChanged: (val) => safeSetState(() =>
+                                          _model.dropLigueFightValue2 = val),
+                                      width: 170.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        't4xsaaqh' /* Poids */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
                                   ),
-                                ],
-                              ),
-                            ),
-                          if (_model.dropLigueBoxeValue != null &&
-                              _model.dropLigueBoxeValue != '')
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2189,17 +2017,20 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
-                                                  sportValue: 'boxe',
-                                                  leagueValue:
-                                                      _model.dropLigueBoxeValue,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
+                                                  sportValue: 'mma',
+                                                  leagueValue: _model
+                                                      .dropLigueFightValue1,
                                                   esport: false,
                                                   points: 0,
+                                                  divisionValue: _model
+                                                      .dropLigueFightValue2,
                                                 ));
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'ijh2c30s' /* Valider Boxe */,
+                                            'bv1e6pnb' /* Valider */,
                                           ),
                                           options: FFButtonOptions(
                                             width: 180.0,
@@ -2274,6 +2105,73 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 5.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropRugbyCupValueController ??=
+                                              FormFieldController<String>(
+                                        _model.dropRugbyCupValue ??= '',
+                                      ),
+                                      options:
+                                          List<String>.from(['champions.cup']),
+                                      optionLabels: [
+                                        FFLocalizations.of(context).getText(
+                                          'v103b5p0' /* Champions Cup */,
+                                        )
+                                      ],
+                                      onChanged: (val) => safeSetState(
+                                          () => _model.dropRugbyCupValue = val),
+                                      width: 170.0,
+                                      height: 40.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'olix285k' /* Coupes */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 0.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 0.0, 12.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: false,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2293,17 +2191,20 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   sportValue: 'rugby',
                                                   leagueValue: _model
                                                       .dropLigueRugbyValue,
                                                   esport: false,
                                                   points: 0,
+                                                  additionalLeague:
+                                                      _model.dropRugbyCupValue,
                                                 ));
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'qxh5fqjs' /* Valider Rugby */,
+                                            'idsyk9ja' /* Valider Rugby */,
                                           ),
                                           options: FFButtonOptions(
                                             width: 180.0,
@@ -2397,7 +2298,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .text,
                                                   adminUser:
                                                       currentUserReference,
-                                                  logo: _model.uploadedFileUrl,
+                                                  logo: _model
+                                                      .uploadedFileUrl_uploadDataHbx,
                                                   sportValue: 'sports.meca',
                                                   leagueValue:
                                                       _model.dropLigueMecaValue,

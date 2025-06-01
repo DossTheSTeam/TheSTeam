@@ -42,15 +42,15 @@ class PostMessagePageModel extends FlutterFlowModel<PostMessagePageWidget> {
   String? Function(BuildContext, String?)? commFieldTextController2Validator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   PostMessagesRecord? commentEsportRef;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadDataMln = false;
+  FFUploadedFile uploadedLocalFile_uploadDataMln =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  String uploadedFileUrl_uploadDataMln = '';
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadDataLrd = false;
+  FFUploadedFile uploadedLocalFile_uploadDataLrd =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadDataLrd = '';
 
   @override
   void initState(BuildContext context) {}

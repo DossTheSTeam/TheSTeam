@@ -12,6 +12,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'e_user_rank_page_model.dart';
 export 'e_user_rank_page_model.dart';
 
@@ -335,19 +336,20 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                AudioMemberConferenceWidget(
-                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioMemberConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         );
@@ -422,19 +424,20 @@ class _EUserRankPageWidgetState extends State<EUserRankPageWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                AudioFanConferenceWidget(
-                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioFanConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         );

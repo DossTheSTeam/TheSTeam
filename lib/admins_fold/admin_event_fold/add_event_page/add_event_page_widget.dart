@@ -14,6 +14,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_event_page_model.dart';
 export 'add_event_page_model.dart';
 
@@ -313,24 +314,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioMemberConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioMemberConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -405,24 +409,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioFanConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioFanConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -1005,7 +1012,6 @@ Nom Event */
                                         'tennis',
                                         'hockey',
                                         'mma',
-                                        'boxe',
                                         'rugby',
                                         'sports.meca'
                                       ]),
@@ -1026,9 +1032,6 @@ Nom Event */
                                           'kuuuztnf' /* MMA */,
                                         ),
                                         FFLocalizations.of(context).getText(
-                                          'cy4ejc2w' /* Boxe */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
                                           'ijz0ct32' /* Rugby */,
                                         ),
                                         FFLocalizations.of(context).getText(
@@ -1037,7 +1040,7 @@ Nom Event */
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropSportValue = val),
-                                      width: 180.0,
+                                      width: 160.0,
                                       height: 40.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1109,26 +1112,17 @@ Nom Event */
                                           'europa.league',
                                           'conference.league',
                                           'nhl',
-                                          'gazon.elite.h',
-                                          'gazon.elite.f',
-                                          'salle.elite.h',
-                                          'salle.elite.f',
-                                          'mouche',
-                                          'coq',
-                                          'plume',
-                                          'leger',
-                                          'mi.moyen',
-                                          'moyen',
-                                          'mi.lourd',
-                                          'lourd',
+                                          'ufc',
                                           'autres.france',
-                                          'super.lourd',
                                           'top.14',
-                                          'pays.rugby',
+                                          'nations.rugby',
                                           'formule.1',
                                           'moto.gp',
                                           'world.superbike',
-                                          'mx.gp'
+                                          'mx.gp',
+                                          'euro.league',
+                                          'champions.cup',
+                                          'nations.basket'
                                         ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
@@ -1174,55 +1168,19 @@ Nom Event */
                                             '7yk5yp1u' /* nhl */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'njc4ihwi' /* gazon.elite.h */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'gq48juvx' /* gazon.elite.f */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'nwf23mkz' /* salle.elite.h */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'n25qdek2' /* salle.elite.f */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'jvkwaozb' /* Mouche */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '19jvncj0' /* Coq */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '22zpt7wk' /* Plume */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'va4u23ul' /* Léger */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'qq8w36z1' /* Mi-Moyen */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ieq0o337' /* Moyen */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '361zr7et' /* Mi-Lourd */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ket3v7a1' /* Lourd */,
+                                            'ket3v7a1' /* UFC */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'xwluklbx' /* Autres - France */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '8qg1tmh1' /* Super Lourd */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
                                             'jal49tll' /* Top 14 */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'b010tqlf' /* Pays Rugby */,
+                                            'yiyen523' /* Nations Rugby */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '8t97n3mq' /* Formule 1 */,
+                                            'uz9v2bnx' /* Formula 1 */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'k076bo4n' /* Moto GP */,
@@ -1232,6 +1190,15 @@ Nom Event */
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'gn93zd0e' /* MX GP */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'wv967ap4' /* Euro League */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'j2rtcm7l' /* Champions Cup */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'tf88qakd' /* Nations Basket */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(
@@ -1263,7 +1230,7 @@ Nom Event */
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '67m2vsh4' /* Ligues */,
+                                          'mqk4vsds' /* Ligues */,
                                         ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -1288,12 +1255,111 @@ Nom Event */
                                   ],
                                 ),
                               ),
+                              if (_model.dropSportValue == 'mma')
+                                Align(
+                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  child: FlutterFlowDropDown<String>(
+                                    controller: _model
+                                            .dropLigueFightValueController1 ??=
+                                        FormFieldController<String>(
+                                      _model.dropLigueFightValue1 ??= '',
+                                    ),
+                                    options: List<String>.from([
+                                      'fly.weight',
+                                      'bantam.weight',
+                                      'feather.weight',
+                                      'light.weight',
+                                      'welter.weight',
+                                      'middle.weight',
+                                      'light.heavy.weight',
+                                      'heavy.weight'
+                                    ]),
+                                    optionLabels: [
+                                      FFLocalizations.of(context).getText(
+                                        'kkqc6vu7' /* Fly Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'kbhy3lo2' /* Bantam Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'buxvmsgz' /* Feather Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'ux5hmdnv' /* Light Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'h0ej69mk' /* Welter Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '09gje5jv' /* Middle Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'd743q7vp' /* Light Heavy Weight */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'r9zrgsnf' /* Heavy Weight */,
+                                      )
+                                    ],
+                                    onChanged: (val) => safeSetState(() =>
+                                        _model.dropLigueFightValue1 = val),
+                                    width: 170.0,
+                                    height: 40.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'p70zc03d' /* Poids */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    elevation: 2.0,
+                                    borderColor: Colors.transparent,
+                                    borderWidth: 0.0,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    hidesUnderline: true,
+                                    isOverButton: false,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  ),
+                                ),
                               Divider(
                                 thickness: 1.0,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              if (_model.dropSportValue != 'sports.meca')
+                              if ((_model.dropSportValue != 'sports.meca') &&
+                                  (_model.dropSportValue != 'mma') &&
+                                  (_model.dropSportValue != null &&
+                                      _model.dropSportValue != ''))
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -2074,6 +2140,795 @@ Nom Event */
                                     ),
                                   ],
                                 ),
+                              if (_model.dropSportValue == 'mma')
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 5.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          StreamBuilder<List<TeamsRecord>>(
+                                            stream: queryTeamsRecord(
+                                              queryBuilder: (teamsRecord) =>
+                                                  teamsRecord
+                                                      .where(
+                                                        'league_value',
+                                                        isEqualTo: _model
+                                                            .dropLigueValue,
+                                                      )
+                                                      .where(
+                                                        'division_value',
+                                                        isEqualTo: _model
+                                                            .dropLigueFightValue1,
+                                                      ),
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<TeamsRecord>
+                                                  dropTeamMMADomTeamsRecordList =
+                                                  snapshot.data!;
+
+                                              return FlutterFlowDropDown<
+                                                  String>(
+                                                controller: _model
+                                                        .dropTeamMMADomValueController ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropTeamMMADomValue ??=
+                                                      '',
+                                                ),
+                                                options: List<String>.from(
+                                                    dropTeamMMADomTeamsRecordList
+                                                        .map((e) => e.value)
+                                                        .toList()),
+                                                optionLabels:
+                                                    dropTeamMMADomTeamsRecordList
+                                                        .map((e) => e.name)
+                                                        .toList(),
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropTeamMMADomValue =
+                                                        val),
+                                                width: 200.0,
+                                                height: 40.0,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ite24t0w' /* Teams */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              );
+                                            },
+                                          ),
+                                          if (_model.dropTeamMMADomValue !=
+                                                  null &&
+                                              _model.dropTeamMMADomValue != '')
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: StreamBuilder<
+                                                  List<TeamsRecord>>(
+                                                stream: queryTeamsRecord(
+                                                  queryBuilder: (teamsRecord) =>
+                                                      teamsRecord.where(
+                                                    'value',
+                                                    isEqualTo: _model
+                                                        .dropTeamMMADomValue,
+                                                  ),
+                                                  singleRecord: true,
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent4,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<TeamsRecord>
+                                                      columnTeamDomRefTeamsRecordList =
+                                                      snapshot.data!;
+                                                  // Return an empty Container when the item does not exist.
+                                                  if (snapshot.data!.isEmpty) {
+                                                    return Container();
+                                                  }
+                                                  final columnTeamDomRefTeamsRecord =
+                                                      columnTeamDomRefTeamsRecordList
+                                                              .isNotEmpty
+                                                          ? columnTeamDomRefTeamsRecordList
+                                                              .first
+                                                          : null;
+
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamDomRefTeamsRecord
+                                                              ?.name,
+                                                          'teamdom',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                      if (_model.eventFightRef
+                                                              ?.reference ==
+                                                          null)
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                var eventsRecordReference =
+                                                                    EventsRecord
+                                                                        .collection
+                                                                        .doc();
+                                                                await eventsRecordReference
+                                                                    .set(
+                                                                        createEventsRecordData(
+                                                                  date: _model
+                                                                      .calendarSelectedDay
+                                                                      ?.start,
+                                                                  hour: _model
+                                                                      .countHourValue,
+                                                                  minute: _model
+                                                                      .countMinuteValue,
+                                                                  teamdom:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          ?.value,
+                                                                  draw: valueOrDefault<
+                                                                      String>(
+                                                                    'Match nul',
+                                                                    'draw',
+                                                                  ),
+                                                                  l2myes:
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                    'Les 2 équipes marquent - Oui',
+                                                                    'l2myes',
+                                                                  ),
+                                                                  l2mno:
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                    'Les 2 équipes marquent - Non',
+                                                                    'l2mno',
+                                                                  ),
+                                                                  adminUser:
+                                                                      currentUserReference,
+                                                                  statut: false,
+                                                                  sportValue: _model
+                                                                      .dropSportValue,
+                                                                  teamdomRef:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          ?.reference,
+                                                                  leagueValue:
+                                                                      _model
+                                                                          .dropLigueValue,
+                                                                  week: _model
+                                                                      .numWeekFieldTextController
+                                                                      .text,
+                                                                  esport: false,
+                                                                  divisionValue:
+                                                                      _model
+                                                                          .dropLigueFightValue1,
+                                                                ));
+                                                                _model.eventFightRef =
+                                                                    EventsRecord
+                                                                        .getDocumentFromData(
+                                                                            createEventsRecordData(
+                                                                              date: _model.calendarSelectedDay?.start,
+                                                                              hour: _model.countHourValue,
+                                                                              minute: _model.countMinuteValue,
+                                                                              teamdom: columnTeamDomRefTeamsRecord?.value,
+                                                                              draw: valueOrDefault<String>(
+                                                                                'Match nul',
+                                                                                'draw',
+                                                                              ),
+                                                                              l2myes: valueOrDefault<String>(
+                                                                                'Les 2 équipes marquent - Oui',
+                                                                                'l2myes',
+                                                                              ),
+                                                                              l2mno: valueOrDefault<String>(
+                                                                                'Les 2 équipes marquent - Non',
+                                                                                'l2mno',
+                                                                              ),
+                                                                              adminUser: currentUserReference,
+                                                                              statut: false,
+                                                                              sportValue: _model.dropSportValue,
+                                                                              teamdomRef: columnTeamDomRefTeamsRecord?.reference,
+                                                                              leagueValue: _model.dropLigueValue,
+                                                                              week: _model.numWeekFieldTextController.text,
+                                                                              esport: false,
+                                                                              divisionValue: _model.dropLigueFightValue1,
+                                                                            ),
+                                                                            eventsRecordReference);
+
+                                                                await TeamEventsRecord.createDoc(
+                                                                        columnTeamDomRefTeamsRecord!
+                                                                            .reference)
+                                                                    .set(
+                                                                        createTeamEventsRecordData(
+                                                                  startedTime: _model
+                                                                      .calendarSelectedDay
+                                                                      ?.start,
+                                                                  events: _model
+                                                                      .eventFightRef
+                                                                      ?.reference,
+                                                                ));
+
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              text: FFLocalizations
+                                                                      .of(context)
+                                                                  .getText(
+                                                                'e95uo45x' /* Valider Domicile */,
+                                                              ),
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                width: 130.0,
+                                                                height: 40.0,
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          16.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
+                                                                elevation: 3.0,
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 1.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            40.0),
+                                                                hoverColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .success,
+                                                                hoverTextColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      thickness: 1.0,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        StreamBuilder<List<TeamsRecord>>(
+                                          stream: queryTeamsRecord(
+                                            queryBuilder: (teamsRecord) =>
+                                                teamsRecord
+                                                    .where(
+                                                      'league_value',
+                                                      isEqualTo:
+                                                          _model.dropLigueValue,
+                                                    )
+                                                    .where(
+                                                      'division_value',
+                                                      isEqualTo: _model
+                                                          .dropLigueFightValue1,
+                                                    ),
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<TeamsRecord>
+                                                dropTeamMMAExtTeamsRecordList =
+                                                snapshot.data!;
+
+                                            return FlutterFlowDropDown<String>(
+                                              controller: _model
+                                                      .dropTeamMMAExtValueController ??=
+                                                  FormFieldController<String>(
+                                                _model.dropTeamMMAExtValue ??=
+                                                    '',
+                                              ),
+                                              options: List<String>.from(
+                                                  dropTeamMMAExtTeamsRecordList
+                                                      .map((e) => e.value)
+                                                      .toList()),
+                                              optionLabels:
+                                                  dropTeamMMAExtTeamsRecordList
+                                                      .map((e) => e.name)
+                                                      .toList(),
+                                              onChanged: (val) => safeSetState(
+                                                  () => _model
+                                                          .dropTeamMMAExtValue =
+                                                      val),
+                                              width: 200.0,
+                                              height: 40.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'rfxi5kof' /* Teams */,
+                                              ),
+                                              icon: Icon(
+                                                Icons
+                                                    .keyboard_arrow_down_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              elevation: 2.0,
+                                              borderColor: Colors.transparent,
+                                              borderWidth: 0.0,
+                                              borderRadius: 8.0,
+                                              margin: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 12.0, 0.0),
+                                              hidesUnderline: true,
+                                              isOverButton: false,
+                                              isSearchable: false,
+                                              isMultiSelect: false,
+                                            );
+                                          },
+                                        ),
+                                        if (_model.dropTeamMMAExtValue !=
+                                                null &&
+                                            _model.dropTeamMMAExtValue != '')
+                                          StreamBuilder<List<TeamsRecord>>(
+                                            stream: queryTeamsRecord(
+                                              queryBuilder: (teamsRecord) =>
+                                                  teamsRecord.where(
+                                                'value',
+                                                isEqualTo:
+                                                    _model.dropTeamMMAExtValue,
+                                              ),
+                                              singleRecord: true,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<TeamsRecord>
+                                                  columnTeamExtRefTeamsRecordList =
+                                                  snapshot.data!;
+                                              // Return an empty Container when the item does not exist.
+                                              if (snapshot.data!.isEmpty) {
+                                                return Container();
+                                              }
+                                              final columnTeamExtRefTeamsRecord =
+                                                  columnTeamExtRefTeamsRecordList
+                                                          .isNotEmpty
+                                                      ? columnTeamExtRefTeamsRecordList
+                                                          .first
+                                                      : null;
+
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      columnTeamExtRefTeamsRecord
+                                                          ?.name,
+                                                      'teamext',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          fontSize: 10.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await _model
+                                                              .eventFightRef!
+                                                              .reference
+                                                              .update(
+                                                                  createEventsRecordData(
+                                                            teamext: _model
+                                                                .dropTeamMMAExtValue,
+                                                            teamextRef:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    ?.reference,
+                                                          ));
+
+                                                          await TeamEventsRecord
+                                                                  .createDoc(
+                                                                      columnTeamExtRefTeamsRecord!
+                                                                          .reference)
+                                                              .set(
+                                                                  createTeamEventsRecordData(
+                                                            startedTime: _model
+                                                                .calendarSelectedDay
+                                                                ?.start,
+                                                            events: _model
+                                                                .eventFightRef
+                                                                ?.reference,
+                                                          ));
+
+                                                          context.pushNamed(
+                                                            AddBetPageWidget
+                                                                .routeName,
+                                                            queryParameters: {
+                                                              'eventRef':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .eventFightRef
+                                                                    ?.reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          '5ree4omd' /* Créer l'évennement */,
+                                                        ),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 130.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .success,
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               if (_model.dropSportValue == 'sports.meca')
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -2326,13 +3181,26 @@ Nom Event */
                                                       _model.dropLigueBasketValue ??=
                                                           '',
                                                     ),
-                                                    options: List<String>.from(
-                                                        ['nba']),
+                                                    options: List<String>.from([
+                                                      'nba',
+                                                      'euro.league',
+                                                      'nations.basket'
+                                                    ]),
                                                     optionLabels: [
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
                                                         '2mhoekyk' /* NBA */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'sy1bdcoi' /* Euro League */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'btfskhbo' /* Nations */,
                                                       )
                                                     ],
                                                     onChanged: (val) =>
@@ -2374,7 +3242,7 @@ Nom Event */
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'b8bv6scc' /* Ligues */,
+                                                      'ngxnnf1o' /* Ligues */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -2475,7 +3343,7 @@ Nom Event */
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '2faf0qt9' /* Ligues */,
+                                                      '67m2vsh4' /* Ligues */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -2534,7 +3402,7 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'e6b9j1ud' /* NHL */,
+                                                        '3ra9kqls' /* NHL */,
                                                       ),
                                                       FFLocalizations.of(
                                                               context)
@@ -2596,7 +3464,7 @@ Nom Event */
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'ruhiq89y' /* Ligues */,
+                                                      'b8bv6scc' /* Ligues */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -2644,56 +3512,13 @@ Nom Event */
                                                       _model.dropLigueMMAValue ??=
                                                           '',
                                                     ),
-                                                    options: List<String>.from([
-                                                      'mouche',
-                                                      'coq',
-                                                      'plume',
-                                                      'leger',
-                                                      'mi.moyen',
-                                                      'moyen',
-                                                      'mi.lourd',
-                                                      'lourd'
-                                                    ]),
+                                                    options: List<String>.from(
+                                                        ['ufc']),
                                                     optionLabels: [
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        's90o0jy2' /* Mouche */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'c4vhj6jp' /* Coq */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'fqctm4dx' /* Plume */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'dj8ou4f4' /* Léger */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'txtcyzdc' /* Mi-Moyen */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'oolhi8o1' /* Moyen */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'f2di3w8r' /* Mi-Lourd */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'v9dhgvsi' /* Lourd */,
+                                                        's90o0jy2' /* UFC */,
                                                       )
                                                     ],
                                                     onChanged: (val) =>
@@ -2735,146 +3560,7 @@ Nom Event */
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'g2pn6vb3' /* Ligues */,
-                                                    ),
-                                                    icon: Icon(
-                                                      Icons
-                                                          .keyboard_arrow_down_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 24.0,
-                                                    ),
-                                                    fillColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    elevation: 2.0,
-                                                    borderColor:
-                                                        Colors.transparent,
-                                                    borderWidth: 0.0,
-                                                    borderRadius: 8.0,
-                                                    margin:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(12.0, 0.0,
-                                                                12.0, 0.0),
-                                                    hidesUnderline: true,
-                                                    isOverButton: false,
-                                                    isSearchable: false,
-                                                    isMultiSelect: false,
-                                                  ),
-                                                ),
-                                              if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.adminSportvalue,
-                                                      '') ==
-                                                  'boxe')
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
-                                                  child: FlutterFlowDropDown<
-                                                      String>(
-                                                    controller: _model
-                                                            .dropLigueBoxeValueController ??=
-                                                        FormFieldController<
-                                                            String>(
-                                                      _model.dropLigueBoxeValue ??=
-                                                          '',
-                                                    ),
-                                                    options: List<String>.from([
-                                                      'mouche',
-                                                      'plume',
-                                                      'leger',
-                                                      'mi.moyen',
-                                                      'moyen',
-                                                      'mi.lourd',
-                                                      'lourd',
-                                                      'super.lourd'
-                                                    ]),
-                                                    optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'vy9p6e8f' /* Mouche - 52 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'xutkf752' /* Plume - 57 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '8fk0uhna' /* Léger - 63 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7xw28tb2' /* Mi-Moyen- 69 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '5nf64e66' /* Moyen- 75 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'p5om9o3b' /* Mi-Lourd - 81 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'z1vmd6wq' /* Lourd - 91 kg */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'z0rt6948' /* Super Lourd + 91 kg */,
-                                                      )
-                                                    ],
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropLigueBoxeValue =
-                                                            val),
-                                                    width: 180.0,
-                                                    height: 50.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'yaga67gl' /* Ligues */,
+                                                      '2faf0qt9' /* Ligues */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -2924,7 +3610,8 @@ Nom Event */
                                                     ),
                                                     options: List<String>.from([
                                                       'top.14',
-                                                      'pays.rugby'
+                                                      'champions.cup',
+                                                      'nations.rugby'
                                                     ]),
                                                     optionLabels: [
                                                       FFLocalizations.of(
@@ -2935,7 +3622,12 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'st7v8ghf' /* Pays Rugby */,
+                                                        'st7v8ghf' /* Champions Cup */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '75l1n7o7' /* Nations */,
                                                       )
                                                     ],
                                                     onChanged: (val) =>
@@ -3093,6 +3785,145 @@ Nom Event */
                                                                 context)
                                                             .getText(
                                                       't0y3lh4z' /* Ligues */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.adminSportvalue,
+                                                      '') ==
+                                                  'mma')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          1.0, 0.0),
+                                                  child: FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropLigueFightValueController2 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropLigueFightValue2 ??=
+                                                          '',
+                                                    ),
+                                                    options: List<String>.from([
+                                                      'fly.weight',
+                                                      'bantam.weight',
+                                                      'feather.weight',
+                                                      'light.weight',
+                                                      'welter.weight',
+                                                      'middle.weight',
+                                                      'light.heavy.weight',
+                                                      'heavy.weight'
+                                                    ]),
+                                                    optionLabels: [
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '2j32kcif' /* Fly Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'pum3172n' /* Bantam Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'ipv31fm1' /* Feather Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'm096q0z6' /* Light Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'yzjukkkp' /* Welter Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'tpkxmmme' /* Middle Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'neid92r9' /* Light Heavy Weight */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'lxch0v3w' /* Heavy Weight */,
+                                                      )
+                                                    ],
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropLigueFightValue2 =
+                                                            val),
+                                                    width: 170.0,
+                                                    height: 40.0,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .poppins(
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'yuaxb0xx' /* Poids */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -4433,11 +5264,17 @@ Nom Event */
                                                   List<TeamsRecord>>(
                                                 stream: queryTeamsRecord(
                                                   queryBuilder: (teamsRecord) =>
-                                                      teamsRecord.where(
-                                                    'league_value',
-                                                    isEqualTo: _model
-                                                        .dropLigueMMAValue,
-                                                  ),
+                                                      teamsRecord
+                                                          .where(
+                                                            'league_value',
+                                                            isEqualTo: _model
+                                                                .dropLigueMMAValue,
+                                                          )
+                                                          .where(
+                                                            'division_value',
+                                                            isEqualTo: _model
+                                                                .dropLigueFightValue2,
+                                                          ),
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
@@ -4700,6 +5537,9 @@ Nom Event */
                                                                     .numWeekFieldTextController
                                                                     .text,
                                                                 esport: false,
+                                                                divisionValue:
+                                                                    _model
+                                                                        .dropLigueFightValue2,
                                                               ));
                                                               _model.eventMMARef =
                                                                   EventsRecord
@@ -4742,6 +5582,8 @@ Nom Event */
                                                                                 _model.numWeekFieldTextController.text,
                                                                             esport:
                                                                                 false,
+                                                                            divisionValue:
+                                                                                _model.dropLigueFightValue2,
                                                                           ),
                                                                           eventsRecordReference);
 
@@ -4845,433 +5687,6 @@ Nom Event */
                                           ],
                                         ),
                                       ),
-                                    if (_model.dropLigueBoxeValue != null &&
-                                        _model.dropLigueBoxeValue != '')
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 10.0, 0.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
-                                              child: StreamBuilder<
-                                                  List<TeamsRecord>>(
-                                                stream: queryTeamsRecord(
-                                                  queryBuilder: (teamsRecord) =>
-                                                      teamsRecord.where(
-                                                    'league_value',
-                                                    isEqualTo: _model
-                                                        .dropLigueBoxeValue,
-                                                  ),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent4,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<TeamsRecord>
-                                                      dropTeamDomBoxeTeamsRecordList =
-                                                      snapshot.data!;
-
-                                                  return FlutterFlowDropDown<
-                                                      String>(
-                                                    controller: _model
-                                                            .dropTeamDomBoxeValueController ??=
-                                                        FormFieldController<
-                                                            String>(
-                                                      _model.dropTeamDomBoxeValue ??=
-                                                          '',
-                                                    ),
-                                                    options: List<String>.from(
-                                                        dropTeamDomBoxeTeamsRecordList
-                                                            .map((e) => e.value)
-                                                            .toList()),
-                                                    optionLabels:
-                                                        dropTeamDomBoxeTeamsRecordList
-                                                            .map((e) => e.name)
-                                                            .toList(),
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropTeamDomBoxeValue =
-                                                            val),
-                                                    width: 200.0,
-                                                    height: 40.0,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'w8ketdyn' /* Teams */,
-                                                    ),
-                                                    icon: Icon(
-                                                      Icons
-                                                          .keyboard_arrow_down_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 24.0,
-                                                    ),
-                                                    fillColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryBackground,
-                                                    elevation: 2.0,
-                                                    borderColor:
-                                                        Colors.transparent,
-                                                    borderWidth: 0.0,
-                                                    borderRadius: 8.0,
-                                                    margin:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(12.0, 0.0,
-                                                                12.0, 0.0),
-                                                    hidesUnderline: true,
-                                                    isOverButton: false,
-                                                    isSearchable: false,
-                                                    isMultiSelect: false,
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'value',
-                                                  isEqualTo: _model
-                                                      .dropTeamDomBoxeValue,
-                                                ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    columnTeamsRecordList =
-                                                    snapshot.data!;
-                                                // Return an empty Container when the item does not exist.
-                                                if (snapshot.data!.isEmpty) {
-                                                  return Container();
-                                                }
-                                                final columnTeamsRecord =
-                                                    columnTeamsRecordList
-                                                            .isNotEmpty
-                                                        ? columnTeamsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                    if (_model.eventBoxeRef
-                                                            ?.reference ==
-                                                        null)
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              var eventsRecordReference =
-                                                                  EventsRecord
-                                                                      .collection
-                                                                      .doc();
-                                                              await eventsRecordReference
-                                                                  .set(
-                                                                      createEventsRecordData(
-                                                                date: _model
-                                                                    .calendarSelectedDay
-                                                                    ?.start,
-                                                                hour: _model
-                                                                    .countHourValue,
-                                                                minute: _model
-                                                                    .countMinuteValue,
-                                                                teamdom:
-                                                                    columnTeamsRecord
-                                                                        ?.value,
-                                                                draw:
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  'Match nul',
-                                                                  'draw',
-                                                                ),
-                                                                l2myes:
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  'Les 2 équipes marquent - Oui',
-                                                                  'l2myes',
-                                                                ),
-                                                                l2mno:
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  'Les 2 équipes marquent - Non',
-                                                                  'l2mno',
-                                                                ),
-                                                                adminUser:
-                                                                    currentUserReference,
-                                                                statut: false,
-                                                                sportValue:
-                                                                    'boxe',
-                                                                teamdomRef:
-                                                                    columnTeamsRecord
-                                                                        ?.reference,
-                                                                leagueValue: _model
-                                                                    .dropLigueBoxeValue,
-                                                                week: _model
-                                                                    .numWeekFieldTextController
-                                                                    .text,
-                                                                esport: false,
-                                                              ));
-                                                              _model.eventBoxeRef =
-                                                                  EventsRecord
-                                                                      .getDocumentFromData(
-                                                                          createEventsRecordData(
-                                                                            date:
-                                                                                _model.calendarSelectedDay?.start,
-                                                                            hour:
-                                                                                _model.countHourValue,
-                                                                            minute:
-                                                                                _model.countMinuteValue,
-                                                                            teamdom:
-                                                                                columnTeamsRecord?.value,
-                                                                            draw:
-                                                                                valueOrDefault<String>(
-                                                                              'Match nul',
-                                                                              'draw',
-                                                                            ),
-                                                                            l2myes:
-                                                                                valueOrDefault<String>(
-                                                                              'Les 2 équipes marquent - Oui',
-                                                                              'l2myes',
-                                                                            ),
-                                                                            l2mno:
-                                                                                valueOrDefault<String>(
-                                                                              'Les 2 équipes marquent - Non',
-                                                                              'l2mno',
-                                                                            ),
-                                                                            adminUser:
-                                                                                currentUserReference,
-                                                                            statut:
-                                                                                false,
-                                                                            sportValue:
-                                                                                'boxe',
-                                                                            teamdomRef:
-                                                                                columnTeamsRecord?.reference,
-                                                                            leagueValue:
-                                                                                _model.dropLigueBoxeValue,
-                                                                            week:
-                                                                                _model.numWeekFieldTextController.text,
-                                                                            esport:
-                                                                                false,
-                                                                          ),
-                                                                          eventsRecordReference);
-
-                                                              await TeamEventsRecord
-                                                                      .createDoc(
-                                                                          columnTeamsRecord!
-                                                                              .reference)
-                                                                  .set(
-                                                                      createTeamEventsRecordData(
-                                                                startedTime: _model
-                                                                    .calendarSelectedDay
-                                                                    ?.start,
-                                                                events: _model
-                                                                    .eventBoxeRef
-                                                                    ?.reference,
-                                                              ));
-
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'qoew11h5' /* Valider Domicile */,
-                                                            ),
-                                                            options:
-                                                                FFButtonOptions(
-                                                              width: 130.0,
-                                                              height: 40.0,
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              iconPadding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            16.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
-                                                              elevation: 3.0,
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          40.0),
-                                                              hoverColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .success,
-                                                              hoverTextColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
                                     if (_model.dropLigueRugbyValue != null &&
                                         _model.dropLigueRugbyValue != '')
                                       Padding(
@@ -5290,7 +5705,7 @@ Nom Event */
                                                       teamsRecord.where(
                                                     'league_value',
                                                     isEqualTo: _model
-                                                        .dropLigueBoxeValue,
+                                                        .dropLigueRugbyValue,
                                                   ),
                                                 ),
                                                 builder: (context, snapshot) {
@@ -7028,11 +7443,17 @@ Nom Event */
                                             StreamBuilder<List<TeamsRecord>>(
                                               stream: queryTeamsRecord(
                                                 queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'league_value',
-                                                  isEqualTo:
-                                                      _model.dropLigueMMAValue,
-                                                ),
+                                                    teamsRecord
+                                                        .where(
+                                                          'league_value',
+                                                          isEqualTo: _model
+                                                              .dropLigueMMAValue,
+                                                        )
+                                                        .where(
+                                                          'division_value',
+                                                          isEqualTo: _model
+                                                              .dropLigueFightValue2,
+                                                        ),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -7376,367 +7797,6 @@ Nom Event */
                                           ],
                                         ),
                                       ),
-                                    if (_model.dropLigueBoxeValue != null &&
-                                        _model.dropLigueBoxeValue != '')
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 5.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            StreamBuilder<List<TeamsRecord>>(
-                                              stream: queryTeamsRecord(
-                                                queryBuilder: (teamsRecord) =>
-                                                    teamsRecord.where(
-                                                  'league_value',
-                                                  isEqualTo:
-                                                      _model.dropLigueBoxeValue,
-                                                ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<TeamsRecord>
-                                                    dropTeamExtBoxeTeamsRecordList =
-                                                    snapshot.data!;
-
-                                                return FlutterFlowDropDown<
-                                                    String>(
-                                                  controller: _model
-                                                          .dropTeamExtBoxeValueController ??=
-                                                      FormFieldController<
-                                                          String>(
-                                                    _model.dropTeamExtBoxeValue ??=
-                                                        '',
-                                                  ),
-                                                  options: List<String>.from(
-                                                      dropTeamExtBoxeTeamsRecordList
-                                                          .map((e) => e.value)
-                                                          .toList()),
-                                                  optionLabels:
-                                                      dropTeamExtBoxeTeamsRecordList
-                                                          .map((e) => e.name)
-                                                          .toList(),
-                                                  onChanged: (val) =>
-                                                      safeSetState(() => _model
-                                                              .dropTeamExtBoxeValue =
-                                                          val),
-                                                  width: 200.0,
-                                                  height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'p0xt0p59' /* Teams */,
-                                                  ),
-                                                  icon: Icon(
-                                                    Icons
-                                                        .keyboard_arrow_down_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                  elevation: 2.0,
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderWidth: 0.0,
-                                                  borderRadius: 8.0,
-                                                  margin: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          12.0, 0.0, 12.0, 0.0),
-                                                  hidesUnderline: true,
-                                                  isOverButton: false,
-                                                  isSearchable: false,
-                                                  isMultiSelect: false,
-                                                );
-                                              },
-                                            ),
-                                            if (_model.dropTeamExtBoxeValue !=
-                                                    null &&
-                                                _model.dropTeamExtBoxeValue !=
-                                                    '')
-                                              StreamBuilder<List<TeamsRecord>>(
-                                                stream: queryTeamsRecord(
-                                                  queryBuilder: (teamsRecord) =>
-                                                      teamsRecord.where(
-                                                    'value',
-                                                    isEqualTo: _model
-                                                        .dropTeamExtBoxeValue,
-                                                  ),
-                                                  singleRecord: true,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent4,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<TeamsRecord>
-                                                      columnTeamExtRefTeamsRecordList =
-                                                      snapshot.data!;
-                                                  // Return an empty Container when the item does not exist.
-                                                  if (snapshot.data!.isEmpty) {
-                                                    return Container();
-                                                  }
-                                                  final columnTeamExtRefTeamsRecord =
-                                                      columnTeamExtRefTeamsRecordList
-                                                              .isNotEmpty
-                                                          ? columnTeamExtRefTeamsRecordList
-                                                              .first
-                                                          : null;
-
-                                                  return Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child:
-                                                                  FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  await _model
-                                                                      .eventBoxeRef!
-                                                                      .reference
-                                                                      .update(
-                                                                          createEventsRecordData(
-                                                                    teamextRef:
-                                                                        columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
-                                                                    teamext:
-                                                                        columnTeamExtRefTeamsRecord
-                                                                            ?.value,
-                                                                  ));
-
-                                                                  await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
-                                                                              .reference)
-                                                                      .set(
-                                                                          createTeamEventsRecordData(
-                                                                    startedTime: _model
-                                                                        .calendarSelectedDay
-                                                                        ?.start,
-                                                                    events: _model
-                                                                        .eventBoxeRef
-                                                                        ?.reference,
-                                                                  ));
-
-                                                                  context
-                                                                      .pushNamed(
-                                                                    AddBetPageWidget
-                                                                        .routeName,
-                                                                    queryParameters:
-                                                                        {
-                                                                      'eventRef':
-                                                                          serializeParam(
-                                                                        _model
-                                                                            .eventBoxeRef
-                                                                            ?.reference,
-                                                                        ParamType
-                                                                            .DocumentReference,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                  );
-                                                                },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '8ceta7uu' /* Créer l'évennement */,
-                                                                ),
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  width: 130.0,
-                                                                  height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            16.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
-                                                                  elevation:
-                                                                      3.0,
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Colors
-                                                                        .transparent,
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              40.0),
-                                                                  hoverColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .success,
-                                                                  hoverTextColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              ),
-                                          ],
-                                        ),
-                                      ),
                                     if (_model.dropLigueRugbyValue != null &&
                                         _model.dropLigueRugbyValue != '')
                                       Padding(
@@ -7752,8 +7812,8 @@ Nom Event */
                                                 queryBuilder: (teamsRecord) =>
                                                     teamsRecord.where(
                                                   'league_value',
-                                                  isEqualTo:
-                                                      _model.dropLigueBoxeValue,
+                                                  isEqualTo: _model
+                                                      .dropLigueRugbyValue,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -7994,7 +8054,7 @@ Nom Event */
                                                                         .calendarSelectedDay
                                                                         ?.start,
                                                                     events: _model
-                                                                        .eventBoxeRef
+                                                                        .eventRugbyRef
                                                                         ?.reference,
                                                                   ));
 

@@ -15,6 +15,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'boss_notif_e_event_end_page_model.dart';
 export 'boss_notif_e_event_end_page_model.dart';
 
@@ -364,24 +365,22 @@ class _BossNotifEEventEndPageWidgetState
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              AudioMemberConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                AudioMemberConferenceWidget(
+                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       );
@@ -458,24 +457,22 @@ class _BossNotifEEventEndPageWidgetState
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              AudioFanConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                AudioFanConferenceWidget(
+                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       );
@@ -4592,7 +4589,8 @@ alla E ... */
                                               borderRadius:
                                                   BorderRadius.circular(0.0),
                                               child: Image.network(
-                                                _model.uploadedFileUrl,
+                                                _model
+                                                    .uploadedFileUrl_uploadData6sy,
                                                 width: 300.0,
                                                 height: 200.0,
                                                 fit: BoxFit.fitHeight,
@@ -4619,8 +4617,9 @@ alla E ... */
                                                   validateFileFormat(
                                                       m.storagePath,
                                                       context))) {
-                                            safeSetState(() =>
-                                                _model.isDataUploading = true);
+                                            safeSetState(() => _model
+                                                    .isDataUploading_uploadData6sy =
+                                                true);
                                             var selectedUploadedFiles =
                                                 <FFUploadedFile>[];
 
@@ -4656,16 +4655,17 @@ alla E ... */
                                                   .map((u) => u!)
                                                   .toList();
                                             } finally {
-                                              _model.isDataUploading = false;
+                                              _model.isDataUploading_uploadData6sy =
+                                                  false;
                                             }
                                             if (selectedUploadedFiles.length ==
                                                     selectedMedia.length &&
                                                 downloadUrls.length ==
                                                     selectedMedia.length) {
                                               safeSetState(() {
-                                                _model.uploadedLocalFile =
+                                                _model.uploadedLocalFile_uploadData6sy =
                                                     selectedUploadedFiles.first;
-                                                _model.uploadedFileUrl =
+                                                _model.uploadedFileUrl_uploadData6sy =
                                                     downloadUrls.first;
                                               });
                                             } else {
@@ -4686,7 +4686,8 @@ alla E ... */
                                 ),
                                 if ((_model.dropReasonsValue != null &&
                                         _model.dropReasonsValue != '') &&
-                                    (_model.uploadedFileUrl != ''))
+                                    (_model.uploadedFileUrl_uploadData6sy !=
+                                            ''))
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -5040,7 +5041,8 @@ resultado ruim */
                                                   eteamWin:
                                                       bossNotifEEventEndPageMyNotificationsRecord
                                                           .eteamWin,
-                                                  image: _model.uploadedFileUrl,
+                                                  image: _model
+                                                      .uploadedFileUrl_uploadData6sy,
                                                   eteamDraw:
                                                       bossNotifEEventEndPageMyNotificationsRecord
                                                           .eteamDraw,

@@ -80,12 +80,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    
-    configurations {
-        all {
-            exclude group: "com.google.android.exoplayer", module: "exoplayer-ui"
-        }
-    }
 }
 
 flutter {

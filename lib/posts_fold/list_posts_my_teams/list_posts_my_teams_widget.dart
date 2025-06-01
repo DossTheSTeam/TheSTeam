@@ -10,6 +10,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'list_posts_my_teams_model.dart';
 export 'list_posts_my_teams_model.dart';
 
@@ -332,24 +333,22 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              AudioMemberConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                AudioMemberConferenceWidget(
+                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       );
@@ -426,24 +425,22 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              AudioFanConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                AudioFanConferenceWidget(
+                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       );
@@ -1023,7 +1020,7 @@ As minhas equipes */
                                                                       .max,
                                                               children: [
                                                                 Container(
-                                                                  height: 93.0,
+                                                                  height: 95.0,
                                                                   child: Stack(
                                                                     children: [
                                                                       if (columnPostPostsRecord.image !=
@@ -1210,41 +1207,41 @@ As minhas equipes */
                                                                                     ),
                                                                                   ),
                                                                                 Container(
-                                                                                  width: 250.0,
+                                                                                  width: 225.0,
                                                                                   height: 50.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                   ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Align(
-                                                                                        alignment: AlignmentDirectional(-1.0, -1.0),
-                                                                                        child: InkWell(
-                                                                                          splashColor: Colors.transparent,
-                                                                                          focusColor: Colors.transparent,
-                                                                                          hoverColor: Colors.transparent,
-                                                                                          highlightColor: Colors.transparent,
-                                                                                          onTap: () async {
-                                                                                            context.pushNamed(
-                                                                                              PostPageWidget.routeName,
-                                                                                              queryParameters: {
-                                                                                                'postRef': serializeParam(
-                                                                                                  columnPostPostsRecord.reference,
-                                                                                                  ParamType.DocumentReference,
-                                                                                                ),
-                                                                                              }.withoutNulls,
-                                                                                              extra: <String, dynamic>{
-                                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                                  hasTransition: true,
-                                                                                                  transitionType: PageTransitionType.scale,
-                                                                                                  alignment: Alignment.bottomCenter,
-                                                                                                  duration: Duration(milliseconds: 600),
-                                                                                                ),
-                                                                                              },
-                                                                                            );
-                                                                                          },
+                                                                                  child: InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      context.pushNamed(
+                                                                                        PostPageWidget.routeName,
+                                                                                        queryParameters: {
+                                                                                          'postRef': serializeParam(
+                                                                                            columnPostPostsRecord.reference,
+                                                                                            ParamType.DocumentReference,
+                                                                                          ),
+                                                                                        }.withoutNulls,
+                                                                                        extra: <String, dynamic>{
+                                                                                          kTransitionInfoKey: TransitionInfo(
+                                                                                            hasTransition: true,
+                                                                                            transitionType: PageTransitionType.scale,
+                                                                                            alignment: Alignment.bottomCenter,
+                                                                                            duration: Duration(milliseconds: 600),
+                                                                                          ),
+                                                                                        },
+                                                                                      );
+                                                                                    },
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                                                      children: [
+                                                                                        Align(
+                                                                                          alignment: AlignmentDirectional(-1.0, -1.0),
                                                                                           child: Text(
                                                                                             columnPostPostsRecord.title,
                                                                                             textAlign: TextAlign.start,
@@ -1260,8 +1257,8 @@ As minhas equipes */
                                                                                                 ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                    ],
+                                                                                      ],
+                                                                                    ),
                                                                                   ),
                                                                                 ),
                                                                               ],
@@ -1305,11 +1302,14 @@ As minhas equipes */
                                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                   size: 20.0,
                                                                                                 ),
-                                                                                              if (columnPostPostsRecord.video != '')
-                                                                                                Icon(
-                                                                                                  Icons.video_collection_rounded,
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  size: 20.0,
+                                                                                              if (columnPostPostsRecord.youtubeVideo != '')
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: FaIcon(
+                                                                                                    FontAwesomeIcons.youtube,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    size: 20.0,
+                                                                                                  ),
                                                                                                 ),
                                                                                             ],
                                                                                           ),

@@ -26,10 +26,10 @@ class PostPageModel extends FlutterFlowModel<PostPageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   PostMessagesRecord? commentRef;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataX6j = false;
+  FFUploadedFile uploadedLocalFile_uploadDataX6j =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataX6j = '';
 
   @override
   void initState(BuildContext context) {}

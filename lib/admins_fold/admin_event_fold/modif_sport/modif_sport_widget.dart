@@ -189,7 +189,6 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     'tennis',
                                     'hockey',
                                     'mma',
-                                    'boxe',
                                     'rugby',
                                     'sports.meca'
                                   ]),
@@ -208,9 +207,6 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                                     ),
                                     FFLocalizations.of(context).getText(
                                       'dg1mrqn4' /* MMA */,
-                                    ),
-                                    FFLocalizations.of(context).getText(
-                                      '2haf6jc4' /* Boxe */,
                                     ),
                                     FFLocalizations.of(context).getText(
                                       'uu0afly5' /* Rugby */,
@@ -332,6 +328,399 @@ class _ModifSportWidgetState extends State<ModifSportWidget> {
                           ],
                         ),
                       ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
+                              child: FlutterFlowDropDown<String>(
+                                controller: _model.dropLigueValueController ??=
+                                    FormFieldController<String>(
+                                  _model.dropLigueValue ??= '',
+                                ),
+                                options: List<String>.from([
+                                  'premier.league',
+                                  'laliga',
+                                  'bundesliga',
+                                  'serie.a',
+                                  'ligue.1',
+                                  'autres',
+                                  'pays.football',
+                                  'nba',
+                                  'atp',
+                                  'wta',
+                                  'champions.league',
+                                  'europa.league',
+                                  'conference.league',
+                                  'nhl',
+                                  'ufc',
+                                  'autres.france',
+                                  'top.14',
+                                  'nations.rugby',
+                                  'formule.1',
+                                  'moto.gp',
+                                  'world.superbike',
+                                  'mx.gp',
+                                  'euro.league',
+                                  'champions.cup',
+                                  'nations.basket'
+                                ]),
+                                optionLabels: [
+                                  FFLocalizations.of(context).getText(
+                                    '3oo61iqt' /* Premier League */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '5kyb7udv' /* LaLiga */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'i6mycttq' /* Bundesliga */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'jd13vub0' /* Serie A */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '1fgtw9f7' /* Ligue 1 */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '63xtdf0w' /* Autres */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'smktbclm' /* Pays Football */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'wgoy6ywc' /* NBA */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'uf1c53tb' /* ATP */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'iijtd2ur' /* WTA */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'shiy1xe3' /* Champions League */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '74mxynwu' /* Europa League */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'ckc4r9g3' /* Conference League */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'zgo0zruk' /* nhl */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'o2780d6t' /* UFC */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'g0yfhq7u' /* Autres - France */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'uzi8b621' /* Top 14 */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'n73vob84' /* Nations Rugby */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'nobdm9hy' /* Formula 1 */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'lq3r9bn9' /* Moto GP */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'mvm41f5m' /* World Superbike */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '8p5nrm71' /* MX GP */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '2fnplcub' /* Euro League */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'lpgtib4v' /* Champions Cup */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'htcqo06b' /* Nations Basket */,
+                                  )
+                                ],
+                                onChanged: (val) => safeSetState(
+                                    () => _model.dropLigueValue = val),
+                                width: 180.0,
+                                height: 40.0,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  '25d6ok15' /* Ligues */,
+                                ),
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                elevation: 2.0,
+                                borderColor: Colors.transparent,
+                                borderWidth: 0.0,
+                                borderRadius: 8.0,
+                                margin: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 12.0, 0.0),
+                                hidesUnderline: true,
+                                isOverButton: false,
+                                isSearchable: false,
+                                isMultiSelect: false,
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 20.0, 20.0, 20.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    await widget.eventRef!
+                                        .update(createEventsRecordData(
+                                      leagueValue: _model.dropLigueValue,
+                                    ));
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'kiats8ai' /* Valider */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 50.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 2.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(25.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (_model.dropSportValue == 'mma')
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 50.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropLigueFightValueController ??=
+                                          FormFieldController<String>(
+                                    _model.dropLigueFightValue ??= '',
+                                  ),
+                                  options: List<String>.from([
+                                    'fly.weight',
+                                    'bantam.weight',
+                                    'feather.weight',
+                                    'light.weight',
+                                    'welter.weight',
+                                    'middle.weight',
+                                    'light.heavy.weight',
+                                    'heavy.weight'
+                                  ]),
+                                  optionLabels: [
+                                    FFLocalizations.of(context).getText(
+                                      'yxevpb2f' /* Fly Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'fc418i5t' /* Bantam Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'k8zvjilt' /* Feather Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'iy55kot6' /* Light Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'a58hyq93' /* Welter Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'lhkndlh4' /* Middle Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'd5j2ojkr' /* Light Heavy Weight */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'ug4ldyau' /* Heavy Weight */,
+                                    )
+                                  ],
+                                  onChanged: (val) => safeSetState(
+                                      () => _model.dropLigueFightValue = val),
+                                  width: 170.0,
+                                  height: 40.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    '75wr7hwq' /* Poids */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  elevation: 2.0,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: false,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 20.0, 20.0, 20.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await widget.eventRef!
+                                          .update(createEventsRecordData(
+                                        divisionValue:
+                                            _model.dropLigueFightValue,
+                                      ));
+                                      Navigator.pop(context);
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'jx1f4msg' /* Valider */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 2.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(25.0),
+                                      hoverColor:
+                                          FlutterFlowTheme.of(context).success,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                     ],
                   ),
                 ),

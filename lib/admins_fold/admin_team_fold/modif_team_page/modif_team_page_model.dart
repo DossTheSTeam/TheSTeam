@@ -16,16 +16,19 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   TextEditingController? teamvalueFieldTextController;
   String? Function(BuildContext, String?)?
       teamvalueFieldTextControllerValidator;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadDataPvp = false;
+  FFUploadedFile uploadedLocalFile_uploadDataPvp =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  String uploadedFileUrl_uploadDataPvp = '';
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadData92n = false;
+  FFUploadedFile uploadedLocalFile_uploadData92n =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadData92n = '';
 
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue;
+  FormFieldController<String>? dropLigueFightValueController;
   // State field(s) for DropLigueFoot widget.
   String? dropLigueFootValue;
   FormFieldController<String>? dropLigueFootValueController;
@@ -41,9 +44,6 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   // State field(s) for DropLigueMMA widget.
   String? dropLigueMMAValue;
   FormFieldController<String>? dropLigueMMAValueController;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue;
-  FormFieldController<String>? dropLigueBoxeValueController;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue;
   FormFieldController<String>? dropLigueRugbyValueController;
@@ -53,6 +53,9 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
   // State field(s) for DropFootCup widget.
   String? dropFootCupValue;
   FormFieldController<String>? dropFootCupValueController;
+  // State field(s) for DropRugbyCup widget.
+  String? dropRugbyCupValue;
+  FormFieldController<String>? dropRugbyCupValueController;
   // State field(s) for NumEventsField widget.
   FocusNode? numEventsFieldFocusNode1;
   TextEditingController? numEventsFieldTextController1;

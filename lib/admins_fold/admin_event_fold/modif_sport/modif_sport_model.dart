@@ -9,6 +9,12 @@ class ModifSportModel extends FlutterFlowModel<ModifSportWidget> {
   // State field(s) for DropSport widget.
   String? dropSportValue;
   FormFieldController<String>? dropSportValueController;
+  // State field(s) for DropLigue widget.
+  String? dropLigueValue;
+  FormFieldController<String>? dropLigueValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue;
+  FormFieldController<String>? dropLigueFightValueController;
 
   @override
   void initState(BuildContext context) {}

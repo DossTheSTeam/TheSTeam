@@ -10,10 +10,10 @@ class ModifETeamPageModel extends FlutterFlowModel<ModifETeamPageWidget> {
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataP8p = false;
+  FFUploadedFile uploadedLocalFile_uploadDataP8p =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataP8p = '';
 
   @override
   void initState(BuildContext context) {}

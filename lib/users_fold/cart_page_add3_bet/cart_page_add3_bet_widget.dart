@@ -10,6 +10,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'cart_page_add3_bet_model.dart';
 export 'cart_page_add3_bet_model.dart';
 
@@ -391,15 +392,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioMemberConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioMemberConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -456,15 +459,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioFanConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioFanConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );

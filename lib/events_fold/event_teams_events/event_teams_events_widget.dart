@@ -444,7 +444,7 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                              width: 45.0,
+                                              width: 55.0,
                                               height: 35.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -568,13 +568,122 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
+                                                            if ((containerEventsRecord.leagueValue != 'autres') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'autres.france') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'champions.league') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'europa.league') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'conference.league') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'champions.cup') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'mma'))
+                                                              FutureBuilder<
+                                                                  List<
+                                                                      TeamsRecord>>(
+                                                                future:
+                                                                    queryTeamsRecordOnce(
+                                                                  queryBuilder: (teamsRecord) =>
+                                                                      teamsRecord
+                                                                          .where(
+                                                                            'league_value',
+                                                                            isEqualTo:
+                                                                                contDomTeamsRecord.leagueValue,
+                                                                          )
+                                                                          .orderBy(
+                                                                              'points',
+                                                                              descending: true),
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            CircularProgressIndicator(
+                                                                          valueColor:
+                                                                              AlwaysStoppedAnimation<Color>(
+                                                                            FlutterFlowTheme.of(context).accent4,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<TeamsRecord>
+                                                                      rowTeamsRecordList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    children: List.generate(
+                                                                        rowTeamsRecordList
+                                                                            .length,
+                                                                        (rowIndex) {
+                                                                      final rowTeamsRecord =
+                                                                          rowTeamsRecordList[
+                                                                              rowIndex];
+                                                                      return Visibility(
+                                                                        visible:
+                                                                            rowTeamsRecord.reference ==
+                                                                                contDomTeamsRecord.reference,
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            functions.zeroTo1(rowIndex).toString(),
+                                                                            '1',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              ),
+                                                                        ),
+                                                                      );
+                                                                    }),
+                                                                  );
+                                                                },
+                                                              ),
                                                             if ((containerEventsRecord.leagueValue == 'champions.league') ||
                                                                 (containerEventsRecord
                                                                         .leagueValue ==
                                                                     'europa.league') ||
                                                                 (containerEventsRecord
                                                                         .leagueValue ==
-                                                                    'conference.league'))
+                                                                    'conference.league') ||
+                                                                (containerEventsRecord
+                                                                        .leagueValue ==
+                                                                    'champions.cup'))
                                                               FutureBuilder<
                                                                   List<
                                                                       TeamsRecord>>(
@@ -662,19 +771,9 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                   );
                                                                 },
                                                               ),
-                                                            if ((containerEventsRecord.leagueValue != 'autres') &&
-                                                                (containerEventsRecord
-                                                                        .leagueValue !=
-                                                                    'autres.france') &&
-                                                                (containerEventsRecord
-                                                                        .leagueValue !=
-                                                                    'champions.league') &&
-                                                                (containerEventsRecord
-                                                                        .leagueValue !=
-                                                                    'europa.league') &&
-                                                                (containerEventsRecord
-                                                                        .leagueValue !=
-                                                                    'conference.league'))
+                                                            if (containerEventsRecord
+                                                                    .sportValue ==
+                                                                'mma')
                                                               FutureBuilder<
                                                                   List<
                                                                       TeamsRecord>>(
@@ -686,6 +785,11 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                             'league_value',
                                                                             isEqualTo:
                                                                                 contDomTeamsRecord.leagueValue,
+                                                                          )
+                                                                          .where(
+                                                                            'division_value',
+                                                                            isEqualTo:
+                                                                                contDomTeamsRecord.divisionValue,
                                                                           )
                                                                           .orderBy(
                                                                               'points',
@@ -1591,23 +1695,44 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            Container(
-                                                                              width: 45.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(3.0),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                                child: Image.network(
-                                                                                  contDomTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitHeight,
+                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
+                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
+                                                                              Container(
+                                                                                width: 55.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(3.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                  child: Image.network(
+                                                                                    contDomTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitHeight,
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
+                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
+                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
+                                                                              Container(
+                                                                                width: 45.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(6.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(10.0),
+                                                                                  child: Image.network(
+                                                                                    contDomTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitWidth,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -1702,23 +1827,44 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            Container(
-                                                                              width: 45.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(3.0),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                                child: Image.network(
-                                                                                  contExtTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitHeight,
+                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
+                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
+                                                                              Container(
+                                                                                width: 55.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(3.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                  child: Image.network(
+                                                                                    contExtTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitHeight,
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
+                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
+                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
+                                                                              Container(
+                                                                                width: 45.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(3.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(10.0),
+                                                                                  child: Image.network(
+                                                                                    contExtTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitWidth,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -1881,7 +2027,7 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                              width: 45.0,
+                                              width: 55.0,
                                               height: 35.0,
                                               decoration: BoxDecoration(
                                                 color:
@@ -2017,7 +2163,13 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                     'europa.league') &&
                                                                 (containerEventsRecord
                                                                         .leagueValue !=
-                                                                    'conference.league'))
+                                                                    'conference.league') &&
+                                                                (containerEventsRecord
+                                                                        .leagueValue !=
+                                                                    'champions.cup') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'mma'))
                                                               FutureBuilder<
                                                                   List<
                                                                       TeamsRecord>>(
@@ -2111,7 +2263,10 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                     'europa.league') ||
                                                                 (containerEventsRecord
                                                                         .leagueValue ==
-                                                                    'conference.league'))
+                                                                    'conference.league') ||
+                                                                (containerEventsRecord
+                                                                        .leagueValue ==
+                                                                    'champions.cup'))
                                                               FutureBuilder<
                                                                   List<
                                                                       TeamsRecord>>(
@@ -2126,6 +2281,101 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           )
                                                                           .orderBy(
                                                                               'points_cup',
+                                                                              descending: true),
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            CircularProgressIndicator(
+                                                                          valueColor:
+                                                                              AlwaysStoppedAnimation<Color>(
+                                                                            FlutterFlowTheme.of(context).accent4,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<TeamsRecord>
+                                                                      rowTeamsRecordList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .end,
+                                                                    children: List.generate(
+                                                                        rowTeamsRecordList
+                                                                            .length,
+                                                                        (rowIndex) {
+                                                                      final rowTeamsRecord =
+                                                                          rowTeamsRecordList[
+                                                                              rowIndex];
+                                                                      return Visibility(
+                                                                        visible:
+                                                                            rowTeamsRecord.reference ==
+                                                                                contExtTeamsRecord.reference,
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            functions.zeroTo1(rowIndex).toString(),
+                                                                            '1',
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              ),
+                                                                        ),
+                                                                      );
+                                                                    }),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            if (containerEventsRecord
+                                                                    .sportValue ==
+                                                                'mma')
+                                                              FutureBuilder<
+                                                                  List<
+                                                                      TeamsRecord>>(
+                                                                future:
+                                                                    queryTeamsRecordOnce(
+                                                                  queryBuilder: (teamsRecord) =>
+                                                                      teamsRecord
+                                                                          .where(
+                                                                            'league_value',
+                                                                            isEqualTo:
+                                                                                contExtTeamsRecord.leagueValue,
+                                                                          )
+                                                                          .where(
+                                                                            'division_value',
+                                                                            isEqualTo:
+                                                                                contExtTeamsRecord.divisionValue,
+                                                                          )
+                                                                          .orderBy(
+                                                                              'points',
                                                                               descending: true),
                                                                 ),
                                                                 builder: (context,
@@ -3031,23 +3281,44 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            Container(
-                                                                              width: 45.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(3.0),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                                child: Image.network(
-                                                                                  contDomTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitHeight,
+                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
+                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
+                                                                              Container(
+                                                                                width: 55.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(3.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                  child: Image.network(
+                                                                                    contDomTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitHeight,
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
+                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
+                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
+                                                                              Container(
+                                                                                width: 45.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(6.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(10.0),
+                                                                                  child: Image.network(
+                                                                                    contDomTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitWidth,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -3142,23 +3413,44 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            Container(
-                                                                              width: 45.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(3.0),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                                child: Image.network(
-                                                                                  contExtTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitHeight,
+                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
+                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
+                                                                              Container(
+                                                                                width: 55.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(3.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                  child: Image.network(
+                                                                                    contExtTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitHeight,
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
+                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
+                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
+                                                                              Container(
+                                                                                width: 45.0,
+                                                                                height: 35.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  borderRadius: BorderRadius.circular(6.0),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(10.0),
+                                                                                  child: Image.network(
+                                                                                    contExtTeamsRecord.logo,
+                                                                                    width: 300.0,
+                                                                                    height: 200.0,
+                                                                                    fit: BoxFit.fitWidth,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(

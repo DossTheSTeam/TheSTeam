@@ -11,6 +11,8 @@ class LiguesRankPageModel extends FlutterFlowModel<LiguesRankPageWidget> {
 
   String? showSport;
 
+  String? showDivision;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropLigueFoot widget.
@@ -28,15 +30,15 @@ class LiguesRankPageModel extends FlutterFlowModel<LiguesRankPageWidget> {
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue;
   FormFieldController<String>? dropLigueHockeyValueController;
-  // State field(s) for DropLigueMMA widget.
-  String? dropLigueMMAValue;
-  FormFieldController<String>? dropLigueMMAValueController;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue;
-  FormFieldController<String>? dropLigueBoxeValueController;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue;
   FormFieldController<String>? dropLigueRugbyValueController;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue;
+  FormFieldController<String>? dropLigueMMAValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue;
+  FormFieldController<String>? dropLigueFightValueController;
 
   @override
   void initState(BuildContext context) {}

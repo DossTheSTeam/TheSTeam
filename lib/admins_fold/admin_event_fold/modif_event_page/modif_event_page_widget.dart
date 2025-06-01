@@ -16,6 +16,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'modif_event_page_model.dart';
 export 'modif_event_page_model.dart';
 
@@ -374,17 +375,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioMemberConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioMemberConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -459,17 +461,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioFanConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioFanConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -552,21 +555,23 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    FocusScope.of(context)
-                                                        .unfocus();
-                                                    FocusManager
-                                                        .instance.primaryFocus
-                                                        ?.unfocus();
-                                                  },
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModifSportWidget(
-                                                      eventRef:
-                                                          widget.eventRef!,
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child: ModifSportWidget(
+                                                        eventRef:
+                                                            widget.eventRef!,
+                                                      ),
                                                     ),
                                                   ),
                                                 );
@@ -604,20 +609,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                FocusScope.of(context)
-                                                    .unfocus();
-                                                FocusManager
-                                                    .instance.primaryFocus
-                                                    ?.unfocus();
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: ModifHourWidget(
-                                                  eventRef: widget.eventRef!,
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: ModifHourWidget(
+                                                    eventRef: widget.eventRef!,
+                                                  ),
                                                 ),
                                               ),
                                             );
@@ -713,20 +720,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                FocusScope.of(context)
-                                                    .unfocus();
-                                                FocusManager
-                                                    .instance.primaryFocus
-                                                    ?.unfocus();
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: ModifDateWidget(
-                                                  eventRef: widget.eventRef!,
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: ModifDateWidget(
+                                                    eventRef: widget.eventRef!,
+                                                  ),
                                                 ),
                                               ),
                                             );
@@ -1444,7 +1453,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           m.storagePath,
                                                           context))) {
                                                 safeSetState(() => _model
-                                                    .isDataUploading1 = true);
+                                                        .isDataUploading_uploadDataGa3 =
+                                                    true);
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
 
@@ -1484,7 +1494,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           .map((u) => u!)
                                                           .toList();
                                                 } finally {
-                                                  _model.isDataUploading1 =
+                                                  _model.isDataUploading_uploadDataGa3 =
                                                       false;
                                                 }
                                                 if (selectedUploadedFiles
@@ -1493,10 +1503,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     downloadUrls.length ==
                                                         selectedMedia.length) {
                                                   safeSetState(() {
-                                                    _model.uploadedLocalFile1 =
+                                                    _model.uploadedLocalFile_uploadDataGa3 =
                                                         selectedUploadedFiles
                                                             .first;
-                                                    _model.uploadedFileUrl1 =
+                                                    _model.uploadedFileUrl_uploadDataGa3 =
                                                         downloadUrls.first;
                                                   });
                                                 } else {
@@ -1514,7 +1524,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             ),
                                           ),
                                         ),
-                                        if (_model.uploadedFileUrl1 != '')
+                                        if (_model.uploadedFileUrl_uploadDataGa3 !=
+                                                '')
                                           Container(
                                             width: 50.0,
                                             height: 40.0,
@@ -1531,7 +1542,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(4.0),
                                                 child: Image.network(
-                                                  _model.uploadedFileUrl1,
+                                                  _model
+                                                      .uploadedFileUrl_uploadDataGa3,
                                                   width: 300.0,
                                                   height: 200.0,
                                                   fit: BoxFit.cover,
@@ -1608,7 +1620,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
                                               child: Image.network(
-                                                _model.uploadedFileUrl2,
+                                                _model
+                                                    .uploadedFileUrl_uploadDataS73,
                                                 width: 300.0,
                                                 height: 200.0,
                                                 fit: BoxFit.cover,
@@ -1639,7 +1652,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           m.storagePath,
                                                           context))) {
                                                 safeSetState(() => _model
-                                                    .isDataUploading2 = true);
+                                                        .isDataUploading_uploadDataS73 =
+                                                    true);
                                                 var selectedUploadedFiles =
                                                     <FFUploadedFile>[];
 
@@ -1679,7 +1693,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                           .map((u) => u!)
                                                           .toList();
                                                 } finally {
-                                                  _model.isDataUploading2 =
+                                                  _model.isDataUploading_uploadDataS73 =
                                                       false;
                                                 }
                                                 if (selectedUploadedFiles
@@ -1688,10 +1702,10 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     downloadUrls.length ==
                                                         selectedMedia.length) {
                                                   safeSetState(() {
-                                                    _model.uploadedLocalFile2 =
+                                                    _model.uploadedLocalFile_uploadDataS73 =
                                                         selectedUploadedFiles
                                                             .first;
-                                                    _model.uploadedFileUrl2 =
+                                                    _model.uploadedFileUrl_uploadDataS73 =
                                                         downloadUrls.first;
                                                   });
                                                 } else {
@@ -1724,7 +1738,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                if (_model.uploadedFileUrl1 != '')
+                                if (_model.uploadedFileUrl_uploadDataGa3 != '')
                                   InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -1733,7 +1747,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     onTap: () async {
                                       await widget.eventRef!
                                           .update(createEventsRecordData(
-                                        imageDom: _model.uploadedFileUrl1,
+                                        imageDom: _model
+                                            .uploadedFileUrl_uploadDataGa3,
                                       ));
                                     },
                                     child: Icon(
@@ -1743,7 +1758,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       size: 30.0,
                                     ),
                                   ),
-                                if (_model.uploadedFileUrl2 != '')
+                                if (_model.uploadedFileUrl_uploadDataS73 != '')
                                   InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -1752,7 +1767,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     onTap: () async {
                                       await widget.eventRef!
                                           .update(createEventsRecordData(
-                                        imageExt: _model.uploadedFileUrl2,
+                                        imageExt: _model
+                                            .uploadedFileUrl_uploadDataS73,
                                       ));
                                     },
                                     child: Icon(
@@ -2464,9 +2480,19 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await columnBetsBetsRecord
-                                                          .reference
-                                                          .delete();
+                                                      context.pushNamed(
+                                                        ModifBetPageWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'betRef':
+                                                              serializeParam(
+                                                            columnBetsBetsRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
                                                     },
                                                     child: Icon(
                                                       Icons
@@ -2781,8 +2807,9 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           selectedMedia.every((m) =>
                                               validateFileFormat(
                                                   m.storagePath, context))) {
-                                        safeSetState(() =>
-                                            _model.isDataUploading3 = true);
+                                        safeSetState(() => _model
+                                                .isDataUploading_uploadDataSre =
+                                            true);
                                         var selectedUploadedFiles =
                                             <FFUploadedFile>[];
 
@@ -2811,16 +2838,17 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               .map((u) => u!)
                                               .toList();
                                         } finally {
-                                          _model.isDataUploading3 = false;
+                                          _model.isDataUploading_uploadDataSre =
+                                              false;
                                         }
                                         if (selectedUploadedFiles.length ==
                                                 selectedMedia.length &&
                                             downloadUrls.length ==
                                                 selectedMedia.length) {
                                           safeSetState(() {
-                                            _model.uploadedLocalFile3 =
+                                            _model.uploadedLocalFile_uploadDataSre =
                                                 selectedUploadedFiles.first;
-                                            _model.uploadedFileUrl3 =
+                                            _model.uploadedFileUrl_uploadDataSre =
                                                 downloadUrls.first;
                                           });
                                         } else {
@@ -2837,7 +2865,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                     ),
                                   ),
                                 ),
-                                if (_model.uploadedFileUrl3 != '')
+                                if (_model.uploadedFileUrl_uploadDataSre != '')
                                   Container(
                                     width: 50.0,
                                     height: 40.0,
@@ -2852,7 +2880,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         borderRadius:
                                             BorderRadius.circular(4.0),
                                         child: Image.network(
-                                          _model.uploadedFileUrl3,
+                                          _model.uploadedFileUrl_uploadDataSre,
                                           width: 300.0,
                                           height: 200.0,
                                           fit: BoxFit.cover,
@@ -2860,7 +2888,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (_model.uploadedFileUrl3 != '')
+                                if (_model.uploadedFileUrl_uploadDataSre != '')
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 0.0),
@@ -2872,7 +2900,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       onTap: () async {
                                         await widget.eventRef!
                                             .update(createEventsRecordData(
-                                          endImage: _model.uploadedFileUrl3,
+                                          endImage: _model
+                                              .uploadedFileUrl_uploadDataSre,
                                         ));
                                       },
                                       child: Icon(
@@ -3444,7 +3473,13 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     'autres') &&
                                                 (modifEventPageEventsRecord
                                                         .leagueValue !=
-                                                    'autres.france'))
+                                                    'autres.france') &&
+                                                (modifEventPageEventsRecord
+                                                        .sportValue !=
+                                                    'basketball') &&
+                                                (modifEventPageEventsRecord
+                                                        .sportValue !=
+                                                    'rugby'))
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -3973,7 +4008,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'dhw5r2o0' /* Victoire Dom */,
+                                                          'hn48ynq5' /* Victoire Dom */,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
@@ -4140,7 +4175,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'dpx2fh6v' /* Nul */,
+                                                          '3kw8fs10' /* Nul */,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
@@ -4308,7 +4343,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'ltk7uxrk' /* Victoire Ext */,
+                                                          'ag9xek79' /* Victoire Ext */,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
@@ -5348,6 +5383,421 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                       ],
                                     ),
                                   ),
+                                if (modifEventPageEventsRecord.leagueValue ==
+                                    'champions.cup')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'wins_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'points_cup':
+                                                        FieldValue.increment(4),
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'looses_cup':
+                                                        FieldValue.increment(1),
+                                                    'points_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'qf8nncmb' /* Victoire Dom */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 130.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'points_cup':
+                                                        FieldValue.increment(2),
+                                                    'draws_cup':
+                                                        FieldValue.increment(1),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'draws_cup':
+                                                        FieldValue.increment(1),
+                                                    'points_cup':
+                                                        FieldValue.increment(2),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'zd99s7r5' /* Nul */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 60.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              await modifEventPageEventsRecord
+                                                  .reference
+                                                  .update(
+                                                      createEventsRecordData(
+                                                seenScore: true,
+                                                scoreDom: int.tryParse(_model
+                                                    .scoreDomFieldTextController
+                                                    .text),
+                                                scoreExt: int.tryParse(_model
+                                                    .scoreExtFieldTextController
+                                                    .text),
+                                              ));
+
+                                              await modifEventPageEventsRecord
+                                                  .teamdomRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                    'points_cup':
+                                                        FieldValue.increment(1),
+                                                    'looses_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                  },
+                                                ),
+                                              });
+
+                                              await modifEventPageEventsRecord
+                                                  .teamextRef!
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'games_cup':
+                                                        FieldValue.increment(1),
+                                                    'points_cup':
+                                                        FieldValue.increment(4),
+                                                    'wins_cup':
+                                                        FieldValue.increment(1),
+                                                    'goals_in_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreExtFieldTextController
+                                                            .text)),
+                                                    'goals_out_cup': FieldValue
+                                                        .increment(int.parse(_model
+                                                            .scoreDomFieldTextController
+                                                            .text)),
+                                                  },
+                                                ),
+                                              });
+
+                                              await widget.eventRef!.update(
+                                                  createEventsRecordData(
+                                                statut: false,
+                                              ));
+
+                                              context.pushNamed(
+                                                  ListEventsAdminWidget
+                                                      .routeName);
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'fqkynz2o' /* Victoire Ext */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 130.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                              hoverTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 if ((modifEventPageEventsRecord.sportValue ==
                                         'mma') ||
                                     (modifEventPageEventsRecord.sportValue ==
@@ -5356,7 +5806,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                         'tennis'))
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 5.0),
+                                        0.0, 10.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -5389,6 +5839,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                         FieldValue.increment(1),
                                                     'total_games':
                                                         FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'points':
+                                                        FieldValue.increment(3),
                                                   },
                                                 ),
                                               });
@@ -5400,6 +5862,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   {
                                                     'total_games':
                                                         FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'points':
+                                                        FieldValue.increment(0),
                                                     'looses':
                                                         FieldValue.increment(1),
                                                   },
@@ -5417,7 +5891,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              'mal5a7sk' /* Victoire Dom */,
+                                              'dhw5r2o0' /* Victoire Dom */,
                                             ),
                                             options: FFButtonOptions(
                                               width: 130.0,
@@ -5501,6 +5975,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   {
                                                     'total_games':
                                                         FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'points':
+                                                        FieldValue.increment(1),
                                                     'draws':
                                                         FieldValue.increment(1),
                                                   },
@@ -5513,6 +5999,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                 ...mapToFirestore(
                                                   {
                                                     'total_games':
+                                                        FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'points':
                                                         FieldValue.increment(1),
                                                     'draws':
                                                         FieldValue.increment(1),
@@ -5531,7 +6029,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              'wjafhksv' /* Nul */,
+                                              'dpx2fh6v' /* Nul */,
                                             ),
                                             options: FFButtonOptions(
                                               width: 60.0,
@@ -5615,6 +6113,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   {
                                                     'total_games':
                                                         FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'points':
+                                                        FieldValue.increment(0),
                                                     'looses':
                                                         FieldValue.increment(1),
                                                   },
@@ -5628,6 +6138,18 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                   {
                                                     'total_games':
                                                         FieldValue.increment(1),
+                                                    'goals_points_in':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreExtFieldTextController
+                                                                .text)),
+                                                    'goals_points_out':
+                                                        FieldValue.increment(
+                                                            int.parse(_model
+                                                                .scoreDomFieldTextController
+                                                                .text)),
+                                                    'points':
+                                                        FieldValue.increment(3),
                                                     'wins':
                                                         FieldValue.increment(1),
                                                   },
@@ -5645,7 +6167,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
-                                              '46wuhkt3' /* Victoire Ext */,
+                                              'ltk7uxrk' /* Victoire Ext */,
                                             ),
                                             options: FFButtonOptions(
                                               width: 130.0,

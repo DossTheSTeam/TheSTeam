@@ -301,8 +301,8 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                safeSetState(
-                                    () => _model.isDataUploading = true);
+                                safeSetState(() => _model
+                                    .isDataUploading_uploadDataAof = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -327,16 +327,17 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                       .map((u) => u!)
                                       .toList();
                                 } finally {
-                                  _model.isDataUploading = false;
+                                  _model.isDataUploading_uploadDataAof = false;
                                 }
                                 if (selectedUploadedFiles.length ==
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
                                   safeSetState(() {
-                                    _model.uploadedLocalFile =
+                                    _model.uploadedLocalFile_uploadDataAof =
                                         selectedUploadedFiles.first;
-                                    _model.uploadedFileUrl = downloadUrls.first;
+                                    _model.uploadedFileUrl_uploadDataAof =
+                                        downloadUrls.first;
                                   });
                                 } else {
                                   safeSetState(() {});
@@ -348,7 +349,7 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                       currentUserReference!)
                                   .set({
                                 ...createImagesRecordData(
-                                  image: _model.uploadedFileUrl,
+                                  image: _model.uploadedFileUrl_uploadDataAof,
                                 ),
                                 ...mapToFirestore(
                                   {

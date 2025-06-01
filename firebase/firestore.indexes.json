@@ -51,7 +51,39 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "points",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "additional_league",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points_cup",
           "order": "DESCENDING"
         }
       ]
@@ -83,6 +115,10 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "points",
           "order": "DESCENDING"
         }
@@ -98,20 +134,6 @@
         },
         {
           "fieldPath": "created_time",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "teams",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "additional_league",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "points_cup",
           "order": "DESCENDING"
         }
       ]
@@ -167,28 +189,6 @@
         {
           "fieldPath": "hour",
           "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "teams",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "league_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "division_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "points",
-          "order": "DESCENDING"
         }
       ]
     },
@@ -422,6 +422,24 @@
         },
         {
           "fieldPath": "date_time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
           "order": "DESCENDING"
         }
       ]

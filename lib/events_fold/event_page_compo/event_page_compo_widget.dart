@@ -10,6 +10,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'event_page_compo_model.dart';
 export 'event_page_compo_model.dart';
 
@@ -330,19 +331,20 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                AudioMemberConferenceWidget(
-                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioMemberConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         );
@@ -417,19 +419,20 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap:
-                                                                              () {
-                                                                            FocusScope.of(context).unfocus();
-                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                          },
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                AudioFanConferenceWidget(
-                                                                              teamRef: currentUserDocument!.audioTeam!,
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: AudioFanConferenceWidget(
+                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         );
@@ -593,11 +596,11 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                   .sportValue ==
                                               'mma')
                                             Icon(
-                                              Icons.sports_mma_outlined,
+                                              Icons.sports_mma_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              size: 24.0,
+                                              size: 25.0,
                                             ),
                                           if (eventPageCompoEventsRecord
                                                   .sportValue ==
@@ -614,16 +617,6 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                               'hockey')
                                             Icon(
                                               Icons.sports_hockey,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                          if (eventPageCompoEventsRecord
-                                                  .sportValue ==
-                                              'boxe')
-                                            Icon(
-                                              Icons.sports_mma_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,

@@ -42,15 +42,15 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
   String? Function(BuildContext, String?)? commFieldTextController2Validator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentEsportRef;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadDataUtu = false;
+  FFUploadedFile uploadedLocalFile_uploadDataUtu =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  String uploadedFileUrl_uploadDataUtu = '';
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadDataLgn = false;
+  FFUploadedFile uploadedLocalFile_uploadDataLgn =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadDataLgn = '';
 
   @override
   void initState(BuildContext context) {}

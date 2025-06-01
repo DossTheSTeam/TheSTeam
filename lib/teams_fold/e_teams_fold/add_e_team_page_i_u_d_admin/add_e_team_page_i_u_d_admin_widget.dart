@@ -2047,7 +2047,7 @@ Geschäftsbedingunge... */
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(0.0),
                                   child: Image.network(
-                                    _model.uploadedFileUrl,
+                                    _model.uploadedFileUrl_uploadData1ni,
                                     width: 300.0,
                                     height: 200.0,
                                     fit: BoxFit.fitHeight,
@@ -2072,8 +2072,8 @@ Geschäftsbedingunge... */
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                safeSetState(
-                                    () => _model.isDataUploading = true);
+                                safeSetState(() => _model
+                                    .isDataUploading_uploadData1ni = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -2098,16 +2098,17 @@ Geschäftsbedingunge... */
                                       .map((u) => u!)
                                       .toList();
                                 } finally {
-                                  _model.isDataUploading = false;
+                                  _model.isDataUploading_uploadData1ni = false;
                                 }
                                 if (selectedUploadedFiles.length ==
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
                                   safeSetState(() {
-                                    _model.uploadedLocalFile =
+                                    _model.uploadedLocalFile_uploadData1ni =
                                         selectedUploadedFiles.first;
-                                    _model.uploadedFileUrl = downloadUrls.first;
+                                    _model.uploadedFileUrl_uploadData1ni =
+                                        downloadUrls.first;
                                   });
                                 } else {
                                   safeSetState(() {});
@@ -3156,7 +3157,7 @@ Geschäftsbedingunge... */
                                                               .eTeamNameFieldTextController
                                                               .text,
                                                           logo: _model
-                                                              .uploadedFileUrl,
+                                                              .uploadedFileUrl_uploadData1ni,
                                                           sportValue:
                                                               'esport.football',
                                                           leagueValue: 'pro',
@@ -3212,7 +3213,7 @@ Geschäftsbedingunge... */
                                                               .eTeamNameFieldTextController
                                                               .text,
                                                           logo: _model
-                                                              .uploadedFileUrl,
+                                                              .uploadedFileUrl_uploadData1ni,
                                                           sportValue:
                                                               'esport.football',
                                                           leagueValue: 'pro',
@@ -3372,7 +3373,7 @@ Geschäftsbedingunge... */
                                                             .eTeamNameFieldTextController
                                                             .text,
                                                         logo: _model
-                                                            .uploadedFileUrl,
+                                                            .uploadedFileUrl_uploadData1ni,
                                                         sportValue:
                                                             'esport.basketball',
                                                         leagueValue: 'pro',
@@ -3426,7 +3427,7 @@ Geschäftsbedingunge... */
                                                             .eTeamNameFieldTextController
                                                             .text,
                                                         logo: _model
-                                                            .uploadedFileUrl,
+                                                            .uploadedFileUrl_uploadData1ni,
                                                         sportValue:
                                                             'esport.basketball',
                                                         leagueValue: 'pro',
@@ -3584,7 +3585,7 @@ Geschäftsbedingunge... */
                                                             .eTeamNameFieldTextController
                                                             .text,
                                                         logo: _model
-                                                            .uploadedFileUrl,
+                                                            .uploadedFileUrl_uploadData1ni,
                                                         sportValue:
                                                             'esport.war',
                                                         leagueValue: 'pro',
@@ -3638,7 +3639,7 @@ Geschäftsbedingunge... */
                                                             .eTeamNameFieldTextController
                                                             .text,
                                                         logo: _model
-                                                            .uploadedFileUrl,
+                                                            .uploadedFileUrl_uploadData1ni,
                                                         sportValue:
                                                             'esport.war',
                                                         leagueValue: 'pro',

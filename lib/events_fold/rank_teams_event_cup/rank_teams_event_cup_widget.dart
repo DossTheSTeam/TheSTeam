@@ -2812,9 +2812,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -2828,9 +2827,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -2987,9 +2985,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3003,9 +3000,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -3111,9 +3107,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3127,9 +3122,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -3235,9 +3229,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3251,9 +3244,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -3359,9 +3351,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3375,9 +3366,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -3497,9 +3487,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3513,9 +3502,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,
@@ -3636,7 +3624,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontWeight: FontWeight.w600,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                               color: valueOrDefault<Color>(
@@ -3644,7 +3632,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                               ),
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontWeight: FontWeight.w600,
                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                             ),
                                                                       ),
@@ -3665,7 +3653,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            'r5ve0ymo' /* : */,
+                                                                            'pxqy73vw' /* : */,
                                                                           ),
                                                                           textAlign:
                                                                               TextAlign.center,
@@ -3673,7 +3661,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                               .bodyMedium
                                                                               .override(
                                                                                 font: GoogleFonts.poppins(
-                                                                                  fontWeight: FontWeight.w500,
+                                                                                  fontWeight: FontWeight.w600,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                                 color: valueOrDefault<Color>(
@@ -3681,7 +3669,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                                   FlutterFlowTheme.of(context).primaryText,
                                                                                 ),
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w500,
+                                                                                fontWeight: FontWeight.w600,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                         ),
@@ -3705,7 +3693,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontWeight: FontWeight.w600,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                               ),
                                                                               color: valueOrDefault<Color>(
@@ -3713,7 +3701,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                               ),
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontWeight: FontWeight.w600,
                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                             ),
                                                                       ),
@@ -3886,9 +3874,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           fontStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontStyle,
@@ -3902,9 +3889,8 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .fontStyle,

@@ -9,6 +9,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'moderator_page_model.dart';
 export 'moderator_page_model.dart';
 
@@ -292,24 +293,27 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioMemberConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioMemberConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -384,24 +388,27 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioFanConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioFanConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -920,64 +927,219 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '3x8yth2u' /* Administrateur */,
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 5.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'football')
+                                          Icon(
+                                            Icons.sports_soccer_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'basketball')
+                                          Icon(
+                                            Icons.sports_basketball,
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'mma')
+                                          Icon(
+                                            Icons.sports_mma_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'sports.meca')
+                                          Icon(
+                                            Icons.sports_motorsports_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'tennis')
+                                          Icon(
+                                            Icons.sports_baseball,
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent1,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'rugby')
+                                          Icon(
+                                            Icons.sports_rugby_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'hockey')
+                                          Icon(
+                                            Icons.sports_hockey,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                      ],
+                                    ),
                                   ),
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'loexi9qx' /* Administrateur */,
                                       ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Text(
-                                  valueOrDefault(
-                                      currentUserDocument?.adminSportvalue, ''),
-                                  maxLines: 1,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
-                                      ),
-                                ),
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            font: GoogleFonts.poppins(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .fontStyle,
+                                            ),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'football')
+                                          Icon(
+                                            Icons.sports_soccer_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'basketball')
+                                          Icon(
+                                            Icons.sports_basketball,
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'mma')
+                                          Icon(
+                                            Icons.sports_mma_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'sports.meca')
+                                          Icon(
+                                            Icons.sports_motorsports_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'tennis')
+                                          Icon(
+                                            Icons.sports_baseball,
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent1,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'rugby')
+                                          Icon(
+                                            Icons.sports_rugby_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                        if (valueOrDefault(
+                                                currentUserDocument
+                                                    ?.adminSportvalue,
+                                                '') ==
+                                            'hockey')
+                                          Icon(
+                                            Icons.sports_hockey,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            size: 25.0,
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                               Divider(
                                 thickness: 1.0,

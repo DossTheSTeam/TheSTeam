@@ -9,6 +9,8 @@ class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
 
   String? showLigueFilter;
 
+  String? showDivision;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropLigueFoot widget.
@@ -26,9 +28,9 @@ class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
   // State field(s) for DropLigueMMA widget.
   String? dropLigueMMAValue1;
   FormFieldController<String>? dropLigueMMAValueController1;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue1;
-  FormFieldController<String>? dropLigueBoxeValueController1;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue1;
+  FormFieldController<String>? dropLigueFightValueController1;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue1;
   FormFieldController<String>? dropLigueRugbyValueController1;
@@ -50,9 +52,9 @@ class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
   // State field(s) for DropLigueMMA widget.
   String? dropLigueMMAValue2;
   FormFieldController<String>? dropLigueMMAValueController2;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue2;
-  FormFieldController<String>? dropLigueBoxeValueController2;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue2;
+  FormFieldController<String>? dropLigueFightValueController2;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue2;
   FormFieldController<String>? dropLigueRugbyValueController2;

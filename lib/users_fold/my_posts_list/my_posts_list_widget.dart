@@ -11,6 +11,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'my_posts_list_model.dart';
 export 'my_posts_list_model.dart';
 
@@ -316,24 +317,27 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioMemberConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioMemberConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -408,24 +412,27 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioFanConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioFanConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -1213,7 +1220,7 @@ de notícias */
                                                                       .max,
                                                               children: [
                                                                 Container(
-                                                                  height: 120.0,
+                                                                  height: 122.0,
                                                                   child: Stack(
                                                                     children: [
                                                                       if (columnPostPostsRecord.image !=
@@ -1397,7 +1404,7 @@ de notícias */
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 250.0,
+                                                                                  width: 225.0,
                                                                                   height: 50.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -1516,6 +1523,38 @@ de notícias */
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          child: Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              if (columnPostPostsRecord.description != '')
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                                  child: Icon(
+                                                                                                    Icons.text_fields_outlined,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    size: 20.0,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              if (columnPostPostsRecord.audio != '')
+                                                                                                Icon(
+                                                                                                  Icons.hearing_rounded,
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  size: 20.0,
+                                                                                                ),
+                                                                                              if (columnPostPostsRecord.youtubeVideo != '')
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: FaIcon(
+                                                                                                    FontAwesomeIcons.youtube,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    size: 20.0,
+                                                                                                  ),
+                                                                                                ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ),
                                                                                         Padding(
                                                                                           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                           child: Icon(
@@ -1642,32 +1681,6 @@ de notícias */
                                                                                       ],
                                                                                     ),
                                                                                   ),
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      if (columnPostPostsRecord.description != '')
-                                                                                        Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                          child: Icon(
-                                                                                            Icons.text_fields_outlined,
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            size: 20.0,
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (columnPostPostsRecord.audio != '')
-                                                                                        Icon(
-                                                                                          Icons.hearing_rounded,
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          size: 20.0,
-                                                                                        ),
-                                                                                      if (columnPostPostsRecord.video != '')
-                                                                                        Icon(
-                                                                                          Icons.video_collection_rounded,
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          size: 20.0,
-                                                                                        ),
-                                                                                    ],
-                                                                                  ),
                                                                                 ],
                                                                               ),
                                                                             ),
@@ -1746,15 +1759,17 @@ de notícias */
                                                                                             enableDrag: false,
                                                                                             context: context,
                                                                                             builder: (context) {
-                                                                                              return GestureDetector(
-                                                                                                onTap: () {
-                                                                                                  FocusScope.of(context).unfocus();
-                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                },
-                                                                                                child: Padding(
-                                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                                  child: DeleteMyPostWidget(
-                                                                                                    myPostRef: columnMyPostsMyPostsRecord.reference,
+                                                                                              return WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(context).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Padding(
+                                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                                    child: DeleteMyPostWidget(
+                                                                                                      myPostRef: columnMyPostsMyPostsRecord.reference,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               );

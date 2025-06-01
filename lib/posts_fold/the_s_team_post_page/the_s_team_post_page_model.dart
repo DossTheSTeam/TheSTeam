@@ -26,10 +26,10 @@ class TheSTeamPostPageModel extends FlutterFlowModel<TheSTeamPostPageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   PostMessagesRecord? commentRef;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataYnz = false;
+  FFUploadedFile uploadedLocalFile_uploadDataYnz =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataYnz = '';
 
   @override
   void initState(BuildContext context) {}

@@ -17,6 +17,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'event_page_add3_bet_model.dart';
 export 'event_page_add3_bet_model.dart';
 
@@ -143,6 +144,94 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
+                                            if (eventPageAdd3BetEventsRecord
+                                                    .leagueValue ==
+                                                'euro.league')
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Container(
+                                                  width: 300.0,
+                                                  height: 200.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(0.0),
+                                                      topRight:
+                                                          Radius.circular(0.0),
+                                                    ),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.asset(
+                                                      'assets/images/logo-default.png',
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.fitHeight,
+                                                      alignment:
+                                                          Alignment(0.0, -1.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            if (eventPageAdd3BetEventsRecord
+                                                    .leagueValue ==
+                                                'champions.cup')
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Container(
+                                                  width: 300.0,
+                                                  height: 200.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(0.0),
+                                                      topRight:
+                                                          Radius.circular(0.0),
+                                                    ),
+                                                    shape: BoxShape.rectangle,
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 20.0,
+                                                                0.0, 0.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      child: Image.asset(
+                                                        'assets/images/Logo_Champions_Cup_2018.png',
+                                                        width: 300.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitWidth,
+                                                        alignment: Alignment(
+                                                            0.0, -1.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
                                             if (eventPageAdd3BetEventsRecord
                                                     .leagueValue ==
                                                 'champions.league')
@@ -468,8 +557,8 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                 ),
                                               ),
                                             if (eventPageAdd3BetEventsRecord
-                                                    .sportValue ==
-                                                'mma')
+                                                    .leagueValue ==
+                                                'ufc')
                                               Align(
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
@@ -1090,17 +1179,18 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioMemberConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioMemberConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -1175,17 +1265,18 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioFanConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioFanConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -1717,38 +1808,78 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                       .alternate,
                                                                 ),
                                                               ),
-                                                              Container(
-                                                                width: 45.0,
-                                                                height: 35.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              3.0),
-                                                                ),
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              0.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    contDomTeamsRecord
-                                                                        .logo,
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        200.0,
-                                                                    fit: BoxFit
-                                                                        .fitHeight,
+                                                              if ((eventPageAdd3BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'mma') &&
+                                                                  (eventPageAdd3BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis'))
+                                                                Container(
+                                                                  width: 55.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            3.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contDomTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          300.0,
+                                                                      height:
+                                                                          200.0,
+                                                                      fit: BoxFit
+                                                                          .fitHeight,
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                              if ((eventPageAdd3BetEventsRecord
+                                                                          .sportValue ==
+                                                                      'mma') ||
+                                                                  (eventPageAdd3BetEventsRecord
+                                                                          .sportValue ==
+                                                                      'tennis'))
+                                                                Container(
+                                                                  width: 45.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            10.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contDomTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          300.0,
+                                                                      height:
+                                                                          200.0,
+                                                                      fit: BoxFit
+                                                                          .fitWidth,
+                                                                    ),
+                                                                  ),
+                                                                ),
                                                               Container(
                                                                 width: 30.0,
                                                                 height: 30.0,
@@ -1771,7 +1902,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                         (eventPageAdd3BetEventsRecord.leagueValue !=
                                                                             'europa.league') &&
                                                                         (eventPageAdd3BetEventsRecord.leagueValue !=
-                                                                            'conference.league'))
+                                                                            'conference.league') &&
+                                                                        (eventPageAdd3BetEventsRecord.leagueValue !=
+                                                                            'champions.cup') &&
+                                                                        (eventPageAdd3BetEventsRecord.sportValue !=
+                                                                            'mma'))
                                                                       FutureBuilder<
                                                                           List<
                                                                               TeamsRecord>>(
@@ -1842,11 +1977,90 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                           );
                                                                         },
                                                                       ),
+                                                                    if (eventPageAdd3BetEventsRecord
+                                                                            .sportValue ==
+                                                                        'mma')
+                                                                      FutureBuilder<
+                                                                          List<
+                                                                              TeamsRecord>>(
+                                                                        future:
+                                                                            queryTeamsRecordOnce(
+                                                                          queryBuilder: (teamsRecord) => teamsRecord
+                                                                              .where(
+                                                                                'league_value',
+                                                                                isEqualTo: contDomTeamsRecord.leagueValue,
+                                                                              )
+                                                                              .where(
+                                                                                'division_value',
+                                                                                isEqualTo: contDomTeamsRecord.divisionValue,
+                                                                              )
+                                                                              .orderBy('points', descending: true),
+                                                                        ),
+                                                                        builder:
+                                                                            (context,
+                                                                                snapshot) {
+                                                                          // Customize what your widget looks like when it's loading.
+                                                                          if (!snapshot
+                                                                              .hasData) {
+                                                                            return Center(
+                                                                              child: SizedBox(
+                                                                                width: 50.0,
+                                                                                height: 50.0,
+                                                                                child: CircularProgressIndicator(
+                                                                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                    FlutterFlowTheme.of(context).accent4,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          }
+                                                                          List<TeamsRecord>
+                                                                              rowTeamsRecordList =
+                                                                              snapshot.data!;
+
+                                                                          return Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.end,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                List.generate(rowTeamsRecordList.length, (rowIndex) {
+                                                                              final rowTeamsRecord = rowTeamsRecordList[rowIndex];
+                                                                              return Visibility(
+                                                                                visible: contDomTeamsRecord.reference == rowTeamsRecord.reference,
+                                                                                child: Align(
+                                                                                  alignment: AlignmentDirectional(1.0, -1.0),
+                                                                                  child: Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      functions.zeroTo1(rowIndex).toString(),
+                                                                                      '1',
+                                                                                    ),
+                                                                                    textAlign: TextAlign.end,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            }),
+                                                                          );
+                                                                        },
+                                                                      ),
                                                                     if ((eventPageAdd3BetEventsRecord.leagueValue == 'champions.league') ||
                                                                         (eventPageAdd3BetEventsRecord.leagueValue ==
                                                                             'europa.league') ||
                                                                         (eventPageAdd3BetEventsRecord.leagueValue ==
-                                                                            'conference.league'))
+                                                                            'conference.league') ||
+                                                                        (eventPageAdd3BetEventsRecord.leagueValue ==
+                                                                            'champions.cup'))
                                                                       FutureBuilder<
                                                                           List<
                                                                               TeamsRecord>>(
@@ -2035,7 +2249,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'plzdmz1r' /* - */,
+                                                                      'lnthe829' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2111,7 +2325,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'wko865v3' /* - */,
+                                                                      'px45bt4t' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2245,7 +2459,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'rv5otyjq' /* - */,
+                                                                      'qmix6lmi' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2321,7 +2535,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'hguwxbri' /* - */,
+                                                                      'alh35n43' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2399,9 +2613,6 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                           'autres.france') &&
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue !=
-                                                          'pays.football') &&
-                                                      (eventPageAdd3BetEventsRecord
-                                                              .leagueValue !=
                                                           'champions.league') &&
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue !=
@@ -2440,26 +2651,28 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () {
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus();
-                                                                    FocusManager
-                                                                        .instance
-                                                                        .primaryFocus
-                                                                        ?.unfocus();
-                                                                  },
+                                                                return WebViewAware(
                                                                   child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                      GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        RankTeamsEventWidget(
-                                                                      eventRef:
-                                                                          widget
-                                                                              .eventRef!,
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          RankTeamsEventWidget(
+                                                                        eventRef:
+                                                                            widget.eventRef!,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 );
@@ -2484,15 +2697,16 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                  if ((eventPageAdd3BetEventsRecord
-                                                              .leagueValue ==
-                                                          'champions.league') ||
+                                                  if ((eventPageAdd3BetEventsRecord.leagueValue == 'champions.league') ||
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue ==
                                                           'europa.league') ||
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue ==
-                                                          'conference.league'))
+                                                          'conference.league') ||
+                                                      (eventPageAdd3BetEventsRecord
+                                                              .leagueValue ==
+                                                          'champions.cup'))
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -2524,26 +2738,28 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () {
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus();
-                                                                    FocusManager
-                                                                        .instance
-                                                                        .primaryFocus
-                                                                        ?.unfocus();
-                                                                  },
+                                                                return WebViewAware(
                                                                   child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                      GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        RankTeamsEventCupWidget(
-                                                                      eventRef:
-                                                                          widget
-                                                                              .eventRef!,
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          RankTeamsEventCupWidget(
+                                                                        eventRef:
+                                                                            widget.eventRef!,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 );
@@ -2568,32 +2784,6 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                  if ((eventPageAdd3BetEventsRecord
-                                                              .leagueValue ==
-                                                          'autres') ||
-                                                      (eventPageAdd3BetEventsRecord
-                                                              .leagueValue ==
-                                                          'autres.france') ||
-                                                      (eventPageAdd3BetEventsRecord
-                                                              .leagueValue ==
-                                                          'pays.football'))
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0,
-                                                                  10.0),
-                                                      child: Icon(
-                                                        Icons.bar_chart,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        size: 20.0,
-                                                      ),
-                                                    ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
                                                         InkWell(
@@ -2615,24 +2805,28 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    EventTeamsEventsWidget(
-                                                                  eventRef: widget
-                                                                      .eventRef!,
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      EventTeamsEventsWidget(
+                                                                    eventRef:
+                                                                        widget
+                                                                            .eventRef!,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             );
@@ -2704,26 +2898,28 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () {
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus();
-                                                                    FocusManager
-                                                                        .instance
-                                                                        .primaryFocus
-                                                                        ?.unfocus();
-                                                                  },
+                                                                return WebViewAware(
                                                                   child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                      GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        StatsTeamsEventWidget(
-                                                                      eventRef:
-                                                                          widget
-                                                                              .eventRef!,
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          StatsTeamsEventWidget(
+                                                                        eventRef:
+                                                                            widget.eventRef!,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 );
@@ -2749,15 +2945,16 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                  if ((eventPageAdd3BetEventsRecord
-                                                              .leagueValue ==
-                                                          'champions.league') ||
+                                                  if ((eventPageAdd3BetEventsRecord.leagueValue == 'champions.league') ||
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue ==
                                                           'europa.league') ||
                                                       (eventPageAdd3BetEventsRecord
                                                               .leagueValue ==
-                                                          'conference.league'))
+                                                          'conference.league') ||
+                                                      (eventPageAdd3BetEventsRecord
+                                                              .leagueValue ==
+                                                          'champions.cup'))
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -2789,26 +2986,28 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () {
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus();
-                                                                    FocusManager
-                                                                        .instance
-                                                                        .primaryFocus
-                                                                        ?.unfocus();
-                                                                  },
+                                                                return WebViewAware(
                                                                   child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                      GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        StatsTeamsEventCupWidget(
-                                                                      eventRef:
-                                                                          widget
-                                                                              .eventRef!,
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          StatsTeamsEventCupWidget(
+                                                                        eventRef:
+                                                                            widget.eventRef!,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 );
@@ -2969,7 +3168,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                         (eventPageAdd3BetEventsRecord.leagueValue !=
                                                                             'europa.league') &&
                                                                         (eventPageAdd3BetEventsRecord.leagueValue !=
-                                                                            'conference.league'))
+                                                                            'conference.league') &&
+                                                                        (eventPageAdd3BetEventsRecord.sportValue !=
+                                                                            'mma') &&
+                                                                        (eventPageAdd3BetEventsRecord.leagueValue !=
+                                                                            'champions.cup'))
                                                                       FutureBuilder<
                                                                           List<
                                                                               TeamsRecord>>(
@@ -3040,11 +3243,90 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                           );
                                                                         },
                                                                       ),
+                                                                    if (eventPageAdd3BetEventsRecord
+                                                                            .sportValue ==
+                                                                        'mma')
+                                                                      FutureBuilder<
+                                                                          List<
+                                                                              TeamsRecord>>(
+                                                                        future:
+                                                                            queryTeamsRecordOnce(
+                                                                          queryBuilder: (teamsRecord) => teamsRecord
+                                                                              .where(
+                                                                                'league_value',
+                                                                                isEqualTo: contExtTeamsRecord.leagueValue,
+                                                                              )
+                                                                              .where(
+                                                                                'division_value',
+                                                                                isEqualTo: contExtTeamsRecord.divisionValue,
+                                                                              )
+                                                                              .orderBy('points', descending: true),
+                                                                        ),
+                                                                        builder:
+                                                                            (context,
+                                                                                snapshot) {
+                                                                          // Customize what your widget looks like when it's loading.
+                                                                          if (!snapshot
+                                                                              .hasData) {
+                                                                            return Center(
+                                                                              child: SizedBox(
+                                                                                width: 50.0,
+                                                                                height: 50.0,
+                                                                                child: CircularProgressIndicator(
+                                                                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                    FlutterFlowTheme.of(context).accent4,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          }
+                                                                          List<TeamsRecord>
+                                                                              rowTeamsRecordList =
+                                                                              snapshot.data!;
+
+                                                                          return Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                List.generate(rowTeamsRecordList.length, (rowIndex) {
+                                                                              final rowTeamsRecord = rowTeamsRecordList[rowIndex];
+                                                                              return Visibility(
+                                                                                visible: contExtTeamsRecord.reference == rowTeamsRecord.reference,
+                                                                                child: Align(
+                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                  child: Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      functions.zeroTo1(rowIndex).toString(),
+                                                                                      '1',
+                                                                                    ),
+                                                                                    textAlign: TextAlign.start,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          ),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            }),
+                                                                          );
+                                                                        },
+                                                                      ),
                                                                     if ((eventPageAdd3BetEventsRecord.leagueValue == 'champions.league') ||
                                                                         (eventPageAdd3BetEventsRecord.leagueValue ==
                                                                             'europa.league') ||
                                                                         (eventPageAdd3BetEventsRecord.leagueValue ==
-                                                                            'conference.league'))
+                                                                            'conference.league') ||
+                                                                        (eventPageAdd3BetEventsRecord.leagueValue ==
+                                                                            'champions.cup'))
                                                                       FutureBuilder<
                                                                           List<
                                                                               TeamsRecord>>(
@@ -3120,38 +3402,78 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                   ],
                                                                 ),
                                                               ),
-                                                              Container(
-                                                                width: 45.0,
-                                                                height: 35.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .alternate,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              3.0),
-                                                                ),
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              0.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    contExtTeamsRecord
-                                                                        .logo,
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        200.0,
-                                                                    fit: BoxFit
-                                                                        .fitHeight,
+                                                              if ((eventPageAdd3BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'mma') &&
+                                                                  (eventPageAdd3BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis'))
+                                                                Container(
+                                                                  width: 55.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            3.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contExtTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          300.0,
+                                                                      height:
+                                                                          200.0,
+                                                                      fit: BoxFit
+                                                                          .fitHeight,
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                              if ((eventPageAdd3BetEventsRecord
+                                                                          .sportValue ==
+                                                                      'mma') ||
+                                                                  (eventPageAdd3BetEventsRecord
+                                                                          .sportValue ==
+                                                                      'tennis'))
+                                                                Container(
+                                                                  width: 45.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            10.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contExtTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          300.0,
+                                                                      height:
+                                                                          200.0,
+                                                                      fit: BoxFit
+                                                                          .fitWidth,
+                                                                    ),
+                                                                  ),
+                                                                ),
                                                               Container(
                                                                 width: 30.0,
                                                                 height: 30.0,
@@ -3275,7 +3597,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '3jftc57p' /* - */,
+                                                                      '3hmuy7ix' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3351,7 +3673,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'fezqy64n' /* - */,
+                                                                      'mi7glaxd' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3485,7 +3807,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'ej3iusah' /* - */,
+                                                                      'et7uqxll' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3561,7 +3883,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'hs5nzr8a' /* - */,
+                                                                      'pffz2eua' /* - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3694,19 +4016,22 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () {
-                                                        FocusScope.of(context)
-                                                            .unfocus();
-                                                        FocusManager.instance
-                                                            .primaryFocus
-                                                            ?.unfocus();
-                                                      },
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child: RankMecaWidget(),
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              RankMecaWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -3722,6 +4047,47 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                 ),
                                                 size: 30.0,
                                               ),
+                                            ),
+                                          ),
+                                        if (eventPageAdd3BetEventsRecord
+                                                .sportValue ==
+                                            'mma')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Text(
+                                              eventPageAdd3BetEventsRecord
+                                                  .divisionValue,
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .fontStyle,
+                                                      ),
                                             ),
                                           ),
                                       ],

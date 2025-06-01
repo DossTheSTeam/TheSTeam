@@ -9,6 +9,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'e_team_users_list_model.dart';
 export 'e_team_users_list_model.dart';
 
@@ -388,15 +389,17 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () {
-                                                                                FocusScope.of(context).unfocus();
-                                                                                FocusManager.instance.primaryFocus?.unfocus();
-                                                                              },
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: AudioMemberConferenceWidget(
-                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: AudioMemberConferenceWidget(
+                                                                                    teamRef: currentUserDocument!.audioTeam!,
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             );
@@ -470,15 +473,17 @@ class _ETeamUsersListWidgetState extends State<ETeamUsersListWidget> {
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () {
-                                                                                FocusScope.of(context).unfocus();
-                                                                                FocusManager.instance.primaryFocus?.unfocus();
-                                                                              },
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: AudioFanConferenceWidget(
-                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: AudioFanConferenceWidget(
+                                                                                    teamRef: currentUserDocument!.audioTeam!,
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             );

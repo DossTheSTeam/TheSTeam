@@ -96,11 +96,6 @@ class PostsRecord extends FirestoreRecord {
   DocumentReference? get teamRef => _teamRef;
   bool hasTeamRef() => _teamRef != null;
 
-  // "video" field.
-  String? _video;
-  String get video => _video ?? '';
-  bool hasVideo() => _video != null;
-
   // "esport" field.
   bool? _esport;
   bool get esport => _esport ?? false;
@@ -146,6 +141,16 @@ class PostsRecord extends FirestoreRecord {
   String get foldCategorie => _foldCategorie ?? '';
   bool hasFoldCategorie() => _foldCategorie != null;
 
+  // "youtube_link" field.
+  String? _youtubeLink;
+  String get youtubeLink => _youtubeLink ?? '';
+  bool hasYoutubeLink() => _youtubeLink != null;
+
+  // "youtube_video" field.
+  String? _youtubeVideo;
+  String get youtubeVideo => _youtubeVideo ?? '';
+  bool hasYoutubeVideo() => _youtubeVideo != null;
+
   void _initializeFields() {
     _member = snapshotData['member'] as DocumentReference?;
     _title = snapshotData['title'] as String?;
@@ -163,7 +168,6 @@ class PostsRecord extends FirestoreRecord {
     _leagueValue = snapshotData['league_value'] as String?;
     _moderator = snapshotData['moderator'] as DocumentReference?;
     _teamRef = snapshotData['team_ref'] as DocumentReference?;
-    _video = snapshotData['video'] as String?;
     _esport = snapshotData['esport'] as bool?;
     _sportValue = snapshotData['sport_value'] as String?;
     _choice1 = snapshotData['choice1'] as String?;
@@ -173,6 +177,8 @@ class PostsRecord extends FirestoreRecord {
     _list4choice2 = getDataList(snapshotData['list4choice2']);
     _list4choice3 = getDataList(snapshotData['list4choice3']);
     _foldCategorie = snapshotData['fold_categorie'] as String?;
+    _youtubeLink = snapshotData['youtube_link'] as String?;
+    _youtubeVideo = snapshotData['youtube_video'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -222,13 +228,14 @@ Map<String, dynamic> createPostsRecordData({
   String? leagueValue,
   DocumentReference? moderator,
   DocumentReference? teamRef,
-  String? video,
   bool? esport,
   String? sportValue,
   String? choice1,
   String? choice2,
   String? choice3,
   String? foldCategorie,
+  String? youtubeLink,
+  String? youtubeVideo,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -245,13 +252,14 @@ Map<String, dynamic> createPostsRecordData({
       'league_value': leagueValue,
       'moderator': moderator,
       'team_ref': teamRef,
-      'video': video,
       'esport': esport,
       'sport_value': sportValue,
       'choice1': choice1,
       'choice2': choice2,
       'choice3': choice3,
       'fold_categorie': foldCategorie,
+      'youtube_link': youtubeLink,
+      'youtube_video': youtubeVideo,
     }.withoutNulls,
   );
 
@@ -280,7 +288,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e1?.leagueValue == e2?.leagueValue &&
         e1?.moderator == e2?.moderator &&
         e1?.teamRef == e2?.teamRef &&
-        e1?.video == e2?.video &&
         e1?.esport == e2?.esport &&
         e1?.sportValue == e2?.sportValue &&
         e1?.choice1 == e2?.choice1 &&
@@ -289,7 +296,9 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         listEquality.equals(e1?.list4choice1, e2?.list4choice1) &&
         listEquality.equals(e1?.list4choice2, e2?.list4choice2) &&
         listEquality.equals(e1?.list4choice3, e2?.list4choice3) &&
-        e1?.foldCategorie == e2?.foldCategorie;
+        e1?.foldCategorie == e2?.foldCategorie &&
+        e1?.youtubeLink == e2?.youtubeLink &&
+        e1?.youtubeVideo == e2?.youtubeVideo;
   }
 
   @override
@@ -310,7 +319,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.leagueValue,
         e?.moderator,
         e?.teamRef,
-        e?.video,
         e?.esport,
         e?.sportValue,
         e?.choice1,
@@ -319,7 +327,9 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.list4choice1,
         e?.list4choice2,
         e?.list4choice3,
-        e?.foldCategorie
+        e?.foldCategorie,
+        e?.youtubeLink,
+        e?.youtubeVideo
       ]);
 
   @override

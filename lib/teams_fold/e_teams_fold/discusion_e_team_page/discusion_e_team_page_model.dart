@@ -27,10 +27,10 @@ class DiscusionETeamPageModel
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   TeamMessagesRecord? teamMessage;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataHat = false;
+  FFUploadedFile uploadedLocalFile_uploadDataHat =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataHat = '';
 
   @override
   void initState(BuildContext context) {}

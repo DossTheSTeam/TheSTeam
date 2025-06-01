@@ -11,6 +11,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'list_events_add2_bet_model.dart';
 export 'list_events_add2_bet_model.dart';
 
@@ -294,24 +295,27 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioMemberConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioMemberConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -386,24 +390,27 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                       context,
                                                                   builder:
                                                                       (context) {
-                                                                    return GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            AudioFanConferenceWidget(
-                                                                          teamRef:
-                                                                              currentUserDocument!.audioTeam!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              AudioFanConferenceWidget(
+                                                                            teamRef:
+                                                                                currentUserDocument!.audioTeam!,
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -664,7 +671,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                           false)
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 3.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
@@ -779,6 +786,163 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                         child: Icon(
                                                           Icons
                                                               .sports_soccer_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 25.0,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          rowCount.toString(),
+                                                          '00',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  FutureBuilder<int>(
+                                    future: queryEventsRecordCount(
+                                      queryBuilder: (eventsRecord) =>
+                                          eventsRecord
+                                              .where(
+                                                'date',
+                                                isEqualTo: _model
+                                                    .calendarSelectedDay?.start,
+                                              )
+                                              .where(
+                                                'sport_value',
+                                                isEqualTo: 'rugby' != ''
+                                                    ? 'rugby'
+                                                    : null,
+                                              )
+                                              .where(
+                                                'statut',
+                                                isEqualTo: true,
+                                              ),
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      int rowCount = snapshot.data!;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (rowCount != 0)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  _model.showSportFilter =
+                                                      'rugby';
+                                                  safeSetState(() {});
+                                                },
+                                                child: Container(
+                                                  width: 55.0,
+                                                  height: 27.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                    shape: BoxShape.rectangle,
+                                                    border: Border.all(
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    2.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Icon(
+                                                          Icons
+                                                              .sports_rugby_rounded,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -997,8 +1161,9 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                               )
                                               .where(
                                                 'sport_value',
-                                                isEqualTo:
-                                                    'mma' != '' ? 'mma' : null,
+                                                isEqualTo: 'hockey' != ''
+                                                    ? 'hockey'
+                                                    : null,
                                               )
                                               .where(
                                                 'statut',
@@ -1039,7 +1204,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   _model.showSportFilter =
-                                                      'mma';
+                                                      'hockey';
                                                   safeSetState(() {});
                                                 },
                                                 child: Container(
@@ -1085,179 +1250,16 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
+                                                                    3.0,
                                                                     0.0,
                                                                     5.0,
                                                                     0.0),
                                                         child: Icon(
-                                                          Icons
-                                                              .sports_mma_outlined,
+                                                          Icons.sports_hockey,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
-                                                          size: 24.0,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          rowCount.toString(),
-                                                          '00',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                  FutureBuilder<int>(
-                                    future: queryEventsRecordCount(
-                                      queryBuilder: (eventsRecord) =>
-                                          eventsRecord
-                                              .where(
-                                                'date',
-                                                isEqualTo: _model
-                                                    .calendarSelectedDay?.start,
-                                              )
-                                              .where(
-                                                'sport_value',
-                                                isEqualTo: 'sports.meca' != ''
-                                                    ? 'sports.meca'
-                                                    : null,
-                                              )
-                                              .where(
-                                                'statut',
-                                                isEqualTo: true,
-                                              ),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      int rowCount = snapshot.data!;
-
-                                      return Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (rowCount != 0)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  _model.showSportFilter =
-                                                      'sports.meca';
-                                                  safeSetState(() {});
-                                                },
-                                                child: Container(
-                                                  width: 55.0,
-                                                  height: 27.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 4.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent3,
-                                                        offset: Offset(
-                                                          0.0,
-                                                          2.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            25.0),
-                                                    shape: BoxShape.rectangle,
-                                                    border: Border.all(
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, -1.0),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      6.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons
-                                                                .sports_motorsports_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                            size: 25.0,
-                                                          ),
+                                                          size: 25.0,
                                                         ),
                                                       ),
                                                       Text(
@@ -1471,319 +1473,6 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                               )
                                               .where(
                                                 'sport_value',
-                                                isEqualTo: 'rugby' != ''
-                                                    ? 'rugby'
-                                                    : null,
-                                              )
-                                              .where(
-                                                'statut',
-                                                isEqualTo: true,
-                                              ),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      int rowCount = snapshot.data!;
-
-                                      return Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (rowCount != 0)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  _model.showSportFilter =
-                                                      'rugby';
-                                                  safeSetState(() {});
-                                                },
-                                                child: Container(
-                                                  width: 55.0,
-                                                  height: 27.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 4.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent3,
-                                                        offset: Offset(
-                                                          0.0,
-                                                          2.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            25.0),
-                                                    shape: BoxShape.rectangle,
-                                                    border: Border.all(
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Icon(
-                                                          Icons
-                                                              .sports_rugby_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 25.0,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          rowCount.toString(),
-                                                          '00',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                  FutureBuilder<int>(
-                                    future: queryEventsRecordCount(
-                                      queryBuilder: (eventsRecord) =>
-                                          eventsRecord
-                                              .where(
-                                                'date',
-                                                isEqualTo: _model
-                                                    .calendarSelectedDay?.start,
-                                              )
-                                              .where(
-                                                'sport_value',
-                                                isEqualTo: 'hockey' != ''
-                                                    ? 'hockey'
-                                                    : null,
-                                              )
-                                              .where(
-                                                'statut',
-                                                isEqualTo: true,
-                                              ),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      int rowCount = snapshot.data!;
-
-                                      return Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (rowCount != 0)
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  _model.showSportFilter =
-                                                      'hockey';
-                                                  safeSetState(() {});
-                                                },
-                                                child: Container(
-                                                  width: 55.0,
-                                                  height: 27.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 4.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent3,
-                                                        offset: Offset(
-                                                          0.0,
-                                                          2.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            25.0),
-                                                    shape: BoxShape.rectangle,
-                                                    border: Border.all(
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    3.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Icon(
-                                                          Icons.sports_hockey,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 25.0,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          rowCount.toString(),
-                                                          '00',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                  FutureBuilder<int>(
-                                    future: queryEventsRecordCount(
-                                      queryBuilder: (eventsRecord) =>
-                                          eventsRecord
-                                              .where(
-                                                'date',
-                                                isEqualTo: _model
-                                                    .calendarSelectedDay?.start,
-                                              )
-                                              .where(
-                                                'sport_value',
                                                 isEqualTo: 'boxe' != ''
                                                     ? 'boxe'
                                                     : null,
@@ -1884,6 +1573,324 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           size: 25.0,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          rowCount.toString(),
+                                                          '00',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  FutureBuilder<int>(
+                                    future: queryEventsRecordCount(
+                                      queryBuilder: (eventsRecord) =>
+                                          eventsRecord
+                                              .where(
+                                                'date',
+                                                isEqualTo: _model
+                                                    .calendarSelectedDay?.start,
+                                              )
+                                              .where(
+                                                'sport_value',
+                                                isEqualTo:
+                                                    'mma' != '' ? 'mma' : null,
+                                              )
+                                              .where(
+                                                'statut',
+                                                isEqualTo: true,
+                                              ),
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      int rowCount = snapshot.data!;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (rowCount != 0)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  _model.showSportFilter =
+                                                      'mma';
+                                                  safeSetState(() {});
+                                                },
+                                                child: Container(
+                                                  width: 55.0,
+                                                  height: 27.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                    shape: BoxShape.rectangle,
+                                                    border: Border.all(
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Icon(
+                                                          Icons
+                                                              .sports_mma_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 25.0,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          rowCount.toString(),
+                                                          '00',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  FutureBuilder<int>(
+                                    future: queryEventsRecordCount(
+                                      queryBuilder: (eventsRecord) =>
+                                          eventsRecord
+                                              .where(
+                                                'date',
+                                                isEqualTo: _model
+                                                    .calendarSelectedDay?.start,
+                                              )
+                                              .where(
+                                                'sport_value',
+                                                isEqualTo: 'sports.meca' != ''
+                                                    ? 'sports.meca'
+                                                    : null,
+                                              )
+                                              .where(
+                                                'statut',
+                                                isEqualTo: true,
+                                              ),
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .accent4,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      int rowCount = snapshot.data!;
+
+                                      return Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (rowCount != 0)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  _model.showSportFilter =
+                                                      'sports.meca';
+                                                  safeSetState(() {});
+                                                },
+                                                child: Container(
+                                                  width: 55.0,
+                                                  height: 27.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .accent3,
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25.0),
+                                                    shape: BoxShape.rectangle,
+                                                    border: Border.all(
+                                                      color:
+                                                          valueOrDefault<Color>(
+                                                        currentUserDocument
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, -1.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      6.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Icon(
+                                                            Icons
+                                                                .sports_motorsports_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
                                                         ),
                                                       ),
                                                       Text(
@@ -2101,7 +2108,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 220.0,
+                                            width: 190.0,
                                             height: 40.0,
                                             decoration: BoxDecoration(
                                               color:
@@ -2112,148 +2119,137 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                               visible: _model.showSportFilter !=
                                                       null &&
                                                   _model.showSportFilter != '',
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        _model.showSportFilter =
-                                                            null;
-                                                        safeSetState(() {});
-                                                      },
-                                                      child: FaIcon(
-                                                        FontAwesomeIcons
-                                                            .eyeSlash,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        size: 30.0,
-                                                      ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      _model.showSportFilter =
+                                                          null;
+                                                      safeSetState(() {});
+                                                    },
+                                                    child: FaIcon(
+                                                      FontAwesomeIcons.eyeSlash,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      size: 30.0,
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  0.0,
-                                                                  10.0,
-                                                                  0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'football')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_soccer_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'basketball')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_basketball,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .warning,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'mma')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_mma_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'sports.meca')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_motorsports_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'tennis')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_baseball,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'rugby')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_rugby_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'hockey')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_hockey,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                          if (_model
-                                                                  .showSportFilter ==
-                                                              'boxe')
-                                                            Icon(
-                                                              Icons
-                                                                  .sports_mma_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 25.0,
-                                                            ),
-                                                        ],
-                                                      ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'football')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_soccer_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'basketball')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_basketball,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .warning,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'mma')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_mma_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'sports.meca')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_motorsports_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'tennis')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_baseball,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .accent1,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'rugby')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_rugby_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'hockey')
+                                                          Icon(
+                                                            Icons.sports_hockey,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                        if (_model
+                                                                .showSportFilter ==
+                                                            'boxe')
+                                                          Icon(
+                                                            Icons
+                                                                .sports_mma_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 25.0,
+                                                          ),
+                                                      ],
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -2324,22 +2320,22 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Container(
-                                            width: 155.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 5.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              width: 100.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                              ),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2437,53 +2433,15 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                 ],
                                               ),
                                             ),
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  columnEventsEventsRecord.hour
-                                                      .toString(),
-                                                  '00',
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        2.0, 0.0, 2.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '97o3qvg2' /* : */,
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    columnEventsEventsRecord
+                                                        .hour
+                                                        .toString(),
+                                                    '00',
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2515,19 +2473,71 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                 .fontStyle,
                                                       ),
                                                 ),
-                                              ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  functions.zeroTo00(
-                                                      columnEventsEventsRecord
-                                                          .minute),
-                                                  '00',
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          2.0, 0.0, 2.0, 0.0),
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '97o3qvg2' /* : */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .poppins(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                  ),
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    functions.zeroTo00(
+                                                        columnEventsEventsRecord
+                                                            .minute),
+                                                    '00',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2539,145 +2549,274 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                 .bodyMedium
                                                                 .fontStyle,
                                                       ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ],
-                                          ),
-                                          Container(
-                                            width: 155.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                ),
+                                              ],
                                             ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(1.0, 0.0, 5.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    LeaguEventsListAdd2BetWidget
-                                                        .routeName,
-                                                    queryParameters: {
-                                                      'eventRef':
-                                                          serializeParam(
-                                                        columnEventsEventsRecord
-                                                            .reference,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'myBetRef':
-                                                          serializeParam(
-                                                        widget.myBetRef,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-                                                },
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  children: [
-                                                    if ((columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'mma') ||
-                                                        (columnEventsEventsRecord
-                                                                .leagueValue ==
-                                                            'autres') ||
-                                                        (columnEventsEventsRecord
-                                                                .leagueValue ==
-                                                            'autres.france'))
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0),
-                                                        child:
-                                                            AuthUserStreamWidget(
-                                                          builder: (context) =>
-                                                              Text(
-                                                            columnEventsEventsRecord
-                                                                .leagueValue,
-                                                            style: FlutterFlowTheme
+                                            Container(
+                                              width: 100.0,
+                                              height: 30.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 3.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      LeaguEventsListAdd2BetWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'eventRef':
+                                                            serializeParam(
+                                                          columnEventsEventsRecord
+                                                              .reference,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'myBetRef':
+                                                            serializeParam(
+                                                          widget.myBetRef,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  },
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: [
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'euro.league')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    currentUserDocument
-                                                                        ?.color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                .primaryBackground,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/logo-default.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitHeight,
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if ((columnEventsEventsRecord
-                                                                .sportValue ==
-                                                            'tennis') ||
-                                                        (columnEventsEventsRecord
-                                                                .leagueValue ==
-                                                            'autres') ||
-                                                        (columnEventsEventsRecord
-                                                                .leagueValue ==
-                                                            'autres.france'))
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width: 28.0,
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'champions.cup')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Logo_Champions_Cup_2018.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitWidth,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'champions.league')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Logo_champions_league.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitHeight,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'europa.league')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Logo_europa.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'conference.league')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    2.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Logo_conference.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'ligue.1')
+                                                        Container(
+                                                          width: 18.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Ligue1.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'premier.league')
+                                                        Container(
+                                                          width: 25.0,
                                                           height: 25.0,
                                                           decoration:
                                                               BoxDecoration(
@@ -2691,76 +2830,120 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                             shape: BoxShape
                                                                 .rectangle,
                                                           ),
-                                                          child: Visibility(
-                                                            visible: columnEventsEventsRecord
-                                                                        .week !=
-                                                                    '',
-                                                            child: Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      -1.0,
-                                                                      1.0),
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  columnEventsEventsRecord
-                                                                      .week,
-                                                                  'W',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .montserrat(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
-                                                                      ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
-                                                                    ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    2.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/PremierLeague.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
                                                               ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'champions.league')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'serie.a')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/Logo_champions_league.png',
+                                                              'assets/images/SerieA.png',
+                                                              width: 300.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'laliga')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    2.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Laliga.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'bundesliga')
+                                                        Container(
+                                                          width: 30.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        0.0),
+                                                            child: Image.asset(
+                                                              'assets/images/Bundesliga.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
@@ -2768,380 +2951,388 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'europa.league')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          shape:
-                                                              BoxShape.circle,
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'nba')
+                                                        Container(
+                                                          width: 15.0,
+                                                          height: 28.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/954px-NBA_Logo.svg.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'ufc')
+                                                        Container(
+                                                          width: 35.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/Logo_europa.png',
+                                                              'assets/images/1200px-UFC_Logo.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
-                                                                  .scaleDown,
+                                                                  .fitWidth,
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'conference.league')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  2.0),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'moto.gp')
+                                                        Container(
+                                                          width: 35.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/Logo_conference.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'ligue.1')
-                                                      Container(
-                                                        width: 18.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      3.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/Ligue1.png',
+                                                              'assets/images/1024px-Moto_Gp_logo.svg.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
-                                                                  .scaleDown,
+                                                                  .fitWidth,
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'premier.league')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'mx.gp')
+                                                        Container(
+                                                          width: 40.0,
+                                                          height: 15.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        1.0,
+                                                                        2.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/Motocross_World_Championship_Logo.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitWidth,
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  2.0),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'world.superbike')
+                                                        Container(
+                                                          width: 40.0,
+                                                          height: 21.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        3.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/1200px-Superbike_World_Championship_logo_(stacked,_2022).svg.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitWidth,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'formule.1')
+                                                        Container(
+                                                          width: 35.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/formula-1-logo-5-3.png',
+                                                                width: 300.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .fitWidth,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'top.14')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/PremierLeague.png',
+                                                              'assets/images/1200px-Top_14.svg.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
-                                                                  .scaleDown,
+                                                                  .fitWidth,
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'serie.a')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/SerieA.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit: BoxFit.cover,
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'nhl')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
                                                           ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'laliga')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  2.0),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/Laliga.png',
+                                                              'assets/images/nhl-logo.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
-                                                                  .scaleDown,
+                                                                  .fitWidth,
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'bundesliga')
-                                                      Container(
-                                                        width: 30.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/Bundesliga.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit: BoxFit
-                                                                .fitHeight,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'nba')
-                                                      Container(
-                                                        width: 15.0,
-                                                        height: 28.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      3.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/954px-NBA_Logo.svg.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .sportValue ==
-                                                        'mma')
-                                                      Container(
-                                                        width: 35.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/1200px-UFC_Logo.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'moto.gp')
-                                                      Container(
-                                                        width: 35.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      3.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/1024px-Moto_Gp_logo.svg.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'mx.gp')
-                                                      Container(
-                                                        width: 40.0,
-                                                        height: 15.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      3.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
+                                                      if ((columnEventsEventsRecord.sportValue == 'tennis') ||
+                                                          (columnEventsEventsRecord
+                                                                  .leagueValue ==
+                                                              'autres') ||
+                                                          (columnEventsEventsRecord
+                                                                  .leagueValue ==
+                                                              'autres.france'))
+                                                        Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      1.0,
-                                                                      2.0,
+                                                                      0.0,
+                                                                      3.0,
                                                                       0.0,
                                                                       0.0),
+                                                          child: Container(
+                                                            width: 28.0,
+                                                            height: 25.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          6.0),
+                                                              shape: BoxShape
+                                                                  .rectangle,
+                                                            ),
+                                                            child: Visibility(
+                                                              visible: columnEventsEventsRecord
+                                                                          .week !=
+                                                                      '',
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        1.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    columnEventsEventsRecord
+                                                                        .week,
+                                                                    'W',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'atp')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/Motocross_World_Championship_Logo.png',
+                                                              'assets/images/1200px-Logo_ATP_World_Tour.svg.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
@@ -3149,36 +3340,31 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'world.superbike')
-                                                      Container(
-                                                        width: 40.0,
-                                                        height: 21.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      3.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
+                                                      if (columnEventsEventsRecord
+                                                              .leagueValue ==
+                                                          'wta')
+                                                        Container(
+                                                          width: 25.0,
+                                                          height: 25.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6.0),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         0.0),
                                                             child: Image.asset(
-                                                              'assets/images/1200px-Superbike_World_Championship_logo_(stacked,_2022).svg.png',
+                                                              'assets/images/Wta.png',
                                                               width: 300.0,
                                                               height: 200.0,
                                                               fit: BoxFit
@@ -3186,178 +3372,13 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'formule.1')
-                                                      Container(
-                                                        width: 35.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/formula-1-logo-5-3.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit
-                                                                  .fitWidth,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'top.14')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/1200px-Top_14.svg.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'atp')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/1200px-Logo_ATP_World_Tour.svg.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'wta')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/Wta.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    if (columnEventsEventsRecord
-                                                            .leagueValue ==
-                                                        'nhl')
-                                                      Container(
-                                                        width: 25.0,
-                                                        height: 25.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      6.0),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/nhl-logo.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit:
-                                                                BoxFit.fitWidth,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -3401,7 +3422,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                         snapshot.data!;
 
                                                     return Container(
-                                                      width: 160.0,
+                                                      width: 155.0,
                                                       height: 60.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -3419,35 +3440,82 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                               MainAxisAlignment
                                                                   .spaceBetween,
                                                           children: [
-                                                            Container(
-                                                              width: 45.0,
-                                                              height: 35.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            3.0),
-                                                              ),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  contDomTeamsRecord
-                                                                      .logo,
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitHeight,
+                                                            if ((columnEventsEventsRecord
+                                                                        .sportValue !=
+                                                                    'mma') &&
+                                                                (columnEventsEventsRecord
+                                                                        .sportValue !=
+                                                                    'tennis'))
+                                                              Container(
+                                                                width: 55.0,
+                                                                height: 35.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              3.0),
+                                                                ),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    contDomTeamsRecord
+                                                                        .logo,
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitHeight,
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
+                                                            if ((columnEventsEventsRecord
+                                                                        .sportValue ==
+                                                                    'mma') ||
+                                                                (columnEventsEventsRecord
+                                                                        .sportValue ==
+                                                                    'tennis'))
+                                                              Container(
+                                                                width: 45.0,
+                                                                height: 35.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              6.0),
+                                                                ),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    contDomTeamsRecord
+                                                                        .logo,
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitWidth,
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
@@ -3585,7 +3653,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                         snapshot.data!;
 
                                                     return Container(
-                                                      width: 160.0,
+                                                      width: 155.0,
                                                       height: 60.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -3603,35 +3671,82 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                               MainAxisAlignment
                                                                   .spaceBetween,
                                                           children: [
-                                                            Container(
-                                                              width: 45.0,
-                                                              height: 35.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            3.0),
-                                                              ),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  contExtTeamsRecord
-                                                                      .logo,
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitHeight,
+                                                            if ((columnEventsEventsRecord
+                                                                        .sportValue !=
+                                                                    'mma') &&
+                                                                (columnEventsEventsRecord
+                                                                        .sportValue !=
+                                                                    'tennis'))
+                                                              Container(
+                                                                width: 55.0,
+                                                                height: 35.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              3.0),
+                                                                ),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    contExtTeamsRecord
+                                                                        .logo,
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitHeight,
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
+                                                            if ((columnEventsEventsRecord
+                                                                        .sportValue ==
+                                                                    'mma') ||
+                                                                (columnEventsEventsRecord
+                                                                        .sportValue ==
+                                                                    'tennis'))
+                                                              Container(
+                                                                width: 45.0,
+                                                                height: 35.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              6.0),
+                                                                ),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              10.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    contExtTeamsRecord
+                                                                        .logo,
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .fitWidth,
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(

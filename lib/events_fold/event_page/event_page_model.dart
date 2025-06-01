@@ -29,10 +29,10 @@ class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentRef;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData9fm = false;
+  FFUploadedFile uploadedLocalFile_uploadData9fm =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData9fm = '';
 
   AudioPlayer? soundPlayer;
 

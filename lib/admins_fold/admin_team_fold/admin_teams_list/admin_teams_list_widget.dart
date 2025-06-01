@@ -231,7 +231,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             'h7ausi40' /* Autres */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '020njb1a' /* Pays Football */,
+                                            '020njb1a' /* Nations */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'mgh7nfx9' /* Autres - France */,
@@ -346,14 +346,20 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueBasketValue1 ??= '',
                                         ),
-                                        options: List<String>.from(
-                                            ['nba', 'pays.basket']),
+                                        options: List<String>.from([
+                                          'nba',
+                                          'nations.basket',
+                                          'euro.league'
+                                        ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             '8kpvijyu' /* NBA */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'pl5h3y27' /* Pays Basketball */,
+                                            'pl5h3y27' /* Nations */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'kj14s7gl' /* Euro League */,
                                           )
                                         ],
                                         onChanged: (val) async {
@@ -682,7 +688,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '68nsbqps' /* MMA */,
+                                        '68nsbqps' /* Fight Sports */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -708,251 +714,217 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 5.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropLigueMMAValueController1 ??=
-                                            FormFieldController<String>(
-                                          _model.dropLigueMMAValue1 ??= '',
-                                        ),
-                                        options: List<String>.from([
-                                          'mouche',
-                                          'coq',
-                                          'plume',
-                                          'leger',
-                                          'mi.moyen',
-                                          'moyen',
-                                          'mi.lourd',
-                                          'lourd'
-                                        ]),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'cy0sv2i2' /* Mouche - 57 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'info2x5m' /* Coq - 61 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'grpassps' /* Plume - 66 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'tfte2x49' /* Léger - 70 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'owkl2p2j' /* Mi-Moyen- 77 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'qo962ce5' /* Moyen- 84 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '0jr0dplw' /* Mi-Lourd - 93 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'x0f0pkkn' /* Lourd - 120 kg */,
-                                          )
-                                        ],
-                                        onChanged: (val) async {
-                                          safeSetState(() =>
-                                              _model.dropLigueMMAValue1 = val);
-                                          _model.showLigueFilter =
-                                              _model.dropLigueMMAValue1;
-                                          safeSetState(() {});
-                                        },
-                                        width: 180.0,
-                                        height: 40.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropLigueMMAValueController1 ??=
+                                                FormFieldController<String>(
+                                              _model.dropLigueMMAValue1 ??= '',
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'hhwdt206' /* Ligues */,
-                                        ),
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor: Colors.transparent,
-                                        borderWidth: 0.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          if (valueOrDefault(
-                                  currentUserDocument?.adminSportvalue, '') ==
-                              'boxe')
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 5.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'k8vqjm6z' /* Boxe */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
+                                            options: List<String>.from(['ufc']),
+                                            optionLabels: [
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'cy0sv2i2' /* UFC */,
+                                              )
+                                            ],
+                                            onChanged: (val) async {
+                                              safeSetState(() => _model
+                                                  .dropLigueMMAValue1 = val);
+                                              _model.showLigueFilter =
+                                                  _model.dropLigueMMAValue1;
+                                              safeSetState(() {});
+                                            },
+                                            width: 180.0,
+                                            height: 40.0,
+                                            textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'hhwdt206' /* Ligues */,
+                                            ),
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Colors.transparent,
+                                            borderWidth: 0.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 5.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropLigueFightValueController1 ??=
+                                                FormFieldController<String>(
+                                              _model.dropLigueFightValue1 ??=
+                                                  '',
+                                            ),
+                                            options: List<String>.from([
+                                              'fly.weight',
+                                              'bantam.weight',
+                                              'feather.weight',
+                                              'light.weight',
+                                              'welter.weight',
+                                              'middle.weight',
+                                              'light.heavy.weight',
+                                              'heavy.weight',
+                                              ''
+                                            ]),
+                                            optionLabels: [
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'iac108xb' /* Fly Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'et2ih6zv' /* Bantam Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '8q1oubvt' /* Feather Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'czbv3lre' /* Light Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ccfpkus3' /* Welter Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'oibsiq74' /* Middle Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9c591hyj' /* Light Heavy Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '25ivjjcj' /* Heavy Weight */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'cz43gm48' /* Poids */,
+                                              )
+                                            ],
+                                            onChanged: (val) async {
+                                              safeSetState(() => _model
+                                                  .dropLigueFightValue1 = val);
+                                              _model.showDivision =
+                                                  _model.dropLigueFightValue1;
+                                              safeSetState(() {});
+                                            },
+                                            width: 170.0,
+                                            height: 40.0,
+                                            textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 5.0),
-                                      child: FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropLigueBoxeValueController1 ??=
-                                            FormFieldController<String>(
-                                          _model.dropLigueBoxeValue1 ??= '',
-                                        ),
-                                        options: List<String>.from([
-                                          'mouche',
-                                          'plume',
-                                          'leger',
-                                          'mi.moyen',
-                                          'moyen',
-                                          'mi.lourd',
-                                          'lourd',
-                                          'super.lourd'
-                                        ]),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'xyu5zzb8' /* Mouche - 52 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'zu1snyjl' /* Plume - 57 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'pfql6e68' /* Léger - 63 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ix7x75k3' /* Mi-Moyen- 69 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'dig4om2d' /* Moyen- 75 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'kyzywpdq' /* Mi-Lourd - 81 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'o3507i26' /* Lourd - 91 kg */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '3vtykgfp' /* Super Lourd + 91 kg */,
-                                          )
-                                        ],
-                                        onChanged: (val) async {
-                                          safeSetState(() =>
-                                              _model.dropLigueBoxeValue1 = val);
-                                          _model.showLigueFilter =
-                                              _model.dropLigueBoxeValue1;
-                                          safeSetState(() {});
-                                        },
-                                        width: 180.0,
-                                        height: 40.0,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '1b7pgzpo' /* Poids */,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '0vot9r0j' /* Ligues */,
+                                            icon: Icon(
+                                              Icons.keyboard_arrow_down_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              size: 24.0,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Colors.transparent,
+                                            borderWidth: 0.0,
+                                            borderRadius: 8.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 12.0, 0.0),
+                                            hidesUnderline: true,
+                                            isOverButton: false,
+                                            isSearchable: false,
+                                            isMultiSelect: false,
+                                          ),
                                         ),
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 24.0,
-                                        ),
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor: Colors.transparent,
-                                        borderWidth: 0.0,
-                                        borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -1007,14 +979,20 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             FormFieldController<String>(
                                           _model.dropLigueRugbyValue1 ??= '',
                                         ),
-                                        options: List<String>.from(
-                                            ['top14', 'pays.rugby']),
+                                        options: List<String>.from([
+                                          'top14',
+                                          'nations.rugby',
+                                          'other.rugby'
+                                        ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             'k86wb19q' /* Top 14 */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '30w1a0xm' /* Pays Rugby */,
+                                            '30w1a0xm' /* Nations */,
+                                          ),
+                                          FFLocalizations.of(context).getText(
+                                            'ff52iqi1' /* Other */,
                                           )
                                         ],
                                         onChanged: (val) async {
@@ -1278,8 +1256,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   'ligue.1',
                                                   'autres',
                                                   'pays.football',
-                                                  'autres.france',
-                                                  'empty'
+                                                  'autres.france'
                                                 ]),
                                                 optionLabels: [
                                                   FFLocalizations.of(context)
@@ -1308,15 +1285,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   ),
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'f3heptj0' /* Pays Football */,
+                                                    'f3heptj0' /* Nations */,
                                                   ),
                                                   FFLocalizations.of(context)
                                                       .getText(
                                                     'q0yti2zi' /* Autres - France */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'fx8dm1an' /* Retirer filtre */,
                                                   )
                                                 ],
                                                 onChanged: (val) =>
@@ -1356,7 +1329,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 hintText:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'hnfuvpxr' /* Ligues */,
+                                                  'yaga67gl' /* Ligues */,
                                                 ),
                                                 icon: Icon(
                                                   Icons
@@ -1438,8 +1411,8 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             ),
                                             options: List<String>.from([
                                               'nba',
-                                              'pays.basket',
-                                              'empty'
+                                              'nations.basket',
+                                              'euro.league'
                                             ]),
                                             optionLabels: [
                                               FFLocalizations.of(context)
@@ -1448,11 +1421,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'g0x9awhc' /* Pays Basketball */,
+                                                'g0x9awhc' /* Nations */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'zf9jk8xt' /* Retirer filtre */,
+                                                'zf9jk8xt' /* Euro League */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -1492,7 +1465,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '8rv7q4z9' /* Ligues */,
+                                              'ruhiq89y' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1570,7 +1543,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   '',
                                             ),
                                             options: List<String>.from(
-                                                ['atp', 'wta', 'empty']),
+                                                ['atp', 'wta']),
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1579,10 +1552,6 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 'i625sg0m' /* WTA */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'djml2o4m' /* Retirer filtre */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -1622,7 +1591,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '74dmtm4p' /* Ligues */,
+                                              'g2pn6vb3' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1704,8 +1673,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               'gazon.elite.h',
                                               'gazon.elite.f',
                                               'salle.elite.h',
-                                              'salle.elite.f',
-                                              'empty'
+                                              'salle.elite.f'
                                             ]),
                                             optionLabels: [
                                               FFLocalizations.of(context)
@@ -1727,10 +1695,6 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 'pijcacx6' /* Salle Elite F */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'igkgwtw8' /* Retirer filtre */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -1770,7 +1734,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '9068xyer' /* Ligues */,
+                                              'hnfuvpxr' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1808,7 +1772,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
-                                            'y13995os' /* MMA */,
+                                            'y13995os' /* Fight Sports */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1836,223 +1800,77 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                         .fontStyle,
                                               ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 5.0),
-                                          child: FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropLigueMMAValueController2 ??=
-                                                FormFieldController<String>(
-                                              _model.dropLigueMMAValue2 ??= '',
-                                            ),
-                                            options: List<String>.from([
-                                              'mouche',
-                                              'coq',
-                                              'plume',
-                                              'leger',
-                                              'mi.moyen',
-                                              'moyen',
-                                              'mi.lourd',
-                                              'lourd'
-                                            ]),
-                                            optionLabels: [
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'fw9gn3hq' /* Mouche - 57 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '0q2x5yec' /* Coq - 61 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '23cy7eea' /* Plume - 66 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'v80nwgk8' /* Léger - 70 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'y4d5xny1' /* Mi-Moyen- 77 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '7ce2m6mz' /* Moyen- 84 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                't1ku0pve' /* Mi-Lourd - 93 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'rz818df4' /* Lourd - 120 kg */,
-                                              )
-                                            ],
-                                            onChanged: (val) => safeSetState(
-                                                () => _model
-                                                    .dropLigueMMAValue2 = val),
-                                            width: 180.0,
-                                            height: 40.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'zehn9t59' /* Ligues */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
-                                            ),
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            elevation: 2.0,
-                                            borderColor: Colors.transparent,
-                                            borderWidth: 0.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 0.0),
-                                            hidesUnderline: true,
-                                            isOverButton: false,
-                                            isSearchable: false,
-                                            isMultiSelect: false,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 5.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'v1az28ux' /* Boxe */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropLigueMMAValueController2 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropLigueMMAValue2 ??=
+                                                      '',
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 5.0),
-                                          child: FlutterFlowDropDown<String>(
-                                            controller: _model
-                                                    .dropLigueBoxeValueController2 ??=
-                                                FormFieldController<String>(
-                                              _model.dropLigueBoxeValue2 ??= '',
-                                            ),
-                                            options: List<String>.from([
-                                              'mouche',
-                                              'plume',
-                                              'leger',
-                                              'mi.moyen',
-                                              'moyen',
-                                              'mi.lourd',
-                                              'lourd',
-                                              'super.lourd'
-                                            ]),
-                                            optionLabels: [
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'g5shnf6t' /* Mouche - 52 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'xcyztbku' /* Plume - 57 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'qm2dmzox' /* Léger - 63 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'b1203c19' /* Mi-Moyen- 69 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'pj9feqfk' /* Moyen- 75 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'b2u7mxo5' /* Mi-Lourd - 81 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'usg9r68p' /* Lourd - 91 kg */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '7l7wz8zr' /* Super Lourd + 91 kg */,
-                                              )
-                                            ],
-                                            onChanged: (val) => safeSetState(
-                                                () => _model
-                                                    .dropLigueBoxeValue2 = val),
-                                            width: 180.0,
-                                            height: 40.0,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
+                                                options: List<String>.from([
+                                                  'ufc',
+                                                  'mouche',
+                                                  'plume',
+                                                  'leger',
+                                                  'mi.moyen',
+                                                  'moyen',
+                                                  'mi.lourd',
+                                                  'lourd',
+                                                  'coq'
+                                                ]),
+                                                optionLabels: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'fw9gn3hq' /* UFC */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'tzvo23sy' /* mouche */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4wscl3i8' /* plume */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '56tp8nah' /* leger */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zsqbq2ht' /* mi.moyen */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ukjtnnds' /* moyen */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'kwv06ves' /* mi.lourd */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'dn5sjfya' /* lourd */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '51glhx4x' /* coq */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropLigueMMAValue2 =
+                                                        val),
+                                                width: 180.0,
+                                                height: 40.0,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
                                                     .bodyMedium
                                                     .override(
                                                       font: GoogleFonts.poppins(
@@ -2079,33 +1897,163 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                               .bodyMedium
                                                               .fontStyle,
                                                     ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'un02i345' /* Ligues */,
-                                            ),
-                                            icon: Icon(
-                                              Icons.keyboard_arrow_down_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '8rv7q4z9' /* Ligues */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .secondaryText,
-                                              size: 24.0,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
                                             ),
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            elevation: 2.0,
-                                            borderColor: Colors.transparent,
-                                            borderWidth: 0.0,
-                                            borderRadius: 8.0,
-                                            margin:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 0.0),
-                                            hidesUnderline: true,
-                                            isOverButton: false,
-                                            isSearchable: false,
-                                            isMultiSelect: false,
-                                          ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropLigueFightValueController2 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropLigueFightValue2 ??=
+                                                      '',
+                                                ),
+                                                options: List<String>.from([
+                                                  'fly.weight',
+                                                  'bantam.weight',
+                                                  'feather.weight',
+                                                  'light.weight',
+                                                  'welter.weight',
+                                                  'middle.weight',
+                                                  'light.heavy.weight',
+                                                  'heavy.weight',
+                                                  ''
+                                                ]),
+                                                optionLabels: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3fdslhg3' /* Fly Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mmn3dg3e' /* Bantam Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'y6vdrlnn' /* Feather Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zzlqs8vg' /* Light Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ndu46vry' /* Welter Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'kujkrc0b' /* Middle Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4068x6m8' /* Light Heavy Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vd3cc55b' /* Heavy Weight */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '9egcdkb8' /* Poids */,
+                                                  )
+                                                ],
+                                                onChanged: (val) async {
+                                                  safeSetState(() => _model
+                                                          .dropLigueFightValue2 =
+                                                      val);
+                                                  _model.showDivision = _model
+                                                      .dropLigueFightValue2;
+                                                  safeSetState(() {});
+                                                },
+                                                width: 170.0,
+                                                height: 40.0,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '0u94en9m' /* Poids */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -2159,8 +2107,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               _model.dropLigueRugbyValue2 ??=
                                                   '',
                                             ),
-                                            options: List<String>.from(
-                                                ['top.14', 'pays.rugby']),
+                                            options: List<String>.from([
+                                              'top.14',
+                                              'nations.rugby',
+                                              'other.rugby'
+                                            ]),
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2168,7 +2119,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'w1yx5iq8' /* Pays Rugby */,
+                                                'rqibrl5v' /* Nations */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ogluw7eg' /* Other */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -2208,7 +2163,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'gq4s4fju' /* Ligues */,
+                                              '74dmtm4p' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -2293,7 +2248,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'i9uzz2o8' /* Formule 1 */,
+                                                '8t97n3mq' /* Formule 1 */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2344,7 +2299,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'ahqs9qf2' /* Ligues */,
+                                              '9068xyer' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -2439,7 +2394,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '318f7aic' /* E Ligue */,
+                                                'q6p605ow' /* E Ligue */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -2846,6 +2801,12 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               currentUserDocument
                                                   ?.adminSportvalue,
                                               '')
+                                          : null,
+                                    )
+                                    .where(
+                                      'division_value',
+                                      isEqualTo: _model.showDivision != ''
+                                          ? _model.showDivision
                                           : null,
                                     )
                                     .orderBy('points', descending: true),
@@ -3684,10 +3645,6 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                       ),
                                       Filter(
                                         'league_value',
-                                        isEqualTo: _model.dropLigueBoxeValue2,
-                                      ),
-                                      Filter(
-                                        'league_value',
                                         isEqualTo: _model.dropLigueRugbyValue2,
                                       ),
                                       Filter(
@@ -3725,34 +3682,454 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     final columnTeamsAdminTeamsRecord =
                                         columnTeamsAdminTeamsRecordList[
                                             columnTeamsAdminIndex];
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: Row(
+                                    return Visibility(
+                                      visible: columnTeamsAdminTeamsRecord
+                                              .divisionValue ==
+                                          _model.showDivision,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 10.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          functions
+                                                              .zeroTo1(
+                                                                  columnTeamsAdminIndex)
+                                                              .toString(),
+                                                          '1',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        columnTeamsAdminTeamsRecord
+                                                            .name,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 35.0, 0.0),
+                                                  child: Container(
+                                                    width: 55.0,
+                                                    height: 40.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      child: Image.network(
+                                                        columnTeamsAdminTeamsRecord
+                                                            .logo,
+                                                        width: 300.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.scaleDown,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamsAdminTeamsRecord
+                                                              .wins
+                                                              .toString(),
+                                                          '0',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '50f3jsg8' /* - */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamsAdminTeamsRecord
+                                                              .draws
+                                                              .toString(),
+                                                          '0',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '5b42n5iq' /* - */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    if (columnTeamsAdminTeamsRecord
+                                                            .sportValue !=
+                                                        'sports.meca')
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamsAdminTeamsRecord
+                                                              .looses
+                                                              .toString(),
+                                                          '0',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    if (columnTeamsAdminTeamsRecord
+                                                            .sportValue ==
+                                                        'sports.meca')
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamsAdminTeamsRecord
+                                                              .totalGames
+                                                              .toString(),
+                                                          '0',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'tvled0lk' /* - */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Text(
                                                       valueOrDefault<String>(
-                                                        functions
-                                                            .zeroTo1(
-                                                                columnTeamsAdminIndex)
+                                                        columnTeamsAdminTeamsRecord
+                                                            .points
                                                             .toString(),
-                                                        '1',
+                                                        '0',
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -3770,9 +4147,6 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                       .bodyMedium
                                                                       .fontStyle,
                                                                 ),
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight: FlutterFlowTheme.of(
@@ -3785,15 +4159,12 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     .fontStyle,
                                                               ),
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      columnTeamsAdminTeamsRecord
-                                                          .name,
+                                                    Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7a38koqj' /*  pts */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -3822,350 +4193,22 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                     .fontStyle,
                                                               ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 35.0, 0.0),
-                                                child: Container(
-                                                  width: 55.0,
-                                                  height: 40.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.network(
-                                                      columnTeamsAdminTeamsRecord
-                                                          .logo,
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.scaleDown,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
-                                                    child: Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsAdminTeamsRecord
-                                                            .wins
-                                                            .toString(),
-                                                        '0',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '50f3jsg8' /* - */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
-                                                    child: Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsAdminTeamsRecord
-                                                            .draws
-                                                            .toString(),
-                                                        '0',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '5b42n5iq' /* - */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  if (columnTeamsAdminTeamsRecord
-                                                          .sportValue !=
-                                                      'sports.meca')
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsAdminTeamsRecord
-                                                            .looses
-                                                            .toString(),
-                                                        '0',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  if (columnTeamsAdminTeamsRecord
-                                                          .sportValue ==
-                                                      'sports.meca')
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsAdminTeamsRecord
-                                                            .totalGames
-                                                            .toString(),
-                                                        '0',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'tvled0lk' /* - */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnTeamsAdminTeamsRecord
-                                                          .points
-                                                          .toString(),
-                                                      '0',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                                        10.0, 0.0, 0.0, 3.0),
+                                                child: Text(
+                                                  columnTeamsAdminTeamsRecord
+                                                      .reference.id,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -4177,57 +4220,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
-                                                  ),
-                                                  Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '7a38koqj' /*  pts */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 0.0, 3.0),
-                                              child: Text(
-                                                columnTeamsAdminTeamsRecord
-                                                    .reference.id,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .warning,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -4239,223 +4236,214 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                                 .bodyMedium
                                                                 .fontStyle,
                                                       ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .warning,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 20.0, 20.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              StreamBuilder<
-                                                  List<MyNotificationsRecord>>(
-                                                stream:
-                                                    queryMyNotificationsRecord(
-                                                  queryBuilder:
-                                                      (myNotificationsRecord) =>
-                                                          myNotificationsRecord
-                                                              .where(
-                                                                'team_ref',
-                                                                isEqualTo:
-                                                                    columnTeamsAdminTeamsRecord
-                                                                        .reference,
-                                                              )
-                                                              .where(
-                                                                'mod_seen',
-                                                                isEqualTo:
-                                                                    false,
-                                                              ),
-                                                  singleRecord: true,
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent4,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<MyNotificationsRecord>
-                                                      rowMyNotificationsRecordList =
-                                                      snapshot.data!;
-                                                  // Return an empty Container when the item does not exist.
-                                                  if (snapshot.data!.isEmpty) {
-                                                    return Container();
-                                                  }
-                                                  final rowMyNotificationsRecord =
-                                                      rowMyNotificationsRecordList
-                                                              .isNotEmpty
-                                                          ? rowMyNotificationsRecordList
-                                                              .first
-                                                          : null;
-
-                                                  return Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (rowMyNotificationsRecord
-                                                              ?.reference !=
-                                                          null)
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                ModTeamNotifsListWidget
-                                                                    .routeName,
-                                                                queryParameters:
-                                                                    {
-                                                                  'teamRef':
-                                                                      serializeParam(
-                                                                    columnTeamsAdminTeamsRecord
-                                                                        .reference,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                              );
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .notifications_none,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                              size: 30.0,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                    ],
-                                                  );
-                                                },
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      TeamUsersListWidget
-                                                          .routeName,
-                                                      queryParameters: {
-                                                        'teamRef':
-                                                            serializeParam(
-                                                          columnTeamsAdminTeamsRecord
-                                                              .reference,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
-                                                  },
-                                                  child: Icon(
-                                                    Icons
-                                                        .supervisor_account_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    size: 30.0,
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      ModifTeamPageWidget
-                                                          .routeName,
-                                                      queryParameters: {
-                                                        'teamRef':
-                                                            serializeParam(
-                                                          columnTeamsAdminTeamsRecord
-                                                              .reference,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
-                                                  },
-                                                  child: Icon(
-                                                    Icons.settings_sharp,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    size: 30.0,
-                                                  ),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 0.0, 20.0, 20.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                StreamBuilder<
+                                                    List<
+                                                        MyNotificationsRecord>>(
+                                                  stream:
+                                                      queryMyNotificationsRecord(
+                                                    queryBuilder:
+                                                        (myNotificationsRecord) =>
+                                                            myNotificationsRecord
+                                                                .where(
+                                                                  'team_ref',
+                                                                  isEqualTo:
+                                                                      columnTeamsAdminTeamsRecord
+                                                                          .reference,
+                                                                )
+                                                                .where(
+                                                                  'mod_seen',
+                                                                  isEqualTo:
+                                                                      false,
+                                                                ),
+                                                    singleRecord: true,
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .accent4,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<MyNotificationsRecord>
+                                                        rowMyNotificationsRecordList =
+                                                        snapshot.data!;
+                                                    // Return an empty Container when the item does not exist.
+                                                    if (snapshot
+                                                        .data!.isEmpty) {
+                                                      return Container();
+                                                    }
+                                                    final rowMyNotificationsRecord =
+                                                        rowMyNotificationsRecordList
+                                                                .isNotEmpty
+                                                            ? rowMyNotificationsRecordList
+                                                                .first
+                                                            : null;
+
+                                                    return Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        if (rowMyNotificationsRecord
+                                                                ?.reference !=
+                                                            null)
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  ModTeamNotifsListWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'teamRef':
+                                                                        serializeParam(
+                                                                      columnTeamsAdminTeamsRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .notifications_none,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                                size: 30.0,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 10.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        TeamUsersListWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'teamRef':
+                                                              serializeParam(
+                                                            columnTeamsAdminTeamsRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: Icon(
+                                                      Icons
+                                                          .supervisor_account_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      size: 30.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          10.0, 0.0, 10.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        ModifTeamPageWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'teamRef':
+                                                              serializeParam(
+                                                            columnTeamsAdminTeamsRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: Icon(
+                                                      Icons.settings_sharp,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      size: 30.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     );
                                   }),
                                 );

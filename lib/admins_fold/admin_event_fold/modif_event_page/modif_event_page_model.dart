@@ -10,20 +10,20 @@ class ModifEventPageModel extends FlutterFlowModel<ModifEventPageWidget> {
   FocusNode? modifOddFieldFocusNode;
   TextEditingController? modifOddFieldTextController;
   String? Function(BuildContext, String?)? modifOddFieldTextControllerValidator;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadDataGa3 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataGa3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  String uploadedFileUrl_uploadDataGa3 = '';
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadDataS73 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataS73 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadDataS73 = '';
 
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading_uploadDataSre = false;
+  FFUploadedFile uploadedLocalFile_uploadDataSre =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl3 = '';
+  String uploadedFileUrl_uploadDataSre = '';
 
   // State field(s) for ScoreDomField widget.
   FocusNode? scoreDomFieldFocusNode;

@@ -17,6 +17,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'event_message_page_model.dart';
 export 'event_message_page_model.dart';
 
@@ -420,15 +421,17 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioMemberConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioMemberConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -485,15 +488,17 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
-                                                                                  return GestureDetector(
-                                                                                    onTap: () {
-                                                                                      FocusScope.of(context).unfocus();
-                                                                                      FocusManager.instance.primaryFocus?.unfocus();
-                                                                                    },
-                                                                                    child: Padding(
-                                                                                      padding: MediaQuery.viewInsetsOf(context),
-                                                                                      child: AudioFanConferenceWidget(
-                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                  return WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(context).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
+                                                                                      child: Padding(
+                                                                                        padding: MediaQuery.viewInsetsOf(context),
+                                                                                        child: AudioFanConferenceWidget(
+                                                                                          teamRef: currentUserDocument!.audioTeam!,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -672,25 +677,28 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    DeleteEventMessageWidget(
-                                                                  startedCommRef:
-                                                                      widget
-                                                                          .startedCommRef!,
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      DeleteEventMessageWidget(
+                                                                    startedCommRef:
+                                                                        widget
+                                                                            .startedCommRef!,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             );
@@ -980,16 +988,21 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                         enableDrag: false,
                                         context: context,
                                         builder: (context) {
-                                          return GestureDetector(
-                                            onTap: () {
-                                              FocusScope.of(context).unfocus();
-                                              FocusManager.instance.primaryFocus
-                                                  ?.unfocus();
-                                            },
-                                            child: Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: CopyTextWidget(),
+                                          return WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: CopyTextWidget(),
+                                              ),
                                             ),
                                           );
                                         },
@@ -1774,13 +1787,13 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               safeSetState(
                                                                   () {});
                                                               safeSetState(() {
-                                                                _model.isDataUploading1 =
+                                                                _model.isDataUploading_uploadDataUtu =
                                                                     false;
-                                                                _model.uploadedLocalFile1 =
+                                                                _model.uploadedLocalFile_uploadDataUtu =
                                                                     FFUploadedFile(
                                                                         bytes: Uint8List.fromList(
                                                                             []));
-                                                                _model.uploadedFileUrl1 =
+                                                                _model.uploadedFileUrl_uploadDataUtu =
                                                                     '';
                                                               });
                                                             },
@@ -1793,7 +1806,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               size: 30.0,
                                                             ),
                                                           ),
-                                                          if (_model.uploadedFileUrl1 !=
+                                                          if (_model.uploadedFileUrl_uploadDataUtu !=
                                                                   '')
                                                             Padding(
                                                               padding:
@@ -1829,7 +1842,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                     child: Image
                                                                         .network(
                                                                       _model
-                                                                          .uploadedFileUrl1,
+                                                                          .uploadedFileUrl_uploadDataUtu,
                                                                       width:
                                                                           300.0,
                                                                       height:
@@ -2232,7 +2245,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                 .commFieldTextController1
                                                                 .text,
                                                             image: _model
-                                                                .uploadedFileUrl1,
+                                                                .uploadedFileUrl_uploadDataUtu,
                                                             moderator:
                                                                 eventMessagePageEventMessagesRecord
                                                                     .moderator,
@@ -2259,7 +2272,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                 .commFieldTextController1
                                                                 .text,
                                                             image: _model
-                                                                .uploadedFileUrl1,
+                                                                .uploadedFileUrl_uploadDataUtu,
                                                             moderator:
                                                                 eventMessagePageEventMessagesRecord
                                                                     .moderator,
@@ -2449,13 +2462,13 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                     () {});
                                                                 safeSetState(
                                                                     () {
-                                                                  _model.isDataUploading2 =
+                                                                  _model.isDataUploading_uploadDataLgn =
                                                                       false;
-                                                                  _model.uploadedLocalFile2 =
+                                                                  _model.uploadedLocalFile_uploadDataLgn =
                                                                       FFUploadedFile(
                                                                           bytes:
                                                                               Uint8List.fromList([]));
-                                                                  _model.uploadedFileUrl2 =
+                                                                  _model.uploadedFileUrl_uploadDataLgn =
                                                                       '';
                                                                 });
                                                               },
@@ -2468,7 +2481,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                 size: 30.0,
                                                               ),
                                                             ),
-                                                            if (_model.uploadedFileUrl2 !=
+                                                            if (_model.uploadedFileUrl_uploadDataLgn !=
                                                                     '')
                                                               Padding(
                                                                 padding:
@@ -2504,7 +2517,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                       child: Image
                                                                           .network(
                                                                         _model
-                                                                            .uploadedFileUrl2,
+                                                                            .uploadedFileUrl_uploadDataLgn,
                                                                         width:
                                                                             300.0,
                                                                         height:
@@ -2900,7 +2913,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             .commFieldTextController2
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl2,
+                                                            .uploadedFileUrl_uploadDataLgn,
                                                         moderator:
                                                             eventMessagePageEventMessagesRecord
                                                                 .moderator,
@@ -2926,7 +2939,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             .commFieldTextController2
                                                             .text,
                                                         image: _model
-                                                            .uploadedFileUrl2,
+                                                            .uploadedFileUrl_uploadDataLgn,
                                                         moderator:
                                                             eventMessagePageEventMessagesRecord
                                                                 .moderator,
@@ -3169,7 +3182,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               m.storagePath,
                                                               context))) {
                                                     safeSetState(() => _model
-                                                            .isDataUploading1 =
+                                                            .isDataUploading_uploadDataUtu =
                                                         true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
@@ -3213,7 +3226,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               .map((u) => u!)
                                                               .toList();
                                                     } finally {
-                                                      _model.isDataUploading1 =
+                                                      _model.isDataUploading_uploadDataUtu =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -3224,10 +3237,10 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile1 =
+                                                        _model.uploadedLocalFile_uploadDataUtu =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl1 =
+                                                        _model.uploadedFileUrl_uploadDataUtu =
                                                             downloadUrls.first;
                                                       });
                                                     } else {
@@ -3283,7 +3296,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               m.storagePath,
                                                               context))) {
                                                     safeSetState(() => _model
-                                                            .isDataUploading2 =
+                                                            .isDataUploading_uploadDataLgn =
                                                         true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
@@ -3327,7 +3340,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                               .map((u) => u!)
                                                               .toList();
                                                     } finally {
-                                                      _model.isDataUploading2 =
+                                                      _model.isDataUploading_uploadDataLgn =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -3338,10 +3351,10 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile2 =
+                                                        _model.uploadedLocalFile_uploadDataLgn =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl2 =
+                                                        _model.uploadedFileUrl_uploadDataLgn =
                                                             downloadUrls.first;
                                                       });
                                                     } else {

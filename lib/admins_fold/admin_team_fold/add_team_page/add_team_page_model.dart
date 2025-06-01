@@ -19,12 +19,9 @@ class AddTeamPageModel extends FlutterFlowModel<AddTeamPageWidget> {
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue;
   FormFieldController<String>? dropLigueHockeyValueController;
-  // State field(s) for DropLigueMMA widget.
-  String? dropLigueMMAValue;
-  FormFieldController<String>? dropLigueMMAValueController;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue;
-  FormFieldController<String>? dropLigueBoxeValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue1;
+  FormFieldController<String>? dropLigueFightValueController1;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue;
   FormFieldController<String>? dropLigueRugbyValueController;
@@ -40,14 +37,20 @@ class AddTeamPageModel extends FlutterFlowModel<AddTeamPageWidget> {
   TextEditingController? teamvalueFieldTextController;
   String? Function(BuildContext, String?)?
       teamvalueFieldTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataHbx = false;
+  FFUploadedFile uploadedLocalFile_uploadDataHbx =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataHbx = '';
 
   // State field(s) for DropFootCup widget.
   String? dropFootCupValue;
   FormFieldController<String>? dropFootCupValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue2;
+  FormFieldController<String>? dropLigueFightValueController2;
+  // State field(s) for DropRugbyCup widget.
+  String? dropRugbyCupValue;
+  FormFieldController<String>? dropRugbyCupValueController;
 
   @override
   void initState(BuildContext context) {}

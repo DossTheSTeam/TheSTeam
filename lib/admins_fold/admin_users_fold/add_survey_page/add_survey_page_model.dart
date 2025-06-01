@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'add_survey_page_widget.dart' show AddSurveyPageWidget;
 import 'package:flutter/material.dart';
+import 'package:record/record.dart';
 
 class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -11,11 +12,19 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   FocusNode? titleFieldFocusNode;
   TextEditingController? titleFieldTextController;
   String? Function(BuildContext, String?)? titleFieldTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData2ch = false;
+  FFUploadedFile uploadedLocalFile_uploadData2ch =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData2ch = '';
 
+  AudioRecorder? audioRecorder;
+  String? audioPost;
+  FFUploadedFile recordedFileBytes =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController2;
+  String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for DescriptionField widget.
   FocusNode? descriptionFieldFocusNode;
   TextEditingController? descriptionFieldTextController;
@@ -45,6 +54,9 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   void dispose() {
     titleFieldFocusNode?.dispose();
     titleFieldTextController?.dispose();
+
+    textFieldFocusNode?.dispose();
+    textController2?.dispose();
 
     descriptionFieldFocusNode?.dispose();
     descriptionFieldTextController?.dispose();

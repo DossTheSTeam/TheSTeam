@@ -12,10 +12,10 @@ class BossNotifEEventEndPageModel
   // State field(s) for DropReasons widget.
   String? dropReasonsValue;
   FormFieldController<String>? dropReasonsValueController;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData6sy = false;
+  FFUploadedFile uploadedLocalFile_uploadData6sy =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData6sy = '';
 
   @override
   void initState(BuildContext context) {}

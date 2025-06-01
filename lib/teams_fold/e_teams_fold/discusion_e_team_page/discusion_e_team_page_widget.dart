@@ -15,6 +15,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:record/record.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'discusion_e_team_page_model.dart';
 export 'discusion_e_team_page_model.dart';
 
@@ -492,17 +493,18 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioMemberConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioMemberConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -577,17 +579,18 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: AudioFanConferenceWidget(
-                                                                                teamRef: currentUserDocument!.audioTeam!,
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: AudioFanConferenceWidget(
+                                                                                  teamRef: currentUserDocument!.audioTeam!,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           );
@@ -678,22 +681,24 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    FocusScope.of(context)
-                                                        .unfocus();
-                                                    FocusManager
-                                                        .instance.primaryFocus
-                                                        ?.unfocus();
-                                                  },
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        AudioMemberConferenceWidget(
-                                                      teamRef:
-                                                          widget.eTeamRef!,
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          AudioMemberConferenceWidget(
+                                                        teamRef:
+                                                            widget.eTeamRef!,
+                                                      ),
                                                     ),
                                                   ),
                                                 );
@@ -731,22 +736,24 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    FocusScope.of(context)
-                                                        .unfocus();
-                                                    FocusManager
-                                                        .instance.primaryFocus
-                                                        ?.unfocus();
-                                                  },
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        AudioFanConferenceWidget(
-                                                      teamRef:
-                                                          widget.eTeamRef!,
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          AudioFanConferenceWidget(
+                                                        teamRef:
+                                                            widget.eTeamRef!,
+                                                      ),
                                                     ),
                                                   ),
                                                 );
@@ -831,14 +838,14 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 null;
                                                             safeSetState(() {});
                                                             safeSetState(() {
-                                                              _model.isDataUploading =
+                                                              _model.isDataUploading_uploadDataHat =
                                                                   false;
-                                                              _model.uploadedLocalFile =
+                                                              _model.uploadedLocalFile_uploadDataHat =
                                                                   FFUploadedFile(
                                                                       bytes: Uint8List
                                                                           .fromList(
                                                                               []));
-                                                              _model.uploadedFileUrl =
+                                                              _model.uploadedFileUrl_uploadDataHat =
                                                                   '';
                                                             });
                                                           },
@@ -851,7 +858,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      if (_model.uploadedFileUrl !=
+                                                      if (_model.uploadedFileUrl_uploadDataHat !=
                                                               '')
                                                         Container(
                                                           width: 50.0,
@@ -878,7 +885,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                               child:
                                                                   Image.network(
                                                                 _model
-                                                                    .uploadedFileUrl,
+                                                                    .uploadedFileUrl_uploadDataHat,
                                                                 width: 300.0,
                                                                 height: 200.0,
                                                                 fit: BoxFit
@@ -1248,7 +1255,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     .commFieldTextController
                                                     .text,
                                                 userRef: currentUserReference,
-                                                image: _model.uploadedFileUrl,
+                                                image: _model
+                                                    .uploadedFileUrl_uploadDataHat,
                                                 audio: _model.audioTeam,
                                               ),
                                               ...mapToFirestore(
@@ -1266,7 +1274,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                     .commFieldTextController
                                                     .text,
                                                 userRef: currentUserReference,
-                                                image: _model.uploadedFileUrl,
+                                                image: _model
+                                                    .uploadedFileUrl_uploadDataHat,
                                                 audio: _model.audioTeam,
                                               ),
                                               ...mapToFirestore(
@@ -1346,8 +1355,9 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   validateFileFormat(
                                                       m.storagePath,
                                                       context))) {
-                                            safeSetState(() =>
-                                                _model.isDataUploading = true);
+                                            safeSetState(() => _model
+                                                    .isDataUploading_uploadDataHat =
+                                                true);
                                             var selectedUploadedFiles =
                                                 <FFUploadedFile>[];
 
@@ -1383,16 +1393,17 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   .map((u) => u!)
                                                   .toList();
                                             } finally {
-                                              _model.isDataUploading = false;
+                                              _model.isDataUploading_uploadDataHat =
+                                                  false;
                                             }
                                             if (selectedUploadedFiles.length ==
                                                     selectedMedia.length &&
                                                 downloadUrls.length ==
                                                     selectedMedia.length) {
                                               safeSetState(() {
-                                                _model.uploadedLocalFile =
+                                                _model.uploadedLocalFile_uploadDataHat =
                                                     selectedUploadedFiles.first;
-                                                _model.uploadedFileUrl =
+                                                _model.uploadedFileUrl_uploadDataHat =
                                                     downloadUrls.first;
                                               });
                                             } else {
@@ -1961,22 +1972,25 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    CopyTextWidget(),
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      CopyTextWidget(),
+                                                                ),
                                                               ),
                                                             );
                                                           },

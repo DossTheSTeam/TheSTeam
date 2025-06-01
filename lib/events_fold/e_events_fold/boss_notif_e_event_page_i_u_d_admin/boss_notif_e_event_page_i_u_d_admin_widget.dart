@@ -12,6 +12,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 export 'boss_notif_e_event_page_i_u_d_admin_model.dart';
 
@@ -409,15 +410,17 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AudioMemberConferenceWidget(
-                                                                                      teamRef: currentUserDocument!.audioTeam!,
+                                                                                return WebViewAware(
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () {
+                                                                                      FocusScope.of(context).unfocus();
+                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                    },
+                                                                                    child: Padding(
+                                                                                      padding: MediaQuery.viewInsetsOf(context),
+                                                                                      child: AudioMemberConferenceWidget(
+                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -478,15 +481,17 @@ class _BossNotifEEventPageIUDAdminWidgetState
                                                                               enableDrag: false,
                                                                               context: context,
                                                                               builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AudioFanConferenceWidget(
-                                                                                      teamRef: currentUserDocument!.audioTeam!,
+                                                                                return WebViewAware(
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () {
+                                                                                      FocusScope.of(context).unfocus();
+                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                    },
+                                                                                    child: Padding(
+                                                                                      padding: MediaQuery.viewInsetsOf(context),
+                                                                                      child: AudioFanConferenceWidget(
+                                                                                        teamRef: currentUserDocument!.audioTeam!,
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 );

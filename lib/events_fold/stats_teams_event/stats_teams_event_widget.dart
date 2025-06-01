@@ -239,7 +239,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              10.0),
                                                       child: Image.network(
                                                         contDomTeamsRecord.logo,
                                                         width: 300.0,
@@ -248,21 +248,17 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Container(
-                                                    width: 30.0,
-                                                    height: 30.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                    ),
-                                                    child: Visibility(
-                                                      visible: (contDomTeamsRecord
-                                                                  .leagueValue !=
-                                                              'autres') &&
-                                                          (contDomTeamsRecord
-                                                                  .leagueValue !=
-                                                              'autres.france'),
+                                                  if (containerEventsRecord
+                                                          .sportValue ==
+                                                      'mma')
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
                                                       child: FutureBuilder<
                                                           List<TeamsRecord>>(
                                                         future:
@@ -274,6 +270,12 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     isEqualTo:
                                                                         contDomTeamsRecord
                                                                             .leagueValue,
+                                                                  )
+                                                                  .where(
+                                                                    'division_value',
+                                                                    isEqualTo:
+                                                                        contDomTeamsRecord
+                                                                            .divisionValue,
                                                                   )
                                                                   .orderBy(
                                                                       'points',
@@ -366,7 +368,126 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         },
                                                       ),
                                                     ),
-                                                  ),
+                                                  if (containerEventsRecord
+                                                          .sportValue !=
+                                                      'mma')
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Visibility(
+                                                        visible: (contDomTeamsRecord
+                                                                    .leagueValue !=
+                                                                'autres') &&
+                                                            (contDomTeamsRecord
+                                                                    .leagueValue !=
+                                                                'autres.france'),
+                                                        child: FutureBuilder<
+                                                            List<TeamsRecord>>(
+                                                          future:
+                                                              queryTeamsRecordOnce(
+                                                            queryBuilder: (teamsRecord) =>
+                                                                teamsRecord
+                                                                    .where(
+                                                                      'league_value',
+                                                                      isEqualTo:
+                                                                          contDomTeamsRecord
+                                                                              .leagueValue,
+                                                                    )
+                                                                    .orderBy(
+                                                                        'points',
+                                                                        descending:
+                                                                            true),
+                                                          ),
+                                                          builder: (context,
+                                                              snapshot) {
+                                                            // Customize what your widget looks like when it's loading.
+                                                            if (!snapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                child: SizedBox(
+                                                                  width: 50.0,
+                                                                  height: 50.0,
+                                                                  child:
+                                                                      CircularProgressIndicator(
+                                                                    valueColor:
+                                                                        AlwaysStoppedAnimation<
+                                                                            Color>(
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }
+                                                            List<TeamsRecord>
+                                                                rowTeamsRecordList =
+                                                                snapshot.data!;
+
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .end,
+                                                              children: List.generate(
+                                                                  rowTeamsRecordList
+                                                                      .length,
+                                                                  (rowIndex) {
+                                                                final rowTeamsRecord =
+                                                                    rowTeamsRecordList[
+                                                                        rowIndex];
+                                                                return Visibility(
+                                                                  visible: contDomTeamsRecord
+                                                                          .reference ==
+                                                                      rowTeamsRecord
+                                                                          .reference,
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      functions
+                                                                          .zeroTo1(
+                                                                              rowIndex)
+                                                                          .toString(),
+                                                                      '1',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                );
+                                                              }),
+                                                            );
+                                                          },
+                                                        ),
+                                                      ),
+                                                    ),
                                                 ],
                                               ),
                                               Align(
@@ -513,21 +634,137 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Container(
-                                                    width: 30.0,
-                                                    height: 30.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
+                                                  if (containerEventsRecord
+                                                          .sportValue !=
+                                                      'mma')
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Visibility(
+                                                        visible: (contExtTeamsRecord
+                                                                    .leagueValue !=
+                                                                'autres') &&
+                                                            (contExtTeamsRecord
+                                                                    .leagueValue !=
+                                                                'autres.france'),
+                                                        child: FutureBuilder<
+                                                            List<TeamsRecord>>(
+                                                          future:
+                                                              queryTeamsRecordOnce(
+                                                            queryBuilder: (teamsRecord) =>
+                                                                teamsRecord
+                                                                    .where(
+                                                                      'league_value',
+                                                                      isEqualTo:
+                                                                          contExtTeamsRecord
+                                                                              .leagueValue,
+                                                                    )
+                                                                    .orderBy(
+                                                                        'points',
+                                                                        descending:
+                                                                            true),
+                                                          ),
+                                                          builder: (context,
+                                                              snapshot) {
+                                                            // Customize what your widget looks like when it's loading.
+                                                            if (!snapshot
+                                                                .hasData) {
+                                                              return Center(
+                                                                child: SizedBox(
+                                                                  width: 50.0,
+                                                                  height: 50.0,
+                                                                  child:
+                                                                      CircularProgressIndicator(
+                                                                    valueColor:
+                                                                        AlwaysStoppedAnimation<
+                                                                            Color>(
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            }
+                                                            List<TeamsRecord>
+                                                                rowTeamsRecordList =
+                                                                snapshot.data!;
+
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: List.generate(
+                                                                  rowTeamsRecordList
+                                                                      .length,
+                                                                  (rowIndex) {
+                                                                final rowTeamsRecord =
+                                                                    rowTeamsRecordList[
+                                                                        rowIndex];
+                                                                return Visibility(
+                                                                  visible: contExtTeamsRecord
+                                                                          .reference ==
+                                                                      rowTeamsRecord
+                                                                          .reference,
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      functions
+                                                                          .zeroTo1(
+                                                                              rowIndex)
+                                                                          .toString(),
+                                                                      '1',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                );
+                                                              }),
+                                                            );
+                                                          },
+                                                        ),
+                                                      ),
                                                     ),
-                                                    child: Visibility(
-                                                      visible: (contExtTeamsRecord
-                                                                  .leagueValue !=
-                                                              'autres') &&
-                                                          (contExtTeamsRecord
-                                                                  .leagueValue !=
-                                                              'autres.france'),
+                                                  if (containerEventsRecord
+                                                          .sportValue ==
+                                                      'mma')
+                                                    Container(
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
                                                       child: FutureBuilder<
                                                           List<TeamsRecord>>(
                                                         future:
@@ -539,6 +776,12 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     isEqualTo:
                                                                         contExtTeamsRecord
                                                                             .leagueValue,
+                                                                  )
+                                                                  .where(
+                                                                    'division_value',
+                                                                    isEqualTo:
+                                                                        contExtTeamsRecord
+                                                                            .divisionValue,
                                                                   )
                                                                   .orderBy(
                                                                       'points',
@@ -631,7 +874,6 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                         },
                                                       ),
                                                     ),
-                                                  ),
                                                   Container(
                                                     width: 45.0,
                                                     height: 35.0,
@@ -646,7 +888,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              10.0),
                                                       child: Image.network(
                                                         contExtTeamsRecord.logo,
                                                         width: 300.0,
@@ -2278,260 +2520,242 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                       .of(context)
                                                                   .secondaryBackground,
                                                             ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                if ((valueOrDefault(currentUserDocument?.langage, '') ==
-                                                                            '') ||
-                                                                    (valueOrDefault(
-                                                                            currentUserDocument?.langage,
-                                                                            '') ==
-                                                                        'francais'))
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'tlg25cc4' /* Les 2 équipes
+                                                            if ((containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'rugby') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'basketball'))
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  if ((valueOrDefault(currentUserDocument?.langage, '') ==
+                                                                              '') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'francais'))
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'tlg25cc4' /* Les 2 équipes
 marquent */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if ((valueOrDefault(
-                                                                            currentUserDocument
-                                                                                ?.langage,
-                                                                            '') ==
-                                                                        'english') ||
-                                                                    (valueOrDefault(
-                                                                            currentUserDocument?.langage,
-                                                                            '') ==
-                                                                        'american'))
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '7jde7joy' /* Both teams
+                                                                  if ((valueOrDefault(
+                                                                              currentUserDocument
+                                                                                  ?.langage,
+                                                                              '') ==
+                                                                          'english') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'american'))
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          '7jde7joy' /* Both teams
 score */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'deutsch')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'mp51a1qu' /* Beide Teams
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'deutsch')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'mp51a1qu' /* Beide Teams
 erzielen Tore */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'espanol')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'nutdljqs' /* Ambos equipos
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'espanol')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'nutdljqs' /* Ambos equipos
 marcan */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'italiano')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'g99dyt4a' /* Entrambe le
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'italiano')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'g99dyt4a' /* Entrambe le
 squadre segnano */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'portugues')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'or2uu7wb' /* Ambas as
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'portugues')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'or2uu7wb' /* Ambas as
 equipas marcam */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                              ],
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                columnTeamsRecord
-                                                                    .l2m
-                                                                    .toString(),
-                                                                '0',
+                                                                ],
                                                               ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
+                                                            if ((containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'rugby') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'basketball'))
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamsRecord
+                                                                      .l2m
+                                                                      .toString(),
+                                                                  '0',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleSmall
@@ -2541,21 +2765,7 @@ equipas marcam */
                                                                           .titleSmall
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
+                                                              ),
                                                           ],
                                                         ),
                                                       ),
@@ -2564,13 +2774,7 @@ equipas marcam */
                                               ),
                                               if ((containerEventsRecord
                                                           .sportValue !=
-                                                      'basketball') &&
-                                                  (containerEventsRecord
-                                                          .sportValue !=
                                                       'mma') &&
-                                                  (containerEventsRecord
-                                                          .sportValue !=
-                                                      'boxe') &&
                                                   (containerEventsRecord
                                                           .sportValue !=
                                                       'tennis'))
@@ -2595,103 +2799,6 @@ equipas marcam */
                                                         MainAxisAlignment
                                                             .spaceAround,
                                                     children: [
-                                                      if (containerEventsRecord
-                                                              .sportValue !=
-                                                          'tennis')
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '4fb6g2uu' /* + / - */,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          functions
-                                                              .averageGoals(
-                                                                  columnTeamsRecord
-                                                                      .goalsPointsIn,
-                                                                  columnTeamsRecord
-                                                                      .goalsPointsOut)
-                                                              .toString(),
-                                                          '0',
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                      ),
-                                                      Divider(
-                                                        thickness: 1.0,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
                                                       Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3961,6 +4068,103 @@ equipas marcam */
                                                                       .totalGames)!)
                                                               .toString(),
                                                           '00.00',
+                                                        ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      if (containerEventsRecord
+                                                              .sportValue !=
+                                                          'tennis')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '3n6c5gmq' /* + / - */,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          functions
+                                                              .averageGoals(
+                                                                  columnTeamsRecord
+                                                                      .goalsPointsIn,
+                                                                  columnTeamsRecord
+                                                                      .goalsPointsOut)
+                                                              .toString(),
+                                                          '0',
                                                         ),
                                                         textAlign:
                                                             TextAlign.center,
@@ -5540,260 +5744,242 @@ equipas marcam */
                                                                       .of(context)
                                                                   .secondaryBackground,
                                                             ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                if ((valueOrDefault(currentUserDocument?.langage, '') ==
-                                                                            '') ||
-                                                                    (valueOrDefault(
-                                                                            currentUserDocument?.langage,
-                                                                            '') ==
-                                                                        'francais'))
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'ij004zyy' /* Les 2 équipes
+                                                            if ((containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'rugby') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'basketball'))
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  if ((valueOrDefault(currentUserDocument?.langage, '') ==
+                                                                              '') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'francais'))
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'ij004zyy' /* Les 2 équipes
 marquent */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if ((valueOrDefault(
-                                                                            currentUserDocument
-                                                                                ?.langage,
-                                                                            '') ==
-                                                                        'english') ||
-                                                                    (valueOrDefault(
-                                                                            currentUserDocument?.langage,
-                                                                            '') ==
-                                                                        'american'))
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '15d5wjv5' /* Both teams
+                                                                  if ((valueOrDefault(
+                                                                              currentUserDocument
+                                                                                  ?.langage,
+                                                                              '') ==
+                                                                          'english') ||
+                                                                      (valueOrDefault(
+                                                                              currentUserDocument?.langage,
+                                                                              '') ==
+                                                                          'american'))
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          '15d5wjv5' /* Both teams
 score */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'deutsch')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'lb6bzlhg' /* Beide Teams
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'deutsch')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'lb6bzlhg' /* Beide Teams
 erzielen Tore */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'espanol')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'xbxac0hm' /* Ambos equipos
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'espanol')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'xbxac0hm' /* Ambos equipos
 marcan */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'italiano')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'q5wfsalo' /* Entrambe le
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'italiano')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'q5wfsalo' /* Entrambe le
 squadre segnano */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.langage,
-                                                                        '') ==
-                                                                    'portugues')
-                                                                  AuthUserStreamWidget(
-                                                                    builder:
-                                                                        (context) =>
-                                                                            Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'y9ss71q1' /* Ambas as 
+                                                                  if (valueOrDefault(
+                                                                          currentUserDocument
+                                                                              ?.langage,
+                                                                          '') ==
+                                                                      'portugues')
+                                                                    AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'y9ss71q1' /* Ambas as 
 equipas marcam */
-                                                                        ,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
+                                                                          ,
+                                                                        ),
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelSmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                              ],
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                columnTeamsRecord
-                                                                    .l2m
-                                                                    .toString(),
-                                                                '0',
+                                                                ],
                                                               ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
+                                                            if ((containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'rugby') &&
+                                                                (containerEventsRecord
+                                                                        .sportValue !=
+                                                                    'basketball'))
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamsRecord
+                                                                      .l2m
+                                                                      .toString(),
+                                                                  '0',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleSmall
@@ -5803,21 +5989,7 @@ equipas marcam */
                                                                           .titleSmall
                                                                           .fontStyle,
                                                                     ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
+                                                              ),
                                                           ],
                                                         ),
                                                       ),
@@ -5826,13 +5998,7 @@ equipas marcam */
                                               ),
                                               if ((containerEventsRecord
                                                           .sportValue !=
-                                                      'basketball') &&
-                                                  (containerEventsRecord
-                                                          .sportValue !=
                                                       'mma') &&
-                                                  (containerEventsRecord
-                                                          .sportValue !=
-                                                      'boxe') &&
                                                   (containerEventsRecord
                                                           .sportValue !=
                                                       'tennis'))
@@ -5857,103 +6023,6 @@ equipas marcam */
                                                         MainAxisAlignment
                                                             .spaceAround,
                                                     children: [
-                                                      if (containerEventsRecord
-                                                              .sportValue !=
-                                                          'tennis')
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'yxzsvr83' /* + / - */,
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          functions
-                                                              .averageGoals(
-                                                                  columnTeamsRecord
-                                                                      .goalsPointsIn,
-                                                                  columnTeamsRecord
-                                                                      .goalsPointsOut)
-                                                              .toString(),
-                                                          '0',
-                                                        ),
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                      ),
-                                                      Divider(
-                                                        thickness: 1.0,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
                                                       Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -7202,6 +7271,103 @@ equipas marcam */
                                                                       .totalGames)!)
                                                               .toString(),
                                                           '00.00',
+                                                        ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      if (containerEventsRecord
+                                                              .sportValue !=
+                                                          'tennis')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'jnghbgh0' /* + / - */,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          functions
+                                                              .averageGoals(
+                                                                  columnTeamsRecord
+                                                                      .goalsPointsIn,
+                                                                  columnTeamsRecord
+                                                                      .goalsPointsOut)
+                                                              .toString(),
+                                                          '0',
                                                         ),
                                                         textAlign:
                                                             TextAlign.center,

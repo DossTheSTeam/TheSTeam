@@ -18,10 +18,10 @@ class AddETeamPageIUDAdminModel
   TextEditingController? eTeamNameFieldTextController;
   String? Function(BuildContext, String?)?
       eTeamNameFieldTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData1ni = false;
+  FFUploadedFile uploadedLocalFile_uploadData1ni =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData1ni = '';
 
   // State field(s) for DropColor1 widget.
   String? dropColor1Value;

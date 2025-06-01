@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 class EEventPageModel extends FlutterFlowModel<EEventPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataHvv = false;
+  FFUploadedFile uploadedLocalFile_uploadDataHvv =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataHvv = '';
 
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;

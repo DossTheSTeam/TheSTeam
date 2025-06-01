@@ -25,12 +25,9 @@ class ListPostsModel extends FlutterFlowModel<ListPostsWidget> {
   // State field(s) for DropLigueHockey widget.
   String? dropLigueHockeyValue;
   FormFieldController<String>? dropLigueHockeyValueController;
-  // State field(s) for DropLigueMMA widget.
-  String? dropLigueMMAValue;
-  FormFieldController<String>? dropLigueMMAValueController;
-  // State field(s) for DropLigueBoxe widget.
-  String? dropLigueBoxeValue;
-  FormFieldController<String>? dropLigueBoxeValueController;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue;
+  FormFieldController<String>? dropLigueFightValueController;
   // State field(s) for DropLigueRugby widget.
   String? dropLigueRugbyValue;
   FormFieldController<String>? dropLigueRugbyValueController;

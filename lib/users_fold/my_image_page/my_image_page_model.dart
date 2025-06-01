@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 class MyImagePageModel extends FlutterFlowModel<MyImagePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataAof = false;
+  FFUploadedFile uploadedLocalFile_uploadDataAof =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataAof = '';
 
   @override
   void initState(BuildContext context) {}
