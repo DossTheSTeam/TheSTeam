@@ -359,7 +359,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             'pl5h3y27' /* Nations */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'kj14s7gl' /* Euro League */,
+                                            'vfrkzowc' /* Euro League */,
                                           )
                                         ],
                                         onChanged: (val) async {
@@ -1417,7 +1417,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'dn2qbiqj' /* NBA */,
+                                                'uc9p1i8a' /* NBA */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1465,7 +1465,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'ruhiq89y' /* Ligues */,
+                                              '37rsqcad' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1547,11 +1547,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'u99rmvrr' /* ATP */,
+                                                '67112en7' /* ATP */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'i625sg0m' /* WTA */,
+                                                'tzi4yr2h' /* WTA */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -1591,7 +1591,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'g2pn6vb3' /* Ligues */,
+                                              '3x2sqlxp' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1734,7 +1734,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'hnfuvpxr' /* Ligues */,
+                                              '2h37ay39' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -1814,53 +1814,12 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   _model.dropLigueMMAValue2 ??=
                                                       '',
                                                 ),
-                                                options: List<String>.from([
-                                                  'ufc',
-                                                  'mouche',
-                                                  'plume',
-                                                  'leger',
-                                                  'mi.moyen',
-                                                  'moyen',
-                                                  'mi.lourd',
-                                                  'lourd',
-                                                  'coq'
-                                                ]),
+                                                options:
+                                                    List<String>.from(['ufc']),
                                                 optionLabels: [
                                                   FFLocalizations.of(context)
                                                       .getText(
                                                     'fw9gn3hq' /* UFC */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'tzvo23sy' /* mouche */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '4wscl3i8' /* plume */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '56tp8nah' /* leger */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'zsqbq2ht' /* mi.moyen */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'ukjtnnds' /* moyen */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'kwv06ves' /* mi.lourd */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'dn5sjfya' /* lourd */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '51glhx4x' /* coq */,
                                                   )
                                                 ],
                                                 onChanged: (val) =>
@@ -1900,7 +1859,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                 hintText:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '8rv7q4z9' /* Ligues */,
+                                                  'kgl1qkuj' /* Ligues */,
                                                 ),
                                                 icon: Icon(
                                                   Icons
@@ -1983,7 +1942,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                                   ),
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '9egcdkb8' /* Poids */,
+                                                    'gcb9xm53' /* Poids */,
                                                   )
                                                 ],
                                                 onChanged: (val) async {
@@ -2115,11 +2074,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'iy93huas' /* Top 14 */,
+                                                'prk1ws1v' /* Top 14 */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'rqibrl5v' /* Nations */,
+                                                'nid7yn1s' /* Nations */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2163,7 +2122,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '74dmtm4p' /* Ligues */,
+                                              'n745tb3c' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
@@ -2248,7 +2207,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '8t97n3mq' /* Formule 1 */,
+                                                'ecyt7f35' /* Formule 1 */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2256,7 +2215,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'slovdbea' /* World Superbike */,
+                                                'phdbciya' /* World Superbike */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -2299,7 +2258,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             hintText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '9068xyer' /* Ligues */,
+                                              'e3yp530t' /* Ligues */,
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,

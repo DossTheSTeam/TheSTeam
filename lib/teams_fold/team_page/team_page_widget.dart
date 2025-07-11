@@ -257,7 +257,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 10.0),
+                                                  5.0, 0.0, 0.0, 5.0),
                                           child: FlutterFlowIconButton(
                                             borderColor: valueOrDefault<Color>(
                                               teamPageTeamsRecord.color2,
@@ -286,6 +286,53 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                         ),
                                         if (teamPageTeamsRecord.members
                                             .contains(currentUserReference))
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 5.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  DiscusionETeamPageWidget
+                                                      .routeName,
+                                                  queryParameters: {
+                                                    'eTeamRef': serializeParam(
+                                                      widget.teamRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .bottomToTop,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons.comment_rounded,
+                                                color: valueOrDefault<Color>(
+                                                  teamPageTeamsRecord.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
+                                                size: 25.0,
+                                              ),
+                                            ),
+                                          ),
+                                        if (teamPageTeamsRecord.members
+                                            .contains(currentUserReference))
                                           InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -293,10 +340,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
-                                                DiscusionETeamPageWidget
-                                                    .routeName,
+                                                AddPostPageWidget.routeName,
                                                 queryParameters: {
-                                                  'eTeamRef': serializeParam(
+                                                  'teamRef': serializeParam(
                                                     widget.teamRef,
                                                     ParamType.DocumentReference,
                                                   ),
@@ -307,21 +353,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
-                                                            .bottomToTop,
+                                                            .rightToLeft,
                                                     duration: Duration(
                                                         milliseconds: 400),
                                                   ),
                                                 },
                                               );
                                             },
-                                            child: Icon(
-                                              Icons.comment_rounded,
+                                            child: FaIcon(
+                                              FontAwesomeIcons.edit,
                                               color: valueOrDefault<Color>(
                                                 teamPageTeamsRecord.color1,
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
                                               ),
-                                              size: 30.0,
+                                              size: 25.0,
                                             ),
                                           ),
                                       ],
@@ -1243,7 +1289,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                   'autres.france') &&
                                               (teamPageTeamsRecord
                                                       .leagueValue !=
-                                                  'pays.football'))
+                                                  'other.rugby'))
                                             Padding(
                                               padding: EdgeInsets.all(2.0),
                                               child: Container(
@@ -1277,50 +1323,37 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         if (teamPageTeamsRecord
                                                                 .leagueValue ==
                                                             'ligue.1')
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 18.0,
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
+                                                          Container(
+                                                            width: 18.0,
+                                                            height: 25.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          3.0),
+                                                              shape: BoxShape
+                                                                  .rectangle,
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(1.0),
+                                                              child: ClipRRect(
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            3.0),
-                                                                shape: BoxShape
-                                                                    .rectangle,
-                                                              ),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .all(
-                                                                            1.0),
+                                                                            0.0),
                                                                 child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              0.0),
-                                                                  child: Image
-                                                                      .asset(
-                                                                    'assets/images/Ligue1.png',
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        200.0,
-                                                                    fit: BoxFit
-                                                                        .scaleDown,
-                                                                  ),
+                                                                    Image.asset(
+                                                                  'assets/images/Ligue1.png',
+                                                                  width: 300.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
                                                                 ),
                                                               ),
                                                             ),
@@ -1856,9 +1889,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                           ),
                                                       ],
                                                     ),
-                                                    if (teamPageTeamsRecord
-                                                            .sportValue !=
-                                                        'sports.meca')
+                                                    if ((teamPageTeamsRecord
+                                                                .sportValue ==
+                                                            'basketball') ||
+                                                        (teamPageTeamsRecord
+                                                                .sportValue ==
+                                                            'tennis') ||
+                                                        (teamPageTeamsRecord
+                                                                .sportValue ==
+                                                            'hockey'))
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -1891,7 +1930,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'r5vt0w5t' /* V - N - D */,
+                                                                    'r5vt0w5t' /* V - D */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -1937,7 +1976,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '6zpv1hry' /* W - D - L */,
+                                                                    '6zpv1hry' /* W - L */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -1978,7 +2017,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'smmsxf2y' /* W - Z - V */,
+                                                                    'smmsxf2y' /* W - V */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -2019,7 +2058,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    's13qrwhw' /* V - D - P */,
+                                                                    's13qrwhw' /* V - P */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -2060,7 +2099,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'zbns6n1l' /* V - D - P */,
+                                                                    'zbns6n1l' /* V - P */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -2101,7 +2140,293 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'li301h3v' /* V - E - P */,
+                                                                    'li301h3v' /* V - P */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    if ((teamPageTeamsRecord
+                                                                .sportValue !=
+                                                            'basketball') &&
+                                                        (teamPageTeamsRecord
+                                                                .sportValue !=
+                                                            'tennis') &&
+                                                        (teamPageTeamsRecord
+                                                                .sportValue !=
+                                                            'hockey') &&
+                                                        (teamPageTeamsRecord
+                                                                .sportValue !=
+                                                            'sports.meca'))
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if ((valueOrDefault(
+                                                                            currentUserDocument
+                                                                                ?.langage,
+                                                                            '') ==
+                                                                        '') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.langage,
+                                                                        '') ==
+                                                                    'francais'))
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'dr952hz4' /* V - N - D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if ((valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.langage,
+                                                                        '') ==
+                                                                    'english') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.langage,
+                                                                        '') ==
+                                                                    'american'))
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '6l5k6tsj' /* W - D - L */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                'deutsch')
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'd1nnq7p8' /* W - Z - V */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                'espanol')
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'rascx5fr' /* V - D - P */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                'italiano')
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'idf0vjiu' /* V - D - P */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .montserrat(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            if (valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                'portugues')
+                                                              AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'nvuo3yow' /* V - E - P */,
                                                                   ),
                                                                   textAlign:
                                                                       TextAlign
@@ -2256,28 +2581,48 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                     .fontStyle,
                                                               ),
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              teamPageTeamsRecord
-                                                                  .draws
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                        if ((teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'basketball') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'tennis') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'hockey'))
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                teamPageTeamsRecord
+                                                                    .draws
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -2287,22 +2632,20 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         .bodyMedium
                                                                         .fontStyle,
                                                                   ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                            ),
                                                           ),
-                                                        ),
-                                                        if (teamPageTeamsRecord
-                                                                .sportValue !=
-                                                            'sports.meca')
+                                                        if ((teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'basketball') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'tennis') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'hockey') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'sports.meca'))
                                                           Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -2663,172 +3006,172 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        if ((teamPageTeamsRecord
-                                                                    .leagueValue !=
+                                                        if ((teamPageTeamsRecord.leagueValue !=
                                                                 'autres') &&
                                                             (teamPageTeamsRecord
                                                                     .leagueValue !=
                                                                 'autres.france') &&
                                                             (teamPageTeamsRecord
-                                                                    .leagueValue !=
-                                                                'pays.football') &&
-                                                            (teamPageTeamsRecord
                                                                     .esport ==
-                                                                false))
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            children: [
-                                                              if (teamPageTeamsRecord
-                                                                      .sportValue !=
-                                                                  'sports.meca')
-                                                                InkWell(
-                                                                  splashColor:
+                                                                false) &&
+                                                            (teamPageTeamsRecord
+                                                                    .leagueValue !=
+                                                                'other.rugby') &&
+                                                            (teamPageTeamsRecord
+                                                                    .sportValue !=
+                                                                'sports.meca'))
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
                                                                       Colors
                                                                           .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showModalBottomSheet(
-                                                                      isScrollControlled:
-                                                                          true,
-                                                                      backgroundColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      enableDrag:
-                                                                          false,
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (context) {
-                                                                        return WebViewAware(
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return WebViewAware(
+                                                                      child:
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
                                                                           child:
-                                                                              GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: RankTeamWidget(
-                                                                                teamRef: widget.teamRef!,
-                                                                              ),
-                                                                            ),
+                                                                              RankTeamWidget(
+                                                                            teamRef:
+                                                                                widget.teamRef!,
                                                                           ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        safeSetState(
-                                                                            () {}));
+                                                                        ),
+                                                                      ),
+                                                                    );
                                                                   },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .bar_chart,
-                                                                    color: valueOrDefault<
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              child: Icon(
+                                                                Icons.bar_chart,
+                                                                color:
+                                                                    valueOrDefault<
                                                                         Color>(
-                                                                      teamPageTeamsRecord
-                                                                          .color1,
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                    ),
-                                                                    size: 30.0,
-                                                                  ),
+                                                                  teamPageTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                 ),
-                                                            ],
+                                                                size: 30.0,
+                                                              ),
+                                                            ),
                                                           ),
                                                         if (teamPageTeamsRecord
                                                                 .sportValue ==
                                                             'sports.meca')
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await showModalBottomSheet(
-                                                                isScrollControlled:
-                                                                    true,
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                enableDrag:
-                                                                    false,
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (context) {
-                                                                  return WebViewAware(
-                                                                    child:
-                                                                        GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return WebViewAware(
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
+                                                                          GestureDetector(
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
-                                                                            RankTeamMecaWidget(
-                                                                          teamRef:
-                                                                              widget.teamRef!,
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              RankTeamMecaWidget(
+                                                                            teamRef:
+                                                                                widget.teamRef!,
+                                                                          ),
                                                                         ),
                                                                       ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ).then((value) =>
-                                                                  safeSetState(
-                                                                      () {}));
-                                                            },
-                                                            child: Icon(
-                                                              Icons.bar_chart,
-                                                              color:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                teamPageTeamsRecord
-                                                                    .color1,
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              child: Icon(
+                                                                Icons.bar_chart,
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  teamPageTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                                size: 30.0,
                                                               ),
-                                                              size: 30.0,
                                                             ),
                                                           ),
                                                         if (teamPageTeamsRecord
                                                                 .esport ==
                                                             true)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
                                                                   .transparent,
@@ -2844,48 +3187,18 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                     ETeamRankPageWidget
                                                                         .routeName);
                                                               },
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context.pushNamed(
-                                                                          ETeamRankPageWidget
-                                                                              .routeName);
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .bar_chart,
-                                                                      color: valueOrDefault<
-                                                                          Color>(
-                                                                        teamPageTeamsRecord
-                                                                            .color1,
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                      ),
-                                                                      size:
-                                                                          30.0,
-                                                                    ),
-                                                                  ),
-                                                                ],
+                                                              child: Icon(
+                                                                Icons.bar_chart,
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  teamPageTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                                size: 30.0,
                                                               ),
                                                             ),
                                                           ),
@@ -3101,11 +3414,11 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                     .leagueValue !=
                                                                 'autres.france') &&
                                                             (teamPageTeamsRecord
-                                                                    .leagueValue !=
-                                                                'pays.football') &&
-                                                            (teamPageTeamsRecord
                                                                     .esport ==
-                                                                false))
+                                                                false) &&
+                                                            (teamPageTeamsRecord
+                                                                    .leagueValue !=
+                                                                'other.rugby'))
                                                           Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3341,7 +3654,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 ),
                                                               if (teamPageTeamsRecord
                                                                       .additionalLeague ==
-                                                                  'champions.league')
+                                                                  'champions.cup')
                                                                 Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
@@ -4248,7 +4561,6 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         'points_cup',
                                                                         descending:
                                                                             true),
-                                                            limit: 30,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -9293,146 +9605,146 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       MainAxisAlignment
                                                                           .spaceBetween,
                                                                   children: [
-                                                                    Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .start,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .end,
-                                                                      children: [
-                                                                        Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                    Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            90.0,
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            SingleChildScrollView(
+                                                                          scrollDirection:
+                                                                              Axis.horizontal,
                                                                           child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.end,
+                                                                            children: [
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                90.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Container(
-                                                                              width: 260.0,
-                                                                              height: 50.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                              ),
-                                                                              child: InkWell(
-                                                                                splashColor: Colors.transparent,
-                                                                                focusColor: Colors.transparent,
-                                                                                hoverColor: Colors.transparent,
-                                                                                highlightColor: Colors.transparent,
-                                                                                onTap: () async {
-                                                                                  context.pushNamed(
-                                                                                    PostPageWidget.routeName,
-                                                                                    queryParameters: {
-                                                                                      'postRef': serializeParam(
-                                                                                        contPostPostsRecord.reference,
-                                                                                        ParamType.DocumentReference,
-                                                                                      ),
-                                                                                    }.withoutNulls,
-                                                                                    extra: <String, dynamic>{
-                                                                                      kTransitionInfoKey: TransitionInfo(
-                                                                                        hasTransition: true,
-                                                                                        transitionType: PageTransitionType.scale,
-                                                                                        alignment: Alignment.bottomCenter,
-                                                                                        duration: Duration(milliseconds: 600),
-                                                                                      ),
-                                                                                    },
-                                                                                  );
-                                                                                },
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                  children: [
-                                                                                    Align(
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                      child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          contPostPostsRecord.title,
-                                                                                          textAlign: TextAlign.start,
-                                                                                          maxLines: 2,
-                                                                                          style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                font: GoogleFonts.poppins(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                                                                                child: InkWell(
+                                                                                  splashColor: Colors.transparent,
+                                                                                  focusColor: Colors.transparent,
+                                                                                  hoverColor: Colors.transparent,
+                                                                                  highlightColor: Colors.transparent,
+                                                                                  onTap: () async {
+                                                                                    context.pushNamed(
+                                                                                      PostPageWidget.routeName,
+                                                                                      queryParameters: {
+                                                                                        'postRef': serializeParam(
+                                                                                          contPostPostsRecord.reference,
+                                                                                          ParamType.DocumentReference,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                      extra: <String, dynamic>{
+                                                                                        kTransitionInfoKey: TransitionInfo(
+                                                                                          hasTransition: true,
+                                                                                          transitionType: PageTransitionType.scale,
+                                                                                          alignment: Alignment.bottomCenter,
+                                                                                          duration: Duration(milliseconds: 600),
+                                                                                        ),
+                                                                                      },
+                                                                                    );
+                                                                                  },
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            contPostPostsRecord.title,
+                                                                                            textAlign: TextAlign.start,
+                                                                                            maxLines: 2,
+                                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                                  font: GoogleFonts.poppins(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                  ),
+                                                                                                  letterSpacing: 0.0,
                                                                                                   fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
                                                                                                 ),
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                              ),
+                                                                                          ),
                                                                                         ),
                                                                                       ),
-                                                                                    ),
-                                                                                  ],
+                                                                                    ],
+                                                                                  ),
                                                                                 ),
                                                                               ),
-                                                                            ),
+                                                                            ],
                                                                           ),
                                                                         ),
-                                                                      ],
+                                                                      ),
                                                                     ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                    Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              -1.0,
+                                                                              0.0),
                                                                       child:
-                                                                          SingleChildScrollView(
-                                                                        scrollDirection:
-                                                                            Axis.horizontal,
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            90.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceBetween,
+                                                                              MainAxisAlignment.start,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.end,
                                                                           children: [
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                if (contPostPostsRecord.description != '')
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    child: Icon(
+                                                                                      Icons.text_fields_outlined,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 20.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                if (contPostPostsRecord.audio != '')
+                                                                                  Icon(
+                                                                                    Icons.hearing_rounded,
+                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    size: 20.0,
+                                                                                  ),
+                                                                                if (contPostPostsRecord.youtubeVideo != '')
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                    child: FaIcon(
+                                                                                      FontAwesomeIcons.youtube,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 20.0,
+                                                                                    ),
+                                                                                  ),
+                                                                              ],
+                                                                            ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      children: [
-                                                                                        if (contPostPostsRecord.description != '')
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                            child: Icon(
-                                                                                              Icons.text_fields_outlined,
-                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              size: 20.0,
-                                                                                            ),
-                                                                                          ),
-                                                                                        if (contPostPostsRecord.audio != '')
-                                                                                          Icon(
-                                                                                            Icons.hearing_rounded,
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            size: 20.0,
-                                                                                          ),
-                                                                                        if (contPostPostsRecord.youtubeVideo != '')
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                            child: FaIcon(
-                                                                                              FontAwesomeIcons.youtube,
-                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              size: 20.0,
-                                                                                            ),
-                                                                                          ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                     child: Icon(

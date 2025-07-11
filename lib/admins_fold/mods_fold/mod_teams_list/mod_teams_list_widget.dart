@@ -678,7 +678,7 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'u3cmio86' /* Retirer filtre */,
+                                                'fx8dm1an' /* Retirer filtre */,
                                               )
                                             ],
                                             onChanged: (val) async {

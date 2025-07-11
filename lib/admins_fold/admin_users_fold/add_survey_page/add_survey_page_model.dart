@@ -6,6 +6,22 @@ import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 
 class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
+  ///  Local state fields for this page.
+
+  bool? showImage1;
+
+  bool? showImage2;
+
+  bool? showAudio;
+
+  bool? showVideo;
+
+  bool? showText1;
+
+  bool? showText2;
+
+  bool? showChoices;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TitleField widget.
@@ -22,7 +38,7 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   FFUploadedFile recordedFileBytes =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for DescriptionField widget.
@@ -30,6 +46,11 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   TextEditingController? descriptionFieldTextController;
   String? Function(BuildContext, String?)?
       descriptionFieldTextControllerValidator;
+  bool isDataUploading_uploadData90s = false;
+  FFUploadedFile uploadedLocalFile_uploadData90s =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl_uploadData90s = '';
+
   // State field(s) for Choice1Field widget.
   FocusNode? choice1FieldFocusNode;
   TextEditingController? choice1FieldTextController;
@@ -42,6 +63,10 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   FocusNode? choice3FieldFocusNode;
   TextEditingController? choice3FieldTextController;
   String? Function(BuildContext, String?)? choice3FieldTextControllerValidator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController7;
+  String? Function(BuildContext, String?)? textController7Validator;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postRef;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
@@ -55,7 +80,7 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
     titleFieldFocusNode?.dispose();
     titleFieldTextController?.dispose();
 
-    textFieldFocusNode?.dispose();
+    textFieldFocusNode1?.dispose();
     textController2?.dispose();
 
     descriptionFieldFocusNode?.dispose();
@@ -69,5 +94,8 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
 
     choice3FieldFocusNode?.dispose();
     choice3FieldTextController?.dispose();
+
+    textFieldFocusNode2?.dispose();
+    textController7?.dispose();
   }
 }

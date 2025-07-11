@@ -46,6 +46,9 @@ class AddEventPageModel extends FlutterFlowModel<AddEventPageWidget> {
   FormFieldController<String>? dropTeamMMAExtValueController;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   EventsRecord? eventAutoRef;
+  // State field(s) for DropLigueFoot widget.
+  String? dropLigueFootValue;
+  FormFieldController<String>? dropLigueFootValueController;
   // State field(s) for DropLigueBasket widget.
   String? dropLigueBasketValue;
   FormFieldController<String>? dropLigueBasketValueController;
@@ -67,6 +70,11 @@ class AddEventPageModel extends FlutterFlowModel<AddEventPageWidget> {
   // State field(s) for DropLigueFight widget.
   String? dropLigueFightValue2;
   FormFieldController<String>? dropLigueFightValueController2;
+  // State field(s) for DropTeamDomFoot widget.
+  String? dropTeamDomFootValue;
+  FormFieldController<String>? dropTeamDomFootValueController;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  EventsRecord? eventFootRef;
   // State field(s) for DropTeamDomBasket widget.
   String? dropTeamDomBasketValue;
   FormFieldController<String>? dropTeamDomBasketValueController;
@@ -94,6 +102,9 @@ class AddEventPageModel extends FlutterFlowModel<AddEventPageWidget> {
   EventsRecord? eventRugbyRef;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   EventsRecord? eventMecaRef;
+  // State field(s) for DropTeamExtFoot widget.
+  String? dropTeamExtFootValue;
+  FormFieldController<String>? dropTeamExtFootValueController;
   // State field(s) for DropTeamExtBasket widget.
   String? dropTeamExtBasketValue;
   FormFieldController<String>? dropTeamExtBasketValueController;

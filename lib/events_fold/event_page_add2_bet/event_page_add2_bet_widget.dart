@@ -11,7 +11,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/teams_fold/audio_fan_conference/audio_fan_conference_widget.dart';
 import '/teams_fold/audio_member_conference/audio_member_conference_widget.dart';
-import '/teams_fold/rank_meca/rank_meca_widget.dart';
+import '/teams_fold/rank_team_meca/rank_team_meca_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -2501,28 +2501,43 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                       ),
                                                                 ),
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    contDomTeamsRecord
-                                                                        .draws
-                                                                        .toString(),
-                                                                    '0',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
+                                                              if ((eventPageAdd2BetEventsRecord.sportValue != 'basketball') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      contDomTeamsRecord
+                                                                          .draws
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontWeight,
@@ -2530,39 +2545,43 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                               .bodyMedium
                                                                               .fontStyle,
                                                                         ),
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'xhtfbh6k' /* - */,
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
+                                                                ),
+                                                              if ((eventPageAdd2BetEventsRecord.sportValue != 'basketball') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'xhtfbh6k' /* - */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontWeight,
@@ -2570,19 +2589,8 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                               .bodyMedium
                                                                               .fontStyle,
                                                                         ),
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                  ),
                                                                 ),
-                                                              ),
                                                               Text(
                                                                 valueOrDefault<
                                                                     String>(
@@ -2643,7 +2651,13 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                         'europa.league') &&
                                                     (eventPageAdd2BetEventsRecord
                                                             .leagueValue !=
-                                                        'conference.league'))
+                                                        'conference.league') &&
+                                                    (eventPageAdd2BetEventsRecord
+                                                            .leagueValue !=
+                                                        'champions.cup') &&
+                                                    (eventPageAdd2BetEventsRecord
+                                                            .leagueValue !=
+                                                        'other.rugby'))
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
@@ -2889,16 +2903,19 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                         'autres.france') &&
                                                     (eventPageAdd2BetEventsRecord
                                                             .leagueValue !=
-                                                        'pays.football') &&
-                                                    (eventPageAdd2BetEventsRecord
-                                                            .leagueValue !=
                                                         'champions.league') &&
                                                     (eventPageAdd2BetEventsRecord
                                                             .leagueValue !=
                                                         'europa.league') &&
                                                     (eventPageAdd2BetEventsRecord
                                                             .leagueValue !=
-                                                        'conference.league'))
+                                                        'conference.league') &&
+                                                    (eventPageAdd2BetEventsRecord
+                                                            .leagueValue !=
+                                                        'champions.cup') &&
+                                                    (eventPageAdd2BetEventsRecord
+                                                            .leagueValue !=
+                                                        'other.rugby'))
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -3894,28 +3911,43 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                       ),
                                                                 ),
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    contExtTeamsRecord
-                                                                        .draws
-                                                                        .toString(),
-                                                                    '0',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
+                                                              if ((eventPageAdd2BetEventsRecord.sportValue != 'basketball') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      contExtTeamsRecord
+                                                                          .draws
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontWeight,
@@ -3923,39 +3955,43 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                               .bodyMedium
                                                                               .fontStyle,
                                                                         ),
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '0uh4yhm5' /* - */,
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
+                                                                ),
+                                                              if ((eventPageAdd2BetEventsRecord.sportValue != 'basketball') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (eventPageAdd2BetEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '0uh4yhm5' /* - */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .fontWeight,
@@ -3963,19 +3999,8 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                               .bodyMedium
                                                                               .fontStyle,
                                                                         ),
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                  ),
                                                                 ),
-                                                              ),
                                                               Text(
                                                                 valueOrDefault<
                                                                     String>(
@@ -4097,7 +4122,12 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                         padding: MediaQuery
                                                             .viewInsetsOf(
                                                                 context),
-                                                        child: RankMecaWidget(),
+                                                        child:
+                                                            RankTeamMecaWidget(
+                                                          teamRef:
+                                                              eventPageAdd2BetEventsRecord
+                                                                  .teamdomRef!,
+                                                        ),
                                                       ),
                                                     ),
                                                   );
@@ -4179,7 +4209,9 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                               ),
                             ),
                           ),
-                          if (eventPageAdd2BetEventsRecord.statut == true)
+                          if ((eventPageAdd2BetEventsRecord.statut == true) &&
+                              (eventPageAdd2BetEventsRecord.sportValue !=
+                                  'sports.meca'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
@@ -5467,6 +5499,659 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                               ),
                                             ],
                                           ),
+                                        ),
+                                      );
+                                    }),
+                                  );
+                                },
+                              ),
+                            ),
+                          if ((eventPageAdd2BetEventsRecord.statut == true) &&
+                              (eventPageAdd2BetEventsRecord.sportValue ==
+                                  'sports.meca'))
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        _model.showMecaBet = 'first';
+                                        safeSetState(() {});
+                                      },
+                                      child: Container(
+                                        width: 60.0,
+                                        height: 30.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(30.0),
+                                          shape: BoxShape.rectangle,
+                                          border: Border.all(
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'awfo9j2v' /* First */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelSmall
+                                                            .fontWeight,
+                                                    fontStyle: FontStyle.italic,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .fontWeight,
+                                                  fontStyle: FontStyle.italic,
+                                                  lineHeight: 0.8,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        _model.showMecaBet = 'podium';
+                                        safeSetState(() {});
+                                      },
+                                      child: Container(
+                                        width: 70.0,
+                                        height: 30.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(30.0),
+                                          shape: BoxShape.rectangle,
+                                          border: Border.all(
+                                            color: valueOrDefault<Color>(
+                                              currentUserDocument?.color1,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                            ),
+                                            width: 2.0,
+                                          ),
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'p3aki199' /* Podium */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelSmall
+                                                            .fontWeight,
+                                                    fontStyle: FontStyle.italic,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .fontWeight,
+                                                  fontStyle: FontStyle.italic,
+                                                  lineHeight: 0.9,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          if ((eventPageAdd2BetEventsRecord.statut == true) &&
+                              (eventPageAdd2BetEventsRecord.sportValue ==
+                                  'sports.meca'))
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 10.0, 10.0, 0.0),
+                              child: StreamBuilder<List<BetsRecord>>(
+                                stream: queryBetsRecord(
+                                  parent: widget.eventRef,
+                                  queryBuilder: (betsRecord) =>
+                                      betsRecord.orderBy('created_time'),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .accent4,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<BetsRecord> columnBetsAVBetsRecordList =
+                                      snapshot.data!;
+
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: List.generate(
+                                        columnBetsAVBetsRecordList.length,
+                                        (columnBetsAVIndex) {
+                                      final columnBetsAVBetsRecord =
+                                          columnBetsAVBetsRecordList[
+                                              columnBetsAVIndex];
+                                      return Visibility(
+                                        visible:
+                                            columnBetsAVBetsRecord.reference !=
+                                                columnMyBetsRecord.bet1,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if ((columnBetsAVBetsRecord.first ==
+                                                    _model.showMecaBet) ||
+                                                (columnBetsAVBetsRecord
+                                                        .podium ==
+                                                    _model.showMecaBet))
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 5.0, 0.0, 5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        if ((columnBetsAVBetsRecord.choice != 'Les 2 équipes marquent - Oui') &&
+                                                            (columnBetsAVBetsRecord
+                                                                    .choice !=
+                                                                'Les 2 équipes marquent - Non') &&
+                                                            (columnBetsAVBetsRecord
+                                                                    .choice !=
+                                                                'Match nul'))
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              columnBetsAVBetsRecord
+                                                                  .choice,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Icon(
+                                                                  Icons
+                                                                      .groups_sharp,
+                                                                  color:
+                                                                      valueOrDefault<
+                                                                          Color>(
+                                                                    currentUserDocument
+                                                                        ?.color2,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                  ),
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnBetsAVBetsRecord
+                                                                      .bettors
+                                                                      .length
+                                                                      .toString(),
+                                                                  '0',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    if ((columnBetsAVBetsRecord
+                                                                .choice ==
+                                                            'plus') ||
+                                                        (columnBetsAVBetsRecord
+                                                                .choice ==
+                                                            'moins'))
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnBetsAVBetsRecord
+                                                                .points,
+                                                            '00.0',
+                                                          ),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    if (columnBetsAVBetsRecord
+                                                                .first !=
+                                                            '')
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnBetsAVBetsRecord
+                                                                .first,
+                                                            'first',
+                                                          ),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    if (columnBetsAVBetsRecord
+                                                                .podium !=
+                                                            '')
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnBetsAVBetsRecord
+                                                                .podium,
+                                                            'podium',
+                                                          ),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  20.0,
+                                                                  0.0),
+                                                      child:
+                                                          AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            FFButtonWidget(
+                                                          onPressed: () async {
+                                                            var cartRecordReference =
+                                                                CartRecord
+                                                                    .createDoc(
+                                                                        currentUserReference!);
+                                                            await cartRecordReference
+                                                                .set(
+                                                                    createCartRecordData(
+                                                              bet: columnBetsAVBetsRecord
+                                                                  .reference,
+                                                              totalOdds:
+                                                                  columnBetsAVBetsRecord
+                                                                      .odd,
+                                                            ));
+                                                            _model.cartMecaRef =
+                                                                CartRecord.getDocumentFromData(
+                                                                    createCartRecordData(
+                                                                      bet: columnBetsAVBetsRecord
+                                                                          .reference,
+                                                                      totalOdds:
+                                                                          columnBetsAVBetsRecord
+                                                                              .odd,
+                                                                    ),
+                                                                    cartRecordReference);
+
+                                                            context.pushNamed(
+                                                              CartPageAdd2BetWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'cartRef':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .cartMecaRef
+                                                                      ?.reference,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                                'myBetRef':
+                                                                    serializeParam(
+                                                                  widget
+                                                                      .myBetRef,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .scale,
+                                                                  alignment:
+                                                                      Alignment
+                                                                          .bottomCenter,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          600),
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          text: formatNumber(
+                                                            columnBetsAVBetsRecord
+                                                                .odd,
+                                                            formatType:
+                                                                FormatType
+                                                                    .decimal,
+                                                            decimalType:
+                                                                DecimalType
+                                                                    .periodDecimal,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 30.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryText,
+                                                            ),
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                            elevation: 3.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        40.0),
+                                                            hoverColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
+                                                            hoverTextColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                          ],
                                         ),
                                       );
                                     }),

@@ -1870,142 +1870,227 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          6.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            30.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        AuthUserStreamWidget(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          await startAudioRecording(
-                                                                            context,
-                                                                            audioRecorder: _model.audioRecorder1 ??=
-                                                                                AudioRecorder(),
-                                                                          );
-                                                                        },
-                                                                        child:
-                                                                            FaIcon(
-                                                                          FontAwesomeIcons
-                                                                              .microphoneAlt,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            currentUserDocument?.color1,
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                          ),
-                                                                          size:
-                                                                              28.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            30.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        AuthUserStreamWidget(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          await stopAudioRecording(
-                                                                            audioRecorder:
-                                                                                _model.audioRecorder1,
-                                                                            audioName:
-                                                                                'recordedFileBytes1',
-                                                                            onRecordingComplete:
-                                                                                (audioFilePath, audioBytes) {
-                                                                              _model.audioSport = audioFilePath;
-                                                                              _model.recordedFileBytes1 = audioBytes;
-                                                                            },
-                                                                          );
-
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        },
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .stop_circle,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            currentUserDocument?.color1,
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                          ),
-                                                                          size:
-                                                                              28.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
                                                                       .transparent,
-                                                              onTap: () async {
-                                                                _model.showAudio =
-                                                                    null;
-                                                                safeSetState(
-                                                                    () {});
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .close_rounded,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                size: 30.0,
-                                                              ),
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    _model.showAudio =
+                                                                        null;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .close_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    size: 30.0,
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          40.0,
+                                                                          0.0,
+                                                                          40.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await startAudioRecording(
+                                                                          context,
+                                                                          audioRecorder: _model.audioRecorder1 ??=
+                                                                              AudioRecorder(),
+                                                                        );
+                                                                      },
+                                                                      child:
+                                                                          FaIcon(
+                                                                        FontAwesomeIcons
+                                                                            .microphoneAlt,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          currentUserDocument
+                                                                              ?.color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        size:
+                                                                            28.0,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                AuthUserStreamWidget(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      await stopAudioRecording(
+                                                                        audioRecorder:
+                                                                            _model.audioRecorder1,
+                                                                        audioName:
+                                                                            'recordedFileBytes1',
+                                                                        onRecordingComplete:
+                                                                            (audioFilePath,
+                                                                                audioBytes) {
+                                                                          _model.audioSport =
+                                                                              audioFilePath;
+                                                                          _model.recordedFileBytes1 =
+                                                                              audioBytes;
+                                                                        },
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .stop_circle,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        currentUserDocument
+                                                                            ?.color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      size:
+                                                                          28.0,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
+                                                            if (_model.audioSport !=
+                                                                    null &&
+                                                                _model.audioSport !=
+                                                                    '')
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
+                                                                  child:
+                                                                      Container(
+                                                                    width:
+                                                                        175.0,
+                                                                    height:
+                                                                        45.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              FlutterFlowAudioPlayer(
+                                                                        audio: Audio
+                                                                            .network(
+                                                                          _model
+                                                                              .audioSport!,
+                                                                          metas:
+                                                                              Metas(
+                                                                            title:
+                                                                                ' ',
+                                                                          ),
+                                                                        ),
+                                                                        titleTextStyle: FlutterFlowTheme.of(context)
+                                                                            .bodySmall
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                            ),
+                                                                        playbackDurationTextStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge
+                                                                            .override(
+                                                                              font: GoogleFonts.poppins(
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                            ),
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).primaryBackground,
+                                                                        playbackButtonColor:
+                                                                            valueOrDefault<Color>(
+                                                                          currentUserDocument
+                                                                              ?.color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        activeTrackColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                        inactiveTrackColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                        elevation:
+                                                                            0.0,
+                                                                        playInBackground:
+                                                                            PlayInBackground.disabledRestoreOnForeground,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
                                                           ],
                                                         ),
                                                       ),
@@ -2547,134 +2632,220 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      _model.showEsportAudio =
+                                                                          null;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .close_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .error,
+                                                                      size:
+                                                                          30.0,
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            6.0,
+                                                                            40.0,
                                                                             0.0,
-                                                                            0.0,
+                                                                            40.0,
                                                                             0.0),
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          30.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          AuthUserStreamWidget(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            await startAudioRecording(
-                                                                              context,
-                                                                              audioRecorder: _model.audioRecorder2 ??= AudioRecorder(),
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              FaIcon(
-                                                                            FontAwesomeIcons.microphoneAlt,
-                                                                            color:
-                                                                                valueOrDefault<Color>(
-                                                                              currentUserDocument?.color1,
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                            ),
-                                                                            size:
-                                                                                28.0,
+                                                                    child:
+                                                                        AuthUserStreamWidget(
+                                                                      builder:
+                                                                          (context) =>
+                                                                              InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          await startAudioRecording(
+                                                                            context,
+                                                                            audioRecorder: _model.audioRecorder2 ??=
+                                                                                AudioRecorder(),
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            FaIcon(
+                                                                          FontAwesomeIcons
+                                                                              .microphoneAlt,
+                                                                          color:
+                                                                              valueOrDefault<Color>(
+                                                                            currentUserDocument?.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
                                                                           ),
+                                                                          size:
+                                                                              28.0,
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          30.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          AuthUserStreamWidget(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            await stopAudioRecording(
-                                                                              audioRecorder: _model.audioRecorder2,
-                                                                              audioName: 'recordedFileBytes2',
-                                                                              onRecordingComplete: (audioFilePath, audioBytes) {
-                                                                                _model.audioEsport = audioFilePath;
-                                                                                _model.recordedFileBytes2 = audioBytes;
-                                                                              },
-                                                                            );
+                                                                  ),
+                                                                  AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await stopAudioRecording(
+                                                                          audioRecorder:
+                                                                              _model.audioRecorder2,
+                                                                          audioName:
+                                                                              'recordedFileBytes2',
+                                                                          onRecordingComplete:
+                                                                              (audioFilePath, audioBytes) {
+                                                                            _model.audioEsport =
+                                                                                audioFilePath;
+                                                                            _model.recordedFileBytes2 =
+                                                                                audioBytes;
+                                                                          },
+                                                                        );
 
-                                                                            safeSetState(() {});
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.stop_circle,
-                                                                            color:
-                                                                                valueOrDefault<Color>(
-                                                                              currentUserDocument?.color1,
-                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      },
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .stop_circle,
+                                                                        color: valueOrDefault<
+                                                                            Color>(
+                                                                          currentUserDocument
+                                                                              ?.color1,
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primaryText,
+                                                                        ),
+                                                                        size:
+                                                                            28.0,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              if (_model.audioEsport !=
+                                                                      null &&
+                                                                  _model.audioEsport !=
+                                                                      '')
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          -1.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0),
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          175.0,
+                                                                      height:
+                                                                          45.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          AuthUserStreamWidget(
+                                                                        builder:
+                                                                            (context) =>
+                                                                                FlutterFlowAudioPlayer(
+                                                                          audio:
+                                                                              Audio.network(
+                                                                            _model.audioEsport!,
+                                                                            metas:
+                                                                                Metas(
+                                                                              title: ' ',
                                                                             ),
-                                                                            size:
-                                                                                28.0,
                                                                           ),
+                                                                          titleTextStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .override(
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                              ),
+                                                                          playbackDurationTextStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                font: GoogleFonts.poppins(
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
+                                                                          playbackButtonColor:
+                                                                              valueOrDefault<Color>(
+                                                                            currentUserDocument?.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                          activeTrackColor:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                          inactiveTrackColor:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                          elevation:
+                                                                              0.0,
+                                                                          playInBackground:
+                                                                              PlayInBackground.disabledRestoreOnForeground,
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ],
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                              InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  _model.showEsportAudio =
-                                                                      null;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .close_rounded,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .error,
-                                                                  size: 30.0,
-                                                                ),
-                                                              ),
                                                             ],
                                                           ),
                                                         ),

@@ -194,7 +194,8 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                                                         BorderRadius.circular(
                                                             0.0),
                                                     child: Image.network(
-                                                      containerTeamsRecord.logo,
+                                                      containerTeamsRecord
+                                                          .profilPicture,
                                                       width: 300.0,
                                                       height: 200.0,
                                                       fit: BoxFit.fitHeight,

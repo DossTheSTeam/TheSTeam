@@ -238,11 +238,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: TeamListWidget.routeName,
-          path: TeamListWidget.routePath,
-          builder: (context, params) => TeamListWidget(),
-        ),
-        FFRoute(
           name: PostMessagePageWidget.routeName,
           path: PostMessagePageWidget.routePath,
           builder: (context, params) => PostMessagePageWidget(
@@ -1091,9 +1086,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: LiguesRankPageWidget.routeName,
-          path: LiguesRankPageWidget.routePath,
-          builder: (context, params) => LiguesRankPageWidget(),
+          name: TeamsListWidget.routeName,
+          path: TeamsListWidget.routePath,
+          builder: (context, params) => TeamsListWidget(),
         ),
         FFRoute(
           name: TheSTeamPostPageWidget.routeName,
@@ -1172,11 +1167,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['events'],
             ),
           ),
-        ),
-        FFRoute(
-          name: TeamListCupWidget.routeName,
-          path: TeamListCupWidget.routePath,
-          builder: (context, params) => TeamListCupWidget(),
         ),
         FFRoute(
           name: PublicStatsCompareWidget.routeName,
@@ -1309,6 +1299,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users', 'my_bets'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AddPostEventPageWidget.routeName,
+          path: AddPostEventPageWidget.routePath,
+          builder: (context, params) => AddPostEventPageWidget(
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ModifTextPostWidget.routeName,
+          path: ModifTextPostWidget.routePath,
+          builder: (context, params) => ModifTextPostWidget(
+            postRef: params.getParam(
+              'postRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['posts'],
             ),
           ),
         )

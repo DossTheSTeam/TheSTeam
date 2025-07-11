@@ -15,9 +15,6 @@ class EUserRankPageModel extends FlutterFlowModel<EUserRankPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropESport widget.
-  String? dropESportValue;
-  FormFieldController<String>? dropESportValueController;
   // State field(s) for DropELigue widget.
   String? dropELigueValue;
   FormFieldController<String>? dropELigueValueController;

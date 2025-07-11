@@ -526,8 +526,11 @@ class _ModifEndEEventPageWidgetState extends State<ModifEndEEventPageWidget> {
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
                                             FFLocalizations.of(context).getText(
-                                              'z31w1g4n' /* Resultat de la rencontre */,
+                                              'z31w1g4n' /* Resultat de
+la rencontre */
+                                              ,
                                             ),
+                                            textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(

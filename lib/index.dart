@@ -34,14 +34,13 @@ export '/users_fold/public_fold/the_s_team_page/the_s_team_page_widget.dart'
 export '/teams_fold/member_entry_page/member_entry_page_widget.dart'
     show MemberEntryPageWidget;
 export '/teams_fold/team_page/team_page_widget.dart' show TeamPageWidget;
-export '/teams_fold/team_list/team_list_widget.dart' show TeamListWidget;
 export '/comments_fold/post_message_page/post_message_page_widget.dart'
     show PostMessagePageWidget;
 export '/comments_fold/list_comms_post_com_page/list_comms_post_com_page_widget.dart'
     show ListCommsPostComPageWidget;
 export '/comments_fold/list_event_messages/list_event_messages_widget.dart'
     show ListEventMessagesWidget;
-export '/posts_fold/list_post_messages/list_post_messages_widget.dart'
+export '/comments_fold/list_post_messages/list_post_messages_widget.dart'
     show ListPostMessagesWidget;
 export '/comments_fold/red_card_post_comm_page/red_card_post_comm_page_widget.dart'
     show RedCardPostCommPageWidget;
@@ -188,8 +187,7 @@ export '/admins_fold/mods_fold/signal_e_event_page/signal_e_event_page_widget.da
 export '/events_fold/e_events_fold/add_date_for_e_event/add_date_for_e_event_widget.dart'
     show AddDateForEEventWidget;
 export '/teams_fold/team_stats/team_stats_widget.dart' show TeamStatsWidget;
-export '/teams_fold/ligues_rank_page/ligues_rank_page_widget.dart'
-    show LiguesRankPageWidget;
+export '/teams_fold/teams_list/teams_list_widget.dart' show TeamsListWidget;
 export '/posts_fold/the_s_team_post_page/the_s_team_post_page_widget.dart'
     show TheSTeamPostPageWidget;
 export '/posts_fold/list_surveys_news/list_surveys_news_widget.dart'
@@ -202,8 +200,6 @@ export '/events_fold/e_events_fold/rating_players_page/rating_players_page_widge
     show RatingPlayersPageWidget;
 export '/events_fold/e_events_fold/add_rating_players_page/add_rating_players_page_widget.dart'
     show AddRatingPlayersPageWidget;
-export '/teams_fold/team_list_cup/team_list_cup_widget.dart'
-    show TeamListCupWidget;
 export '/users_fold/public_fold/public_stats_compare/public_stats_compare_widget.dart'
     show PublicStatsCompareWidget;
 export '/users_fold/public_fold/full_image_page/full_image_page_widget.dart'
@@ -226,3 +222,7 @@ export '/events_fold/leagu_events_list_add2_bet/leagu_events_list_add2_bet_widge
     show LeaguEventsListAdd2BetWidget;
 export '/events_fold/leagu_events_list_add3_bet/leagu_events_list_add3_bet_widget.dart'
     show LeaguEventsListAdd3BetWidget;
+export '/posts_fold/add_post_event_page/add_post_event_page_widget.dart'
+    show AddPostEventPageWidget;
+export '/posts_fold/modif_text_post/modif_text_post_widget.dart'
+    show ModifTextPostWidget;

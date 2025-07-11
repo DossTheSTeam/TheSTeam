@@ -103,33 +103,25 @@
       ]
     },
     {
-      "collectionGroup": "teams",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "league_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "division_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "points",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "post_messages",
       "queryScope": "COLLECTION_GROUP",
       "fields": [
         {
           "fieldPath": "started_comm",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "posts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "event_ref",
           "order": "ASCENDING"
         },
         {
@@ -189,6 +181,28 @@
         {
           "fieldPath": "hour",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
+          "order": "DESCENDING"
         }
       ]
     },

@@ -357,7 +357,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
                                         FFLocalizations.of(context).getText(
-                                          'e0grgz9e' /* Fight */,
+                                          'e0grgz9e' /* Fight Sports */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -611,7 +611,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         options: List<String>.from([
                                           'nba',
                                           'nations.basket',
-                                          'euro.league'
+                                          'euro.league',
+                                          'other.basket'
                                         ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
@@ -622,7 +623,8 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'px8gl8cb' /* Euro League */,
-                                          )
+                                          ),
+                                          ''
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueBasketValue = val),
@@ -877,7 +879,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         options: List<String>.from(['ufc']),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
-                                            '21jshawk' /* UFC */,
+                                            'mpv0es9m' /* UFC */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
@@ -1051,7 +1053,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             'qzhsfbg1' /* Formule 1 */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'oqb99g5g' /* Moto GP */,
+                                            'k076bo4n' /* Moto GP */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'h5r36l24' /* World Superbike */,
@@ -1418,7 +1420,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           ]),
                                           optionLabels: [
                                             FFLocalizations.of(context).getText(
-                                              '9iuojbmy' /* Champions League */,
+                                              'zzaczw7m' /* Champions League */,
                                             ),
                                             FFLocalizations.of(context).getText(
                                               '1nhjiq4g' /* Europa League */,

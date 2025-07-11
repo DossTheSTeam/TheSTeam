@@ -1715,7 +1715,7 @@ résseau */
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          TeamListWidget
+                                                          TeamsListWidget
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
@@ -1803,7 +1803,7 @@ résseau */
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  TeamListWidget
+                                                                  TeamsListWidget
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
@@ -1895,60 +1895,6 @@ résseau */
                                                               ),
                                                             ),
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        20.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context
-                                                                    .pushNamed(
-                                                                  LiguesRankPageWidget
-                                                                      .routeName,
-                                                                  extra: <String,
-                                                                      dynamic>{
-                                                                    kTransitionInfoKey:
-                                                                        TransitionInfo(
-                                                                      hasTransition:
-                                                                          true,
-                                                                      transitionType:
-                                                                          PageTransitionType
-                                                                              .bottomToTop,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              400),
-                                                                    ),
-                                                                  },
-                                                                );
-                                                              },
-                                                              child: Icon(
-                                                                Icons.bar_chart,
-                                                                color:
-                                                                    valueOrDefault<
-                                                                        Color>(
-                                                                  currentUserDocument
-                                                                      ?.color1,
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
-                                                                size: 30.0,
-                                                              ),
-                                                            ),
-                                                          ),
                                                         ],
                                                       ),
                                                       if (valueOrDefault<bool>(
@@ -1966,7 +1912,7 @@ résseau */
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         3.0,
-                                                                        0.0,
+                                                                        10.0,
                                                                         0.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -2069,45 +2015,6 @@ ligues */
                                                                               1.0,
                                                                         ),
                                                                   ),
-                                                                ),
-                                                                Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '6mjibdxp' /* Classement */,
-                                                                  ),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  maxLines: 2,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                        lineHeight:
-                                                                            1.0,
-                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
@@ -3989,7 +3896,7 @@ réseau */
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          TeamListWidget
+                                                          ETeamRankPageWidget
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
@@ -3999,12 +3906,10 @@ réseau */
                                                                   true,
                                                               transitionType:
                                                                   PageTransitionType
-                                                                      .scale,
-                                                              alignment: Alignment
-                                                                  .bottomCenter,
+                                                                      .bottomToTop,
                                                               duration: Duration(
                                                                   milliseconds:
-                                                                      600),
+                                                                      400),
                                                             ),
                                                           },
                                                         );
@@ -4077,7 +3982,7 @@ réseau */
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  TeamListWidget
+                                                                  ETeamRankPageWidget
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
@@ -4087,13 +3992,10 @@ réseau */
                                                                           true,
                                                                       transitionType:
                                                                           PageTransitionType
-                                                                              .scale,
-                                                                      alignment:
-                                                                          Alignment
-                                                                              .bottomCenter,
+                                                                              .bottomToTop,
                                                                       duration: Duration(
                                                                           milliseconds:
-                                                                              600),
+                                                                              400),
                                                                     ),
                                                                   },
                                                                 );

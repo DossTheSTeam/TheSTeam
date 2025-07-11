@@ -917,14 +917,42 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
                                                           children: [
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                _model.showAudio =
+                                                                    null;
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .close_rounded,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                                size: 30.0,
+                                                              ),
+                                                            ),
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          40.0,
                                                                           0.0,
-                                                                          1.0,
-                                                                          30.0,
+                                                                          40.0,
                                                                           0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -961,86 +989,159 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          30.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  await stopAudioRecording(
-                                                                    audioRecorder:
-                                                                        _model
-                                                                            .audioRecorder,
-                                                                    audioName:
-                                                                        'recordedFileBytes',
-                                                                    onRecordingComplete:
-                                                                        (audioFilePath,
-                                                                            audioBytes) {
-                                                                      _model.audioTeam =
-                                                                          audioFilePath;
-                                                                      _model.recordedFileBytes =
-                                                                          audioBytes;
-                                                                    },
-                                                                  );
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await stopAudioRecording(
+                                                                  audioRecorder:
+                                                                      _model
+                                                                          .audioRecorder,
+                                                                  audioName:
+                                                                      'recordedFileBytes',
+                                                                  onRecordingComplete:
+                                                                      (audioFilePath,
+                                                                          audioBytes) {
+                                                                    _model.audioTeam =
+                                                                        audioFilePath;
+                                                                    _model.recordedFileBytes =
+                                                                        audioBytes;
+                                                                  },
+                                                                );
 
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .stop_circle,
-                                                                  color:
-                                                                      valueOrDefault<
-                                                                          Color>(
-                                                                    discusionETeamPageTeamsRecord
-                                                                        .color1,
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                  ),
-                                                                  size: 30.0,
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .stop_circle,
+                                                                color:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  discusionETeamPageTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                 ),
+                                                                size: 30.0,
                                                               ),
                                                             ),
                                                           ],
                                                         ),
                                                       ),
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          _model.showAudio =
-                                                              null;
-                                                          safeSetState(() {});
-                                                        },
-                                                        child: Icon(
-                                                          Icons.close_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          size: 30.0,
+                                                      if (_model.audioTeam !=
+                                                              null &&
+                                                          _model.audioTeam !=
+                                                              '')
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        10.0),
+                                                            child: Container(
+                                                              width: 175.0,
+                                                              height: 45.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                              child:
+                                                                  FlutterFlowAudioPlayer(
+                                                                audio: Audio
+                                                                    .network(
+                                                                  _model
+                                                                      .audioTeam!,
+                                                                  metas: Metas(
+                                                                    title: ' ',
+                                                                  ),
+                                                                ),
+                                                                titleTextStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodySmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                playbackDurationTextStyle:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.poppins(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                playbackButtonColor:
+                                                                    valueOrDefault<
+                                                                        Color>(
+                                                                  discusionETeamPageTeamsRecord
+                                                                      .color1,
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                                activeTrackColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                inactiveTrackColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .alternate,
+                                                                elevation: 0.0,
+                                                                playInBackground:
+                                                                    PlayInBackground
+                                                                        .disabledRestoreOnForeground,
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
-                                                      ),
                                                     ],
                                                   ),
                                                 ),

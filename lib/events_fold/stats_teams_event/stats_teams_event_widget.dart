@@ -385,7 +385,10 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                 'autres') &&
                                                             (contDomTeamsRecord
                                                                     .leagueValue !=
-                                                                'autres.france'),
+                                                                'autres.france') &&
+                                                            (contDomTeamsRecord
+                                                                    .leagueValue !=
+                                                                'other.rugby'),
                                                         child: FutureBuilder<
                                                             List<TeamsRecord>>(
                                                           future:
@@ -651,7 +654,10 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                 'autres') &&
                                                             (contExtTeamsRecord
                                                                     .leagueValue !=
-                                                                'autres.france'),
+                                                                'autres.france') &&
+                                                            (contExtTeamsRecord
+                                                                    .leagueValue !=
+                                                                'other.rugby'),
                                                         child: FutureBuilder<
                                                             List<TeamsRecord>>(
                                                           future:
@@ -1058,7 +1064,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1097,21 +1103,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '6hkyftmo' /* N */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '6hkyftmo' /* N */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1119,18 +1141,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1199,7 +1210,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1238,21 +1249,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '6mvq6ox2' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '6mvq6ox2' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1260,18 +1287,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1335,7 +1351,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1374,21 +1390,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '8re7zvn0' /* Z */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '8re7zvn0' /* Z */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1396,18 +1428,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1471,7 +1492,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1510,21 +1531,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '1e448yqy' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '1e448yqy' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1532,18 +1569,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1607,7 +1633,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1646,21 +1672,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'cbbbma5x' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'cbbbma5x' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1668,18 +1710,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1743,7 +1774,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -1782,21 +1813,37 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'j4rdnyg7' /* E */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'j4rdnyg7' /* E */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -1804,18 +1851,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1870,7 +1906,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                             MainAxisSize.max,
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .spaceBetween,
+                                                                .spaceEvenly,
                                                         children: [
                                                           Text(
                                                             valueOrDefault<
@@ -1912,22 +1948,43 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                       .fontStyle,
                                                                 ),
                                                           ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamsRecord
-                                                                  .draws
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                          if ((containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'basketball') &&
+                                                              (containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'tennis') &&
+                                                              (containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'hockey'))
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .draws
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmall
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelSmall
@@ -1937,18 +1994,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                                         .labelSmall
                                                                         .fontStyle,
                                                                   ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
+                                                            ),
                                                           Text(
                                                             valueOrDefault<
                                                                 String>(
@@ -1997,10 +2043,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                             'basketball') &&
                                                         (containerEventsRecord
                                                                 .sportValue !=
-                                                            'mma') &&
-                                                        (containerEventsRecord
-                                                                .sportValue !=
-                                                            'boxe'))
+                                                            'mma'))
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -4282,7 +4325,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -4321,21 +4364,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'yxfileip' /* N */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'yxfileip' /* N */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -4343,18 +4402,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -4423,7 +4471,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -4462,21 +4510,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'rtp0a21j' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'rtp0a21j' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -4484,18 +4548,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -4559,7 +4612,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -4598,21 +4651,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'r4olsrek' /* Z */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'r4olsrek' /* Z */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -4620,18 +4689,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -4695,7 +4753,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -4734,21 +4792,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'kymfhlv4' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'kymfhlv4' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -4756,18 +4830,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -4831,7 +4894,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -4870,21 +4933,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'no557i5j' /* D */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'no557i5j' /* D */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -4892,18 +4971,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -4967,7 +5035,7 @@ equipas marcam */
                                                                     .max,
                                                             mainAxisAlignment:
                                                                 MainAxisAlignment
-                                                                    .spaceBetween,
+                                                                    .spaceEvenly,
                                                             children: [
                                                               Text(
                                                                 FFLocalizations.of(
@@ -5006,21 +5074,37 @@ equipas marcam */
                                                                           .fontStyle,
                                                                     ),
                                                               ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'xlfve9kd' /* E */,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
+                                                              if ((containerEventsRecord.sportValue != 'basketball') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'tennis') &&
+                                                                  (containerEventsRecord
+                                                                          .sportValue !=
+                                                                      'hockey'))
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'xlfve9kd' /* E */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .poppins(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
@@ -5028,18 +5112,7 @@ equipas marcam */
                                                                             .labelSmall
                                                                             .fontStyle,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                              ),
+                                                                ),
                                                               Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -5094,7 +5167,7 @@ equipas marcam */
                                                             MainAxisSize.max,
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .spaceBetween,
+                                                                .spaceEvenly,
                                                         children: [
                                                           Text(
                                                             valueOrDefault<
@@ -5136,22 +5209,43 @@ equipas marcam */
                                                                       .fontStyle,
                                                                 ),
                                                           ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamsRecord
-                                                                  .draws
-                                                                  .toString(),
-                                                              '0',
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
+                                                          if ((containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'basketball') &&
+                                                              (containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'tennis') &&
+                                                              (containerEventsRecord
+                                                                      .sportValue !=
+                                                                  'hockey'))
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                columnTeamsRecord
+                                                                    .draws
+                                                                    .toString(),
+                                                                '0',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmall
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelSmall
@@ -5161,18 +5255,7 @@ equipas marcam */
                                                                         .labelSmall
                                                                         .fontStyle,
                                                                   ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
+                                                            ),
                                                           Text(
                                                             valueOrDefault<
                                                                 String>(
@@ -5221,10 +5304,7 @@ equipas marcam */
                                                             'basketball') &&
                                                         (containerEventsRecord
                                                                 .sportValue !=
-                                                            'mma') &&
-                                                        (containerEventsRecord
-                                                                .sportValue !=
-                                                            'boxe'))
+                                                            'mma'))
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional

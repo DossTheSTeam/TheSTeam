@@ -162,7 +162,6 @@ final parametersBuilderMap =
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },
       ),
-  'TeamList': ParameterData.none(),
   'PostMessagePage': (data) async => ParameterData(
         allParams: {
           'startedCommRef':
@@ -469,7 +468,7 @@ final parametersBuilderMap =
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
-  'LiguesRankPage': ParameterData.none(),
+  'TeamsList': ParameterData.none(),
   'TheSTeamPostPage': (data) async => ParameterData(
         allParams: {
           'postRef': getParameter<DocumentReference>(data, 'postRef'),
@@ -501,7 +500,6 @@ final parametersBuilderMap =
           'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
-  'TeamListCup': ParameterData.none(),
   'PublicStatsCompare': (data) async => ParameterData(
         allParams: {
           'userRef': getParameter<DocumentReference>(data, 'userRef'),
@@ -550,6 +548,16 @@ final parametersBuilderMap =
         allParams: {
           'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
           'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+        },
+      ),
+  'AddPostEventPage': (data) async => ParameterData(
+        allParams: {
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
+        },
+      ),
+  'ModifTextPost': (data) async => ParameterData(
+        allParams: {
+          'postRef': getParameter<DocumentReference>(data, 'postRef'),
         },
       ),
 };

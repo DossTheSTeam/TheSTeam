@@ -3613,7 +3613,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            'jrfvtpn2' /* - */,
+                                                                            '3k8hp5k9' /* - */,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -3783,7 +3783,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'bbgudfyj' /* - */,
+                                                                        'e7q637vf' /* - */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)

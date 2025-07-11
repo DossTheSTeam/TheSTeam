@@ -3525,360 +3525,457 @@ befor... */
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => InkWell(
+                                      if (_model.showImage == true)
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
                                                 hoverColor: Colors.transparent,
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
-                                                    maxWidth: 1000.00,
-                                                    maxHeight: 1000.00,
-                                                    allowPhoto: true,
-                                                  );
-                                                  if (selectedMedia != null &&
-                                                      selectedMedia.every((m) =>
-                                                          validateFileFormat(
-                                                              m.storagePath,
-                                                              context))) {
-                                                    safeSetState(() => _model
-                                                            .isDataUploading_uploadDataNu8 =
-                                                        true);
-                                                    var selectedUploadedFiles =
-                                                        <FFUploadedFile>[];
-
-                                                    var downloadUrls =
-                                                        <String>[];
-                                                    try {
-                                                      selectedUploadedFiles =
-                                                          selectedMedia
-                                                              .map((m) =>
-                                                                  FFUploadedFile(
-                                                                    name: m
-                                                                        .storagePath
-                                                                        .split(
-                                                                            '/')
-                                                                        .last,
-                                                                    bytes:
-                                                                        m.bytes,
-                                                                    height: m
-                                                                        .dimensions
-                                                                        ?.height,
-                                                                    width: m
-                                                                        .dimensions
-                                                                        ?.width,
-                                                                    blurHash: m
-                                                                        .blurHash,
-                                                                  ))
-                                                              .toList();
-
-                                                      downloadUrls =
-                                                          (await Future.wait(
-                                                        selectedMedia.map(
-                                                          (m) async =>
-                                                              await uploadData(
-                                                                  m.storagePath,
-                                                                  m.bytes),
-                                                        ),
-                                                      ))
-                                                              .where((u) =>
-                                                                  u != null)
-                                                              .map((u) => u!)
-                                                              .toList();
-                                                    } finally {
-                                                      _model.isDataUploading_uploadDataNu8 =
-                                                          false;
-                                                    }
-                                                    if (selectedUploadedFiles
-                                                                .length ==
-                                                            selectedMedia
-                                                                .length &&
-                                                        downloadUrls.length ==
-                                                            selectedMedia
-                                                                .length) {
-                                                      safeSetState(() {
-                                                        _model.uploadedLocalFile_uploadDataNu8 =
-                                                            selectedUploadedFiles
-                                                                .first;
-                                                        _model.uploadedFileUrl_uploadDataNu8 =
-                                                            downloadUrls.first;
-                                                      });
-                                                    } else {
-                                                      safeSetState(() {});
-                                                      return;
-                                                    }
-                                                  }
+                                                  _model.showImage = null;
+                                                  safeSetState(() {});
                                                 },
                                                 child: Icon(
-                                                  Icons.image_search_rounded,
-                                                  color: valueOrDefault<Color>(
-                                                    currentUserDocument?.color1,
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                  ),
+                                                  Icons.close_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
                                                   size: 30.0,
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          if (_model.uploadedFileUrl_uploadDataNu8 !=
-                                                  '')
-                                            Container(
-                                              width: 50.0,
-                                              height: 40.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(6.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(2.0),
-                                                child: ClipRRect(
+                                            if (_model.uploadedFileUrl_uploadDataNu8 !=
+                                                    '')
+                                              Container(
+                                                width: 50.0,
+                                                height: 40.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          4.0),
-                                                  child: Image.network(
-                                                    _model
-                                                        .uploadedFileUrl_uploadDataNu8,
-                                                    width: 300.0,
-                                                    height: 200.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                                          6.0),
                                                 ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            6.0, 0.0, 0.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 15.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await startAudioRecording(
-                                                      context,
-                                                      audioRecorder: _model
-                                                              .audioRecorder ??=
-                                                          AudioRecorder(),
-                                                    );
-                                                  },
-                                                  child: FaIcon(
-                                                    FontAwesomeIcons
-                                                        .microphoneAlt,
-                                                    color:
-                                                        valueOrDefault<Color>(
-                                                      currentUserDocument
-                                                          ?.color1,
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4.0),
+                                                    child: Image.network(
+                                                      _model
+                                                          .uploadedFileUrl_uploadDataNu8,
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
                                                     ),
-                                                    size: 28.0,
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 15.0, 0.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await stopAudioRecording(
-                                                      audioRecorder:
-                                                          _model.audioRecorder,
-                                                      audioName:
-                                                          'recordedFileBytes',
-                                                      onRecordingComplete:
-                                                          (audioFilePath,
-                                                              audioBytes) {
-                                                        _model.audioBossMessage =
-                                                            audioFilePath;
-                                                        _model.recordedFileBytes =
-                                                            audioBytes;
-                                                      },
-                                                    );
-
-                                                    safeSetState(() {});
-                                                  },
-                                                  child: Icon(
-                                                    Icons.stop_circle,
-                                                    color:
-                                                        valueOrDefault<Color>(
-                                                      currentUserDocument
-                                                          ?.color1,
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
-                                                    ),
-                                                    size: 28.0,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
                                           ],
                                         ),
-                                      ),
+                                      if (_model.showVocal == true)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 30.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      _model.showVocal = null;
+                                                      safeSetState(() {});
+                                                    },
+                                                    child: Icon(
+                                                      Icons.close_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      size: 30.0,
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(40.0, 0.0,
+                                                                40.0, 0.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await startAudioRecording(
+                                                            context,
+                                                            audioRecorder: _model
+                                                                    .audioRecorder ??=
+                                                                AudioRecorder(),
+                                                          );
+                                                        },
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .microphoneAlt,
+                                                          color: valueOrDefault<
+                                                              Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
+                                                          size: 28.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await stopAudioRecording(
+                                                          audioRecorder: _model
+                                                              .audioRecorder,
+                                                          audioName:
+                                                              'recordedFileBytes',
+                                                          onRecordingComplete:
+                                                              (audioFilePath,
+                                                                  audioBytes) {
+                                                            _model.audioBossMessage =
+                                                                audioFilePath;
+                                                            _model.recordedFileBytes =
+                                                                audioBytes;
+                                                          },
+                                                        );
+
+                                                        safeSetState(() {});
+                                                      },
+                                                      child: Icon(
+                                                        Icons.stop_circle,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          currentUserDocument
+                                                              ?.color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
+                                                        size: 28.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              if (_model.audioBossMessage !=
+                                                      null &&
+                                                  _model.audioBossMessage != '')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 10.0),
+                                                    child: Container(
+                                                      width: 175.0,
+                                                      height: 45.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child:
+                                                          AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            FlutterFlowAudioPlayer(
+                                                          audio: Audio.network(
+                                                            _model
+                                                                .audioBossMessage!,
+                                                            metas: Metas(
+                                                              title: ' ',
+                                                            ),
+                                                          ),
+                                                          titleTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmall
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                          playbackDurationTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          playbackButtonColor:
+                                                              valueOrDefault<
+                                                                  Color>(
+                                                            currentUserDocument
+                                                                ?.color1,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                          ),
+                                                          activeTrackColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .alternate,
+                                                          inactiveTrackColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .alternate,
+                                                          elevation: 0.0,
+                                                          playInBackground:
+                                                              PlayInBackground
+                                                                  .disabledRestoreOnForeground,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ),
                                     ],
                                   ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 8.0, 0.0),
-                                      child: AuthUserStreamWidget(
-                                        builder: (context) => TextFormField(
-                                          controller:
-                                              _model.commFieldTextController,
-                                          focusNode: _model.commFieldFocusNode,
-                                          autofocus: false,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontStyle,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'dyrvozcw' /* ....................... */,
-                                            ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontStyle,
-                                                    ),
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: valueOrDefault<Color>(
-                                                  currentUserDocument?.color2,
+                                  if (_model.showVocal == true)
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        _model.showText = null;
+                                        safeSetState(() {});
+                                      },
+                                      child: Icon(
+                                        Icons.close_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                  if (_model.showVocal == true)
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 8.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => TextFormField(
+                                            controller:
+                                                _model.commFieldTextController,
+                                            focusNode:
+                                                _model.commFieldFocusNode,
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .labelMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'dyrvozcw' /* ....................... */,
+                                              ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
+                                                      ),
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: valueOrDefault<Color>(
+                                                    currentUserDocument?.color2,
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  width: 2.0,
                                                 ),
-                                                width: 2.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 2.0,
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 2.0,
+                                              errorBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            focusedErrorBorder:
-                                                UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 2.0,
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
                                             ),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.poppins(
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -3890,23 +3987,13 @@ befor... */
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                          validator: _model
-                                              .commFieldTextControllerValidator
-                                              .asValidator(context),
+                                            validator: _model
+                                                .commFieldTextControllerValidator
+                                                .asValidator(context),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 5.0, 0.0),
@@ -3976,6 +4063,154 @@ befor... */
                                       ),
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 15.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  if ((_model.showVocal != true) &&
+                                      (_model.showText != true))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.showText = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: FaIcon(
+                                          FontAwesomeIcons.edit,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    ),
+                                  if (_model.showImage != true)
+                                    AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          final selectedMedia =
+                                              await selectMediaWithSourceBottomSheet(
+                                            context: context,
+                                            maxWidth: 1000.00,
+                                            maxHeight: 1000.00,
+                                            allowPhoto: true,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() => _model
+                                                    .isDataUploading_uploadDataNu8 =
+                                                true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+
+                                              downloadUrls = (await Future.wait(
+                                                selectedMedia.map(
+                                                  (m) async => await uploadData(
+                                                      m.storagePath, m.bytes),
+                                                ),
+                                              ))
+                                                  .where((u) => u != null)
+                                                  .map((u) => u!)
+                                                  .toList();
+                                            } finally {
+                                              _model.isDataUploading_uploadDataNu8 =
+                                                  false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile_uploadDataNu8 =
+                                                    selectedUploadedFiles.first;
+                                                _model.uploadedFileUrl_uploadDataNu8 =
+                                                    downloadUrls.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
+                                          }
+
+                                          _model.showImage = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: Icon(
+                                          Icons.image_search_rounded,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    ),
+                                  if ((_model.showVocal != true) &&
+                                      (_model.showText != true))
+                                    AuthUserStreamWidget(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.showVocal = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: FaIcon(
+                                          FontAwesomeIcons.microphoneAlt,
+                                          color: valueOrDefault<Color>(
+                                            currentUserDocument?.color1,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                          size: 30.0,
+                                        ),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),

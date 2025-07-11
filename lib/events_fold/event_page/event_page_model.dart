@@ -15,10 +15,14 @@ class EventPageModel extends FlutterFlowModel<EventPageWidget> {
 
   bool? showAudio = false;
 
+  String? showMecaBet;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CartRecord? cartRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CartRecord? cartMecaRef;
   AudioRecorder? audioRecorder;
   String? audio;
   FFUploadedFile recordedFileBytes =

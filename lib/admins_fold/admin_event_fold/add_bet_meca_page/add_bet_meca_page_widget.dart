@@ -1018,222 +1018,294 @@ et les cot... */
                                           );
                                         },
                                       ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 20.0, 0.0),
-                                            child: Container(
-                                              width: 70.0,
-                                              height: 30.0,
-                                              decoration: BoxDecoration(
-                                                color:
+                                      StreamBuilder<List<TeamsRecord>>(
+                                        stream: queryTeamsRecord(
+                                          queryBuilder: (teamsRecord) =>
+                                              teamsRecord
+                                                  .where(
+                                                    'value',
+                                                    isEqualTo:
+                                                        _model.dropTeam1Value,
+                                                  )
+                                                  .where(
+                                                    'league_value',
+                                                    isEqualTo:
+                                                        addBetMecaPageEventsRecord
+                                                            .leagueValue,
+                                                  )
+                                                  .where(
+                                                    'sport_value',
+                                                    isEqualTo:
+                                                        addBetMecaPageEventsRecord
+                                                            .sportValue,
+                                                  ),
+                                          singleRecord: true,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                        .accent4,
+                                                  ),
+                                                ),
                                               ),
-                                              child: Padding(
+                                            );
+                                          }
+                                          List<TeamsRecord> rowTeamsRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final rowTeamsRecord =
+                                              rowTeamsRecordList.isNotEmpty
+                                                  ? rowTeamsRecordList.first
+                                                  : null;
+
+                                          return Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .coteDomFieldTextController1,
-                                                  focusNode: _model
-                                                      .coteDomFieldFocusNode1,
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'uzgkmcix' /* 00.00 */,
-                                                    ),
-                                                    hintStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                        0.0, 0.0, 20.0, 0.0),
+                                                child: Container(
+                                                  width: 70.0,
+                                                  height: 30.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 0.0,
+                                                                8.0, 0.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .coteDomFieldTextController1,
+                                                      focusNode: _model
+                                                          .coteDomFieldFocusNode1,
+                                                      autofocus: false,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'uzgkmcix' /* 00.00 */,
+                                                        ),
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .poppins(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
+                                                                  fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .fontStyle,
-                                                            ),
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                                ),
+                                                        enabledBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        errorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .error,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .error,
-                                                        width: 2.0,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
                                                       ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      keyboardType:
+                                                          const TextInputType
+                                                              .numberWithOptions(
+                                                              decimal: true),
+                                                      validator: _model
+                                                          .coteDomFieldTextController1Validator
+                                                          .asValidator(context),
                                                     ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  textAlign: TextAlign.center,
-                                                  keyboardType:
-                                                      const TextInputType
-                                                          .numberWithOptions(
-                                                          decimal: true),
-                                                  validator: _model
-                                                      .coteDomFieldTextController1Validator
-                                                      .asValidator(context),
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                          if (_model.bet1Ref?.reference == null)
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                var betsRecordReference =
-                                                    BetsRecord.createDoc(
-                                                        addBetMecaPageEventsRecord
-                                                            .reference);
-                                                await betsRecordReference.set({
-                                                  ...createBetsRecordData(
-                                                    choice:
-                                                        _model.dropTeam1Value,
-                                                    odd: double.tryParse(_model
-                                                        .coteDomFieldTextController1
-                                                        .text),
-                                                    statut: false,
-                                                    first: 'first',
-                                                  ),
-                                                  ...mapToFirestore(
-                                                    {
-                                                      'created_time': FieldValue
-                                                          .serverTimestamp(),
-                                                    },
-                                                  ),
-                                                });
-                                                _model.bet1Ref = BetsRecord
-                                                    .getDocumentFromData({
-                                                  ...createBetsRecordData(
-                                                    choice:
-                                                        _model.dropTeam1Value,
-                                                    odd: double.tryParse(_model
-                                                        .coteDomFieldTextController1
-                                                        .text),
-                                                    statut: false,
-                                                    first: 'first',
-                                                  ),
-                                                  ...mapToFirestore(
-                                                    {
-                                                      'created_time':
-                                                          DateTime.now(),
-                                                    },
-                                                  ),
-                                                }, betsRecordReference);
+                                              if (_model.bet1Ref?.reference ==
+                                                  null)
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    var betsRecordReference =
+                                                        BetsRecord.createDoc(
+                                                            addBetMecaPageEventsRecord
+                                                                .reference);
+                                                    await betsRecordReference
+                                                        .set({
+                                                      ...createBetsRecordData(
+                                                        choice: _model
+                                                            .dropTeam1Value,
+                                                        odd: double.tryParse(_model
+                                                            .coteDomFieldTextController1
+                                                            .text),
+                                                        statut: false,
+                                                        first: 'first',
+                                                      ),
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'created_time': FieldValue
+                                                              .serverTimestamp(),
+                                                        },
+                                                      ),
+                                                    });
+                                                    _model.bet1Ref = BetsRecord
+                                                        .getDocumentFromData({
+                                                      ...createBetsRecordData(
+                                                        choice: _model
+                                                            .dropTeam1Value,
+                                                        odd: double.tryParse(_model
+                                                            .coteDomFieldTextController1
+                                                            .text),
+                                                        statut: false,
+                                                        first: 'first',
+                                                      ),
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'created_time':
+                                                              DateTime.now(),
+                                                        },
+                                                      ),
+                                                    }, betsRecordReference);
 
-                                                safeSetState(() {});
-                                              },
-                                              child: Icon(
-                                                Icons.send_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                                    await widget.eventMecaRef!
+                                                        .update(
+                                                            createEventsRecordData(
+                                                      teamdomRef: rowTeamsRecord
+                                                          ?.reference,
+                                                    ));
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.send_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                            ),
-                                        ],
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                            ],
+                                          );
+                                        },
                                       ),
                                     ],
                                   ),

@@ -1366,7 +1366,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                 queryBuilder: (teamPostsRecord) =>
                                     teamPostsRecord.orderBy('created_time',
                                         descending: true),
-                                limit: 20,
+                                limit: 50,
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
@@ -1625,151 +1625,186 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                 MainAxisAlignment
                                                                     .spaceBetween,
                                                             children: [
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .end,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            89.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          235.0,
-                                                                      height:
-                                                                          50.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                      ),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              PostPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'postRef': serializeParam(
-                                                                                  columnPostsPostsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.scale,
-                                                                                  alignment: Alignment.bottomCenter,
-                                                                                  duration: Duration(milliseconds: 400),
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          },
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          75.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      SingleChildScrollView(
+                                                                    scrollDirection:
+                                                                        Axis.horizontal,
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              3.0,
+                                                                              3.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.center,
-                                                                            children: [
-                                                                              Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
-                                                                                child: InkWell(
-                                                                                  splashColor: Colors.transparent,
-                                                                                  focusColor: Colors.transparent,
-                                                                                  hoverColor: Colors.transparent,
-                                                                                  highlightColor: Colors.transparent,
-                                                                                  onTap: () async {
-                                                                                    context.pushNamed(
-                                                                                      PostPageWidget.routeName,
-                                                                                      queryParameters: {
-                                                                                        'postRef': serializeParam(
-                                                                                          columnPostsPostsRecord.reference,
-                                                                                          ParamType.DocumentReference,
-                                                                                        ),
-                                                                                      }.withoutNulls,
-                                                                                      extra: <String, dynamic>{
-                                                                                        kTransitionInfoKey: TransitionInfo(
-                                                                                          hasTransition: true,
-                                                                                          transitionType: PageTransitionType.scale,
-                                                                                          alignment: Alignment.bottomCenter,
-                                                                                          duration: Duration(milliseconds: 400),
-                                                                                        ),
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              context.pushNamed(
+                                                                                PostPageWidget.routeName,
+                                                                                queryParameters: {
+                                                                                  'postRef': serializeParam(
+                                                                                    columnPostsPostsRecord.reference,
+                                                                                    ParamType.DocumentReference,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                    hasTransition: true,
+                                                                                    transitionType: PageTransitionType.scale,
+                                                                                    alignment: Alignment.bottomCenter,
+                                                                                    duration: Duration(milliseconds: 400),
+                                                                                  ),
+                                                                                },
+                                                                              );
+                                                                            },
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                Align(
+                                                                                  alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          PostPageWidget.routeName,
+                                                                                          queryParameters: {
+                                                                                            'postRef': serializeParam(
+                                                                                              columnPostsPostsRecord.reference,
+                                                                                              ParamType.DocumentReference,
+                                                                                            ),
+                                                                                          }.withoutNulls,
+                                                                                          extra: <String, dynamic>{
+                                                                                            kTransitionInfoKey: TransitionInfo(
+                                                                                              hasTransition: true,
+                                                                                              transitionType: PageTransitionType.scale,
+                                                                                              alignment: Alignment.bottomCenter,
+                                                                                              duration: Duration(milliseconds: 400),
+                                                                                            ),
+                                                                                          },
+                                                                                        );
                                                                                       },
-                                                                                    );
-                                                                                  },
-                                                                                  child: Text(
-                                                                                    columnPostsPostsRecord.title,
-                                                                                    textAlign: TextAlign.start,
-                                                                                    maxLines: 2,
-                                                                                    style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                          ),
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                        ),
+                                                                                      child: Text(
+                                                                                        columnPostsPostsRecord.title,
+                                                                                        textAlign: TextAlign.start,
+                                                                                        maxLines: 2,
+                                                                                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                              font: GoogleFonts.poppins(
+                                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                              ),
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
                                                                                   ),
                                                                                 ),
-                                                                              ),
-                                                                            ],
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         ),
-                                                                      ),
+                                                                      ],
                                                                     ),
                                                                   ),
-                                                                ],
+                                                                ),
                                                               ),
-                                                              Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        5.0,
-                                                                        10.0,
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.0,
                                                                         0.0),
-                                                                child:
-                                                                    SingleChildScrollView(
-                                                                  scrollDirection:
-                                                                      Axis.horizontal,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          90.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
                                                                     mainAxisAlignment:
                                                                         MainAxisAlignment
-                                                                            .spaceBetween,
+                                                                            .start,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .end,
                                                                     children: [
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          if (columnPostsPostsRecord.description != '')
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              child: Icon(
+                                                                                Icons.text_fields_outlined,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 20.0,
+                                                                              ),
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.audio != '')
+                                                                            Icon(
+                                                                              Icons.hearing_rounded,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 20.0,
+                                                                            ),
+                                                                          if (columnPostsPostsRecord.youtubeVideo != '')
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                              child: FaIcon(
+                                                                                FontAwesomeIcons.youtube,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 20.0,
+                                                                              ),
+                                                                            ),
+                                                                        ],
+                                                                      ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
+                                                                            5.0,
                                                                             0.0,
                                                                             5.0,
                                                                             0.0),
@@ -1778,38 +1813,6 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  if (columnPostsPostsRecord.description != '')
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                      child: Icon(
-                                                                                        Icons.text_fields_outlined,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 20.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  if (columnPostsPostsRecord.audio != '')
-                                                                                    Icon(
-                                                                                      Icons.hearing_rounded,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      size: 20.0,
-                                                                                    ),
-                                                                                  if (columnPostsPostsRecord.youtubeVideo != '')
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                      child: FaIcon(
-                                                                                        FontAwesomeIcons.youtube,
-                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                        size: 20.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Icon(

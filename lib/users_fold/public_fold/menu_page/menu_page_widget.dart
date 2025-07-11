@@ -4408,7 +4408,7 @@ esportivas */
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          TeamListWidget
+                                                          TeamsListWidget
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
@@ -4418,12 +4418,10 @@ esportivas */
                                                                   true,
                                                               transitionType:
                                                                   PageTransitionType
-                                                                      .scale,
-                                                              alignment: Alignment
-                                                                  .bottomCenter,
+                                                                      .bottomToTop,
                                                               duration: Duration(
                                                                   milliseconds:
-                                                                      600),
+                                                                      400),
                                                             ),
                                                           },
                                                         );
@@ -4708,7 +4706,7 @@ esportivas */
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  TeamListWidget
+                                                                  TeamsListWidget
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
@@ -4718,13 +4716,10 @@ esportivas */
                                                                           true,
                                                                       transitionType:
                                                                           PageTransitionType
-                                                                              .scale,
-                                                                      alignment:
-                                                                          Alignment
-                                                                              .bottomCenter,
+                                                                              .bottomToTop,
                                                                       duration: Duration(
                                                                           milliseconds:
-                                                                              600),
+                                                                              400),
                                                                     ),
                                                                   },
                                                                 );
@@ -4751,7 +4746,7 @@ esportivas */
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
-                                                                        30.0,
+                                                                        20.0,
                                                                         0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -4787,60 +4782,6 @@ esportivas */
                                                               child: Icon(
                                                                 Icons
                                                                     .favorite_rounded,
-                                                                color:
-                                                                    valueOrDefault<
-                                                                        Color>(
-                                                                  currentUserDocument
-                                                                      ?.color1,
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
-                                                                size: 30.0,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        20.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context
-                                                                    .pushNamed(
-                                                                  LiguesRankPageWidget
-                                                                      .routeName,
-                                                                  extra: <String,
-                                                                      dynamic>{
-                                                                    kTransitionInfoKey:
-                                                                        TransitionInfo(
-                                                                      hasTransition:
-                                                                          true,
-                                                                      transitionType:
-                                                                          PageTransitionType
-                                                                              .bottomToTop,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              400),
-                                                                    ),
-                                                                  },
-                                                                );
-                                                              },
-                                                              child: Icon(
-                                                                Icons.bar_chart,
                                                                 color:
                                                                     valueOrDefault<
                                                                         Color>(
@@ -6080,6 +6021,8 @@ esportivas */
                                                   Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -6348,7 +6291,7 @@ esportivas */
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    12.0,
+                                                                    5.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
@@ -6501,6 +6444,8 @@ esportivas */
                                                   Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -6811,31 +6756,28 @@ esportivas */
                                                             maxLines: 1,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .titleMedium
+                                                                .labelLarge
                                                                 .override(
                                                                   font: GoogleFonts
-                                                                      .poppins(
+                                                                      .montserrat(
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleMedium
+                                                                        .labelLarge
                                                                         .fontWeight,
                                                                     fontStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleMedium
+                                                                        .labelLarge
                                                                         .fontStyle,
                                                                   ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium
+                                                                      .labelLarge
                                                                       .fontWeight,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium
+                                                                      .labelLarge
                                                                       .fontStyle,
                                                                 ),
                                                           ),
@@ -7450,7 +7392,7 @@ esportivas */
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          TeamListWidget
+                                                          ETeamRankPageWidget
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
@@ -7460,12 +7402,10 @@ esportivas */
                                                                   true,
                                                               transitionType:
                                                                   PageTransitionType
-                                                                      .scale,
-                                                              alignment: Alignment
-                                                                  .bottomCenter,
+                                                                      .bottomToTop,
                                                               duration: Duration(
                                                                   milliseconds:
-                                                                      600),
+                                                                      400),
                                                             ),
                                                           },
                                                         );
@@ -7538,7 +7478,7 @@ esportivas */
                                                               onTap: () async {
                                                                 context
                                                                     .pushNamed(
-                                                                  TeamListWidget
+                                                                  ETeamRankPageWidget
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
@@ -7548,13 +7488,10 @@ esportivas */
                                                                           true,
                                                                       transitionType:
                                                                           PageTransitionType
-                                                                              .scale,
-                                                                      alignment:
-                                                                          Alignment
-                                                                              .bottomCenter,
+                                                                              .bottomToTop,
                                                                       duration: Duration(
                                                                           milliseconds:
-                                                                              600),
+                                                                              400),
                                                                     ),
                                                                   },
                                                                 );
@@ -7581,7 +7518,7 @@ esportivas */
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
-                                                                        30.0,
+                                                                        20.0,
                                                                         0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -7630,61 +7567,6 @@ esportivas */
                                                               ),
                                                             ),
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        21.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context
-                                                                    .pushNamed(
-                                                                  ETeamRankPageWidget
-                                                                      .routeName,
-                                                                  extra: <String,
-                                                                      dynamic>{
-                                                                    kTransitionInfoKey:
-                                                                        TransitionInfo(
-                                                                      hasTransition:
-                                                                          true,
-                                                                      transitionType:
-                                                                          PageTransitionType
-                                                                              .bottomToTop,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              400),
-                                                                    ),
-                                                                  },
-                                                                );
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .bar_chart_outlined,
-                                                                color:
-                                                                    valueOrDefault<
-                                                                        Color>(
-                                                                  currentUserDocument
-                                                                      ?.color1,
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
-                                                                size: 30.0,
-                                                              ),
-                                                            ),
-                                                          ),
                                                         ],
                                                       ),
                                                     ],
@@ -7718,7 +7600,7 @@ esportivas */
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          ETeamRankPageWidget
+                                                          ListEventsWidget
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
@@ -7728,10 +7610,12 @@ esportivas */
                                                                   true,
                                                               transitionType:
                                                                   PageTransitionType
-                                                                      .bottomToTop,
+                                                                      .scale,
+                                                              alignment: Alignment
+                                                                  .bottomCenter,
                                                               duration: Duration(
                                                                   milliseconds:
-                                                                      400),
+                                                                      600),
                                                             ),
                                                           },
                                                         );

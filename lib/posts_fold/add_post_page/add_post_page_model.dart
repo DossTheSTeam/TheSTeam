@@ -7,6 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 
 class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
+  ///  Local state fields for this page.
+
+  bool? showText1;
+
+  bool? showText2;
+
+  bool? showImage1;
+
+  bool? showImage2;
+
+  bool? showAudio;
+
+  bool? showVideo;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropAdvice widget.
@@ -33,6 +47,15 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
+  bool isDataUploading_uploadData8yc = false;
+  FFUploadedFile uploadedLocalFile_uploadData8yc =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl_uploadData8yc = '';
+
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postRef;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
@@ -51,5 +74,8 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
 
     textFieldFocusNode2?.dispose();
     textController3?.dispose();
+
+    textFieldFocusNode3?.dispose();
+    textController4?.dispose();
   }
 }

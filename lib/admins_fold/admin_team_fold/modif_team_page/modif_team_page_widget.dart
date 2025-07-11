@@ -1636,7 +1636,8 @@ photo de profil */
                                         options: List<String>.from([
                                           'nba',
                                           'nations.basket',
-                                          'euro.league'
+                                          'euro.league',
+                                          'other.basket'
                                         ]),
                                         optionLabels: [
                                           FFLocalizations.of(context).getText(
@@ -1647,7 +1648,8 @@ photo de profil */
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'l1cpip3b' /* Euro League */,
-                                          )
+                                          ),
+                                          ''
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueBasketValue = val),
@@ -1855,7 +1857,7 @@ photo de profil */
                                             'y13iitdw' /* Gazon Elite H */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'khg0fsnk' /* Gazon Elite H */,
+                                            'enar0wl2' /* Gazon Elite H */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             '76ntowz9' /* Salle Elite H */,
@@ -2403,15 +2405,15 @@ photo de profil */
                                               optionLabels: [
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'zzaczw7m' /* Champions League */,
+                                                  'tdmmfa72' /* Champions League */,
                                                 ),
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'fldfp0ba' /* Europa League */,
+                                                  'igh1q4v8' /* Europa League */,
                                                 ),
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'sakg2tf1' /* Conference League */,
+                                                  's3ax6uht' /* Conference League */,
                                                 )
                                               ],
                                               onChanged: (val) => safeSetState(

@@ -558,7 +558,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '7694nrxw' /* Equipes */,
+                              'fwarqdpz' /* Equipes */,
                             ),
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)

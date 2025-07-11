@@ -774,21 +774,16 @@ class _LeaguEventsListAdd3BetWidgetState
                                 width: double.infinity,
                                 height: 200.0,
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: Image.asset(
-                                      'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                    ).image,
-                                  ),
                                   gradient: LinearGradient(
                                     colors: [
+                                      FlutterFlowTheme.of(context).tertiary,
                                       FlutterFlowTheme.of(context).tertiary,
                                       FlutterFlowTheme.of(context)
                                           .primaryBackground
                                     ],
-                                    stops: [0.0, 1.0],
-                                    begin: AlignmentDirectional(0.0, -1.0),
-                                    end: AlignmentDirectional(0, 1.0),
+                                    stops: [0.0, 0.5, 1.0],
+                                    begin: AlignmentDirectional(1.0, 0.0),
+                                    end: AlignmentDirectional(-1.0, 0),
                                   ),
                                 ),
                               ),
@@ -803,13 +798,12 @@ class _LeaguEventsListAdd3BetWidgetState
                                   gradient: LinearGradient(
                                     colors: [
                                       FlutterFlowTheme.of(context).tertiary,
-                                      FlutterFlowTheme.of(context).tertiary,
                                       FlutterFlowTheme.of(context)
                                           .primaryBackground
                                     ],
-                                    stops: [0.0, 0.5, 1.0],
-                                    begin: AlignmentDirectional(1.0, 0.0),
-                                    end: AlignmentDirectional(-1.0, 0),
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
                                   ),
                                 ),
                               ),

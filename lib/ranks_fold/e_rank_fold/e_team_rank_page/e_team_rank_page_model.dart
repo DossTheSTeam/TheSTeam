@@ -15,9 +15,6 @@ class ETeamRankPageModel extends FlutterFlowModel<ETeamRankPageWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for DropESport widget.
-  String? dropESportValue;
-  FormFieldController<String>? dropESportValueController;
   // State field(s) for DropLigue widget.
   String? dropLigueValue;
   FormFieldController<String>? dropLigueValueController;

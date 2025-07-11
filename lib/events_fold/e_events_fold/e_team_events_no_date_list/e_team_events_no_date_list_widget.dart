@@ -86,7 +86,7 @@ class _ETeamEventsNoDateListWidgetState
               body: Align(
                 alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 50.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -94,7 +94,7 @@ class _ETeamEventsNoDateListWidgetState
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 0.0),
+                              10.0, 30.0, 0.0, 0.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
@@ -1281,7 +1281,7 @@ noch festgelegt */
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
+                                      10.0, 5.0, 10.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -2171,7 +2171,7 @@ verfügbar  */
                               ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
+                                  0.0, 10.0, 0.0, 50.0),
                               child: StreamBuilder<List<TeamEventsRecord>>(
                                 stream: queryTeamEventsRecord(
                                   parent: widget.teamRef,
@@ -2208,559 +2208,576 @@ verfügbar  */
                                       return Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 5.0, 0.0),
-                                            child: StreamBuilder<EventsRecord>(
-                                              stream: EventsRecord.getDocument(
-                                                  columnTeamEventsTeamEventsRecord
-                                                      .events!),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        valueColor:
-                                                            AlwaysStoppedAnimation<
-                                                                Color>(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
-                                                        ),
+                                          StreamBuilder<EventsRecord>(
+                                            stream: EventsRecord.getDocument(
+                                                columnTeamEventsTeamEventsRecord
+                                                    .events!),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4,
                                                       ),
                                                     ),
-                                                  );
-                                                }
+                                                  ),
+                                                );
+                                              }
 
-                                                final columnEventEventsRecord =
-                                                    snapshot.data!;
+                                              final columnEventEventsRecord =
+                                                  snapshot.data!;
 
-                                                return Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      StreamBuilder<
+                                                          TeamsRecord>(
+                                                        stream: TeamsRecord
+                                                            .getDocument(
+                                                                columnEventEventsRecord
+                                                                    .teamdomRef!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          final contDomTeamsRecord =
+                                                              snapshot.data!;
+
+                                                          return Container(
+                                                            width: 160.0,
+                                                            height: 70.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Container(
+                                                                    width: 45.0,
+                                                                    height:
+                                                                        35.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        contDomTeamsRecord
+                                                                            .logo,
+                                                                        width:
+                                                                            300.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .fitHeight,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      contDomTeamsRecord
+                                                                          .name,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      maxLines:
+                                                                          2,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                      if (columnEventEventsRecord
+                                                              .esport ==
+                                                          true)
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            if (valueOrDefault<
+                                                                bool>(
+                                                              eTeamEventsNoDateListTeamsRecord
+                                                                      .boss ==
+                                                                  currentUserReference,
+                                                              true,
+                                                            ))
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      context
+                                                                          .pushNamed(
+                                                                        ListMessagesBossEventWidget
+                                                                            .routeName,
+                                                                        queryParameters:
+                                                                            {
+                                                                          'eventRef':
+                                                                              serializeParam(
+                                                                            columnEventEventsRecord.reference,
+                                                                            ParamType.DocumentReference,
+                                                                          ),
+                                                                          'eTeamRef':
+                                                                              serializeParam(
+                                                                            columnEventEventsRecord.teamdomRef,
+                                                                            ParamType.DocumentReference,
+                                                                          ),
+                                                                        }.withoutNulls,
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.bottomToTop,
+                                                                            duration:
+                                                                                Duration(milliseconds: 400),
+                                                                          ),
+                                                                        },
+                                                                      );
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .comment_rounded,
+                                                                      color: valueOrDefault<
+                                                                          Color>(
+                                                                        eTeamEventsNoDateListTeamsRecord
+                                                                            .color1,
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                      size:
+                                                                          30.0,
+                                                                    ),
+                                                                  ),
+                                                                  if ((columnEventEventsRecord
+                                                                              .domReady ==
+                                                                          false) &&
+                                                                      (widget.teamRef ==
+                                                                          columnEventEventsRecord
+                                                                              .teamdomRef))
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            AddPlayersEventPageWidget.routeName,
+                                                                            queryParameters:
+                                                                                {
+                                                                              'eventRef': serializeParam(
+                                                                                columnEventEventsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                              'myETeamRef': serializeParam(
+                                                                                widget.teamRef,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                            extra: <String,
+                                                                                dynamic>{
+                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                hasTransition: true,
+                                                                                transitionType: PageTransitionType.bottomToTop,
+                                                                                duration: Duration(milliseconds: 400),
+                                                                              ),
+                                                                            },
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .location_history_outlined,
+                                                                          color:
+                                                                              valueOrDefault<Color>(
+                                                                            eTeamEventsNoDateListTeamsRecord.color1,
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  if ((columnEventEventsRecord
+                                                                              .extReady ==
+                                                                          false) &&
+                                                                      (widget.teamRef ==
+                                                                          columnEventEventsRecord
+                                                                              .teamextRef))
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            AddPlayersEventPageWidget.routeName,
+                                                                            queryParameters:
+                                                                                {
+                                                                              'eventRef': serializeParam(
+                                                                                columnEventEventsRecord.reference,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                              'myETeamRef': serializeParam(
+                                                                                widget.teamRef,
+                                                                                ParamType.DocumentReference,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                            extra: <String,
+                                                                                dynamic>{
+                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                hasTransition: true,
+                                                                                transitionType: PageTransitionType.bottomToTop,
+                                                                                duration: Duration(milliseconds: 400),
+                                                                              ),
+                                                                            },
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .location_history_outlined,
+                                                                          color:
+                                                                              eTeamEventsNoDateListTeamsRecord.color1,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                ],
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      StreamBuilder<
+                                                          TeamsRecord>(
+                                                        stream: TeamsRecord
+                                                            .getDocument(
+                                                                columnEventEventsRecord
+                                                                    .teamextRef!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent4,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          final contExtTeamsRecord =
+                                                              snapshot.data!;
+
+                                                          return Container(
+                                                            width: 160.0,
+                                                            height: 70.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Container(
+                                                                    width: 45.0,
+                                                                    height:
+                                                                        35.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        contExtTeamsRecord
+                                                                            .logo,
+                                                                        width:
+                                                                            300.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .fitHeight,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      contExtTeamsRecord
+                                                                          .name,
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      maxLines:
+                                                                          2,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.poppins(
+                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  if (columnEventEventsRecord
+                                                          .seenScore ==
+                                                      true)
                                                     Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
-                                                              .spaceBetween,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
+                                                              .spaceAround,
                                                       children: [
-                                                        StreamBuilder<
-                                                            TeamsRecord>(
-                                                          stream: TeamsRecord
-                                                              .getDocument(
-                                                                  columnEventEventsRecord
-                                                                      .teamdomRef!),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                    ),
-                                                                  ),
+                                                        Text(
+                                                          columnEventEventsRecord
+                                                              .scoreDom
+                                                              .toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
-                                                              );
-                                                            }
-
-                                                            final contDomTeamsRecord =
-                                                                snapshot.data!;
-
-                                                            return Container(
-                                                              width: 160.0,
-                                                              height: 70.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
-                                                                  children: [
-                                                                    Container(
-                                                                      width:
-                                                                          45.0,
-                                                                      height:
-                                                                          35.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(0.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          contDomTeamsRecord
-                                                                              .logo,
-                                                                          width:
-                                                                              300.0,
-                                                                          height:
-                                                                              200.0,
-                                                                          fit: BoxFit
-                                                                              .fitHeight,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        contDomTeamsRecord
-                                                                            .name,
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        maxLines:
-                                                                            2,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
                                                         ),
-                                                        if (columnEventEventsRecord
-                                                                .esport ==
-                                                            true)
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              if (valueOrDefault<
-                                                                  bool>(
-                                                                eTeamEventsNoDateListTeamsRecord
-                                                                        .boss ==
-                                                                    currentUserReference,
-                                                                true,
-                                                              ))
-                                                                Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          ListMessagesBossEventWidget
-                                                                              .routeName,
-                                                                          queryParameters:
-                                                                              {
-                                                                            'eventRef':
-                                                                                serializeParam(
-                                                                              columnEventEventsRecord.reference,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                            'eTeamRef':
-                                                                                serializeParam(
-                                                                              columnEventEventsRecord.teamdomRef,
-                                                                              ParamType.DocumentReference,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.bottomToTop,
-                                                                              duration: Duration(milliseconds: 400),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .comment_rounded,
-                                                                        color: valueOrDefault<
-                                                                            Color>(
-                                                                          eTeamEventsNoDateListTeamsRecord
-                                                                              .color1,
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primaryText,
-                                                                        ),
-                                                                        size:
-                                                                            30.0,
-                                                                      ),
-                                                                    ),
-                                                                    if ((columnEventEventsRecord.domReady ==
-                                                                            false) &&
-                                                                        (widget.teamRef ==
-                                                                            columnEventEventsRecord.teamdomRef))
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              AddPlayersEventPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'eventRef': serializeParam(
-                                                                                  columnEventEventsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                                'myETeamRef': serializeParam(
-                                                                                  widget.teamRef,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.bottomToTop,
-                                                                                  duration: Duration(milliseconds: 400),
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.location_history_outlined,
-                                                                            color:
-                                                                                valueOrDefault<Color>(
-                                                                              eTeamEventsNoDateListTeamsRecord.color1,
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                            ),
-                                                                            size:
-                                                                                30.0,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    if ((columnEventEventsRecord.extReady ==
-                                                                            false) &&
-                                                                        (widget.teamRef ==
-                                                                            columnEventEventsRecord.teamextRef))
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              AddPlayersEventPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'eventRef': serializeParam(
-                                                                                  columnEventEventsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                                'myETeamRef': serializeParam(
-                                                                                  widget.teamRef,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.bottomToTop,
-                                                                                  duration: Duration(milliseconds: 400),
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.location_history_outlined,
-                                                                            color:
-                                                                                eTeamEventsNoDateListTeamsRecord.color1,
-                                                                            size:
-                                                                                30.0,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                  ],
+                                                        Text(
+                                                          columnEventEventsRecord
+                                                              .scoreExt
+                                                              .toString(),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
                                                                 ),
-                                                            ],
-                                                          ),
-                                                        StreamBuilder<
-                                                            TeamsRecord>(
-                                                          stream: TeamsRecord
-                                                              .getDocument(
-                                                                  columnEventEventsRecord
-                                                                      .teamextRef!),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-
-                                                            final contExtTeamsRecord =
-                                                                snapshot.data!;
-
-                                                            return Container(
-                                                              width: 160.0,
-                                                              height: 70.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
+                                                                    .labelMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
                                                               ),
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
-                                                                  children: [
-                                                                    Container(
-                                                                      width:
-                                                                          45.0,
-                                                                      height:
-                                                                          35.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(0.0),
-                                                                        child: Image
-                                                                            .network(
-                                                                          contExtTeamsRecord
-                                                                              .logo,
-                                                                          width:
-                                                                              300.0,
-                                                                          height:
-                                                                              200.0,
-                                                                          fit: BoxFit
-                                                                              .fitHeight,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        contExtTeamsRecord
-                                                                            .name,
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        maxLines:
-                                                                            2,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
                                                         ),
                                                       ],
                                                     ),
-                                                    if (columnEventEventsRecord
-                                                            .seenScore ==
-                                                        true)
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceAround,
-                                                        children: [
-                                                          Text(
-                                                            columnEventEventsRecord
-                                                                .scoreDom
-                                                                .toString(),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            columnEventEventsRecord
-                                                                .scoreExt
-                                                                .toString(),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color:
-                                                          eTeamEventsNoDateListTeamsRecord
-                                                              .color2,
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
+                                                  Divider(
+                                                    thickness: 1.0,
+                                                    color:
+                                                        eTeamEventsNoDateListTeamsRecord
+                                                            .color2,
+                                                  ),
+                                                ],
+                                              );
+                                            },
                                           ),
                                         ],
                                       );

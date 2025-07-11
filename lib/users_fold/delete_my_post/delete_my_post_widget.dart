@@ -3,6 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'delete_my_post_model.dart';
@@ -411,76 +413,190 @@ Löschvorgan... */
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 100.0, 0.0, 100.0),
-                            child: StreamBuilder<List<TeamPostsRecord>>(
-                              stream: queryTeamPostsRecord(
-                                queryBuilder: (teamPostsRecord) =>
-                                    teamPostsRecord.where(
-                                  'posts',
-                                  isEqualTo: containerMyPostsRecord.posts,
-                                ),
-                                singleRecord: true,
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).accent4,
-                                        ),
+                          StreamBuilder<PostsRecord>(
+                            stream: PostsRecord.getDocument(
+                                containerMyPostsRecord.posts!),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).accent4,
                                       ),
                                     ),
-                                  );
-                                }
-                                List<TeamPostsRecord> rowTeamPostsRecordList =
-                                    snapshot.data!;
-                                // Return an empty Container when the item does not exist.
-                                if (snapshot.data!.isEmpty) {
-                                  return Container();
-                                }
-                                final rowTeamPostsRecord =
-                                    rowTeamPostsRecordList.isNotEmpty
-                                        ? rowTeamPostsRecordList.first
-                                        : null;
-
-                                return Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await rowTeamPostsRecord!.reference
-                                              .delete();
-                                          await widget.myPostRef!.delete();
-                                          await containerMyPostsRecord.posts!
-                                              .delete();
-                                          Navigator.pop(context);
-                                        },
-                                        child: Icon(
-                                          Icons.delete_forever_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          size: 50.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 );
-                              },
-                            ),
+                              }
+
+                              final columnPostsRecord = snapshot.data!;
+
+                              return Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  if (columnPostsRecord.teamRef != null)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 100.0, 0.0, 100.0),
+                                      child:
+                                          StreamBuilder<List<TeamPostsRecord>>(
+                                        stream: queryTeamPostsRecord(
+                                          queryBuilder: (teamPostsRecord) =>
+                                              teamPostsRecord.where(
+                                            'posts',
+                                            isEqualTo:
+                                                containerMyPostsRecord.posts,
+                                          ),
+                                          singleRecord: true,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent4,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<TeamPostsRecord>
+                                              rowTeamPostsRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final rowTeamPostsRecord =
+                                              rowTeamPostsRecordList.isNotEmpty
+                                                  ? rowTeamPostsRecordList.first
+                                                  : null;
+
+                                          return Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await rowTeamPostsRecord!
+                                                        .reference
+                                                        .delete();
+                                                    await widget.myPostRef!
+                                                        .delete();
+                                                    await actions
+                                                        .deletePostMessages(
+                                                      columnPostsRecord
+                                                          .reference,
+                                                    );
+                                                    await containerMyPostsRecord
+                                                        .posts!
+                                                        .delete();
+                                                    Navigator.pop(context);
+
+                                                    context.pushNamed(
+                                                        ListPostsWidget
+                                                            .routeName);
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .delete_forever_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    size: 50.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  if (columnPostsRecord.eventRef != null)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 100.0, 0.0, 100.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await widget.myPostRef!
+                                                    .delete();
+
+                                                await columnPostsRecord
+                                                    .eventRef!
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'posts': FieldValue
+                                                          .arrayRemove([
+                                                        columnPostsRecord
+                                                            .reference
+                                                      ]),
+                                                    },
+                                                  ),
+                                                });
+                                                await actions
+                                                    .deletePostMessages(
+                                                  columnPostsRecord.reference,
+                                                );
+                                                await containerMyPostsRecord
+                                                    .posts!
+                                                    .delete();
+                                                Navigator.pop(context);
+
+                                                context.pushNamed(
+                                                    ListPostsWidget.routeName);
+                                              },
+                                              child: Icon(
+                                                Icons.delete_forever_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                ],
+                              );
+                            },
                           ),
                         ],
                       ),

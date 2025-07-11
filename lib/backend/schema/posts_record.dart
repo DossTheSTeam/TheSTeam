@@ -151,6 +151,21 @@ class PostsRecord extends FirestoreRecord {
   String get youtubeVideo => _youtubeVideo ?? '';
   bool hasYoutubeVideo() => _youtubeVideo != null;
 
+  // "event_ref" field.
+  DocumentReference? _eventRef;
+  DocumentReference? get eventRef => _eventRef;
+  bool hasEventRef() => _eventRef != null;
+
+  // "text2" field.
+  String? _text2;
+  String get text2 => _text2 ?? '';
+  bool hasText2() => _text2 != null;
+
+  // "image2" field.
+  String? _image2;
+  String get image2 => _image2 ?? '';
+  bool hasImage2() => _image2 != null;
+
   void _initializeFields() {
     _member = snapshotData['member'] as DocumentReference?;
     _title = snapshotData['title'] as String?;
@@ -179,6 +194,9 @@ class PostsRecord extends FirestoreRecord {
     _foldCategorie = snapshotData['fold_categorie'] as String?;
     _youtubeLink = snapshotData['youtube_link'] as String?;
     _youtubeVideo = snapshotData['youtube_video'] as String?;
+    _eventRef = snapshotData['event_ref'] as DocumentReference?;
+    _text2 = snapshotData['text2'] as String?;
+    _image2 = snapshotData['image2'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -236,6 +254,9 @@ Map<String, dynamic> createPostsRecordData({
   String? foldCategorie,
   String? youtubeLink,
   String? youtubeVideo,
+  DocumentReference? eventRef,
+  String? text2,
+  String? image2,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -260,6 +281,9 @@ Map<String, dynamic> createPostsRecordData({
       'fold_categorie': foldCategorie,
       'youtube_link': youtubeLink,
       'youtube_video': youtubeVideo,
+      'event_ref': eventRef,
+      'text2': text2,
+      'image2': image2,
     }.withoutNulls,
   );
 
@@ -298,7 +322,10 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         listEquality.equals(e1?.list4choice3, e2?.list4choice3) &&
         e1?.foldCategorie == e2?.foldCategorie &&
         e1?.youtubeLink == e2?.youtubeLink &&
-        e1?.youtubeVideo == e2?.youtubeVideo;
+        e1?.youtubeVideo == e2?.youtubeVideo &&
+        e1?.eventRef == e2?.eventRef &&
+        e1?.text2 == e2?.text2 &&
+        e1?.image2 == e2?.image2;
   }
 
   @override
@@ -329,7 +356,10 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.list4choice3,
         e?.foldCategorie,
         e?.youtubeLink,
-        e?.youtubeVideo
+        e?.youtubeVideo,
+        e?.eventRef,
+        e?.text2,
+        e?.image2
       ]);
 
   @override

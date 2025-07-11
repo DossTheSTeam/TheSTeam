@@ -580,7 +580,9 @@ class _PlayerNotifEEventStartPageWidgetState
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
                                           FFLocalizations.of(context).getText(
-                                            'dnfncfvy' /* Einzelheiten zur Einladung */,
+                                            'dnfncfvy' /* Einzelheiten zur
+Einladung */
+                                            ,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -616,7 +618,9 @@ class _PlayerNotifEEventStartPageWidgetState
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
                                           FFLocalizations.of(context).getText(
-                                            'xj05t4kd' /* Detalles de la invitación */,
+                                            'xj05t4kd' /* Detalles de la
+invitación */
+                                            ,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)

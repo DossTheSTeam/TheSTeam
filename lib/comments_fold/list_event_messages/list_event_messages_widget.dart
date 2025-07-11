@@ -557,7 +557,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '3k8hp5k9' /* - */,
+                                                  '8ri7yx5v' /* - */,
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)

@@ -801,7 +801,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -929,7 +929,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -1052,7 +1052,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -1175,7 +1175,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -1298,7 +1298,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -1421,7 +1421,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -1536,7 +1536,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                             MainAxisSize.max,
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .spaceBetween,
+                                                                .spaceEvenly,
                                                         children: [
                                                           Text(
                                                             valueOrDefault<
@@ -4196,7 +4196,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4324,7 +4324,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4447,7 +4447,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4570,7 +4570,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4693,7 +4693,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4816,7 +4816,7 @@ equipas marcam */
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .spaceEvenly,
                                                                 children: [
                                                                   Text(
                                                                     FFLocalizations.of(
@@ -4931,7 +4931,7 @@ equipas marcam */
                                                             MainAxisSize.max,
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
-                                                                .spaceBetween,
+                                                                .spaceEvenly,
                                                         children: [
                                                           Text(
                                                             valueOrDefault<

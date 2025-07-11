@@ -2282,7 +2282,7 @@ class _AdminUsersListWidgetState extends State<AdminUsersListWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'e7q637vf' /* - */,
+                                                        '0ts2laoo' /* - */,
                                                       ),
                                                       maxLines: 2,
                                                       style:

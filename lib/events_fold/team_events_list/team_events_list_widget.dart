@@ -1286,7 +1286,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                             parent: widget.teamRef,
                             queryBuilder: (teamEventsRecord) => teamEventsRecord
                                 .orderBy('started_time', descending: true),
-                            limit: 10,
+                            limit: 30,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
