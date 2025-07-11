@@ -221,9 +221,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                           padding: EdgeInsets.all(12.0),
                           child: Container(
                             width: double.infinity,
-                            height: MediaQuery.sizeOf(context).width >= 768.0
-                                ? 530.0
-                                : 630.0,
+                            height: 600.0,
                             constraints: BoxConstraints(
                               maxWidth: 570.0,
                             ),
@@ -978,12 +976,13 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        100.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            50.0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
