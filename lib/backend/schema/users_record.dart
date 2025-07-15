@@ -146,46 +146,6 @@ class UsersRecord extends FirestoreRecord {
   int get betLoose => _betLoose ?? 0;
   bool hasBetLoose() => _betLoose != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
-  // "tops" field.
-  int? _tops;
-  int get tops => _tops ?? 0;
-  bool hasTops() => _tops != null;
-
-  // "flops" field.
-  int? _flops;
-  int get flops => _flops ?? 0;
-  bool hasFlops() => _flops != null;
-
-  // "total_games" field.
-  int? _totalGames;
-  int get totalGames => _totalGames ?? 0;
-  bool hasTotalGames() => _totalGames != null;
-
-  // "erank_value" field.
-  String? _erankValue;
-  String get erankValue => _erankValue ?? '';
-  bool hasErankValue() => _erankValue != null;
-
-  // "edivision_value" field.
-  String? _edivisionValue;
-  String get edivisionValue => _edivisionValue ?? '';
-  bool hasEdivisionValue() => _edivisionValue != null;
-
-  // "esport_value" field.
-  String? _esportValue;
-  String get esportValue => _esportValue ?? '';
-  bool hasEsportValue() => _esportValue != null;
-
-  // "eteam_ref" field.
-  DocumentReference? _eteamRef;
-  DocumentReference? get eteamRef => _eteamRef;
-  bool hasEteamRef() => _eteamRef != null;
-
   // "family_name" field.
   String? _familyName;
   String get familyName => _familyName ?? '';
@@ -215,11 +175,6 @@ class UsersRecord extends FirestoreRecord {
   bool? _boolFlop;
   bool get boolFlop => _boolFlop ?? false;
   bool hasBoolFlop() => _boolFlop != null;
-
-  // "e_update_time" field.
-  DateTime? _eUpdateTime;
-  DateTime? get eUpdateTime => _eUpdateTime;
-  bool hasEUpdateTime() => _eUpdateTime != null;
 
   // "topsflops" field.
   int? _topsflops;
@@ -323,21 +278,12 @@ class UsersRecord extends FirestoreRecord {
     _totalMises = castToType<double>(snapshotData['total_mises']);
     _earningsTotal = castToType<double>(snapshotData['earnings_total']);
     _betLoose = castToType<int>(snapshotData['bet_loose']);
-    _esport = snapshotData['esport'] as bool?;
-    _tops = castToType<int>(snapshotData['tops']);
-    _flops = castToType<int>(snapshotData['flops']);
-    _totalGames = castToType<int>(snapshotData['total_games']);
-    _erankValue = snapshotData['erank_value'] as String?;
-    _edivisionValue = snapshotData['edivision_value'] as String?;
-    _esportValue = snapshotData['esport_value'] as String?;
-    _eteamRef = snapshotData['eteam_ref'] as DocumentReference?;
     _familyName = snapshotData['family_name'] as String?;
     _firstName = snapshotData['first_name'] as String?;
     _guest = snapshotData['guest'] as bool?;
     _boolMvp = snapshotData['bool_mvp'] as bool?;
     _boolTop = snapshotData['bool_top'] as bool?;
     _boolFlop = snapshotData['bool_flop'] as bool?;
-    _eUpdateTime = snapshotData['e_update_time'] as DateTime?;
     _topsflops = castToType<int>(snapshotData['topsflops']);
     _helpNav = snapshotData['help_nav'] as bool?;
     _adminSport = snapshotData['admin_sport'] as bool?;
@@ -412,21 +358,12 @@ Map<String, dynamic> createUsersRecordData({
   double? totalMises,
   double? earningsTotal,
   int? betLoose,
-  bool? esport,
-  int? tops,
-  int? flops,
-  int? totalGames,
-  String? erankValue,
-  String? edivisionValue,
-  String? esportValue,
-  DocumentReference? eteamRef,
   String? familyName,
   String? firstName,
   bool? guest,
   bool? boolMvp,
   bool? boolTop,
   bool? boolFlop,
-  DateTime? eUpdateTime,
   int? topsflops,
   bool? helpNav,
   bool? adminSport,
@@ -468,21 +405,12 @@ Map<String, dynamic> createUsersRecordData({
       'total_mises': totalMises,
       'earnings_total': earningsTotal,
       'bet_loose': betLoose,
-      'esport': esport,
-      'tops': tops,
-      'flops': flops,
-      'total_games': totalGames,
-      'erank_value': erankValue,
-      'edivision_value': edivisionValue,
-      'esport_value': esportValue,
-      'eteam_ref': eteamRef,
       'family_name': familyName,
       'first_name': firstName,
       'guest': guest,
       'bool_mvp': boolMvp,
       'bool_top': boolTop,
       'bool_flop': boolFlop,
-      'e_update_time': eUpdateTime,
       'topsflops': topsflops,
       'help_nav': helpNav,
       'admin_sport': adminSport,
@@ -536,21 +464,12 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.totalMises == e2?.totalMises &&
         e1?.earningsTotal == e2?.earningsTotal &&
         e1?.betLoose == e2?.betLoose &&
-        e1?.esport == e2?.esport &&
-        e1?.tops == e2?.tops &&
-        e1?.flops == e2?.flops &&
-        e1?.totalGames == e2?.totalGames &&
-        e1?.erankValue == e2?.erankValue &&
-        e1?.edivisionValue == e2?.edivisionValue &&
-        e1?.esportValue == e2?.esportValue &&
-        e1?.eteamRef == e2?.eteamRef &&
         e1?.familyName == e2?.familyName &&
         e1?.firstName == e2?.firstName &&
         e1?.guest == e2?.guest &&
         e1?.boolMvp == e2?.boolMvp &&
         e1?.boolTop == e2?.boolTop &&
         e1?.boolFlop == e2?.boolFlop &&
-        e1?.eUpdateTime == e2?.eUpdateTime &&
         e1?.topsflops == e2?.topsflops &&
         e1?.helpNav == e2?.helpNav &&
         e1?.adminSport == e2?.adminSport &&
@@ -596,21 +515,12 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.totalMises,
         e?.earningsTotal,
         e?.betLoose,
-        e?.esport,
-        e?.tops,
-        e?.flops,
-        e?.totalGames,
-        e?.erankValue,
-        e?.edivisionValue,
-        e?.esportValue,
-        e?.eteamRef,
         e?.familyName,
         e?.firstName,
         e?.guest,
         e?.boolMvp,
         e?.boolTop,
         e?.boolFlop,
-        e?.eUpdateTime,
         e?.topsflops,
         e?.helpNav,
         e?.adminSport,

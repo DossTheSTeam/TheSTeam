@@ -276,11 +276,6 @@ final parametersBuilderMap =
   'GeneralsCondidtionsPage': ParameterData.none(),
   'InfosRankPage': ParameterData.none(),
   'ShoppingPage': ParameterData.none(),
-  'ModifETeamPage': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
   'ModTeamsList': ParameterData.none(),
   'ListEventsAdd2Bet': (data) async => ParameterData(
         allParams: {
@@ -363,37 +358,9 @@ final parametersBuilderMap =
         },
       ),
   'AdminStAppUsersList': ParameterData.none(),
-  'AddETeamPageIUDAdmin': ParameterData.none(),
   'ModifTeamPage': (data) async => ParameterData(
         allParams: {
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'EEventPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-        },
-      ),
-  'ETeamUsersList': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'EMemberEntryPage': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'EUserRankPage': ParameterData.none(),
-  'ETeamRankPage': ParameterData.none(),
-  'MyBestsEUserRankPage': ParameterData.none(),
-  'AdminEUserRankPage': ParameterData.none(),
-  'AdminETeamRankPage': ParameterData.none(),
-  'MyBestsETeamRankPage': ParameterData.none(),
-  'BossEMemberEntryPage': (data) async => ParameterData(
-        allParams: {
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
   'DiscusionETeamPage': (data) async => ParameterData(
@@ -401,66 +368,9 @@ final parametersBuilderMap =
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
-  'ETeamEventsList': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'ListMessagesBossEvent': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
-        },
-      ),
-  'AddPlayersEventPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'myETeamRef': getParameter<DocumentReference>(data, 'myETeamRef'),
-        },
-      ),
-  'ModifEndEEventPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'myETeamRef': getParameter<DocumentReference>(data, 'myETeamRef'),
-        },
-      ),
-  'TeamListForEvents': (data) async => ParameterData(
-        allParams: {
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
-        },
-      ),
-  'BossNotifEEventPageIUDAdmin': (data) async => ParameterData(
-        allParams: {
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
-        },
-      ),
-  'ETeamEventsNoDateList': (data) async => ParameterData(
-        allParams: {
-          'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'PlayerNotifEEventStartPage': (data) async => ParameterData(
-        allParams: {
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-          'eEventRef': getParameter<DocumentReference>(data, 'eEventRef'),
-        },
-      ),
-  'BossNotifEEventEndPage': (data) async => ParameterData(
-        allParams: {
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-          'eEventRef': getParameter<DocumentReference>(data, 'eEventRef'),
-        },
-      ),
   'SignalEEventPage': (data) async => ParameterData(
         allParams: {
           'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-        },
-      ),
-  'AddDateForEEvent': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
   'TeamStats': (data) async => ParameterData(
@@ -487,17 +397,6 @@ final parametersBuilderMap =
   'ListAdvices': (data) async => ParameterData(
         allParams: {
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
-        },
-      ),
-  'RatingPlayersPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-        },
-      ),
-  'AddRatingPlayersPage': (data) async => ParameterData(
-        allParams: {
-          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
   'PublicStatsCompare': (data) async => ParameterData(

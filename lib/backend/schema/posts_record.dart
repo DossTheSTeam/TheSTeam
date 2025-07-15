@@ -96,11 +96,6 @@ class PostsRecord extends FirestoreRecord {
   DocumentReference? get teamRef => _teamRef;
   bool hasTeamRef() => _teamRef != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   // "sport_value" field.
   String? _sportValue;
   String get sportValue => _sportValue ?? '';
@@ -146,11 +141,6 @@ class PostsRecord extends FirestoreRecord {
   String get youtubeLink => _youtubeLink ?? '';
   bool hasYoutubeLink() => _youtubeLink != null;
 
-  // "youtube_video" field.
-  String? _youtubeVideo;
-  String get youtubeVideo => _youtubeVideo ?? '';
-  bool hasYoutubeVideo() => _youtubeVideo != null;
-
   // "event_ref" field.
   DocumentReference? _eventRef;
   DocumentReference? get eventRef => _eventRef;
@@ -183,7 +173,6 @@ class PostsRecord extends FirestoreRecord {
     _leagueValue = snapshotData['league_value'] as String?;
     _moderator = snapshotData['moderator'] as DocumentReference?;
     _teamRef = snapshotData['team_ref'] as DocumentReference?;
-    _esport = snapshotData['esport'] as bool?;
     _sportValue = snapshotData['sport_value'] as String?;
     _choice1 = snapshotData['choice1'] as String?;
     _choice2 = snapshotData['choice2'] as String?;
@@ -193,7 +182,6 @@ class PostsRecord extends FirestoreRecord {
     _list4choice3 = getDataList(snapshotData['list4choice3']);
     _foldCategorie = snapshotData['fold_categorie'] as String?;
     _youtubeLink = snapshotData['youtube_link'] as String?;
-    _youtubeVideo = snapshotData['youtube_video'] as String?;
     _eventRef = snapshotData['event_ref'] as DocumentReference?;
     _text2 = snapshotData['text2'] as String?;
     _image2 = snapshotData['image2'] as String?;
@@ -246,14 +234,12 @@ Map<String, dynamic> createPostsRecordData({
   String? leagueValue,
   DocumentReference? moderator,
   DocumentReference? teamRef,
-  bool? esport,
   String? sportValue,
   String? choice1,
   String? choice2,
   String? choice3,
   String? foldCategorie,
   String? youtubeLink,
-  String? youtubeVideo,
   DocumentReference? eventRef,
   String? text2,
   String? image2,
@@ -273,14 +259,12 @@ Map<String, dynamic> createPostsRecordData({
       'league_value': leagueValue,
       'moderator': moderator,
       'team_ref': teamRef,
-      'esport': esport,
       'sport_value': sportValue,
       'choice1': choice1,
       'choice2': choice2,
       'choice3': choice3,
       'fold_categorie': foldCategorie,
       'youtube_link': youtubeLink,
-      'youtube_video': youtubeVideo,
       'event_ref': eventRef,
       'text2': text2,
       'image2': image2,
@@ -312,7 +296,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e1?.leagueValue == e2?.leagueValue &&
         e1?.moderator == e2?.moderator &&
         e1?.teamRef == e2?.teamRef &&
-        e1?.esport == e2?.esport &&
         e1?.sportValue == e2?.sportValue &&
         e1?.choice1 == e2?.choice1 &&
         e1?.choice2 == e2?.choice2 &&
@@ -322,7 +305,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         listEquality.equals(e1?.list4choice3, e2?.list4choice3) &&
         e1?.foldCategorie == e2?.foldCategorie &&
         e1?.youtubeLink == e2?.youtubeLink &&
-        e1?.youtubeVideo == e2?.youtubeVideo &&
         e1?.eventRef == e2?.eventRef &&
         e1?.text2 == e2?.text2 &&
         e1?.image2 == e2?.image2;
@@ -346,7 +328,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.leagueValue,
         e?.moderator,
         e?.teamRef,
-        e?.esport,
         e?.sportValue,
         e?.choice1,
         e?.choice2,
@@ -356,7 +337,6 @@ class PostsRecordDocumentEquality implements Equality<PostsRecord> {
         e?.list4choice3,
         e?.foldCategorie,
         e?.youtubeLink,
-        e?.youtubeVideo,
         e?.eventRef,
         e?.text2,
         e?.image2

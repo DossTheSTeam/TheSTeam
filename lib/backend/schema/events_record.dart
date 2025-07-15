@@ -131,11 +131,6 @@ class EventsRecord extends FirestoreRecord {
   String get week => _week ?? '';
   bool hasWeek() => _week != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   // "boss_dom" field.
   DocumentReference? _bossDom;
   DocumentReference? get bossDom => _bossDom;
@@ -255,7 +250,6 @@ class EventsRecord extends FirestoreRecord {
     _teamextRef = snapshotData['teamext_ref'] as DocumentReference?;
     _leagueValue = snapshotData['league_value'] as String?;
     _week = snapshotData['week'] as String?;
-    _esport = snapshotData['esport'] as bool?;
     _bossDom = snapshotData['boss_dom'] as DocumentReference?;
     _bossExt = snapshotData['boss_ext'] as DocumentReference?;
     _players = getDataList(snapshotData['players']);
@@ -332,7 +326,6 @@ Map<String, dynamic> createEventsRecordData({
   DocumentReference? teamextRef,
   String? leagueValue,
   String? week,
-  bool? esport,
   DocumentReference? bossDom,
   DocumentReference? bossExt,
   bool? domReady,
@@ -374,7 +367,6 @@ Map<String, dynamic> createEventsRecordData({
       'teamext_ref': teamextRef,
       'league_value': leagueValue,
       'week': week,
-      'esport': esport,
       'boss_dom': bossDom,
       'boss_ext': bossExt,
       'dom_ready': domReady,
@@ -427,7 +419,6 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.teamextRef == e2?.teamextRef &&
         e1?.leagueValue == e2?.leagueValue &&
         e1?.week == e2?.week &&
-        e1?.esport == e2?.esport &&
         e1?.bossDom == e2?.bossDom &&
         e1?.bossExt == e2?.bossExt &&
         listEquality.equals(e1?.players, e2?.players) &&
@@ -474,7 +465,6 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.teamextRef,
         e?.leagueValue,
         e?.week,
-        e?.esport,
         e?.bossDom,
         e?.bossExt,
         e?.players,

@@ -185,18 +185,6 @@ service cloud.firestore {
     }
 
 
-    match /events/{parent}/rates/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if true;
-      allow delete: if true;
-    }
-
-    match /{path=**}/rates/{document} {
-      allow read: if true;
-    }
-
-
     match /teams/{parent}/team_conference/{document} {
       allow create: if true;
       allow read: if true;

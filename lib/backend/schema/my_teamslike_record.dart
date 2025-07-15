@@ -21,11 +21,6 @@ class MyTeamslikeRecord extends FirestoreRecord {
   List<DocumentReference> get teams => _teams ?? const [];
   bool hasTeams() => _teams != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   // "created_time" field.
   DateTime? _createdTime;
   DateTime? get createdTime => _createdTime;
@@ -35,7 +30,6 @@ class MyTeamslikeRecord extends FirestoreRecord {
 
   void _initializeFields() {
     _teams = getDataList(snapshotData['teams']);
-    _esport = snapshotData['esport'] as bool?;
     _createdTime = snapshotData['created_time'] as DateTime?;
   }
 
@@ -79,12 +73,10 @@ class MyTeamslikeRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createMyTeamslikeRecordData({
-  bool? esport,
   DateTime? createdTime,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'esport': esport,
       'created_time': createdTime,
     }.withoutNulls,
   );
@@ -99,13 +91,12 @@ class MyTeamslikeRecordDocumentEquality implements Equality<MyTeamslikeRecord> {
   bool equals(MyTeamslikeRecord? e1, MyTeamslikeRecord? e2) {
     const listEquality = ListEquality();
     return listEquality.equals(e1?.teams, e2?.teams) &&
-        e1?.esport == e2?.esport &&
         e1?.createdTime == e2?.createdTime;
   }
 
   @override
   int hash(MyTeamslikeRecord? e) =>
-      const ListEquality().hash([e?.teams, e?.esport, e?.createdTime]);
+      const ListEquality().hash([e?.teams, e?.createdTime]);
 
   @override
   bool isValidKey(Object? o) => o is MyTeamslikeRecord;

@@ -40,11 +40,6 @@ class TeamMessagesRecord extends FirestoreRecord {
   String get audio => _audio ?? '';
   bool hasAudio() => _audio != null;
 
-  // "e_event" field.
-  DocumentReference? _eEvent;
-  DocumentReference? get eEvent => _eEvent;
-  bool hasEEvent() => _eEvent != null;
-
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -53,7 +48,6 @@ class TeamMessagesRecord extends FirestoreRecord {
     _dateTime = snapshotData['date_time'] as DateTime?;
     _image = snapshotData['image'] as String?;
     _audio = snapshotData['audio'] as String?;
-    _eEvent = snapshotData['e_event'] as DocumentReference?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -101,7 +95,6 @@ Map<String, dynamic> createTeamMessagesRecordData({
   DateTime? dateTime,
   String? image,
   String? audio,
-  DocumentReference? eEvent,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -110,7 +103,6 @@ Map<String, dynamic> createTeamMessagesRecordData({
       'date_time': dateTime,
       'image': image,
       'audio': audio,
-      'e_event': eEvent,
     }.withoutNulls,
   );
 
@@ -127,13 +119,12 @@ class TeamMessagesRecordDocumentEquality
         e1?.userRef == e2?.userRef &&
         e1?.dateTime == e2?.dateTime &&
         e1?.image == e2?.image &&
-        e1?.audio == e2?.audio &&
-        e1?.eEvent == e2?.eEvent;
+        e1?.audio == e2?.audio;
   }
 
   @override
   int hash(TeamMessagesRecord? e) => const ListEquality()
-      .hash([e?.text, e?.userRef, e?.dateTime, e?.image, e?.audio, e?.eEvent]);
+      .hash([e?.text, e?.userRef, e?.dateTime, e?.image, e?.audio]);
 
   @override
   bool isValidKey(Object? o) => o is TeamMessagesRecord;

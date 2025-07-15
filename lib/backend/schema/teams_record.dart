@@ -86,11 +86,6 @@ class TeamsRecord extends FirestoreRecord {
   DocumentReference? get boss => _boss;
   bool hasBoss() => _boss != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   // "division_value" field.
   String? _divisionValue;
   String get divisionValue => _divisionValue ?? '';
@@ -206,6 +201,11 @@ class TeamsRecord extends FirestoreRecord {
   String get profilPicture => _profilPicture ?? '';
   bool hasProfilPicture() => _profilPicture != null;
 
+  // "champion" field.
+  bool? _champion;
+  bool get champion => _champion ?? false;
+  bool hasChampion() => _champion != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _value = snapshotData['value'] as String?;
@@ -221,7 +221,6 @@ class TeamsRecord extends FirestoreRecord {
     _looses = castToType<int>(snapshotData['looses']);
     _points = castToType<int>(snapshotData['points']);
     _boss = snapshotData['boss'] as DocumentReference?;
-    _esport = snapshotData['esport'] as bool?;
     _divisionValue = snapshotData['division_value'] as String?;
     _goalsPointsIn = castToType<int>(snapshotData['goals_points_in']);
     _goalsPointsOut = castToType<int>(snapshotData['goals_points_out']);
@@ -245,6 +244,7 @@ class TeamsRecord extends FirestoreRecord {
     _l2m = castToType<int>(snapshotData['l2m']);
     _l2mCup = castToType<int>(snapshotData['l2m_cup']);
     _profilPicture = snapshotData['profil_picture'] as String?;
+    _champion = snapshotData['champion'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -292,7 +292,6 @@ Map<String, dynamic> createTeamsRecordData({
   int? looses,
   int? points,
   DocumentReference? boss,
-  bool? esport,
   String? divisionValue,
   int? goalsPointsIn,
   int? goalsPointsOut,
@@ -316,6 +315,7 @@ Map<String, dynamic> createTeamsRecordData({
   int? l2m,
   int? l2mCup,
   String? profilPicture,
+  bool? champion,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -330,7 +330,6 @@ Map<String, dynamic> createTeamsRecordData({
       'looses': looses,
       'points': points,
       'boss': boss,
-      'esport': esport,
       'division_value': divisionValue,
       'goals_points_in': goalsPointsIn,
       'goals_points_out': goalsPointsOut,
@@ -354,6 +353,7 @@ Map<String, dynamic> createTeamsRecordData({
       'l2m': l2m,
       'l2m_cup': l2mCup,
       'profil_picture': profilPicture,
+      'champion': champion,
     }.withoutNulls,
   );
 
@@ -380,7 +380,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.looses == e2?.looses &&
         e1?.points == e2?.points &&
         e1?.boss == e2?.boss &&
-        e1?.esport == e2?.esport &&
         e1?.divisionValue == e2?.divisionValue &&
         e1?.goalsPointsIn == e2?.goalsPointsIn &&
         e1?.goalsPointsOut == e2?.goalsPointsOut &&
@@ -403,7 +402,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.pointsCup == e2?.pointsCup &&
         e1?.l2m == e2?.l2m &&
         e1?.l2mCup == e2?.l2mCup &&
-        e1?.profilPicture == e2?.profilPicture;
+        e1?.profilPicture == e2?.profilPicture &&
+        e1?.champion == e2?.champion;
   }
 
   @override
@@ -422,7 +422,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.looses,
         e?.points,
         e?.boss,
-        e?.esport,
         e?.divisionValue,
         e?.goalsPointsIn,
         e?.goalsPointsOut,
@@ -445,7 +444,8 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.pointsCup,
         e?.l2m,
         e?.l2mCup,
-        e?.profilPicture
+        e?.profilPicture,
+        e?.champion
       ]);
 
   @override

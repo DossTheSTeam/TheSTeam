@@ -86,16 +86,6 @@ class EventMessagesRecord extends FirestoreRecord {
   DocumentReference? get startedComm => _startedComm;
   bool hasStartedComm() => _startedComm != null;
 
-  // "boss_dom" field.
-  DocumentReference? _bossDom;
-  DocumentReference? get bossDom => _bossDom;
-  bool hasBossDom() => _bossDom != null;
-
-  // "boss_ext" field.
-  DocumentReference? _bossExt;
-  DocumentReference? get bossExt => _bossExt;
-  bool hasBossExt() => _bossExt != null;
-
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -113,8 +103,6 @@ class EventMessagesRecord extends FirestoreRecord {
     _numComments = castToType<int>(snapshotData['num_comments']);
     _moderator = snapshotData['moderator'] as DocumentReference?;
     _startedComm = snapshotData['started_comm'] as DocumentReference?;
-    _bossDom = snapshotData['boss_dom'] as DocumentReference?;
-    _bossExt = snapshotData['boss_ext'] as DocumentReference?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -168,8 +156,6 @@ Map<String, dynamic> createEventMessagesRecordData({
   int? numComments,
   DocumentReference? moderator,
   DocumentReference? startedComm,
-  DocumentReference? bossDom,
-  DocumentReference? bossExt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -184,8 +170,6 @@ Map<String, dynamic> createEventMessagesRecordData({
       'num_comments': numComments,
       'moderator': moderator,
       'started_comm': startedComm,
-      'boss_dom': bossDom,
-      'boss_ext': bossExt,
     }.withoutNulls,
   );
 
@@ -212,9 +196,7 @@ class EventMessagesRecordDocumentEquality
         listEquality.equals(e1?.redcards, e2?.redcards) &&
         e1?.numComments == e2?.numComments &&
         e1?.moderator == e2?.moderator &&
-        e1?.startedComm == e2?.startedComm &&
-        e1?.bossDom == e2?.bossDom &&
-        e1?.bossExt == e2?.bossExt;
+        e1?.startedComm == e2?.startedComm;
   }
 
   @override
@@ -232,9 +214,7 @@ class EventMessagesRecordDocumentEquality
         e?.redcards,
         e?.numComments,
         e?.moderator,
-        e?.startedComm,
-        e?.bossDom,
-        e?.bossExt
+        e?.startedComm
       ]);
 
   @override

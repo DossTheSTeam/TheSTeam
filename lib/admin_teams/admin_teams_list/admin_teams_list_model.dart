@@ -1,0 +1,70 @@
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
+import 'admin_teams_list_widget.dart' show AdminTeamsListWidget;
+import 'package:flutter/material.dart';
+
+class AdminTeamsListModel extends FlutterFlowModel<AdminTeamsListWidget> {
+  ///  Local state fields for this page.
+
+  String? showLigueFilter;
+
+  String? showDivision;
+
+  ///  State fields for stateful widgets in this page.
+
+  // State field(s) for DropLigueFoot widget.
+  String? dropLigueFootValue1;
+  FormFieldController<String>? dropLigueFootValueController1;
+  // State field(s) for DropLigueBasket widget.
+  String? dropLigueBasketValue1;
+  FormFieldController<String>? dropLigueBasketValueController1;
+  // State field(s) for DropLigueTennis widget.
+  String? dropLigueTennisValue1;
+  FormFieldController<String>? dropLigueTennisValueController1;
+  // State field(s) for DropLigueHockey widget.
+  String? dropLigueHockeyValue1;
+  FormFieldController<String>? dropLigueHockeyValueController1;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue1;
+  FormFieldController<String>? dropLigueMMAValueController1;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue1;
+  FormFieldController<String>? dropLigueFightValueController1;
+  // State field(s) for DropLigueRugby widget.
+  String? dropLigueRugbyValue1;
+  FormFieldController<String>? dropLigueRugbyValueController1;
+  // State field(s) for DropLigueMeca widget.
+  String? dropLigueMecaValue1;
+  FormFieldController<String>? dropLigueMecaValueController1;
+  // State field(s) for DropLigueFoot widget.
+  String? dropLigueFootValue2;
+  FormFieldController<String>? dropLigueFootValueController2;
+  // State field(s) for DropLigueBasket widget.
+  String? dropLigueBasketValue2;
+  FormFieldController<String>? dropLigueBasketValueController2;
+  // State field(s) for DropLigueTennis widget.
+  String? dropLigueTennisValue2;
+  FormFieldController<String>? dropLigueTennisValueController2;
+  // State field(s) for DropLigueHockey widget.
+  String? dropLigueHockeyValue2;
+  FormFieldController<String>? dropLigueHockeyValueController2;
+  // State field(s) for DropLigueMMA widget.
+  String? dropLigueMMAValue2;
+  FormFieldController<String>? dropLigueMMAValueController2;
+  // State field(s) for DropLigueFight widget.
+  String? dropLigueFightValue2;
+  FormFieldController<String>? dropLigueFightValueController2;
+  // State field(s) for DropLigueRugby widget.
+  String? dropLigueRugbyValue2;
+  FormFieldController<String>? dropLigueRugbyValueController2;
+  // State field(s) for DropLigueMeca widget.
+  String? dropLigueMecaValue2;
+  FormFieldController<String>? dropLigueMecaValueController2;
+
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {}
+}

@@ -25,17 +25,11 @@ class MyPostsRecord extends FirestoreRecord {
   DocumentReference? get posts => _posts;
   bool hasPosts() => _posts != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _dateTime = snapshotData['date_time'] as DateTime?;
     _posts = snapshotData['posts'] as DocumentReference?;
-    _esport = snapshotData['esport'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -80,13 +74,11 @@ class MyPostsRecord extends FirestoreRecord {
 Map<String, dynamic> createMyPostsRecordData({
   DateTime? dateTime,
   DocumentReference? posts,
-  bool? esport,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'date_time': dateTime,
       'posts': posts,
-      'esport': esport,
     }.withoutNulls,
   );
 
@@ -98,14 +90,12 @@ class MyPostsRecordDocumentEquality implements Equality<MyPostsRecord> {
 
   @override
   bool equals(MyPostsRecord? e1, MyPostsRecord? e2) {
-    return e1?.dateTime == e2?.dateTime &&
-        e1?.posts == e2?.posts &&
-        e1?.esport == e2?.esport;
+    return e1?.dateTime == e2?.dateTime && e1?.posts == e2?.posts;
   }
 
   @override
   int hash(MyPostsRecord? e) =>
-      const ListEquality().hash([e?.dateTime, e?.posts, e?.esport]);
+      const ListEquality().hash([e?.dateTime, e?.posts]);
 
   @override
   bool isValidKey(Object? o) => o is MyPostsRecord;

@@ -552,18 +552,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ShoppingPageWidget(),
         ),
         FFRoute(
-          name: ModifETeamPageWidget.routeName,
-          path: ModifETeamPageWidget.routePath,
-          builder: (context, params) => ModifETeamPageWidget(
-            teamRef: params.getParam(
-              'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
           name: ModTeamsListWidget.routeName,
           path: ModTeamsListWidget.routePath,
           builder: (context, params) => ModTeamsListWidget(),
@@ -787,100 +775,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AdminStAppUsersListWidget(),
         ),
         FFRoute(
-          name: AddETeamPageIUDAdminWidget.routeName,
-          path: AddETeamPageIUDAdminWidget.routePath,
-          builder: (context, params) => AddETeamPageIUDAdminWidget(),
-        ),
-        FFRoute(
           name: ModifTeamPageWidget.routeName,
           path: ModifTeamPageWidget.routePath,
           builder: (context, params) => ModifTeamPageWidget(
             teamRef: params.getParam(
               'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: EEventPageWidget.routeName,
-          path: EEventPageWidget.routePath,
-          builder: (context, params) => EEventPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: ETeamUsersListWidget.routeName,
-          path: ETeamUsersListWidget.routePath,
-          builder: (context, params) => ETeamUsersListWidget(
-            teamRef: params.getParam(
-              'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: EMemberEntryPageWidget.routeName,
-          path: EMemberEntryPageWidget.routePath,
-          builder: (context, params) => EMemberEntryPageWidget(
-            teamRef: params.getParam(
-              'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: EUserRankPageWidget.routeName,
-          path: EUserRankPageWidget.routePath,
-          builder: (context, params) => EUserRankPageWidget(),
-        ),
-        FFRoute(
-          name: ETeamRankPageWidget.routeName,
-          path: ETeamRankPageWidget.routePath,
-          builder: (context, params) => ETeamRankPageWidget(),
-        ),
-        FFRoute(
-          name: MyBestsEUserRankPageWidget.routeName,
-          path: MyBestsEUserRankPageWidget.routePath,
-          builder: (context, params) => MyBestsEUserRankPageWidget(),
-        ),
-        FFRoute(
-          name: AdminEUserRankPageWidget.routeName,
-          path: AdminEUserRankPageWidget.routePath,
-          builder: (context, params) => AdminEUserRankPageWidget(),
-        ),
-        FFRoute(
-          name: AdminETeamRankPageWidget.routeName,
-          path: AdminETeamRankPageWidget.routePath,
-          builder: (context, params) => AdminETeamRankPageWidget(),
-        ),
-        FFRoute(
-          name: MyBestsETeamRankPageWidget.routeName,
-          path: MyBestsETeamRankPageWidget.routePath,
-          builder: (context, params) => MyBestsETeamRankPageWidget(),
-        ),
-        FFRoute(
-          name: BossEMemberEntryPageWidget.routeName,
-          path: BossEMemberEntryPageWidget.routePath,
-          builder: (context, params) => BossEMemberEntryPageWidget(
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-            eTeamRef: params.getParam(
-              'eTeamRef',
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['teams'],
@@ -900,150 +799,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ETeamEventsListWidget.routeName,
-          path: ETeamEventsListWidget.routePath,
-          builder: (context, params) => ETeamEventsListWidget(
-            teamRef: params.getParam(
-              'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: ListMessagesBossEventWidget.routeName,
-          path: ListMessagesBossEventWidget.routePath,
-          builder: (context, params) => ListMessagesBossEventWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            eTeamRef: params.getParam(
-              'eTeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: AddPlayersEventPageWidget.routeName,
-          path: AddPlayersEventPageWidget.routePath,
-          builder: (context, params) => AddPlayersEventPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            myETeamRef: params.getParam(
-              'myETeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: ModifEndEEventPageWidget.routeName,
-          path: ModifEndEEventPageWidget.routePath,
-          builder: (context, params) => ModifEndEEventPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            myETeamRef: params.getParam(
-              'myETeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: TeamListForEventsWidget.routeName,
-          path: TeamListForEventsWidget.routePath,
-          builder: (context, params) => TeamListForEventsWidget(
-            eTeamRef: params.getParam(
-              'eTeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: BossNotifEEventPageIUDAdminWidget.routeName,
-          path: BossNotifEEventPageIUDAdminWidget.routePath,
-          builder: (context, params) => BossNotifEEventPageIUDAdminWidget(
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-            eTeamRef: params.getParam(
-              'eTeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: ETeamEventsNoDateListWidget.routeName,
-          path: ETeamEventsNoDateListWidget.routePath,
-          builder: (context, params) => ETeamEventsNoDateListWidget(
-            teamRef: params.getParam(
-              'teamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: PlayerNotifEEventStartPageWidget.routeName,
-          path: PlayerNotifEEventStartPageWidget.routePath,
-          builder: (context, params) => PlayerNotifEEventStartPageWidget(
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-            eEventRef: params.getParam(
-              'eEventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: BossNotifEEventEndPageWidget.routeName,
-          path: BossNotifEEventEndPageWidget.routePath,
-          builder: (context, params) => BossNotifEEventEndPageWidget(
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-            eEventRef: params.getParam(
-              'eEventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-          ),
-        ),
-        FFRoute(
           name: SignalEEventPageWidget.routeName,
           path: SignalEEventPageWidget.routePath,
           builder: (context, params) => SignalEEventPageWidget(
@@ -1052,24 +807,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users', 'my_notifications'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: AddDateForEEventWidget.routeName,
-          path: AddDateForEEventWidget.routePath,
-          builder: (context, params) => AddDateForEEventWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            eTeamRef: params.getParam(
-              'eTeamRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['teams'],
             ),
           ),
         ),
@@ -1135,36 +872,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['teams'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: RatingPlayersPageWidget.routeName,
-          path: RatingPlayersPageWidget.routePath,
-          builder: (context, params) => RatingPlayersPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
-            ),
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-          ),
-        ),
-        FFRoute(
-          name: AddRatingPlayersPageWidget.routeName,
-          path: AddRatingPlayersPageWidget.routePath,
-          builder: (context, params) => AddRatingPlayersPageWidget(
-            eventRef: params.getParam(
-              'eventRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['events'],
             ),
           ),
         ),

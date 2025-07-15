@@ -22,7 +22,6 @@ import 'schema/post_messages_record.dart';
 import 'schema/team_posts_record.dart';
 import 'schema/team_events_record.dart';
 import 'schema/team_messages_record.dart';
-import 'schema/rates_record.dart';
 import 'schema/team_conference_record.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -49,7 +48,6 @@ export 'schema/post_messages_record.dart';
 export 'schema/team_posts_record.dart';
 export 'schema/team_events_record.dart';
 export 'schema/team_messages_record.dart';
-export 'schema/rates_record.dart';
 export 'schema/team_conference_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
@@ -715,46 +713,6 @@ Future<List<TeamMessagesRecord>> queryTeamMessagesRecordOnce({
     queryCollectionOnce(
       TeamMessagesRecord.collection(parent),
       TeamMessagesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query RatesRecords (as a Stream and as a Future).
-Future<int> queryRatesRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      RatesRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<RatesRecord>> queryRatesRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      RatesRecord.collection(parent),
-      RatesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<RatesRecord>> queryRatesRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      RatesRecord.collection(parent),
-      RatesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

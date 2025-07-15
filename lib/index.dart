@@ -1,228 +1,171 @@
 // Export pages
-export '/users_fold/auth_page/auth_page_widget.dart' show AuthPageWidget;
-export '/users_fold/my_bet_page/my_bet_page_widget.dart' show MyBetPageWidget;
-export '/users_fold/my_bets_list/my_bets_list_widget.dart'
-    show MyBetsListWidget;
-export '/users_fold/my_edit_profil/my_edit_profil_widget.dart'
+export '/users/auth_page/auth_page_widget.dart' show AuthPageWidget;
+export '/users/my_bet_page/my_bet_page_widget.dart' show MyBetPageWidget;
+export '/users/my_bets_list/my_bets_list_widget.dart' show MyBetsListWidget;
+export '/users/my_edit_profil/my_edit_profil_widget.dart'
     show MyEditProfilWidget;
-export '/users_fold/my_image_page/my_image_page_widget.dart'
-    show MyImagePageWidget;
-export '/users_fold/my_notifs_list/my_notifs_list_widget.dart'
+export '/users/my_image_page/my_image_page_widget.dart' show MyImagePageWidget;
+export '/users/my_notifs_list/my_notifs_list_widget.dart'
     show MyNotifsListWidget;
-export '/users_fold/my_posts_list/my_posts_list_widget.dart'
-    show MyPostsListWidget;
-export '/users_fold/my_profil_stats/my_profil_stats_widget.dart'
+export '/users/my_posts_list/my_posts_list_widget.dart' show MyPostsListWidget;
+export '/users/my_profil_stats/my_profil_stats_widget.dart'
     show MyProfilStatsWidget;
-export '/users_fold/my_profil_page/my_profil_page_widget.dart'
+export '/users/my_profil_page/my_profil_page_widget.dart'
     show MyProfilPageWidget;
-export '/users_fold/my_profil_social/my_profil_social_widget.dart'
+export '/users/my_profil_social/my_profil_social_widget.dart'
     show MyProfilSocialWidget;
-export '/users_fold/my_team_list/my_team_list_widget.dart'
-    show MyTeamListWidget;
-export '/users_fold/public_fold/menu_page/menu_page_widget.dart'
-    show MenuPageWidget;
-export '/users_fold/public_fold/public_bets_list/public_bets_list_widget.dart'
+export '/users/my_team_list/my_team_list_widget.dart' show MyTeamListWidget;
+export '/public/menu_page/menu_page_widget.dart' show MenuPageWidget;
+export '/public/public_bets_list/public_bets_list_widget.dart'
     show PublicBetsListWidget;
-export '/users_fold/public_fold/public_stats/public_stats_widget.dart'
-    show PublicStatsWidget;
-export '/users_fold/public_fold/public_posts_list/public_posts_list_widget.dart'
+export '/public/public_stats/public_stats_widget.dart' show PublicStatsWidget;
+export '/public/public_posts_list/public_posts_list_widget.dart'
     show PublicPostsListWidget;
-export '/users_fold/public_fold/public_profil_page/public_profil_page_widget.dart'
+export '/public/public_profil_page/public_profil_page_widget.dart'
     show PublicProfilPageWidget;
-export '/users_fold/public_fold/the_s_team_page/the_s_team_page_widget.dart'
+export '/public/the_s_team_page/the_s_team_page_widget.dart'
     show TheSTeamPageWidget;
-export '/teams_fold/member_entry_page/member_entry_page_widget.dart'
+export '/teams/member_entry_page/member_entry_page_widget.dart'
     show MemberEntryPageWidget;
-export '/teams_fold/team_page/team_page_widget.dart' show TeamPageWidget;
-export '/comments_fold/post_message_page/post_message_page_widget.dart'
+export '/teams/team_page/team_page_widget.dart' show TeamPageWidget;
+export '/comments/post_message_page/post_message_page_widget.dart'
     show PostMessagePageWidget;
-export '/comments_fold/list_comms_post_com_page/list_comms_post_com_page_widget.dart'
+export '/comments/list_comms_post_com_page/list_comms_post_com_page_widget.dart'
     show ListCommsPostComPageWidget;
-export '/comments_fold/list_event_messages/list_event_messages_widget.dart'
+export '/comments/list_event_messages/list_event_messages_widget.dart'
     show ListEventMessagesWidget;
-export '/comments_fold/list_post_messages/list_post_messages_widget.dart'
+export '/comments/list_post_messages/list_post_messages_widget.dart'
     show ListPostMessagesWidget;
-export '/comments_fold/red_card_post_comm_page/red_card_post_comm_page_widget.dart'
+export '/comments/red_card_post_comm_page/red_card_post_comm_page_widget.dart'
     show RedCardPostCommPageWidget;
-export '/users_fold/cart_page/cart_page_widget.dart' show CartPageWidget;
-export '/events_fold/event_page/event_page_widget.dart' show EventPageWidget;
-export '/events_fold/list_events/list_events_widget.dart' show ListEventsWidget;
-export '/events_fold/team_events_list/team_events_list_widget.dart'
+export '/users/cart_page/cart_page_widget.dart' show CartPageWidget;
+export '/events/event_page/event_page_widget.dart' show EventPageWidget;
+export '/events/list_events/list_events_widget.dart' show ListEventsWidget;
+export '/events/team_events_list/team_events_list_widget.dart'
     show TeamEventsListWidget;
-export '/posts_fold/add_post_page/add_post_page_widget.dart'
-    show AddPostPageWidget;
-export '/posts_fold/list_posts/list_posts_widget.dart' show ListPostsWidget;
-export '/posts_fold/list_posts_my_teams/list_posts_my_teams_widget.dart'
+export '/posts/add_post_page/add_post_page_widget.dart' show AddPostPageWidget;
+export '/posts/list_posts/list_posts_widget.dart' show ListPostsWidget;
+export '/posts/list_posts_my_teams/list_posts_my_teams_widget.dart'
     show ListPostsMyTeamsWidget;
-export '/posts_fold/post_page/post_page_widget.dart' show PostPageWidget;
-export '/posts_fold/red_card_post_page/red_card_post_page_widget.dart'
+export '/posts/post_page/post_page_widget.dart' show PostPageWidget;
+export '/posts/red_card_post_page/red_card_post_page_widget.dart'
     show RedCardPostPageWidget;
-export '/posts_fold/list_posts_team/list_posts_team_widget.dart'
+export '/posts/list_posts_team/list_posts_team_widget.dart'
     show ListPostsTeamWidget;
-export '/admins_fold/admin_event_fold/add_bet_page/add_bet_page_widget.dart'
+export '/admin_events/add_bet_page/add_bet_page_widget.dart'
     show AddBetPageWidget;
-export '/admins_fold/admin_event_fold/add_event_page/add_event_page_widget.dart'
+export '/admin_events/add_event_page/add_event_page_widget.dart'
     show AddEventPageWidget;
-export '/admins_fold/admin_event_fold/list_events_admin/list_events_admin_widget.dart'
+export '/admin_events/list_events_admin/list_events_admin_widget.dart'
     show ListEventsAdminWidget;
-export '/admins_fold/admin_event_fold/modif_bet_page/modif_bet_page_widget.dart'
+export '/admin_events/modif_bet_page/modif_bet_page_widget.dart'
     show ModifBetPageWidget;
-export '/admins_fold/admin_event_fold/modif_event_page/modif_event_page_widget.dart'
+export '/admin_events/modif_event_page/modif_event_page_widget.dart'
     show ModifEventPageWidget;
-export '/admins_fold/admin_team_fold/add_team_page/add_team_page_widget.dart'
+export '/admin_teams/add_team_page/add_team_page_widget.dart'
     show AddTeamPageWidget;
-export '/admins_fold/admin_users_fold/admin_member_entry_page/admin_member_entry_page_widget.dart'
+export '/admin_users/admin_member_entry_page/admin_member_entry_page_widget.dart'
     show AdminMemberEntryPageWidget;
-export '/admins_fold/admin_team_fold/team_users_list/team_users_list_widget.dart'
+export '/admin_teams/team_users_list/team_users_list_widget.dart'
     show TeamUsersListWidget;
-export '/admins_fold/admin_users_fold/admin_users_list/admin_users_list_widget.dart'
+export '/admin_users/admin_users_list/admin_users_list_widget.dart'
     show AdminUsersListWidget;
-export '/admins_fold/admin_users_fold/profil_public_admin/profil_public_admin_widget.dart'
+export '/admin_users/profil_public_admin/profil_public_admin_widget.dart'
     show ProfilPublicAdminWidget;
-export '/admins_fold/mods_fold/signal_post_page/signal_post_page_widget.dart'
+export '/moderator/signal_post_page/signal_post_page_widget.dart'
     show SignalPostPageWidget;
-export '/admins_fold/admin_users_fold/admin_page/admin_page_widget.dart'
-    show AdminPageWidget;
-export '/admins_fold/mods_fold/moderator_page/moderator_page_widget.dart'
+export '/admin_users/admin_page/admin_page_widget.dart' show AdminPageWidget;
+export '/moderator/moderator_page/moderator_page_widget.dart'
     show ModeratorPageWidget;
-export '/admins_fold/admin_team_fold/admin_teams_list/admin_teams_list_widget.dart'
+export '/admin_teams/admin_teams_list/admin_teams_list_widget.dart'
     show AdminTeamsListWidget;
-export '/ranks_fold/my_bests_rank_page/my_bests_rank_page_widget.dart'
+export '/rank_users/my_bests_rank_page/my_bests_rank_page_widget.dart'
     show MyBestsRankPageWidget;
-export '/ranks_fold/rank_page/rank_page_widget.dart' show RankPageWidget;
-export '/users_fold/public_fold/confidentiality_page/confidentiality_page_widget.dart'
+export '/rank_users/rank_page/rank_page_widget.dart' show RankPageWidget;
+export '/public/confidentiality_page/confidentiality_page_widget.dart'
     show ConfidentialityPageWidget;
-export '/users_fold/public_fold/generals_condidtions_page/generals_condidtions_page_widget.dart'
+export '/public/generals_condidtions_page/generals_condidtions_page_widget.dart'
     show GeneralsCondidtionsPageWidget;
-export '/users_fold/public_fold/infos_rank_page/infos_rank_page_widget.dart'
+export '/public/infos_rank_page/infos_rank_page_widget.dart'
     show InfosRankPageWidget;
-export '/users_fold/public_fold/shopping_page/shopping_page_widget.dart'
+export '/public/shopping_page/shopping_page_widget.dart'
     show ShoppingPageWidget;
-export '/teams_fold/e_teams_fold/modif_e_team_page/modif_e_team_page_widget.dart'
-    show ModifETeamPageWidget;
-export '/admins_fold/mods_fold/mod_teams_list/mod_teams_list_widget.dart'
+export '/moderator/mod_teams_list/mod_teams_list_widget.dart'
     show ModTeamsListWidget;
-export '/events_fold/list_events_add2_bet/list_events_add2_bet_widget.dart'
+export '/events/list_events_add2_bet/list_events_add2_bet_widget.dart'
     show ListEventsAdd2BetWidget;
-export '/events_fold/event_page_add2_bet/event_page_add2_bet_widget.dart'
+export '/events/event_page_add2_bet/event_page_add2_bet_widget.dart'
     show EventPageAdd2BetWidget;
-export '/users_fold/cart_page_add2_bet/cart_page_add2_bet_widget.dart'
+export '/users/cart_page_add2_bet/cart_page_add2_bet_widget.dart'
     show CartPageAdd2BetWidget;
-export '/users_fold/public_fold/public_bet_page/public_bet_page_widget.dart'
+export '/public/public_bet_page/public_bet_page_widget.dart'
     show PublicBetPageWidget;
-export '/comments_fold/list_comms_event_comm_page/list_comms_event_comm_page_widget.dart'
+export '/comments/list_comms_event_comm_page/list_comms_event_comm_page_widget.dart'
     show ListCommsEventCommPageWidget;
-export '/comments_fold/event_message_page/event_message_page_widget.dart'
+export '/comments/event_message_page/event_message_page_widget.dart'
     show EventMessagePageWidget;
-export '/comments_fold/red_card_event_comm_page/red_card_event_comm_page_widget.dart'
+export '/comments/red_card_event_comm_page/red_card_event_comm_page_widget.dart'
     show RedCardEventCommPageWidget;
-export '/admins_fold/mods_fold/signal_event_message_page/signal_event_message_page_widget.dart'
+export '/moderator/signal_event_message_page/signal_event_message_page_widget.dart'
     show SignalEventMessagePageWidget;
-export '/admins_fold/mods_fold/mod_notifs_list/mod_notifs_list_widget.dart'
+export '/moderator/mod_notifs_list/mod_notifs_list_widget.dart'
     show ModNotifsListWidget;
-export '/ranks_fold/admin_rank_page/admin_rank_page_widget.dart'
+export '/rank_users/admin_rank_page/admin_rank_page_widget.dart'
     show AdminRankPageWidget;
-export '/admins_fold/mods_fold/signal_post_message_page/signal_post_message_page_widget.dart'
+export '/moderator/signal_post_message_page/signal_post_message_page_widget.dart'
     show SignalPostMessagePageWidget;
-export '/users_fold/cart_page_add3_bet/cart_page_add3_bet_widget.dart'
+export '/users/cart_page_add3_bet/cart_page_add3_bet_widget.dart'
     show CartPageAdd3BetWidget;
-export '/events_fold/list_events_add3_bet/list_events_add3_bet_widget.dart'
+export '/events/list_events_add3_bet/list_events_add3_bet_widget.dart'
     show ListEventsAdd3BetWidget;
-export '/events_fold/event_page_add3_bet/event_page_add3_bet_widget.dart'
+export '/events/event_page_add3_bet/event_page_add3_bet_widget.dart'
     show EventPageAdd3BetWidget;
-export '/admins_fold/mods_fold/mod_team_notifs_list/mod_team_notifs_list_widget.dart'
+export '/moderator/mod_team_notifs_list/mod_team_notifs_list_widget.dart'
     show ModTeamNotifsListWidget;
-export '/events_fold/my_teams_list_events/my_teams_list_events_widget.dart'
+export '/events/my_teams_list_events/my_teams_list_events_widget.dart'
     show MyTeamsListEventsWidget;
-export '/users_fold/public_fold/search_users_list/search_users_list_widget.dart'
+export '/public/search_users_list/search_users_list_widget.dart'
     show SearchUsersListWidget;
-export '/admins_fold/admin_users_fold/admin_st_app_users_list/admin_st_app_users_list_widget.dart'
+export '/admin_users/admin_st_app_users_list/admin_st_app_users_list_widget.dart'
     show AdminStAppUsersListWidget;
-export '/teams_fold/e_teams_fold/add_e_team_page_i_u_d_admin/add_e_team_page_i_u_d_admin_widget.dart'
-    show AddETeamPageIUDAdminWidget;
-export '/admins_fold/admin_team_fold/modif_team_page/modif_team_page_widget.dart'
+export '/admin_teams/modif_team_page/modif_team_page_widget.dart'
     show ModifTeamPageWidget;
-export '/events_fold/e_events_fold/e_event_page/e_event_page_widget.dart'
-    show EEventPageWidget;
-export '/teams_fold/e_teams_fold/e_team_users_list/e_team_users_list_widget.dart'
-    show ETeamUsersListWidget;
-export '/teams_fold/e_teams_fold/e_member_entry_page/e_member_entry_page_widget.dart'
-    show EMemberEntryPageWidget;
-export '/ranks_fold/e_rank_fold/e_user_rank_page/e_user_rank_page_widget.dart'
-    show EUserRankPageWidget;
-export '/ranks_fold/e_rank_fold/e_team_rank_page/e_team_rank_page_widget.dart'
-    show ETeamRankPageWidget;
-export '/ranks_fold/e_rank_fold/my_bests_e_user_rank_page/my_bests_e_user_rank_page_widget.dart'
-    show MyBestsEUserRankPageWidget;
-export '/ranks_fold/e_rank_fold/admin_e_user_rank_page/admin_e_user_rank_page_widget.dart'
-    show AdminEUserRankPageWidget;
-export '/ranks_fold/e_rank_fold/admin_e_team_rank_page/admin_e_team_rank_page_widget.dart'
-    show AdminETeamRankPageWidget;
-export '/ranks_fold/e_rank_fold/my_bests_e_team_rank_page/my_bests_e_team_rank_page_widget.dart'
-    show MyBestsETeamRankPageWidget;
-export '/teams_fold/e_teams_fold/boss_e_member_entry_page/boss_e_member_entry_page_widget.dart'
-    show BossEMemberEntryPageWidget;
-export '/teams_fold/e_teams_fold/discusion_e_team_page/discusion_e_team_page_widget.dart'
+export '/teams/discusion_e_team_page/discusion_e_team_page_widget.dart'
     show DiscusionETeamPageWidget;
-export '/events_fold/e_events_fold/e_team_events_list/e_team_events_list_widget.dart'
-    show ETeamEventsListWidget;
-export '/events_fold/e_events_fold/list_messages_boss_event/list_messages_boss_event_widget.dart'
-    show ListMessagesBossEventWidget;
-export '/events_fold/e_events_fold/add_players_event_page/add_players_event_page_widget.dart'
-    show AddPlayersEventPageWidget;
-export '/events_fold/e_events_fold/modif_end_e_event_page/modif_end_e_event_page_widget.dart'
-    show ModifEndEEventPageWidget;
-export '/teams_fold/e_teams_fold/team_list_for_events/team_list_for_events_widget.dart'
-    show TeamListForEventsWidget;
-export '/events_fold/e_events_fold/boss_notif_e_event_page_i_u_d_admin/boss_notif_e_event_page_i_u_d_admin_widget.dart'
-    show BossNotifEEventPageIUDAdminWidget;
-export '/events_fold/e_events_fold/e_team_events_no_date_list/e_team_events_no_date_list_widget.dart'
-    show ETeamEventsNoDateListWidget;
-export '/events_fold/e_events_fold/player_notif_e_event_start_page/player_notif_e_event_start_page_widget.dart'
-    show PlayerNotifEEventStartPageWidget;
-export '/events_fold/e_events_fold/boss_notif_e_event_end_page/boss_notif_e_event_end_page_widget.dart'
-    show BossNotifEEventEndPageWidget;
-export '/admins_fold/mods_fold/signal_e_event_page/signal_e_event_page_widget.dart'
+export '/moderator/signal_e_event_page/signal_e_event_page_widget.dart'
     show SignalEEventPageWidget;
-export '/events_fold/e_events_fold/add_date_for_e_event/add_date_for_e_event_widget.dart'
-    show AddDateForEEventWidget;
-export '/teams_fold/team_stats/team_stats_widget.dart' show TeamStatsWidget;
-export '/teams_fold/teams_list/teams_list_widget.dart' show TeamsListWidget;
-export '/posts_fold/the_s_team_post_page/the_s_team_post_page_widget.dart'
+export '/teams/team_stats/team_stats_widget.dart' show TeamStatsWidget;
+export '/teams/teams_list/teams_list_widget.dart' show TeamsListWidget;
+export '/posts/the_s_team_post_page/the_s_team_post_page_widget.dart'
     show TheSTeamPostPageWidget;
-export '/posts_fold/list_surveys_news/list_surveys_news_widget.dart'
+export '/posts/list_surveys_news/list_surveys_news_widget.dart'
     show ListSurveysNewsWidget;
-export '/admins_fold/admin_users_fold/add_survey_page/add_survey_page_widget.dart'
+export '/admin_users/add_survey_page/add_survey_page_widget.dart'
     show AddSurveyPageWidget;
-export '/posts_fold/list_advices/list_advices_widget.dart'
-    show ListAdvicesWidget;
-export '/events_fold/e_events_fold/rating_players_page/rating_players_page_widget.dart'
-    show RatingPlayersPageWidget;
-export '/events_fold/e_events_fold/add_rating_players_page/add_rating_players_page_widget.dart'
-    show AddRatingPlayersPageWidget;
-export '/users_fold/public_fold/public_stats_compare/public_stats_compare_widget.dart'
+export '/posts/list_advices/list_advices_widget.dart' show ListAdvicesWidget;
+export '/public/public_stats_compare/public_stats_compare_widget.dart'
     show PublicStatsCompareWidget;
-export '/users_fold/public_fold/full_image_page/full_image_page_widget.dart'
+export '/public/full_image_page/full_image_page_widget.dart'
     show FullImagePageWidget;
-export '/admins_fold/admin_event_fold/refund_page/refund_page_widget.dart'
+export '/admin_events/refund_page/refund_page_widget.dart'
     show RefundPageWidget;
-export '/admins_fold/admin_users_fold/menu_page_pub/menu_page_pub_widget.dart'
+export '/admin_users/menu_page_pub/menu_page_pub_widget.dart'
     show MenuPagePubWidget;
-export '/admins_fold/admin_event_fold/add_bet_meca_page/add_bet_meca_page_widget.dart'
+export '/admin_events/add_bet_meca_page/add_bet_meca_page_widget.dart'
     show AddBetMecaPageWidget;
-export '/admins_fold/admin_event_fold/modif_rank_pilotes/modif_rank_pilotes_widget.dart'
+export '/admin_events/modif_rank_pilotes/modif_rank_pilotes_widget.dart'
     show ModifRankPilotesWidget;
-export '/ranks_fold/rank_page_my_enterprise/rank_page_my_enterprise_widget.dart'
+export '/rank_users/rank_page_my_enterprise/rank_page_my_enterprise_widget.dart'
     show RankPageMyEnterpriseWidget;
-export '/events_fold/event_page_compo/event_page_compo_widget.dart'
+export '/events/event_page_compo/event_page_compo_widget.dart'
     show EventPageCompoWidget;
-export '/events_fold/leagu_events_list/leagu_events_list_widget.dart'
+export '/events/leagu_events_list/leagu_events_list_widget.dart'
     show LeaguEventsListWidget;
-export '/events_fold/leagu_events_list_add2_bet/leagu_events_list_add2_bet_widget.dart'
+export '/events/leagu_events_list_add2_bet/leagu_events_list_add2_bet_widget.dart'
     show LeaguEventsListAdd2BetWidget;
-export '/events_fold/leagu_events_list_add3_bet/leagu_events_list_add3_bet_widget.dart'
+export '/events/leagu_events_list_add3_bet/leagu_events_list_add3_bet_widget.dart'
     show LeaguEventsListAdd3BetWidget;
-export '/posts_fold/add_post_event_page/add_post_event_page_widget.dart'
+export '/posts/add_post_event_page/add_post_event_page_widget.dart'
     show AddPostEventPageWidget;
-export '/posts_fold/modif_text_post/modif_text_post_widget.dart'
+export '/posts/modif_text_post/modif_text_post_widget.dart'
     show ModifTextPostWidget;

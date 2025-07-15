@@ -21,16 +21,10 @@ class MyTeamsRecord extends FirestoreRecord {
   List<DocumentReference> get teams => _teams ?? const [];
   bool hasTeams() => _teams != null;
 
-  // "esport" field.
-  bool? _esport;
-  bool get esport => _esport ?? false;
-  bool hasEsport() => _esport != null;
-
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _teams = getDataList(snapshotData['teams']);
-    _esport = snapshotData['esport'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -72,13 +66,9 @@ class MyTeamsRecord extends FirestoreRecord {
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createMyTeamsRecordData({
-  bool? esport,
-}) {
+Map<String, dynamic> createMyTeamsRecordData() {
   final firestoreData = mapToFirestore(
-    <String, dynamic>{
-      'esport': esport,
-    }.withoutNulls,
+    <String, dynamic>{}.withoutNulls,
   );
 
   return firestoreData;
@@ -90,13 +80,11 @@ class MyTeamsRecordDocumentEquality implements Equality<MyTeamsRecord> {
   @override
   bool equals(MyTeamsRecord? e1, MyTeamsRecord? e2) {
     const listEquality = ListEquality();
-    return listEquality.equals(e1?.teams, e2?.teams) &&
-        e1?.esport == e2?.esport;
+    return listEquality.equals(e1?.teams, e2?.teams);
   }
 
   @override
-  int hash(MyTeamsRecord? e) =>
-      const ListEquality().hash([e?.teams, e?.esport]);
+  int hash(MyTeamsRecord? e) => const ListEquality().hash([e?.teams]);
 
   @override
   bool isValidKey(Object? o) => o is MyTeamsRecord;
