@@ -679,7 +679,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primary,
+                                                              .alternate,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               1.0),
@@ -703,10 +703,11 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                   .circular(
                                                                       0.0),
                                                           child: Image.asset(
-                                                            'assets/images/Motocross_World_Championship_Logo.png',
+                                                            'assets/images/mxgp.png',
                                                             width: 300.0,
                                                             height: 200.0,
-                                                            fit: BoxFit.contain,
+                                                            fit:
+                                                                BoxFit.fitWidth,
                                                             alignment:
                                                                 Alignment(
                                                                     0.0, 0.0),

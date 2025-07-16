@@ -289,24 +289,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "league_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sport_value",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "points",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "teams",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
           "fieldPath": "additional_league",
           "order": "ASCENDING"
         },
@@ -316,6 +298,24 @@
         },
         {
           "fieldPath": "points_cup",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teams",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "league_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sport_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "points",
           "order": "DESCENDING"
         }
       ]
