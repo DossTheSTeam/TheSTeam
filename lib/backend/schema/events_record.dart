@@ -131,50 +131,10 @@ class EventsRecord extends FirestoreRecord {
   String get week => _week ?? '';
   bool hasWeek() => _week != null;
 
-  // "boss_dom" field.
-  DocumentReference? _bossDom;
-  DocumentReference? get bossDom => _bossDom;
-  bool hasBossDom() => _bossDom != null;
-
-  // "boss_ext" field.
-  DocumentReference? _bossExt;
-  DocumentReference? get bossExt => _bossExt;
-  bool hasBossExt() => _bossExt != null;
-
-  // "players" field.
-  List<DocumentReference>? _players;
-  List<DocumentReference> get players => _players ?? const [];
-  bool hasPlayers() => _players != null;
-
-  // "dom_ready" field.
-  bool? _domReady;
-  bool get domReady => _domReady ?? false;
-  bool hasDomReady() => _domReady != null;
-
-  // "ext_ready" field.
-  bool? _extReady;
-  bool get extReady => _extReady ?? false;
-  bool hasExtReady() => _extReady != null;
-
-  // "bool_redcard" field.
-  bool? _boolRedcard;
-  bool get boolRedcard => _boolRedcard ?? false;
-  bool hasBoolRedcard() => _boolRedcard != null;
-
   // "division_value" field.
   String? _divisionValue;
   String get divisionValue => _divisionValue ?? '';
   bool hasDivisionValue() => _divisionValue != null;
-
-  // "date_dom" field.
-  bool? _dateDom;
-  bool get dateDom => _dateDom ?? false;
-  bool hasDateDom() => _dateDom != null;
-
-  // "date_ext" field.
-  bool? _dateExt;
-  bool get dateExt => _dateExt ?? false;
-  bool hasDateExt() => _dateExt != null;
 
   // "points" field.
   String? _points;
@@ -250,15 +210,7 @@ class EventsRecord extends FirestoreRecord {
     _teamextRef = snapshotData['teamext_ref'] as DocumentReference?;
     _leagueValue = snapshotData['league_value'] as String?;
     _week = snapshotData['week'] as String?;
-    _bossDom = snapshotData['boss_dom'] as DocumentReference?;
-    _bossExt = snapshotData['boss_ext'] as DocumentReference?;
-    _players = getDataList(snapshotData['players']);
-    _domReady = snapshotData['dom_ready'] as bool?;
-    _extReady = snapshotData['ext_ready'] as bool?;
-    _boolRedcard = snapshotData['bool_redcard'] as bool?;
     _divisionValue = snapshotData['division_value'] as String?;
-    _dateDom = snapshotData['date_dom'] as bool?;
-    _dateExt = snapshotData['date_ext'] as bool?;
     _points = snapshotData['points'] as String?;
     _plus = snapshotData['plus'] as String?;
     _moins = snapshotData['moins'] as String?;
@@ -326,14 +278,7 @@ Map<String, dynamic> createEventsRecordData({
   DocumentReference? teamextRef,
   String? leagueValue,
   String? week,
-  DocumentReference? bossDom,
-  DocumentReference? bossExt,
-  bool? domReady,
-  bool? extReady,
-  bool? boolRedcard,
   String? divisionValue,
-  bool? dateDom,
-  bool? dateExt,
   String? points,
   String? plus,
   String? moins,
@@ -367,14 +312,7 @@ Map<String, dynamic> createEventsRecordData({
       'teamext_ref': teamextRef,
       'league_value': leagueValue,
       'week': week,
-      'boss_dom': bossDom,
-      'boss_ext': bossExt,
-      'dom_ready': domReady,
-      'ext_ready': extReady,
-      'bool_redcard': boolRedcard,
       'division_value': divisionValue,
-      'date_dom': dateDom,
-      'date_ext': dateExt,
       'points': points,
       'plus': plus,
       'moins': moins,
@@ -419,15 +357,7 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.teamextRef == e2?.teamextRef &&
         e1?.leagueValue == e2?.leagueValue &&
         e1?.week == e2?.week &&
-        e1?.bossDom == e2?.bossDom &&
-        e1?.bossExt == e2?.bossExt &&
-        listEquality.equals(e1?.players, e2?.players) &&
-        e1?.domReady == e2?.domReady &&
-        e1?.extReady == e2?.extReady &&
-        e1?.boolRedcard == e2?.boolRedcard &&
         e1?.divisionValue == e2?.divisionValue &&
-        e1?.dateDom == e2?.dateDom &&
-        e1?.dateExt == e2?.dateExt &&
         e1?.points == e2?.points &&
         e1?.plus == e2?.plus &&
         e1?.moins == e2?.moins &&
@@ -465,15 +395,7 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.teamextRef,
         e?.leagueValue,
         e?.week,
-        e?.bossDom,
-        e?.bossExt,
-        e?.players,
-        e?.domReady,
-        e?.extReady,
-        e?.boolRedcard,
         e?.divisionValue,
-        e?.dateDom,
-        e?.dateExt,
         e?.points,
         e?.plus,
         e?.moins,

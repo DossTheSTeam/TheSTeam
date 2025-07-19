@@ -673,12 +673,9 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                             ),
                                                           ],
                                                         ),
-                                                        if ((columnNotifsMyNotificationsRecord
-                                                                    .boolBoss !=
-                                                                true) &&
-                                                            (columnNotifsMyNotificationsRecord
-                                                                    .teamRef ==
-                                                                null))
+                                                        if (columnNotifsMyNotificationsRecord
+                                                                .teamRef ==
+                                                            null)
                                                           Container(
                                                             width: 25.0,
                                                             height: 25.0,

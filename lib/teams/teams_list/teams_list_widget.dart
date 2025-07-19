@@ -11725,12 +11725,19 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
-                                                                        _model.showLigue =
-                                                                            'formule.1';
-                                                                        _model.showSport =
-                                                                            'sports.meca';
-                                                                        safeSetState(
-                                                                            () {});
+                                                                        context
+                                                                            .pushNamed(
+                                                                          TeamPageWidget
+                                                                              .routeName,
+                                                                          queryParameters:
+                                                                              {
+                                                                            'teamRef':
+                                                                                serializeParam(
+                                                                              columnMMAChampPointsScrollTeamsRecord.reference,
+                                                                              ParamType.DocumentReference,
+                                                                            ),
+                                                                          }.withoutNulls,
+                                                                        );
                                                                       },
                                                                       child:
                                                                           Container(

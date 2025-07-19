@@ -75,55 +75,10 @@ class MyNotificationsRecord extends FirestoreRecord {
   String get textReasons => _textReasons ?? '';
   bool hasTextReasons() => _textReasons != null;
 
-  // "my_eteam" field.
-  DocumentReference? _myEteam;
-  DocumentReference? get myEteam => _myEteam;
-  bool hasMyEteam() => _myEteam != null;
-
-  // "e_event" field.
-  DocumentReference? _eEvent;
-  DocumentReference? get eEvent => _eEvent;
-  bool hasEEvent() => _eEvent != null;
-
-  // "eteam_dom" field.
-  DocumentReference? _eteamDom;
-  DocumentReference? get eteamDom => _eteamDom;
-  bool hasEteamDom() => _eteamDom != null;
-
-  // "eteam_ext" field.
-  DocumentReference? _eteamExt;
-  DocumentReference? get eteamExt => _eteamExt;
-  bool hasEteamExt() => _eteamExt != null;
-
-  // "eteam_win" field.
-  DocumentReference? _eteamWin;
-  DocumentReference? get eteamWin => _eteamWin;
-  bool hasEteamWin() => _eteamWin != null;
-
-  // "score_dom" field.
-  int? _scoreDom;
-  int get scoreDom => _scoreDom ?? 0;
-  bool hasScoreDom() => _scoreDom != null;
-
-  // "score_ext" field.
-  int? _scoreExt;
-  int get scoreExt => _scoreExt ?? 0;
-  bool hasScoreExt() => _scoreExt != null;
-
-  // "eteam_draw" field.
-  String? _eteamDraw;
-  String get eteamDraw => _eteamDraw ?? '';
-  bool hasEteamDraw() => _eteamDraw != null;
-
   // "image" field.
   String? _image;
   String get image => _image ?? '';
   bool hasImage() => _image != null;
-
-  // "bool_boss" field.
-  bool? _boolBoss;
-  bool get boolBoss => _boolBoss ?? false;
-  bool hasBoolBoss() => _boolBoss != null;
 
   DocumentReference get parentReference => reference.parent.parent!;
 
@@ -140,16 +95,7 @@ class MyNotificationsRecord extends FirestoreRecord {
     _postMessage = snapshotData['post_message'] as DocumentReference?;
     _eventMessage = snapshotData['event_message'] as DocumentReference?;
     _textReasons = snapshotData['text_reasons'] as String?;
-    _myEteam = snapshotData['my_eteam'] as DocumentReference?;
-    _eEvent = snapshotData['e_event'] as DocumentReference?;
-    _eteamDom = snapshotData['eteam_dom'] as DocumentReference?;
-    _eteamExt = snapshotData['eteam_ext'] as DocumentReference?;
-    _eteamWin = snapshotData['eteam_win'] as DocumentReference?;
-    _scoreDom = castToType<int>(snapshotData['score_dom']);
-    _scoreExt = castToType<int>(snapshotData['score_ext']);
-    _eteamDraw = snapshotData['eteam_draw'] as String?;
     _image = snapshotData['image'] as String?;
-    _boolBoss = snapshotData['bool_boss'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -204,16 +150,7 @@ Map<String, dynamic> createMyNotificationsRecordData({
   DocumentReference? postMessage,
   DocumentReference? eventMessage,
   String? textReasons,
-  DocumentReference? myEteam,
-  DocumentReference? eEvent,
-  DocumentReference? eteamDom,
-  DocumentReference? eteamExt,
-  DocumentReference? eteamWin,
-  int? scoreDom,
-  int? scoreExt,
-  String? eteamDraw,
   String? image,
-  bool? boolBoss,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -229,16 +166,7 @@ Map<String, dynamic> createMyNotificationsRecordData({
       'post_message': postMessage,
       'event_message': eventMessage,
       'text_reasons': textReasons,
-      'my_eteam': myEteam,
-      'e_event': eEvent,
-      'eteam_dom': eteamDom,
-      'eteam_ext': eteamExt,
-      'eteam_win': eteamWin,
-      'score_dom': scoreDom,
-      'score_ext': scoreExt,
-      'eteam_draw': eteamDraw,
       'image': image,
-      'bool_boss': boolBoss,
     }.withoutNulls,
   );
 
@@ -263,16 +191,7 @@ class MyNotificationsRecordDocumentEquality
         e1?.postMessage == e2?.postMessage &&
         e1?.eventMessage == e2?.eventMessage &&
         e1?.textReasons == e2?.textReasons &&
-        e1?.myEteam == e2?.myEteam &&
-        e1?.eEvent == e2?.eEvent &&
-        e1?.eteamDom == e2?.eteamDom &&
-        e1?.eteamExt == e2?.eteamExt &&
-        e1?.eteamWin == e2?.eteamWin &&
-        e1?.scoreDom == e2?.scoreDom &&
-        e1?.scoreExt == e2?.scoreExt &&
-        e1?.eteamDraw == e2?.eteamDraw &&
-        e1?.image == e2?.image &&
-        e1?.boolBoss == e2?.boolBoss;
+        e1?.image == e2?.image;
   }
 
   @override
@@ -289,16 +208,7 @@ class MyNotificationsRecordDocumentEquality
         e?.postMessage,
         e?.eventMessage,
         e?.textReasons,
-        e?.myEteam,
-        e?.eEvent,
-        e?.eteamDom,
-        e?.eteamExt,
-        e?.eteamWin,
-        e?.scoreDom,
-        e?.scoreExt,
-        e?.eteamDraw,
-        e?.image,
-        e?.boolBoss
+        e?.image
       ]);
 
   @override

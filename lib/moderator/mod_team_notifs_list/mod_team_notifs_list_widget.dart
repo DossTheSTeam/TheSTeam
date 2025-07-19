@@ -850,7 +850,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'iancq22r' /* veut mettre un carton rouge à */,
+                                                                'yopx1kls' /* veut mettre un carton rouge à */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign

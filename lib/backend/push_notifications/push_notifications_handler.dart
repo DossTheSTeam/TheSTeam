@@ -368,11 +368,6 @@ final parametersBuilderMap =
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),
         },
       ),
-  'SignalEEventPage': (data) async => ParameterData(
-        allParams: {
-          'notifRef': getParameter<DocumentReference>(data, 'notifRef'),
-        },
-      ),
   'TeamStats': (data) async => ParameterData(
         allParams: {
           'eTeamRef': getParameter<DocumentReference>(data, 'eTeamRef'),

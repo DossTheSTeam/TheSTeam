@@ -132,8 +132,6 @@ export '/admin_teams/modif_team_page/modif_team_page_widget.dart'
     show ModifTeamPageWidget;
 export '/teams/discusion_e_team_page/discusion_e_team_page_widget.dart'
     show DiscusionETeamPageWidget;
-export '/moderator/signal_e_event_page/signal_e_event_page_widget.dart'
-    show SignalEEventPageWidget;
 export '/teams/team_stats/team_stats_widget.dart' show TeamStatsWidget;
 export '/teams/teams_list/teams_list_widget.dart' show TeamsListWidget;
 export '/posts/the_s_team_post_page/the_s_team_post_page_widget.dart'

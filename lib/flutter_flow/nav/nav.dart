@@ -799,18 +799,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: SignalEEventPageWidget.routeName,
-          path: SignalEEventPageWidget.routePath,
-          builder: (context, params) => SignalEEventPageWidget(
-            notifRef: params.getParam(
-              'notifRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users', 'my_notifications'],
-            ),
-          ),
-        ),
-        FFRoute(
           name: TeamStatsWidget.routeName,
           path: TeamStatsWidget.routePath,
           builder: (context, params) => TeamStatsWidget(

@@ -156,31 +156,6 @@ class UsersRecord extends FirestoreRecord {
   String get firstName => _firstName ?? '';
   bool hasFirstName() => _firstName != null;
 
-  // "guest" field.
-  bool? _guest;
-  bool get guest => _guest ?? false;
-  bool hasGuest() => _guest != null;
-
-  // "bool_mvp" field.
-  bool? _boolMvp;
-  bool get boolMvp => _boolMvp ?? false;
-  bool hasBoolMvp() => _boolMvp != null;
-
-  // "bool_top" field.
-  bool? _boolTop;
-  bool get boolTop => _boolTop ?? false;
-  bool hasBoolTop() => _boolTop != null;
-
-  // "bool_flop" field.
-  bool? _boolFlop;
-  bool get boolFlop => _boolFlop ?? false;
-  bool hasBoolFlop() => _boolFlop != null;
-
-  // "topsflops" field.
-  int? _topsflops;
-  int get topsflops => _topsflops ?? 0;
-  bool hasTopsflops() => _topsflops != null;
-
   // "help_nav" field.
   bool? _helpNav;
   bool get helpNav => _helpNav ?? false;
@@ -280,11 +255,6 @@ class UsersRecord extends FirestoreRecord {
     _betLoose = castToType<int>(snapshotData['bet_loose']);
     _familyName = snapshotData['family_name'] as String?;
     _firstName = snapshotData['first_name'] as String?;
-    _guest = snapshotData['guest'] as bool?;
-    _boolMvp = snapshotData['bool_mvp'] as bool?;
-    _boolTop = snapshotData['bool_top'] as bool?;
-    _boolFlop = snapshotData['bool_flop'] as bool?;
-    _topsflops = castToType<int>(snapshotData['topsflops']);
     _helpNav = snapshotData['help_nav'] as bool?;
     _adminSport = snapshotData['admin_sport'] as bool?;
     _adminSportvalue = snapshotData['admin_sportvalue'] as String?;
@@ -360,11 +330,6 @@ Map<String, dynamic> createUsersRecordData({
   int? betLoose,
   String? familyName,
   String? firstName,
-  bool? guest,
-  bool? boolMvp,
-  bool? boolTop,
-  bool? boolFlop,
-  int? topsflops,
   bool? helpNav,
   bool? adminSport,
   String? adminSportvalue,
@@ -407,11 +372,6 @@ Map<String, dynamic> createUsersRecordData({
       'bet_loose': betLoose,
       'family_name': familyName,
       'first_name': firstName,
-      'guest': guest,
-      'bool_mvp': boolMvp,
-      'bool_top': boolTop,
-      'bool_flop': boolFlop,
-      'topsflops': topsflops,
       'help_nav': helpNav,
       'admin_sport': adminSport,
       'admin_sportvalue': adminSportvalue,
@@ -466,11 +426,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.betLoose == e2?.betLoose &&
         e1?.familyName == e2?.familyName &&
         e1?.firstName == e2?.firstName &&
-        e1?.guest == e2?.guest &&
-        e1?.boolMvp == e2?.boolMvp &&
-        e1?.boolTop == e2?.boolTop &&
-        e1?.boolFlop == e2?.boolFlop &&
-        e1?.topsflops == e2?.topsflops &&
         e1?.helpNav == e2?.helpNav &&
         e1?.adminSport == e2?.adminSport &&
         e1?.adminSportvalue == e2?.adminSportvalue &&
@@ -517,11 +472,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.betLoose,
         e?.familyName,
         e?.firstName,
-        e?.guest,
-        e?.boolMvp,
-        e?.boolTop,
-        e?.boolFlop,
-        e?.topsflops,
         e?.helpNav,
         e?.adminSport,
         e?.adminSportvalue,

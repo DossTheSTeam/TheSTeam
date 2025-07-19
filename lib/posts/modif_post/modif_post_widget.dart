@@ -1157,7 +1157,7 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                           await selectMediaWithSourceBottomSheet(
                                         context: context,
                                         maxWidth: 1000.00,
-                                        maxHeight: 100.00,
+                                        maxHeight: 1000.00,
                                         allowPhoto: true,
                                       );
                                       if (selectedMedia != null &&

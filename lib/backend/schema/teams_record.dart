@@ -131,11 +131,6 @@ class TeamsRecord extends FirestoreRecord {
   String get additionalLeague => _additionalLeague ?? '';
   bool hasAdditionalLeague() => _additionalLeague != null;
 
-  // "bio" field.
-  String? _bio;
-  String get bio => _bio ?? '';
-  bool hasBio() => _bio != null;
-
   // "color1" field.
   Color? _color1;
   Color? get color1 => _color1;
@@ -230,7 +225,6 @@ class TeamsRecord extends FirestoreRecord {
     _redCards = castToType<int>(snapshotData['red_cards']);
     _guest = snapshotData['guest'] as bool?;
     _additionalLeague = snapshotData['additional_league'] as String?;
-    _bio = snapshotData['bio'] as String?;
     _color1 = getSchemaColor(snapshotData['color1']);
     _color2 = getSchemaColor(snapshotData['color2']);
     _conference = snapshotData['conference'] as DocumentReference?;
@@ -301,7 +295,6 @@ Map<String, dynamic> createTeamsRecordData({
   int? redCards,
   bool? guest,
   String? additionalLeague,
-  String? bio,
   Color? color1,
   Color? color2,
   DocumentReference? conference,
@@ -339,7 +332,6 @@ Map<String, dynamic> createTeamsRecordData({
       'red_cards': redCards,
       'guest': guest,
       'additional_league': additionalLeague,
-      'bio': bio,
       'color1': color1,
       'color2': color2,
       'conference': conference,
@@ -389,7 +381,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.redCards == e2?.redCards &&
         e1?.guest == e2?.guest &&
         e1?.additionalLeague == e2?.additionalLeague &&
-        e1?.bio == e2?.bio &&
         e1?.color1 == e2?.color1 &&
         e1?.color2 == e2?.color2 &&
         e1?.conference == e2?.conference &&
@@ -431,7 +422,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.redCards,
         e?.guest,
         e?.additionalLeague,
-        e?.bio,
         e?.color1,
         e?.color2,
         e?.conference,
