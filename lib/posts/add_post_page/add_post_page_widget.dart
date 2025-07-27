@@ -1004,47 +1004,64 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                             ),
                                             child: Padding(
                                               padding: EdgeInsets.all(3.0),
-                                              child: FlutterFlowAudioPlayer(
-                                                audio: Audio.network(
-                                                  _model.audioPost!,
-                                                  metas: Metas(
-                                                    title: ' ',
-                                                  ),
-                                                ),
-                                                titleTextStyle: FlutterFlowTheme
-                                                        .of(context)
-                                                    .bodySmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .fontStyle,
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) =>
+                                                    FlutterFlowAudioPlayer(
+                                                  audio: Audio.network(
+                                                    _model.audioPost!,
+                                                    metas: Metas(
+                                                      title: ' ',
                                                     ),
-                                                playbackDurationTextStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
+                                                  ),
+                                                  titleTextStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .poppins(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .fontStyle,
+                                                            ),
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .fontStyle,
+                                                          ),
+                                                  playbackDurationTextStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            font: GoogleFonts
+                                                                .poppins(
+                                                              fontWeight:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontWeight,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1056,33 +1073,31 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                                                     .labelMedium
                                                                     .fontStyle,
                                                           ),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                playbackButtonColor:
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  playbackButtonColor:
+                                                      valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                activeTrackColor:
+                                                  ),
+                                                  activeTrackColor:
+                                                      valueOrDefault<Color>(
+                                                    currentUserDocument?.color1,
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
-                                                inactiveTrackColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                elevation: 4.0,
-                                                playInBackground: PlayInBackground
-                                                    .disabledRestoreOnForeground,
+                                                        .primaryText,
+                                                  ),
+                                                  inactiveTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  elevation: 0.0,
+                                                  playInBackground:
+                                                      PlayInBackground
+                                                          .disabledPause,
+                                                ),
                                               ),
                                             ),
                                           ),

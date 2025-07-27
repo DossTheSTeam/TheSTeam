@@ -1417,7 +1417,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'uc9p1i8a' /* NBA */,
+                                                'dp6lj4xl' /* NBA */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1547,11 +1547,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                             optionLabels: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '67112en7' /* ATP */,
+                                                'ajdxr1xu' /* ATP */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'tzi4yr2h' /* WTA */,
+                                                'o3v88j40' /* WTA */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(
@@ -2215,11 +2215,11 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'phdbciya' /* World Superbike */,
+                                                's51u37rk' /* World Superbike */,
                                               ),
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'ukrkamdm' /* MX GP */,
+                                                '4sijvncg' /* MX GP */,
                                               )
                                             ],
                                             onChanged: (val) => safeSetState(

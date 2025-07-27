@@ -4,10 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/users/reset_paswword/reset_paswword_widget.dart';
-import '/flutter_flow/permissions_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,11 +35,6 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => AuthPageModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await requestPermission(notificationsPermission);
-    });
 
     _model.tabBarController = TabController(
       vsync: this,
@@ -221,7 +214,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                           padding: EdgeInsets.all(12.0),
                           child: Container(
                             width: double.infinity,
-                            height: 600.0,
+                            height: 570.0,
                             constraints: BoxConstraints(
                               maxWidth: 570.0,
                             ),
@@ -404,7 +397,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
-                                                                0.0, 20.0),
+                                                                0.0, 10.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -982,7 +975,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
-                                                                            50.0),
+                                                                            20.0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -1271,7 +1264,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
-                                                                0.0, 24.0),
+                                                                0.0, 10.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1902,11 +1895,19 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
+                                                                  50.0,
                                                                   0.0,
-                                                                  0.0,
-                                                                  100.0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () async {
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
                                                           await showModalBottomSheet(
                                                             isScrollControlled:
                                                                 true,
@@ -1943,76 +1944,43 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                               safeSetState(
                                                                   () {}));
                                                         },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'jib4whuk' /* Mot de passe oublié ? */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 44.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      32.0,
-                                                                      0.0,
-                                                                      32.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .error,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            width: 2.0,
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'rlyn9zm2' /* Mot de passe oublié ? */,
                                                           ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
-                                                          hoverColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryBackground,
+                                                          textAlign:
+                                                              TextAlign.start,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .error,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
                                                       ),
                                                     ),

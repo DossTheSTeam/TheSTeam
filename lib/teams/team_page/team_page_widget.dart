@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/public/block_user/block_user_widget.dart';
-import '/teams/audio_member_conference/audio_member_conference_widget.dart';
 import '/teams/rank_team/rank_team_widget.dart';
 import '/teams/rank_team_cup/rank_team_cup_widget.dart';
 import '/teams/rank_team_meca/rank_team_meca_widget.dart';
@@ -384,513 +383,153 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            if (currentUserDocument
-                                                    ?.audioTeam !=
-                                                null)
-                                              AuthUserStreamWidget(
-                                                builder: (context) =>
-                                                    StreamBuilder<TeamsRecord>(
-                                                  stream:
-                                                      TeamsRecord.getDocument(
-                                                          currentUserDocument!
-                                                              .audioTeam!),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation<
-                                                                    Color>(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .accent4,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-
-                                                    final rowTeamsRecord =
-                                                        snapshot.data!;
-
-                                                    return Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                TeamPageWidget
-                                                                    .routeName,
-                                                                queryParameters:
-                                                                    {
-                                                                  'teamRef':
-                                                                      serializeParam(
-                                                                    currentUserDocument
-                                                                        ?.audioTeam,
-                                                                    ParamType
-                                                                        .DocumentReference,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .bottomToTop,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            400),
-                                                                  ),
-                                                                },
-                                                              );
-                                                            },
-                                                            child: Container(
-                                                              width: 65.0,
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  if (true /* Warning: Trying to access variable not yet defined. */)
+                                                    FutureBuilder<
+                                                        List<
+                                                            MyNotificationsRecord>>(
+                                                      future:
+                                                          queryMyNotificationsRecordOnce(
+                                                        parent:
+                                                            currentUserReference,
+                                                        singleRecord: true,
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
                                                               height: 50.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  rowTeamsRecord
-                                                                      .logo,
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitHeight,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent4,
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: StreamBuilder<
-                                                              TeamConferenceRecord>(
-                                                            stream: TeamConferenceRecord
-                                                                .getDocument(
-                                                                    rowTeamsRecord
-                                                                        .conference!),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    child:
-                                                                        CircularProgressIndicator(
-                                                                      valueColor:
-                                                                          AlwaysStoppedAnimation<
-                                                                              Color>(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .accent4,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
+                                                          );
+                                                        }
+                                                        List<MyNotificationsRecord>
+                                                            rowNotifsMyNotificationsRecordList =
+                                                            snapshot.data!;
+                                                        // Return an empty Container when the item does not exist.
+                                                        if (snapshot
+                                                            .data!.isEmpty) {
+                                                          return Container();
+                                                        }
+                                                        final rowNotifsMyNotificationsRecord =
+                                                            rowNotifsMyNotificationsRecordList
+                                                                    .isNotEmpty
+                                                                ? rowNotifsMyNotificationsRecordList
+                                                                    .first
+                                                                : null;
 
-                                                              final columnTeamConferenceRecord =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  if (columnTeamConferenceRecord
-                                                                      .members
-                                                                      .contains(
-                                                                          currentUserReference))
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          FlutterFlowIconButton(
-                                                                        borderColor:
-                                                                            valueOrDefault<Color>(
-                                                                          rowTeamsRecord
-                                                                              .color2,
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .secondaryText,
-                                                                        ),
-                                                                        borderRadius:
-                                                                            50.0,
-                                                                        borderWidth:
-                                                                            1.0,
-                                                                        buttonSize:
-                                                                            50.0,
-                                                                        fillColor:
-                                                                            FlutterFlowTheme.of(context).tertiary,
-                                                                        icon:
-                                                                            FaIcon(
-                                                                          FontAwesomeIcons
-                                                                              .microphoneAlt,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            rowTeamsRecord.color1,
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                          ),
-                                                                          size:
-                                                                              31.0,
-                                                                        ),
-                                                                        onPressed:
-                                                                            () async {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return WebViewAware(
-                                                                                child: GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: AudioMemberConferenceWidget(
-                                                                                      teamRef: currentUserDocument!.audioTeam!,
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        },
-                                                                      ),
-                                                                    ),
-                                                                  Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      if (columnTeamConferenceRecord
-                                                                          .fans
-                                                                          .contains(currentUserReference))
-                                                                        Align(
-                                                                          alignment:
-                                                                              AlignmentDirectional(0.0, 0.0),
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor: valueOrDefault<Color>(
-                                                                              rowTeamsRecord.color2,
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                            ),
-                                                                            borderRadius: 50.0,
-                                                                            borderWidth: 1.0,
-                                                                            buttonSize: 50.0,
-                                                                            fillColor: FlutterFlowTheme.of(context).tertiary,
-                                                                            icon: FaIcon(
-                                                                              FontAwesomeIcons.headphonesAlt,
-                                                                              color: valueOrDefault<Color>(
-                                                                                rowTeamsRecord.color1,
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                              size: 31.0,
-                                                                            ),
-                                                                            onPressed: () {
-                                                                              print('IconButton pressed ...');
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                ),
-                                              ),
-                                            if (currentUserDocument
-                                                    ?.audioTeam ==
-                                                null)
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (teamPageTeamsRecord
-                                                          .members
-                                                          .contains(
-                                                              currentUserReference))
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await showModalBottomSheet(
-                                                                isScrollControlled:
-                                                                    true,
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                enableDrag:
-                                                                    false,
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (context) {
-                                                                  return WebViewAware(
-                                                                    child:
-                                                                        GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        FocusScope.of(context)
-                                                                            .unfocus();
-                                                                        FocusManager
-                                                                            .instance
-                                                                            .primaryFocus
-                                                                            ?.unfocus();
-                                                                      },
-                                                                      child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            MediaQuery.viewInsetsOf(context),
-                                                                        child:
-                                                                            AudioMemberConferenceWidget(
-                                                                          teamRef:
-                                                                              widget.teamRef!,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              ).then((value) =>
-                                                                  safeSetState(
-                                                                      () {}));
-                                                            },
-                                                            child: FaIcon(
-                                                              FontAwesomeIcons
-                                                                  .microphoneAlt,
-                                                              color:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                teamPageTeamsRecord
-                                                                    .color1,
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
-                                                              size: 30.0,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (true /* Warning: Trying to access variable not yet defined. */)
-                                                        FutureBuilder<
-                                                            List<
-                                                                MyNotificationsRecord>>(
-                                                          future:
-                                                              queryMyNotificationsRecordOnce(
-                                                            parent:
-                                                                currentUserReference,
-                                                            singleRecord: true,
-                                                          ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            List<MyNotificationsRecord>
-                                                                rowNotifsMyNotificationsRecordList =
-                                                                snapshot.data!;
-                                                            // Return an empty Container when the item does not exist.
-                                                            if (snapshot.data!
-                                                                .isEmpty) {
-                                                              return Container();
-                                                            }
-                                                            final rowNotifsMyNotificationsRecord =
-                                                                rowNotifsMyNotificationsRecordList
-                                                                        .isNotEmpty
-                                                                    ? rowNotifsMyNotificationsRecordList
-                                                                        .first
-                                                                    : null;
-
-                                                            return Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                        return Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        MyNotifsListWidget
-                                                                            .routeName,
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.rightToLeft,
-                                                                            duration:
-                                                                                Duration(milliseconds: 400),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .notifications_active_outlined,
-                                                                      color: valueOrDefault<
-                                                                          Color>(
-                                                                        currentUserDocument
-                                                                            ?.color1,
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .accent1,
-                                                                      ),
-                                                                      size:
-                                                                          40.0,
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      MyNotifsListWidget
+                                                                          .routeName,
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.rightToLeft,
+                                                                          duration:
+                                                                              Duration(milliseconds: 400),
+                                                                        ),
+                                                                      },
+                                                                    );
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .notifications_active_outlined,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      currentUserDocument
+                                                                          ?.color1,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent1,
                                                                     ),
+                                                                    size: 40.0,
                                                                   ),
                                                                 ),
-                                                              ],
-                                                            );
-                                                          },
-                                                        ),
-                                                      if (teamPageTeamsRecord
-                                                          .fans
-                                                          .contains(
-                                                              currentUserReference))
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: FaIcon(
-                                                            FontAwesomeIcons
-                                                                .headphonesAlt,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ),
+                                                  if (teamPageTeamsRecord.fans
+                                                      .contains(
+                                                          currentUserReference))
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: FaIcon(
+                                                        FontAwesomeIcons
+                                                            .headphonesAlt,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .alternate,
-                                                            size: 30.0,
-                                                          ),
-                                                        ),
-                                                    ],
-                                                  ),
-                                                ),
+                                                        size: 30.0,
+                                                      ),
+                                                    ),
+                                                ],
                                               ),
+                                            ),
                                           ],
                                         ),
                                       ],

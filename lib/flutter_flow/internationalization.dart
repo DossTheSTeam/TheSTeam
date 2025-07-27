@@ -270,13 +270,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': 'Continua con Apple',
       'pt': 'Continuar com a Apple',
     },
-    'jib4whuk': {
+    'rlyn9zm2': {
       'fr': 'Mot de passe oublié ?',
-      'de': 'Passwort vergessen?',
-      'en': 'Forgot your password?',
-      'es': '¿Olvidaste tu contraseña?',
-      'it': 'Hai dimenticato la password?',
-      'pt': 'Esqueceu sua senha?',
+      'de': 'Füllen Sie das Formular aus, um sich uns anzuschließen',
+      'en': 'Fill out the form to join us',
+      'es': 'Llena el formulario para unirte a nosotros',
+      'it': 'Compila il modulo per unirti a noi',
+      'pt': 'Preencha o formulário para se juntar a nós',
     },
     '0muq2m4r': {
       'fr': 'Home',
@@ -2069,6 +2069,110 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3h2h03xy': {
       'fr': 'Competição entre colegas',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'hwjmvhxp': {
+      'fr': 'Notifications',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'ukzwx7ci': {
+      'fr': 'Activée',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'eta7666l': {
+      'fr': 'Enabled',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '7p1mrg5h': {
+      'fr': 'Ermöglicht',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'ttqze3lh': {
+      'fr': 'Desactivado',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'x9kpx7k7': {
+      'fr': 'Abilitato',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '4lhrhvks': {
+      'fr': 'Habilitado',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '7aapg814': {
+      'fr': 'Désactivée',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'dwml3gr6': {
+      'fr': 'Disabled',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '9wf3tavw': {
+      'fr': 'Deaktiviert',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '5mkscj3z': {
+      'fr': 'Desactivado',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'm6ne4343': {
+      'fr': 'Disabilitato',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    '298rwgjd': {
+      'fr': 'Desabilitado',
       'de': '',
       'en': '',
       'es': '',
@@ -7374,7 +7478,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'gbmbrec2': {
+    'ho9nj97q': {
       'fr': 'Search for an item...',
       'de': '',
       'en': '',
@@ -7382,7 +7486,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'wdf4q37t': {
+    'wrpbyxzp': {
       'fr': 'Amateur',
       'de': '',
       'en': '',
@@ -7390,7 +7494,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'f06v7qad': {
+    'kvafi22i': {
       'fr': 'Pro',
       'de': '',
       'en': '',
@@ -7398,7 +7502,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'um2lb4v2': {
+    'zhz08m0y': {
       'fr': 'Champion',
       'de': '',
       'en': '',
@@ -7406,7 +7510,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'wxd981a3': {
+    'xavftkqb': {
       'fr': 'Légende',
       'de': '',
       'en': '',
@@ -7414,7 +7518,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '9w6y0xoe': {
+    'nx7bnfos': {
       'fr': 'Ligues',
       'de': '',
       'en': '',
@@ -8420,7 +8524,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '8uihqliw': {
+    'e1iw76d4': {
       'fr': 'C',
       'de': '',
       'en': '',
@@ -11010,7 +11114,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'mqk4vsds': {
+    'bmdhux9w': {
       'fr': 'Ligues',
       'de': '',
       'en': '',
@@ -11546,7 +11650,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'o92lhz7w': {
+    'favg2lx8': {
       'fr': 'Serie A',
       'de': '',
       'en': '',
@@ -11554,7 +11658,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'wfs864xu': {
+    'inegvvoa': {
       'fr': 'Ligue 1',
       'de': '',
       'en': '',
@@ -11570,7 +11674,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'yjym4s7f': {
+    'eue7aadg': {
       'fr': 'Autres',
       'de': '',
       'en': '',
@@ -11594,7 +11698,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'fldfp0ba': {
+    '1nhjiq4g': {
       'fr': 'Europa League',
       'de': '',
       'en': '',
@@ -11602,7 +11706,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'sakg2tf1': {
+    'e0cbygge': {
       'fr': 'Conference League',
       'de': '',
       'en': '',
@@ -11794,7 +11898,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '75l1n7o7': {
+    'zvi3yz93': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -13359,7 +13463,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'k076bo4n': {
+    'z99eqhev': {
       'fr': 'Moto GP',
       'de': '',
       'en': '',
@@ -13375,7 +13479,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '4sijvncg': {
+    'fqljkoau': {
       'fr': 'MX GP',
       'de': '',
       'en': '',
@@ -13423,7 +13527,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '1nhjiq4g': {
+    'fldfp0ba': {
       'fr': 'Europa League',
       'de': '',
       'en': '',
@@ -13431,7 +13535,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'e0cbygge': {
+    'sakg2tf1': {
       'fr': 'Conference League',
       'de': '',
       'en': '',
@@ -15343,7 +15447,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'uc9p1i8a': {
+    'dp6lj4xl': {
       'fr': 'NBA',
       'de': '',
       'en': '',
@@ -15391,7 +15495,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '67112en7': {
+    'ajdxr1xu': {
       'fr': 'ATP',
       'de': '',
       'en': '',
@@ -15399,7 +15503,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'tzi4yr2h': {
+    'o3v88j40': {
       'fr': 'WTA',
       'de': '',
       'en': '',
@@ -15679,7 +15783,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'phdbciya': {
+    's51u37rk': {
       'fr': 'World Superbike',
       'de': '',
       'en': '',
@@ -15687,7 +15791,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'ukrkamdm': {
+    '4sijvncg': {
       'fr': 'MX GP',
       'de': '',
       'en': '',
@@ -17070,7 +17174,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'n3kp8udm': {
-      'fr': 'thesteam.sport@gmail.com',
+      'fr': 'https://thesteamsport.com/contact/',
       'de': '',
       'en': '',
       'es': '',
@@ -17249,7 +17353,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '38w9tt63': {
-      'fr': 'thesteamsport.com',
+      'fr': 'https://thesteamsport.com/',
       'de': '',
       'en': '',
       'es': '',
@@ -17960,7 +18064,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'j90zk0p7': {
-      'fr': 'thesteamsport.com',
+      'fr': 'https://thesteamsport.com/',
       'de': '',
       'en': '',
       'es': '',
@@ -18550,7 +18654,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '15tqawkq': {
+    'rm7ezpqy': {
       'fr': 'Valider',
       'de': '',
       'en': '',
@@ -18558,7 +18662,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'lvgo0tbv': {
+    'utyfii83': {
       'fr': 'to validate',
       'de': '',
       'en': '',
@@ -18566,7 +18670,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'apdmmvvk': {
+    '846kjdov': {
       'fr': 'zu validieren',
       'de': '',
       'en': '',
@@ -18574,7 +18678,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'rc12s8os': {
+    '56lqnisj': {
       'fr': 'validar',
       'de': '',
       'en': '',
@@ -18582,7 +18686,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '8f7so47k': {
+    'ebiyha3j': {
       'fr': 'convalidare',
       'de': '',
       'en': '',
@@ -18590,7 +18694,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'ot0skxhh': {
+    '6rf2ftpz': {
       'fr': 'validar',
       'de': '',
       'en': '',
@@ -18809,7 +18913,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '3arima5t': {
+    'yjym4s7f': {
       'fr': 'Autres',
       'de': '',
       'en': '',
@@ -18817,7 +18921,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'rqibrl5v': {
+    'vcchscdt': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -18969,7 +19073,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    't5s7gncx': {
+    'y5859mzl': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -23540,7 +23644,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'enar0wl2': {
+    'kjofif06': {
       'fr': 'Gazon Elite H',
       'de': '',
       'en': '',
@@ -23628,7 +23732,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'rg131ksu': {
+    'jgva4ud1': {
       'fr': 'Autres',
       'de': '',
       'en': '',
@@ -23708,7 +23812,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'tdmmfa72': {
+    '6w6qx53q': {
       'fr': 'Champions League',
       'de': '',
       'en': '',
@@ -23716,7 +23820,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'igh1q4v8': {
+    'pwx6f8sl': {
       'fr': 'Europa League',
       'de': '',
       'en': '',
@@ -23724,7 +23828,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    's3ax6uht': {
+    'naqnkqti': {
       'fr': 'Conference League',
       'de': '',
       'en': '',
@@ -30768,124 +30872,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
   },
-  // AudioMemberConference
-  {
-    'c1m6gunm': {
-      'fr': 'Membres connectés',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    '4p3ngwmg': {
-      'fr': 'UserPseudo',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'kymtlq79': {
-      'fr': 'Privée',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    '7saalgs3': {
-      'fr': 'Publique',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'lg0kpfdj': {
-      'fr': 'Passer en\nprivée',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'ttt4b687': {
-      'fr': 'Passer en\npublique',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'nocluooh': {
-      'fr': 'Fans connectés',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-  },
-  // AudioFanConference
-  {
-    'g64h17ei': {
-      'fr': 'Team Name',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    '4q0bhzz6': {
-      'fr': 'Fonction pas encore disponible',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'qscftk50': {
-      'fr': '0',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'gjz1rzrd': {
-      'fr': 'Membres connectés',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'r97pyrt4': {
-      'fr': 'UserPseudo',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'czywx66g': {
-      'fr': '0',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-    'eam829y6': {
-      'fr': 'Fans connectés',
-      'de': '',
-      'en': '',
-      'es': '',
-      'it': '',
-      'pt': '',
-    },
-  },
   // ModifHour
   {
     '79v91ftk': {
@@ -32764,7 +32750,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'pqi9nzru': {
+    'vvw0t8ur': {
       'fr': 'C',
       'de': '',
       'en': '',

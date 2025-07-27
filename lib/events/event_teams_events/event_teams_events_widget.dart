@@ -2545,7 +2545,7 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'pqi9nzru' /* C */,
+                                                                      'vvw0t8ur' /* C */,
                                                                     ),
                                                                     textAlign:
                                                                         TextAlign

@@ -206,16 +206,6 @@ class UsersRecord extends FirestoreRecord {
   bool get adult => _adult ?? false;
   bool hasAdult() => _adult != null;
 
-  // "player" field.
-  bool? _player;
-  bool get player => _player ?? false;
-  bool hasPlayer() => _player != null;
-
-  // "audio_team" field.
-  DocumentReference? _audioTeam;
-  DocumentReference? get audioTeam => _audioTeam;
-  bool hasAudioTeam() => _audioTeam != null;
-
   // "enterprise" field.
   String? _enterprise;
   String get enterprise => _enterprise ?? '';
@@ -225,6 +215,11 @@ class UsersRecord extends FirestoreRecord {
   String? _langage;
   String get langage => _langage ?? '';
   bool hasLangage() => _langage != null;
+
+  // "notifs_push" field.
+  bool? _notifsPush;
+  bool get notifsPush => _notifsPush ?? false;
+  bool hasNotifsPush() => _notifsPush != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -265,10 +260,9 @@ class UsersRecord extends FirestoreRecord {
     _suspensionDays = castToType<int>(snapshotData['suspension_days']);
     _dateofBirth = snapshotData['dateof_birth'] as String?;
     _adult = snapshotData['adult'] as bool?;
-    _player = snapshotData['player'] as bool?;
-    _audioTeam = snapshotData['audio_team'] as DocumentReference?;
     _enterprise = snapshotData['enterprise'] as String?;
     _langage = snapshotData['langage'] as String?;
+    _notifsPush = snapshotData['notifs_push'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -340,10 +334,9 @@ Map<String, dynamic> createUsersRecordData({
   int? suspensionDays,
   String? dateofBirth,
   bool? adult,
-  bool? player,
-  DocumentReference? audioTeam,
   String? enterprise,
   String? langage,
+  bool? notifsPush,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -382,10 +375,9 @@ Map<String, dynamic> createUsersRecordData({
       'suspension_days': suspensionDays,
       'dateof_birth': dateofBirth,
       'adult': adult,
-      'player': player,
-      'audio_team': audioTeam,
       'enterprise': enterprise,
       'langage': langage,
+      'notifs_push': notifsPush,
     }.withoutNulls,
   );
 
@@ -436,10 +428,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.suspensionDays == e2?.suspensionDays &&
         e1?.dateofBirth == e2?.dateofBirth &&
         e1?.adult == e2?.adult &&
-        e1?.player == e2?.player &&
-        e1?.audioTeam == e2?.audioTeam &&
         e1?.enterprise == e2?.enterprise &&
-        e1?.langage == e2?.langage;
+        e1?.langage == e2?.langage &&
+        e1?.notifsPush == e2?.notifsPush;
   }
 
   @override
@@ -482,10 +473,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.suspensionDays,
         e?.dateofBirth,
         e?.adult,
-        e?.player,
-        e?.audioTeam,
         e?.enterprise,
-        e?.langage
+        e?.langage,
+        e?.notifsPush
       ]);
 
   @override

@@ -768,6 +768,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                     () => _model.dropPriceValue = val),
                                 width: 110.0,
                                 height: 40.0,
+                                menuOffset: Offset(0, 0.0),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1123,7 +1124,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        '15tqawkq' /* Valider */,
+                                        'rm7ezpqy' /* Valider */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1159,7 +1160,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        'lvgo0tbv' /* to validate */,
+                                        'utyfii83' /* to validate */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1192,7 +1193,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        'apdmmvvk' /* zu validieren */,
+                                        '846kjdov' /* zu validieren */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1225,7 +1226,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        'rc12s8os' /* validar */,
+                                        '56lqnisj' /* validar */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1258,7 +1259,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        '8f7so47k' /* convalidare */,
+                                        'ebiyha3j' /* convalidare */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
@@ -1291,7 +1292,7 @@ class _ShoppingPageWidgetState extends State<ShoppingPageWidget> {
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
                                       FFLocalizations.of(context).getText(
-                                        'ot0skxhh' /* validar */,
+                                        '6rf2ftpz' /* validar */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall

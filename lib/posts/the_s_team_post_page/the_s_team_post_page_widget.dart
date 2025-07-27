@@ -9,8 +9,6 @@ import '/flutter_flow/flutter_flow_youtube_player.dart';
 import '/flutter_flow/upload_data.dart';
 import '/posts/copy_text_post/copy_text_post_widget.dart';
 import '/posts/modif_post/modif_post_widget.dart';
-import '/teams/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/teams/audio_member_conference/audio_member_conference_widget.dart';
 import '/users/delete_my_post/delete_my_post_widget.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -374,9 +372,15 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                           child: Icon(
                                                             Icons
                                                                 .content_copy_rounded,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              columnUsersRecord
+                                                                  .color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryText,
+                                                            ),
                                                             size: 25.0,
                                                           ),
                                                         ),
@@ -384,302 +388,6 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                if (currentUserDocument
-                                                        ?.audioTeam !=
-                                                    null)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 5.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          StreamBuilder<
-                                                              TeamsRecord>(
-                                                        stream: TeamsRecord
-                                                            .getDocument(
-                                                                currentUserDocument!
-                                                                    .audioTeam!),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-
-                                                          final rowTeamsRecord =
-                                                              snapshot.data!;
-
-                                                          return Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      TeamPageWidget
-                                                                          .routeName,
-                                                                      queryParameters:
-                                                                          {
-                                                                        'teamRef':
-                                                                            serializeParam(
-                                                                          currentUserDocument
-                                                                              ?.audioTeam,
-                                                                          ParamType
-                                                                              .DocumentReference,
-                                                                        ),
-                                                                      }.withoutNulls,
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.bottomToTop,
-                                                                          duration:
-                                                                              Duration(milliseconds: 400),
-                                                                        ),
-                                                                      },
-                                                                    );
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    width: 65.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        rowTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitHeight,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: StreamBuilder<
-                                                                    TeamConferenceRecord>(
-                                                                  stream: TeamConferenceRecord
-                                                                      .getDocument(
-                                                                          rowTeamsRecord
-                                                                              .conference!),
-                                                                  builder: (context,
-                                                                      snapshot) {
-                                                                    // Customize what your widget looks like when it's loading.
-                                                                    if (!snapshot
-                                                                        .hasData) {
-                                                                      return Center(
-                                                                        child:
-                                                                            SizedBox(
-                                                                          width:
-                                                                              50.0,
-                                                                          height:
-                                                                              50.0,
-                                                                          child:
-                                                                              CircularProgressIndicator(
-                                                                            valueColor:
-                                                                                AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).accent4,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      );
-                                                                    }
-
-                                                                    final rowTeamConferenceRecord =
-                                                                        snapshot
-                                                                            .data!;
-
-                                                                    return Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        if (rowTeamConferenceRecord
-                                                                            .members
-                                                                            .contains(currentUserReference))
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.0, -1.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                                                                              child: FlutterFlowIconButton(
-                                                                                borderColor: valueOrDefault<Color>(
-                                                                                  rowTeamsRecord.color2,
-                                                                                  FlutterFlowTheme.of(context).secondaryText,
-                                                                                ),
-                                                                                borderRadius: 50.0,
-                                                                                borderWidth: 1.0,
-                                                                                buttonSize: 50.0,
-                                                                                fillColor: FlutterFlowTheme.of(context).tertiary,
-                                                                                icon: FaIcon(
-                                                                                  FontAwesomeIcons.microphoneAlt,
-                                                                                  color: valueOrDefault<Color>(
-                                                                                    rowTeamsRecord.color1,
-                                                                                    FlutterFlowTheme.of(context).primaryText,
-                                                                                  ),
-                                                                                  size: 31.0,
-                                                                                ),
-                                                                                onPressed: () async {
-                                                                                  await showModalBottomSheet(
-                                                                                    isScrollControlled: true,
-                                                                                    backgroundColor: Colors.transparent,
-                                                                                    enableDrag: false,
-                                                                                    context: context,
-                                                                                    builder: (context) {
-                                                                                      return WebViewAware(
-                                                                                        child: GestureDetector(
-                                                                                          onTap: () {
-                                                                                            FocusScope.of(context).unfocus();
-                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                          },
-                                                                                          child: Padding(
-                                                                                            padding: MediaQuery.viewInsetsOf(context),
-                                                                                            child: AudioMemberConferenceWidget(
-                                                                                              teamRef: currentUserDocument!.audioTeam!,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  ).then((value) => safeSetState(() {}));
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        if (rowTeamConferenceRecord
-                                                                            .fans
-                                                                            .contains(currentUserReference))
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.0, -1.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                                                                              child: FlutterFlowIconButton(
-                                                                                borderColor: valueOrDefault<Color>(
-                                                                                  rowTeamsRecord.color2,
-                                                                                  FlutterFlowTheme.of(context).secondaryText,
-                                                                                ),
-                                                                                borderRadius: 50.0,
-                                                                                borderWidth: 1.0,
-                                                                                buttonSize: 50.0,
-                                                                                fillColor: FlutterFlowTheme.of(context).tertiary,
-                                                                                icon: FaIcon(
-                                                                                  FontAwesomeIcons.headphonesAlt,
-                                                                                  color: valueOrDefault<Color>(
-                                                                                    rowTeamsRecord.color1,
-                                                                                    FlutterFlowTheme.of(context).primaryText,
-                                                                                  ),
-                                                                                  size: 31.0,
-                                                                                ),
-                                                                                onPressed: () async {
-                                                                                  await showModalBottomSheet(
-                                                                                    isScrollControlled: true,
-                                                                                    backgroundColor: Colors.transparent,
-                                                                                    enableDrag: false,
-                                                                                    context: context,
-                                                                                    builder: (context) {
-                                                                                      return WebViewAware(
-                                                                                        child: GestureDetector(
-                                                                                          onTap: () {
-                                                                                            FocusScope.of(context).unfocus();
-                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                          },
-                                                                                          child: Padding(
-                                                                                            padding: MediaQuery.viewInsetsOf(context),
-                                                                                            child: AudioFanConferenceWidget(
-                                                                                              teamRef: currentUserDocument!.audioTeam!,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  ).then((value) => safeSetState(() {}));
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                      ],
-                                                                    );
-                                                                  },
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      ),
-                                                    ),
-                                                  ),
                                                 StreamBuilder<
                                                     List<MyPostsRecord>>(
                                                   stream: queryMyPostsRecord(
@@ -1071,19 +779,25 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               playbackButtonColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                  valueOrDefault<Color>(
+                                                columnUsersRecord.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                              ),
                                               activeTrackColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
+                                                  valueOrDefault<Color>(
+                                                columnUsersRecord.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                              ),
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
-                                              elevation: 4.0,
+                                                      .secondaryBackground,
+                                              elevation: 0.0,
                                               playInBackground: PlayInBackground
-                                                  .disabledRestoreOnForeground,
+                                                  .disabledPause,
                                             ),
                                           ),
                                         ),
@@ -2405,10 +2119,14 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       child: Icon(
                                                         Icons
                                                             .insert_comment_rounded,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
+                                                        color: valueOrDefault<
+                                                            Color>(
+                                                          columnUsersRecord
+                                                              .color1,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                        ),
                                                         size: 30.0,
                                                       ),
                                                     ),
@@ -3143,7 +2861,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                         0.0,
                                                                     playInBackground:
                                                                         PlayInBackground
-                                                                            .disabledRestoreOnForeground,
+                                                                            .disabledPause,
                                                                   ),
                                                                 ),
                                                               ),
@@ -3340,123 +3058,135 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 5.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  var postMessagesRecordReference =
-                                                      PostMessagesRecord
-                                                          .createDoc(
-                                                              widget.postRef!);
-                                                  await postMessagesRecordReference
-                                                      .set({
-                                                    ...createPostMessagesRecordData(
-                                                      commUser:
-                                                          currentUserReference,
-                                                      text: _model
-                                                          .commFieldTextController
-                                                          .text,
-                                                      image: _model
-                                                          .uploadedFileUrl_uploadDataYnz,
-                                                      moderator:
-                                                          theSTeamPostPagePostsRecord
-                                                              .moderator,
-                                                      audio: _model.audio,
-                                                    ),
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'created_time': FieldValue
-                                                            .serverTimestamp(),
-                                                      },
-                                                    ),
-                                                  });
-                                                  _model.commentRef =
-                                                      PostMessagesRecord
-                                                          .getDocumentFromData({
-                                                    ...createPostMessagesRecordData(
-                                                      commUser:
-                                                          currentUserReference,
-                                                      text: _model
-                                                          .commFieldTextController
-                                                          .text,
-                                                      image: _model
-                                                          .uploadedFileUrl_uploadDataYnz,
-                                                      moderator:
-                                                          theSTeamPostPagePostsRecord
-                                                              .moderator,
-                                                      audio: _model.audio,
-                                                    ),
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'created_time':
-                                                            DateTime.now(),
-                                                      },
-                                                    ),
-                                                  }, postMessagesRecordReference);
-
-                                                  await widget.postRef!
-                                                      .update({
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'num_comments':
-                                                            FieldValue
-                                                                .increment(1),
-                                                      },
-                                                    ),
-                                                  });
-
-                                                  context.pushNamed(
-                                                    ListPostMessagesWidget
-                                                        .routeName,
-                                                    queryParameters: {
-                                                      'postRef': serializeParam(
-                                                        widget.postRef,
-                                                        ParamType
-                                                            .DocumentReference,
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    var postMessagesRecordReference =
+                                                        PostMessagesRecord
+                                                            .createDoc(widget
+                                                                .postRef!);
+                                                    await postMessagesRecordReference
+                                                        .set({
+                                                      ...createPostMessagesRecordData(
+                                                        commUser:
+                                                            currentUserReference,
+                                                        text: _model
+                                                            .commFieldTextController
+                                                            .text,
+                                                        image: _model
+                                                            .uploadedFileUrl_uploadDataYnz,
+                                                        moderator:
+                                                            theSTeamPostPagePostsRecord
+                                                                .moderator,
+                                                        audio: _model.audio,
                                                       ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .scale,
-                                                        alignment: Alignment
-                                                            .bottomCenter,
-                                                        duration: Duration(
-                                                            milliseconds: 600),
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'created_time': FieldValue
+                                                              .serverTimestamp(),
+                                                        },
                                                       ),
-                                                    },
-                                                  );
+                                                    });
+                                                    _model.commentRef =
+                                                        PostMessagesRecord
+                                                            .getDocumentFromData({
+                                                      ...createPostMessagesRecordData(
+                                                        commUser:
+                                                            currentUserReference,
+                                                        text: _model
+                                                            .commFieldTextController
+                                                            .text,
+                                                        image: _model
+                                                            .uploadedFileUrl_uploadDataYnz,
+                                                        moderator:
+                                                            theSTeamPostPagePostsRecord
+                                                                .moderator,
+                                                        audio: _model.audio,
+                                                      ),
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'created_time':
+                                                              DateTime.now(),
+                                                        },
+                                                      ),
+                                                    }, postMessagesRecordReference);
 
-                                                  await columnUsersRecord
-                                                      .reference
-                                                      .update({
-                                                    ...mapToFirestore(
-                                                      {
-                                                        'stock': FieldValue
-                                                            .increment(0.5),
+                                                    await widget.postRef!
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'num_comments':
+                                                              FieldValue
+                                                                  .increment(1),
+                                                        },
+                                                      ),
+                                                    });
+
+                                                    context.pushNamed(
+                                                      ListPostMessagesWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'postRef':
+                                                            serializeParam(
+                                                          widget.postRef,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .scale,
+                                                          alignment: Alignment
+                                                              .bottomCenter,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  600),
+                                                        ),
                                                       },
-                                                    ),
-                                                  });
-                                                  safeSetState(() {
-                                                    _model
-                                                        .commFieldTextController
-                                                        ?.clear();
-                                                  });
+                                                    );
 
-                                                  safeSetState(() {});
-                                                },
-                                                child: Icon(
-                                                  Icons.send_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 30.0,
+                                                    await columnUsersRecord
+                                                        .reference
+                                                        .update({
+                                                      ...mapToFirestore(
+                                                        {
+                                                          'stock': FieldValue
+                                                              .increment(0.5),
+                                                        },
+                                                      ),
+                                                    });
+                                                    safeSetState(() {
+                                                      _model
+                                                          .commFieldTextController
+                                                          ?.clear();
+                                                    });
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.send_rounded,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    size: 30.0,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -3500,102 +3230,113 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
-                                                    maxWidth: 1000.00,
-                                                    maxHeight: 1000.00,
-                                                    allowPhoto: true,
-                                                  );
-                                                  if (selectedMedia != null &&
-                                                      selectedMedia.every((m) =>
-                                                          validateFileFormat(
-                                                              m.storagePath,
-                                                              context))) {
-                                                    safeSetState(() => _model
-                                                            .isDataUploading_uploadDataYnz =
-                                                        true);
-                                                    var selectedUploadedFiles =
-                                                        <FFUploadedFile>[];
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    final selectedMedia =
+                                                        await selectMediaWithSourceBottomSheet(
+                                                      context: context,
+                                                      maxWidth: 1000.00,
+                                                      maxHeight: 1000.00,
+                                                      allowPhoto: true,
+                                                    );
+                                                    if (selectedMedia != null &&
+                                                        selectedMedia.every((m) =>
+                                                            validateFileFormat(
+                                                                m.storagePath,
+                                                                context))) {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading_uploadDataYnz =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
 
-                                                    var downloadUrls =
-                                                        <String>[];
-                                                    try {
-                                                      selectedUploadedFiles =
-                                                          selectedMedia
-                                                              .map((m) =>
-                                                                  FFUploadedFile(
-                                                                    name: m
-                                                                        .storagePath
-                                                                        .split(
-                                                                            '/')
-                                                                        .last,
-                                                                    bytes:
-                                                                        m.bytes,
-                                                                    height: m
-                                                                        .dimensions
-                                                                        ?.height,
-                                                                    width: m
-                                                                        .dimensions
-                                                                        ?.width,
-                                                                    blurHash: m
-                                                                        .blurHash,
-                                                                  ))
-                                                              .toList();
-
-                                                      downloadUrls =
-                                                          (await Future.wait(
-                                                        selectedMedia.map(
-                                                          (m) async =>
-                                                              await uploadData(
-                                                                  m.storagePath,
-                                                                  m.bytes),
-                                                        ),
-                                                      ))
-                                                              .where((u) =>
-                                                                  u != null)
-                                                              .map((u) => u!)
-                                                              .toList();
-                                                    } finally {
-                                                      _model.isDataUploading_uploadDataYnz =
-                                                          false;
-                                                    }
-                                                    if (selectedUploadedFiles
-                                                                .length ==
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        selectedUploadedFiles =
                                                             selectedMedia
-                                                                .length &&
-                                                        downloadUrls.length ==
-                                                            selectedMedia
-                                                                .length) {
-                                                      safeSetState(() {
-                                                        _model.uploadedLocalFile_uploadDataYnz =
-                                                            selectedUploadedFiles
-                                                                .first;
-                                                        _model.uploadedFileUrl_uploadDataYnz =
-                                                            downloadUrls.first;
-                                                      });
-                                                    } else {
-                                                      safeSetState(() {});
-                                                      return;
-                                                    }
-                                                  }
+                                                                .map((m) =>
+                                                                    FFUploadedFile(
+                                                                      name: m
+                                                                          .storagePath
+                                                                          .split(
+                                                                              '/')
+                                                                          .last,
+                                                                      bytes: m
+                                                                          .bytes,
+                                                                      height: m
+                                                                          .dimensions
+                                                                          ?.height,
+                                                                      width: m
+                                                                          .dimensions
+                                                                          ?.width,
+                                                                      blurHash:
+                                                                          m.blurHash,
+                                                                    ))
+                                                                .toList();
 
-                                                  _model.showImage = true;
-                                                  safeSetState(() {});
-                                                },
-                                                child: Icon(
-                                                  Icons.image_search_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  size: 30.0,
+                                                        downloadUrls =
+                                                            (await Future.wait(
+                                                          selectedMedia.map(
+                                                            (m) async =>
+                                                                await uploadData(
+                                                                    m.storagePath,
+                                                                    m.bytes),
+                                                          ),
+                                                        ))
+                                                                .where((u) =>
+                                                                    u != null)
+                                                                .map((u) => u!)
+                                                                .toList();
+                                                      } finally {
+                                                        _model.isDataUploading_uploadDataYnz =
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFile_uploadDataYnz =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl_uploadDataYnz =
+                                                              downloadUrls
+                                                                  .first;
+                                                        });
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        return;
+                                                      }
+                                                    }
+
+                                                    _model.showImage = true;
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.image_search_rounded,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                    ),
+                                                    size: 30.0,
+                                                  ),
                                                 ),
                                               ),
                                             ),

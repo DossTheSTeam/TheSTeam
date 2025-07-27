@@ -1053,13 +1053,13 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             'qzhsfbg1' /* Formule 1 */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            'k076bo4n' /* Moto GP */,
+                                            'z99eqhev' /* Moto GP */,
                                           ),
                                           FFLocalizations.of(context).getText(
                                             'h5r36l24' /* World Superbike */,
                                           ),
                                           FFLocalizations.of(context).getText(
-                                            '4sijvncg' /* MX GP */,
+                                            'fqljkoau' /* MX GP */,
                                           )
                                         ],
                                         onChanged: (val) => safeSetState(() =>
@@ -1423,10 +1423,10 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                               'zzaczw7m' /* Champions League */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              '1nhjiq4g' /* Europa League */,
+                                              'fldfp0ba' /* Europa League */,
                                             ),
                                             FFLocalizations.of(context).getText(
-                                              'e0cbygge' /* Conference League */,
+                                              'sakg2tf1' /* Conference League */,
                                             )
                                           ],
                                           onChanged: (val) => safeSetState(() =>

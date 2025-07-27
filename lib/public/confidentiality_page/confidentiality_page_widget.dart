@@ -1823,13 +1823,51 @@ Confidencialidade */
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'n3kp8udm' /* thesteam.sport@gmail.com */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.poppins(
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await Clipboard.setData(ClipboardData(
+                                text: 'https://thesteamsport.com/contact/'));
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return WebViewAware(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      FocusScope.of(context).unfocus();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                    },
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: CopyTextWidget(),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'n3kp8udm' /* https://thesteamsport.com/cont... */,
+                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -1837,14 +1875,7 @@ Confidencialidade */
                                           .bodyLarge
                                           .fontStyle,
                                     ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .fontStyle,
-                                  ),
+                          ),
                         ),
                       ),
                     ),
@@ -1861,7 +1892,7 @@ Confidencialidade */
                           onTap: () async {
                             await Clipboard.setData(ClipboardData(
                                 text:
-                                    'Droit d\'accès: Consulter les données les concernant. Droit de rectification: Modifier les données inexactes ou incomplètes. Droit d\'effacement: Demander la suppression de leurs données. Droit d\'opposition: S\'opposer au traitement de leurs données pour des motifs légitimes. Droit à la limitation du traitement: Demander la limitation du traitement de leurs données. Droit à la portabilité des données: Recevoir les données les concernant dans un format structuré, couramment utilisé et lisible par machine. Pour exercer ces droits, l\'utilisateur peut contacter The S Team à l\'adresse suivante : '));
+                                    'Droit d\'accès: Consulter les données les concernant. Droit de rectification: Modifier les données inexactes ou incomplètes. Droit d\'effacement: Demander la suppression de leurs données. Droit d\'opposition: S\'opposer au traitement de leurs données pour des motifs légitimes. Droit à la limitation du traitement: Demander la limitation du traitement de leurs données. Droit à la portabilité des données: Recevoir les données les concernant dans un format structuré, couramment utilisé et lisible par machine. Pour exercer ces droits, l\'utilisateur peut contacter The S Team à l\'adresse suivante : https://thesteamsport.com/contact/'));
                             await showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
@@ -2650,27 +2681,59 @@ Confidencialidade */
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '38w9tt63' /* thesteamsport.com */,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await Clipboard.setData(ClipboardData(
+                              text: 'https://thesteamsport.com/'));
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            enableDrag: false,
+                            context: context,
+                            builder: (context) {
+                              return WebViewAware(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    FocusScope.of(context).unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
+                                  },
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: CopyTextWidget(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ).then((value) => safeSetState(() {}));
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '38w9tt63' /* https://thesteamsport.com/ */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).labelLarge.override(
+                                    font: GoogleFonts.montserrat(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                  ),
                         ),
-                        style: FlutterFlowTheme.of(context).labelLarge.override(
-                              font: GoogleFonts.montserrat(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelLarge
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .fontStyle,
-                            ),
                       ),
                     ),
                     Padding(

@@ -1639,19 +1639,19 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                                       ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               playbackButtonColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               activeTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .success,
+                                                      .primaryText,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
+                                                      .secondaryBackground,
                                               elevation: 4.0,
                                               playInBackground: PlayInBackground
-                                                  .disabledRestoreOnForeground,
+                                                  .disabledPause,
                                             ),
                                           ),
                                         ),

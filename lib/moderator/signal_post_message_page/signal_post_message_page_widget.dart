@@ -1575,19 +1575,19 @@ class _SignalPostMessagePageWidgetState
                                                       ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               playbackButtonColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               activeTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .success,
+                                                      .primaryText,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
-                                              elevation: 4.0,
+                                                      .secondaryBackground,
+                                              elevation: 0.0,
                                               playInBackground: PlayInBackground
-                                                  .disabledRestoreOnForeground,
+                                                  .disabledPause,
                                             ),
                                           ),
                                         ),

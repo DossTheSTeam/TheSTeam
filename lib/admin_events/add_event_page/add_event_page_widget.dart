@@ -3,18 +3,14 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/teams/audio_fan_conference/audio_fan_conference_widget.dart';
-import '/teams/audio_member_conference/audio_member_conference_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_event_page_model.dart';
 export 'add_event_page_model.dart';
 
@@ -127,331 +123,6 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              if (currentUserDocument?.audioTeam != null)
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 5.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) =>
-                                        StreamBuilder<TeamsRecord>(
-                                      stream: TeamsRecord.getDocument(
-                                          currentUserDocument!.audioTeam!),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-
-                                        final rowTeamsRecord = snapshot.data!;
-
-                                        return Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    TeamPageWidget.routeName,
-                                                    queryParameters: {
-                                                      'teamRef': serializeParam(
-                                                        currentUserDocument
-                                                            ?.audioTeam,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .bottomToTop,
-                                                        duration: Duration(
-                                                            milliseconds: 400),
-                                                      ),
-                                                    },
-                                                  );
-                                                },
-                                                child: Container(
-                                                  width: 65.0,
-                                                  height: 50.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.network(
-                                                      rowTeamsRecord.logo,
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitHeight,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: StreamBuilder<
-                                                  TeamConferenceRecord>(
-                                                stream: TeamConferenceRecord
-                                                    .getDocument(rowTeamsRecord
-                                                        .conference!),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent4,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-
-                                                  final rowTeamConferenceRecord =
-                                                      snapshot.data!;
-
-                                                  return Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      if (rowTeamConferenceRecord
-                                                          .members
-                                                          .contains(
-                                                              currentUserReference))
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        20.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child:
-                                                                FlutterFlowIconButton(
-                                                              borderColor:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                rowTeamsRecord
-                                                                    .color2,
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                              ),
-                                                              borderRadius:
-                                                                  50.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 50.0,
-                                                              fillColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary,
-                                                              icon: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .microphoneAlt,
-                                                                color:
-                                                                    valueOrDefault<
-                                                                        Color>(
-                                                                  rowTeamsRecord
-                                                                      .color1,
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
-                                                                size: 31.0,
-                                                              ),
-                                                              onPressed:
-                                                                  () async {
-                                                                await showModalBottomSheet(
-                                                                  isScrollControlled:
-                                                                      true,
-                                                                  backgroundColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  enableDrag:
-                                                                      false,
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (context) {
-                                                                    return WebViewAware(
-                                                                      child:
-                                                                          GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
-                                                                        child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
-                                                                          child:
-                                                                              AudioMemberConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ).then((value) =>
-                                                                    safeSetState(
-                                                                        () {}));
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (rowTeamConferenceRecord
-                                                          .fans
-                                                          .contains(
-                                                              currentUserReference))
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        20.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child:
-                                                                FlutterFlowIconButton(
-                                                              borderColor:
-                                                                  valueOrDefault<
-                                                                      Color>(
-                                                                rowTeamsRecord
-                                                                    .color2,
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                              ),
-                                                              borderRadius:
-                                                                  50.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 50.0,
-                                                              fillColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary,
-                                                              icon: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .headphonesAlt,
-                                                                color:
-                                                                    valueOrDefault<
-                                                                        Color>(
-                                                                  rowTeamsRecord
-                                                                      .color1,
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                ),
-                                                                size: 31.0,
-                                                              ),
-                                                              onPressed:
-                                                                  () async {
-                                                                await showModalBottomSheet(
-                                                                  isScrollControlled:
-                                                                      true,
-                                                                  backgroundColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  enableDrag:
-                                                                      false,
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (context) {
-                                                                    return WebViewAware(
-                                                                      child:
-                                                                          GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
-                                                                        child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
-                                                                          child:
-                                                                              AudioFanConferenceWidget(
-                                                                            teamRef:
-                                                                                currentUserDocument!.audioTeam!,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ).then((value) =>
-                                                                    safeSetState(
-                                                                        () {}));
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                    ],
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
@@ -1230,7 +901,7 @@ Nom Event */
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'mqk4vsds' /* Ligues */,
+                                          'bmdhux9w' /* Ligues */,
                                         ),
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -3207,12 +2878,12 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'o92lhz7w' /* Serie A */,
+                                                        'favg2lx8' /* Serie A */,
                                                       ),
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'wfs864xu' /* Ligue 1 */,
+                                                        'inegvvoa' /* Ligue 1 */,
                                                       ),
                                                       FFLocalizations.of(
                                                               context)
@@ -3222,7 +2893,7 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'yjym4s7f' /* Autres */,
+                                                        'eue7aadg' /* Autres */,
                                                       ),
                                                       FFLocalizations.of(
                                                               context)
@@ -3237,12 +2908,12 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'fldfp0ba' /* Europa League */,
+                                                        '1nhjiq4g' /* Europa League */,
                                                       ),
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'sakg2tf1' /* Conference League */,
+                                                        'e0cbygge' /* Conference League */,
                                                       )
                                                     ],
                                                     onChanged: (val) =>
@@ -3778,7 +3449,7 @@ Nom Event */
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '75l1n7o7' /* Nations */,
+                                                        'zvi3yz93' /* Nations */,
                                                       )
                                                     ],
                                                     onChanged: (val) =>

@@ -141,11 +141,6 @@ class TeamsRecord extends FirestoreRecord {
   Color? get color2 => _color2;
   bool hasColor2() => _color2 != null;
 
-  // "conference" field.
-  DocumentReference? _conference;
-  DocumentReference? get conference => _conference;
-  bool hasConference() => _conference != null;
-
   // "goals_in_cup" field.
   int? _goalsInCup;
   int get goalsInCup => _goalsInCup ?? 0;
@@ -227,7 +222,6 @@ class TeamsRecord extends FirestoreRecord {
     _additionalLeague = snapshotData['additional_league'] as String?;
     _color1 = getSchemaColor(snapshotData['color1']);
     _color2 = getSchemaColor(snapshotData['color2']);
-    _conference = snapshotData['conference'] as DocumentReference?;
     _goalsInCup = castToType<int>(snapshotData['goals_in_cup']);
     _goalsOutCup = castToType<int>(snapshotData['goals_out_cup']);
     _gamesCup = castToType<int>(snapshotData['games_cup']);
@@ -297,7 +291,6 @@ Map<String, dynamic> createTeamsRecordData({
   String? additionalLeague,
   Color? color1,
   Color? color2,
-  DocumentReference? conference,
   int? goalsInCup,
   int? goalsOutCup,
   int? gamesCup,
@@ -334,7 +327,6 @@ Map<String, dynamic> createTeamsRecordData({
       'additional_league': additionalLeague,
       'color1': color1,
       'color2': color2,
-      'conference': conference,
       'goals_in_cup': goalsInCup,
       'goals_out_cup': goalsOutCup,
       'games_cup': gamesCup,
@@ -383,7 +375,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e1?.additionalLeague == e2?.additionalLeague &&
         e1?.color1 == e2?.color1 &&
         e1?.color2 == e2?.color2 &&
-        e1?.conference == e2?.conference &&
         e1?.goalsInCup == e2?.goalsInCup &&
         e1?.goalsOutCup == e2?.goalsOutCup &&
         e1?.gamesCup == e2?.gamesCup &&
@@ -424,7 +415,6 @@ class TeamsRecordDocumentEquality implements Equality<TeamsRecord> {
         e?.additionalLeague,
         e?.color1,
         e?.color2,
-        e?.conference,
         e?.goalsInCup,
         e?.goalsOutCup,
         e?.gamesCup,

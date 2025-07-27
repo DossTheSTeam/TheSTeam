@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
@@ -136,24 +135,19 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
-                                  child: AuthUserStreamWidget(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_back_ios_new_rounded,
-                                        color: valueOrDefault<Color>(
-                                          currentUserDocument?.color1,
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                        size: 30.0,
-                                      ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 30.0,
                                     ),
                                   ),
                                 ),
@@ -1293,65 +1287,54 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                           size: 30.0,
                                         ),
                                       ),
-                                      AuthUserStreamWidget(
-                                        builder: (context) => InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await startAudioRecording(
-                                              context,
-                                              audioRecorder:
-                                                  _model.audioRecorder ??=
-                                                      AudioRecorder(),
-                                            );
-                                          },
-                                          child: FaIcon(
-                                            FontAwesomeIcons.microphoneAlt,
-                                            color: valueOrDefault<Color>(
-                                              currentUserDocument?.color1,
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                            ),
-                                            size: 28.0,
-                                          ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await startAudioRecording(
+                                            context,
+                                            audioRecorder:
+                                                _model.audioRecorder ??=
+                                                    AudioRecorder(),
+                                          );
+                                        },
+                                        child: FaIcon(
+                                          FontAwesomeIcons.microphoneAlt,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 28.0,
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 0.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await stopAudioRecording(
-                                                audioRecorder:
-                                                    _model.audioRecorder,
-                                                audioName: 'recordedFileBytes',
-                                                onRecordingComplete:
-                                                    (audioFilePath,
-                                                        audioBytes) {
-                                                  _model.audio = audioFilePath;
-                                                  _model.recordedFileBytes =
-                                                      audioBytes;
-                                                },
-                                              );
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await stopAudioRecording(
+                                              audioRecorder:
+                                                  _model.audioRecorder,
+                                              audioName: 'recordedFileBytes',
+                                              onRecordingComplete:
+                                                  (audioFilePath, audioBytes) {
+                                                _model.audio = audioFilePath;
+                                                _model.recordedFileBytes =
+                                                    audioBytes;
+                                              },
+                                            );
 
-                                              safeSetState(() {});
-                                            },
-                                            child: Icon(
-                                              Icons.stop_circle,
-                                              color: valueOrDefault<Color>(
-                                                currentUserDocument?.color1,
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                              ),
-                                              size: 28.0,
-                                            ),
+                                            safeSetState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.stop_circle,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 28.0,
                                           ),
                                         ),
                                       ),
@@ -1388,7 +1371,7 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                           height: 78.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .alternate,
                                           ),
                                           child: Padding(
                                             padding: EdgeInsets.all(3.0),
@@ -1459,19 +1442,19 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                                       ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .alternate,
                                               playbackButtonColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               activeTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .info,
+                                                      .primaryText,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .error,
-                                              elevation: 4.0,
+                                                      .secondaryBackground,
+                                              elevation: 0.0,
                                               playInBackground: PlayInBackground
-                                                  .disabledRestoreOnForeground,
+                                                  .disabledPause,
                                             ),
                                           ),
                                         ),
