@@ -103,3 +103,21 @@ bool checkStock(
     return false;
   }
 }
+
+String generateUuid() {
+  final math.Random random = math.Random();
+  final List<int> bytes = List<int>.generate(16, (i) => random.nextInt(256));
+
+  // Set the UUID version (4) and variant (RFC4122)
+  bytes[6] = (bytes[6] & 0x0F) | 0x40; // Version 4
+  bytes[8] = (bytes[8] & 0x3F) | 0x80; // RFC4122 variant
+
+  final StringBuffer buffer = StringBuffer();
+  for (int i = 0; i < 16; i++) {
+    buffer.write(bytes[i].toRadixString(16).padLeft(2, '0'));
+    if (i == 3 || i == 5 || i == 7 || i == 9) {
+      buffer.write('-');
+    }
+  }
+  return buffer.toString();
+}

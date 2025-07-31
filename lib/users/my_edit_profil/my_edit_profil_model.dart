@@ -22,8 +22,6 @@ class MyEditProfilModel extends FlutterFlowModel<MyEditProfilWidget> {
   FocusNode? dateFieldFocusNode;
   TextEditingController? dateFieldTextController;
   String? Function(BuildContext, String?)? dateFieldTextControllerValidator;
-  // Stores action output result for [Custom Action - getAndSaveFcmToken] action in Icon widget.
-  bool? tokenSaveSuccess;
 
   @override
   void initState(BuildContext context) {}

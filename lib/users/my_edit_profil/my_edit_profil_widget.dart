@@ -9,7 +9,6 @@ import '/users/enterprise_infos/enterprise_infos_widget.dart';
 import '/users/langage/langage_widget.dart';
 import '/users/number_phone/number_phone_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/permissions_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5128,64 +5127,10 @@ be... */
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                _model.tokenSaveSuccess =
-                                                    await actions
-                                                        .getAndSaveFcmToken(
+                                                await actions
+                                                    .manageFcmTokenAndDeviceUuid(
                                                   currentUserUid,
                                                 );
-                                                if (_model.tokenSaveSuccess!) {
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        ' \"Préférences de notifications mises à jour.\"',
-                                                        style: TextStyle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                        ),
-                                                      ),
-                                                      duration: Duration(
-                                                          milliseconds: 4000),
-                                                      backgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
-                                                    ),
-                                                  );
-
-                                                  await currentUserReference!
-                                                      .update(
-                                                          createUsersRecordData(
-                                                    notifsPush: true,
-                                                  ));
-                                                  await requestPermission(
-                                                      notificationsPermission);
-                                                } else {
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        '\"Erreur : impossible d\'activer les notifications. Vérifiez les permissions.\"',
-                                                        style: TextStyle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                        ),
-                                                      ),
-                                                      duration: Duration(
-                                                          milliseconds: 4000),
-                                                      backgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
-                                                    ),
-                                                  );
-                                                }
-
-                                                context.safePop();
-
-                                                safeSetState(() {});
                                               },
                                               child: Icon(
                                                 Icons
@@ -5239,7 +5184,7 @@ be... */
                                                 Icons.notifications_off,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                        .error,
                                                 size: 30.0,
                                               ),
                                             ),

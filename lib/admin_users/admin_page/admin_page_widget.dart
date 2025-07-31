@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -940,23 +939,32 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       .fontStyle,
                                 ),
                       ),
+                      if (valueOrDefault<bool>(
+                              currentUserDocument?.notifsPush, false) ==
+                          false)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 5.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Icon(
+                              Icons.notifications_active_rounded,
+                              color: FlutterFlowTheme.of(context).success,
+                              size: 30.0,
+                            ),
+                          ),
+                        ),
                       Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidEdit,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '4aoe5c5d' /* Page de pub */,
+                                  '0uye2unc' /* Page de pub */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1015,7 +1023,7 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'cz3ne6wf' /* Boutique */,
+                                  'xrrm6niy' /* Boutique */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1088,170 +1096,6 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'k5knty0c' /* Créer avec Google */,
-                        ),
-                        maxLines: 1,
-                        style:
-                            FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
-                                ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            final user =
-                                await authManager.signInWithGoogle(context);
-                            if (user == null) {
-                              return;
-                            }
-
-                            context.goNamedAuth(
-                                MyProfilPageWidget.routeName, context.mounted);
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'vt0frocg' /* Créer avec Google */,
-                          ),
-                          icon: FaIcon(
-                            FontAwesomeIcons.google,
-                            size: 20.0,
-                          ),
-                          options: FFButtonOptions(
-                            width: 230.0,
-                            height: 44.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(40.0),
-                            hoverColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'kpb468py' /* Se connecter */,
-                        ),
-                        maxLines: 1,
-                        style:
-                            FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).error,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
-                                ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            final user =
-                                await authManager.signInWithGoogle(context);
-                            if (user == null) {
-                              return;
-                            }
-
-                            context.goNamedAuth(
-                                MyProfilPageWidget.routeName, context.mounted);
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'l9fm03ma' /* Continuer avec Google */,
-                          ),
-                          icon: FaIcon(
-                            FontAwesomeIcons.google,
-                            size: 20.0,
-                          ),
-                          options: FFButtonOptions(
-                            width: 230.0,
-                            height: 44.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(40.0),
-                            hoverColor:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                          ),
                         ),
                       ),
                     ],

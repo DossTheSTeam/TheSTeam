@@ -688,7 +688,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                 elevation: 0.0,
                                                                 playInBackground:
                                                                     PlayInBackground
-                                                                        .disabledRestoreOnForeground,
+                                                                        .disabledPause,
                                                               ),
                                                             ),
                                                           ),
