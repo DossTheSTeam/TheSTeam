@@ -75,8 +75,8 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: WillPopScope(
-            onWillPop: () async => false,
+          child: PopScope(
+            canPop: false,
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -6847,6 +6847,18 @@ para o meu sto... */
                                                                       myBetPageMyBetsRecord
                                                                           .potentialy),
                                                               'earnings_total':
+                                                                  FieldValue.increment(
+                                                                      myBetPageMyBetsRecord
+                                                                          .potentialy),
+                                                              'cumul_betwin':
+                                                                  FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                              'cumul_earnings':
+                                                                  FieldValue.increment(
+                                                                      myBetPageMyBetsRecord
+                                                                          .potentialy),
+                                                              'cumul_gains':
                                                                   FieldValue.increment(
                                                                       myBetPageMyBetsRecord
                                                                           .potentialy),

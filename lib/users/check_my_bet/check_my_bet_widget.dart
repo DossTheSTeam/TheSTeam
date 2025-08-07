@@ -786,6 +786,18 @@ para o meu sto... */
                                                                     FieldValue.increment(
                                                                         containerMyBetsRecord
                                                                             .potentialy),
+                                                                'cumul_betwin':
+                                                                    FieldValue
+                                                                        .increment(
+                                                                            1),
+                                                                'cumul_gains':
+                                                                    FieldValue.increment(
+                                                                        containerMyBetsRecord
+                                                                            .potentialy),
+                                                                'cumul_earnings':
+                                                                    FieldValue.increment(
+                                                                        containerMyBetsRecord
+                                                                            .potentialy),
                                                               },
                                                             ),
                                                           });

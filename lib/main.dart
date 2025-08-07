@@ -1,3 +1,5 @@
+import '/custom_code/actions/index.dart' as actions;
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,6 +20,10 @@ void main() async {
   usePathUrlStrategy();
 
   await initFirebase();
+
+  // Start initial custom actions code
+  await actions.registerBackgroundHandler();
+  // End initial custom actions code
 
   await FlutterFlowTheme.initialize();
 

@@ -104,20 +104,48 @@ bool checkStock(
   }
 }
 
-String generateUuid() {
-  final math.Random random = math.Random();
-  final List<int> bytes = List<int>.generate(16, (i) => random.nextInt(256));
+double? roi(
+  double? earnings,
+  double? mises,
+) {
+  // Le symbole '?' indique que les variables 'earnings' et 'mises'
+  // peuvent être nulles. C'est une bonne pratique pour éviter les erreurs.
+  // La première étape est de vérifier si les variables ne sont pas nulles
+  // et que la mise n'est pas égale à 0 pour éviter une division par zéro.
+  if (earnings != null && mises != null && mises != 0) {
+    // Si toutes les conditions sont remplies, on procède au calcul.
+    // Le calcul est le suivant : (earnings / mises) * 100
+    double result = (earnings / mises) * 100;
 
-  // Set the UUID version (4) and variant (RFC4122)
-  bytes[6] = (bytes[6] & 0x0F) | 0x40; // Version 4
-  bytes[8] = (bytes[8] & 0x3F) | 0x80; // RFC4122 variant
-
-  final StringBuffer buffer = StringBuffer();
-  for (int i = 0; i < 16; i++) {
-    buffer.write(bytes[i].toRadixString(16).padLeft(2, '0'));
-    if (i == 3 || i == 5 || i == 7 || i == 9) {
-      buffer.write('-');
-    }
+    // On retourne le résultat en tant que double, arrondi à deux décimales.
+    // La méthode 'toStringAsFixed(2)' renvoie une chaîne de caractères
+    // qui doit être reconvertie en double avec 'double.parse'.
+    return double.parse(result.toStringAsFixed(2));
+  } else {
+    // Si l'une des conditions n'est pas remplie (par exemple, si 'mises' est nul ou égal à zéro),
+    // on retourne null. C'est une manière sécurisée de gérer les erreurs potentielles
+    // sans faire planter l'application.
+    return null;
   }
-  return buffer.toString();
+}
+
+double? roc(
+  double? earnings,
+  double? stock,
+) {
+  if (earnings != null && stock != null && stock != 0) {
+    // Si toutes les conditions sont remplies, on procède au calcul.
+    // Le calcul est le suivant : (earnings / stock) * 100
+    double result = (earnings / stock) * 100;
+
+    // On retourne le résultat en tant que double, arrondi à deux décimales.
+    // La méthode 'toStringAsFixed(2)' renvoie une chaîne de caractères
+    // qui doit être reconvertie en double avec 'double.parse'.
+    return double.parse(result.toStringAsFixed(2));
+  } else {
+    // Si l'une des conditions n'est pas remplie (par exemple, si 'stock' est nul ou égal à zéro),
+    // on retourne null. C'est une manière sécurisée de gérer les erreurs potentielles
+    // sans faire planter l'application.
+    return null;
+  }
 }

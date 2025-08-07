@@ -292,6 +292,7 @@ final parametersBuilderMap =
         allParams: {
           'cartRef': getParameter<DocumentReference>(data, 'cartRef'),
           'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
   'PublicBetPage': (data) async => ParameterData(
@@ -333,6 +334,7 @@ final parametersBuilderMap =
         allParams: {
           'cartRef': getParameter<DocumentReference>(data, 'cartRef'),
           'myBetRef': getParameter<DocumentReference>(data, 'myBetRef'),
+          'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
   'ListEventsAdd3Bet': (data) async => ParameterData(

@@ -602,6 +602,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               isList: false,
               collectionNamePath: ['users', 'my_bets'],
             ),
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
+            ),
           ),
         ),
         FFRoute(
@@ -707,6 +713,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users', 'my_bets'],
+            ),
+            eventRef: params.getParam(
+              'eventRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['events'],
             ),
           ),
         ),

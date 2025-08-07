@@ -141,11 +141,6 @@ class UsersRecord extends FirestoreRecord {
   double get earningsTotal => _earningsTotal ?? 0.0;
   bool hasEarningsTotal() => _earningsTotal != null;
 
-  // "bet_loose" field.
-  int? _betLoose;
-  int get betLoose => _betLoose ?? 0;
-  bool hasBetLoose() => _betLoose != null;
-
   // "family_name" field.
   String? _familyName;
   String get familyName => _familyName ?? '';
@@ -221,6 +216,41 @@ class UsersRecord extends FirestoreRecord {
   bool get notifsPush => _notifsPush ?? false;
   bool hasNotifsPush() => _notifsPush != null;
 
+  // "cumul_betwin" field.
+  int? _cumulBetwin;
+  int get cumulBetwin => _cumulBetwin ?? 0;
+  bool hasCumulBetwin() => _cumulBetwin != null;
+
+  // "cumul_bets" field.
+  int? _cumulBets;
+  int get cumulBets => _cumulBets ?? 0;
+  bool hasCumulBets() => _cumulBets != null;
+
+  // "cumul_gains" field.
+  double? _cumulGains;
+  double get cumulGains => _cumulGains ?? 0.0;
+  bool hasCumulGains() => _cumulGains != null;
+
+  // "cumul_mises" field.
+  double? _cumulMises;
+  double get cumulMises => _cumulMises ?? 0.0;
+  bool hasCumulMises() => _cumulMises != null;
+
+  // "cumul_earnings" field.
+  double? _cumulEarnings;
+  double get cumulEarnings => _cumulEarnings ?? 0.0;
+  bool hasCumulEarnings() => _cumulEarnings != null;
+
+  // "bet_loose" field.
+  int? _betLoose;
+  int get betLoose => _betLoose ?? 0;
+  bool hasBetLoose() => _betLoose != null;
+
+  // "cumul_loose" field.
+  int? _cumulLoose;
+  int get cumulLoose => _cumulLoose ?? 0;
+  bool hasCumulLoose() => _cumulLoose != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -247,7 +277,6 @@ class UsersRecord extends FirestoreRecord {
     _totalGains = castToType<double>(snapshotData['total_gains']);
     _totalMises = castToType<double>(snapshotData['total_mises']);
     _earningsTotal = castToType<double>(snapshotData['earnings_total']);
-    _betLoose = castToType<int>(snapshotData['bet_loose']);
     _familyName = snapshotData['family_name'] as String?;
     _firstName = snapshotData['first_name'] as String?;
     _helpNav = snapshotData['help_nav'] as bool?;
@@ -263,6 +292,13 @@ class UsersRecord extends FirestoreRecord {
     _enterprise = snapshotData['enterprise'] as String?;
     _langage = snapshotData['langage'] as String?;
     _notifsPush = snapshotData['notifs_push'] as bool?;
+    _cumulBetwin = castToType<int>(snapshotData['cumul_betwin']);
+    _cumulBets = castToType<int>(snapshotData['cumul_bets']);
+    _cumulGains = castToType<double>(snapshotData['cumul_gains']);
+    _cumulMises = castToType<double>(snapshotData['cumul_mises']);
+    _cumulEarnings = castToType<double>(snapshotData['cumul_earnings']);
+    _betLoose = castToType<int>(snapshotData['bet_loose']);
+    _cumulLoose = castToType<int>(snapshotData['cumul_loose']);
   }
 
   static CollectionReference get collection =>
@@ -321,7 +357,6 @@ Map<String, dynamic> createUsersRecordData({
   double? totalGains,
   double? totalMises,
   double? earningsTotal,
-  int? betLoose,
   String? familyName,
   String? firstName,
   bool? helpNav,
@@ -337,6 +372,13 @@ Map<String, dynamic> createUsersRecordData({
   String? enterprise,
   String? langage,
   bool? notifsPush,
+  int? cumulBetwin,
+  int? cumulBets,
+  double? cumulGains,
+  double? cumulMises,
+  double? cumulEarnings,
+  int? betLoose,
+  int? cumulLoose,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -362,7 +404,6 @@ Map<String, dynamic> createUsersRecordData({
       'total_gains': totalGains,
       'total_mises': totalMises,
       'earnings_total': earningsTotal,
-      'bet_loose': betLoose,
       'family_name': familyName,
       'first_name': firstName,
       'help_nav': helpNav,
@@ -378,6 +419,13 @@ Map<String, dynamic> createUsersRecordData({
       'enterprise': enterprise,
       'langage': langage,
       'notifs_push': notifsPush,
+      'cumul_betwin': cumulBetwin,
+      'cumul_bets': cumulBets,
+      'cumul_gains': cumulGains,
+      'cumul_mises': cumulMises,
+      'cumul_earnings': cumulEarnings,
+      'bet_loose': betLoose,
+      'cumul_loose': cumulLoose,
     }.withoutNulls,
   );
 
@@ -415,7 +463,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.totalGains == e2?.totalGains &&
         e1?.totalMises == e2?.totalMises &&
         e1?.earningsTotal == e2?.earningsTotal &&
-        e1?.betLoose == e2?.betLoose &&
         e1?.familyName == e2?.familyName &&
         e1?.firstName == e2?.firstName &&
         e1?.helpNav == e2?.helpNav &&
@@ -430,7 +477,14 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.adult == e2?.adult &&
         e1?.enterprise == e2?.enterprise &&
         e1?.langage == e2?.langage &&
-        e1?.notifsPush == e2?.notifsPush;
+        e1?.notifsPush == e2?.notifsPush &&
+        e1?.cumulBetwin == e2?.cumulBetwin &&
+        e1?.cumulBets == e2?.cumulBets &&
+        e1?.cumulGains == e2?.cumulGains &&
+        e1?.cumulMises == e2?.cumulMises &&
+        e1?.cumulEarnings == e2?.cumulEarnings &&
+        e1?.betLoose == e2?.betLoose &&
+        e1?.cumulLoose == e2?.cumulLoose;
   }
 
   @override
@@ -460,7 +514,6 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.totalGains,
         e?.totalMises,
         e?.earningsTotal,
-        e?.betLoose,
         e?.familyName,
         e?.firstName,
         e?.helpNav,
@@ -475,7 +528,14 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.adult,
         e?.enterprise,
         e?.langage,
-        e?.notifsPush
+        e?.notifsPush,
+        e?.cumulBetwin,
+        e?.cumulBets,
+        e?.cumulGains,
+        e?.cumulMises,
+        e?.cumulEarnings,
+        e?.betLoose,
+        e?.cumulLoose
       ]);
 
   @override

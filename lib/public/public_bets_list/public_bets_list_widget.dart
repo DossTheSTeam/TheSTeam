@@ -90,8 +90,8 @@ class _PublicBetsListWidgetState extends State<PublicBetsListWidget>
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: WillPopScope(
-            onWillPop: () async => false,
+          child: PopScope(
+            canPop: false,
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1645,7 +1645,7 @@ Concluído */
                                                                                       notificationImageUrl: currentUserPhoto,
                                                                                       notificationSound: 'default',
                                                                                       userRefs: [
-                                                                                        columnUsersRecord.reference
+                                                                                        widget.userRef!
                                                                                       ],
                                                                                       initialPageName: 'MyNotifsList',
                                                                                       parameterData: {},

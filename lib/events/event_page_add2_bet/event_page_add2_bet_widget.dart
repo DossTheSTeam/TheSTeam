@@ -83,8 +83,8 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
             FocusScope.of(context).unfocus();
             FocusManager.instance.primaryFocus?.unfocus();
           },
-          child: WillPopScope(
-            onWillPop: () async => false,
+          child: PopScope(
+            canPop: false,
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -5038,6 +5038,12 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                               ParamType
                                                                   .DocumentReference,
                                                             ),
+                                                            'eventRef':
+                                                                serializeParam(
+                                                              widget.eventRef,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
@@ -5687,6 +5693,13 @@ class _EventPageAdd2BetWidgetState extends State<EventPageAdd2BetWidget> {
                                                                       serializeParam(
                                                                     widget
                                                                         .myBetRef,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                  'eventRef':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .eventRef,
                                                                     ParamType
                                                                         .DocumentReference,
                                                                   ),
