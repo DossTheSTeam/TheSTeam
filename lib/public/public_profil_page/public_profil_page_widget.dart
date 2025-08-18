@@ -1146,7 +1146,7 @@ Débloquer */
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'pqk94xtd' /* Paris sportifs */,
+                                                              'tj60muw5' /* Paris sportifs */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1192,7 +1192,7 @@ Débloquer */
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'u6pz75bx' /* Sports bets */,
+                                                              'bukxj2q2' /* Sports bets */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1233,7 +1233,7 @@ Débloquer */
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'vg5yktgx' /* Sportwetten */,
+                                                              'h0utbm6j' /* Sportwetten */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1274,7 +1274,7 @@ Débloquer */
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'sdobiixc' /* Apuestas deportivas */,
+                                                              'h3yh8619' /* Apuestas deportivas */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1315,7 +1315,7 @@ Débloquer */
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'gfi374v9' /* Scommesse sportive */,
+                                                              'mx9si0re' /* Scommesse sportive */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -2827,7 +2827,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '9funfh85' /* Actualités */,
+                                                      'd5ojhdj2' /* Actualités */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2874,7 +2874,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ctjmoou6' /* News */,
+                                                      'kuto77zz' /* News */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2916,7 +2916,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'epu2gctj' /* Neuigkeiten */,
+                                                      'dcuff3ko' /* Neuigkeiten */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2958,7 +2958,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'kko5sy19' /* Noticias */,
+                                                      'upzioxiq' /* Noticias */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -3000,7 +3000,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '42ioynpa' /* Notizie */,
+                                                      '7hgyuabd' /* Notizie */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -3042,7 +3042,7 @@ Débloquer */
                                                   builder: (context) => Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'cn88mtgf' /* Novidades */,
+                                                      '07giddur' /* Novidades */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)

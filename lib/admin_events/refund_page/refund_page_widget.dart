@@ -1745,6 +1745,9 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                                                     'total_bets': FieldValue.increment(-(1)),
                                                                                     'total_mises': FieldValue.increment(-(rowMyBetsRecord.mise)),
                                                                                     'earnings_total': FieldValue.increment(rowMyBetsRecord.mise),
+                                                                                    'cumul_bets': FieldValue.increment(-(1)),
+                                                                                    'cumul_mises': FieldValue.increment(-(rowMyBetsRecord.mise)),
+                                                                                    'cumul_earnings': FieldValue.increment(rowMyBetsRecord.mise),
                                                                                   },
                                                                                 ),
                                                                               });

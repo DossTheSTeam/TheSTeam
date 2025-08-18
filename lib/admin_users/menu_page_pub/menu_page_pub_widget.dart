@@ -2151,29 +2151,6 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                                                   ),
                                                 ),
                                               ),
-                                              if (valueOrDefault<bool>(
-                                                      currentUserDocument
-                                                          ?.helpNav,
-                                                      false) ==
-                                                  true)
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 3.0,
-                                                                0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [],
-                                                    ),
-                                                  ),
-                                                ),
                                             ],
                                           ),
                                         ],
@@ -2202,8 +2179,8 @@ class _MenuPagePubWidgetState extends State<MenuPagePubWidget> {
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 70.0,
                     showsTestAd: false,
-                    iOSAdUnitID: 'ca-app-pub-5890797816389993~8454369463',
-                    androidAdUnitID: 'ca-app-pub-5890797816389993~9535545098',
+                    iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                    androidAdUnitID: 'ca-app-pub-5890797816389993/4818405035',
                   ),
                 ),
               ],
