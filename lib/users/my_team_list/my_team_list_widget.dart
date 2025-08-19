@@ -51,7 +51,7 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           body: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 50.0, 10.0, 0.0),
             child: Stack(
               children: [
                 Column(

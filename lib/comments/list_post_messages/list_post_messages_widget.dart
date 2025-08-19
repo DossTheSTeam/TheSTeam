@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -81,72 +82,51 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               body: SafeArea(
                 top: true,
-                child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 0.0),
-                  child: Stack(
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 10.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    AuthUserStreamWidget(
-                                      builder: (context) => InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            MenuPageWidget.routeName,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .leftToRight,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: Icon(
-                                          Icons.menu_rounded,
-                                          color: valueOrDefault<Color>(
-                                            currentUserDocument?.color1,
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                          size: 30.0,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: AuthUserStreamWidget(
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      AuthUserStreamWidget(
                                         builder: (context) => InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.safePop();
+                                            context.pushNamed(
+                                              MenuPageWidget.routeName,
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .leftToRight,
+                                                  duration: Duration(
+                                                      milliseconds: 400),
+                                                ),
+                                              },
+                                            );
                                           },
                                           child: Icon(
-                                            Icons.arrow_back_ios_new_rounded,
+                                            Icons.menu_rounded,
                                             color: valueOrDefault<Color>(
                                               currentUserDocument?.color1,
                                               FlutterFlowTheme.of(context)
@@ -156,386 +136,437 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if ((valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.langage,
-                                                          '') ==
-                                                      '') ||
-                                              (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.langage,
-                                                      '') ==
-                                                  'francais'))
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'txm0gv8l' /* Commentaires */,
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.safePop();
+                                            },
+                                            child: Icon(
+                                              Icons.arrow_back_ios_new_rounded,
+                                              color: valueOrDefault<Color>(
+                                                currentUserDocument?.color1,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
                                               ),
+                                              size: 30.0,
                                             ),
-                                          if ((valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.langage,
-                                                      '') ==
-                                                  'english') ||
-                                              (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.langage,
-                                                      '') ==
-                                                  'american'))
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '5kiaz70t' /* Comments */,
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.langage,
-                                                  '') ==
-                                              'deutsch')
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'juduk89i' /* Kommentare */,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.langage,
-                                                  '') ==
-                                              'espanol')
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '4zgdjfiy' /* Comentarios */,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.langage,
-                                                  '') ==
-                                              'italiano')
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'v0qaqn3q' /* Commenti */,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                  currentUserDocument?.langage,
-                                                  '') ==
-                                              'portugues')
-                                            AuthUserStreamWidget(
-                                              builder: (context) => Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'jett9erq' /* Comentários */,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ),
-                                        ],
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
-                                ),
-                                if (true /* Warning: Trying to access variable not yet defined. */)
-                                  FutureBuilder<List<MyNotificationsRecord>>(
-                                    future: queryMyNotificationsRecordOnce(
-                                      parent: currentUserReference,
-                                      singleRecord: true,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              valueColor:
-                                                  AlwaysStoppedAnimation<Color>(
-                                                FlutterFlowTheme.of(context)
-                                                    .accent4,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<MyNotificationsRecord>
-                                          rowNotifsMyNotificationsRecordList =
-                                          snapshot.data!;
-                                      // Return an empty Container when the item does not exist.
-                                      if (snapshot.data!.isEmpty) {
-                                        return Container();
-                                      }
-                                      final rowNotifsMyNotificationsRecord =
-                                          rowNotifsMyNotificationsRecordList
-                                                  .isNotEmpty
-                                              ? rowNotifsMyNotificationsRecordList
-                                                  .first
-                                              : null;
-
-                                      return Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: AuthUserStreamWidget(
-                                              builder: (context) => InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    MyNotifsListWidget
-                                                        .routeName,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .rightToLeft,
-                                                        duration: Duration(
-                                                            milliseconds: 400),
-                                                      ),
-                                                    },
-                                                  );
-                                                },
-                                                child: Icon(
-                                                  Icons
-                                                      .notifications_active_outlined,
-                                                  color: valueOrDefault<Color>(
-                                                    currentUserDocument?.color1,
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent1,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if ((valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        '') ||
+                                                (valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    'francais'))
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'txm0gv8l' /* Commentaires */,
                                                   ),
-                                                  size: 40.0,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            if ((valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    'english') ||
+                                                (valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.langage,
+                                                        '') ==
+                                                    'american'))
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '5kiaz70t' /* Comments */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            if (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'deutsch')
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'juduk89i' /* Kommentare */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            if (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'espanol')
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4zgdjfiy' /* Comentarios */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            if (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'italiano')
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'v0qaqn3q' /* Commenti */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                            if (valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.langage,
+                                                    '') ==
+                                                'portugues')
+                                              AuthUserStreamWidget(
+                                                builder: (context) => Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'jett9erq' /* Comentários */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.poppins(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  if (true /* Warning: Trying to access variable not yet defined. */)
+                                    FutureBuilder<List<MyNotificationsRecord>>(
+                                      future: queryMyNotificationsRecordOnce(
+                                        parent: currentUserReference,
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent4,
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                              ],
+                                          );
+                                        }
+                                        List<MyNotificationsRecord>
+                                            rowNotifsMyNotificationsRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final rowNotifsMyNotificationsRecord =
+                                            rowNotifsMyNotificationsRecordList
+                                                    .isNotEmpty
+                                                ? rowNotifsMyNotificationsRecordList
+                                                    .first
+                                                : null;
+
+                                        return Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: AuthUserStreamWidget(
+                                                builder: (context) => InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      MyNotifsListWidget
+                                                          .routeName,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .rightToLeft,
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  400),
+                                                        ),
+                                                      },
+                                                    );
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .notifications_active_outlined,
+                                                    color:
+                                                        valueOrDefault<Color>(
+                                                      currentUserDocument
+                                                          ?.color1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent1,
+                                                    ),
+                                                    size: 40.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                5.0, 0.0, 5.0, 0.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      listPostMessagesPostsRecord.title,
-                                      textAlign: TextAlign.center,
-                                      maxLines: 4,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            font: GoogleFonts.montserrat(
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 0.0, 5.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        listPostMessagesPostsRecord.title,
+                                        textAlign: TextAlign.center,
+                                        maxLines: 4,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              font: GoogleFonts.montserrat(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .labelLarge
@@ -545,77 +576,77 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                       .labelLarge
                                                       .fontStyle,
                                             ),
-                                            letterSpacing: 0.0,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 1.0,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                AuthUserStreamWidget(
+                                  builder: (context) =>
+                                      FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.dropLigueValueController ??=
+                                            FormFieldController<String>(
+                                      _model.dropLigueValue ??= valueOrDefault(
+                                          currentUserDocument?.rankValue, ''),
+                                    ),
+                                    options: List<String>.from([
+                                      'amateur',
+                                      'pro',
+                                      'champion',
+                                      'legende',
+                                      ''
+                                    ]),
+                                    optionLabels: [
+                                      FFLocalizations.of(context).getText(
+                                        '7sb7nfdx' /* Amateur */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'm8b7weih' /* Pro */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'jcqcvyqv' /* Champion */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'h3hs42uk' /* Légende */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '0hfjmrwe' /* Ligues */,
+                                      )
+                                    ],
+                                    onChanged: (val) => safeSetState(
+                                        () => _model.dropLigueValue = val),
+                                    width: 250.0,
+                                    height: 56.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelLarge
+                                                    .bodyMedium
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelLarge
+                                                    .bodyMedium
                                                     .fontStyle,
                                           ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          AuthUserStreamWidget(
-                            builder: (context) => Divider(
-                              thickness: 1.0,
-                              color: valueOrDefault<Color>(
-                                currentUserDocument?.color2,
-                                FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              AuthUserStreamWidget(
-                                builder: (context) =>
-                                    FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropLigueValueController ??=
-                                          FormFieldController<String>(
-                                    _model.dropLigueValue ??= valueOrDefault(
-                                        currentUserDocument?.rankValue, ''),
-                                  ),
-                                  options: List<String>.from([
-                                    'amateur',
-                                    'pro',
-                                    'champion',
-                                    'legende',
-                                    ''
-                                  ]),
-                                  optionLabels: [
-                                    FFLocalizations.of(context).getText(
-                                      '7sb7nfdx' /* Amateur */,
-                                    ),
-                                    FFLocalizations.of(context).getText(
-                                      'm8b7weih' /* Pro */,
-                                    ),
-                                    FFLocalizations.of(context).getText(
-                                      'jcqcvyqv' /* Champion */,
-                                    ),
-                                    FFLocalizations.of(context).getText(
-                                      'h3hs42uk' /* Légende */,
-                                    ),
-                                    FFLocalizations.of(context).getText(
-                                      '0hfjmrwe' /* Ligues */,
-                                    )
-                                  ],
-                                  onChanged: (val) => safeSetState(
-                                      () => _model.dropLigueValue = val),
-                                  width: 250.0,
-                                  height: 56.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.poppins(
+                                          letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -625,55 +656,52 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                  hintText: FFLocalizations.of(context).getText(
-                                    'f399b4d5' /* Ligue */,
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'f399b4d5' /* Ligue */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 2.0,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isOverButton: true,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
                                   ),
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  elevation: 2.0,
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  borderWidth: 2.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 4.0, 16.0, 4.0),
-                                  hidesUnderline: true,
-                                  isOverButton: true,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
+                                ),
+                              ],
+                            ),
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 1.0,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                               ),
-                            ],
-                          ),
-                          AuthUserStreamWidget(
-                            builder: (context) => Divider(
-                              thickness: 1.0,
-                              color: valueOrDefault<Color>(
-                                currentUserDocument?.color2,
-                                FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                      Padding(
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            5.0, 160.0, 5.0, 50.0),
+                            10.0, 160.0, 10.0, 70.0),
                         child: StreamBuilder<List<PostMessagesRecord>>(
                           stream: queryPostMessagesRecord(
                             parent: widget.postRef,
@@ -1237,8 +1265,19 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                           },
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 1.0),
+                      child: FlutterFlowAdBanner(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 70.0,
+                        showsTestAd: false,
+                        iOSAdUnitID: 'ca-app-pub-5890797816389993/4762770228',
+                        androidAdUnitID:
+                            'ca-app-pub-5890797816389993/6743449195',
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

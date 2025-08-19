@@ -412,7 +412,6 @@ final parametersBuilderMap =
           'eventRef': getParameter<DocumentReference>(data, 'eventRef'),
         },
       ),
-  'MenuPagePub': ParameterData.none(),
   'AddBetMecaPage': (data) async => ParameterData(
         allParams: {
           'eventMecaRef': getParameter<DocumentReference>(data, 'eventMecaRef'),

@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/users/langage/langage_widget.dart';
@@ -1982,7 +1983,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                               'suspendu')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 50.0),
+                                  0.0, 0.0, 0.0, 60.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -5461,6 +5462,16 @@ esportivas */
                         ],
                       ),
                     ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.0, 1.0),
+                  child: FlutterFlowAdBanner(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 70.0,
+                    showsTestAd: false,
+                    iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                    androidAdUnitID: 'ca-app-pub-5890797816389993/4818405035',
                   ),
                 ),
               ],

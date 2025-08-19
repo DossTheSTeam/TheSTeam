@@ -890,7 +890,7 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'n7thk4hz' /* C */,
+                                                                      '22sy3vh7' /* C */,
                                                                     ),
                                                                     textAlign:
                                                                         TextAlign

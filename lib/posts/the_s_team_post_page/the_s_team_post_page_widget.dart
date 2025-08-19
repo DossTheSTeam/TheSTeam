@@ -1699,7 +1699,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '7t8mhq9t' /* Ecrit par */,
+                                                        'yohz707l' /* Ecrit par */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1745,7 +1745,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'jmei50e6' /* Written by */,
+                                                        'p8nnekdh' /* Written by */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1786,7 +1786,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'uz2tb4jr' /* Geschrieben von */,
+                                                        'yui6dooy' /* Geschrieben von */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1827,7 +1827,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'xi9r95sb' /* Escrito por */,
+                                                        'wjbwojyt' /* Escrito por */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1868,7 +1868,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'y9lkvwls' /* Scritto da */,
+                                                        'tg3yz7p2' /* Scritto da */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -1909,7 +1909,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'd48hst2e' /* Escrito por */,
+                                                        'q7pu579k' /* Escrito por */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(

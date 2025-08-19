@@ -147,8 +147,6 @@ export '/public/full_image_page/full_image_page_widget.dart'
     show FullImagePageWidget;
 export '/admin_events/refund_page/refund_page_widget.dart'
     show RefundPageWidget;
-export '/admin_users/menu_page_pub/menu_page_pub_widget.dart'
-    show MenuPagePubWidget;
 export '/admin_events/add_bet_meca_page/add_bet_meca_page_widget.dart'
     show AddBetMecaPageWidget;
 export '/admin_events/modif_rank_pilotes/modif_rank_pilotes_widget.dart'

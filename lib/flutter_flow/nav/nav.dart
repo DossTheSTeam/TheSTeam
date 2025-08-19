@@ -916,11 +916,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: MenuPagePubWidget.routeName,
-          path: MenuPagePubWidget.routePath,
-          builder: (context, params) => MenuPagePubWidget(),
-        ),
-        FFRoute(
           name: AddBetMecaPageWidget.routeName,
           path: AddBetMecaPageWidget.routePath,
           builder: (context, params) => AddBetMecaPageWidget(

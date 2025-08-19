@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -78,8 +79,8 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              body: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 0.0),
+              body: SafeArea(
+                top: true,
                 child: Stack(
                   children: [
                     Padding(
@@ -615,8 +616,8 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                     Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 70.0, 0.0, 50.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -5757,6 +5758,17 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                             ],
                           ),
                         ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 1.0),
+                      child: FlutterFlowAdBanner(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 70.0,
+                        showsTestAd: false,
+                        iOSAdUnitID: 'ca-app-pub-5890797816389993/4443206026',
+                        androidAdUnitID:
+                            'ca-app-pub-5890797816389993/3788599906',
                       ),
                     ),
                   ],
