@@ -1266,17 +1266,18 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
-                      child: FlutterFlowAdBanner(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 70.0,
-                        showsTestAd: false,
-                        iOSAdUnitID: 'ca-app-pub-5890797816389993/4762770228',
-                        androidAdUnitID:
-                            'ca-app-pub-5890797816389993/6743449195',
+                    if (!isWeb)
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 1.0),
+                        child: FlutterFlowAdBanner(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 70.0,
+                          showsTestAd: false,
+                          iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                          androidAdUnitID:
+                              'ca-app-pub-5890797816389993/4818405035',
+                        ),
                       ),
-                    ),
                   ],
                 ),
               ),

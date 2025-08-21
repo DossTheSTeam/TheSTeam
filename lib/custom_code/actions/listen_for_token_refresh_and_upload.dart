@@ -49,7 +49,8 @@ Future<void> listenForTokenRefreshAndUpload(String userId) async {
     // Remplacement de l'appel Cloud Function par une requête HTTP POST vers Cloud Run
 
     // URL du point de terminaison Cloud Run
-    const String cloudRunUrl = 'https://addfcmtoken-184746316510-ew.run.app';
+    const String cloudRunUrl =
+        'https://addfcmtoken-184746316510.europe-west9.run.app';
 
     // Création du corps de la requête JSON
     final Map<String, dynamic> requestBody = {

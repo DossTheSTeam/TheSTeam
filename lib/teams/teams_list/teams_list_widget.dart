@@ -50,8 +50,8 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          body: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+          body: SafeArea(
+            top: true,
             child: Stack(
               children: [
                 Padding(
@@ -7420,7 +7420,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 290.0, 10.0, 70.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 270.0, 10.0, 70.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -18538,16 +18538,17 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: FlutterFlowAdBanner(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 70.0,
-                    showsTestAd: false,
-                    iOSAdUnitID: 'ca-app-pub-5890797816389993/6954383940',
-                    androidAdUnitID: 'ca-app-pub-5890797816389993/4575632611',
+                if (!isWeb)
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.0),
+                    child: FlutterFlowAdBanner(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 70.0,
+                      showsTestAd: false,
+                      iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                      androidAdUnitID: 'ca-app-pub-5890797816389993/4818405035',
+                    ),
                   ),
-                ),
               ],
             ),
           ),

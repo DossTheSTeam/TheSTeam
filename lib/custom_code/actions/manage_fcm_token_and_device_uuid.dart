@@ -79,9 +79,9 @@ Future<void> manageFcmTokenAndDeviceUuid(String userId) async {
 
     // --- DÉBUT DE LA MODIFICATION MAJEURE ---
     // Remplacement de l'appel à Firestore par une requête HTTP POST vers Cloud Run
-
     // 5. URL du point de terminaison Cloud Run
-    const String cloudRunUrl = 'https://addfcmtoken-184746316510-ew.run.app';
+    const String cloudRunUrl =
+        'https://addfcmtoken-184746316510.europe-west9.run.app';
 
     // 6. Création du corps de la requête JSON
     final Map<String, dynamic> requestBody = {

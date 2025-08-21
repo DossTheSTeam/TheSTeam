@@ -95,7 +95,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
                   child: StreamBuilder<UsersRecord>(
                     stream:
                         UsersRecord.getDocument(postPagePostsRecord.member!),
@@ -3711,10 +3711,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                               ),
                             ),
                           ),
-                          if (responsiveVisibility(
-                            context: context,
-                            tabletLandscape: false,
-                          ))
+                          if (!isWeb)
                             Align(
                               alignment: AlignmentDirectional(0.0, 1.0),
                               child: FlutterFlowAdBanner(
@@ -3722,9 +3719,9 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                 height: 70.0,
                                 showsTestAd: false,
                                 iOSAdUnitID:
-                                    'ca-app-pub-5890797816389993/3289621043',
+                                    'ca-app-pub-5890797816389993/8705679157',
                                 androidAdUnitID:
-                                    'ca-app-pub-5890797816389993/8849354895',
+                                    'ca-app-pub-5890797816389993/4818405035',
                               ),
                             ),
                         ],

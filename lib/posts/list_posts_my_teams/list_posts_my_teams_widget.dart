@@ -68,7 +68,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1176,16 +1176,17 @@ As minhas equipes */
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
-                  child: FlutterFlowAdBanner(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 70.0,
-                    showsTestAd: false,
-                    iOSAdUnitID: 'ca-app-pub-5890797816389993/2848452128',
-                    androidAdUnitID: 'ca-app-pub-5890797816389993/5097812140',
+                if (!isWeb)
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.0),
+                    child: FlutterFlowAdBanner(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 70.0,
+                      showsTestAd: false,
+                      iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                      androidAdUnitID: 'ca-app-pub-5890797816389993/4818405035',
+                    ),
                   ),
-                ),
               ],
             ),
           ),
