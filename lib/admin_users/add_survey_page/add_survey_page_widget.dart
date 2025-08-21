@@ -669,16 +669,10 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                                     .fromSTEB(
                                                         0.0, 15.0, 0.0, 0.0),
                                                 child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
+                                                  builder: (context) =>
+                                                      GestureDetector(
+                                                    onLongPressDown:
+                                                        (details) async {
                                                       await startAudioRecording(
                                                         context,
                                                         audioRecorder: _model
@@ -686,37 +680,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                                             AudioRecorder(),
                                                       );
                                                     },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .microphoneAlt,
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                      ),
-                                                      size: 28.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 15.0, 0.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
+                                                    onLongPressUp: () async {
                                                       await stopAudioRecording(
                                                         audioRecorder: _model
                                                             .audioRecorder,
@@ -734,8 +698,9 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
 
                                                       safeSetState(() {});
                                                     },
-                                                    child: Icon(
-                                                      Icons.stop_circle,
+                                                    child: FaIcon(
+                                                      FontAwesomeIcons
+                                                          .microphoneAlt,
                                                       color:
                                                           valueOrDefault<Color>(
                                                         currentUserDocument
@@ -2302,7 +2267,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                       leagueValue:
                                           addSurveyPageTeamsRecord.leagueValue,
                                       foldCategorie: 'news',
-                                      audio: '',
+                                      audio: _model.audioPost,
                                       youtubeLink: _model.youtubeId,
                                       text2: _model.textController7.text,
                                       image2:
@@ -2329,7 +2294,7 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                       leagueValue:
                                           addSurveyPageTeamsRecord.leagueValue,
                                       foldCategorie: 'news',
-                                      audio: '',
+                                      audio: _model.audioPost,
                                       youtubeLink: _model.youtubeId,
                                       text2: _model.textController7.text,
                                       image2:

@@ -1602,26 +1602,33 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                       AuthUserStreamWidget(
                                                                     builder:
                                                                         (context) =>
-                                                                            InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
+                                                                            GestureDetector(
+                                                                      onLongPressDown:
+                                                                          (details) async {
                                                                         await startAudioRecording(
                                                                           context,
                                                                           audioRecorder: _model.audioRecorder ??=
                                                                               AudioRecorder(),
                                                                         );
+                                                                      },
+                                                                      onLongPressUp:
+                                                                          () async {
+                                                                        await stopAudioRecording(
+                                                                          audioRecorder:
+                                                                              _model.audioRecorder,
+                                                                          audioName:
+                                                                              'recordedFileBytes',
+                                                                          onRecordingComplete:
+                                                                              (audioFilePath, audioBytes) {
+                                                                            _model.audioSport =
+                                                                                audioFilePath;
+                                                                            _model.recordedFileBytes =
+                                                                                audioBytes;
+                                                                          },
+                                                                        );
+
+                                                                        safeSetState(
+                                                                            () {});
                                                                       },
                                                                       child:
                                                                           FaIcon(
@@ -1637,57 +1644,6 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                                         size:
                                                                             28.0,
                                                                       ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                AuthUserStreamWidget(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      await stopAudioRecording(
-                                                                        audioRecorder:
-                                                                            _model.audioRecorder,
-                                                                        audioName:
-                                                                            'recordedFileBytes',
-                                                                        onRecordingComplete:
-                                                                            (audioFilePath,
-                                                                                audioBytes) {
-                                                                          _model.audioSport =
-                                                                              audioFilePath;
-                                                                          _model.recordedFileBytes =
-                                                                              audioBytes;
-                                                                        },
-                                                                      );
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .stop_circle,
-                                                                      color: valueOrDefault<
-                                                                          Color>(
-                                                                        currentUserDocument
-                                                                            ?.color1,
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                      ),
-                                                                      size:
-                                                                          28.0,
                                                                     ),
                                                                   ),
                                                                 ),

@@ -1287,12 +1287,8 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                           size: 30.0,
                                         ),
                                       ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
+                                      GestureDetector(
+                                        onLongPressDown: (details) async {
                                           await startAudioRecording(
                                             context,
                                             audioRecorder:
@@ -1300,42 +1296,25 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                                     AudioRecorder(),
                                           );
                                         },
+                                        onLongPressUp: () async {
+                                          await stopAudioRecording(
+                                            audioRecorder: _model.audioRecorder,
+                                            audioName: 'recordedFileBytes',
+                                            onRecordingComplete:
+                                                (audioFilePath, audioBytes) {
+                                              _model.audio = audioFilePath;
+                                              _model.recordedFileBytes =
+                                                  audioBytes;
+                                            },
+                                          );
+
+                                          safeSetState(() {});
+                                        },
                                         child: FaIcon(
                                           FontAwesomeIcons.microphoneAlt,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           size: 28.0,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await stopAudioRecording(
-                                              audioRecorder:
-                                                  _model.audioRecorder,
-                                              audioName: 'recordedFileBytes',
-                                              onRecordingComplete:
-                                                  (audioFilePath, audioBytes) {
-                                                _model.audio = audioFilePath;
-                                                _model.recordedFileBytes =
-                                                    audioBytes;
-                                              },
-                                            );
-
-                                            safeSetState(() {});
-                                          },
-                                          child: Icon(
-                                            Icons.stop_circle,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 28.0,
-                                          ),
                                         ),
                                       ),
                                       InkWell(

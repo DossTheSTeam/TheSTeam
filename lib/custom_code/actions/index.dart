@@ -6,4 +6,3 @@ export 'extract_youtube_id_action.dart' show extractYoutubeIdAction;
 export 'manage_fcm_token_and_device_uuid.dart' show manageFcmTokenAndDeviceUuid;
 export 'listen_for_token_refresh_and_upload.dart'
     show listenForTokenRefreshAndUpload;
-export 'register_background_handler.dart' show registerBackgroundHandler;

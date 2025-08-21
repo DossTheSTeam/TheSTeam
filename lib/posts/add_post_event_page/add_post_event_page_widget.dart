@@ -921,16 +921,10 @@ class _AddPostEventPageWidgetState extends State<AddPostEventPageWidget> {
                                                     .fromSTEB(
                                                         0.0, 15.0, 0.0, 0.0),
                                                 child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
+                                                  builder: (context) =>
+                                                      GestureDetector(
+                                                    onLongPressDown:
+                                                        (details) async {
                                                       await startAudioRecording(
                                                         context,
                                                         audioRecorder: _model
@@ -938,37 +932,7 @@ class _AddPostEventPageWidgetState extends State<AddPostEventPageWidget> {
                                                             AudioRecorder(),
                                                       );
                                                     },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .microphoneAlt,
-                                                      color:
-                                                          valueOrDefault<Color>(
-                                                        currentUserDocument
-                                                            ?.color1,
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
-                                                      ),
-                                                      size: 28.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 15.0, 0.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
+                                                    onLongPressUp: () async {
                                                       await stopAudioRecording(
                                                         audioRecorder: _model
                                                             .audioRecorder,
@@ -986,8 +950,9 @@ class _AddPostEventPageWidgetState extends State<AddPostEventPageWidget> {
 
                                                       safeSetState(() {});
                                                     },
-                                                    child: Icon(
-                                                      Icons.stop_circle,
+                                                    child: FaIcon(
+                                                      FontAwesomeIcons
+                                                          .microphoneAlt,
                                                       color:
                                                           valueOrDefault<Color>(
                                                         currentUserDocument

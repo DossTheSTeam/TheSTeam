@@ -2951,21 +2951,26 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                           AuthUserStreamWidget(
                                                                         builder:
                                                                             (context) =>
-                                                                                InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
+                                                                                GestureDetector(
+                                                                          onLongPressDown:
+                                                                              (details) async {
                                                                             await startAudioRecording(
                                                                               context,
                                                                               audioRecorder: _model.audioRecorder ??= AudioRecorder(),
                                                                             );
+                                                                          },
+                                                                          onLongPressUp:
+                                                                              () async {
+                                                                            await stopAudioRecording(
+                                                                              audioRecorder: _model.audioRecorder,
+                                                                              audioName: 'recordedFileBytes',
+                                                                              onRecordingComplete: (audioFilePath, audioBytes) {
+                                                                                _model.audio = audioFilePath;
+                                                                                _model.recordedFileBytes = audioBytes;
+                                                                              },
+                                                                            );
+
+                                                                            safeSetState(() {});
                                                                           },
                                                                           child:
                                                                               FaIcon(
@@ -2978,49 +2983,6 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                             size:
                                                                                 28.0,
                                                                           ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    AuthUserStreamWidget(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          await stopAudioRecording(
-                                                                            audioRecorder:
-                                                                                _model.audioRecorder,
-                                                                            audioName:
-                                                                                'recordedFileBytes',
-                                                                            onRecordingComplete:
-                                                                                (audioFilePath, audioBytes) {
-                                                                              _model.audio = audioFilePath;
-                                                                              _model.recordedFileBytes = audioBytes;
-                                                                            },
-                                                                          );
-
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        },
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .stop_circle,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            currentUserDocument?.color1,
-                                                                            FlutterFlowTheme.of(context).primaryText,
-                                                                          ),
-                                                                          size:
-                                                                              28.0,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -3711,19 +3673,39 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                               ),
                             ),
                           ),
-                          if (!isWeb)
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
-                              child: FlutterFlowAdBanner(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 70.0,
-                                showsTestAd: false,
-                                iOSAdUnitID:
-                                    'ca-app-pub-5890797816389993/8705679157',
-                                androidAdUnitID:
-                                    'ca-app-pub-5890797816389993/4818405035',
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 1.0),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 60.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                image: DecorationImage(
+                                  fit: BoxFit.fitHeight,
+                                  image: Image.asset(
+                                    'assets/images/Logo_The_S_Team.png',
+                                  ).image,
+                                ),
+                              ),
+                              child: Visibility(
+                                visible: !isWeb,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  child: FlutterFlowAdBanner(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: 60.0,
+                                    showsTestAd: false,
+                                    iOSAdUnitID:
+                                        'ca-app-pub-5890797816389993/8705679157',
+                                    androidAdUnitID:
+                                        'ca-app-pub-5890797816389993/4818405035',
+                                  ),
+                                ),
                               ),
                             ),
+                          ),
                         ],
                       );
                     },
