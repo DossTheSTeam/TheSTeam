@@ -1613,9 +1613,9 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                             height: 60.0,
                             showsTestAd: false,
                             iOSAdUnitID:
-                                'ca-app-pub-5890797816389993/8705679157',
+                                'ca-app-pub-5890797816389993/2848452128',
                             androidAdUnitID:
-                                'ca-app-pub-5890797816389993/4818405035',
+                                'ca-app-pub-5890797816389993/5097812140',
                           ),
                         ),
                       ),

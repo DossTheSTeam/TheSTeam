@@ -8320,9 +8320,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                             height: 60.0,
                             showsTestAd: false,
                             iOSAdUnitID:
-                                'ca-app-pub-5890797816389993/8705679157',
+                                'ca-app-pub-5890797816389993/6954383940',
                             androidAdUnitID:
-                                'ca-app-pub-5890797816389993/4818405035',
+                                'ca-app-pub-5890797816389993/4575632611',
                           ),
                         ),
                       ),

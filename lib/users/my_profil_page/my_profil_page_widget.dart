@@ -6049,9 +6049,9 @@ mein profil */
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 60.0,
                         showsTestAd: false,
-                        iOSAdUnitID: 'ca-app-pub-5890797816389993/8705679157',
+                        iOSAdUnitID: 'ca-app-pub-5890797816389993/6609918951',
                         androidAdUnitID:
-                            'ca-app-pub-5890797816389993/4818405035',
+                            'ca-app-pub-5890797816389993/9790067324',
                       ),
                     ),
                   ),
