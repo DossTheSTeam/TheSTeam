@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/comments/delete_event_message/delete_event_message_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -2019,21 +2019,6 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             },
                                                           ),
                                                         }, eventMessagesRecordReference);
-                                                        triggerPushNotification(
-                                                          notificationTitle:
-                                                              currentUserDisplayName,
-                                                          notificationText:
-                                                              'A commenté votre commentaire :',
-                                                          notificationImageUrl:
-                                                              currentUserPhoto,
-                                                          userRefs: [
-                                                            eventMessagePageEventMessagesRecord
-                                                                .commUser!
-                                                          ],
-                                                          initialPageName:
-                                                              'MyNotifsList',
-                                                          parameterData: {},
-                                                        );
 
                                                         await widget
                                                             .startedCommRef!
@@ -2112,6 +2097,25 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             },
                                                           ),
                                                         });
+                                                        await SendUserNotificationCall
+                                                            .call(
+                                                          toUserId:
+                                                              eventMessagePageEventMessagesRecord
+                                                                  .commUser?.id,
+                                                          notificationType:
+                                                              'A commenté votre message :',
+                                                          notificationTitle:
+                                                              currentUserDisplayName,
+                                                          notificationBody:
+                                                              eventMessagePageEventMessagesRecord
+                                                                  .text,
+                                                          postId:
+                                                              eventMessagePageEventMessagesRecord
+                                                                  .reference.id,
+                                                          authToken:
+                                                              currentJwtToken,
+                                                        );
+
                                                         safeSetState(() {
                                                           _model
                                                               .commFieldTextController

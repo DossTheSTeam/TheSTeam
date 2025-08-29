@@ -186,7 +186,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                               ),
                             )
                           ],
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(6.0),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).alternate,
                             width: 3.0,

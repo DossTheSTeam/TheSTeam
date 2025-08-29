@@ -8831,8 +8831,7 @@ Estratégi... */
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    ListSurveysNewsWidget
-                                                        .routeName,
+                                                    ListSurveysWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         columnTeamsRecord
@@ -9121,8 +9120,7 @@ Estratégi... */
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    ListSurveysNewsWidget
-                                                        .routeName,
+                                                    ListSurveysWidget.routeName,
                                                     queryParameters: {
                                                       'teamRef': serializeParam(
                                                         columnTeamsRecord

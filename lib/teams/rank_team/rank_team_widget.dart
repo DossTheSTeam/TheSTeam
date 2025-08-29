@@ -1947,7 +1947,7 @@ class _RankTeamWidgetState extends State<RankTeamWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'ae4kc7w2' /* + : - */,
+                                                            'h5f3rg23' /* + : - */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

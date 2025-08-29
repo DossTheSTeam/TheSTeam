@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1479,6 +1480,18 @@ class _RedCardPostPageWidgetState extends State<RedCardPostPageWidget> {
                                     initialPageName: 'ModNotifsList',
                                     parameterData: {},
                                   );
+                                  await SendUserNotificationCall.call(
+                                    toUserId: redCardPostPagePostsRecord
+                                        .moderator?.id,
+                                    notificationType: 'Signale une actualité.',
+                                    notificationTitle: currentUserDisplayName,
+                                    notificationBody:
+                                        redCardPostPagePostsRecord.title,
+                                    postId:
+                                        redCardPostPagePostsRecord.reference.id,
+                                    authToken: currentJwtToken,
+                                  );
+
                                   context.safePop();
                                 },
                                 text: FFLocalizations.of(context).getText(

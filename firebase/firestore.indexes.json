@@ -339,20 +339,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "news",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "created_time",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "team_posts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
           "fieldPath": "fold_categorie",
           "order": "ASCENDING"
         },

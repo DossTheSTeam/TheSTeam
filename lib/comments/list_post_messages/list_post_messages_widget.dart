@@ -543,30 +543,20 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        listPostMessagesPostsRecord.title,
-                                        textAlign: TextAlign.center,
-                                        maxLines: 4,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      listPostMessagesPostsRecord.title,
+                                      textAlign: TextAlign.center,
+                                      maxLines: 1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            font: GoogleFonts.montserrat(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .labelLarge
@@ -576,10 +566,19 @@ class _ListPostMessagesWidgetState extends State<ListPostMessagesWidget> {
                                                       .labelLarge
                                                       .fontStyle,
                                             ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             AuthUserStreamWidget(

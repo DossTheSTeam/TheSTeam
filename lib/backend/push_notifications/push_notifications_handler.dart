@@ -381,7 +381,7 @@ final parametersBuilderMap =
           'postRef': getParameter<DocumentReference>(data, 'postRef'),
         },
       ),
-  'ListSurveysNews': (data) async => ParameterData(
+  'ListSurveys': (data) async => ParameterData(
         allParams: {
           'teamRef': getParameter<DocumentReference>(data, 'teamRef'),
         },

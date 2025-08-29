@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -2739,18 +2739,19 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                       },
                                     ),
                                   });
-                                  triggerPushNotification(
-                                    notificationTitle: currentUserDisplayName,
-                                    notificationText:
+                                  await SendUserNotificationCall.call(
+                                    toUserId: memberEntryPageTeamsRecord
+                                        .adminUser?.id,
+                                    notificationType:
                                         'Veut devenir membre d\'un club.',
-                                    notificationImageUrl: currentUserPhoto,
-                                    notificationSound: 'default',
-                                    userRefs: [
-                                      memberEntryPageTeamsRecord.adminUser!
-                                    ],
-                                    initialPageName: 'ModNotifsList',
-                                    parameterData: {},
+                                    notificationTitle: currentUserDisplayName,
+                                    notificationBody:
+                                        memberEntryPageTeamsRecord.name,
+                                    postId:
+                                        memberEntryPageTeamsRecord.reference.id,
+                                    authToken: currentJwtToken,
                                   );
+
                                   context.safePop();
                                 },
                                 text: FFLocalizations.of(context).getText(

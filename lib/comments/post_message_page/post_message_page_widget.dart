@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/comments/delete_post_message/delete_post_message_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -2009,21 +2009,6 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         },
                                                       ),
                                                     }, postMessagesRecordReference);
-                                                    triggerPushNotification(
-                                                      notificationTitle:
-                                                          currentUserDisplayName,
-                                                      notificationText:
-                                                          'A commenté votre commentaire :',
-                                                      notificationImageUrl:
-                                                          currentUserPhoto,
-                                                      userRefs: [
-                                                        postMessagePagePostMessagesRecord
-                                                            .commUser!
-                                                      ],
-                                                      initialPageName:
-                                                          'MyNotifsList',
-                                                      parameterData: {},
-                                                    );
 
                                                     await widget
                                                         .startedCommRef!
@@ -2097,6 +2082,25 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         },
                                                       ),
                                                     });
+                                                    await SendUserNotificationCall
+                                                        .call(
+                                                      toUserId:
+                                                          postMessagePagePostMessagesRecord
+                                                              .commUser?.id,
+                                                      notificationType:
+                                                          'A commenté votre message :',
+                                                      notificationTitle:
+                                                          currentUserDisplayName,
+                                                      notificationBody:
+                                                          postMessagePagePostMessagesRecord
+                                                              .text,
+                                                      postId:
+                                                          postMessagePagePostMessagesRecord
+                                                              .reference.id,
+                                                      authToken:
+                                                          currentJwtToken,
+                                                    );
+
                                                     safeSetState(() {
                                                       _model
                                                           .commFieldTextController

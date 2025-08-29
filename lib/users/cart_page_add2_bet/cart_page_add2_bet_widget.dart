@@ -2061,7 +2061,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              '38z89ac8' /* Mise */,
+                                                                              'hctv5l26' /* Mise */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2091,7 +2091,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'puyjwcuv' /* Betting */,
+                                                                              '30yz94q7' /* Betting */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2120,7 +2120,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'w9b0fh8n' /* Wetten */,
+                                                                              'z57r4ape' /* Wetten */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2149,7 +2149,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'dob7ki3w' /* Apuestas */,
+                                                                              '9k6xdndd' /* Apuestas */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2178,7 +2178,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'vptcnzxx' /* Scommesse */,
+                                                                              'gpumzxvk' /* Scommesse */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2207,7 +2207,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'vf0ilfxl' /* Apostas */,
+                                                                              'c4uamlrl' /* Apostas */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2247,7 +2247,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'yx5tvzy2' /* Cote */,
+                                                                              'ofjm1ftu' /* Cote */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2277,7 +2277,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'ev6pbojr' /* Odds */,
+                                                                              '6082me5r' /* Odds */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2306,7 +2306,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              '18lorjax' /* Quoten */,
+                                                                              'r00byw0f' /* Quoten */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2335,7 +2335,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'wqjx15f5' /* Cuotas */,
+                                                                              'i0iwgmbm' /* Cuotas */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2364,7 +2364,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              '10q0s4ef' /* Quote */,
+                                                                              'dsryatzj' /* Quote */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(
@@ -2393,7 +2393,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           builder: (context) =>
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'viktx85m' /* Probabilidades */,
+                                                                              'n1z7s435' /* Probabilidades */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   font: GoogleFonts.poppins(

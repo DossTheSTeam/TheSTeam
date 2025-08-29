@@ -1683,7 +1683,7 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                         looping: true,
                                         mute: false,
                                         showControls: true,
-                                        showFullScreen: true,
+                                        showFullScreen: false,
                                         strictRelatedVideos: true,
                                       ),
                                     Padding(

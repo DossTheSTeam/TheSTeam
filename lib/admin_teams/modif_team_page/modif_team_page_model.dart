@@ -21,11 +21,6 @@ class ModifTeamPageModel extends FlutterFlowModel<ModifTeamPageWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl_uploadDataPvp = '';
 
-  bool isDataUploading_uploadData92n = false;
-  FFUploadedFile uploadedLocalFile_uploadData92n =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl_uploadData92n = '';
-
   // State field(s) for DropLigueFight widget.
   String? dropLigueFightValue;
   FormFieldController<String>? dropLigueFightValueController;

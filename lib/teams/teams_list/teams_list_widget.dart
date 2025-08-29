@@ -11283,7 +11283,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                           children: [
                                                             Container(
                                                               width: 160.0,
-                                                              height: 150.0,
+                                                              height: 50.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -11302,78 +11302,13 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .end,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0,
-                                                                            5.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      children: [
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              TeamPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'teamRef': serializeParam(
-                                                                                  columnMMAChampPointsScrollTeamsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                90.0,
-                                                                            height:
-                                                                                100.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).alternate,
-                                                                              borderRadius: BorderRadius.circular(0.0),
-                                                                              border: Border.all(
-                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                              ),
-                                                                            ),
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(0.0),
-                                                                              child: Image.network(
-                                                                                columnMMAChampPointsScrollTeamsRecord.profilPicture,
-                                                                                width: 200.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.fitHeight,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
                                                                   Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.0,
-                                                                            0.0),
+                                                                            1.0),
                                                                     child:
                                                                         InkWell(
                                                                       splashColor:
@@ -11441,7 +11376,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                             ),
                                                             Container(
                                                               width: 50.0,
-                                                              height: 60.0,
+                                                              height: 50.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(

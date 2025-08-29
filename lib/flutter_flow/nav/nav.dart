@@ -840,9 +840,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ListSurveysNewsWidget.routeName,
-          path: ListSurveysNewsWidget.routePath,
-          builder: (context, params) => ListSurveysNewsWidget(
+          name: ListSurveysWidget.routeName,
+          path: ListSurveysWidget.routePath,
+          builder: (context, params) => ListSurveysWidget(
             teamRef: params.getParam(
               'teamRef',
               ParamType.DocumentReference,

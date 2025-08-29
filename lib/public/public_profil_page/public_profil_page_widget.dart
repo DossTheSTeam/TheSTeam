@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -259,14 +259,41 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
-                                        child: Icon(
-                                          Icons.monetization_on_outlined,
-                                          color: valueOrDefault<Color>(
-                                            publicProfilPageUsersRecord.color2,
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Cet utilisateur fait partie des meilleurs parieurs.',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                  ),
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
+                                            );
+                                          },
+                                          child: Icon(
+                                            Icons.monetization_on_outlined,
+                                            color: valueOrDefault<Color>(
+                                              publicProfilPageUsersRecord
+                                                  .color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                            ),
+                                            size: 25.0,
                                           ),
-                                          size: 25.0,
                                         ),
                                       ),
                                     ),
@@ -277,14 +304,41 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
-                                        child: Icon(
-                                          Icons.local_police_outlined,
-                                          color: valueOrDefault<Color>(
-                                            publicProfilPageUsersRecord.color2,
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Cet utilisateur fait partie des  modérateurs.',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                  ),
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                              ),
+                                            );
+                                          },
+                                          child: Icon(
+                                            Icons.local_police_outlined,
+                                            color: valueOrDefault<Color>(
+                                              publicProfilPageUsersRecord
+                                                  .color2,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                            ),
+                                            size: 25.0,
                                           ),
-                                          size: 25.0,
                                         ),
                                       ),
                                     ),
@@ -582,76 +636,35 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
-                                                            if (containerTeamsRecord
-                                                                        .profilPicture !=
-                                                                    '')
-                                                              Container(
-                                                                width: 65.0,
-                                                                height: 50.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              3.0),
-                                                                ),
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              0.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    containerTeamsRecord
-                                                                        .profilPicture,
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        200.0,
-                                                                    fit: BoxFit
-                                                                        .fitHeight,
-                                                                  ),
+                                                            Container(
+                                                              width: 65.0,
+                                                              height: 50.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            3.0),
+                                                              ),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  containerTeamsRecord
+                                                                      .logo,
+                                                                  width: 300.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .fitHeight,
                                                                 ),
                                                               ),
-                                                            if (containerTeamsRecord
-                                                                        .profilPicture ==
-                                                                    '')
-                                                              Container(
-                                                                width: 65.0,
-                                                                height: 50.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              3.0),
-                                                                ),
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              0.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    containerTeamsRecord
-                                                                        .logo,
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        200.0,
-                                                                    fit: BoxFit
-                                                                        .fitHeight,
-                                                                  ),
-                                                                ),
-                                                              ),
+                                                            ),
                                                           ],
                                                         ),
                                                       ),
@@ -864,21 +877,16 @@ Débloquer */
                                                             },
                                                           ),
                                                         });
-                                                        triggerPushNotification(
+                                                        await SendUserNotificationCall
+                                                            .call(
+                                                          toUserId: widget
+                                                              .userRef?.id,
+                                                          notificationType:
+                                                              'fait partie de vos fans.',
                                                           notificationTitle:
                                                               currentUserDisplayName,
-                                                          notificationText:
-                                                              'fait partie de vos fans.',
-                                                          notificationImageUrl:
-                                                              currentUserPhoto,
-                                                          notificationSound:
-                                                              'default',
-                                                          userRefs: [
-                                                            widget.userRef!
-                                                          ],
-                                                          initialPageName:
-                                                              'MyNotifsList',
-                                                          parameterData: {},
+                                                          notificationBody:
+                                                              'Vous pouvez le suivre en retour',
                                                         );
                                                       },
                                                       child: Icon(

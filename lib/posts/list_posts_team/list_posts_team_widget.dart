@@ -156,33 +156,32 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                 ),
                               ),
                             ),
-                            if (listPostsTeamTeamsRecord.profilPicture == '')
-                              Align(
-                                alignment: AlignmentDirectional(-1.0, 1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 130.0,
-                                    height: 80.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderRadius: BorderRadius.circular(6.0),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.network(
-                                        listPostsTeamTeamsRecord.logo,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.fitHeight,
-                                      ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 0.0, 0.0),
+                                child: Container(
+                                  width: 130.0,
+                                  height: 80.0,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderRadius: BorderRadius.circular(6.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    child: Image.network(
+                                      listPostsTeamTeamsRecord.logo,
+                                      width: 300.0,
+                                      height: 200.0,
+                                      fit: BoxFit.fitHeight,
                                     ),
                                   ),
                                 ),
                               ),
+                            ),
                             Align(
                               alignment: AlignmentDirectional(0.0, 1.0),
                               child: Padding(
@@ -383,32 +382,6 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                 ],
                               ),
                             ),
-                            if (listPostsTeamTeamsRecord.profilPicture != '')
-                              Align(
-                                alignment: AlignmentDirectional(-1.0, 1.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      child: Image.network(
-                                        listPostsTeamTeamsRecord.profilPicture,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
                           ],
                         ),
                       ),

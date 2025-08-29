@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'list_surveys_news_widget.dart' show ListSurveysNewsWidget;
+import 'list_surveys_widget.dart' show ListSurveysWidget;
 import 'package:flutter/material.dart';
 
-class ListSurveysNewsModel extends FlutterFlowModel<ListSurveysNewsWidget> {
+class ListSurveysModel extends FlutterFlowModel<ListSurveysWidget> {
   @override
   void initState(BuildContext context) {}
 

@@ -136,8 +136,7 @@ export '/teams/team_stats/team_stats_widget.dart' show TeamStatsWidget;
 export '/teams/teams_list/teams_list_widget.dart' show TeamsListWidget;
 export '/posts/the_s_team_post_page/the_s_team_post_page_widget.dart'
     show TheSTeamPostPageWidget;
-export '/posts/list_surveys_news/list_surveys_news_widget.dart'
-    show ListSurveysNewsWidget;
+export '/posts/list_surveys/list_surveys_widget.dart' show ListSurveysWidget;
 export '/admin_users/add_survey_page/add_survey_page_widget.dart'
     show AddSurveyPageWidget;
 export '/posts/list_advices/list_advices_widget.dart' show ListAdvicesWidget;

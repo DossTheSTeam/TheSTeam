@@ -925,7 +925,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primaryBackground,
+                                                                        .alternate,
                                                                   ),
                                                                   child:
                                                                       Visibility(

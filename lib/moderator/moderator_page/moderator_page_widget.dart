@@ -923,7 +923,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'tpbc7b51' /* Ajouter les cotes */,
+                                          'ogbrefro' /* Ajouter les cotes */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge

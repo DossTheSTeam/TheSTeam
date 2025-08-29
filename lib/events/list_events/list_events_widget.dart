@@ -2900,7 +2900,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primary,
+                                                                        .alternate,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             3.0),
@@ -2919,7 +2919,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                               0.0),
                                                                       child: Image
                                                                           .asset(
-                                                                        'assets/images/Ligue1.png',
+                                                                        'assets/images/GCNK54CRZFGURCI73J3VCYNINY.jpg',
                                                                         width:
                                                                             300.0,
                                                                         height:
