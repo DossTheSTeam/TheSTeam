@@ -4943,7 +4943,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '4sujqa46': {
-      'fr': 'v 1.3.8',
+      'fr': 'v 1.3.9',
       'de': '',
       'en': '',
       'es': '',
@@ -10565,7 +10565,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'ysb59qlu': {
+    'sdqcdyd8': {
       'fr': 'Premier League',
       'de': '',
       'en': '',
@@ -10573,7 +10573,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'uvego3q5': {
+    'tb96myof': {
       'fr': 'LaLiga',
       'de': '',
       'en': '',
@@ -10581,7 +10581,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '87r5d0ie': {
+    'z49k2ivq': {
       'fr': 'Bundesliga',
       'de': '',
       'en': '',
@@ -10589,7 +10589,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'qqhzbeme': {
+    'iijibp6n': {
       'fr': 'Serie A',
       'de': '',
       'en': '',
@@ -10597,7 +10597,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '4mk8fnrk': {
+    'ase12nsr': {
       'fr': 'Ligue 1',
       'de': '',
       'en': '',
@@ -10605,7 +10605,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'c7m8zn20': {
+    'chcftl0v': {
       'fr': 'Champions League',
       'de': '',
       'en': '',
@@ -10653,7 +10653,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'mzi9mftn': {
+    'cg8gzsrg': {
       'fr': 'Top 14',
       'de': '',
       'en': '',
@@ -10661,7 +10661,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'w39svpwo': {
+    '6pmc780l': {
       'fr': 'Champions Cup',
       'de': '',
       'en': '',
@@ -10669,7 +10669,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'x1wd8v56': {
+    '82ed7lvh': {
       'fr': 'Other',
       'de': '',
       'en': '',
@@ -10677,7 +10677,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '28begfcc': {
+    'fxa6l0ff': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -10685,7 +10685,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'k6zfknom': {
+    '95vm4raj': {
       'fr': 'NBA',
       'de': '',
       'en': '',
@@ -10693,7 +10693,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'x83ufrij': {
+    'vwz7k495': {
       'fr': 'Euro League',
       'de': '',
       'en': '',
@@ -10701,7 +10701,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'edzbn6uv': {
+    'sv8i125i': {
       'fr': 'Other',
       'de': '',
       'en': '',
@@ -10709,7 +10709,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'flm2j8zj': {
+    '6yea90fl': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -10717,7 +10717,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'axt92hm3': {
+    'sn5rjmsv': {
       'fr': 'NHL',
       'de': '',
       'en': '',
@@ -10725,7 +10725,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    't7sr2v45': {
+    '1sv3pibn': {
       'fr': 'ATP',
       'de': '',
       'en': '',
@@ -10733,7 +10733,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'u356t6bx': {
+    'p3kh2jz1': {
       'fr': 'WTA',
       'de': '',
       'en': '',
@@ -10741,7 +10741,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'bin1ulez': {
+    'rlphlrug': {
       'fr': 'UFC',
       'de': '',
       'en': '',
@@ -10749,7 +10749,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'oimdsjx1': {
+    'v8rb9yh0': {
       'fr': 'Formula 1',
       'de': '',
       'en': '',
@@ -10757,7 +10757,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'kgcyhbbk': {
+    'byg4j6i2': {
       'fr': 'Moto GP',
       'de': '',
       'en': '',
@@ -10765,15 +10765,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '77snmpx9': {
-      'fr': 'World Superbike',
+    '70e2lbh6': {
+      'fr': 'World SuperBike',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'd6dps6yt': {
+    'yuzyg15e': {
       'fr': 'MX GP',
       'de': '',
       'en': '',
@@ -25588,7 +25588,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'tysf7l2z': {
+    'd0xscv4q': {
       'fr': 'Premier League',
       'de': '',
       'en': '',
@@ -25596,7 +25596,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '4lv2f9rt': {
+    'w5xxn608': {
       'fr': 'LaLiga',
       'de': '',
       'en': '',
@@ -25604,7 +25604,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '9eeqygvw': {
+    'g75djuam': {
       'fr': 'Bundesliga',
       'de': '',
       'en': '',
@@ -25612,7 +25612,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '2ksvxtox': {
+    '3xygoi9l': {
       'fr': 'Serie A',
       'de': '',
       'en': '',
@@ -25620,7 +25620,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'tyo4fv4n': {
+    'xc6igfwy': {
       'fr': 'Ligue 1',
       'de': '',
       'en': '',
@@ -25628,7 +25628,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'yn5x96cp': {
+    'czusdvz4': {
       'fr': 'Champions League',
       'de': '',
       'en': '',
@@ -25636,7 +25636,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '9ni6x8fs': {
+    'a7vtbb8r': {
       'fr': 'Europa League',
       'de': '',
       'en': '',
@@ -25644,7 +25644,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '3knyxq7b': {
+    'ycr0fg5x': {
       'fr': 'Conference League',
       'de': '',
       'en': '',
@@ -25652,7 +25652,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '0nsptzoe': {
+    'jdvoz5p4': {
       'fr': 'Other',
       'de': '',
       'en': '',
@@ -25660,7 +25660,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '0kwp4nh5': {
+    'hvze54l9': {
       'fr': 'Autres - France',
       'de': '',
       'en': '',
@@ -25668,7 +25668,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '12svhz7k': {
+    '3k8290yu': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -25676,7 +25676,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '53lga4tv': {
+    'rss1pwts': {
       'fr': 'Top 14',
       'de': '',
       'en': '',
@@ -25684,7 +25684,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'ubtc15bt': {
+    '38kkna4r': {
       'fr': 'Champions Cup',
       'de': '',
       'en': '',
@@ -25692,7 +25692,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '7w3rr46t': {
+    'jul8tmim': {
       'fr': 'Other',
       'de': '',
       'en': '',
@@ -25700,7 +25700,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '77kg03nn': {
+    'ec2tuure': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -25708,7 +25708,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    't3ywv8s0': {
+    '9p9jlhms': {
       'fr': 'NBA',
       'de': '',
       'en': '',
@@ -25716,7 +25716,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'gwj1cjnf': {
+    '8lar4wku': {
       'fr': 'Euro League',
       'de': '',
       'en': '',
@@ -25724,7 +25724,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '243k85ah': {
+    'bm1eaxow': {
       'fr': 'Other',
       'de': '',
       'en': '',
@@ -25732,7 +25732,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '3p6zqdz0': {
+    'vywk7kil': {
       'fr': 'Nations',
       'de': '',
       'en': '',
@@ -25740,7 +25740,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'ohn3idf2': {
+    'bgd3iv1p': {
       'fr': 'NHL',
       'de': '',
       'en': '',
@@ -25748,7 +25748,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'rcvyc17f': {
+    'ei85eoov': {
       'fr': 'ATP',
       'de': '',
       'en': '',
@@ -25756,7 +25756,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '7hooh671': {
+    'ys16wci5': {
       'fr': 'WTA',
       'de': '',
       'en': '',
@@ -25764,71 +25764,79 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'o1fuu7c7': {
-      'fr': 'Flyweight',
+    '9co4a7ug': {
+      'fr': 'UFC',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    '10c0725l': {
-      'fr': 'Bantamweight',
+    'ounk5v4x': {
+      'fr': 'FlyWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'c6b7h178': {
-      'fr': 'Featherweight',
+    'h2nuqsja': {
+      'fr': 'BantamWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'boenmd9g': {
-      'fr': 'Lightweight',
+    '46iv2zor': {
+      'fr': 'FeatherWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'y5inog23': {
-      'fr': 'Welterweight',
+    '8b1i7xk8': {
+      'fr': 'LightWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    '9d0ym42x': {
-      'fr': 'Middleweight',
+    'sktt8zh4': {
+      'fr': 'WelterWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    '4c6zt65k': {
-      'fr': 'Light Heavyweight',
+    '7kfzcveg': {
+      'fr': 'MiddleWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    '6vq7xro3': {
-      'fr': 'Heavyweight',
+    '62e1fxkr': {
+      'fr': 'Light HeavyWeight',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'nmhacagb': {
+    'jnyuqfsx': {
+      'fr': 'HeavyWeight',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'z4av36dx': {
       'fr': 'Formula 1',
       'de': '',
       'en': '',
@@ -25836,7 +25844,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'vf6azphs': {
+    'xuhxmoab': {
       'fr': 'Moto GP',
       'de': '',
       'en': '',
@@ -25844,15 +25852,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'pybq3z0k': {
-      'fr': 'World Superbike',
+    '5a1zs41g': {
+      'fr': 'World SuperBike',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'x5ade23r': {
+    '54j9yk67': {
       'fr': 'MX GP',
       'de': '',
       'en': '',

@@ -226,7 +226,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                     ),
                                                   ),
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -234,16 +234,16 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                           .primaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              3.0),
+                                                              0.0),
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contDomTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),
@@ -949,7 +949,7 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                       ),
                                                     ),
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -957,16 +957,16 @@ class _StatsTeamsEventWidgetState extends State<StatsTeamsEventWidget>
                                                           .primaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              3.0),
+                                                              0.0),
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contExtTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),

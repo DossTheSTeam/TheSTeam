@@ -453,11 +453,11 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                               ),
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(6.0),
                                                 child: Image.network(
                                                   contDomTeamsRecord.logo,
-                                                  width: 300.0,
-                                                  height: 200.0,
+                                                  width: 55.0,
+                                                  height: 35.0,
                                                   fit: BoxFit.fitHeight,
                                                 ),
                                               ),
@@ -1767,44 +1767,23 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
-                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
-                                                                              Container(
-                                                                                width: 55.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(3.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(0.0),
-                                                                                  child: Image.network(
-                                                                                    contDomTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitHeight,
-                                                                                  ),
+                                                                            Container(
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(6.0),
+                                                                                child: Image.network(
+                                                                                  contDomTeamsRecord.logo,
+                                                                                  width: 55.0,
+                                                                                  height: 35.0,
+                                                                                  fit: BoxFit.fitHeight,
                                                                                 ),
                                                                               ),
-                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
-                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
-                                                                              Container(
-                                                                                width: 45.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(6.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(10.0),
-                                                                                  child: Image.network(
-                                                                                    contDomTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitWidth,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
+                                                                            ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -1899,44 +1878,23 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
-                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
-                                                                              Container(
-                                                                                width: 55.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(3.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(0.0),
-                                                                                  child: Image.network(
-                                                                                    contExtTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitHeight,
-                                                                                  ),
+                                                                            Container(
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(6.0),
+                                                                                child: Image.network(
+                                                                                  contExtTeamsRecord.logo,
+                                                                                  width: 55.0,
+                                                                                  height: 35.0,
+                                                                                  fit: BoxFit.fitHeight,
                                                                                 ),
                                                                               ),
-                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
-                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
-                                                                              Container(
-                                                                                width: 45.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(3.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(10.0),
-                                                                                  child: Image.network(
-                                                                                    contExtTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitWidth,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
+                                                                            ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -3425,44 +3383,23 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
-                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
-                                                                              Container(
-                                                                                width: 55.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(3.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(0.0),
-                                                                                  child: Image.network(
-                                                                                    contDomTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitHeight,
-                                                                                  ),
+                                                                            Container(
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(6.0),
+                                                                                child: Image.network(
+                                                                                  contDomTeamsRecord.logo,
+                                                                                  width: 55.0,
+                                                                                  height: 35.0,
+                                                                                  fit: BoxFit.fitHeight,
                                                                                 ),
                                                                               ),
-                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
-                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
-                                                                              Container(
-                                                                                width: 45.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(6.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(10.0),
-                                                                                  child: Image.network(
-                                                                                    contDomTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitWidth,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
+                                                                            ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(
@@ -3557,44 +3494,23 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                                                           mainAxisAlignment:
                                                                               MainAxisAlignment.spaceBetween,
                                                                           children: [
-                                                                            if ((columnEventEventsRecord.sportValue != 'mma') &&
-                                                                                (columnEventEventsRecord.sportValue != 'tennis'))
-                                                                              Container(
-                                                                                width: 55.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(3.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(0.0),
-                                                                                  child: Image.network(
-                                                                                    contExtTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitHeight,
-                                                                                  ),
+                                                                            Container(
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(6.0),
+                                                                                child: Image.network(
+                                                                                  contExtTeamsRecord.logo,
+                                                                                  width: 55.0,
+                                                                                  height: 35.0,
+                                                                                  fit: BoxFit.fitHeight,
                                                                                 ),
                                                                               ),
-                                                                            if ((columnEventEventsRecord.sportValue == 'mma') ||
-                                                                                (columnEventEventsRecord.sportValue == 'tennis'))
-                                                                              Container(
-                                                                                width: 45.0,
-                                                                                height: 35.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(6.0),
-                                                                                ),
-                                                                                child: ClipRRect(
-                                                                                  borderRadius: BorderRadius.circular(10.0),
-                                                                                  child: Image.network(
-                                                                                    contExtTeamsRecord.logo,
-                                                                                    width: 300.0,
-                                                                                    height: 200.0,
-                                                                                    fit: BoxFit.fitWidth,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
+                                                                            ),
                                                                             Align(
                                                                               alignment: AlignmentDirectional(0.0, 0.0),
                                                                               child: Text(

@@ -179,7 +179,7 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Container(
-                                                  width: 45.0,
+                                                  width: 55.0,
                                                   height: 35.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -187,16 +187,16 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                                                         .primaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            3.0),
+                                                            0.0),
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0.0),
+                                                            6.0),
                                                     child: Image.network(
                                                       containerTeamsRecord.logo,
-                                                      width: 300.0,
-                                                      height: 200.0,
+                                                      width: 55.0,
+                                                      height: 35.0,
                                                       fit: BoxFit.fitHeight,
                                                     ),
                                                   ),

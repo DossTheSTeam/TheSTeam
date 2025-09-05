@@ -12,7 +12,7 @@ service cloud.firestore {
       allow create: if request.auth.uid == parent;
       allow read: if true;
       allow write: if true;
-      allow delete: if request.auth.uid == parent;
+      allow delete: if true;
     }
 
     match /{path=**}/my_teamslike/{document} {
@@ -24,7 +24,7 @@ service cloud.firestore {
       allow create: if request.auth.uid == parent;
       allow read: if true;
       allow write: if true;
-      allow delete: if request.auth.uid == parent;
+      allow delete: if true;
     }
 
     match /{path=**}/my_teams/{document} {
@@ -35,20 +35,15 @@ service cloud.firestore {
     match /users/{parent}/cart/{document} {
       allow create: if request.auth.uid == parent;
       allow read: if true;
-      allow write: if true;
+      allow write: if request.auth.uid == parent;
       allow delete: if request.auth.uid == parent;
     }
-
-    match /{path=**}/cart/{document} {
-      allow read: if true;
-    }
-
 
     match /users/{parent}/my_bets/{document} {
       allow create: if request.auth.uid == parent;
       allow read: if true;
       allow write: if true;
-      allow delete: if request.auth.uid == parent;
+      allow delete: if true;
     }
 
     match /{path=**}/my_bets/{document} {
@@ -60,7 +55,7 @@ service cloud.firestore {
       allow create: if request.auth.uid == parent;
       allow read: if true;
       allow write: if true;
-      allow delete: if request.auth.uid == parent;
+      allow delete: if true;
     }
 
     match /{path=**}/my_posts/{document} {
@@ -71,7 +66,7 @@ service cloud.firestore {
     match /users/{parent}/images/{document} {
       allow create: if request.auth.uid == parent;
       allow read: if true;
-      allow write: if true;
+      allow write: if request.auth.uid == parent;
       allow delete: if request.auth.uid == parent;
     }
 
@@ -83,7 +78,7 @@ service cloud.firestore {
     match /users/{parent}/my_notifications/{document} {
       allow create: if request.auth.uid == parent;
       allow read: if true;
-      allow write: if true;
+      allow write: if request.auth.uid == parent;
       allow delete: if request.auth.uid == parent;
     }
 

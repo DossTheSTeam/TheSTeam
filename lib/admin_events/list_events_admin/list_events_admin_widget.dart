@@ -427,17 +427,6 @@ class _ListEventsAdminWidgetState extends State<ListEventsAdminWidget> {
                                                                   ),
                                                                 if (columnEventsEventsRecord
                                                                         .sportValue ==
-                                                                    'boxe')
-                                                                  Icon(
-                                                                    Icons
-                                                                        .sports_mma_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                if (columnEventsEventsRecord
-                                                                        .sportValue ==
                                                                     'rugby')
                                                                   Icon(
                                                                     Icons

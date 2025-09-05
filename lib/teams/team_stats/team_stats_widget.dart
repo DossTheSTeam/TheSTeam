@@ -174,21 +174,21 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 65.0,
-                                      height: 50.0,
+                                      width: 55.0,
+                                      height: 35.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         borderRadius:
-                                            BorderRadius.circular(3.0),
+                                            BorderRadius.circular(0.0),
                                       ),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(0.0),
                                         child: Image.network(
                                           teamStatsTeamsRecord.logo,
-                                          width: 300.0,
-                                          height: 200.0,
+                                          width: 55.0,
+                                          height: 35.0,
                                           fit: BoxFit.fitHeight,
                                         ),
                                       ),
@@ -379,672 +379,298 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'ligue.1')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 25.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          3.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(1.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/Ligue1.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 3.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    if (teamStatsTeamsRecord
+                                                            .leagueValue ==
+                                                        'euro.league')
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
                                                         ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'premier.league')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          child: Image.asset(
+                                                            'assets/images/Europ.TST.jpg',
                                                             width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(2.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/PremierLeague.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'serie.a')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/SerieA.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'laliga')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(2.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/Laliga.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'bundesliga')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 45.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/Bundesliga.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitHeight,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'nba')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 20.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          3.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(1.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/954px-NBA_Logo.svg.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'ufc')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
-                                                            child: Container(
-                                                              width: 45.0,
-                                                              height: 35.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            6.0),
-                                                                shape: BoxShape
-                                                                    .rectangle,
-                                                              ),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/1200px-UFC_Logo.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitWidth,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'moto.gp')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 45.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          3.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/1024px-Moto_Gp_logo.svg.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitWidth,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'mx.gp')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 50.0,
                                                             height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          3.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          1.0,
-                                                                          2.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/Motocross_World_Championship_Logo.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitWidth,
-                                                                ),
-                                                              ),
-                                                            ),
+                                                            fit: BoxFit
+                                                                .fitHeight,
                                                           ),
                                                         ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'world.superbike')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 45.0,
-                                                            height: 30.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          3.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(1.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/1200px-Superbike_World_Championship_logo_(stacked,_2022).svg.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitWidth,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
+                                                      ),
+                                                    if ((teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'ligue.1') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'top.14'))
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
                                                         ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'formule.1')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 40.0,
-                                                            height: 30.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(1.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            0.0),
-                                                                child:
-                                                                    Image.asset(
-                                                                  'assets/images/formula-1-logo-5-3.png',
-                                                                  width: 300.0,
-                                                                  height: 200.0,
-                                                                  fit: BoxFit
-                                                                      .fitWidth,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'top.14')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          child: Image.asset(
+                                                            'assets/images/France.TST.jpg',
                                                             width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/1200px-Top_14.svg.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitWidth,
-                                                              ),
-                                                            ),
+                                                            height: 25.0,
+                                                            fit:
+                                                                BoxFit.fitWidth,
                                                           ),
                                                         ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'atp')
-                                                        Align(
+                                                      ),
+                                                    if (teamStatsTeamsRecord
+                                                            .leagueValue ==
+                                                        'serie.a')
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: Align(
                                                           alignment:
                                                               AlignmentDirectional(
                                                                   0.0, 0.0),
-                                                          child: Container(
-                                                            width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/1200px-Logo_ATP_World_Tour.svg.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitWidth,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'wta')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/Wta.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitWidth,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'nhl')
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Container(
-                                                            width: 35.0,
-                                                            height: 35.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          6.0),
-                                                              shape: BoxShape
-                                                                  .rectangle,
-                                                            ),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/nhl-logo.png',
-                                                                width: 300.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .fitWidth,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      if (teamStatsTeamsRecord
-                                                              .leagueValue ==
-                                                          'euro.league')
-                                                        Container(
-                                                          width: 35.0,
-                                                          height: 35.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        6.0),
-                                                            shape: BoxShape
-                                                                .rectangle,
-                                                          ),
                                                           child: ClipRRect(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0.0),
+                                                                        6.0),
                                                             child: Image.asset(
-                                                              'assets/images/logo-default.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
+                                                              'assets/images/Italie.TST.jpg',
+                                                              width: 35.0,
+                                                              height: 25.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .fitWidth,
                                                             ),
                                                           ),
                                                         ),
-                                                    ],
-                                                  ),
+                                                      ),
+                                                    if (teamStatsTeamsRecord
+                                                            .leagueValue ==
+                                                        'laliga')
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          child: Image.asset(
+                                                            'assets/images/Espana.TST.jpeg',
+                                                            width: 35.0,
+                                                            height: 25.0,
+                                                            fit:
+                                                                BoxFit.fitWidth,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (teamStatsTeamsRecord
+                                                            .leagueValue ==
+                                                        'bundesliga')
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          child: Image.asset(
+                                                            'assets/images/Deutsch.TST.jpeg',
+                                                            width: 35.0,
+                                                            height: 25.0,
+                                                            fit:
+                                                                BoxFit.fitWidth,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if ((teamStatsTeamsRecord.leagueValue == 'nba') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'ufc') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'nhl'))
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          child: Image.asset(
+                                                            'assets/images/USA.TST.jpg',
+                                                            width: 300.0,
+                                                            height: 200.0,
+                                                            fit:
+                                                                BoxFit.fitWidth,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if ((teamStatsTeamsRecord.leagueValue == 'moto.gp') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'mx.gp') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'world.superbike') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'formule.1') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'wta') ||
+                                                        (teamStatsTeamsRecord
+                                                                .leagueValue ==
+                                                            'atp'))
+                                                      Container(
+                                                        width: 25.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          child: Image.asset(
+                                                            'assets/images/World.TST.png',
+                                                            width: 25.0,
+                                                            height: 25.0,
+                                                            fit: BoxFit
+                                                                .fitHeight,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (teamStatsTeamsRecord
+                                                            .leagueValue ==
+                                                        'premier.league')
+                                                      Container(
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      6.0),
+                                                          child: Image.asset(
+                                                            'assets/images/England.TST.jpg',
+                                                            width: 35.0,
+                                                            height: 25.0,
+                                                            fit:
+                                                                BoxFit.fitWidth,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                  ],
                                                 ),
                                               ),
                                             ],
@@ -4383,143 +4009,30 @@ equipas marcam */
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   if (teamStatsTeamsRecord
-                                                          .additionalLeague ==
-                                                      'champions.cup')
-                                                    Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Container(
-                                                        width: 35.0,
-                                                        height: 35.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      1.0,
-                                                                      0.0,
-                                                                      1.0,
-                                                                      1.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/Logo_Champions_Cup_2018.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit
-                                                                  .fitHeight,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  if (teamStatsTeamsRecord
-                                                          .additionalLeague ==
-                                                      'champions.league')
-                                                    Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Container(
-                                                        width: 35.0,
-                                                        height: 35.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/Logo_champions_league.png',
-                                                              width: 300.0,
-                                                              height: 200.0,
-                                                              fit: BoxFit
-                                                                  .fitHeight,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  if (teamStatsTeamsRecord
-                                                          .additionalLeague ==
-                                                      'europa.league')
+                                                          .leagueValue ==
+                                                      'euro.league')
                                                     Container(
                                                       width: 35.0,
-                                                      height: 35.0,
+                                                      height: 25.0,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                        shape:
+                                                            BoxShape.rectangle,
                                                       ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(1.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/Logo_europa.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  if (teamStatsTeamsRecord
-                                                          .additionalLeague ==
-                                                      'conference.league')
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 35.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(2.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
-                                                          child: Image.asset(
-                                                            'assets/images/Logo_conference.png',
-                                                            width: 300.0,
-                                                            height: 200.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(6.0),
+                                                        child: Image.asset(
+                                                          'assets/images/Europ.TST.jpg',
+                                                          width: 35.0,
+                                                          height: 25.0,
+                                                          fit: BoxFit.fitHeight,
                                                         ),
                                                       ),
                                                     ),

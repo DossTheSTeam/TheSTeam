@@ -325,7 +325,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                             },
                                                             child: Container(
                                                               width: 65.0,
-                                                              height: 50.0,
+                                                              height: 45.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -334,19 +334,19 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            3.0),
+                                                                            0.0),
                                                               ),
                                                               child: ClipRRect(
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            0.0),
+                                                                            6.0),
                                                                 child: Image
                                                                     .network(
                                                                   rowTeamTeamsRecord
                                                                       .logo,
-                                                                  width: 300.0,
-                                                                  height: 200.0,
+                                                                  width: 65.0,
+                                                                  height: 45.0,
                                                                   fit: BoxFit
                                                                       .fitHeight,
                                                                 ),
@@ -818,103 +818,56 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                         MainAxisAlignment
                                                                             .spaceBetween,
                                                                     children: [
-                                                                      if ((contDomTeamsRecord.sportValue !=
-                                                                              'mma') &&
-                                                                          (contDomTeamsRecord.sportValue !=
-                                                                              'tennis'))
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              TeamPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'teamRef': serializeParam(
-                                                                                  contDomTeamsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                55.0,
-                                                                            height:
-                                                                                35.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              borderRadius: BorderRadius.circular(3.0),
-                                                                            ),
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(0.0),
-                                                                              child: Image.network(
-                                                                                contDomTeamsRecord.logo,
-                                                                                width: 300.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.fitHeight,
+                                                                      InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            TeamPageWidget.routeName,
+                                                                            queryParameters:
+                                                                                {
+                                                                              'teamRef': serializeParam(
+                                                                                contDomTeamsRecord.reference,
+                                                                                ParamType.DocumentReference,
                                                                               ),
+                                                                            }.withoutNulls,
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              55.0,
+                                                                          height:
+                                                                              35.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(0.0),
+                                                                          ),
+                                                                          child:
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(6.0),
+                                                                            child:
+                                                                                Image.network(
+                                                                              contDomTeamsRecord.logo,
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              fit: BoxFit.fitHeight,
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      if ((contDomTeamsRecord.sportValue ==
-                                                                              'mma') ||
-                                                                          (contDomTeamsRecord.sportValue ==
-                                                                              'tennis'))
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              TeamPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'teamRef': serializeParam(
-                                                                                  contDomTeamsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                45.0,
-                                                                            height:
-                                                                                35.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              borderRadius: BorderRadius.circular(6.0),
-                                                                              shape: BoxShape.rectangle,
-                                                                            ),
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(10.0),
-                                                                              child: Image.network(
-                                                                                contDomTeamsRecord.logo,
-                                                                                width: 300.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.fitWidth,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
+                                                                      ),
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.0,
@@ -1098,103 +1051,56 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                         MainAxisAlignment
                                                                             .spaceBetween,
                                                                     children: [
-                                                                      if ((contExtTeamsRecord.sportValue !=
-                                                                              'mma') &&
-                                                                          (contExtTeamsRecord.sportValue !=
-                                                                              'tennis'))
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              TeamPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'teamRef': serializeParam(
-                                                                                  contExtTeamsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                55.0,
-                                                                            height:
-                                                                                35.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              borderRadius: BorderRadius.circular(3.0),
-                                                                            ),
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(0.0),
-                                                                              child: Image.network(
-                                                                                contExtTeamsRecord.logo,
-                                                                                width: 300.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.fitHeight,
+                                                                      InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed(
+                                                                            TeamPageWidget.routeName,
+                                                                            queryParameters:
+                                                                                {
+                                                                              'teamRef': serializeParam(
+                                                                                contExtTeamsRecord.reference,
+                                                                                ParamType.DocumentReference,
                                                                               ),
+                                                                            }.withoutNulls,
+                                                                          );
+                                                                        },
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              55.0,
+                                                                          height:
+                                                                              35.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(0.0),
+                                                                          ),
+                                                                          child:
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(6.0),
+                                                                            child:
+                                                                                Image.network(
+                                                                              contExtTeamsRecord.logo,
+                                                                              width: 55.0,
+                                                                              height: 35.0,
+                                                                              fit: BoxFit.fitHeight,
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      if ((contExtTeamsRecord.sportValue ==
-                                                                              'mma') ||
-                                                                          (contExtTeamsRecord.sportValue ==
-                                                                              'tennis'))
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              TeamPageWidget.routeName,
-                                                                              queryParameters: {
-                                                                                'teamRef': serializeParam(
-                                                                                  contExtTeamsRecord.reference,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                45.0,
-                                                                            height:
-                                                                                35.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              borderRadius: BorderRadius.circular(6.0),
-                                                                              shape: BoxShape.rectangle,
-                                                                            ),
-                                                                            child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(10.0),
-                                                                              child: Image.network(
-                                                                                contExtTeamsRecord.logo,
-                                                                                width: 300.0,
-                                                                                height: 200.0,
-                                                                                fit: BoxFit.fitWidth,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
+                                                                      ),
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.0,

@@ -87,116 +87,90 @@ class _LeaguEventsListAdd2BetWidgetState
                 alignment: AlignmentDirectional(0.0, -1.0),
                 child: Stack(
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional(0.0, -1.0),
-                            child: Container(
-                              height: 230.0,
-                              child: Stack(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        51.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 199.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                      ),
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(1.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'euro.league')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
-                                                      topLeft:
-                                                          Radius.circular(0.0),
-                                                      topRight:
-                                                          Radius.circular(0.0),
+                    if (responsiveVisibility(
+                      context: context,
+                      tabletLandscape: false,
+                    ))
+                      Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, -1.0),
+                              child: Container(
+                                height: 200.0,
+                                child: Stack(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          51.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 199.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                        ),
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(1.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              if ((leaguEventsListAdd2BetEventsRecord.leagueValue ==
+                                                      'champions.league') ||
+                                                  (leaguEventsListAdd2BetEventsRecord.leagueValue ==
+                                                      'champions.cup') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'euro.league') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'europa.league') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'conference.league'))
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        bottomRight:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        topLeft:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        topRight:
+                                                            Radius.circular(
+                                                                0.0),
+                                                      ),
+                                                      shape: BoxShape.rectangle,
                                                     ),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/logo-default.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitHeight,
-                                                      alignment:
-                                                          Alignment(0.0, -1.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'champions.cup')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
-                                                      topLeft:
-                                                          Radius.circular(0.0),
-                                                      topRight:
-                                                          Radius.circular(0.0),
-                                                    ),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 20.0,
-                                                                0.0, 0.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               0.0),
                                                       child: Image.asset(
-                                                        'assets/images/Logo_Champions_Cup_2018.png',
-                                                        width: 300.0,
+                                                        'assets/images/Europ.TST.jpg',
+                                                        width: 320.0,
                                                         height: 200.0,
                                                         fit: BoxFit.fitWidth,
                                                         alignment: Alignment(
@@ -205,430 +179,87 @@ class _LeaguEventsListAdd2BetWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'champions.league')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
-                                                      topLeft:
-                                                          Radius.circular(0.0),
-                                                      topRight:
-                                                          Radius.circular(0.0),
+                                              if ((leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'ligue.1') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'top.14'))
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
                                                     ),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/Logo_champions_league.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                      alignment:
-                                                          Alignment(0.0, -1.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'europa.league')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 5.0,
-                                                                0.0, 0.0),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               0.0),
                                                       child: Image.asset(
-                                                        'assets/images/Logo_europa.png',
-                                                        width: 300.0,
+                                                        'assets/images/France.TST.jpg',
+                                                        width: 320.0,
                                                         height: 200.0,
                                                         fit: BoxFit.fitWidth,
-                                                        alignment: Alignment(
-                                                            0.0, -1.0),
+                                                        alignment:
+                                                            Alignment(0.0, 0.0),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'conference.league')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/Logo_conference.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
+                                              if (leaguEventsListAdd2BetEventsRecord
+                                                      .leagueValue ==
+                                                  'premier.league')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: Align(
                                                       alignment:
-                                                          Alignment(0.0, -1.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'ligue.1')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 225.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/Ligue1.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                      alignment:
-                                                          Alignment(0.0, -1.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'premier.league')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, -1.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.asset(
-                                                        'assets/images/PremierLeague.png',
-                                                        width: 300.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'serie.a')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.asset(
-                                                        'assets/images/SerieA.png',
-                                                        width: 300.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.none,
-                                                        alignment: Alignment(
-                                                            0.0, -0.1),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'laliga')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(2.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.asset(
-                                                        'assets/images/Laliga.png',
-                                                        width: 300.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.fitWidth,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'bundesliga')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 320.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/2048px-Bundesliga-logo.svg.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'nba')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.asset(
-                                                        'assets/images/954px-NBA_Logo.svg.png',
-                                                        width: 300.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.contain,
-                                                        alignment: Alignment(
-                                                            0.0, -1.0),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'ufc')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/1200px-UFC_Logo.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'moto.gp')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/1024px-Moto_Gp_logo.svg.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'mx.gp')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 320.0,
-                                                  height: 107.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            1.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, -1.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  6.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                          AlignmentDirectional(
+                                                              0.0, -1.0),
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(0.0),
+                                                            BorderRadius.only(
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topRight:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                        ),
                                                         child: Image.asset(
-                                                          'assets/images/mxgp.png',
-                                                          width: 300.0,
+                                                          'assets/images/England.TST.jpg',
+                                                          width: 320.0,
                                                           height: 200.0,
                                                           fit: BoxFit.fitWidth,
                                                           alignment: Alignment(
@@ -638,34 +269,197 @@ class _LeaguEventsListAdd2BetWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'world.superbike')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            3.0),
-                                                    shape: BoxShape.rectangle,
+                                              if (leaguEventsListAdd2BetEventsRecord
+                                                      .leagueValue ==
+                                                  'serie.a')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                        child: Image.asset(
+                                                          'assets/images/Italie.TST.jpg',
+                                                          width: 320.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.fitHeight,
+                                                          alignment: Alignment(
+                                                              0.0, -1.0),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(1.0),
+                                                ),
+                                              if (leaguEventsListAdd2BetEventsRecord
+                                                      .leagueValue ==
+                                                  'laliga')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               0.0),
                                                       child: Image.asset(
-                                                        'assets/images/1200px-Superbike_World_Championship_logo_(stacked,_2022).svg.png',
+                                                        'assets/images/Espana.TST.jpeg',
+                                                        width: 320.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitWidth,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              if (leaguEventsListAdd2BetEventsRecord
+                                                      .leagueValue ==
+                                                  'bundesliga')
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      child: Image.asset(
+                                                        'assets/images/Deutsch.TST.jpeg',
+                                                        width: 320.0,
+                                                        height: 200.0,
+                                                        fit: BoxFit.fitWidth,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              if ((leaguEventsListAdd2BetEventsRecord.leagueValue == 'nba') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'ufc') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'nhl'))
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 320.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                        child: Image.asset(
+                                                          'assets/images/USA.TST.jpg',
+                                                          width: 320.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.fitWidth,
+                                                          alignment: Alignment(
+                                                              0.0, 0.0),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              if ((leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'moto.gp') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'mx.gp') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'world.superbike') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'formule.1') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'atp') ||
+                                                  (leaguEventsListAdd2BetEventsRecord
+                                                          .leagueValue ==
+                                                      'wta'))
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Container(
+                                                    width: 300.0,
+                                                    height: 200.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      child: Image.asset(
+                                                        'assets/images/World.TST.png',
                                                         width: 300.0,
                                                         height: 200.0,
                                                         fit: BoxFit.fitWidth,
@@ -673,420 +467,261 @@ class _LeaguEventsListAdd2BetWidgetState
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'formule.1')
-                                              Container(
-                                                width: 300.0,
-                                                height: 200.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          6.0),
-                                                  shape: BoxShape.rectangle,
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(1.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/formula-1-logo-5-3.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'top.14')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            6.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/1200px-Top_14.svg.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'nhl')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            6.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/nhl-logo.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'atp')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            6.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/1200px-Logo_ATP_World_Tour.svg.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (leaguEventsListAdd2BetEventsRecord
-                                                    .leagueValue ==
-                                                'wta')
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 200.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    shape: BoxShape.rectangle,
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/Wta.png',
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.fitHeight,
-                                                      alignment:
-                                                          Alignment(0.0, 0.0),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        50.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 200.0,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: Image.asset(
-                                            'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                          ).image,
-                                        ),
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground
-                                          ],
-                                          stops: [0.0, 1.0],
-                                          begin:
-                                              AlignmentDirectional(0.0, -1.0),
-                                          end: AlignmentDirectional(0, 1.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        50.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 200.0,
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground
-                                          ],
-                                          stops: [0.0, 0.5, 1.0],
-                                          begin: AlignmentDirectional(1.0, 0.0),
-                                          end: AlignmentDirectional(-1.0, 0),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          50.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 200.0,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: Image.asset(
+                                              'assets/images/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                            ).image,
+                                          ),
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              FlutterFlowTheme.of(context)
+                                                  .tertiary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground
+                                            ],
+                                            stops: [0.0, 1.0],
+                                            begin:
+                                                AlignmentDirectional(0.0, -1.0),
+                                            end: AlignmentDirectional(0, 1.0),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 30.0, 20.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) =>
-                                                    FlutterFlowIconButton(
-                                                  borderColor:
-                                                      valueOrDefault<Color>(
-                                                    currentUserDocument?.color2,
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                  ),
-                                                  borderRadius: 50.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 50.0,
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .tertiary,
-                                                  icon: Icon(
-                                                    Icons
-                                                        .arrow_back_ios_new_rounded,
-                                                    color:
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          50.0, 0.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 200.0,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              FlutterFlowTheme.of(context)
+                                                  .tertiary,
+                                              FlutterFlowTheme.of(context)
+                                                  .tertiary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground
+                                            ],
+                                            stops: [0.0, 0.5, 1.0],
+                                            begin:
+                                                AlignmentDirectional(1.0, 0.0),
+                                            end: AlignmentDirectional(-1.0, 0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 30.0, 20.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      FlutterFlowIconButton(
+                                                    borderColor:
                                                         valueOrDefault<Color>(
                                                       currentUserDocument
-                                                          ?.color1,
+                                                          ?.color2,
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText,
+                                                          .secondaryText,
                                                     ),
-                                                    size: 30.0,
-                                                  ),
-                                                  onPressed: () async {
-                                                    context.safePop();
-                                                  },
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        if (true /* Warning: Trying to access variable not yet defined. */)
-                                          FutureBuilder<
-                                              List<MyNotificationsRecord>>(
-                                            future:
-                                                queryMyNotificationsRecordOnce(
-                                              parent: currentUserReference,
-                                              singleRecord: true,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
+                                                    borderRadius: 50.0,
+                                                    borderWidth: 1.0,
+                                                    buttonSize: 50.0,
+                                                    fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .accent4,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<MyNotificationsRecord>
-                                                  rowNotifsMyNotificationsRecordList =
-                                                  snapshot.data!;
-                                              // Return an empty Container when the item does not exist.
-                                              if (snapshot.data!.isEmpty) {
-                                                return Container();
-                                              }
-                                              final rowNotifsMyNotificationsRecord =
-                                                  rowNotifsMyNotificationsRecordList
-                                                          .isNotEmpty
-                                                      ? rowNotifsMyNotificationsRecordList
-                                                          .first
-                                                      : null;
-
-                                              return Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            MyNotifsListWidget
-                                                                .routeName,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .rightToLeft,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        400),
-                                                              ),
-                                                            },
-                                                          );
-                                                        },
-                                                        child: Icon(
-                                                          Icons
-                                                              .notifications_active_outlined,
-                                                          color: valueOrDefault<
-                                                              Color>(
-                                                            currentUserDocument
-                                                                ?.color1,
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .accent1,
-                                                          ),
-                                                          size: 40.0,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        if ((valueOrDefault(
+                                                            .tertiary,
+                                                    icon: Icon(
+                                                      Icons
+                                                          .arrow_back_ios_new_rounded,
+                                                      color:
+                                                          valueOrDefault<Color>(
                                                         currentUserDocument
-                                                            ?.langage,
-                                                        '') ==
-                                                    '') ||
-                                            (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.langage,
-                                                    '') ==
-                                                'francais'))
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'mqc62156' /* Evénements */,
+                                                            ?.color1,
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                      ),
+                                                      size: 30.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      context.safePop();
+                                                    },
+                                                  ),
+                                                ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
+                                            ],
+                                          ),
+                                          if (true /* Warning: Trying to access variable not yet defined. */)
+                                            FutureBuilder<
+                                                List<MyNotificationsRecord>>(
+                                              future:
+                                                  queryMyNotificationsRecordOnce(
+                                                parent: currentUserReference,
+                                                singleRecord: true,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent4,
                                                         ),
-                                                        letterSpacing: 0.0,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<MyNotificationsRecord>
+                                                    rowNotifsMyNotificationsRecordList =
+                                                    snapshot.data!;
+                                                // Return an empty Container when the item does not exist.
+                                                if (snapshot.data!.isEmpty) {
+                                                  return Container();
+                                                }
+                                                final rowNotifsMyNotificationsRecord =
+                                                    rowNotifsMyNotificationsRecordList
+                                                            .isNotEmpty
+                                                        ? rowNotifsMyNotificationsRecordList
+                                                            .first
+                                                        : null;
+
+                                                return Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child:
+                                                          AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              MyNotifsListWidget
+                                                                  .routeName,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .rightToLeft,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          400),
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons
+                                                                .notifications_active_outlined,
+                                                            color:
+                                                                valueOrDefault<
+                                                                    Color>(
+                                                              currentUserDocument
+                                                                  ?.color1,
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .accent1,
+                                                            ),
+                                                            size: 40.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          if ((valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.langage,
+                                                          '') ==
+                                                      '') ||
+                                              (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'francais'))
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'mqc62156' /* Evénements */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1098,42 +733,41 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
-                                            ),
-                                          ),
-                                        if ((valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.langage,
-                                                    '') ==
-                                                'english') ||
-                                            (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.langage,
-                                                    '') ==
-                                                'american'))
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '476zkqb0' /* Events */,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                            ),
+                                          if ((valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'english') ||
+                                              (valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.langage,
+                                                      '') ==
+                                                  'american'))
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '476zkqb0' /* Events */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1145,36 +779,35 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
-                                            ),
-                                          ),
-                                        if (valueOrDefault(
-                                                currentUserDocument?.langage,
-                                                '') ==
-                                            'deutsch')
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'w43qyxkf' /* Veranstaltungen */,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                            ),
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'deutsch')
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'w43qyxkf' /* Veranstaltungen */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1186,36 +819,35 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
-                                            ),
-                                          ),
-                                        if (valueOrDefault(
-                                                currentUserDocument?.langage,
-                                                '') ==
-                                            'espanol')
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'wj5ntqio' /* Eventos */,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                            ),
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'espanol')
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'wj5ntqio' /* Eventos */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1227,36 +859,35 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
-                                            ),
-                                          ),
-                                        if (valueOrDefault(
-                                                currentUserDocument?.langage,
-                                                '') ==
-                                            'italiano')
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'wuj2uz2f' /* Eventi */,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                            ),
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'italiano')
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'wuj2uz2f' /* Eventi */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1268,36 +899,35 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
-                                            ),
-                                          ),
-                                        if (valueOrDefault(
-                                                currentUserDocument?.langage,
-                                                '') ==
-                                            'portugues')
-                                          AuthUserStreamWidget(
-                                            builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'd1p74ip3' /* Eventos */,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                            ),
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.langage,
+                                                  '') ==
+                                              'portugues')
+                                            AuthUserStreamWidget(
+                                              builder: (context) => Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'd1p74ip3' /* Eventos */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: GoogleFonts.poppins(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1309,20 +939,48 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                 .headlineSmall
                                                                 .fontStyle,
                                                       ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
+                                              ),
                                             ),
-                                          ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 3.0, 0.0, 0.0),
-                                          child: Text(
-                                            leaguEventsListAdd2BetEventsRecord
-                                                .leagueValue,
-                                            maxLines: 2,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleSmall
-                                                .override(
-                                                  font: GoogleFonts.poppins(
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 3.0, 0.0, 0.0),
+                                            child: Text(
+                                              leaguEventsListAdd2BetEventsRecord
+                                                  .leagueValue,
+                                              maxLines: 2,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1334,48 +992,33 @@ class _LeaguEventsListAdd2BetWidgetState
                                                             .titleSmall
                                                             .fontStyle,
                                                   ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          AuthUserStreamWidget(
-                            builder: (context) => Divider(
-                              thickness: 1.0,
-                              color: valueOrDefault<Color>(
-                                currentUserDocument?.color2,
-                                FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                            AuthUserStreamWidget(
+                              builder: (context) => Divider(
+                                thickness: 1.0,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.color2,
+                                  FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
                     Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 240.0, 0.0, 50.0),
+                            0.0, 210.0, 0.0, 50.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -1813,80 +1456,36 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                   MainAxisAlignment
                                                                       .spaceBetween,
                                                               children: [
-                                                                if ((columnEventsRecord
-                                                                            .sportValue !=
-                                                                        'mma') &&
-                                                                    (columnEventsRecord
-                                                                            .sportValue !=
-                                                                        'tennis'))
-                                                                  Container(
-                                                                    width: 55.0,
-                                                                    height:
-                                                                        35.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              3.0),
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        contDomTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitHeight,
-                                                                      ),
+                                                                Container(
+                                                                  width: 55.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contDomTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          55.0,
+                                                                      height:
+                                                                          35.0,
+                                                                      fit: BoxFit
+                                                                          .fitHeight,
                                                                     ),
                                                                   ),
-                                                                if ((columnEventsRecord
-                                                                            .sportValue ==
-                                                                        'mma') ||
-                                                                    (columnEventsRecord
-                                                                            .sportValue ==
-                                                                        'tennis'))
-                                                                  Container(
-                                                                    width: 45.0,
-                                                                    height:
-                                                                        35.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              6.0),
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        contDomTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitWidth,
-                                                                      ),
-                                                                    ),
-                                                                  ),
+                                                                ),
                                                                 Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
@@ -2050,80 +1649,36 @@ class _LeaguEventsListAdd2BetWidgetState
                                                                   MainAxisAlignment
                                                                       .spaceBetween,
                                                               children: [
-                                                                if ((columnEventsRecord
-                                                                            .sportValue !=
-                                                                        'mma') &&
-                                                                    (columnEventsRecord
-                                                                            .sportValue !=
-                                                                        'tennis'))
-                                                                  Container(
-                                                                    width: 55.0,
-                                                                    height:
-                                                                        35.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              3.0),
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              0.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        contExtTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitHeight,
-                                                                      ),
+                                                                Container(
+                                                                  width: 55.0,
+                                                                  height: 35.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      contExtTeamsRecord
+                                                                          .logo,
+                                                                      width:
+                                                                          55.0,
+                                                                      height:
+                                                                          35.0,
+                                                                      fit: BoxFit
+                                                                          .fitHeight,
                                                                     ),
                                                                   ),
-                                                                if ((columnEventsRecord
-                                                                            .sportValue ==
-                                                                        'mma') ||
-                                                                    (columnEventsRecord
-                                                                            .sportValue ==
-                                                                        'tennis'))
-                                                                  Container(
-                                                                    width: 45.0,
-                                                                    height:
-                                                                        35.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              6.0),
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0),
-                                                                      child: Image
-                                                                          .network(
-                                                                        contExtTeamsRecord
-                                                                            .logo,
-                                                                        width:
-                                                                            300.0,
-                                                                        height:
-                                                                            200.0,
-                                                                        fit: BoxFit
-                                                                            .fitWidth,
-                                                                      ),
-                                                                    ),
-                                                                  ),
+                                                                ),
                                                                 Align(
                                                                   alignment:
                                                                       AlignmentDirectional(

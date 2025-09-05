@@ -227,7 +227,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                     ),
                                                   ),
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -237,11 +237,11 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contDomTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),
@@ -615,7 +615,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                     ),
                                                   ),
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -625,11 +625,11 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contExtTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),

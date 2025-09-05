@@ -7762,10 +7762,10 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/France.jpeg',
+                                                          'assets/images/France.TST.jpg',
                                                           width: 100.0,
                                                           height: 100.0,
-                                                          fit: BoxFit.fitHeight,
+                                                          fit: BoxFit.fill,
                                                         ),
                                                       ),
                                                     ),
@@ -7851,7 +7851,7 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/usa.jpg',
+                                                          'assets/images/USA.TST.jpg',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.fitHeight,
@@ -7940,7 +7940,7 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/Angleterre.png',
+                                                          'assets/images/England.TST.jpg',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.fitHeight,
@@ -8029,7 +8029,7 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/Espagne.png',
+                                                          'assets/images/Espana.TST.jpeg',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.fitHeight,
@@ -8118,10 +8118,10 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/Italie.png',
+                                                          'assets/images/Italie.TST.jpg',
                                                           width: 100.0,
                                                           height: 100.0,
-                                                          fit: BoxFit.fitHeight,
+                                                          fit: BoxFit.fill,
                                                         ),
                                                       ),
                                                     ),
@@ -8207,7 +8207,7 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/Allemagne.jpeg',
+                                                          'assets/images/Deutsch.TST.jpeg',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.fitHeight,
@@ -8296,7 +8296,7 @@ be... */
                                                             BorderRadius
                                                                 .circular(50.0),
                                                         child: Image.asset(
-                                                          'assets/images/Portugal.png',
+                                                          'assets/images/Portugal.TST.jpg',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.fitHeight,
