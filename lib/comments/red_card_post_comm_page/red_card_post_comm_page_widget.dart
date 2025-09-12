@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1437,9 +1436,7 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                     triggerPushNotification(
                                       notificationTitle: currentUserDisplayName,
                                       notificationText:
-                                          'Signale un mauvais comportement.',
-                                      notificationImageUrl: currentUserPhoto,
-                                      notificationSound: 'default',
+                                          'Souhaite mettre un carton rouge',
                                       userRefs: [
                                         redCardPostCommPagePostMessagesRecord
                                             .moderator!
@@ -1447,22 +1444,6 @@ class _RedCardPostCommPageWidgetState extends State<RedCardPostCommPageWidget> {
                                       initialPageName: 'ModNotifsList',
                                       parameterData: {},
                                     );
-                                    await SendUserNotificationCall.call(
-                                      toUserId:
-                                          redCardPostCommPagePostMessagesRecord
-                                              .moderator?.id,
-                                      notificationType:
-                                          'Signale un mauvais comportement.',
-                                      notificationTitle: currentUserDisplayName,
-                                      notificationBody:
-                                          redCardPostCommPagePostMessagesRecord
-                                              .text,
-                                      postId:
-                                          redCardPostCommPagePostMessagesRecord
-                                              .reference.id,
-                                      authToken: currentJwtToken,
-                                    );
-
                                     context.safePop();
                                   },
                                   text: FFLocalizations.of(context).getText(

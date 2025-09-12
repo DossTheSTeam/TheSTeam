@@ -61,6 +61,7 @@ class _NumberPhoneWidgetState extends State<NumberPhoneWidget> {
             children: [
               Container(
                 width: double.infinity,
+                height: 500.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [

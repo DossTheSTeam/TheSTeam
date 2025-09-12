@@ -76,15 +76,5 @@ function createBody({ headers, params, body, bodyType }) {
       return qs.stringify(params);
   }
 }
-function escapeStringForJson(val) {
-  if (typeof val !== "string") {
-    return val;
-  }
-  return val
-    .replace(/[\\]/g, "\\\\")
-    .replace(/["]/g, '\\"')
-    .replace(/[\n]/g, "\\n")
-    .replace(/[\t]/g, "\\t");
-}
 
 module.exports = { makeApiCall };

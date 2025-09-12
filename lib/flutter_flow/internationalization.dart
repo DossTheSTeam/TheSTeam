@@ -2091,7 +2091,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'i6wwb5g8': {
+    'erecpocy': {
       'fr': 'Notifications',
       'de': '',
       'en': '',
@@ -2099,7 +2099,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '49kn7koa': {
+    'a4j8mp5f': {
       'fr': 'Activée',
       'de': '',
       'en': '',
@@ -2107,7 +2107,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '38kqq12c': {
+    'y6uwsgn0': {
       'fr': 'Enabled',
       'de': '',
       'en': '',
@@ -2115,7 +2115,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'c5czbacr': {
+    'ombyb1ts': {
       'fr': 'Ermöglicht',
       'de': '',
       'en': '',
@@ -2123,7 +2123,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'y3b6wvdf': {
+    'fyq68fgz': {
       'fr': 'Desactivado',
       'de': '',
       'en': '',
@@ -2131,7 +2131,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '5zonm8gv': {
+    'x1ri8q7i': {
       'fr': 'Abilitato',
       'de': '',
       'en': '',
@@ -2139,7 +2139,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'fbq9xb8z': {
+    'j17hnma4': {
       'fr': 'Habilitado',
       'de': '',
       'en': '',
@@ -2147,7 +2147,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '5cugz6i0': {
+    'ce24ih91': {
       'fr': 'Désactivée',
       'de': '',
       'en': '',
@@ -2155,7 +2155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '3d85ibyd': {
+    '2ex3whkt': {
       'fr': 'Disabled',
       'de': '',
       'en': '',
@@ -2163,7 +2163,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'qvfz0d7v': {
+    '14vpws2b': {
       'fr': 'Deaktiviert',
       'de': '',
       'en': '',
@@ -2171,7 +2171,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'uodkh79z': {
+    'ayzoh8p8': {
       'fr': 'Desactivado',
       'de': '',
       'en': '',
@@ -2179,7 +2179,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '9kt5tyi5': {
+    '078ia1ai': {
       'fr': 'Disabilitato',
       'de': '',
       'en': '',
@@ -2187,7 +2187,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    '9jufd9yb': {
+    '8gc8bqxj': {
       'fr': 'Desabilitado',
       'de': '',
       'en': '',
@@ -4943,7 +4943,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '4sujqa46': {
-      'fr': 'v 1.3.9',
+      'fr': 'v 1.4.1',
       'de': '',
       'en': '',
       'es': '',
@@ -18512,7 +18512,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3oleipe7': {
       'fr':
-          'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez.\nEn revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement.',
+          'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez.\nEn revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement. Une période d\'innactivité de plus de 3 mois entraine la descente en division inférieure.',
       'de': '',
       'en': '',
       'es': '',
@@ -36774,14 +36774,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'O S Team Sport requer acesso ao seu microfone para que você possa gravar comentários de voz em resposta a postagens ou outros comentários. Esse recurso permite que você compartilhe seus pensamentos e reações de forma mais rápida e expressiva, enriquecendo as discussões dentro da comunidade. O acesso ao microfone só é usado quando você inicia voluntariamente a gravação de um comentário de voz. Nenhuma gravação de áudio é feita sem o seu conhecimento, e as gravações são armazenadas apenas localmente no seu dispositivo e/ou em nossos servidores Firebase como parte do seu Conteúdo do Usuário.',
     },
-    'xzkptrck': {
-      'fr': 'Recevez des notifications',
-      'de': 'Benachrichtigungen erhalten',
-      'en': 'Receive notifications',
-      'es': 'Recibir notificaciones',
-      'it': 'Ricevi notifiche',
-      'pt': 'Receber notificações',
-    },
     '0e6emcr8': {
       'fr':
           'The S Team Sport requiert l\'accès à votre microphone afin de vous offrir la possibilité d\'enregistrer des commentaires vocaux en réponse à des publications ou à d\'autres commentaires. Cette fonctionnalité vous permet de partager vos pensées et vos réactions de manière plus rapide et expressive, enrichissant ainsi les discussions au sein de la communauté. L\'accès au microphone est uniquement utilisé lorsque vous initiez volontairement l\'enregistrement d\'un commentaire vocal. Aucun enregistrement audio n\'est effectué à votre insu, et les enregistrements sont uniquement stockés localement sur votre appareil et/ou sur nos serveurs Firebase dans le cadre de votre contenu utilisateur.',
@@ -36795,6 +36787,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'S Team Sport necessita dell\'accesso al tuo microfono per consentirti di registrare commenti vocali in risposta ai post o ad altri commenti. Questa funzionalità ti consente di condividere pensieri e reazioni in modo più rapido ed espressivo, arricchendo le discussioni all\'interno della community. L\'accesso al microfono viene utilizzato solo quando si avvia volontariamente la registrazione di un commento vocale. Nessuna registrazione audio viene effettuata senza la tua conoscenza e le registrazioni vengono archiviate solo localmente sul tuo dispositivo e/o sui nostri server Firebase come parte dei tuoi Contenuti utente.',
       'pt':
           'O S Team Sport requer acesso ao seu microfone para que você possa gravar comentários de voz em resposta a postagens ou outros comentários. Esse recurso permite que você compartilhe seus pensamentos e reações de forma mais rápida e expressiva, enriquecendo as discussões dentro da comunidade. O acesso ao microfone só é usado quando você inicia voluntariamente a gravação de um comentário de voz. Nenhuma gravação de áudio é feita sem o seu conhecimento, e as gravações são armazenadas apenas localmente no seu dispositivo e/ou em nossos servidores Firebase como parte do seu Conteúdo do Usuário.',
+    },
+    'awbaq37l': {
+      'fr': 'Recevez des notifications',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
     },
     '84egkd9z': {
       'fr': '',

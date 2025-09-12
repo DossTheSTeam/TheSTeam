@@ -167,15 +167,15 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    borderRadius: BorderRadius.circular(6.0),
+                                    borderRadius: BorderRadius.circular(0.0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(12.0),
                                     child: Image.network(
                                       listPostsTeamTeamsRecord.logo,
-                                      width: 300.0,
-                                      height: 200.0,
+                                      width: 130.0,
+                                      height: 80.0,
                                       fit: BoxFit.fitHeight,
                                     ),
                                   ),
@@ -1244,7 +1244,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            75.0,
+                                                                            80.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),

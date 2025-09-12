@@ -595,7 +595,7 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -605,11 +605,11 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contDomTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),
@@ -854,7 +854,7 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Container(
-                                                    width: 45.0,
+                                                    width: 55.0,
                                                     height: 35.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -864,11 +864,11 @@ class _EventPageCompoWidgetState extends State<EventPageCompoWidget> {
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              6.0),
                                                       child: Image.network(
                                                         contExtTeamsRecord.logo,
-                                                        width: 300.0,
-                                                        height: 200.0,
+                                                        width: 55.0,
+                                                        height: 35.0,
                                                         fit: BoxFit.fitHeight,
                                                       ),
                                                     ),

@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -1362,6 +1363,23 @@ Nom Event */
                                                                       .eventRef
                                                                       ?.reference,
                                                                 ));
+                                                                triggerPushNotification(
+                                                                  notificationTitle:
+                                                                      'Match bientôt disponible pour',
+                                                                  notificationText:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          .name,
+                                                                  notificationImageUrl:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          .logo,
+                                                                  userRefs:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          .fans
+                                                                          .toList(),
+                                                                  initialPageName:
+                                                                      'ListEvents',
+                                                                  parameterData: {},
+                                                                );
 
                                                                 safeSetState(
                                                                     () {});
@@ -1704,6 +1722,23 @@ Nom Event */
                                                                 .eventRef
                                                                 ?.reference,
                                                           ));
+                                                          triggerPushNotification(
+                                                            notificationTitle:
+                                                                'Match bientôt disponible pour',
+                                                            notificationText:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .name,
+                                                            notificationImageUrl:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .logo,
+                                                            userRefs:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .fans
+                                                                    .toList(),
+                                                            initialPageName:
+                                                                'ListEvents',
+                                                            parameterData: {},
+                                                          );
 
                                                           context.pushNamed(
                                                             AddBetPageWidget
@@ -2132,9 +2167,26 @@ Nom Event */
                                                                               divisionValue: _model.dropLigueFightValue1,
                                                                             ),
                                                                             eventsRecordReference);
+                                                                triggerPushNotification(
+                                                                  notificationTitle:
+                                                                      'Combat bientôt disponible pour',
+                                                                  notificationText:
+                                                                      columnTeamDomRefTeamsRecord!
+                                                                          .name,
+                                                                  notificationImageUrl:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          .logo,
+                                                                  userRefs:
+                                                                      columnTeamDomRefTeamsRecord
+                                                                          .fans
+                                                                          .toList(),
+                                                                  initialPageName:
+                                                                      'ListEvents',
+                                                                  parameterData: {},
+                                                                );
 
                                                                 await TeamEventsRecord.createDoc(
-                                                                        columnTeamDomRefTeamsRecord!
+                                                                        columnTeamDomRefTeamsRecord
                                                                             .reference)
                                                                     .set(
                                                                         createTeamEventsRecordData(
@@ -2490,6 +2542,23 @@ Nom Event */
                                                                 .eventFightRef
                                                                 ?.reference,
                                                           ));
+                                                          triggerPushNotification(
+                                                            notificationTitle:
+                                                                'Combat bientôt disponible pour',
+                                                            notificationText:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .name,
+                                                            notificationImageUrl:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .logo,
+                                                            userRefs:
+                                                                columnTeamExtRefTeamsRecord
+                                                                    .fans
+                                                                    .toList(),
+                                                            initialPageName:
+                                                                'ListEvents',
+                                                            parameterData: {},
+                                                          );
 
                                                           context.pushNamed(
                                                             AddBetPageWidget

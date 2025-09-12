@@ -847,15 +847,15 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                       height: 25.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).alternate,
-                                                                                        borderRadius: BorderRadius.circular(6.0),
+                                                                                        borderRadius: BorderRadius.circular(0.0),
                                                                                         shape: BoxShape.rectangle,
                                                                                       ),
                                                                                       child: ClipRRect(
-                                                                                        borderRadius: BorderRadius.circular(0.0),
+                                                                                        borderRadius: BorderRadius.circular(6.0),
                                                                                         child: Image.asset(
                                                                                           'assets/images/USA.TST.jpg',
-                                                                                          width: 300.0,
-                                                                                          height: 200.0,
+                                                                                          width: 35.0,
+                                                                                          height: 25.0,
                                                                                           fit: BoxFit.fitWidth,
                                                                                         ),
                                                                                       ),

@@ -9,7 +9,7 @@ import '/users/delete_my_user_ref/delete_my_user_ref_widget.dart';
 import '/users/enterprise_infos/enterprise_infos_widget.dart';
 import '/users/langage/langage_widget.dart';
 import '/users/number_phone/number_phone_widget.dart';
-import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/permissions_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -4828,7 +4828,7 @@ be... */
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'i6wwb5g8' /* Notifications */,
+                                                  'erecpocy' /* Notifications */,
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
@@ -4902,7 +4902,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '49kn7koa' /* Activée */,
+                                                                'a4j8mp5f' /* Activée */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4950,7 +4950,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '38kqq12c' /* Enabled */,
+                                                                'y6uwsgn0' /* Enabled */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4993,7 +4993,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'c5czbacr' /* Ermöglicht */,
+                                                                'ombyb1ts' /* Ermöglicht */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5036,7 +5036,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'y3b6wvdf' /* Desactivado */,
+                                                                'fyq68fgz' /* Desactivado */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5079,7 +5079,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '5zonm8gv' /* Abilitato */,
+                                                                'x1ri8q7i' /* Abilitato */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5122,7 +5122,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'fbq9xb8z' /* Habilitado */,
+                                                                'j17hnma4' /* Habilitado */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5193,7 +5193,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '5cugz6i0' /* Désactivée */,
+                                                                'ce24ih91' /* Désactivée */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5241,7 +5241,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '3d85ibyd' /* Disabled */,
+                                                                '2ex3whkt' /* Disabled */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5284,7 +5284,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'qvfz0d7v' /* Deaktiviert */,
+                                                                '14vpws2b' /* Deaktiviert */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5327,7 +5327,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'uodkh79z' /* Desactivado */,
+                                                                'ayzoh8p8' /* Desactivado */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5370,7 +5370,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '9kt5tyi5' /* Disabilitato */,
+                                                                '078ia1ai' /* Disabilitato */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5413,7 +5413,7 @@ be... */
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '9jufd9yb' /* Desabilitado */,
+                                                                '8gc8bqxj' /* Desabilitado */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -5487,10 +5487,8 @@ be... */
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    await actions
-                                                        .manageFcmTokenAndDeviceUuid(
-                                                      currentUserUid,
-                                                    );
+                                                    await requestPermission(
+                                                        notificationsPermission);
 
                                                     await currentUserReference!
                                                         .update(
@@ -5528,6 +5526,11 @@ be... */
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
+                                                    await currentUserReference!
+                                                        .update(
+                                                            createUsersRecordData(
+                                                      notifsPush: false,
+                                                    ));
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(

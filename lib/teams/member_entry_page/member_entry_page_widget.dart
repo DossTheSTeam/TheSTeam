@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -2739,19 +2739,16 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                       },
                                     ),
                                   });
-                                  await SendUserNotificationCall.call(
-                                    toUserId: memberEntryPageTeamsRecord
-                                        .adminUser?.id,
-                                    notificationType:
-                                        'Veut devenir membre d\'un club.',
+                                  triggerPushNotification(
                                     notificationTitle: currentUserDisplayName,
-                                    notificationBody:
-                                        memberEntryPageTeamsRecord.name,
-                                    postId:
-                                        memberEntryPageTeamsRecord.reference.id,
-                                    authToken: currentJwtToken,
+                                    notificationText:
+                                        'veut devenir membre d\'un club',
+                                    userRefs: [
+                                      memberEntryPageTeamsRecord.adminUser!
+                                    ],
+                                    initialPageName: 'ModNotifsList',
+                                    parameterData: {},
                                   );
-
                                   context.safePop();
                                 },
                                 text: FFLocalizations.of(context).getText(

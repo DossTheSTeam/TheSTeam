@@ -583,11 +583,11 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      0.0),
+                                                                      6.0),
                                                           child: Image.asset(
                                                             'assets/images/USA.TST.jpg',
-                                                            width: 300.0,
-                                                            height: 200.0,
+                                                            width: 35.0,
+                                                            height: 25.0,
                                                             fit:
                                                                 BoxFit.fitWidth,
                                                           ),
@@ -4002,40 +4002,98 @@ equipas marcam */
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(1.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(1.0, 0.0, 0.0, 5.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
                                                 children: [
-                                                  if (teamStatsTeamsRecord
-                                                          .leagueValue ==
-                                                      'euro.league')
-                                                    Container(
-                                                      width: 35.0,
-                                                      height: 25.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(0.0),
-                                                        shape:
-                                                            BoxShape.rectangle,
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(6.0),
-                                                        child: Image.asset(
-                                                          'assets/images/Europ.TST.jpg',
-                                                          width: 35.0,
-                                                          height: 25.0,
-                                                          fit: BoxFit.fitHeight,
-                                                        ),
+                                                  Container(
+                                                    width: 35.0,
+                                                    height: 25.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              6.0),
+                                                      child: Image.asset(
+                                                        'assets/images/Europ.TST.jpg',
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        fit: BoxFit.fitHeight,
                                                       ),
                                                     ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 0.0,
+                                                                5.0, 0.0),
+                                                    child: Text(
+                                                      teamStatsTeamsRecord
+                                                          .additionalLeague,
+                                                      maxLines: 2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .poppins(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    width: 35.0,
+                                                    height: 25.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              6.0),
+                                                      child: Image.asset(
+                                                        'assets/images/Europ.TST.jpg',
+                                                        width: 35.0,
+                                                        height: 25.0,
+                                                        fit: BoxFit.fitHeight,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                             ),

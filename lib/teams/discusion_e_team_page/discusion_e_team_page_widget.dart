@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -925,6 +926,25 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   },
                                                 ),
                                               }, teamMessagesRecordReference);
+                                              triggerPushNotification(
+                                                notificationTitle:
+                                                    '${currentUserDisplayName}à commenté dans votre club',
+                                                notificationText:
+                                                    discusionETeamPageTeamsRecord
+                                                        .name,
+                                                notificationImageUrl:
+                                                    discusionETeamPageTeamsRecord
+                                                        .logo,
+                                                userRefs:
+                                                    discusionETeamPageTeamsRecord
+                                                        .members
+                                                        .toList(),
+                                                initialPageName:
+                                                    'DiscusionETeamPage',
+                                                parameterData: {
+                                                  'eTeamRef': widget.eTeamRef,
+                                                },
+                                              );
                                               safeSetState(() {
                                                 _model.commFieldTextController
                                                     ?.clear();

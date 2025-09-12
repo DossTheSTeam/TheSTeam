@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/comments/delete_event_message/delete_event_message_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -2040,7 +2040,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             .set({
                                                           ...createMyNotificationsRecordData(
                                                             text:
-                                                                'a commenté votre commentaire :',
+                                                                'a commenté votre message :',
                                                             userRef:
                                                                 currentUserReference,
                                                             seen: false,
@@ -2097,25 +2097,19 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             },
                                                           ),
                                                         });
-                                                        await SendUserNotificationCall
-                                                            .call(
-                                                          toUserId:
-                                                              eventMessagePageEventMessagesRecord
-                                                                  .commUser?.id,
-                                                          notificationType:
-                                                              'A commenté votre message :',
+                                                        triggerPushNotification(
                                                           notificationTitle:
                                                               currentUserDisplayName,
-                                                          notificationBody:
-                                                              eventMessagePageEventMessagesRecord
-                                                                  .text,
-                                                          postId:
-                                                              eventMessagePageEventMessagesRecord
-                                                                  .reference.id,
-                                                          authToken:
-                                                              currentJwtToken,
+                                                          notificationText:
+                                                              'à commenté votre message',
+                                                          userRefs: [
+                                                            columnUsersRecord
+                                                                .reference
+                                                          ],
+                                                          initialPageName:
+                                                              'MyNotifsList',
+                                                          parameterData: {},
                                                         );
-
                                                         safeSetState(() {
                                                           _model
                                                               .commFieldTextController

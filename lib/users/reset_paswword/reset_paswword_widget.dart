@@ -62,6 +62,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
             children: [
               Container(
                 width: double.infinity,
+                height: 500.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [

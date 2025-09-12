@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -3091,24 +3091,21 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       },
                                                     ),
                                                   });
-                                                  await SendUserNotificationCall
-                                                      .call(
-                                                    toUserId:
-                                                        theSTeamPostPagePostsRecord
-                                                            .member?.id,
-                                                    notificationType:
-                                                        'A commenté votre actualité :',
+                                                  triggerPushNotification(
                                                     notificationTitle:
                                                         currentUserDisplayName,
-                                                    notificationBody:
-                                                        theSTeamPostPagePostsRecord
-                                                            .title,
-                                                    postId:
-                                                        theSTeamPostPagePostsRecord
-                                                            .reference.id,
-                                                    authToken: currentJwtToken,
+                                                    notificationText:
+                                                        'à commenté votre actualité',
+                                                    userRefs: [
+                                                      columnUsersRecord
+                                                          .reference
+                                                    ],
+                                                    initialPageName: 'PostPage',
+                                                    parameterData: {
+                                                      'postRef':
+                                                          widget.postRef,
+                                                    },
                                                   );
-
                                                   safeSetState(() {
                                                     _model
                                                         .commFieldTextController

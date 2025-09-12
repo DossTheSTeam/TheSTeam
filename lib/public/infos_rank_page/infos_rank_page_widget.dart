@@ -105,9 +105,9 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                           ),
                         ],
                       ),
-                      Column(
+                      Row(
                         mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           if ((valueOrDefault(
                                           currentUserDocument?.langage, '') ==
@@ -1309,7 +1309,7 @@ manière re... */
                                 onTap: () async {
                                   await Clipboard.setData(ClipboardData(
                                       text:
-                                          'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez. En revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement.'));
+                                          'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez. En revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement. Une période d\'innactivité de plus de 3 mois entraine la descente en division inférieure.'));
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
                                     backgroundColor: Colors.transparent,

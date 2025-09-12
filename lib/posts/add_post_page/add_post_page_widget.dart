@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -1789,6 +1790,20 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           },
                                         ),
                                       });
+                                      triggerPushNotification(
+                                        notificationTitle:
+                                            '${currentUserDisplayName}${addPostPageTeamsRecord.name}',
+                                        notificationText: _model
+                                            .titleFieldTextController.text,
+                                        notificationImageUrl:
+                                            addPostPageTeamsRecord.logo,
+                                        userRefs: addPostPageTeamsRecord.fans
+                                            .toList(),
+                                        initialPageName: 'PostPage',
+                                        parameterData: {
+                                          'postRef': _model.postRef?.reference,
+                                        },
+                                      );
 
                                       context.pushNamed(
                                         ListPostsTeamWidget.routeName,
@@ -1943,6 +1958,21 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                           },
                                         ),
                                       });
+                                      triggerPushNotification(
+                                        notificationTitle:
+                                            '${currentUserDisplayName}${addPostPageTeamsRecord.name}',
+                                        notificationText: _model
+                                            .titleFieldTextController.text,
+                                        notificationImageUrl:
+                                            addPostPageTeamsRecord.logo,
+                                        userRefs: addPostPageTeamsRecord.fans
+                                            .toList(),
+                                        initialPageName: 'PostPage',
+                                        parameterData: {
+                                          'postRef':
+                                              _model.adminPostRef?.reference,
+                                        },
+                                      );
 
                                       context.pushNamed(
                                         ListAdvicesWidget.routeName,

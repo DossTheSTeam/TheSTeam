@@ -455,7 +455,7 @@ aposta */
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 20.0),
+                                                    0.0, 10.0, 0.0, 100.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -946,7 +946,7 @@ para o meu sto... */
                                 if (containerMyBetsRecord.statut == false)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 20.0),
+                                        0.0, 10.0, 0.0, 100.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:

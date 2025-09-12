@@ -2066,11 +2066,11 @@ class _EventTeamsEventsWidgetState extends State<EventTeamsEventsWidget> {
                                               ),
                                               child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(6.0),
                                                 child: Image.network(
                                                   contExtTeamsRecord.logo,
-                                                  width: 300.0,
-                                                  height: 200.0,
+                                                  width: 55.0,
+                                                  height: 35.0,
                                                   fit: BoxFit.fitHeight,
                                                 ),
                                               ),

@@ -58,6 +58,7 @@ class _DeleteMyUserRefWidgetState extends State<DeleteMyUserRefWidget> {
             children: [
               Container(
                 width: double.infinity,
+                height: 500.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [

@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -1659,13 +1659,14 @@ Concluído */
                                                                                             },
                                                                                           ),
                                                                                         });
-                                                                                        await SendUserNotificationCall.call(
-                                                                                          toUserId: widget.userRef?.id,
-                                                                                          notificationType: 'A regarder votre paris en cours.',
+                                                                                        triggerPushNotification(
                                                                                           notificationTitle: currentUserDisplayName,
-                                                                                          notificationBody: 'Cette action ajoute 2 pièces à votre stock',
-                                                                                          postId: publicBetsListMyBetsRecord.reference.id,
-                                                                                          authToken: currentJwtToken,
+                                                                                          notificationText: 'a visionné votre paris sportif',
+                                                                                          userRefs: [
+                                                                                            stackUsersRecord.reference
+                                                                                          ],
+                                                                                          initialPageName: 'MyNotifsList',
+                                                                                          parameterData: {},
                                                                                         );
 
                                                                                         context.pushNamed(
