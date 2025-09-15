@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1810,6 +1811,19 @@ class _AddPostEventPageWidgetState extends State<AddPostEventPageWidget> {
                                           },
                                         ),
                                       });
+                                      triggerPushNotification(
+                                        notificationTitle:
+                                            'Actualité de l\'événement',
+                                        notificationText: _model
+                                            .titleFieldTextController.text,
+                                        userRefs: addPostEventPageEventsRecord
+                                            .notifsUsers
+                                            .toList(),
+                                        initialPageName: 'PostPage',
+                                        parameterData: {
+                                          'postRef': _model.postRef?.reference,
+                                        },
+                                      );
 
                                       context.pushNamed(
                                         ListPostsWidget.routeName,

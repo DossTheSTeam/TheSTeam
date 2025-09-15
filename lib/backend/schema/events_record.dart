@@ -186,6 +186,11 @@ class EventsRecord extends FirestoreRecord {
   List<DocumentReference> get posts => _posts ?? const [];
   bool hasPosts() => _posts != null;
 
+  // "notifs_users" field.
+  List<DocumentReference>? _notifsUsers;
+  List<DocumentReference> get notifsUsers => _notifsUsers ?? const [];
+  bool hasNotifsUsers() => _notifsUsers != null;
+
   void _initializeFields() {
     _date = snapshotData['date'] as DateTime?;
     _hour = castToType<int>(snapshotData['hour']);
@@ -221,6 +226,7 @@ class EventsRecord extends FirestoreRecord {
     _imageDom = snapshotData['image_dom'] as String?;
     _imageExt = snapshotData['image_ext'] as String?;
     _posts = getDataList(snapshotData['posts']);
+    _notifsUsers = getDataList(snapshotData['notifs_users']);
   }
 
   static CollectionReference get collection =>
@@ -367,7 +373,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.endImage == e2?.endImage &&
         e1?.imageDom == e2?.imageDom &&
         e1?.imageExt == e2?.imageExt &&
-        listEquality.equals(e1?.posts, e2?.posts);
+        listEquality.equals(e1?.posts, e2?.posts) &&
+        listEquality.equals(e1?.notifsUsers, e2?.notifsUsers);
   }
 
   @override
@@ -405,7 +412,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.endImage,
         e?.imageDom,
         e?.imageExt,
-        e?.posts
+        e?.posts,
+        e?.notifsUsers
       ]);
 
   @override

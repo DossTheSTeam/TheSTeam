@@ -4,6 +4,7 @@ import '/admin_events/modif_sport/modif_sport_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -3078,6 +3079,19 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               .update(createEventsRecordData(
                                             statut: false,
                                           ));
+                                          triggerPushNotification(
+                                            notificationTitle:
+                                                'Evénement commencé',
+                                            notificationText:
+                                                '${modifEventPageEventsRecord.teamdom}  :  ${modifEventPageEventsRecord.teamext}',
+                                            userRefs: modifEventPageEventsRecord
+                                                .notifsUsers
+                                                .toList(),
+                                            initialPageName: 'EventPage',
+                                            parameterData: {
+                                              'eventRef': widget.eventRef,
+                                            },
+                                          );
 
                                           context.pushNamed(
                                               ListEventsAdminWidget.routeName);
@@ -3408,6 +3422,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                               endImage: _model
                                                   .uploadedFileUrl_uploadDataSre,
                                             ));
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  'Evénement terminé',
+                                              notificationText:
+                                                  'Statistiques disponibles',
+                                              notificationImageUrl: _model
+                                                  .uploadedFileUrl_uploadDataSre,
+                                              userRefs:
+                                                  modifEventPageEventsRecord
+                                                      .notifsUsers
+                                                      .toList(),
+                                              initialPageName: 'EventPage',
+                                              parameterData: {
+                                                'eventRef': widget.eventRef,
+                                              },
+                                            );
                                           },
                                           child: Icon(
                                             Icons.send_rounded,
@@ -4520,6 +4550,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -4678,6 +4724,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -4836,6 +4898,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -5018,6 +5096,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -5176,6 +5270,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -5334,6 +5444,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                       createEventsRecordData(
                                                                 statut: false,
                                                               ));
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'Match terminé',
+                                                                notificationText:
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                userRefs: modifEventPageEventsRecord
+                                                                    .notifsUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'EventPage',
+                                                                parameterData: {
+                                                                  'eventRef':
+                                                                      widget
+                                                                          .eventRef,
+                                                                },
+                                                              );
 
                                                               context.pushNamed(
                                                                   ListEventsAdminWidget
@@ -5504,6 +5630,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -5653,6 +5795,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -5802,6 +5960,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -5963,6 +6137,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6110,6 +6300,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6257,6 +6463,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Match terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6426,6 +6648,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Evénement terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6575,6 +6813,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Evénement terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6724,6 +6978,22 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                       createEventsRecordData(
                                                     statut: false,
                                                   ));
+                                                  triggerPushNotification(
+                                                    notificationTitle:
+                                                        'Evénement terminé',
+                                                    notificationText:
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                    userRefs:
+                                                        modifEventPageEventsRecord
+                                                            .notifsUsers
+                                                            .toList(),
+                                                    initialPageName:
+                                                        'EventPage',
+                                                    parameterData: {
+                                                      'eventRef':
+                                                          widget.eventRef,
+                                                    },
+                                                  );
 
                                                   context.pushNamed(
                                                       ListEventsAdminWidget
@@ -6858,6 +7128,19 @@ Coupe Na... */
                                                   .scoreExtFieldTextController
                                                   .text),
                                             ));
+                                            triggerPushNotification(
+                                              notificationTitle: 'Evénement ',
+                                              notificationText:
+                                                  '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                              userRefs:
+                                                  modifEventPageEventsRecord
+                                                      .notifsUsers
+                                                      .toList(),
+                                              initialPageName: 'EventPage',
+                                              parameterData: {
+                                                'eventRef': widget.eventRef,
+                                              },
+                                            );
 
                                             context.pushNamed(
                                                 ListEventsAdminWidget

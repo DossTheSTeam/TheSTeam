@@ -4943,7 +4943,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     '4sujqa46': {
-      'fr': 'v 1.4.1',
+      'fr': 'v 1.4.2',
       'de': '',
       'en': '',
       'es': '',
@@ -14915,6 +14915,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
+    'zbbsuxd5': {
+      'fr': 'Moderateur ?',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'p6069xjr': {
+      'fr': 'Oui',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
+    'vi0bob06': {
+      'fr': 'Non',
+      'de': '',
+      'en': '',
+      'es': '',
+      'it': '',
+      'pt': '',
+    },
     'whin8rka': {
       'fr': 'Sport',
       'de': '',
@@ -14988,14 +15012,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': '',
     },
     'so23zqdx': {
-      'fr': 'Changer le Statut Testeur',
+      'fr': 'Changer le Statut Meilleurs parieurs',
       'de': '',
       'en': '',
       'es': '',
       'it': '',
       'pt': '',
     },
-    'p6069xjr': {
+    '059pn1bg': {
       'fr': 'Oui',
       'de': '',
       'en': '',
@@ -15003,7 +15027,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': '',
       'pt': '',
     },
-    'vi0bob06': {
+    'iljtegb7': {
       'fr': 'Non',
       'de': '',
       'en': '',

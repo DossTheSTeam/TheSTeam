@@ -1,12 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
+import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'red_card_event_comm_page_model.dart';
@@ -1438,18 +1439,42 @@ class _RedCardEventCommPageWidgetState
                                         },
                                       ),
                                     });
-                                    triggerPushNotification(
-                                      notificationTitle: currentUserDisplayName,
-                                      notificationText:
-                                          'Souhaite mettre un carton rouge',
-                                      userRefs: [
-                                        redCardEventCommPageEventMessagesRecord
-                                            .moderator!
-                                      ],
-                                      initialPageName: 'ModNotifsList',
-                                      parameterData: {},
-                                    );
+                                    try {
+                                      final result =
+                                          await FirebaseFunctions.instanceFor(
+                                                  region: 'europe-west1')
+                                              .httpsCallable(
+                                                  'customPushNotification')
+                                              .call({
+                                        "userRef":
+                                            redCardEventCommPageEventMessagesRecord
+                                                .moderator!.path,
+                                        "notificationTitle":
+                                            valueOrDefault<String>(
+                                          currentUserDisplayName,
+                                          'NewUser',
+                                        ),
+                                        "notificationBody":
+                                            'Souhaite mettre un carton rouge',
+                                      });
+                                      _model.notificationResult =
+                                          CustomPushNotificationCloudFunctionCallResponse(
+                                        data: result.data,
+                                        succeeded: true,
+                                        resultAsString: result.data.toString(),
+                                        jsonBody: result.data,
+                                      );
+                                    } on FirebaseFunctionsException catch (error) {
+                                      _model.notificationResult =
+                                          CustomPushNotificationCloudFunctionCallResponse(
+                                        errorCode: error.code,
+                                        succeeded: false,
+                                      );
+                                    }
+
                                     context.safePop();
+
+                                    safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'y42rsrz0' /* Confirmer le carton rouge par ... */,

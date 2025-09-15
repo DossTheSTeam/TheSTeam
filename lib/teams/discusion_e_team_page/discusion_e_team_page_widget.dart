@@ -926,12 +926,15 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   },
                                                 ),
                                               }, teamMessagesRecordReference);
+                                              safeSetState(() {
+                                                _model.commFieldTextController
+                                                    ?.clear();
+                                              });
                                               triggerPushNotification(
                                                 notificationTitle:
-                                                    '${currentUserDisplayName}à commenté dans votre club',
+                                                    currentUserDisplayName,
                                                 notificationText:
-                                                    discusionETeamPageTeamsRecord
-                                                        .name,
+                                                    '  : à commenté dans votre club',
                                                 notificationImageUrl:
                                                     discusionETeamPageTeamsRecord
                                                         .logo,
@@ -945,10 +948,6 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                   'eTeamRef': widget.eTeamRef,
                                                 },
                                               );
-                                              safeSetState(() {
-                                                _model.commFieldTextController
-                                                    ?.clear();
-                                              });
 
                                               safeSetState(() {});
                                             },

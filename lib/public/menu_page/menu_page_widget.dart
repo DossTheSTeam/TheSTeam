@@ -5546,7 +5546,7 @@ esportivas */
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '4sujqa46' /* v 1.4.1 */,
+                                                      '4sujqa46' /* v 1.4.2 */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)

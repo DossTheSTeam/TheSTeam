@@ -365,44 +365,55 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                           ),
                                         ),
                                       ),
-                                    if (teamPageTeamsRecord.members
-                                        .contains(currentUserReference))
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                            AddPostPageWidget.routeName,
-                                            queryParameters: {
-                                              'teamRef': serializeParam(
-                                                widget.teamRef,
-                                                ParamType.DocumentReference,
+                                    if ((teamPageTeamsRecord.leagueValue !=
+                                            'test') &&
+                                        (teamPageTeamsRecord.leagueValue !=
+                                            'admin'))
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (teamPageTeamsRecord.members
+                                              .contains(currentUserReference))
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  AddPostPageWidget.routeName,
+                                                  queryParameters: {
+                                                    'teamRef': serializeParam(
+                                                      widget.teamRef,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .rightToLeft,
+                                                      duration: Duration(
+                                                          milliseconds: 400),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: FaIcon(
+                                                FontAwesomeIcons.edit,
+                                                color: valueOrDefault<Color>(
+                                                  teamPageTeamsRecord.color1,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                                ),
+                                                size: 25.0,
                                               ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType
-                                                        .rightToLeft,
-                                                duration:
-                                                    Duration(milliseconds: 400),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        child: FaIcon(
-                                          FontAwesomeIcons.edit,
-                                          color: valueOrDefault<Color>(
-                                            teamPageTeamsRecord.color1,
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                          size: 25.0,
-                                        ),
+                                            ),
+                                        ],
                                       ),
                                   ],
                                 ),

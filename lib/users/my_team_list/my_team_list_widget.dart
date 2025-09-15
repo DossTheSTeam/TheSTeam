@@ -1047,58 +1047,58 @@ class _MyTeamListWidgetState extends State<MyTeamListWidget>
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            AddPostPageWidget.routeName,
-                                                                            queryParameters:
-                                                                                {
-                                                                              'teamRef': serializeParam(
-                                                                                rowMyTeamTeamsRecord.reference,
-                                                                                ParamType.DocumentReference,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.rightToLeft,
-                                                                                duration: Duration(milliseconds: 400),
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        },
+                                                                    if ((rowMyTeamTeamsRecord.leagueValue !=
+                                                                            'test') &&
+                                                                        (rowMyTeamTeamsRecord.leagueValue !=
+                                                                            'admin'))
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                         child:
-                                                                            FaIcon(
-                                                                          FontAwesomeIcons
-                                                                              .edit,
-                                                                          color:
-                                                                              valueOrDefault<Color>(
-                                                                            rowMyTeamTeamsRecord.color1,
-                                                                            FlutterFlowTheme.of(context).secondaryText,
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            context.pushNamed(
+                                                                              AddPostPageWidget.routeName,
+                                                                              queryParameters: {
+                                                                                'teamRef': serializeParam(
+                                                                                  rowMyTeamTeamsRecord.reference,
+                                                                                  ParamType.DocumentReference,
+                                                                                ),
+                                                                              }.withoutNulls,
+                                                                              extra: <String, dynamic>{
+                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                  hasTransition: true,
+                                                                                  transitionType: PageTransitionType.rightToLeft,
+                                                                                  duration: Duration(milliseconds: 400),
+                                                                                ),
+                                                                              },
+                                                                            );
+                                                                          },
+                                                                          child:
+                                                                              FaIcon(
+                                                                            FontAwesomeIcons.edit,
+                                                                            color:
+                                                                                valueOrDefault<Color>(
+                                                                              rowMyTeamTeamsRecord.color1,
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                            ),
+                                                                            size:
+                                                                                30.0,
                                                                           ),
-                                                                          size:
-                                                                              30.0,
                                                                         ),
                                                                       ),
-                                                                    ),
                                                                   ],
                                                                 ),
                                                               ),

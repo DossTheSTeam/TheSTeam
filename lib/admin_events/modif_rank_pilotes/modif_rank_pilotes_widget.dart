@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -5300,6 +5301,20 @@ class _ModifRankPilotesWidgetState extends State<ModifRankPilotesWidget> {
                                           0.0, 5.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
+                                          triggerPushNotification(
+                                            notificationTitle:
+                                                'Course terminée',
+                                            notificationText:
+                                                '1 - ${_model.dropTeam1Value} : 2 - ${_model.dropTeam2Value} : 3 - ${_model.dropTeam3Value}',
+                                            userRefs:
+                                                modifRankPilotesEventsRecord
+                                                    .notifsUsers
+                                                    .toList(),
+                                            initialPageName: 'EventPage',
+                                            parameterData: {
+                                              'eventRef': widget.eventMecaRef,
+                                            },
+                                          );
                                           context.safePop();
                                         },
                                         text:

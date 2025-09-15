@@ -1792,7 +1792,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       });
                                       triggerPushNotification(
                                         notificationTitle:
-                                            '${currentUserDisplayName}${addPostPageTeamsRecord.name}',
+                                            addPostPageTeamsRecord.name,
                                         notificationText: _model
                                             .titleFieldTextController.text,
                                         notificationImageUrl:
@@ -1960,7 +1960,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                       });
                                       triggerPushNotification(
                                         notificationTitle:
-                                            '${currentUserDisplayName}${addPostPageTeamsRecord.name}',
+                                            addPostPageTeamsRecord.name,
                                         notificationText: _model
                                             .titleFieldTextController.text,
                                         notificationImageUrl:

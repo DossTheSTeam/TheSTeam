@@ -2269,6 +2269,204 @@ suspension */
                           ],
                         ),
                       ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'zbbsuxd5' /* Moderateur ? */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  font: GoogleFonts.poppins(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                          ),
+                        ),
+                      ),
+                      StreamBuilder<List<TeamsRecord>>(
+                        stream: queryTeamsRecord(
+                          queryBuilder: (teamsRecord) => teamsRecord.where(
+                            'league_value',
+                            isEqualTo: 'admin',
+                          ),
+                          singleRecord: true,
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).accent4,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          List<TeamsRecord> rowTeamsRecordList = snapshot.data!;
+                          // Return an empty Container when the item does not exist.
+                          if (snapshot.data!.isEmpty) {
+                            return Container();
+                          }
+                          final rowTeamsRecord = rowTeamsRecordList.isNotEmpty
+                              ? rowTeamsRecordList.first
+                              : null;
+
+                          return Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              if (rowTeamsRecord?.members
+                                      .contains(widget.userRef) ??
+                                  true)
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'p6069xjr' /* Oui */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                              if (rowTeamsRecord?.members
+                                      .contains(widget.userRef) ??
+                                  true)
+                                FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  borderRadius: 50.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  icon: Icon(
+                                    Icons.person_off,
+                                    color: FlutterFlowTheme.of(context).error,
+                                    size: 35.0,
+                                  ),
+                                  onPressed: () async {
+                                    await widget.userRef!.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'stsocialapp': FieldValue.delete(),
+                                        },
+                                      ),
+                                    });
+
+                                    await rowTeamsRecord!.reference.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'members': FieldValue.arrayRemove(
+                                              [widget.userRef]),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                ),
+                              if (!rowTeamsRecord!.members
+                                  .contains(widget.userRef))
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'vi0bob06' /* Non */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                              if (!rowTeamsRecord.members
+                                  .contains(widget.userRef))
+                                FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  borderRadius: 50.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  icon: Icon(
+                                    Icons.person_add,
+                                    color: FlutterFlowTheme.of(context).success,
+                                    size: 35.0,
+                                  ),
+                                  onPressed: () async {
+                                    await widget.userRef!
+                                        .update(createUsersRecordData(
+                                      stsocialapp: 'moderateur',
+                                    ));
+
+                                    await rowTeamsRecord.reference.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'members': FieldValue.arrayUnion(
+                                              [widget.userRef]),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                ),
+                            ],
+                          );
+                        },
+                      ),
                       if (profilPublicAdminUsersRecord.stsocialapp ==
                           'suspendu')
                         Column(
@@ -2611,7 +2809,7 @@ suspension */
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'so23zqdx' /* Changer le Statut Testeur */,
+                              'so23zqdx' /* Changer le Statut Meilleurs pa... */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
@@ -2635,103 +2833,169 @@ suspension */
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          if (profilPublicAdminUsersRecord.testor == true)
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'p6069xjr' /* Oui */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).success,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                      StreamBuilder<List<TeamsRecord>>(
+                        stream: queryTeamsRecord(
+                          queryBuilder: (teamsRecord) => teamsRecord.where(
+                            'league_value',
+                            isEqualTo: 'test',
+                          ),
+                          singleRecord: true,
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).accent4,
                                   ),
-                            ),
-                          if (profilPublicAdminUsersRecord.testor == true)
-                            FlutterFlowIconButton(
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              borderRadius: 50.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              fillColor: FlutterFlowTheme.of(context).alternate,
-                              icon: Icon(
-                                Icons.person_off,
-                                color: FlutterFlowTheme.of(context).error,
-                                size: 35.0,
+                                ),
                               ),
-                              onPressed: () async {
-                                await widget.userRef!
-                                    .update(createUsersRecordData(
-                                  testor: false,
-                                ));
-                              },
-                            ),
-                          if (profilPublicAdminUsersRecord.testor != true)
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'vi0bob06' /* Non */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                            );
+                          }
+                          List<TeamsRecord> rowTeamsRecordList = snapshot.data!;
+                          // Return an empty Container when the item does not exist.
+                          if (snapshot.data!.isEmpty) {
+                            return Container();
+                          }
+                          final rowTeamsRecord = rowTeamsRecordList.isNotEmpty
+                              ? rowTeamsRecordList.first
+                              : null;
+
+                          return Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              if (rowTeamsRecord?.members
+                                      .contains(widget.userRef) ??
+                                  true)
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    '059pn1bg' /* Oui */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                              if (rowTeamsRecord?.members
+                                      .contains(widget.userRef) ??
+                                  true)
+                                FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  borderRadius: 50.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  icon: Icon(
+                                    Icons.person_off,
                                     color: FlutterFlowTheme.of(context).error,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                                    size: 35.0,
                                   ),
-                            ),
-                          if (profilPublicAdminUsersRecord.testor != true)
-                            FlutterFlowIconButton(
-                              borderColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                              borderRadius: 50.0,
-                              borderWidth: 1.0,
-                              buttonSize: 50.0,
-                              fillColor: FlutterFlowTheme.of(context).alternate,
-                              icon: Icon(
-                                Icons.person_add,
-                                color: FlutterFlowTheme.of(context).success,
-                                size: 35.0,
-                              ),
-                              onPressed: () async {
-                                await widget.userRef!
-                                    .update(createUsersRecordData(
-                                  testor: true,
-                                ));
-                              },
-                            ),
-                        ],
+                                  onPressed: () async {
+                                    await widget.userRef!
+                                        .update(createUsersRecordData(
+                                      testor: false,
+                                    ));
+
+                                    await rowTeamsRecord!.reference.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'members': FieldValue.arrayRemove(
+                                              [widget.userRef]),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                ),
+                              if (!rowTeamsRecord!.members
+                                  .contains(widget.userRef))
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'iljtegb7' /* Non */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.poppins(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                ),
+                              if (!rowTeamsRecord.members
+                                  .contains(widget.userRef))
+                                FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  borderRadius: 50.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  icon: Icon(
+                                    Icons.person_add,
+                                    color: FlutterFlowTheme.of(context).success,
+                                    size: 35.0,
+                                  ),
+                                  onPressed: () async {
+                                    await widget.userRef!
+                                        .update(createUsersRecordData(
+                                      testor: true,
+                                    ));
+
+                                    await rowTeamsRecord.reference.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'members': FieldValue.arrayUnion(
+                                              [widget.userRef]),
+                                        },
+                                      ),
+                                    });
+                                  },
+                                ),
+                            ],
+                          );
+                        },
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(

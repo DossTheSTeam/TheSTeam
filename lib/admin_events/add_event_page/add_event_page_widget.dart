@@ -1350,24 +1350,11 @@ Nom Event */
                                                                               week: _model.numWeekFieldTextController.text,
                                                                             ),
                                                                             eventsRecordReference);
-
-                                                                await TeamEventsRecord.createDoc(
-                                                                        columnTeamDomRefTeamsRecord!
-                                                                            .reference)
-                                                                    .set(
-                                                                        createTeamEventsRecordData(
-                                                                  startedTime: _model
-                                                                      .calendarSelectedDay
-                                                                      ?.start,
-                                                                  events: _model
-                                                                      .eventRef
-                                                                      ?.reference,
-                                                                ));
                                                                 triggerPushNotification(
                                                                   notificationTitle:
-                                                                      'Match bientôt disponible pour',
+                                                                      'Match bientôt disponible pour ',
                                                                   notificationText:
-                                                                      columnTeamDomRefTeamsRecord
+                                                                      columnTeamDomRefTeamsRecord!
                                                                           .name,
                                                                   notificationImageUrl:
                                                                       columnTeamDomRefTeamsRecord
@@ -1380,6 +1367,19 @@ Nom Event */
                                                                       'ListEvents',
                                                                   parameterData: {},
                                                                 );
+
+                                                                await TeamEventsRecord.createDoc(
+                                                                        columnTeamDomRefTeamsRecord
+                                                                            .reference)
+                                                                    .set(
+                                                                        createTeamEventsRecordData(
+                                                                  startedTime: _model
+                                                                      .calendarSelectedDay
+                                                                      ?.start,
+                                                                  events: _model
+                                                                      .eventRef
+                                                                      ?.reference,
+                                                                ));
 
                                                                 safeSetState(
                                                                     () {});
@@ -1724,7 +1724,7 @@ Nom Event */
                                                           ));
                                                           triggerPushNotification(
                                                             notificationTitle:
-                                                                'Match bientôt disponible pour',
+                                                                'Match bientôt disponible pour ',
                                                             notificationText:
                                                                 columnTeamExtRefTeamsRecord
                                                                     .name,
@@ -2169,7 +2169,7 @@ Nom Event */
                                                                             eventsRecordReference);
                                                                 triggerPushNotification(
                                                                   notificationTitle:
-                                                                      'Combat bientôt disponible pour',
+                                                                      'Combat bientôt disponible pour ',
                                                                   notificationText:
                                                                       columnTeamDomRefTeamsRecord!
                                                                           .name,
@@ -2544,7 +2544,7 @@ Nom Event */
                                                           ));
                                                           triggerPushNotification(
                                                             notificationTitle:
-                                                                'Combat bientôt disponible pour',
+                                                                'Combat bientôt disponible pour ',
                                                             notificationText:
                                                                 columnTeamExtRefTeamsRecord
                                                                     .name,

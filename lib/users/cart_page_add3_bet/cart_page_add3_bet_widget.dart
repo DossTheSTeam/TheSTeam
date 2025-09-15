@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -4006,6 +4007,21 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       },
                                                                     ),
                                                                   });
+                                                                  triggerPushNotification(
+                                                                    notificationTitle:
+                                                                        currentUserDisplayName,
+                                                                    notificationText:
+                                                                        'a parié sur un événement',
+                                                                    userRefs: (currentUserDocument?.fans.toList() ??
+                                                                            [])
+                                                                        .toList(),
+                                                                    initialPageName:
+                                                                        'PublicProfilPage',
+                                                                    parameterData: {
+                                                                      'userRef':
+                                                                          currentUserReference,
+                                                                    },
+                                                                  );
 
                                                                   context
                                                                       .goNamed(

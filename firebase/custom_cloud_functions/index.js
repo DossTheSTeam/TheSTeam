@@ -6,3 +6,5 @@ exports.deleteAllImagesOnDocumentDelete =
   deleteAllImagesOnDocumentDelete.deleteAllImagesOnDocumentDelete;
 const onUserDeleted = require("./on_user_deleted.js");
 exports.onUserDeleted = onUserDeleted.onUserDeleted;
+const customPushNotification = require("./custom_push_notification.js");
+exports.customPushNotification = customPushNotification.customPushNotification;

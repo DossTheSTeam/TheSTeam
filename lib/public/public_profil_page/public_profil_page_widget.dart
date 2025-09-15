@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
+import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,6 +11,7 @@ import '/users/langage/langage_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -877,19 +878,47 @@ Débloquer */
                                                             },
                                                           ),
                                                         });
-                                                        triggerPushNotification(
-                                                          notificationTitle:
+                                                        try {
+                                                          final result = await FirebaseFunctions
+                                                                  .instanceFor(
+                                                                      region:
+                                                                          'europe-west1')
+                                                              .httpsCallable(
+                                                                  'customPushNotification')
+                                                              .call({
+                                                            "userRef":
+                                                                publicProfilPageUsersRecord
+                                                                    .reference
+                                                                    .path,
+                                                            "notificationTitle":
+                                                                valueOrDefault<
+                                                                    String>(
                                                               currentUserDisplayName,
-                                                          notificationText:
-                                                              'fait partie de vos fans ',
-                                                          userRefs: [
-                                                            publicProfilPageUsersRecord
-                                                                .reference
-                                                          ],
-                                                          initialPageName:
-                                                              'MyNotifsList',
-                                                          parameterData: {},
-                                                        );
+                                                              'NewUser',
+                                                            ),
+                                                            "notificationBody":
+                                                                'fait partie de vos fans ',
+                                                          });
+                                                          _model.notificationResult =
+                                                              CustomPushNotificationCloudFunctionCallResponse(
+                                                            data: result.data,
+                                                            succeeded: true,
+                                                            resultAsString:
+                                                                result.data
+                                                                    .toString(),
+                                                            jsonBody:
+                                                                result.data,
+                                                          );
+                                                        } on FirebaseFunctionsException catch (error) {
+                                                          _model.notificationResult =
+                                                              CustomPushNotificationCloudFunctionCallResponse(
+                                                            errorCode:
+                                                                error.code,
+                                                            succeeded: false,
+                                                          );
+                                                        }
+
+                                                        safeSetState(() {});
                                                       },
                                                       child: Icon(
                                                         Icons

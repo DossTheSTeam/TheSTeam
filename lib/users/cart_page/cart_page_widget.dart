@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -3069,6 +3070,24 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                             },
                                                           ),
                                                         });
+                                                        triggerPushNotification(
+                                                          notificationTitle:
+                                                              currentUserDisplayName,
+                                                          notificationText:
+                                                              'a parié sur un événement',
+                                                          userRefs:
+                                                              (currentUserDocument
+                                                                          ?.fans
+                                                                          .toList() ??
+                                                                      [])
+                                                                  .toList(),
+                                                          initialPageName:
+                                                              'PublicProfilPage',
+                                                          parameterData: {
+                                                            'userRef':
+                                                                currentUserReference,
+                                                          },
+                                                        );
 
                                                         context.goNamed(
                                                           MyProfilPageWidget

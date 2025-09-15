@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -14,6 +14,7 @@ import '/posts/modif_post/modif_post_widget.dart';
 import '/users/delete_my_post/delete_my_post_widget.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -3388,19 +3389,46 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                               },
                                                             ),
                                                           });
-                                                          triggerPushNotification(
-                                                            notificationTitle:
+                                                          try {
+                                                            final result = await FirebaseFunctions
+                                                                    .instanceFor(
+                                                                        region:
+                                                                            'europe-west1')
+                                                                .httpsCallable(
+                                                                    'customPushNotification')
+                                                                .call({
+                                                              "userRef":
+                                                                  stackUsersRecord
+                                                                      .reference
+                                                                      .path,
+                                                              "notificationTitle":
+                                                                  valueOrDefault<
+                                                                      String>(
                                                                 currentUserDisplayName,
-                                                            notificationText:
-                                                                'à commenté votre actualité',
-                                                            userRefs: [
-                                                              stackUsersRecord
-                                                                  .reference
-                                                            ],
-                                                            initialPageName:
-                                                                'MyNotifsList',
-                                                            parameterData: {},
-                                                          );
+                                                                'NewUser',
+                                                              ),
+                                                              "notificationBody":
+                                                                  'à commenté votre actualité',
+                                                            });
+                                                            _model.notificationResult =
+                                                                CustomPushNotificationCloudFunctionCallResponse(
+                                                              data: result.data,
+                                                              succeeded: true,
+                                                              resultAsString:
+                                                                  result.data
+                                                                      .toString(),
+                                                              jsonBody:
+                                                                  result.data,
+                                                            );
+                                                          } on FirebaseFunctionsException catch (error) {
+                                                            _model.notificationResult =
+                                                                CustomPushNotificationCloudFunctionCallResponse(
+                                                              errorCode:
+                                                                  error.code,
+                                                              succeeded: false,
+                                                            );
+                                                          }
+
                                                           safeSetState(() {
                                                             _model
                                                                 .commFieldTextController

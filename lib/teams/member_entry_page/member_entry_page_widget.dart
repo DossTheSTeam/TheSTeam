@@ -1,11 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
+import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/users/langage/langage_widget.dart';
 import '/index.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -2739,17 +2740,39 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                       },
                                     ),
                                   });
-                                  triggerPushNotification(
-                                    notificationTitle: currentUserDisplayName,
-                                    notificationText:
-                                        'veut devenir membre d\'un club',
-                                    userRefs: [
-                                      memberEntryPageTeamsRecord.adminUser!
-                                    ],
-                                    initialPageName: 'ModNotifsList',
-                                    parameterData: {},
-                                  );
+                                  try {
+                                    final result = await FirebaseFunctions
+                                            .instanceFor(region: 'europe-west1')
+                                        .httpsCallable('customPushNotification')
+                                        .call({
+                                      "userRef": memberEntryPageTeamsRecord
+                                          .adminUser!.path,
+                                      "notificationTitle":
+                                          valueOrDefault<String>(
+                                        currentUserDisplayName,
+                                        'NewUser',
+                                      ),
+                                      "notificationBody":
+                                          'veut devenir membre d\'un club',
+                                    });
+                                    _model.notificationResult =
+                                        CustomPushNotificationCloudFunctionCallResponse(
+                                      data: result.data,
+                                      succeeded: true,
+                                      resultAsString: result.data.toString(),
+                                      jsonBody: result.data,
+                                    );
+                                  } on FirebaseFunctionsException catch (error) {
+                                    _model.notificationResult =
+                                        CustomPushNotificationCloudFunctionCallResponse(
+                                      errorCode: error.code,
+                                      succeeded: false,
+                                    );
+                                  }
+
                                   context.safePop();
+
+                                  safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'y289y99w' /* Confirmer ma candidature  */,
