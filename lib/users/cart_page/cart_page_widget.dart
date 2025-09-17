@@ -2970,6 +2970,27 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                               currentUserDocument
                                                                   ?.stock,
                                                               0.0))) {
+                                                        triggerPushNotification(
+                                                          notificationTitle:
+                                                              currentUserDisplayName,
+                                                          notificationText:
+                                                              'a parié sur un événement',
+                                                          notificationImageUrl:
+                                                              currentUserPhoto,
+                                                          userRefs:
+                                                              (currentUserDocument
+                                                                          ?.fans
+                                                                          .toList() ??
+                                                                      [])
+                                                                  .toList(),
+                                                          initialPageName:
+                                                              'PublicProfilPage',
+                                                          parameterData: {
+                                                            'userRef':
+                                                                currentUserReference,
+                                                          },
+                                                        );
+
                                                         await MyBetsRecord
                                                                 .createDoc(
                                                                     currentUserReference!)
@@ -3070,24 +3091,6 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                             },
                                                           ),
                                                         });
-                                                        triggerPushNotification(
-                                                          notificationTitle:
-                                                              currentUserDisplayName,
-                                                          notificationText:
-                                                              'a parié sur un événement',
-                                                          userRefs:
-                                                              (currentUserDocument
-                                                                          ?.fans
-                                                                          .toList() ??
-                                                                      [])
-                                                                  .toList(),
-                                                          initialPageName:
-                                                              'PublicProfilPage',
-                                                          parameterData: {
-                                                            'userRef':
-                                                                currentUserReference,
-                                                          },
-                                                        );
 
                                                         context.goNamed(
                                                           MyProfilPageWidget

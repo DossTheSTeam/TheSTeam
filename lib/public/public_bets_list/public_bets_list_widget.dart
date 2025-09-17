@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +9,6 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -1628,6 +1627,23 @@ Concluído */
                                                                                       hoverColor: Colors.transparent,
                                                                                       highlightColor: Colors.transparent,
                                                                                       onTap: () async {
+                                                                                        triggerPushNotification(
+                                                                                          notificationTitle: valueOrDefault<String>(
+                                                                                            currentUserDisplayName,
+                                                                                            'NewUser',
+                                                                                          ),
+                                                                                          notificationText: 'a visionné votre pari sportif, vous gagnez 2 pièces. ',
+                                                                                          notificationImageUrl: currentUserPhoto,
+                                                                                          notificationSound: 'default',
+                                                                                          userRefs: [
+                                                                                            widget.userRef!
+                                                                                          ],
+                                                                                          initialPageName: 'MyBetPage',
+                                                                                          parameterData: {
+                                                                                            'myBetRef': columnMyBetsMyBetsRecord.reference,
+                                                                                          },
+                                                                                        );
+
                                                                                         await columnMyBetsMyBetsRecord.parentReference.update({
                                                                                           ...mapToFirestore(
                                                                                             {
@@ -1646,41 +1662,6 @@ Concluído */
                                                                                             },
                                                                                           ),
                                                                                         });
-
-                                                                                        await MyNotificationsRecord.createDoc(widget.userRef!).set({
-                                                                                          ...createMyNotificationsRecordData(
-                                                                                            text: 'a visionné votre pari sportif',
-                                                                                            userRef: currentUserReference,
-                                                                                            seen: false,
-                                                                                            textReasons: 'Cette action ajoute 2 pièces à votre stock',
-                                                                                          ),
-                                                                                          ...mapToFirestore(
-                                                                                            {
-                                                                                              'date_time': FieldValue.serverTimestamp(),
-                                                                                            },
-                                                                                          ),
-                                                                                        });
-                                                                                        try {
-                                                                                          final result = await FirebaseFunctions.instanceFor(region: 'europe-west1').httpsCallable('customPushNotification').call({
-                                                                                            "userRef": columnMyBetsMyBetsRecord.parentReference.path,
-                                                                                            "notificationTitle": valueOrDefault<String>(
-                                                                                              currentUserDisplayName,
-                                                                                              'NewUser',
-                                                                                            ),
-                                                                                            "notificationBody": 'a visionné votre pari sportif',
-                                                                                          });
-                                                                                          _model.notificationResult = CustomPushNotificationCloudFunctionCallResponse(
-                                                                                            data: result.data,
-                                                                                            succeeded: true,
-                                                                                            resultAsString: result.data.toString(),
-                                                                                            jsonBody: result.data,
-                                                                                          );
-                                                                                        } on FirebaseFunctionsException catch (error) {
-                                                                                          _model.notificationResult = CustomPushNotificationCloudFunctionCallResponse(
-                                                                                            errorCode: error.code,
-                                                                                            succeeded: false,
-                                                                                          );
-                                                                                        }
 
                                                                                         context.pushNamed(
                                                                                           PublicBetPageWidget.routeName,
@@ -1703,8 +1684,6 @@ Concluído */
                                                                                             ),
                                                                                           },
                                                                                         );
-
-                                                                                        safeSetState(() {});
                                                                                       },
                                                                                       child: Icon(
                                                                                         Icons.remove_red_eye_outlined,

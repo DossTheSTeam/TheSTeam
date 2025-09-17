@@ -88,8 +88,6 @@ export '/public/generals_condidtions_page/generals_condidtions_page_widget.dart'
     show GeneralsCondidtionsPageWidget;
 export '/public/infos_rank_page/infos_rank_page_widget.dart'
     show InfosRankPageWidget;
-export '/public/shopping_page/shopping_page_widget.dart'
-    show ShoppingPageWidget;
 export '/moderator/mod_teams_list/mod_teams_list_widget.dart'
     show ModTeamsListWidget;
 export '/events/list_events_add2_bet/list_events_add2_bet_widget.dart'

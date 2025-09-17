@@ -1053,7 +1053,7 @@ class _AdminMemberEntryPageWidgetState
                                           .set({
                                         ...createMyNotificationsRecordData(
                                           text:
-                                              'Votre demande de membre pour le club suivant a été accepté',
+                                              'Votre demande de membre pour le club suivant a été acceptée',
                                           seen: false,
                                           moderator: currentUserReference,
                                           teamRef:
@@ -1270,7 +1270,7 @@ class _AdminMemberEntryPageWidgetState
                                       .set({
                                     ...createMyNotificationsRecordData(
                                       text:
-                                          'Votre demande pour être membre a été refusé pour le motif suivant :',
+                                          'Votre demande pour être membre a été refusée pour le motif suivant :',
                                       seen: false,
                                       textFouls: _model.dropReasonsValue,
                                       moderator: currentUserReference,

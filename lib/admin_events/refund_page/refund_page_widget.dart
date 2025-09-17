@@ -1755,10 +1755,10 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
 
                                                                               await MyNotificationsRecord.createDoc(columnUsersRecord.reference).set({
                                                                                 ...createMyNotificationsRecordData(
-                                                                                  text: 'Votre mise de${valueOrDefault<String>(
+                                                                                  text: 'Votre mise de ${valueOrDefault<String>(
                                                                                     functions.limitOf2Decimal(rowMyBetsRecord.mise).toString(),
                                                                                     '00.00',
-                                                                                  )} est remboursée car la rencontre est reportée',
+                                                                                  )}  est remboursée car la rencontre est reportée.  Votre pari est supprimé, vos statistiques sont actualisées.',
                                                                                   seen: false,
                                                                                   moderator: currentUserReference,
                                                                                 ),

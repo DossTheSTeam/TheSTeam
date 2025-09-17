@@ -908,7 +908,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (eventPageEventsRecord.notifsUsers
+                                          if (!eventPageEventsRecord.notifsUsers
                                               .contains(currentUserReference))
                                             AuthUserStreamWidget(
                                               builder: (context) => InkWell(
@@ -987,7 +987,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (!eventPageEventsRecord.notifsUsers
+                                          if (eventPageEventsRecord.notifsUsers
                                               .contains(currentUserReference))
                                             AuthUserStreamWidget(
                                               builder: (context) => InkWell(

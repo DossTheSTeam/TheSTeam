@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/comments/delete_post_message/delete_post_message_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/users/copy_text/copy_text_widget.dart';
 import '/index.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -2010,6 +2009,29 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         },
                                                       ),
                                                     }, postMessagesRecordReference);
+                                                    triggerPushNotification(
+                                                      notificationTitle:
+                                                          valueOrDefault<
+                                                              String>(
+                                                        currentUserDisplayName,
+                                                        'NewUser',
+                                                      ),
+                                                      notificationText:
+                                                          'à commenté votre message. ${postMessagePagePostMessagesRecord.text}',
+                                                      notificationImageUrl:
+                                                          currentUserPhoto,
+                                                      userRefs: [
+                                                        postMessagePagePostMessagesRecord
+                                                            .commUser!
+                                                      ],
+                                                      initialPageName:
+                                                          'PostMessagePage',
+                                                      parameterData: {
+                                                        'startedCommRef': _model
+                                                            .commentRef
+                                                            ?.reference,
+                                                      },
+                                                    );
 
                                                     await widget
                                                         .startedCommRef!
@@ -2023,24 +2045,13 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                       ),
                                                     });
 
-                                                    await MyNotificationsRecord
-                                                            .createDoc(
-                                                                postMessagePagePostMessagesRecord
-                                                                    .commUser!)
-                                                        .set({
-                                                      ...createMyNotificationsRecordData(
-                                                        text:
-                                                            'a commenté votre commentaire :',
-                                                        userRef:
-                                                            currentUserReference,
-                                                        seen: false,
-                                                        postMessage: widget
-                                                            .startedCommRef,
-                                                      ),
+                                                    await columnUsersRecord
+                                                        .reference
+                                                        .update({
                                                       ...mapToFirestore(
                                                         {
-                                                          'date_time': FieldValue
-                                                              .serverTimestamp(),
+                                                          'stock': FieldValue
+                                                              .increment(0.5),
                                                         },
                                                       ),
                                                     });
@@ -2072,54 +2083,6 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         ),
                                                       },
                                                     );
-
-                                                    await columnUsersRecord
-                                                        .reference
-                                                        .update({
-                                                      ...mapToFirestore(
-                                                        {
-                                                          'stock': FieldValue
-                                                              .increment(0.5),
-                                                        },
-                                                      ),
-                                                    });
-                                                    try {
-                                                      final result =
-                                                          await FirebaseFunctions
-                                                                  .instanceFor(
-                                                                      region:
-                                                                          'europe-west1')
-                                                              .httpsCallable(
-                                                                  'customPushNotification')
-                                                              .call({
-                                                        "userRef":
-                                                            columnUsersRecord
-                                                                .reference.path,
-                                                        "notificationTitle":
-                                                            valueOrDefault<
-                                                                String>(
-                                                          currentUserDisplayName,
-                                                          'NewUser',
-                                                        ),
-                                                        "notificationBody":
-                                                            'à commenté votre message',
-                                                      });
-                                                      _model.notificationResult =
-                                                          CustomPushNotificationCloudFunctionCallResponse(
-                                                        data: result.data,
-                                                        succeeded: true,
-                                                        resultAsString: result
-                                                            .data
-                                                            .toString(),
-                                                        jsonBody: result.data,
-                                                      );
-                                                    } on FirebaseFunctionsException catch (error) {
-                                                      _model.notificationResult =
-                                                          CustomPushNotificationCloudFunctionCallResponse(
-                                                        errorCode: error.code,
-                                                        succeeded: false,
-                                                      );
-                                                    }
 
                                                     safeSetState(() {
                                                       _model

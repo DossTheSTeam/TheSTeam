@@ -275,7 +275,6 @@ final parametersBuilderMap =
   'ConfidentialityPage': ParameterData.none(),
   'GeneralsCondidtionsPage': ParameterData.none(),
   'InfosRankPage': ParameterData.none(),
-  'ShoppingPage': ParameterData.none(),
   'ModTeamsList': ParameterData.none(),
   'ListEventsAdd2Bet': (data) async => ParameterData(
         allParams: {

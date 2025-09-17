@@ -547,11 +547,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => InfosRankPageWidget(),
         ),
         FFRoute(
-          name: ShoppingPageWidget.routeName,
-          path: ShoppingPageWidget.routePath,
-          builder: (context, params) => ShoppingPageWidget(),
-        ),
-        FFRoute(
           name: ModTeamsListWidget.routeName,
           path: ModTeamsListWidget.routePath,
           builder: (context, params) => ModTeamsListWidget(),

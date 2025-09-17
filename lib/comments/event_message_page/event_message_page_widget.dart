@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/comments/delete_event_message/delete_event_message_widget.dart';
 import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import '/users/copy_text/copy_text_widget.dart';
 import '/index.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -2020,6 +2019,30 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             },
                                                           ),
                                                         }, eventMessagesRecordReference);
+                                                        triggerPushNotification(
+                                                          notificationTitle:
+                                                              valueOrDefault<
+                                                                  String>(
+                                                            currentUserDisplayName,
+                                                            'NewUser',
+                                                          ),
+                                                          notificationText:
+                                                              'à commenté votre message. ${eventMessagePageEventMessagesRecord.text}',
+                                                          notificationImageUrl:
+                                                              currentUserPhoto,
+                                                          userRefs: [
+                                                            eventMessagePageEventMessagesRecord
+                                                                .commUser!
+                                                          ],
+                                                          initialPageName:
+                                                              'EventMessagePage',
+                                                          parameterData: {
+                                                            'startedCommRef':
+                                                                _model
+                                                                    .commentRef
+                                                                    ?.reference,
+                                                          },
+                                                        );
 
                                                         await widget
                                                             .startedCommRef!
@@ -2034,25 +2057,14 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           ),
                                                         });
 
-                                                        await MyNotificationsRecord
-                                                                .createDoc(
-                                                                    eventMessagePageEventMessagesRecord
-                                                                        .commUser!)
-                                                            .set({
-                                                          ...createMyNotificationsRecordData(
-                                                            text:
-                                                                'a commenté votre message :',
-                                                            userRef:
-                                                                currentUserReference,
-                                                            seen: false,
-                                                            eventMessage: widget
-                                                                .startedCommRef,
-                                                          ),
+                                                        await columnUsersRecord
+                                                            .reference
+                                                            .update({
                                                           ...mapToFirestore(
                                                             {
-                                                              'date_time':
-                                                                  FieldValue
-                                                                      .serverTimestamp(),
+                                                              'stock': FieldValue
+                                                                  .increment(
+                                                                      0.5),
                                                             },
                                                           ),
                                                         });
@@ -2086,57 +2098,6 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             ),
                                                           },
                                                         );
-
-                                                        await columnUsersRecord
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'stock': FieldValue
-                                                                  .increment(
-                                                                      0.5),
-                                                            },
-                                                          ),
-                                                        });
-                                                        try {
-                                                          final result = await FirebaseFunctions
-                                                                  .instanceFor(
-                                                                      region:
-                                                                          'europe-west1')
-                                                              .httpsCallable(
-                                                                  'customPushNotification')
-                                                              .call({
-                                                            "userRef":
-                                                                columnUsersRecord
-                                                                    .reference
-                                                                    .path,
-                                                            "notificationTitle":
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              currentUserDisplayName,
-                                                              'NewUser',
-                                                            ),
-                                                            "notificationBody":
-                                                                'à commenté votre message',
-                                                          });
-                                                          _model.notificationResult =
-                                                              CustomPushNotificationCloudFunctionCallResponse(
-                                                            data: result.data,
-                                                            succeeded: true,
-                                                            resultAsString:
-                                                                result.data
-                                                                    .toString(),
-                                                            jsonBody:
-                                                                result.data,
-                                                          );
-                                                        } on FirebaseFunctionsException catch (error) {
-                                                          _model.notificationResult =
-                                                              CustomPushNotificationCloudFunctionCallResponse(
-                                                            errorCode:
-                                                                error.code,
-                                                            succeeded: false,
-                                                          );
-                                                        }
 
                                                         safeSetState(() {
                                                           _model

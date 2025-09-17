@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'post_page_widget.dart' show PostPageWidget;
@@ -27,8 +26,6 @@ class PostPageModel extends FlutterFlowModel<PostPageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   PostMessagesRecord? commentRef;
-  // Stores action output result for [Cloud Function - customPushNotification] action in Icon widget.
-  CustomPushNotificationCloudFunctionCallResponse? notificationResult;
   bool isDataUploading_uploadDataX6j = false;
   FFUploadedFile uploadedLocalFile_uploadDataX6j =
       FFUploadedFile(bytes: Uint8List.fromList([]));

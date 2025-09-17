@@ -752,103 +752,134 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                             .fontStyle,
                                       ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: Container(
-                                    width: 65.0,
-                                    height: 50.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                if (modifTeamPageTeamsRecord.logo != '')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 6.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await modifTeamPageTeamsRecord.reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'logo': FieldValue.delete(),
+                                            },
+                                          ),
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.delete_forever_rounded,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 30.0,
+                                      ),
                                     ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(3.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(0.0),
-                                        child: Image.network(
-                                          _model.uploadedFileUrl_uploadDataPvp,
-                                          width: 300.0,
-                                          height: 200.0,
-                                          fit: BoxFit.scaleDown,
+                                  ),
+                                if (modifTeamPageTeamsRecord.logo == '')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 6.0, 0.0),
+                                    child: Container(
+                                      width: 65.0,
+                                      height: 50.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(3.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: Image.network(
+                                            _model
+                                                .uploadedFileUrl_uploadDataPvp,
+                                            width: 300.0,
+                                            height: 200.0,
+                                            fit: BoxFit.scaleDown,
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    final selectedMedia =
-                                        await selectMediaWithSourceBottomSheet(
-                                      context: context,
-                                      maxWidth: 1000.00,
-                                      maxHeight: 1000.00,
-                                      allowPhoto: true,
-                                    );
-                                    if (selectedMedia != null &&
-                                        selectedMedia.every((m) =>
-                                            validateFileFormat(
-                                                m.storagePath, context))) {
-                                      safeSetState(() =>
+                                if (modifTeamPageTeamsRecord.logo == '')
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      final selectedMedia =
+                                          await selectMediaWithSourceBottomSheet(
+                                        context: context,
+                                        maxWidth: 1000.00,
+                                        maxHeight: 1000.00,
+                                        allowPhoto: true,
+                                      );
+                                      if (selectedMedia != null &&
+                                          selectedMedia.every((m) =>
+                                              validateFileFormat(
+                                                  m.storagePath, context))) {
+                                        safeSetState(() => _model
+                                                .isDataUploading_uploadDataPvp =
+                                            true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
+
+                                        var downloadUrls = <String>[];
+                                        try {
+                                          selectedUploadedFiles = selectedMedia
+                                              .map((m) => FFUploadedFile(
+                                                    name: m.storagePath
+                                                        .split('/')
+                                                        .last,
+                                                    bytes: m.bytes,
+                                                    height:
+                                                        m.dimensions?.height,
+                                                    width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
+                                                  ))
+                                              .toList();
+
+                                          downloadUrls = (await Future.wait(
+                                            selectedMedia.map(
+                                              (m) async => await uploadData(
+                                                  m.storagePath, m.bytes),
+                                            ),
+                                          ))
+                                              .where((u) => u != null)
+                                              .map((u) => u!)
+                                              .toList();
+                                        } finally {
                                           _model.isDataUploading_uploadDataPvp =
-                                              true);
-                                      var selectedUploadedFiles =
-                                          <FFUploadedFile>[];
-
-                                      var downloadUrls = <String>[];
-                                      try {
-                                        selectedUploadedFiles = selectedMedia
-                                            .map((m) => FFUploadedFile(
-                                                  name: m.storagePath
-                                                      .split('/')
-                                                      .last,
-                                                  bytes: m.bytes,
-                                                  height: m.dimensions?.height,
-                                                  width: m.dimensions?.width,
-                                                  blurHash: m.blurHash,
-                                                ))
-                                            .toList();
-
-                                        downloadUrls = (await Future.wait(
-                                          selectedMedia.map(
-                                            (m) async => await uploadData(
-                                                m.storagePath, m.bytes),
-                                          ),
-                                        ))
-                                            .where((u) => u != null)
-                                            .map((u) => u!)
-                                            .toList();
-                                      } finally {
-                                        _model.isDataUploading_uploadDataPvp =
-                                            false;
+                                              false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                                selectedMedia.length &&
+                                            downloadUrls.length ==
+                                                selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile_uploadDataPvp =
+                                                selectedUploadedFiles.first;
+                                            _model.uploadedFileUrl_uploadDataPvp =
+                                                downloadUrls.first;
+                                          });
+                                        } else {
+                                          safeSetState(() {});
+                                          return;
+                                        }
                                       }
-                                      if (selectedUploadedFiles.length ==
-                                              selectedMedia.length &&
-                                          downloadUrls.length ==
-                                              selectedMedia.length) {
-                                        safeSetState(() {
-                                          _model.uploadedLocalFile_uploadDataPvp =
-                                              selectedUploadedFiles.first;
-                                          _model.uploadedFileUrl_uploadDataPvp =
-                                              downloadUrls.first;
-                                        });
-                                      } else {
-                                        safeSetState(() {});
-                                        return;
-                                      }
-                                    }
-                                  },
-                                  child: Icon(
-                                    Icons.image_search_outlined,
-                                    color: modifTeamPageTeamsRecord.color1,
-                                    size: 30.0,
+                                    },
+                                    child: Icon(
+                                      Icons.image_search_outlined,
+                                      color: modifTeamPageTeamsRecord.color1,
+                                      size: 30.0,
+                                    ),
                                   ),
-                                ),
                               ],
                             ),
                           ),

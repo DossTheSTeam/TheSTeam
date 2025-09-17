@@ -737,7 +737,8 @@ class _ColorUserWidgetState extends State<ColorUserWidget> {
                                   '#C0C0C0',
                                   '#FFD700',
                                   '#B22222',
-                                  '#860038'
+                                  '#860038',
+                                  '#000080'
                                 ]),
                                 optionLabels: [
                                   FFLocalizations.of(context).getText(
@@ -805,6 +806,9 @@ class _ColorUserWidgetState extends State<ColorUserWidget> {
                                   ),
                                   FFLocalizations.of(context).getText(
                                     '9s9tah2d' /* Burgundy */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '69b6xshj' /* Blue 3 */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -1181,7 +1185,8 @@ class _ColorUserWidgetState extends State<ColorUserWidget> {
                                   '#C0C0C0',
                                   '#FFD700',
                                   '#B22222',
-                                  '#860038'
+                                  '#860038',
+                                  '#000080'
                                 ]),
                                 optionLabels: [
                                   FFLocalizations.of(context).getText(
@@ -1249,6 +1254,9 @@ class _ColorUserWidgetState extends State<ColorUserWidget> {
                                   ),
                                   FFLocalizations.of(context).getText(
                                     'u8wenkp2' /* Burgundy */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'zci0yz6u' /* Blue 3 */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(

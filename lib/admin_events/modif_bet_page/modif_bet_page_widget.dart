@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -883,6 +884,17 @@ class _ModifBetPageWidgetState extends State<ModifBetPageWidget> {
                                                 .update(createBetsRecordData(
                                               statut: true,
                                             ));
+                                            triggerPushNotification(
+                                              notificationTitle:
+                                                  'Bien joué !!!',
+                                              notificationText:
+                                                  'Votre choix est validé, vérifiez vos paris sportifs.',
+                                              userRefs: modifBetPageBetsRecord
+                                                  .bettors
+                                                  .toList(),
+                                              initialPageName: 'MyBetsList',
+                                              parameterData: {},
+                                            );
                                             context.safePop();
                                           },
                                           text: FFLocalizations.of(context)

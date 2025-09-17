@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'event_message_page_widget.dart' show EventMessagePageWidget;
@@ -33,8 +32,6 @@ class EventMessagePageModel extends FlutterFlowModel<EventMessagePageWidget> {
   String? Function(BuildContext, String?)? commFieldTextControllerValidator;
   // Stores action output result for [Backend Call - Create Document] action in Icon widget.
   EventMessagesRecord? commentRef;
-  // Stores action output result for [Cloud Function - customPushNotification] action in Icon widget.
-  CustomPushNotificationCloudFunctionCallResponse? notificationResult;
   bool isDataUploading_uploadDataUtu = false;
   FFUploadedFile uploadedLocalFile_uploadDataUtu =
       FFUploadedFile(bytes: Uint8List.fromList([]));

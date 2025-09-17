@@ -3018,6 +3018,24 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    triggerPushNotification(
+                                                                      notificationTitle:
+                                                                          currentUserDisplayName,
+                                                                      notificationText:
+                                                                          'a parié sur 2 événements',
+                                                                      notificationImageUrl:
+                                                                          currentUserPhoto,
+                                                                      userRefs: (currentUserDocument?.fans.toList() ??
+                                                                              [])
+                                                                          .toList(),
+                                                                      initialPageName:
+                                                                          'PublicProfilPage',
+                                                                      parameterData: {
+                                                                        'userRef':
+                                                                            currentUserReference,
+                                                                      },
+                                                                    );
+
                                                                     await widget
                                                                         .myBetRef!
                                                                         .update({
@@ -3076,21 +3094,6 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                         },
                                                                       ),
                                                                     });
-                                                                    triggerPushNotification(
-                                                                      notificationTitle:
-                                                                          currentUserDisplayName,
-                                                                      notificationText:
-                                                                          'a parié sur un événement',
-                                                                      userRefs: (currentUserDocument?.fans.toList() ??
-                                                                              [])
-                                                                          .toList(),
-                                                                      initialPageName:
-                                                                          'PublicProfilPage',
-                                                                      parameterData: {
-                                                                        'userRef':
-                                                                            currentUserReference,
-                                                                      },
-                                                                    );
 
                                                                     context
                                                                         .goNamed(

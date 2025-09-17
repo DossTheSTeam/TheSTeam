@@ -710,7 +710,8 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       '#C0C0C0',
                                       '#FFD700',
                                       '#B22222',
-                                      '#860038'
+                                      '#860038',
+                                      '#000080'
                                     ]),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
@@ -778,6 +779,9 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       ),
                                       FFLocalizations.of(context).getText(
                                         '2454f5bx' /* Burgundy */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'xc3e5lgo' /* Blue 3 */,
                                       )
                                     ],
                                     onChanged: (val) => safeSetState(
@@ -1358,7 +1362,8 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       '#C0C0C0',
                                       '#FFD700',
                                       '#B22222',
-                                      '#860038'
+                                      '#860038',
+                                      '#000080'
                                     ]),
                                     optionLabels: [
                                       FFLocalizations.of(context).getText(
@@ -1426,6 +1431,9 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       ),
                                       FFLocalizations.of(context).getText(
                                         'x2p3241y' /* Burgundy */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '3e5mv1kv' /* Blue 3 */,
                                       )
                                     ],
                                     onChanged: (val) => safeSetState(
