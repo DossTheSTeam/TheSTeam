@@ -73,7 +73,17 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed(MenuPageWidget.routeName);
+                                  context.pushNamed(
+                                    MenuPageWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                        duration: Duration(milliseconds: 600),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
                                   Icons.menu_rounded,
@@ -88,7 +98,17 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.safePop();
+                                  context.pushNamed(
+                                    TheSTeamPageWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
+                                        duration: Duration(milliseconds: 600),
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: Icon(
                                   Icons.arrow_back_ios_new_rounded,

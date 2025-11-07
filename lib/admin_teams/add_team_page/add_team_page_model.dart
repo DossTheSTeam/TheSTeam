@@ -39,7 +39,7 @@ class AddTeamPageModel extends FlutterFlowModel<AddTeamPageWidget> {
       teamvalueFieldTextControllerValidator;
   bool isDataUploading_uploadDataHbx = false;
   FFUploadedFile uploadedLocalFile_uploadDataHbx =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataHbx = '';
 
   // State field(s) for DropFootCup widget.

@@ -30,7 +30,7 @@ class AddPostEventPageModel extends FlutterFlowModel<AddPostEventPageWidget> {
   String? Function(BuildContext, String?)? titleFieldTextControllerValidator;
   bool isDataUploading_uploadDataFr6 = false;
   FFUploadedFile uploadedLocalFile_uploadDataFr6 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataFr6 = '';
 
   // State field(s) for TextField widget.
@@ -40,7 +40,7 @@ class AddPostEventPageModel extends FlutterFlowModel<AddPostEventPageWidget> {
   AudioRecorder? audioRecorder;
   String? audioPost;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
@@ -49,7 +49,7 @@ class AddPostEventPageModel extends FlutterFlowModel<AddPostEventPageWidget> {
   String? extractIdResult;
   bool isDataUploading_uploadDataSib = false;
   FFUploadedFile uploadedLocalFile_uploadDataSib =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataSib = '';
 
   // State field(s) for TextField widget.

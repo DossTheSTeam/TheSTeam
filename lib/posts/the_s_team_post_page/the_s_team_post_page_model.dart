@@ -19,7 +19,7 @@ class TheSTeamPostPageModel extends FlutterFlowModel<TheSTeamPostPageWidget> {
   AudioRecorder? audioRecorder;
   String? audio;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
@@ -28,7 +28,7 @@ class TheSTeamPostPageModel extends FlutterFlowModel<TheSTeamPostPageWidget> {
   PostMessagesRecord? commentRef;
   bool isDataUploading_uploadDataYnz = false;
   FFUploadedFile uploadedLocalFile_uploadDataYnz =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataYnz = '';
 
   @override

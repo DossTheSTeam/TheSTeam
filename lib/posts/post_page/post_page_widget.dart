@@ -225,7 +225,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 5.0),
+                                                  .fromSTEB(5.0, 5.0, 0.0, 5.0),
                                               child: FlutterFlowIconButton(
                                                 borderColor:
                                                     valueOrDefault<Color>(
@@ -2781,10 +2781,12 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                     () {
                                                                   _model.isDataUploading_uploadDataX6j =
                                                                       false;
-                                                                  _model.uploadedLocalFile_uploadDataX6j =
-                                                                      FFUploadedFile(
-                                                                          bytes:
-                                                                              Uint8List.fromList([]));
+                                                                  _model.uploadedLocalFile_uploadDataX6j = FFUploadedFile(
+                                                                      bytes: Uint8List
+                                                                          .fromList(
+                                                                              []),
+                                                                      originalFilename:
+                                                                          '');
                                                                   _model.uploadedFileUrl_uploadDataX6j =
                                                                       '';
                                                                 });
@@ -3512,6 +3514,8 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                               ?.width,
                                                                           blurHash:
                                                                               m.blurHash,
+                                                                          originalFilename:
+                                                                              m.originalFilename,
                                                                         ))
                                                                     .toList();
 

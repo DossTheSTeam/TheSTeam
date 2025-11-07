@@ -399,7 +399,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 3.0),
+                              0.0, 5.0, 0.0, 3.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(

@@ -474,7 +474,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 3.0),
+                                0.0, 5.0, 0.0, 3.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(

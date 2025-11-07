@@ -197,6 +197,38 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "earnings_total",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rank_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "earnings_total",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rank_value",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "division_value",
           "order": "ASCENDING"
         },
@@ -249,6 +281,28 @@
         {
           "fieldPath": "num_penalities",
           "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rank_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "division_value",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "earnings_total",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "update_time",
+          "order": "ASCENDING"
         }
       ]
     },

@@ -1854,7 +1854,20 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         ),
                                       });
                                       await widget.notifRef!.delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'yh3j06lf' /* Confirmer le carton rouge */,
@@ -2081,7 +2094,20 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                         modSeen: true,
                                       ));
                                       await widget.notifRef!.delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '6v438u95' /* Pas de carton */,
@@ -2201,7 +2227,20 @@ class _SignalPostPageWidgetState extends State<SignalPostPageWidget> {
                                       await columnPostPostsRecord.reference
                                           .delete();
                                       await widget.notifRef!.delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '13k88sl2' /* Suppprimer l'actualité */,

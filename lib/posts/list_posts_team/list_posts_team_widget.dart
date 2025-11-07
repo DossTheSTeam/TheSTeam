@@ -241,7 +241,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 10.0),
+                                            5.0, 5.0, 0.0, 10.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: valueOrDefault<Color>(
                                             listPostsTeamTeamsRecord.color2,

@@ -1879,6 +1879,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                         ?.width,
                                                                     blurHash: m
                                                                         .blurHash,
+                                                                    originalFilename:
+                                                                        m.originalFilename,
                                                                   ))
                                                               .toList();
 
@@ -2090,6 +2092,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                         ?.width,
                                                                     blurHash: m
                                                                         .blurHash,
+                                                                    originalFilename:
+                                                                        m.originalFilename,
                                                                   ))
                                                               .toList();
 
@@ -3340,6 +3344,8 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                     ?.width,
                                                                 blurHash:
                                                                     m.blurHash,
+                                                                originalFilename:
+                                                                    m.originalFilename,
                                                               ))
                                                       .toList();
 
@@ -4554,7 +4560,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -4728,7 +4734,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -4902,7 +4908,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -5100,7 +5106,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -5274,7 +5280,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -5448,7 +5454,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                 notificationTitle:
                                                                     'Match terminé',
                                                                 notificationText:
-                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                                    '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                                 userRefs: modifEventPageEventsRecord
                                                                     .notifsUsers
                                                                     .toList(),
@@ -5799,7 +5805,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Match terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -5964,7 +5970,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Match terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6141,7 +6147,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Match terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6304,7 +6310,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Match terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6467,7 +6473,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Match terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6652,7 +6658,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Evénement terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6817,7 +6823,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Evénement terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -6982,7 +6988,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                     notificationTitle:
                                                         'Evénement terminé',
                                                     notificationText:
-                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                        '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                                     userRefs:
                                                         modifEventPageEventsRecord
                                                             .notifsUsers
@@ -7131,7 +7137,7 @@ Coupe Na... */
                                             triggerPushNotification(
                                               notificationTitle: 'Evénement ',
                                               notificationText:
-                                                  '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}${modifEventPageEventsRecord.teamext}',
+                                                  '${modifEventPageEventsRecord.teamdom}  ${_model.scoreDomFieldTextController.text}  :  ${_model.scoreExtFieldTextController.text}  ${modifEventPageEventsRecord.teamext}',
                                               userRefs:
                                                   modifEventPageEventsRecord
                                                       .notifsUsers

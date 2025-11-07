@@ -842,6 +842,8 @@ class _ModifTeamPageWidgetState extends State<ModifTeamPageWidget> {
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
                                                     blurHash: m.blurHash,
+                                                    originalFilename:
+                                                        m.originalFilename,
                                                   ))
                                               .toList();
 

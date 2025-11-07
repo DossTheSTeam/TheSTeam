@@ -26,18 +26,18 @@ class ModifPostModel extends FlutterFlowModel<ModifPostWidget> {
   String? Function(BuildContext, String?)? textController1Validator;
   bool isDataUploading_uploadDataHj6 = false;
   FFUploadedFile uploadedLocalFile_uploadDataHj6 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataHj6 = '';
 
   bool isDataUploading_uploadDataQzm = false;
   FFUploadedFile uploadedLocalFile_uploadDataQzm =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataQzm = '';
 
   AudioRecorder? audioRecorder;
   String? audio;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;

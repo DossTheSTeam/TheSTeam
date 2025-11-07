@@ -1,3 +1,4 @@
+import '/admin_users/delete_s_team_post/delete_s_team_post_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
@@ -9,7 +10,6 @@ import '/flutter_flow/flutter_flow_youtube_player.dart';
 import '/flutter_flow/upload_data.dart';
 import '/posts/copy_text_post/copy_text_post_widget.dart';
 import '/posts/modif_post/modif_post_widget.dart';
-import '/users/delete_my_post/delete_my_post_widget.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -230,7 +230,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 0.0,
+                                                            .fromSTEB(5.0, 5.0,
                                                                 0.0, 5.0),
                                                     child:
                                                         FlutterFlowIconButton(
@@ -380,11 +380,11 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                 ],
                                               ),
                                               StreamBuilder<
-                                                  List<MyPostsRecord>>(
-                                                stream: queryMyPostsRecord(
+                                                  List<TeamPostsRecord>>(
+                                                stream: queryTeamPostsRecord(
                                                   queryBuilder:
-                                                      (myPostsRecord) =>
-                                                          myPostsRecord.where(
+                                                      (teamPostsRecord) =>
+                                                          teamPostsRecord.where(
                                                     'posts',
                                                     isEqualTo: widget.postRef,
                                                   ),
@@ -410,17 +410,17 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                       ),
                                                     );
                                                   }
-                                                  List<MyPostsRecord>
-                                                      columnMyPostsRecordList =
+                                                  List<TeamPostsRecord>
+                                                      columnTeamPostsRecordList =
                                                       snapshot.data!;
                                                   // Return an empty Container when the item does not exist.
                                                   if (snapshot.data!.isEmpty) {
                                                     return Container();
                                                   }
-                                                  final columnMyPostsRecord =
-                                                      columnMyPostsRecordList
+                                                  final columnTeamPostsRecord =
+                                                      columnTeamPostsRecordList
                                                               .isNotEmpty
-                                                          ? columnMyPostsRecordList
+                                                          ? columnTeamPostsRecordList
                                                               .first
                                                           : null;
 
@@ -430,22 +430,22 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          if ((valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.stsocialapp,
-                                                                      '') ==
-                                                                  'administrateur') ||
-                                                              (theSTeamPostPagePostsRecord
-                                                                      .member ==
-                                                                  currentUserReference))
-                                                            AuthUserStreamWidget(
-                                                              builder:
-                                                                  (context) =>
-                                                                      InkWell(
+                                                      if ((theSTeamPostPagePostsRecord
+                                                                  .member ==
+                                                              currentUserReference) ||
+                                                          (valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.stsocialapp,
+                                                                  '') ==
+                                                              'administrateur'))
+                                                        AuthUserStreamWidget(
+                                                          builder: (context) =>
+                                                              Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
                                                                 focusColor: Colors
@@ -482,8 +482,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                DeleteMyPostWidget(
-                                                                              myPostRef: columnMyPostsRecord!.reference,
+                                                                                DeleteSTeamPostWidget(
+                                                                              teamPostRef: columnTeamPostsRecord!.reference,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -502,28 +502,15 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                   size: 25.0,
                                                                 ),
                                                               ),
-                                                            ),
-                                                          if ((valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.stsocialapp,
-                                                                      '') ==
-                                                                  'administrateur') ||
-                                                              (theSTeamPostPagePostsRecord
-                                                                      .member ==
-                                                                  currentUserReference))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child:
-                                                                  AuthUserStreamWidget(
-                                                                builder:
-                                                                    (context) =>
-                                                                        InkWell(
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            20.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: InkWell(
                                                                   splashColor:
                                                                       Colors
                                                                           .transparent,
@@ -580,9 +567,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                        ],
-                                                      ),
+                                                            ],
+                                                          ),
+                                                        ),
                                                     ],
                                                   );
                                                 },
@@ -1946,30 +1933,39 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                   ),
                                                 ),
                                               ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  columnUsersRecord.displayName,
-                                                  'NewUser',
-                                                ),
-                                                maxLines: 1,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .montserrat(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                    PublicProfilPageWidget
+                                                        .routeName,
+                                                    queryParameters: {
+                                                      'userRef': serializeParam(
+                                                        theSTeamPostPagePostsRecord
+                                                            .member,
+                                                        ParamType
+                                                            .DocumentReference,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    columnUsersRecord
+                                                        .displayName,
+                                                    'NewUser',
+                                                  ),
+                                                  maxLines: 1,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelLarge
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .montserrat(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1981,6 +1977,19 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                   .labelLarge
                                                                   .fontStyle,
                                                         ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .fontStyle,
+                                                      ),
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -1993,7 +2002,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                       'moderateur')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        columnUsersRecord.reference.id,
+                                        theSTeamPostPagePostsRecord
+                                            .reference.id,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -2516,7 +2526,9 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                               FFUploadedFile(
                                                                   bytes: Uint8List
                                                                       .fromList(
-                                                                          []));
+                                                                          []),
+                                                                  originalFilename:
+                                                                      '');
                                                           _model.uploadedFileUrl_uploadDataYnz =
                                                               '';
                                                         });
@@ -3199,6 +3211,8 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                                         ?.width,
                                                                     blurHash: m
                                                                         .blurHash,
+                                                                    originalFilename:
+                                                                        m.originalFilename,
                                                                   ))
                                                               .toList();
 

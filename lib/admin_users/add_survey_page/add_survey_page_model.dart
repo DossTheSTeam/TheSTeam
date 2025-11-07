@@ -32,13 +32,13 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   String? Function(BuildContext, String?)? titleFieldTextControllerValidator;
   bool isDataUploading_uploadData2ch = false;
   FFUploadedFile uploadedLocalFile_uploadData2ch =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData2ch = '';
 
   AudioRecorder? audioRecorder;
   String? audioPost;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController2;
@@ -52,7 +52,7 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
       descriptionFieldTextControllerValidator;
   bool isDataUploading_uploadData90s = false;
   FFUploadedFile uploadedLocalFile_uploadData90s =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData90s = '';
 
   // State field(s) for Choice1Field widget.
@@ -75,6 +75,10 @@ class AddSurveyPageModel extends FlutterFlowModel<AddSurveyPageWidget> {
   PostsRecord? postRef;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PostsRecord? postNewsRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PostsRecord? postNewsIOSRef;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PostsRecord? postNewsAndroidRef;
 
   @override
   void initState(BuildContext context) {}

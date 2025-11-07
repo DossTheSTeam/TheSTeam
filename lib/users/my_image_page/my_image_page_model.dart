@@ -8,7 +8,7 @@ class MyImagePageModel extends FlutterFlowModel<MyImagePageWidget> {
 
   bool isDataUploading_uploadDataAof = false;
   FFUploadedFile uploadedLocalFile_uploadDataAof =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataAof = '';
 
   @override

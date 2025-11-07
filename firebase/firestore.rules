@@ -76,10 +76,10 @@ service cloud.firestore {
 
 
     match /users/{parent}/my_notifications/{document} {
-      allow create: if request.auth.uid == parent;
+      allow create: if true;
       allow read: if true;
-      allow write: if request.auth.uid == parent;
-      allow delete: if request.auth.uid == parent;
+      allow write: if true;
+      allow delete: if true;
     }
 
     match /{path=**}/my_notifications/{document} {

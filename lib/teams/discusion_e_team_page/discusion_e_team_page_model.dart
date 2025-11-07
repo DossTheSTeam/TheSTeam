@@ -20,7 +20,7 @@ class DiscusionETeamPageModel
   AudioRecorder? audioRecorder;
   String? audioTeam;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
@@ -29,7 +29,7 @@ class DiscusionETeamPageModel
   TeamMessagesRecord? teamMessage;
   bool isDataUploading_uploadDataHat = false;
   FFUploadedFile uploadedLocalFile_uploadDataHat =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataHat = '';
 
   @override

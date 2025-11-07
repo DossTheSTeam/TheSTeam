@@ -34,7 +34,7 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
   String? Function(BuildContext, String?)? titleFieldTextControllerValidator;
   bool isDataUploading_uploadDataErx = false;
   FFUploadedFile uploadedLocalFile_uploadDataErx =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataErx = '';
 
   // State field(s) for TextField widget.
@@ -44,7 +44,7 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
   AudioRecorder? audioRecorder;
   String? audioPost;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
@@ -57,7 +57,7 @@ class AddPostPageModel extends FlutterFlowModel<AddPostPageWidget> {
   String? Function(BuildContext, String?)? textController4Validator;
   bool isDataUploading_uploadData8yc = false;
   FFUploadedFile uploadedLocalFile_uploadData8yc =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData8yc = '';
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.

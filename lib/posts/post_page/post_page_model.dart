@@ -19,7 +19,7 @@ class PostPageModel extends FlutterFlowModel<PostPageWidget> {
   AudioRecorder? audioRecorder;
   String? audio;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
@@ -28,7 +28,7 @@ class PostPageModel extends FlutterFlowModel<PostPageWidget> {
   PostMessagesRecord? commentRef;
   bool isDataUploading_uploadDataX6j = false;
   FFUploadedFile uploadedLocalFile_uploadDataX6j =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataX6j = '';
 
   @override

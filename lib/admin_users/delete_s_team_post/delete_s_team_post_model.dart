@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'menu_page_widget.dart' show MenuPageWidget;
+import 'delete_s_team_post_widget.dart' show DeleteSTeamPostWidget;
 import 'package:flutter/material.dart';
 
-class MenuPageModel extends FlutterFlowModel<MenuPageWidget> {
+class DeleteSTeamPostModel extends FlutterFlowModel<DeleteSTeamPostWidget> {
   @override
   void initState(BuildContext context) {}
 

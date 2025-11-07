@@ -58,7 +58,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
             child: Stack(
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1764,7 +1764,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                       color:
                                                           valueOrDefault<Color>(
                                                         currentUserDocument
-                                                            ?.color2,
+                                                            ?.color1,
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .accent1,
@@ -1917,7 +1917,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                           color: valueOrDefault<
                                                               Color>(
                                                             currentUserDocument
-                                                                ?.color2,
+                                                                ?.color1,
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .success,

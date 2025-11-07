@@ -1029,6 +1029,8 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
                                                     blurHash: m.blurHash,
+                                                    originalFilename:
+                                                        m.originalFilename,
                                                   ))
                                               .toList();
 
@@ -1176,6 +1178,8 @@ class _ModifPostWidgetState extends State<ModifPostWidget> {
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
                                                     blurHash: m.blurHash,
+                                                    originalFilename:
+                                                        m.originalFilename,
                                                   ))
                                               .toList();
 

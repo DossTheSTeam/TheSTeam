@@ -1815,7 +1815,20 @@ class _SignalEventMessagePageWidgetState
                                       await signalEventMessagePageMyNotificationsRecord
                                           .reference
                                           .delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'l0ragdiz' /* Confirmer le carton rouge */,
@@ -2044,7 +2057,20 @@ class _SignalEventMessagePageWidgetState
                                         modSeen: true,
                                       ));
                                       await widget.notifRef!.delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'y40fmxmf' /* Pas de carton */,
@@ -2171,7 +2197,20 @@ class _SignalEventMessagePageWidgetState
                                       await signalEventMessagePageMyNotificationsRecord
                                           .reference
                                           .delete();
-                                      context.safePop();
+
+                                      context.pushNamed(
+                                        ModeratorPageWidget.routeName,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                            duration:
+                                                Duration(milliseconds: 600),
+                                          ),
+                                        },
+                                      );
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '1jvtfmpa' /* Suppprimer le commentaire */,

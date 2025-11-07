@@ -11076,8 +11076,9 @@ Add yo... */
                                                       _model.uploadedLocalFile_uploadData9fm =
                                                           FFUploadedFile(
                                                               bytes: Uint8List
-                                                                  .fromList(
-                                                                      []));
+                                                                  .fromList([]),
+                                                              originalFilename:
+                                                                  '');
                                                       _model.uploadedFileUrl_uploadData9fm =
                                                           '';
                                                     });
@@ -11720,6 +11721,8 @@ Add yo... */
                                                                     ?.width,
                                                                 blurHash:
                                                                     m.blurHash,
+                                                                originalFilename:
+                                                                    m.originalFilename,
                                                               ))
                                                       .toList();
 

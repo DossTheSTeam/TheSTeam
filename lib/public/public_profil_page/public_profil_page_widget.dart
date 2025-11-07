@@ -279,7 +279,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .primaryBackground,
                                               ),
                                             );
                                           },
@@ -324,7 +324,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .primaryBackground,
                                               ),
                                             );
                                           },

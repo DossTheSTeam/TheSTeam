@@ -25,7 +25,7 @@ class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   AudioRecorder? audioRecorder;
   String? audio;
   FFUploadedFile recordedFileBytes =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   // State field(s) for CommField widget.
   FocusNode? commFieldFocusNode;
   TextEditingController? commFieldTextController;
@@ -34,7 +34,7 @@ class EventPageModel extends FlutterFlowModel<EventPageWidget> {
   EventMessagesRecord? commentRef;
   bool isDataUploading_uploadData9fm = false;
   FFUploadedFile uploadedLocalFile_uploadData9fm =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadData9fm = '';
 
   @override

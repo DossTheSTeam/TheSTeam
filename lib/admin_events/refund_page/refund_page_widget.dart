@@ -1751,7 +1751,6 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                                                   },
                                                                                 ),
                                                                               });
-                                                                              await rowMyBetsRecord.reference.delete();
 
                                                                               await MyNotificationsRecord.createDoc(columnUsersRecord.reference).set({
                                                                                 ...createMyNotificationsRecordData(
@@ -1768,6 +1767,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                                                   },
                                                                                 ),
                                                                               });
+                                                                              await rowMyBetsRecord.reference.delete();
                                                                             },
                                                                             child:
                                                                                 FaIcon(

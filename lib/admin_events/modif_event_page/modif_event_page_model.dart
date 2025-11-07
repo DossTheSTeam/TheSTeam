@@ -12,17 +12,17 @@ class ModifEventPageModel extends FlutterFlowModel<ModifEventPageWidget> {
   String? Function(BuildContext, String?)? modifOddFieldTextControllerValidator;
   bool isDataUploading_uploadDataGa3 = false;
   FFUploadedFile uploadedLocalFile_uploadDataGa3 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataGa3 = '';
 
   bool isDataUploading_uploadDataS73 = false;
   FFUploadedFile uploadedLocalFile_uploadDataS73 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataS73 = '';
 
   bool isDataUploading_uploadDataSre = false;
   FFUploadedFile uploadedLocalFile_uploadDataSre =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+      FFUploadedFile(bytes: Uint8List.fromList([]), originalFilename: '');
   String uploadedFileUrl_uploadDataSre = '';
 
   // State field(s) for ScoreDomField widget.

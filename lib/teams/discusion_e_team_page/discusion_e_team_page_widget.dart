@@ -404,10 +404,12 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                               safeSetState(() {
                                                                 _model.isDataUploading_uploadDataHat =
                                                                     false;
-                                                                _model.uploadedLocalFile_uploadDataHat =
-                                                                    FFUploadedFile(
-                                                                        bytes: Uint8List.fromList(
-                                                                            []));
+                                                                _model.uploadedLocalFile_uploadDataHat = FFUploadedFile(
+                                                                    bytes: Uint8List
+                                                                        .fromList(
+                                                                            []),
+                                                                    originalFilename:
+                                                                        '');
                                                                 _model.uploadedFileUrl_uploadDataHat =
                                                                     '';
                                                               });
@@ -1040,6 +1042,8 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                                   ?.width,
                                                               blurHash:
                                                                   m.blurHash,
+                                                              originalFilename:
+                                                                  m.originalFilename,
                                                             ))
                                                         .toList();
 

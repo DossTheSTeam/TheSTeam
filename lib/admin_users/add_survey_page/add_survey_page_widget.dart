@@ -492,6 +492,8 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                                                     ?.width,
                                                                 blurHash:
                                                                     m.blurHash,
+                                                                originalFilename:
+                                                                    m.originalFilename,
                                                               ))
                                                       .toList();
 
@@ -1337,6 +1339,8 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                                                                   ?.width,
                                                               blurHash:
                                                                   m.blurHash,
+                                                              originalFilename:
+                                                                  m.originalFilename,
                                                             ))
                                                         .toList();
 
@@ -2027,310 +2031,740 @@ class _AddSurveyPageWidgetState extends State<AddSurveyPageWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 30.0, 0.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                var postsRecordReference =
-                                    PostsRecord.collection.doc();
-                                await postsRecordReference.set({
-                                  ...createPostsRecordData(
-                                    title: _model.titleFieldTextController.text,
-                                    description: _model
-                                        .descriptionFieldTextController.text,
-                                    image: _model.uploadedFileUrl_uploadData2ch,
-                                    teamRef: widget.teamRef,
-                                    member: currentUserReference,
-                                    choice1:
-                                        _model.choice1FieldTextController.text,
-                                    choice2:
-                                        _model.choice2FieldTextController.text,
-                                    choice3:
-                                        _model.choice3FieldTextController.text,
-                                    leagueValue:
-                                        addSurveyPageTeamsRecord.leagueValue,
-                                    audio: _model.audioPost,
-                                    youtubeLink: _model.youtubeId,
-                                    text2: _model.textController7.text,
-                                    image2:
-                                        _model.uploadedFileUrl_uploadData90s,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time':
-                                          FieldValue.serverTimestamp(),
-                                    },
-                                  ),
-                                });
-                                _model.postRef =
-                                    PostsRecord.getDocumentFromData({
-                                  ...createPostsRecordData(
-                                    title: _model.titleFieldTextController.text,
-                                    description: _model
-                                        .descriptionFieldTextController.text,
-                                    image: _model.uploadedFileUrl_uploadData2ch,
-                                    teamRef: widget.teamRef,
-                                    member: currentUserReference,
-                                    choice1:
-                                        _model.choice1FieldTextController.text,
-                                    choice2:
-                                        _model.choice2FieldTextController.text,
-                                    choice3:
-                                        _model.choice3FieldTextController.text,
-                                    leagueValue:
-                                        addSurveyPageTeamsRecord.leagueValue,
-                                    audio: _model.audioPost,
-                                    youtubeLink: _model.youtubeId,
-                                    text2: _model.textController7.text,
-                                    image2:
-                                        _model.uploadedFileUrl_uploadData90s,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time': DateTime.now(),
-                                    },
-                                  ),
-                                }, postsRecordReference);
-
-                                await TeamPostsRecord.createDoc(
-                                        widget.teamRef!)
-                                    .set({
-                                  ...createTeamPostsRecordData(
-                                    posts: _model.postRef?.reference,
-                                    survey: true,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time':
-                                          FieldValue.serverTimestamp(),
-                                    },
-                                  ),
-                                });
-                                triggerPushNotification(
-                                  notificationTitle: currentUserDisplayName,
-                                  notificationText:
-                                      _model.titleFieldTextController.text,
-                                  notificationImageUrl:
-                                      addSurveyPageTeamsRecord.logo,
-                                  userRefs:
-                                      (currentUserDocument?.fans.toList() ??
-                                              [])
-                                          .toList(),
-                                  initialPageName: 'PostPage',
-                                  parameterData: {
-                                    'postRef': _model.postRef?.reference,
-                                  },
-                                );
-
-                                context.pushNamed(
-                                  ListSurveysWidget.routeName,
-                                  queryParameters: {
-                                    'teamRef': serializeParam(
-                                      widget.teamRef,
-                                      ParamType.DocumentReference,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.scale,
-                                      alignment: Alignment.bottomCenter,
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  },
-                                );
-
+                                0.0, 20.0, 0.0, 0.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                _model.showText2 = true;
                                 safeSetState(() {});
                               },
-                              text: FFLocalizations.of(context).getText(
-                                'a1z6dc9t' /* Valider Sondage */,
-                              ),
-                              options: FFButtonOptions(
-                                height: 30.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    25.0, 0.0, 25.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).success,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '4wowr893' /* Valider sur les 2 plateformes ... */,
+                                ),
+                                maxLines: 1,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
                                     .override(
                                       font: GoogleFonts.poppins(
                                         fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            .titleSmall
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            .titleSmall
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
+                                          .titleSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
+                                          .titleSmall
                                           .fontStyle,
                                     ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(40.0),
-                                hoverColor:
-                                    FlutterFlowTheme.of(context).success,
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 50.0, 0.0, 30.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                var postsRecordReference =
-                                    PostsRecord.collection.doc();
-                                await postsRecordReference.set({
-                                  ...createPostsRecordData(
-                                    title: _model.titleFieldTextController.text,
-                                    description: _model
-                                        .descriptionFieldTextController.text,
-                                    image: _model.uploadedFileUrl_uploadData2ch,
-                                    teamRef: widget.teamRef,
-                                    member: currentUserReference,
-                                    leagueValue:
-                                        addSurveyPageTeamsRecord.leagueValue,
-                                    foldCategorie: 'news',
-                                    audio: _model.audioPost,
-                                    youtubeLink: _model.youtubeId,
-                                    text2: _model.textController7.text,
-                                    image2:
-                                        _model.uploadedFileUrl_uploadData90s,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time':
-                                          FieldValue.serverTimestamp(),
-                                    },
-                                  ),
-                                });
-                                _model.postNewsRef =
-                                    PostsRecord.getDocumentFromData({
-                                  ...createPostsRecordData(
-                                    title: _model.titleFieldTextController.text,
-                                    description: _model
-                                        .descriptionFieldTextController.text,
-                                    image: _model.uploadedFileUrl_uploadData2ch,
-                                    teamRef: widget.teamRef,
-                                    member: currentUserReference,
-                                    leagueValue:
-                                        addSurveyPageTeamsRecord.leagueValue,
-                                    foldCategorie: 'news',
-                                    audio: _model.audioPost,
-                                    youtubeLink: _model.youtubeId,
-                                    text2: _model.textController7.text,
-                                    image2:
-                                        _model.uploadedFileUrl_uploadData90s,
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time': DateTime.now(),
-                                    },
-                                  ),
-                                }, postsRecordReference);
-
-                                await TeamPostsRecord.createDoc(
-                                        widget.teamRef!)
-                                    .set({
-                                  ...createTeamPostsRecordData(
-                                    posts: _model.postNewsRef?.reference,
-                                    news: true,
-                                    foldCategorie: 'news',
-                                  ),
-                                  ...mapToFirestore(
-                                    {
-                                      'created_time':
-                                          FieldValue.serverTimestamp(),
-                                    },
-                                  ),
-                                });
-                                triggerPushNotification(
-                                  notificationTitle: currentUserDisplayName,
-                                  notificationText:
-                                      _model.titleFieldTextController.text,
-                                  notificationImageUrl:
-                                      addSurveyPageTeamsRecord.logo,
-                                  userRefs:
-                                      (currentUserDocument?.fans.toList() ??
-                                              [])
-                                          .toList(),
-                                  initialPageName: 'PostPage',
-                                  parameterData: {
-                                    'postRef': _model.postNewsRef?.reference,
-                                  },
-                                );
-
-                                context.pushNamed(
-                                  ListAdvicesWidget.routeName,
-                                  queryParameters: {
-                                    'teamRef': serializeParam(
-                                      widget.teamRef,
-                                      ParamType.DocumentReference,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.scale,
-                                      alignment: Alignment.bottomCenter,
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  },
-                                );
-
-                                safeSetState(() {});
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'eeugwko6' /* Valider Nouveauté */,
-                              ),
-                              options: FFButtonOptions(
-                                height: 30.0,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    25.0, 0.0, 25.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).success,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
+                                    0.0, 20.0, 0.0, 20.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    var postsRecordReference =
+                                        PostsRecord.collection.doc();
+                                    await postsRecordReference.set({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        choice1: _model
+                                            .choice1FieldTextController.text,
+                                        choice2: _model
+                                            .choice2FieldTextController.text,
+                                        choice3: _model
+                                            .choice3FieldTextController.text,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
                                       ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      letterSpacing: 0.0,
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    _model.postRef =
+                                        PostsRecord.getDocumentFromData({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        choice1: _model
+                                            .choice1FieldTextController.text,
+                                        choice2: _model
+                                            .choice2FieldTextController.text,
+                                        choice3: _model
+                                            .choice3FieldTextController.text,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time': DateTime.now(),
+                                        },
+                                      ),
+                                    }, postsRecordReference);
+
+                                    await TeamPostsRecord.createDoc(
+                                            widget.teamRef!)
+                                        .set({
+                                      ...createTeamPostsRecordData(
+                                        posts: _model.postRef?.reference,
+                                        survey: true,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    triggerPushNotification(
+                                      notificationTitle: currentUserDisplayName,
+                                      notificationText:
+                                          _model.titleFieldTextController.text,
+                                      notificationImageUrl:
+                                          addSurveyPageTeamsRecord.logo,
+                                      userRefs: addSurveyPageTeamsRecord.fans
+                                          .toList(),
+                                      initialPageName: 'PostPage',
+                                      parameterData: {
+                                        'postRef': _model.postRef?.reference,
+                                      },
+                                    );
+
+                                    context.pushNamed(
+                                      ListSurveysWidget.routeName,
+                                      queryParameters: {
+                                        'teamRef': serializeParam(
+                                          widget.teamRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.scale,
+                                          alignment: Alignment.bottomCenter,
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'a1z6dc9t' /* Sondage */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 30.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        25.0, 0.0, 25.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 20.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    var postsRecordReference =
+                                        PostsRecord.collection.doc();
+                                    await postsRecordReference.set({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    _model.postNewsRef =
+                                        PostsRecord.getDocumentFromData({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time': DateTime.now(),
+                                        },
+                                      ),
+                                    }, postsRecordReference);
+
+                                    await TeamPostsRecord.createDoc(
+                                            widget.teamRef!)
+                                        .set({
+                                      ...createTeamPostsRecordData(
+                                        posts: _model.postNewsRef?.reference,
+                                        news: true,
+                                        foldCategorie: 'news',
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    triggerPushNotification(
+                                      notificationTitle: currentUserDisplayName,
+                                      notificationText:
+                                          _model.titleFieldTextController.text,
+                                      notificationImageUrl:
+                                          addSurveyPageTeamsRecord.logo,
+                                      userRefs: addSurveyPageTeamsRecord.fans
+                                          .toList(),
+                                      initialPageName: 'PostPage',
+                                      parameterData: {
+                                        'postRef':
+                                            _model.postNewsRef?.reference,
+                                      },
+                                    );
+
+                                    context.pushNamed(
+                                      ListAdvicesWidget.routeName,
+                                      queryParameters: {
+                                        'teamRef': serializeParam(
+                                          widget.teamRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.scale,
+                                          alignment: Alignment.bottomCenter,
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'eeugwko6' /* News */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 30.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        25.0, 0.0, 25.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.showText2 = true;
+                              safeSetState(() {});
+                            },
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'yp8mcb1a' /* Choix Plateforme News ? */,
+                              ),
+                              maxLines: 1,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font: GoogleFonts.poppins(
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
+                                          .titleSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
+                                          .titleSmall
                                           .fontStyle,
                                     ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(40.0),
-                                hoverColor:
-                                    FlutterFlowTheme.of(context).success,
-                              ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
                             ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 30.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    var postsRecordReference =
+                                        PostsRecord.collection.doc();
+                                    await postsRecordReference.set({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    _model.postNewsIOSRef =
+                                        PostsRecord.getDocumentFromData({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time': DateTime.now(),
+                                        },
+                                      ),
+                                    }, postsRecordReference);
+
+                                    await TeamPostsRecord.createDoc(
+                                            widget.teamRef!)
+                                        .set({
+                                      ...createTeamPostsRecordData(
+                                        posts: _model.postNewsIOSRef?.reference,
+                                        news: true,
+                                        foldCategorie: 'news',
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    triggerPushNotification(
+                                      notificationTitle: currentUserDisplayName,
+                                      notificationText:
+                                          _model.titleFieldTextController.text,
+                                      notificationImageUrl:
+                                          addSurveyPageTeamsRecord.logo,
+                                      userRefs: addSurveyPageTeamsRecord.fans
+                                          .where((e) => isiOS)
+                                          .toList(),
+                                      initialPageName: 'PostPage',
+                                      parameterData: {
+                                        'postRef':
+                                            _model.postNewsIOSRef?.reference,
+                                      },
+                                    );
+
+                                    context.pushNamed(
+                                      ListAdvicesWidget.routeName,
+                                      queryParameters: {
+                                        'teamRef': serializeParam(
+                                          widget.teamRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.scale,
+                                          alignment: Alignment.bottomCenter,
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'ormb12fn' /* IOS */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 30.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        25.0, 0.0, 25.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 30.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    var postsRecordReference =
+                                        PostsRecord.collection.doc();
+                                    await postsRecordReference.set({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    _model.postNewsAndroidRef =
+                                        PostsRecord.getDocumentFromData({
+                                      ...createPostsRecordData(
+                                        title: _model
+                                            .titleFieldTextController.text,
+                                        description: _model
+                                            .descriptionFieldTextController
+                                            .text,
+                                        image: _model
+                                            .uploadedFileUrl_uploadData2ch,
+                                        teamRef: widget.teamRef,
+                                        member: currentUserReference,
+                                        leagueValue: addSurveyPageTeamsRecord
+                                            .leagueValue,
+                                        foldCategorie: 'news',
+                                        audio: _model.audioPost,
+                                        youtubeLink: _model.youtubeId,
+                                        text2: _model.textController7.text,
+                                        image2: _model
+                                            .uploadedFileUrl_uploadData90s,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time': DateTime.now(),
+                                        },
+                                      ),
+                                    }, postsRecordReference);
+
+                                    await TeamPostsRecord.createDoc(
+                                            widget.teamRef!)
+                                        .set({
+                                      ...createTeamPostsRecordData(
+                                        posts: _model
+                                            .postNewsAndroidRef?.reference,
+                                        news: true,
+                                        foldCategorie: 'news',
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'created_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    triggerPushNotification(
+                                      notificationTitle: currentUserDisplayName,
+                                      notificationText:
+                                          _model.titleFieldTextController.text,
+                                      notificationImageUrl:
+                                          addSurveyPageTeamsRecord.logo,
+                                      userRefs: addSurveyPageTeamsRecord.fans
+                                          .where((e) => isAndroid)
+                                          .toList(),
+                                      initialPageName: 'PostPage',
+                                      parameterData: {
+                                        'postRef': _model
+                                            .postNewsAndroidRef?.reference,
+                                      },
+                                    );
+
+                                    context.pushNamed(
+                                      ListAdvicesWidget.routeName,
+                                      queryParameters: {
+                                        'teamRef': serializeParam(
+                                          widget.teamRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.scale,
+                                          alignment: Alignment.bottomCenter,
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    '41g0mowj' /* Android */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 30.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        25.0, 0.0, 25.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.poppins(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(40.0),
+                                    hoverColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

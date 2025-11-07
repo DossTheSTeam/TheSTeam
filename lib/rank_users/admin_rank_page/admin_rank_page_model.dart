@@ -10,6 +10,8 @@ class AdminRankPageModel extends FlutterFlowModel<AdminRankPageWidget> {
 
   String? showPenalitiesFilter;
 
+  String? showUpdateFilter;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Calendar widget.
