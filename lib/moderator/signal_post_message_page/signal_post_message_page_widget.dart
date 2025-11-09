@@ -10,7 +10,6 @@ import '/users/copy_text/copy_text_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'signal_post_message_page_model.dart';
 export 'signal_post_message_page_model.dart';
@@ -174,32 +173,18 @@ class _SignalPostMessagePageWidgetState
                                     ],
                                   ),
                                   Text(
-                                    FFLocalizations.of(context).getText(
-                                      'pqccepa3' /* Détails signalement */,
-                                    ),
+                                    'Détails signalement',
                                     maxLines: 1,
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          font: GoogleFonts.montserrat(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .displaySmall
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .displaySmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -306,34 +291,20 @@ class _SignalPostMessagePageWidgetState
                                                   'NewUser',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -382,32 +353,18 @@ class _SignalPostMessagePageWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .warning,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -431,30 +388,15 @@ class _SignalPostMessagePageWidgetState
                                                             context)
                                                         .labelMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
                                                           letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMediumIsCustom,
                                                         ),
                                                   ),
                                                   Padding(
@@ -525,33 +467,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -591,33 +520,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -657,33 +573,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -709,32 +612,18 @@ class _SignalPostMessagePageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 10.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'fp2mcb28' /* veut mettre un carton rouge à */,
-                                    ),
+                                    'veut mettre un carton rouge à',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -835,34 +724,20 @@ class _SignalPostMessagePageWidgetState
                                                   'NewUser',
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -911,32 +786,18 @@ class _SignalPostMessagePageWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .warning,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -960,30 +821,15 @@ class _SignalPostMessagePageWidgetState
                                                             context)
                                                         .labelMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
                                                           letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMediumIsCustom,
                                                         ),
                                                   ),
                                                   Padding(
@@ -1054,33 +900,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -1120,33 +953,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -1186,33 +1006,20 @@ class _SignalPostMessagePageWidgetState
                                                         '0',
                                                       ),
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -1238,32 +1045,18 @@ class _SignalPostMessagePageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 20.0, 0.0, 10.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'z3onf7uq' /* Pour la raison suivante */,
-                                    ),
+                                    'Pour la raison suivante',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1279,25 +1072,13 @@ class _SignalPostMessagePageWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyLargeIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1313,25 +1094,13 @@ class _SignalPostMessagePageWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyLargeIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1352,25 +1121,13 @@ class _SignalPostMessagePageWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyLarge
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLargeFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyLarge
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyLargeIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1381,32 +1138,18 @@ class _SignalPostMessagePageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 10.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ac5osojr' /* Dans le commentaire suivant */,
-                                    ),
+                                    'Dans le commentaire suivant',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1421,25 +1164,13 @@ class _SignalPostMessagePageWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -1519,59 +1250,29 @@ class _SignalPostMessagePageWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodySmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodySmall
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmallIsCustom,
                                                       ),
                                               playbackDurationTextStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelMediumIsCustom,
                                                       ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
@@ -1605,25 +1306,13 @@ class _SignalPostMessagePageWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -1633,27 +1322,15 @@ class _SignalPostMessagePageWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .warning,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
                                   ),
                                   Align(
@@ -1812,9 +1489,7 @@ class _SignalPostMessagePageWidgetState
                                         },
                                       );
                                     },
-                                    text: FFLocalizations.of(context).getText(
-                                      's9axy6pz' /* Confirmer le carton rouge */,
-                                    ),
+                                    text: 'Confirmer le carton rouge',
                                     options: FFButtonOptions(
                                       width: 350.0,
                                       height: 50.0,
@@ -1826,27 +1501,15 @@ class _SignalPostMessagePageWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -1869,32 +1532,18 @@ class _SignalPostMessagePageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'xjur9pzv' /* Refuser la demande */,
-                                    ),
+                                    'Refuser la demande',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1905,32 +1554,18 @@ class _SignalPostMessagePageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '73jfh9m2' /* pour la raison suivante */,
-                                    ),
+                                    'pour la raison suivante',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1947,15 +1582,9 @@ class _SignalPostMessagePageWidgetState
                                   'pas.dans.cgu'
                                 ]),
                                 optionLabels: [
-                                  FFLocalizations.of(context).getText(
-                                    'lau5sk4y' /* Manque d'elements */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '4nw9nsfq' /* Chambrage  */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'jgfoxmvf' /* Pas mentionnés dans CGU */,
-                                  )
+                                  'Manque d\'elements',
+                                  'Chambrage ',
+                                  'Pas mentionnés dans CGU'
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.dropReasonsValue = val),
@@ -1964,25 +1593,14 @@ class _SignalPostMessagePageWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'z4lcc8yh' /* Raisons */,
-                                ),
+                                hintText: 'Raisons',
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -2054,9 +1672,7 @@ class _SignalPostMessagePageWidgetState
                                         },
                                       );
                                     },
-                                    text: FFLocalizations.of(context).getText(
-                                      '8eub8ppt' /* Pas de carton */,
-                                    ),
+                                    text: 'Pas de carton',
                                     options: FFButtonOptions(
                                       width: 350.0,
                                       height: 50.0,
@@ -2069,27 +1685,15 @@ class _SignalPostMessagePageWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -2194,9 +1798,7 @@ class _SignalPostMessagePageWidgetState
                                         },
                                       );
                                     },
-                                    text: FFLocalizations.of(context).getText(
-                                      '6k4kxtu4' /* Suppprimer le commentaire */,
-                                    ),
+                                    text: 'Suppprimer le commentaire',
                                     options: FFButtonOptions(
                                       width: 350.0,
                                       height: 50.0,
@@ -2208,27 +1810,15 @@ class _SignalPostMessagePageWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(

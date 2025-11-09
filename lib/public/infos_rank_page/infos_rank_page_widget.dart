@@ -6,7 +6,6 @@ import '/users/copy_text/copy_text_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'infos_rank_page_model.dart';
 export 'infos_rank_page_model.dart';
@@ -121,33 +120,17 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                     'francais'))
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'drw9wytu' /* Informations 
-classement
-Paris... */
-                                    ,
-                                  ),
+                                  'Informations \nclassement\nParis sportifs',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -159,33 +142,17 @@ Paris... */
                                     'american'))
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    '3nceunaj' /* Ranking
-Information
-Sports Bet... */
-                                    ,
-                                  ),
+                                  'Ranking\nInformation\nSports Betting',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -194,33 +161,17 @@ Sports Bet... */
                                 'deutsch')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'a3p7wcq7' /* Ranking
-Informationen
-Sportwet... */
-                                    ,
-                                  ),
+                                  'Ranking\nInformationen\nSportwetten',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -229,33 +180,17 @@ Sportwet... */
                                 'espanol')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'a50rzgv6' /* Información
-de clasificación
-A... */
-                                    ,
-                                  ),
+                                  'Información\nde clasificación\nApuestas deportivas',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -264,33 +199,17 @@ A... */
                                 'italiano')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    '1kej0sdf' /* Informazioni
-sulla classifica
-... */
-                                    ,
-                                  ),
+                                  'Informazioni\nsulla classifica\nScommesse sportive',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -299,33 +218,17 @@ sulla classifica
                                 'portugues')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ykjbjazb' /* Informações
-de classificação
-A... */
-                                    ,
-                                  ),
+                                  'Informações\nde classificação\nApostas desportivas',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -441,109 +344,61 @@ A... */
                               Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '467hz0nt' /* LES LIGUES */,
-                                  ),
+                                  'LES LIGUES',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
                             ],
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'to7hxalb' /* Amateur, pro, champion, légend... */,
-                            ),
+                            'Amateur, pro, champion, légende',
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.montserrat(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelLargeIsCustom,
                                 ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                'p8nlrrpy' /* Une ligue comprends 3 division... */,
-                              ),
+                              'Une ligue comprends 3 divisions',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
                                   ),
                             ),
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'k0m0ujvt' /* Tous les utilisateurs débutent... */,
-                            ),
+                            'Tous les utilisateurs débutent en\nLigue Pro - Division 3',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.montserrat(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelLargeIsCustom,
                                 ),
                           ),
                           Align(
@@ -603,28 +458,17 @@ A... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  't5m5v8jg' /* Les montées et descentes de di... */,
-                                ),
+                                'Les montées et descentes de divisions s\'effectuent le 1er de chaque mois.\n(Minimum 1000 utilisateurs dans la division)',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyLargeFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyLargeIsCustom,
                                     ),
                               ),
                             ),
@@ -635,31 +479,20 @@ A... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'cxuwxffw' /* Les 25% en haut du classement ... */,
-                                ),
+                                'Les 25% en haut du classement montent en division suppérieure.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color:
                                           FlutterFlowTheme.of(context).success,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -670,30 +503,19 @@ A... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'xunppiv2' /* Les 25%  en bas du classement ... */,
-                                ),
+                                'Les 25%  en bas du classement retrogradent en division inférieure.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color: FlutterFlowTheme.of(context).error,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -704,31 +526,20 @@ A... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 5.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '6rvpfvtt' /* Les 10%  en haut du classement... */,
-                                ),
+                                'Les 10%  en haut du classement de division 1 montent en Ligue suppérieure.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color:
                                           FlutterFlowTheme.of(context).success,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -739,30 +550,19 @@ A... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'dg3rpv8r' /* Les 10%  en bas du classement ... */,
-                                ),
+                                'Les 10%  en bas du classement de division 3 retrogradent en Ligue inférieure.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color: FlutterFlowTheme.of(context).error,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -822,28 +622,17 @@ A... */
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                'rmrvzbf2' /* Pourquoi ? */,
-                              ),
+                              'Pourquoi ?',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    font: GoogleFonts.montserrat(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelLargeFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelLargeIsCustom,
                                   ),
                             ),
                           ),
@@ -854,60 +643,33 @@ A... */
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'hcs6ucfl' /* Aider */,
-                                  ),
+                                  'Aider',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ukijd23p' /* Les plus faibles à réussir */,
-                                    ),
+                                    'Les plus faibles à réussir',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -922,62 +684,33 @@ A... */
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'v2e6j888' /* Partager */,
-                                  ),
+                                  'Partager',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'bkwye968' /* Vos pronostiques de
-manière re... */
-                                      ,
-                                    ),
+                                    'Vos pronostiques de\nmanière responsable',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -992,60 +725,33 @@ manière re... */
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'j3tmkskn' /* Echanger */,
-                                  ),
+                                  'Echanger',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '8mrgwj79' /* Entre personne du même niveau */,
-                                    ),
+                                    'Entre personne du même niveau',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1060,60 +766,33 @@ manière re... */
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'i1s8fj3c' /* Proteger */,
-                                  ),
+                                  'Proteger',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'c3x882rz' /* Les discussions pertinentes */,
-                                    ),
+                                    'Les discussions pertinentes',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
                                   ),
                                 ),
@@ -1177,28 +856,17 @@ manière re... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '7d6ys0e4' /* Le classement à plusieurs util... */,
-                                ),
+                                'Le classement à plusieurs utilités :\n\nil met en lumière les meilleurs pronostiqueurs de la communauté.\nCela permet aux utilisateurs ayant peu de réussite de suivre les meilleurs.\nCela permet aussi aux membres les plus performants de discuter avec des personnes du même niveau.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyLargeFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyLargeIsCustom,
                                     ),
                               ),
                             ),
@@ -1260,28 +928,17 @@ manière re... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '9d3bms29' /* Comment ? */,
-                                ),
+                                'Comment ?',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      font: GoogleFonts.montserrat(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelLargeFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelLargeIsCustom,
                                     ),
                               ),
                             ),
@@ -1289,28 +946,17 @@ manière re... */
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                '3oleipe7' /* Le classement prend en compte ... */,
-                              ),
+                              'Le classement prend en compte vos choix de paris sportifs ainsi que vos actions dans l\'application, votre stock de pièces  peut s\'élever grâce à des paris gagnants, des clickSTeam et des réactions que vous provoquez.\nEn revanche des paris perdants ainsi que des cartons rouges  reçus feront baisser votre stock et perdre des places au classement. Une période d\'innactivité de plus de 3 mois entraine la descente en division inférieure.',
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .bodyLarge
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyLargeFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyLargeIsCustom,
                                   ),
                             ),
                           ),
@@ -1371,28 +1017,17 @@ manière re... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '6hktaf8v' /* Barème */,
-                                ),
+                                'Barème',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      font: GoogleFonts.montserrat(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelLargeFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelLargeIsCustom,
                                     ),
                               ),
                             ),
@@ -1417,66 +1052,37 @@ manière re... */
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'l6rjg4ek' /* Réponse de commentaires */,
-                                          ),
+                                          'Réponse de commentaires',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'jq3m4t2c' /* + 0.50 */,
-                                        ),
+                                        '+ 0.50',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelLargeIsCustom,
                                             ),
                                       ),
                                     ],
@@ -1496,66 +1102,37 @@ manière re... */
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'za1h9w5g' /* Like / Dislike */,
-                                          ),
+                                          'Like / Dislike',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'w8d19zvo' /* + 0.50 */,
-                                        ),
+                                        '+ 0.50',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelLargeIsCustom,
                                             ),
                                       ),
                                     ],
@@ -1575,66 +1152,37 @@ manière re... */
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'ialbh2l3' /* ClickSteam */,
-                                          ),
+                                          'ClickSteam',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'rmu298mo' /* + 2 */,
-                                        ),
+                                        '+ 2',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelLargeIsCustom,
                                             ),
                                       ),
                                     ],
@@ -1654,66 +1202,37 @@ manière re... */
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'ekbyf8ye' /* Carton rouge */,
-                                          ),
+                                          'Carton rouge',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'wgdu0g8v' /* - 5 */,
-                                        ),
+                                        '- 5',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelLargeIsCustom,
                                             ),
                                       ),
                                     ],
@@ -1733,66 +1252,37 @@ manière re... */
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '8t51emt8' /* Suppression de contenu */,
-                                          ),
+                                          'Suppression de contenu',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'o8m23a82' /* - 10 */,
-                                        ),
+                                        '- 10',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              font: GoogleFonts.montserrat(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelLargeIsCustom,
                                             ),
                                       ),
                                     ],
@@ -1855,27 +1345,16 @@ manière re... */
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                '8r4m3upz' /* Nous vous conseillons de consu... */,
-                              ),
+                              'Nous vous conseillons de consulter les conditions générales d\'utilisation afin de vous informer sur les risques liés à un comportement inapproprié.',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
                                   ),
                             ),
                           ),
@@ -1962,36 +1441,21 @@ manière re... */
                                           0.0, 10.0, 0.0, 0.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'kocgvwyn' /* Conditions générales */,
-                                          ),
+                                          'Conditions générales',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLargeFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -2006,34 +1470,20 @@ manière re... */
                                           'american'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '25jkd4tv' /* General conditions */,
-                                        ),
+                                        'General conditions',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -2042,37 +1492,21 @@ manière re... */
                                       'deutsch')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'jdret8tx' /* Allgemeine
-Geschäftsbedingunge... */
-                                          ,
-                                        ),
+                                        'Allgemeine\nGeschäftsbedingungen',
                                         textAlign: TextAlign.end,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -2081,34 +1515,20 @@ Geschäftsbedingunge... */
                                       'espanol')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'zagdlqe8' /* Condiciones generales */,
-                                        ),
+                                        'Condiciones generales',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -2117,34 +1537,20 @@ Geschäftsbedingunge... */
                                       'italiano')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '8k838q0j' /* Condizioni generali */,
-                                        ),
+                                        'Condizioni generali',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -2153,34 +1559,20 @@ Geschäftsbedingunge... */
                                       'portugues')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'c1yee9d2' /* Condições gerais */,
-                                        ),
+                                        'Condições gerais',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -2194,30 +1586,17 @@ Geschäftsbedingunge... */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'ju4a9ddi' /* Dans cette application ...
-Tou... */
-                                  ,
-                                ),
+                                'Dans cette application ...\nTout est publique',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      font: GoogleFonts.montserrat(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelLargeFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelLargeIsCustom,
                                     ),
                               ),
                             ),
@@ -2225,56 +1604,34 @@ Tou... */
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                'utbntbx5' /* La visibilité des pronostiques... */,
-                              ),
+                              'La visibilité des pronostiques, des classements , des commentaires...',
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
                                   ),
                             ),
                           ),
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                '6vkgn5y0' /* Mais vous ne pourrez pas comme... */,
-                              ),
+                              'Mais vous ne pourrez pas commenter dans une autre ligue que la votre.',
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -2355,27 +1712,16 @@ Tou... */
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 10.0),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                '7bhp4uhw' /* Copyright © 2025 The S Team Sp... */,
-                              ),
+                              'Copyright © 2025 The S Team Sport',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                             ),
                           ),

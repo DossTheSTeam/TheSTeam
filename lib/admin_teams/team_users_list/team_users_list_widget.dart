@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'team_users_list_model.dart';
 export 'team_users_list_model.dart';
 
@@ -178,29 +177,15 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
+                                                          .labelMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -214,25 +199,16 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                         ),
                         Text(
                           teamUsersListTeamsRecord.reference.id,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    color: FlutterFlowTheme.of(context).warning,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                color: FlutterFlowTheme.of(context).warning,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
@@ -259,25 +235,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                       Padding(
@@ -467,13 +431,9 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -632,25 +592,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                       Padding(
@@ -840,13 +788,9 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1025,25 +969,13 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                       Padding(
@@ -1233,13 +1165,9 @@ class _TeamUsersListWidgetState extends State<TeamUsersListWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),

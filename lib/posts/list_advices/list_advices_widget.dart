@@ -9,7 +9,6 @@ import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'list_advices_model.dart';
 export 'list_advices_model.dart';
 
@@ -153,22 +152,10 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                   ''
                                                 ]),
                                                 optionLabels: [
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'ip7qwik5' /* Conseils sur l'appli */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'la4n75ts' /* Conseils de parieur */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'egrlsztc' /* Actualités */,
-                                                  ),
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '7hkyp4jd' /* Catégories */,
-                                                  )
+                                                  'Conseils sur l\'appli',
+                                                  'Conseils de parieur',
+                                                  'Actualités',
+                                                  'Catégories'
                                                 ],
                                                 onChanged: (val) async {
                                                   safeSetState(() => _model
@@ -179,39 +166,21 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                 },
                                                 width: 180.0,
                                                 height: 50.0,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '88md016r' /* Actus/Conseils */,
-                                                ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
+                                                        ),
+                                                hintText: 'Actus/Conseils',
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -753,13 +722,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                                 textAlign: TextAlign.start,
                                                                                 maxLines: 2,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -886,13 +851,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -936,13 +897,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -986,13 +943,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -1037,13 +990,9 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],

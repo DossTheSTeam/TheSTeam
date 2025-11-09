@@ -7,7 +7,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'my_teams_list_events_model.dart';
 export 'my_teams_list_events_model.dart';
 
@@ -144,33 +143,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                             'francais'))
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '0fxvs891' /* Evénements */,
-                                          ),
+                                          'Evénements',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -184,33 +168,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                             'american'))
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            't581m2s8' /* Events */,
-                                          ),
+                                          'Events',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -219,33 +188,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         'deutsch')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '5iqhuw52' /* Veranstaltungen */,
-                                          ),
+                                          'Veranstaltungen',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -254,33 +208,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         'espanol')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'zbu64uko' /* Eventos */,
-                                          ),
+                                          'Eventos',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -289,33 +228,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         'italiano')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '2rw7wnrg' /* Eventi */,
-                                          ),
+                                          'Eventi',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -324,33 +248,18 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         'portugues')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'tayl2a61' /* Eventos */,
-                                          ),
+                                          'Eventos',
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
-                                                font: GoogleFonts.montserrat(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                         ),
                                       ),
@@ -641,29 +550,19 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   '00/00/0000',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                               Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                                                                                 child: Text(
-                                                                                  FFLocalizations.of(context).getText(
-                                                                                    'ggf2thne' /* - */,
-                                                                                  ),
+                                                                                  '-',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        font: GoogleFonts.poppins(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -673,29 +572,19 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   '00',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                               Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                                                                                 child: Text(
-                                                                                  FFLocalizations.of(context).getText(
-                                                                                    '9q3danc8' /* : */,
-                                                                                  ),
+                                                                                  ':',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        font: GoogleFonts.poppins(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -705,13 +594,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                   '00',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -881,13 +766,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                                 'W',
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                    font: GoogleFonts.montserrat(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                                    ),
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1027,13 +908,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                             textAlign: TextAlign.start,
                                                                                             maxLines: 2,
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                  font: GoogleFonts.poppins(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                  ),
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1162,13 +1039,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                             textAlign: TextAlign.start,
                                                                                             maxLines: 2,
                                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                  font: GoogleFonts.poppins(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                  ),
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1210,13 +1083,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                 ),
                                                                                 textAlign: TextAlign.end,
                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1240,13 +1109,9 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                 ),
                                                                                 textAlign: TextAlign.end,
                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1335,42 +1200,22 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                 'francais'))
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ou7m0sn1' /* Vos équipes preferées n'ont
-pa... */
-                                                ,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              'Vos équipes preferées n\'ont\npas d\'évènements à venir\nRechercher des équipes',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         if ((valueOrDefault(
@@ -1385,42 +1230,22 @@ pa... */
                                                 'american'))
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'czpvgcag' /* Your favorite teams have no
-up... */
-                                                ,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              'Your favorite teams have no\nupcoming events.\nSearch for teams',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         if (valueOrDefault(
@@ -1429,41 +1254,23 @@ up... */
                                             'deutsch')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'xrjlzmeu' /* Ihre Lieblingsteams haben kein... */,
-                                              ),
+                                              'Ihre Lieblingsteams haben keine \nanstehenden Veranstaltungen.\nTeams suchen',
                                               textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         if (valueOrDefault(
@@ -1472,40 +1279,22 @@ up... */
                                             'espanol')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'cgt3azbb' /* Tus equipos favoritos no tiene... */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              'Tus equipos favoritos no tienen\neventos próximos.\nBuscar equipos',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         if (valueOrDefault(
@@ -1514,42 +1303,22 @@ up... */
                                             'italiano')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'yn60n4w7' /* Le tue squadre preferite non
-h... */
-                                                ,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              'Le tue squadre preferite non\nhanno eventi imminenti.\nCerca squadre',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         if (valueOrDefault(
@@ -1558,42 +1327,22 @@ h... */
                                             'portugues')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'btud0spj' /* As suas equipas favoritas
-não ... */
-                                                ,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.montserrat(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLarge
-                                                            .fontStyle,
-                                                  ),
+                                              'As suas equipas favoritas\nnão têm eventos futuros.\nProcure por equipas',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLargeFamily,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLargeIsCustom,
+                                                      ),
                                             ),
                                           ),
                                         AuthUserStreamWidget(

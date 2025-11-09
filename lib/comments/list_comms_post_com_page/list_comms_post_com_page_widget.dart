@@ -8,7 +8,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'list_comms_post_com_page_model.dart';
 export 'list_comms_post_com_page_model.dart';
 
@@ -274,36 +273,23 @@ class _ListCommsPostComPageWidgetState
                                                       rowUsersRecord
                                                           .displayName,
                                                       maxLines: 1,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                                ),
-                                                                color:
-                                                                    rowUsersRecord
-                                                                        .color1,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .titleSmallFamily,
+                                                            color:
+                                                                rowUsersRecord
+                                                                    .color1,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -354,21 +340,11 @@ class _ListCommsPostComPageWidgetState
                                         ''
                                       ]),
                                       optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          '24c0r8qp' /* Amateur */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'gqku86cl' /* Pro */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          '5uxidgu5' /* Champion */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'x0u9blgb' /* Légende */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'ix4tyxf5' /* Ligues */,
-                                        )
+                                        'Amateur',
+                                        'Pro',
+                                        'Champion',
+                                        'Légende',
+                                        'Ligues'
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropLigueValue = val),
@@ -377,30 +353,15 @@ class _ListCommsPostComPageWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        '6f9rg7tn' /* Ligue */,
-                                      ),
+                                      hintText: 'Ligue',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -720,17 +681,13 @@ class _ListCommsPostComPageWidgetState
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                          font: GoogleFonts.montserrat(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                           color: valueOrDefault<Color>(
                                                                                             columnUsersRecord.color1,
                                                                                             FlutterFlowTheme.of(context).primaryText,
                                                                                           ),
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -763,13 +720,9 @@ class _ListCommsPostComPageWidgetState
                                                                                     columnCommsSportPostMessagesRecord.text,
                                                                                     maxLines: 2,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -835,13 +788,9 @@ class _ListCommsPostComPageWidgetState
                                                                               ),
                                                                               maxLines: 1,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.poppins(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                    ),
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -899,13 +848,9 @@ class _ListCommsPostComPageWidgetState
                                                                                         ),
                                                                                         maxLines: 1,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.poppins(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -931,13 +876,9 @@ class _ListCommsPostComPageWidgetState
                                                                                         ),
                                                                                         maxLines: 1,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.poppins(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -963,13 +904,9 @@ class _ListCommsPostComPageWidgetState
                                                                                         ),
                                                                                         maxLines: 1,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.poppins(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -996,13 +933,9 @@ class _ListCommsPostComPageWidgetState
                                                                                       ),
                                                                                       maxLines: 1,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            font: GoogleFonts.poppins(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                            ),
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],

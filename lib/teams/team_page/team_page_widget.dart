@@ -15,7 +15,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'team_page_model.dart';
 export 'team_page_model.dart';
@@ -210,26 +209,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: teamPageTeamsRecord.color1,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ],
@@ -255,26 +242,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: teamPageTeamsRecord.color1,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ],
@@ -616,18 +591,10 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                       context)
                                                   .labelMedium
                                                   .override(
-                                                    font: GoogleFonts.poppins(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMediumFamily,
                                                     color:
                                                         valueOrDefault<Color>(
                                                       teamPageTeamsRecord
@@ -637,16 +604,10 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                           .primaryText,
                                                     ),
                                                     letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
                                                                 context)
-                                                            .labelMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontStyle,
+                                                            .labelMediumIsCustom,
                                                   ),
                                             ),
                                           ],
@@ -670,25 +631,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1108,22 +1057,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'qn0fjrvk' /* V - D */,
-                                                                        ),
+                                                                        'V - D',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1140,22 +1082,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'nlcys5al' /* W - L */,
-                                                                        ),
+                                                                        'W - L',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1168,22 +1103,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '5utfwsy7' /* W - V */,
-                                                                        ),
+                                                                        'W - V',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1196,22 +1124,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'de17rssl' /* V - P */,
-                                                                        ),
+                                                                        'V - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1224,22 +1145,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'fgbqm0sc' /* V - P */,
-                                                                        ),
+                                                                        'V - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1252,22 +1166,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'v0xcfyl9' /* V - P */,
-                                                                        ),
+                                                                        'V - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1312,22 +1219,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '8yueexq1' /* V - N - D */,
-                                                                        ),
+                                                                        'V - N - D',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1344,22 +1244,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'gnxi1icv' /* W - D - L */,
-                                                                        ),
+                                                                        'W - D - L',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1372,22 +1265,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'nwfjfvkz' /* W - Z - V */,
-                                                                        ),
+                                                                        'W - Z - V',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1400,22 +1286,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '7ur0nvrr' /* V - D - P */,
-                                                                        ),
+                                                                        'V - D - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1428,22 +1307,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'hnble4p9' /* V - D - P */,
-                                                                        ),
+                                                                        'V - D - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1456,22 +1328,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'qeldf998' /* V - E - P */,
-                                                                        ),
+                                                                        'V - E - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1482,11 +1347,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   .sportValue ==
                                                               'sports.meca')
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '543lsj9q' /* V - Top 3 */,
-                                                              ),
+                                                              'V - Top 3',
                                                               textAlign:
                                                                   TextAlign
                                                                       .center,
@@ -1494,27 +1355,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .montserrat(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
                                                                   ),
                                                             ),
                                                           Row(
@@ -1545,55 +1393,29 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
                                                               Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'a699g8m6' /* - */,
-                                                                ),
+                                                                '-',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelMediumIsCustom,
                                                                     ),
                                                               ),
                                                               if ((teamPageTeamsRecord.sportValue != 'basketball') &&
@@ -1622,21 +1444,12 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1651,32 +1464,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           .sportValue !=
                                                                       'sports.meca'))
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'pbzrxjjz' /* - */,
-                                                                  ),
+                                                                  '-',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (teamPageTeamsRecord
@@ -1701,21 +1499,12 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1743,30 +1532,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '371jconp' /* Classement */,
-                                                                    ),
+                                                                    'Classement',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1784,30 +1560,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'oft6ww2b' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1820,30 +1583,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'vp4m54zm' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1856,30 +1606,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'waf0vwey' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1892,30 +1629,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'cmwyxvo4' /* Classifica */,
-                                                                    ),
+                                                                    'Classifica',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1928,30 +1652,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '19myy90q' /* Classificação */,
-                                                                    ),
+                                                                    'Classificação',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2124,20 +1835,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             .champion ==
                                                                         true)
                                                                       Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'h65usw85' /* C */,
-                                                                        ),
+                                                                        'C',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     if (teamPageTeamsRecord
@@ -2198,13 +1902,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                   ),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                        font: GoogleFonts.montserrat(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                                        ),
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               );
@@ -2283,13 +1983,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                  font: GoogleFonts.montserrat(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                                 ),
                                                                           ),
                                                                         );
@@ -2470,22 +2166,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '95a63hh9' /* V - N - D */,
-                                                                        ),
+                                                                        'V - N - D',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2502,22 +2191,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'c1hfmq4y' /* W - D - L */,
-                                                                        ),
+                                                                        'W - D - L',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2530,22 +2212,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          's142q3y9' /* W - Z - V */,
-                                                                        ),
+                                                                        'W - Z - V',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2558,22 +2233,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'cmlmjheh' /* V - D - P */,
-                                                                        ),
+                                                                        'V - D - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2586,22 +2254,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'kyw4pv3y' /* V - D - P */,
-                                                                        ),
+                                                                        'V - D - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2614,22 +2275,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'z49ido6u' /* V - E - P */,
-                                                                        ),
+                                                                        'V - E - P',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: GoogleFonts.montserrat(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelLarge.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2664,55 +2318,29 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
                                                               Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '2sreclqe' /* - */,
-                                                                ),
+                                                                '-',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Padding(
@@ -2735,23 +2363,12 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2759,32 +2376,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .sportValue !=
                                                                   'sports.meca')
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'pt1w4ggu' /* - */,
-                                                                  ),
+                                                                  '-',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (teamPageTeamsRecord
@@ -2809,21 +2411,12 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2851,30 +2444,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '9zi3zfr8' /* Classement */,
-                                                                    ),
+                                                                    'Classement',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2892,30 +2472,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'k3mr5o9s' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2928,30 +2495,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'z970mafv' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2964,30 +2518,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'd8vuqjo4' /* Ranking */,
-                                                                    ),
+                                                                    'Ranking',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3000,30 +2541,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'beazeikg' /* Classifica */,
-                                                                    ),
+                                                                    'Classifica',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3036,30 +2564,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'zjzqsikx' /* Classificação */,
-                                                                    ),
+                                                                    'Classificação',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3146,13 +2661,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleLarge
                                                                               .override(
-                                                                                font: GoogleFonts.montserrat(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).titleLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                               ),
                                                                         ),
                                                                       );
@@ -3336,14 +2847,10 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                               ),
                                                                         ),
                                                                         duration:
@@ -3430,27 +2937,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                     .of(context)
                                                                 .titleLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLargeIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -3475,32 +2970,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    's7wo5pvb' /* Fans */,
-                                                                  ),
+                                                                  'Fans',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3518,32 +2998,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'knyhhkuf' /* Fans */,
-                                                                  ),
+                                                                  'Fans',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3556,32 +3021,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'b0ndqy02' /* Fans */,
-                                                                  ),
+                                                                  'Fans',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3594,32 +3044,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'fzz5txad' /* Fans */,
-                                                                  ),
+                                                                  'Fans',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3632,32 +3067,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '4uxf7or1' /* Tifosi */,
-                                                                  ),
+                                                                  'Tifosi',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3670,32 +3090,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'kga4dzje' /* Adeptos */,
-                                                                  ),
+                                                                  'Adeptos',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3856,27 +3261,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .of(context)
                                                                   .titleLarge
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .montserrat(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleLargeIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3902,30 +3294,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '9riakgga' /* Membres */,
-                                                                    ),
+                                                                    'Membres',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3943,30 +3322,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'na1vdy19' /* Members */,
-                                                                    ),
+                                                                    'Members',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3979,30 +3345,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'tgcv5q3i' /* Mitglieder */,
-                                                                    ),
+                                                                    'Mitglieder',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -4015,30 +3368,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'pr9rk2lm' /* Miembros */,
-                                                                    ),
+                                                                    'Miembros',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -4051,30 +3391,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '49y6s5pb' /* Membri */,
-                                                                    ),
+                                                                    'Membri',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -4087,30 +3414,17 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                   builder:
                                                                       (context) =>
                                                                           Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'p2fm95gt' /* Membros */,
-                                                                    ),
+                                                                    'Membros',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.montserrat(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelLarge.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -4188,20 +3502,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'h3lgsa9j' /* Membres */,
-                                                                        ),
+                                                                        'Membres',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4218,20 +3525,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'swj14tms' /* Members */,
-                                                                        ),
+                                                                        'Members',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4244,20 +3544,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '0xfw3rrd' /* Mitglieder */,
-                                                                        ),
+                                                                        'Mitglieder',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4270,20 +3563,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'drjn5ihl' /* Miembros */,
-                                                                        ),
+                                                                        'Miembros',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4296,20 +3582,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'rpdrfvbe' /* Membri */,
-                                                                        ),
+                                                                        'Membri',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4322,20 +3601,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '2owadkyh' /* Membros */,
-                                                                        ),
+                                                                        'Membros',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -4379,21 +3651,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           (valueOrDefault(currentUserDocument?.langage, '') ==
                                                                               'francais'))
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'g1zyr47w' /* Ne plus voir les infos de cet ... */,
-                                                                          ),
+                                                                          'Ne plus voir les infos de cet utilisateur  ',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       if ((valueOrDefault(currentUserDocument?.langage, '') ==
@@ -4401,21 +3666,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           (valueOrDefault(currentUserDocument?.langage, '') ==
                                                                               'american'))
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'ayoup7yk' /* No longer see this user's info... */,
-                                                                          ),
+                                                                          'No longer see this user\'s information',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       if (valueOrDefault(
@@ -4423,21 +3681,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '') ==
                                                                           'deutsch')
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            '1ihr962d' /* Die Informationen dieses Benut... */,
-                                                                          ),
+                                                                          'Die Informationen dieses Benutzers werden nicht mehr angezeigt',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       if (valueOrDefault(
@@ -4445,21 +3696,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '') ==
                                                                           'espanol')
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'id5ba8y1' /* Ya no veo la información de es... */,
-                                                                          ),
+                                                                          'Ya no veo la información de este usuario',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       if (valueOrDefault(
@@ -4467,21 +3711,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '') ==
                                                                           'italiano')
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            '8a8ab9ra' /* Non visualizzerai più le infor... */,
-                                                                          ),
+                                                                          'Non visualizzerai più le informazioni di questo utente',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       if (valueOrDefault(
@@ -4489,21 +3726,14 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '') ==
                                                                           'portugues')
                                                                         Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            's7lpvni5' /* Já não vejo as informações des... */,
-                                                                          ),
+                                                                          'Já não vejo as informações deste utilizador',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                     ],
@@ -4717,13 +3947,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                 ),
                                                                                 maxLines: 1,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -4796,34 +4022,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '1gr7dig7' /* Copier couleurs */,
-                                                                  ),
+                                                                  'Copier couleurs',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -4841,34 +4052,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '136ehppw' /* Copy colors */,
-                                                                  ),
+                                                                  'Copy colors',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -4881,34 +4077,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2zp8v3f9' /* Farben kopieren */,
-                                                                  ),
+                                                                  'Farben kopieren',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -4921,34 +4102,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'k2orczgo' /* Copiar colores */,
-                                                                  ),
+                                                                  'Copiar colores',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -4961,34 +4127,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'i1q2hlwb' /* Copia i colori */,
-                                                                  ),
+                                                                  'Copia i colori',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5001,34 +4152,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '3m0x9zkn' /* Copiar cores */,
-                                                                  ),
+                                                                  'Copiar cores',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5203,34 +4339,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2w56p9v9' /* Copier l'image */,
-                                                                  ),
+                                                                  'Copier l\'image',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5248,34 +4369,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'tvux8drl' /* Copy image */,
-                                                                  ),
+                                                                  'Copy image',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5288,34 +4394,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'th02qu6e' /* Bild kopieren */,
-                                                                  ),
+                                                                  'Bild kopieren',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5328,34 +4419,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '2qjug0uq' /* Copiar imagen */,
-                                                                  ),
+                                                                  'Copiar imagen',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5368,34 +4444,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '83wasu5y' /* Copia immagine */,
-                                                                  ),
+                                                                  'Copia immagine',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5408,34 +4469,19 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                 builder:
                                                                     (context) =>
                                                                         Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'kc0mkzyp' /* Copiar imagem */,
-                                                                  ),
+                                                                  'Copiar imagem',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -5611,37 +4657,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'gec57c1n' /* Evénements */,
-                                                        ),
+                                                        'Evénements',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -5658,37 +4688,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'gdvcgt9x' /* Events */,
-                                                        ),
+                                                        'Events',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -5700,37 +4714,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'r4ojcag2' /* Veranstaltungen */,
-                                                        ),
+                                                        'Veranstaltungen',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -5742,37 +4740,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'nasz3hsl' /* Eventos */,
-                                                        ),
+                                                        'Eventos',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -5784,37 +4766,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'ekg2i1es' /* Eventi */,
-                                                        ),
+                                                        'Eventi',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -5826,37 +4792,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '9tlsyvbw' /* Eventos */,
-                                                        ),
+                                                        'Eventos',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -6089,13 +5039,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '00/00/0000',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Padding(
@@ -6106,17 +5052,11 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'l3nspi1e' /* - */,
-                                                                              ),
+                                                                              '-',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.poppins(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                    ),
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6126,13 +5066,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '00',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Padding(
@@ -6143,17 +5079,11 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'bjsvv4zt' /* : */,
-                                                                              ),
+                                                                              ':',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.poppins(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                    ),
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6163,13 +5093,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                               '00',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -6281,13 +5207,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                       textAlign: TextAlign.start,
                                                                                       maxLines: 2,
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                            font: GoogleFonts.poppins(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                            ),
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -6438,13 +5360,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                       textAlign: TextAlign.start,
                                                                                       maxLines: 2,
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                            font: GoogleFonts.poppins(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                            ),
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -6485,13 +5403,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -6511,13 +5425,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -6704,13 +5614,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                       Padding(
@@ -6721,20 +5627,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             0.0),
                                                                         child:
                                                                             Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'maru6alm' /* - */,
-                                                                          ),
+                                                                          '-',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -6749,13 +5648,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                       Padding(
@@ -6766,20 +5661,13 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             0.0),
                                                                         child:
                                                                             Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            '8viyivnu' /* : */,
-                                                                          ),
+                                                                          ':',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.poppins(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -6793,13 +5681,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -6817,27 +5701,15 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Padding(
@@ -6997,38 +5869,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         'francais'))
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'frz5pdd0' /* Actualités */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Actualités',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 if ((valueOrDefault(
@@ -7043,38 +5898,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                         'american'))
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'aqgwmdoh' /* News */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'News',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 if (valueOrDefault(
@@ -7084,38 +5922,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     'deutsch')
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'hc9galz4' /* Neuigkeiten */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Neuigkeiten',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 if (valueOrDefault(
@@ -7125,38 +5946,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     'espanol')
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'yq5afzvp' /* Noticias */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Noticias',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 if (valueOrDefault(
@@ -7166,38 +5970,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     'italiano')
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'u2mzsu5d' /* Notizie */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Notizie',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 if (valueOrDefault(
@@ -7207,38 +5994,21 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     'portugues')
                                                   AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'f8b9jgls' /* Novidades */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Novidades',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                               ],
@@ -7595,13 +6365,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   maxLines: 2,
                                                                                                   style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                        font: GoogleFonts.poppins(
-                                                                                                          fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                          fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                        ),
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -7675,13 +6441,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                           ),
                                                                                           maxLines: 1,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -7707,13 +6469,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                           ),
                                                                                           maxLines: 1,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -7739,13 +6497,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                           ),
                                                                                           maxLines: 1,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -7772,13 +6526,9 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                         ),
                                                                                         maxLines: 1,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.poppins(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                              ),
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -7870,32 +6620,18 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font: GoogleFonts.poppins(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .warning,
                                                     letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
                                                                 context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
+                                                            .bodyMediumIsCustom,
                                                   ),
                                             ),
                                           ),

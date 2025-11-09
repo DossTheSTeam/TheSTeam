@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'delete_post_message_model.dart';
 export 'delete_post_message_model.dart';
 
@@ -150,31 +149,17 @@ class _DeletePostMessageWidgetState extends State<DeletePostMessageWidget> {
                                           'francais'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '5scbih7s' /* Confirmer la suppression */,
-                                        ),
+                                        'Confirmer la suppression',
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -188,31 +173,17 @@ class _DeletePostMessageWidgetState extends State<DeletePostMessageWidget> {
                                           'american'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'wgd2olhq' /* Confirm deletion */,
-                                        ),
+                                        'Confirm deletion',
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -221,34 +192,18 @@ class _DeletePostMessageWidgetState extends State<DeletePostMessageWidget> {
                                       'deutsch')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '9n357ej7' /* Bestätigen Sie den
-Löschvorgan... */
-                                          ,
-                                        ),
+                                        'Bestätigen Sie den\nLöschvorgang',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -257,32 +212,18 @@ Löschvorgan... */
                                       'espanol')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'rzo0zt6g' /* Confirmar eliminación */,
-                                        ),
+                                        'Confirmar eliminación',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -291,32 +232,18 @@ Löschvorgan... */
                                       'italiano')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'v4o3mute' /* Conferma l'eliminazione */,
-                                        ),
+                                        'Conferma l\'eliminazione',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -325,32 +252,18 @@ Löschvorgan... */
                                       'portugues')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          's73heszs' /* Confirmar eliminação */,
-                                        ),
+                                        'Confirmar eliminação',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                     ),

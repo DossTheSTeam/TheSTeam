@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'modif_text_post_model.dart';
 export 'modif_text_post_model.dart';
 
@@ -117,43 +116,24 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'alwh2dye' /* coller pour reprendre le texte... */,
-                              ),
+                              hintText:
+                                  'coller pour reprendre le texte de départ ou écrire autre chose',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -191,21 +171,11 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
                                 ),
                             maxLines: null,
                             cursorColor:
@@ -219,28 +189,17 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            '1al1yvi4' /* Confirmer */,
-                          ),
+                          'Confirmer',
                           maxLines: 1,
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleSmallIsCustom,
+                              ),
                         ),
                       ),
                       Padding(
@@ -267,9 +226,7 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                                   }.withoutNulls,
                                 );
                               },
-                              text: FFLocalizations.of(context).getText(
-                                'u9migs4f' /* Texte 1 */,
-                              ),
+                              text: 'Texte 1',
                               options: FFButtonOptions(
                                 height: 30.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -280,23 +237,14 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelMediumIsCustom,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(
@@ -325,9 +273,7 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                                   }.withoutNulls,
                                 );
                               },
-                              text: FFLocalizations.of(context).getText(
-                                '4gb77a5z' /* Texte 2 */,
-                              ),
+                              text: 'Texte 2',
                               options: FFButtonOptions(
                                 height: 30.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -338,23 +284,14 @@ class _ModifTextPostWidgetState extends State<ModifTextPostWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelMediumIsCustom,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

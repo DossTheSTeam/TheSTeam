@@ -9,7 +9,15 @@ const kThemeModeKey = '__theme_mode__';
 
 SharedPreferences? _prefs;
 
+enum DeviceSize {
+  mobile,
+  tablet,
+  desktop,
+}
+
 abstract class FlutterFlowTheme {
+  static DeviceSize deviceSize = DeviceSize.mobile;
+
   static Future initialize() async =>
       _prefs = await SharedPreferences.getInstance();
 
@@ -27,6 +35,7 @@ abstract class FlutterFlowTheme {
       : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
 
   static FlutterFlowTheme of(BuildContext context) {
+    deviceSize = getDeviceSize(context);
     return Theme.of(context).brightness == Brightness.dark
         ? DarkModeTheme()
         : LightModeTheme();
@@ -131,7 +140,22 @@ abstract class FlutterFlowTheme {
   bool get bodySmallIsCustom => typography.bodySmallIsCustom;
   TextStyle get bodySmall => typography.bodySmall;
 
-  Typography get typography => ThemeTypography(this);
+  Typography get typography => {
+        DeviceSize.mobile: MobileTypography(this),
+        DeviceSize.tablet: TabletTypography(this),
+        DeviceSize.desktop: DesktopTypography(this),
+      }[deviceSize]!;
+}
+
+DeviceSize getDeviceSize(BuildContext context) {
+  final width = MediaQuery.sizeOf(context).width;
+  if (width < 479) {
+    return DeviceSize.mobile;
+  } else if (width < 991) {
+    return DeviceSize.tablet;
+  } else {
+    return DeviceSize.desktop;
+  }
 }
 
 class LightModeTheme extends FlutterFlowTheme {
@@ -208,8 +232,232 @@ abstract class Typography {
   TextStyle get bodySmall;
 }
 
-class ThemeTypography extends Typography {
-  ThemeTypography(this.theme);
+class MobileTypography extends Typography {
+  MobileTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Montserrat';
+  bool get displayLargeIsCustom => false;
+  TextStyle get displayLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w800,
+        fontSize: 30.0,
+      );
+  String get displayMediumFamily => 'Montserrat';
+  bool get displayMediumIsCustom => false;
+  TextStyle get displayMedium => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 28.0,
+      );
+  String get displaySmallFamily => 'Montserrat';
+  bool get displaySmallIsCustom => false;
+  TextStyle get displaySmall => GoogleFonts.montserrat(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 26.0,
+      );
+  String get headlineLargeFamily => 'Montserrat';
+  bool get headlineLargeIsCustom => false;
+  TextStyle get headlineLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 26.0,
+      );
+  String get headlineMediumFamily => 'Montserrat';
+  bool get headlineMediumIsCustom => false;
+  TextStyle get headlineMedium => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+      );
+  String get headlineSmallFamily => 'Poppins';
+  bool get headlineSmallIsCustom => false;
+  TextStyle get headlineSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 22.0,
+      );
+  String get titleLargeFamily => 'Montserrat';
+  bool get titleLargeIsCustom => false;
+  TextStyle get titleLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+      );
+  String get titleMediumFamily => 'Poppins';
+  bool get titleMediumIsCustom => false;
+  TextStyle get titleMedium => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 20.0,
+      );
+  String get titleSmallFamily => 'Poppins';
+  bool get titleSmallIsCustom => false;
+  TextStyle get titleSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get labelLargeFamily => 'Montserrat';
+  bool get labelLargeIsCustom => false;
+  TextStyle get labelLarge => GoogleFonts.montserrat(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 18.0,
+      );
+  String get labelMediumFamily => 'Poppins';
+  bool get labelMediumIsCustom => false;
+  TextStyle get labelMedium => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get labelSmallFamily => 'Poppins';
+  bool get labelSmallIsCustom => false;
+  TextStyle get labelSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get bodyLargeFamily => 'Poppins';
+  bool get bodyLargeIsCustom => false;
+  TextStyle get bodyLarge => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get bodyMediumFamily => 'Poppins';
+  bool get bodyMediumIsCustom => false;
+  TextStyle get bodyMedium => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+  String get bodySmallFamily => 'Poppins';
+  bool get bodySmallIsCustom => false;
+  TextStyle get bodySmall => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 1.0,
+      );
+}
+
+class TabletTypography extends Typography {
+  TabletTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Montserrat';
+  bool get displayLargeIsCustom => false;
+  TextStyle get displayLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w800,
+        fontSize: 30.0,
+      );
+  String get displayMediumFamily => 'Montserrat';
+  bool get displayMediumIsCustom => false;
+  TextStyle get displayMedium => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 28.0,
+      );
+  String get displaySmallFamily => 'Montserrat';
+  bool get displaySmallIsCustom => false;
+  TextStyle get displaySmall => GoogleFonts.montserrat(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 26.0,
+      );
+  String get headlineLargeFamily => 'Montserrat';
+  bool get headlineLargeIsCustom => false;
+  TextStyle get headlineLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 26.0,
+      );
+  String get headlineMediumFamily => 'Montserrat';
+  bool get headlineMediumIsCustom => false;
+  TextStyle get headlineMedium => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+      );
+  String get headlineSmallFamily => 'Poppins';
+  bool get headlineSmallIsCustom => false;
+  TextStyle get headlineSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 22.0,
+      );
+  String get titleLargeFamily => 'Montserrat';
+  bool get titleLargeIsCustom => false;
+  TextStyle get titleLarge => GoogleFonts.montserrat(
+        color: theme.primaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 22.0,
+      );
+  String get titleMediumFamily => 'Poppins';
+  bool get titleMediumIsCustom => false;
+  TextStyle get titleMedium => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 20.0,
+      );
+  String get titleSmallFamily => 'Poppins';
+  bool get titleSmallIsCustom => false;
+  TextStyle get titleSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get labelLargeFamily => 'Montserrat';
+  bool get labelLargeIsCustom => false;
+  TextStyle get labelLarge => GoogleFonts.montserrat(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.bold,
+        fontSize: 18.0,
+      );
+  String get labelMediumFamily => 'Poppins';
+  bool get labelMediumIsCustom => false;
+  TextStyle get labelMedium => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get labelSmallFamily => 'Poppins';
+  bool get labelSmallIsCustom => false;
+  TextStyle get labelSmall => GoogleFonts.poppins(
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get bodyLargeFamily => 'Poppins';
+  bool get bodyLargeIsCustom => false;
+  TextStyle get bodyLarge => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 14.0,
+      );
+  String get bodyMediumFamily => 'Poppins';
+  bool get bodyMediumIsCustom => false;
+  TextStyle get bodyMedium => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 12.0,
+      );
+  String get bodySmallFamily => 'Poppins';
+  bool get bodySmallIsCustom => false;
+  TextStyle get bodySmall => GoogleFonts.poppins(
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 1.0,
+      );
+}
+
+class DesktopTypography extends Typography {
+  DesktopTypography(this.theme);
 
   final FlutterFlowTheme theme;
 

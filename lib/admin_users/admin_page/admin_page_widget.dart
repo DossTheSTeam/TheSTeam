@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'admin_page_model.dart';
 export 'admin_page_model.dart';
 
@@ -109,30 +108,17 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'gh6n3x2f' /* Espace admin */,
-                                  ),
+                                  'Espace admin',
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                               ],
@@ -176,28 +162,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              '3xyu2ntu' /* Rencontre */,
-                            ),
+                            'Rencontre',
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .headlineSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -221,29 +195,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       .pushNamed(AddEventPageWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'bics63ju' /* Créer une rencontre */,
-                                  ),
+                                  'Créer une rencontre',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -285,29 +246,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       ListEventsAdminWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'qwlf4u7y' /* Ajouter les cotes */,
-                                  ),
+                                  'Ajouter les cotes',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -350,29 +298,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       ListEventsAdminWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'xsqv8cp6' /* Modifier le statut */,
-                                  ),
+                                  'Modifier le statut',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -402,28 +337,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'ign28y02' /* Equipe */,
-                            ),
+                            'Equipe',
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .headlineSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -447,29 +370,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       .pushNamed(AddTeamPageWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'qwa3l5ei' /* Créer une équipe */,
-                                  ),
+                                  'Créer une équipe',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -517,29 +427,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       AdminTeamsListWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'gwb6jxnk' /* Modifier une équipe */,
-                                  ),
+                                  'Modifier une équipe',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -574,28 +471,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              '50ryzean' /* Utilisateurs */,
-                            ),
+                            'Utilisateurs',
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .headlineSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -619,29 +504,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       .pushNamed(AdminRankPageWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '86ayqfok' /* Admin Classement Parieurs */,
-                                  ),
+                                  'Admin Classement Parieurs',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -689,29 +561,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       AdminUsersListWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '0nfiw3jv' /* Voir utilisateurs */,
-                                  ),
+                                  'Voir utilisateurs',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -759,29 +618,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       AdminStAppUsersListWidget.routeName);
                                 },
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '2pevzw6u' /* Voir utilisateurs sous app */,
-                                  ),
+                                  'Voir utilisateurs sous app',
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -816,28 +662,16 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              '5z116nen' /* Sondage / News */,
-                            ),
+                            'Sondage / News',
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .headlineSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -902,31 +736,17 @@ class _AdminPageWidgetState extends State<AdminPageWidget> {
                                       );
                                     },
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'jbujm4tx' /* Créer un sondage/news */,
-                                      ),
+                                      'Créer un sondage/news',
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
-                                            font: GoogleFonts.montserrat(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelLargeIsCustom,
                                           ),
                                     ),
                                   ),

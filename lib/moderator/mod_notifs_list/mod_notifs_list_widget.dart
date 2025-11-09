@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'mod_notifs_list_model.dart';
 export 'mod_notifs_list_model.dart';
 
@@ -118,30 +117,17 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'v767oik2' /* Notifications */,
-                                  ),
+                                  'Notifications',
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .displaySmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -291,35 +277,21 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                     'NewUser',
                                                   ),
                                                   maxLines: 1,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ),
                                             ],
@@ -347,34 +319,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                       .languageCode,
                                                 ),
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLargeIsCustom,
+                                                        ),
                                               ),
                                             ),
                                             Align(
@@ -384,34 +342,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                 columnMyNotificationsRecord
                                                     .text,
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLargeIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -432,34 +376,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                 columnMyNotificationsRecord
                                                     .textFouls,
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLargeIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -481,34 +411,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                 columnMyNotificationsRecord
                                                     .textReasons,
                                                 maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyLarge
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .fontStyle,
-                                                    ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLargeIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -569,38 +485,22 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     0.0,
                                                                     10.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '6svxu9n9' /* veut mettre un carton rouge à */,
-                                                          ),
+                                                          'veut mettre un carton rouge à',
                                                           textAlign:
                                                               TextAlign.start,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMediumIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -741,23 +641,12 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -794,35 +683,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           10.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'kpsccdz9' /* Vérifier les informations */,
-                                                                ),
+                                                                'Vérifier les informations',
                                                                 maxLines: 1,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .montserrat(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -936,38 +810,22 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       0.0,
                                                                       10.0),
                                                           child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '8zcoiu71' /* veut mettre un carton rouge à */,
-                                                            ),
+                                                            'veut mettre un carton rouge à',
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -1114,17 +972,12 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1153,35 +1006,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           10.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '1aismkeo' /* Vérifier les informations */,
-                                                                ),
+                                                                'Vérifier les informations',
                                                                 maxLines: 1,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .montserrat(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1297,38 +1135,22 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       0.0,
                                                                       10.0),
                                                           child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '9tioumeq' /* veut mettre un carton rouge à */,
-                                                            ),
+                                                            'veut mettre un carton rouge à',
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -1470,21 +1292,12 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1513,35 +1326,20 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           10.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '9kh6cu35' /* Vérifier les informations */,
-                                                                ),
+                                                                'Vérifier les informations',
                                                                 maxLines: 1,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .montserrat(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1626,11 +1424,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                   0.0,
                                                                   10.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'sjzkhpfz' /* Veut devenir membre de ce club */,
-                                                        ),
+                                                        'Veut devenir membre de ce club',
                                                         textAlign:
                                                             TextAlign.start,
                                                         style:
@@ -1638,27 +1432,15 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1791,25 +1573,14 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1837,37 +1608,21 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       10.0,
                                                                       0.0),
                                                           child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '9chfby4j' /* Vérifier les informations */,
-                                                            ),
+                                                            'Vérifier les informations',
                                                             maxLines: 1,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                           ),
                                                         ),

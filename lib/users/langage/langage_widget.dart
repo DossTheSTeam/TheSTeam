@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'langage_model.dart';
 export 'langage_model.dart';
 
@@ -138,25 +137,13 @@ class _LangageWidgetState extends State<LangageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ),
@@ -196,27 +183,13 @@ class _LangageWidgetState extends State<LangageWidget> {
                                 'american'
                               ]),
                               optionLabels: [
-                                FFLocalizations.of(context).getText(
-                                  'jjstsu7x' /* Français */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  't19dmcfu' /* English */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'w9ef06hv' /* Español */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'xc0xa2ak' /* Italiano */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'tqraoaxi' /* Deutsch */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'mcjclh4q' /* Português */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'ulskskyh' /* American */,
-                                )
+                                'Français',
+                                'English',
+                                'Español',
+                                'Italiano',
+                                'Deutsch',
+                                'Português',
+                                'American'
                               ],
                               onChanged: (val) => safeSetState(
                                   () => _model.dropLangageValue = val),
@@ -225,25 +198,14 @@ class _LangageWidgetState extends State<LangageWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
                                   ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'rv3652so' /* ###### */,
-                              ),
+                              hintText: '######',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color:

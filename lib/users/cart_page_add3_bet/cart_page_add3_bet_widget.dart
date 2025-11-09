@@ -7,7 +7,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'cart_page_add3_bet_model.dart';
 export 'cart_page_add3_bet_model.dart';
 
@@ -328,39 +327,26 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                             textAlign:
                                                                                 TextAlign.end,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'dznurlam' /* - */,
-                                                                      ),
+                                                                      '-',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Container(
@@ -391,13 +377,9 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -452,13 +434,9 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -482,17 +460,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'mql6z7wi' /* Les 2 équipes marquent -  oui */,
-                                                                                ),
+                                                                                'Les 2 équipes marquent -  oui',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -500,17 +472,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'nfv41wwe' /* Both teams score - yes */,
-                                                                                ),
+                                                                                'Both teams score - yes',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -518,17 +484,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'wpjmavky' /* Beide Teams erzielen Tore – Ja */,
-                                                                                ),
+                                                                                'Beide Teams erzielen Tore – Ja',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -536,17 +496,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '197kb2sa' /* Ambos equipos marcan - sí */,
-                                                                                ),
+                                                                                'Ambos equipos marcan - sí',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -554,17 +508,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'm21cxvdd' /* Entrambe le squadre segnano - ... */,
-                                                                                ),
+                                                                                'Entrambe le squadre segnano - sì',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -572,17 +520,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'h2d21j67' /* Ambas as equipas marcam - sim */,
-                                                                                ),
+                                                                                'Ambas as equipas marcam - sim',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -609,17 +551,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '1oqi4zx6' /* Les 2 équipes marquent -  non */,
-                                                                                ),
+                                                                                'Les 2 équipes marquent -  non',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -627,17 +563,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '5knyy2jm' /* Both teams score - no */,
-                                                                                ),
+                                                                                'Both teams score - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -645,17 +575,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '4gg7rnv9' /* Beide Teams erzielen Tore - ne... */,
-                                                                                ),
+                                                                                'Beide Teams erzielen Tore - nein',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -663,17 +587,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'chei5viv' /* Ambos equipos marcan - no */,
-                                                                                ),
+                                                                                'Ambos equipos marcan - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -681,17 +599,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'aaidvzmz' /* Entrambe le squadre segnano - ... */,
-                                                                                ),
+                                                                                'Entrambe le squadre segnano - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -699,17 +611,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'egjhemcf' /* Ambas as equipas marcam - não */,
-                                                                                ),
+                                                                                'Ambas as equipas marcam - não',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -736,17 +642,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'cztgjc6i' /* Match nul */,
-                                                                                ),
+                                                                                'Match nul',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -754,17 +654,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'wncuys0p' /* Draw */,
-                                                                                ),
+                                                                                'Draw',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -772,17 +666,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '2467ocfc' /* Ziehen */,
-                                                                                ),
+                                                                                'Ziehen',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -790,17 +678,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'ccsa3q6u' /* Dibujar */,
-                                                                                ),
+                                                                                'Dibujar',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -808,17 +690,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '537p1xlx' /* Disegno */,
-                                                                                ),
+                                                                                'Disegno',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -826,17 +702,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'yk8tjk6p' /* Empate */,
-                                                                                ),
+                                                                                'Empate',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -863,23 +733,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (columnBet1BetsRecord
@@ -897,23 +756,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (columnBet1BetsRecord
@@ -931,23 +779,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               Padding(
@@ -973,23 +810,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1141,39 +967,26 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                             textAlign:
                                                                                 TextAlign.end,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '229x5pqa' /* - */,
-                                                                      ),
+                                                                      '-',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).headlineSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).headlineSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Container(
@@ -1204,13 +1017,9 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.poppins(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1265,13 +1074,9 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1295,17 +1100,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'ghddsshq' /* Les 2 équipes marquent -  oui */,
-                                                                                ),
+                                                                                'Les 2 équipes marquent -  oui',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1313,17 +1112,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'jmrbh4ns' /* Both teams score - yes */,
-                                                                                ),
+                                                                                'Both teams score - yes',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1331,17 +1124,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'gqqqcw2d' /* Beide Teams erzielen Tore – Ja */,
-                                                                                ),
+                                                                                'Beide Teams erzielen Tore – Ja',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1349,17 +1136,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'l1kcakuj' /* Ambos equipos marcan - sí */,
-                                                                                ),
+                                                                                'Ambos equipos marcan - sí',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1367,17 +1148,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '63ecskdo' /* Entrambe le squadre segnano - ... */,
-                                                                                ),
+                                                                                'Entrambe le squadre segnano - sì',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1385,17 +1160,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'bcg7o8eh' /* Ambas as equipas marcam - sim */,
-                                                                                ),
+                                                                                'Ambas as equipas marcam - sim',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1422,17 +1191,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'hicalk5a' /* Les 2 équipes marquent -  non */,
-                                                                                ),
+                                                                                'Les 2 équipes marquent -  non',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1440,17 +1203,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'gtfipzcm' /* Both teams score - no */,
-                                                                                ),
+                                                                                'Both teams score - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1458,17 +1215,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'z77vt6ja' /* Beide Teams erzielen Tore - ne... */,
-                                                                                ),
+                                                                                'Beide Teams erzielen Tore - nein',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1476,17 +1227,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'g9fy0j9c' /* Ambos equipos marcan - no */,
-                                                                                ),
+                                                                                'Ambos equipos marcan - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1494,17 +1239,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'lxnzuri2' /* Entrambe le squadre segnano - ... */,
-                                                                                ),
+                                                                                'Entrambe le squadre segnano - no',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1512,17 +1251,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  's3r5mex3' /* Ambas as equipas marcam - não */,
-                                                                                ),
+                                                                                'Ambas as equipas marcam - não',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1549,17 +1282,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '75h1th3q' /* Match nul */,
-                                                                                ),
+                                                                                'Match nul',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1567,17 +1294,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'h2l8xni0' /* Draw */,
-                                                                                ),
+                                                                                'Draw',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1585,17 +1306,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'deutsch')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'nhoysy5l' /* Ziehen */,
-                                                                                ),
+                                                                                'Ziehen',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1603,17 +1318,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'espanol')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'lde6qng3' /* Dibujar */,
-                                                                                ),
+                                                                                'Dibujar',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1621,17 +1330,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'italiano')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'te1mnwny' /* Disegno */,
-                                                                                ),
+                                                                                'Disegno',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1639,17 +1342,11 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                               'portugues')
                                                                             AuthUserStreamWidget(
                                                                               builder: (context) => Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'fwv9fib9' /* Empate */,
-                                                                                ),
+                                                                                'Empate',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.poppins(
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                      ),
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1676,23 +1373,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (columnBet2BetsRecord
@@ -1710,23 +1396,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               if (columnBet2BetsRecord
@@ -1744,23 +1419,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               Padding(
@@ -1786,23 +1450,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .montserrat(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1915,61 +1568,34 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
                                                           ),
                                                         ),
                                                         Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'sqg9ubdl' /* - */,
-                                                          ),
+                                                          '-',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmall
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmall
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
                                                               ),
                                                         ),
                                                         Container(
@@ -2003,25 +1629,14 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -2070,25 +1685,14 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -2121,20 +1725,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'vscsnnyb' /* Les 2 équipes marquent -  oui */,
-                                                                        ),
+                                                                        'Les 2 équipes marquent -  oui',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2151,20 +1748,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '8fzs4nkk' /* Both teams score - yes */,
-                                                                        ),
+                                                                        'Both teams score - yes',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2177,20 +1767,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'qbs12ybd' /* Beide Teams erzielen Tore – Ja */,
-                                                                        ),
+                                                                        'Beide Teams erzielen Tore – Ja',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2203,20 +1786,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'x6pknouh' /* Ambos equipos marcan - sí */,
-                                                                        ),
+                                                                        'Ambos equipos marcan - sí',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2229,20 +1805,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'rywv06gj' /* Entrambe le squadre segnano - ... */,
-                                                                        ),
+                                                                        'Entrambe le squadre segnano - sì',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2255,20 +1824,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'wblm4fsw' /* Ambas as equipas marcam - sim */,
-                                                                        ),
+                                                                        'Ambas as equipas marcam - sim',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2304,20 +1866,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'm0qncl4v' /* Les 2 équipes marquent -  non */,
-                                                                        ),
+                                                                        'Les 2 équipes marquent -  non',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2334,20 +1889,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'ybpubi28' /* Both teams score - no */,
-                                                                        ),
+                                                                        'Both teams score - no',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2360,20 +1908,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'nrjkwj2c' /* Beide Teams erzielen Tore - ne... */,
-                                                                        ),
+                                                                        'Beide Teams erzielen Tore - nein',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2386,20 +1927,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'j2t41awg' /* Ambos equipos marcan - no */,
-                                                                        ),
+                                                                        'Ambos equipos marcan - no',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2412,20 +1946,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '8f770zlw' /* Entrambe le squadre segnano - ... */,
-                                                                        ),
+                                                                        'Entrambe le squadre segnano - no',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2438,20 +1965,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'moal0g3a' /* Ambas as equipas marcam - não */,
-                                                                        ),
+                                                                        'Ambas as equipas marcam - não',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2487,20 +2007,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'a4f8hrmh' /* Match nul */,
-                                                                        ),
+                                                                        'Match nul',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2517,20 +2030,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'lo64z6dc' /* Draw */,
-                                                                        ),
+                                                                        'Draw',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2543,20 +2049,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'lzkuyjz2' /* Ziehen */,
-                                                                        ),
+                                                                        'Ziehen',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2569,20 +2068,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'mnz9kqdj' /* Dibujar */,
-                                                                        ),
+                                                                        'Dibujar',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2595,20 +2087,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'lfb54aic' /* Disegno */,
-                                                                        ),
+                                                                        'Disegno',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2621,20 +2106,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'wlt35aw1' /* Empate */,
-                                                                        ),
+                                                                        'Empate',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2661,27 +2139,15 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
                                                               ),
                                                         ),
                                                       if (columnCartBetBetsRecord
@@ -2699,27 +2165,15 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
                                                               ),
                                                         ),
                                                       if (columnCartBetBetsRecord
@@ -2737,27 +2191,15 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
                                                               ),
                                                         ),
                                                       Padding(
@@ -2783,27 +2225,15 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelLargeIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -2869,20 +2299,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '1pnsftv3' /* Mise */,
-                                                                        ),
+                                                                        'Mise',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2908,20 +2331,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'okkmw3if' /* Betting */,
-                                                                        ),
+                                                                        'Betting',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2943,20 +2359,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'zx5o2kdz' /* Wetten */,
-                                                                        ),
+                                                                        'Wetten',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2978,20 +2387,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'gabr3pqc' /* Apuestas */,
-                                                                        ),
+                                                                        'Apuestas',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3013,20 +2415,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'hoj8tbru' /* Scommesse */,
-                                                                        ),
+                                                                        'Scommesse',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3048,20 +2443,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'g23gc6xr' /* Apostas */,
-                                                                        ),
+                                                                        'Apostas',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3094,20 +2482,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'ew676zi4' /* Cote */,
-                                                                        ),
+                                                                        'Cote',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3133,20 +2514,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '3fxjcjss' /* Odds */,
-                                                                        ),
+                                                                        'Odds',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3168,20 +2542,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'rsxyd8d1' /* Quoten */,
-                                                                        ),
+                                                                        'Quoten',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3203,20 +2570,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '8srevfv8' /* Cuotas */,
-                                                                        ),
+                                                                        'Cuotas',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3238,20 +2598,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          '2fx3mkiv' /* Quote */,
-                                                                        ),
+                                                                        'Quote',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3273,20 +2626,13 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'rj7ovbi0' /* Probabilidades */,
-                                                                        ),
+                                                                        'Probabilidades',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                               letterSpacing: 0.0,
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3342,21 +2688,12 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                             context)
                                                                         .labelSmall
                                                                         .override(
-                                                                          font:
-                                                                              GoogleFonts.poppins(
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                          ),
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .labelSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .labelSmall
-                                                                              .fontStyle,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   Padding(
@@ -3442,28 +2779,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3505,34 +2831,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'mclz25by' /* Gain potentiel */,
-                                                                ),
+                                                                'Gain potentiel',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3550,34 +2861,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'ucn7q91s' /* Potential earnings */,
-                                                                ),
+                                                                'Potential earnings',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3590,34 +2886,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'wj1yw6zq' /* Potenzielle Erträge */,
-                                                                ),
+                                                                'Potenzielle Erträge',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3630,34 +2911,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'tvtqfgei' /* Ganancias potenciales */,
-                                                                ),
+                                                                'Ganancias potenciales',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3670,34 +2936,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'ulalzbc5' /* Ganhos potenciais */,
-                                                                ),
+                                                                'Ganhos potenciais',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3710,34 +2961,19 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                               builder:
                                                                   (context) =>
                                                                       Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'y3pou3lb' /* Guadagni potenziali */,
-                                                                ),
+                                                                'Guadagni potenziali',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .labelSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3784,30 +3020,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                             ),
                                                             Padding(
@@ -4096,26 +3319,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'zb2a37ug' /* Annuler */,
-                                                                      ),
+                                                                      'Annuler',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4132,26 +3346,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'sf04gffv' /* Cancel */,
-                                                                      ),
+                                                                      'Cancel',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4164,26 +3369,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'ejvc4ksj' /* Stornieren */,
-                                                                      ),
+                                                                      'Stornieren',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4196,26 +3392,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'j7r2b3gh' /* Cancelar */,
-                                                                      ),
+                                                                      'Cancelar',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4228,26 +3415,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '97jrw8lu' /* Cancellare */,
-                                                                      ),
+                                                                      'Cancellare',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4260,26 +3438,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'uzz887sz' /* Cancelar */,
-                                                                      ),
+                                                                      'Cancelar',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4303,26 +3472,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'p85gmh21' /* Valider */,
-                                                                      ),
+                                                                      'Valider',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4339,26 +3499,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'k65jrteh' /* to validate */,
-                                                                      ),
+                                                                      'to validate',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4371,26 +3522,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        '0n3rtf3j' /* zu validieren */,
-                                                                      ),
+                                                                      'zu validieren',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4403,26 +3545,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'ih9n9qcf' /* validar */,
-                                                                      ),
+                                                                      'validar',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4435,26 +3568,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'sgoth73d' /* convalidare */,
-                                                                      ),
+                                                                      'convalidare',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4467,26 +3591,17 @@ class _CartPageAdd3BetWidgetState extends State<CartPageAdd3BetWidget> {
                                                                     builder:
                                                                         (context) =>
                                                                             Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'y0v1wd14' /* validar */,
-                                                                      ),
+                                                                      'validar',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                GoogleFonts.poppins(
-                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                            ),
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),

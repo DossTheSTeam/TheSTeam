@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'copy_text_model.dart';
 export 'copy_text_model.dart';
 
@@ -118,31 +117,17 @@ class _CopyTextWidgetState extends State<CopyTextWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '3rp46uwo' /* Texte copié */,
-                                      ),
+                                      'Texte copié',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -157,31 +142,17 @@ class _CopyTextWidgetState extends State<CopyTextWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'jm5gt8cw' /* Copied text */,
-                                      ),
+                                      'Copied text',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -193,31 +164,17 @@ class _CopyTextWidgetState extends State<CopyTextWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'd0jntrun' /* Kopierter text */,
-                                      ),
+                                      'Kopierter text',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -232,31 +189,17 @@ class _CopyTextWidgetState extends State<CopyTextWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'okgugu40' /* Texto copiado */,
-                                      ),
+                                      'Texto copiado',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -268,31 +211,17 @@ class _CopyTextWidgetState extends State<CopyTextWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '3ipz5lum' /* Testo copiato */,
-                                      ),
+                                      'Testo copiato',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),

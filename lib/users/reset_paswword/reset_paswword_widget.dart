@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'reset_paswword_model.dart';
 export 'reset_paswword_model.dart';
 
@@ -115,29 +114,16 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wjs9rbr6' /* Mot de passe oublié */,
-                                  ),
+                                  'Mot de passe oublié',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -166,27 +152,16 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 15.0, 0.0, 0.0),
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'y56lvvb0' /* Indiquez votre adresse email */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
+                          'Indiquez votre adresse email',
+                          style: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .labelMediumIsCustom,
+                              ),
                         ),
                       ),
                       Padding(
@@ -198,45 +173,24 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                           textCapitalization: TextCapitalization.sentences,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
-                                    ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'w8g0cjva' /* mon.compte@mail.com */,
-                            ),
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .bodyLarge
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyLargeFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyLargeIsCustom,
+                                ),
+                            hintText: 'mon.compte@mail.com',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
                                 ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -273,24 +227,15 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                             contentPadding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 24.0, 20.0, 24.0),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
                           keyboardType: TextInputType.emailAddress,
                           cursorColor: FlutterFlowTheme.of(context).primary,
                           validator: _model.emailAddressTextControllerValidator
@@ -330,9 +275,7 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                             );
                             Navigator.pop(context);
                           },
-                          text: FFLocalizations.of(context).getText(
-                            'x3fuv293' /* Valider */,
-                          ),
+                          text: 'Valider',
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50.0,
@@ -345,22 +288,12 @@ class _ResetPaswwordWidgetState extends State<ResetPaswwordWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: Colors.white,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

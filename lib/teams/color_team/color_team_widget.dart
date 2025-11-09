@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'color_team_model.dart';
 export 'color_team_model.dart';
 
@@ -169,33 +168,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'francais'))
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '9x4lts70' /* Changer la couleur */,
-                                          ),
+                                          'Changer la couleur',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -209,33 +193,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'american'))
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '0yuum5eb' /* Change color */,
-                                          ),
+                                          'Change color',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -244,33 +213,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         'deutsch')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'p9civtlr' /* Farbe ändern */,
-                                          ),
+                                          'Farbe ändern',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -279,33 +233,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         'espanol')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'myk569op' /* Cambiar el color */,
-                                          ),
+                                          'Cambiar el color',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -314,33 +253,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         'italiano')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            '4yc8x6h3' /* Cambiare colore */,
-                                          ),
+                                          'Cambiare colore',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -349,33 +273,18 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         'portugues')
                                       AuthUserStreamWidget(
                                         builder: (context) => Text(
-                                          FFLocalizations.of(context).getText(
-                                            'z4r8h683' /* Mudar cor */,
-                                          ),
+                                          'Mudar cor',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ),
@@ -395,25 +304,13 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ],
@@ -452,34 +349,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'francais'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'mxx0k0it' /* Couleur principale */,
-                                        ),
+                                        'Couleur principale',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -493,34 +376,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'american'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ren9ij0j' /* Main color */,
-                                        ),
+                                        'Main color',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -529,34 +398,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'deutsch')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'y4q28h62' /* Hauptfarbe */,
-                                        ),
+                                        'Hauptfarbe',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -565,34 +420,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'espanol')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'kf9i4rx6' /* color principal */,
-                                        ),
+                                        'color principal',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -601,34 +442,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'italiano')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '6mjfofxl' /* Colore principale */,
-                                        ),
+                                        'Colore principale',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -637,34 +464,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'portugues')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ian1kfue' /* Cor principal */,
-                                        ),
+                                        'Cor principal',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -714,75 +527,29 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       '#000080'
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        '16iw5he5' /* Yellow */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '5xir36yz' /* Green 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'n1tr0iht' /* Pink */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'ggmfe1ep' /* Cyan 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'olgyrnzc' /* Sky blue */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'b703bgxs' /* Magenta */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'et5doyyq' /* Orange */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'y7k43ybu' /* Red 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'vaid474w' /* Purpple */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'xeib4i6m' /* Blue 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'rarz4fd8' /* Green 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'v5hok419' /* Cyan 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'djlrubfe' /* Green 3 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'pmbfd9bu' /* Blue 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'pezq89qu' /* Magenta 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '1daqpljo' /* Red 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'tptzoui9' /* Brown */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'dt5unbdu' /* Grey2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '8zyobqmp' /* Grey 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'i4mlop88' /* Gold */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'q1r2opbi' /* Red 3 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '2454f5bx' /* Burgundy */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'xc3e5lgo' /* Blue 3 */,
-                                      )
+                                      'Yellow',
+                                      'Green 1',
+                                      'Pink',
+                                      'Cyan 1',
+                                      'Sky blue',
+                                      'Magenta',
+                                      'Orange',
+                                      'Red 1',
+                                      'Purpple',
+                                      'Blue 1',
+                                      'Green 2',
+                                      'Cyan 2',
+                                      'Green 3',
+                                      'Blue 2',
+                                      'Magenta 2',
+                                      'Red 2',
+                                      'Brown',
+                                      'Grey2',
+                                      'Grey 1',
+                                      'Gold',
+                                      'Red 3',
+                                      'Burgundy',
+                                      'Blue 3'
                                     ],
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropColor1Value = val),
@@ -791,30 +558,15 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'ilbf6y91' /* Colors */,
-                                    ),
+                                    hintText: 'Colors',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -915,57 +667,28 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'td62eoua' /* hex....... */,
-                                          ),
+                                          hintText: 'hex.......',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
@@ -1014,25 +737,13 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -1104,34 +815,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'francais'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'sayjzu4e' /* Couleur secondaire */,
-                                        ),
+                                        'Couleur secondaire',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1145,34 +842,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'american'))
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '4rl77u9n' /* Secondary color */,
-                                        ),
+                                        'Secondary color',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1181,34 +864,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'deutsch')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '2ijdnwqa' /* Sekundärfarbe */,
-                                        ),
+                                        'Sekundärfarbe',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1217,34 +886,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'espanol')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ujkbstqz' /* color secundario */,
-                                        ),
+                                        'color secundario',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1253,34 +908,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'italiano')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'zxupr4up' /* Colore secondario */,
-                                        ),
+                                        'Colore secondario',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1289,34 +930,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       'portugues')
                                     AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '8ondqja3' /* Cor secundária */,
-                                        ),
+                                        'Cor secundária',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -1366,75 +993,29 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                       '#000080'
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        't2g9mxor' /* Yellow */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '54qxmx7n' /* Green 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'vymokpt8' /* Pink */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '5jwelsyo' /* Cyan 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '1a3j9rjn' /* Sky Blue */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'w3ey40ut' /* Magenta */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'jecshxpf' /* Orange */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'krzsa9rn' /* Red 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'efyu3v3c' /* Purpple */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'x148oq5g' /* Blue 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '0jr4kwbx' /* Green 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'za69mixy' /* Cyan 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '08sx9dlo' /* Green 3 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'xdjk4klw' /* Blue 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'qw3i92s0' /* Magenta 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        's5veblj1' /* Red 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'nw2w1ade' /* Brown */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'poaag4wq' /* Grey 2 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'v4iqwnh5' /* Grey 1 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'xdfi21th' /* Gold */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'krc37oib' /* Red 3 */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'x2p3241y' /* Burgundy */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '3e5mv1kv' /* Blue 3 */,
-                                      )
+                                      'Yellow',
+                                      'Green 1',
+                                      'Pink',
+                                      'Cyan 1',
+                                      'Sky Blue',
+                                      'Magenta',
+                                      'Orange',
+                                      'Red 1',
+                                      'Purpple',
+                                      'Blue 1',
+                                      'Green 2',
+                                      'Cyan 2',
+                                      'Green 3',
+                                      'Blue 2',
+                                      'Magenta 2',
+                                      'Red 2',
+                                      'Brown',
+                                      'Grey 2',
+                                      'Grey 1',
+                                      'Gold',
+                                      'Red 3',
+                                      'Burgundy',
+                                      'Blue 3'
                                     ],
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropColor2Value = val),
@@ -1443,30 +1024,15 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'tmu3j9y8' /* Colors */,
-                                    ),
+                                    hintText: 'Colors',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -1571,57 +1137,28 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'qc7cu0yb' /* hex....... */,
-                                          ),
+                                          hintText: 'hex.......',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
@@ -1670,25 +1207,13 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -1765,39 +1290,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                                 'francais'))
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'n8xqqhaq' /* Changer la couleur */,
-                                              ),
+                                              'Changer la couleur',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -1813,39 +1320,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                                 'american'))
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'piwzsv05' /* Change color */,
-                                              ),
+                                              'Change color',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -1855,39 +1344,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'deutsch')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ndwaflxy' /* Farbe ändern */,
-                                              ),
+                                              'Farbe ändern',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -1897,39 +1368,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'espanol')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'isiwy7pr' /* Cambiar el color */,
-                                              ),
+                                              'Cambiar el color',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -1939,39 +1392,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'italiano')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'xvup34nw' /* Cambiare colore */,
-                                              ),
+                                              'Cambiare colore',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -1981,39 +1416,21 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                             'portugues')
                                           AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'p7x84vhj' /* Mudar cor */,
-                                              ),
+                                              'Mudar cor',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 10.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -2036,36 +1453,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                               'francais'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'xi22plms' /* Valider */,
-                                            ),
+                                            'Valider',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2079,36 +1480,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                               'american'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '3emj0gim' /* to validate */,
-                                            ),
+                                            'to validate',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2118,36 +1503,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'deutsch')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'i5p9fnov' /* zu validieren */,
-                                            ),
+                                            'zu validieren',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2157,36 +1526,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'espanol')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'sm2lx7st' /* validar */,
-                                            ),
+                                            'validar',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2196,36 +1549,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'italiano')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'edo9lg3b' /* convalidare */,
-                                            ),
+                                            'convalidare',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2235,36 +1572,20 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'portugues')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'm09fuil3' /* validar */,
-                                            ),
+                                            'validar',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2285,39 +1606,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                               'francais'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '8bpjiupi' /* Enlever */,
-                                            ),
+                                            'Enlever',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2331,39 +1636,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                               'american'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'ko8v5980' /* To remove */,
-                                            ),
+                                            'To remove',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2373,39 +1662,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'deutsch')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'am8qbt6w' /* Zum Entfernen */,
-                                            ),
+                                            'Zum Entfernen',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2415,39 +1688,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'espanol')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'ri5ghupl' /* para eliminar */,
-                                            ),
+                                            'para eliminar',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2457,39 +1714,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'italiano')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'z16zeyvf' /* Per rimuovere */,
-                                            ),
+                                            'Per rimuovere',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2499,39 +1740,23 @@ class _ColorTeamWidgetState extends State<ColorTeamWidget> {
                                           'portugues')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '0k854pbp' /* Para remover */,
-                                            ),
+                                            'Para remover',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .error,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),

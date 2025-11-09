@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'copy_text_post_model.dart';
 export 'copy_text_post_model.dart';
 
@@ -184,38 +183,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '42xgi95q' /* Copier le titre */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Copier le titre',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -235,38 +217,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'avssb5zb' /* Copy title */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Copy title',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -281,38 +246,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        't4e4kg9a' /* Titel kopieren */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Titel kopieren',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -327,38 +275,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'gy0pvmrx' /* Copiar título */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Copiar título',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -373,38 +304,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'slt7h4ky' /* Copiar título */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Copiar título',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -419,38 +333,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                           0.0, 0.0),
                                                   child: AuthUserStreamWidget(
                                                     builder: (context) => Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7sd3kn3l' /* Copia titolo */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      'Copia titolo',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLarge
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -516,37 +413,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'kwn6g4oj' /* Copier le texte 1 */,
-                                                        ),
+                                                        'Copier le texte 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -568,37 +449,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'u772v794' /* Copy text 1 */,
-                                                        ),
+                                                        'Copy text 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -615,37 +480,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '92bmgovj' /* Text kopieren 1 */,
-                                                        ),
+                                                        'Text kopieren 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -662,37 +511,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'ruketwc7' /* Copiar texto 1 */,
-                                                        ),
+                                                        'Copiar texto 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -709,37 +542,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'xl9j3ss2' /* Copiar texto 1 */,
-                                                        ),
+                                                        'Copiar texto 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -756,37 +573,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'rd4qalrk' /* Copia testo 1 */,
-                                                        ),
+                                                        'Copia testo 1',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -855,37 +656,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'f6vy5ds2' /* Copier le texte 2 */,
-                                                        ),
+                                                        'Copier le texte 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -907,37 +692,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '6zrlh25d' /* Copy text 2 */,
-                                                        ),
+                                                        'Copy text 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -954,37 +723,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '3sz7ncpz' /* Text kopieren 2 */,
-                                                        ),
+                                                        'Text kopieren 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1001,37 +754,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'ri7y8fns' /* Copiar texto 2 */,
-                                                        ),
+                                                        'Copiar texto 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1048,37 +785,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '76fvq3b3' /* Copiar texto 2 */,
-                                                        ),
+                                                        'Copiar texto 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1095,37 +816,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'akctzaq9' /* Copia testo 2 */,
-                                                        ),
+                                                        'Copia testo 2',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1195,37 +900,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'hqdqq7ta' /* Copier l'URL */,
-                                                        ),
+                                                        'Copier l\'URL',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1247,37 +936,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'kz72518i' /* Copy URL */,
-                                                        ),
+                                                        'Copy URL',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1294,37 +967,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '12fiafa2' /* URL kopieren */,
-                                                        ),
+                                                        'URL kopieren',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1341,37 +998,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'gxj4np6m' /* Copiar URL */,
-                                                        ),
+                                                        'Copiar URL',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1388,37 +1029,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'qsx7c8dd' /* Copiar URL */,
-                                                        ),
+                                                        'Copiar URL',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1435,37 +1060,21 @@ class _CopyTextPostWidgetState extends State<CopyTextPostWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'ybgubx2c' /* Copia URL */,
-                                                        ),
+                                                        'Copia URL',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .montserrat(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ),

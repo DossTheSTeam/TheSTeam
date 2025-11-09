@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'auth_page_model.dart';
 export 'auth_page_model.dart';
@@ -246,6 +245,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                       alignment: Alignment(0.0, 0),
                                       child: TabBar(
                                         isScrollable: true,
+                                        tabAlignment: TabAlignment.center,
                                         labelColor: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         unselectedLabelColor:
@@ -257,49 +257,25 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                         unselectedLabelStyle: FlutterFlowTheme
                                                 .of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                         indicatorColor:
                                             FlutterFlowTheme.of(context)
@@ -307,16 +283,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                         indicatorWeight: 3.0,
                                         tabs: [
                                           Tab(
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '7o5t7m69' /* Créer */,
-                                            ),
+                                            text: 'Créer',
                                           ),
                                           Tab(
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'v1duj999' /* Connecter */,
-                                            ),
+                                            text: 'Connecter',
                                           ),
                                         ],
                                         controller: _model.tabBarController,
@@ -369,40 +339,23 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                         ),
                                                       ),
                                                     Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'mlemvz0x' /* Bienvenue */,
-                                                      ),
+                                                      'Bienvenue',
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .headlineMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .headlineMediumIsCustom,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -413,11 +366,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   0.0,
                                                                   10.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'dapfj0ui' /* Remplir le formulaire pour nou... */,
-                                                        ),
+                                                        'Remplir le formulaire pour nous rejoindre',
                                                         textAlign:
                                                             TextAlign.start,
                                                         style:
@@ -425,27 +374,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -471,36 +408,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
-                                                            hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'woqsezji' /* email */,
-                                                            ),
+                                                            hintText: 'email',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyLargeIsCustom,
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -570,27 +491,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   .of(context)
                                                               .bodyLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLargeIsCustom,
                                                               ),
                                                           keyboardType:
                                                               TextInputType
@@ -627,35 +536,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           decoration:
                                                               InputDecoration(
                                                             hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'uywfwoyz' /* Mot de passe */,
-                                                            ),
+                                                                'Mot de passe',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyLargeIsCustom,
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -748,27 +642,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   .of(context)
                                                               .bodyLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLargeIsCustom,
                                                               ),
                                                           validator: _model
                                                               .passwordCreateTextControllerValidator
@@ -802,35 +684,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           decoration:
                                                               InputDecoration(
                                                             hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              '5zn5elmm' /* Confirmer mot de passe */,
-                                                            ),
+                                                                'Confirmer mot de passe',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyLargeIsCustom,
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -923,27 +790,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   .of(context)
                                                               .bodyLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLargeIsCustom,
                                                               ),
                                                           validator: _model
                                                               .confirmPasswordCreateTextControllerValidator
@@ -1018,11 +873,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       context
                                                                           .mounted);
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'mhkp53t0' /* Création */,
-                                                                ),
+                                                                text:
+                                                                    'Création',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 230.0,
@@ -1046,25 +898,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -1122,11 +963,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                             MyProfilPageWidget.routeName,
                                                                             context.mounted);
                                                                       },
-                                                                      text: FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'qcgntalk' /* Créer avec Apple */,
-                                                                      ),
+                                                                      text:
+                                                                          'Créer avec Apple',
                                                                       icon:
                                                                           FaIcon(
                                                                         FontAwesomeIcons
@@ -1155,13 +993,10 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
-                                                                                fontWeight: FontWeight.bold,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             0.0,
@@ -1206,11 +1041,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     context
                                                                         .mounted);
                                                               },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                '0ojsvj2t' /* Créer avec Google */,
-                                                              ),
+                                                              text:
+                                                                  'Créer avec Google',
                                                               icon: FaIcon(
                                                                 FontAwesomeIcons
                                                                     .google,
@@ -1241,23 +1073,17 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
@@ -1325,40 +1151,23 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                         ),
                                                       ),
                                                     Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'pwvzta1f' /* Bienvenue */,
-                                                      ),
+                                                      'Bienvenue',
                                                       textAlign:
                                                           TextAlign.start,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .montserrat(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .headlineMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .headlineMediumIsCustom,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -1369,11 +1178,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   0.0,
                                                                   10.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '6q70olfu' /* Remplir le formulaire pour nou... */,
-                                                        ),
+                                                        'Remplir le formulaire pour nous rejoindre',
                                                         textAlign:
                                                             TextAlign.start,
                                                         style:
@@ -1381,27 +1186,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1427,36 +1220,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
-                                                            hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'zp016hcn' /* email */,
-                                                            ),
+                                                            hintText: 'email',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyLargeIsCustom,
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -1530,27 +1307,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   .of(context)
                                                               .bodyLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLargeIsCustom,
                                                               ),
                                                           keyboardType:
                                                               TextInputType
@@ -1587,35 +1352,20 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                           decoration:
                                                               InputDecoration(
                                                             hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'taxgalhi' /* Mot de passe */,
-                                                            ),
+                                                                'Mot de passe',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyLargeFamily,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyLargeIsCustom,
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -1712,27 +1462,15 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                   .of(context)
                                                               .bodyLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyLarge
-                                                                    .fontStyle,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLargeIsCustom,
                                                               ),
                                                           validator: _model
                                                               .passwordTextControllerValidator
@@ -1779,11 +1517,7 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 context
                                                                     .mounted);
                                                           },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            '41rdc376' /* Connexion */,
-                                                          ),
+                                                          text: 'Connexion',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 230.0,
@@ -1810,28 +1544,17 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
@@ -1892,11 +1615,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                       context
                                                                           .mounted);
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'uo301jfn' /* Continuer avec Apple */,
-                                                                ),
+                                                                text:
+                                                                    'Continuer avec Apple',
                                                                 icon: FaIcon(
                                                                   FontAwesomeIcons
                                                                       .apple,
@@ -1925,21 +1645,14 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -1991,11 +1704,8 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 context
                                                                     .mounted);
                                                           },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'mwzgtdkh' /* Continuer avec Google */,
-                                                          ),
+                                                          text:
+                                                              'Continuer avec Google',
                                                           icon: FaIcon(
                                                             FontAwesomeIcons
                                                                 .google,
@@ -2027,23 +1737,17 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                             elevation: 0.0,
                                                             borderSide:
@@ -2125,41 +1829,25 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                     () {}));
                                                           },
                                                           child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'ocaqgobr' /* Mot de passe oublié ? */,
-                                                            ),
+                                                            'Mot de passe oublié ?',
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLargeIsCustom,
                                                                 ),
                                                           ),
                                                         ),

@@ -8,7 +8,6 @@ import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'my_posts_list_model.dart';
 export 'my_posts_list_model.dart';
@@ -141,34 +140,18 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                         'francais'))
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '9rvm36l7' /* Mon réseau
-d'actualités */
-                                        ,
-                                      ),
+                                      'Mon réseau\nd\'actualités',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -180,34 +163,18 @@ d'actualités */
                                         'american'))
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '3beyb41s' /* My news
-network */
-                                        ,
-                                      ),
+                                      'My news\nnetwork',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -216,34 +183,18 @@ network */
                                     'deutsch')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'kutv3q03' /* Mein 
-achrichtennetzwerk */
-                                        ,
-                                      ),
+                                      'Mein \nachrichtennetzwerk',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -252,34 +203,18 @@ achrichtennetzwerk */
                                     'espanol')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'iavufg8g' /* Mi red
-de noticias */
-                                        ,
-                                      ),
+                                      'Mi red\nde noticias',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -288,34 +223,18 @@ de noticias */
                                     'italiano')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'djep21dn' /* La mia rete
-di notizie */
-                                        ,
-                                      ),
+                                      'La mia rete\ndi notizie',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -324,34 +243,18 @@ di notizie */
                                     'portugues')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'ahkn9w8t' /* A minha rede
-de notícias */
-                                        ,
-                                      ),
+                                      'A minha rede\nde notícias',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -889,13 +792,9 @@ de notícias */
                                                                                                           textAlign: TextAlign.start,
                                                                                                           maxLines: 2,
                                                                                                           style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                                font: GoogleFonts.poppins(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                                ),
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                                 letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -932,13 +831,9 @@ de notícias */
                                                                                                           textAlign: TextAlign.start,
                                                                                                           maxLines: 2,
                                                                                                           style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                                font: GoogleFonts.poppins(
-                                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                                ),
+                                                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                                 letterSpacing: 0.0,
-                                                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -1012,13 +907,9 @@ de notícias */
                                                                                             ),
                                                                                             maxLines: 1,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.poppins(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1044,13 +935,9 @@ de notícias */
                                                                                             ),
                                                                                             maxLines: 1,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.poppins(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1076,13 +963,9 @@ de notícias */
                                                                                             ),
                                                                                             maxLines: 1,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  font: GoogleFonts.poppins(
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                  ),
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1109,13 +992,9 @@ de notícias */
                                                                                           ),
                                                                                           maxLines: 1,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1161,13 +1040,9 @@ de notícias */
                                                                                           ),
                                                                                           maxLines: 1,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -1233,92 +1108,56 @@ de notícias */
                                                                                           children: [
                                                                                             if ((valueOrDefault(currentUserDocument?.langage, '') == '') || (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'bkovmf0n' /* Ecrit par */,
-                                                                                                ),
+                                                                                                'Ecrit par',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             if ((valueOrDefault(currentUserDocument?.langage, '') == 'english') || (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'ob0uqx2k' /* Written by */,
-                                                                                                ),
+                                                                                                'Written by',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             if (valueOrDefault(currentUserDocument?.langage, '') == 'deutsch')
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'ge58c4uu' /* Geschrieben von */,
-                                                                                                ),
+                                                                                                'Geschrieben von',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             if (valueOrDefault(currentUserDocument?.langage, '') == 'espanol')
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'ti7p02i0' /* Escrito por */,
-                                                                                                ),
+                                                                                                'Escrito por',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             if (valueOrDefault(currentUserDocument?.langage, '') == 'italiano')
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'uaa4t29i' /* Scritto da */,
-                                                                                                ),
+                                                                                                'Scritto da',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             if (valueOrDefault(currentUserDocument?.langage, '') == 'portugues')
                                                                                               Text(
-                                                                                                FFLocalizations.of(context).getText(
-                                                                                                  'l7yrkokv' /* Escrito por */,
-                                                                                                ),
+                                                                                                'Escrito por',
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: GoogleFonts.poppins(
-                                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                      ),
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                           ],
@@ -1358,18 +1197,14 @@ de notícias */
                                                                                               ),
                                                                                               maxLines: 1,
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: GoogleFonts.poppins(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                    ),
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     color: valueOrDefault<Color>(
                                                                                                       rowMemberUsersRecord.color1,
                                                                                                       FlutterFlowTheme.of(context).primaryText,
                                                                                                     ),
                                                                                                     fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1571,14 +1406,10 @@ de notícias */
                                                                                               textAlign: TextAlign.start,
                                                                                               maxLines: 2,
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: GoogleFonts.poppins(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                    ),
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1717,14 +1548,10 @@ de notícias */
                                                                                               textAlign: TextAlign.start,
                                                                                               maxLines: 2,
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: GoogleFonts.poppins(
-                                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                                    ),
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1757,14 +1584,10 @@ de notícias */
                                                                               textAlign: TextAlign.start,
                                                                               maxLines: 2,
                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                    font: GoogleFonts.poppins(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                    ),
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1821,13 +1644,9 @@ de notícias */
                                                                                     textAlign: TextAlign.start,
                                                                                     maxLines: 2,
                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -1879,13 +1698,9 @@ de notícias */
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -1951,92 +1766,56 @@ de notícias */
                                                                                     children: [
                                                                                       if ((valueOrDefault(currentUserDocument?.langage, '') == '') || (valueOrDefault(currentUserDocument?.langage, '') == 'francais'))
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'w5dgt7bz' /* Ecrit par */,
-                                                                                          ),
+                                                                                          'Ecrit par',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       if ((valueOrDefault(currentUserDocument?.langage, '') == 'english') || (valueOrDefault(currentUserDocument?.langage, '') == 'american'))
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            '0ab8fuk5' /* Written by */,
-                                                                                          ),
+                                                                                          'Written by',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       if (valueOrDefault(currentUserDocument?.langage, '') == 'deutsch')
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            '4piakeuw' /* Geschrieben von */,
-                                                                                          ),
+                                                                                          'Geschrieben von',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       if (valueOrDefault(currentUserDocument?.langage, '') == 'espanol')
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'hp2l9u0s' /* Escrito por */,
-                                                                                          ),
+                                                                                          'Escrito por',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       if (valueOrDefault(currentUserDocument?.langage, '') == 'italiano')
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            '32xtoux1' /* Scritto da */,
-                                                                                          ),
+                                                                                          'Scritto da',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       if (valueOrDefault(currentUserDocument?.langage, '') == 'portugues')
                                                                                         Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'c9rjx6k7' /* Escrito por */,
-                                                                                          ),
+                                                                                          'Escrito por',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                font: GoogleFonts.poppins(
-                                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                                ),
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                     ],
@@ -2076,18 +1855,14 @@ de notícias */
                                                                                         ),
                                                                                         maxLines: 1,
                                                                                         style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                              font: GoogleFonts.poppins(
-                                                                                                fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
-                                                                                              ),
+                                                                                              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                               color: valueOrDefault<Color>(
                                                                                                 rowMemberUsersRecord.color1,
                                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                                               ),
                                                                                               fontSize: 12.0,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelSmall.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelSmall.fontStyle,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -2160,13 +1935,9 @@ de notícias */
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -2192,13 +1963,9 @@ de notícias */
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -2224,13 +1991,9 @@ de notícias */
                                                                                     ),
                                                                                     maxLines: 1,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.poppins(
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -2257,13 +2020,9 @@ de notícias */
                                                                                   ),
                                                                                   maxLines: 1,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        font: GoogleFonts.poppins(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                        ),
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -2322,36 +2081,20 @@ de notícias */
                                               'francais'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'hori4x2h' /* Suivre des membres de clubs ou... */,
-                                            ),
+                                            'Suivre des membres de clubs ou créer des actualités\npour accéder au contenu de cette page',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2365,36 +2108,20 @@ de notícias */
                                               'american'))
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '0p0fhxga' /* Follow club members or create ... */,
-                                            ),
+                                            'Follow club members or create news\nto access the content on this page',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2404,36 +2131,20 @@ de notícias */
                                           'deutsch')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '332sy4z1' /* Clubmitgliedern folgen oder Ne... */,
-                                            ),
+                                            'Clubmitgliedern folgen oder News erstellen\num auf den Inhalt dieser Seite zuzugreifen',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2443,36 +2154,20 @@ de notícias */
                                           'espanol')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'z5off1cs' /* Sigue a los miembros del club ... */,
-                                            ),
+                                            'Sigue a los miembros del club o crea noticias\npara acceder al contenido de esta página',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2482,36 +2177,20 @@ de notícias */
                                           'italiano')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              '63w3scr9' /* Segui i membri del club o crea... */,
-                                            ),
+                                            'Segui i membri del club o crea notizie\nper accedere al contenuto di questa pagina',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -2521,36 +2200,20 @@ de notícias */
                                           'portugues')
                                         AuthUserStreamWidget(
                                           builder: (context) => Text(
-                                            FFLocalizations.of(context).getText(
-                                              'rm0j9wkt' /* Siga os membros do clube ou cr... */,
-                                            ),
+                                            'Siga os membros do clube ou crie notícias\naceder ao conteúdo desta página',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),

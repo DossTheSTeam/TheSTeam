@@ -6,7 +6,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'mod_teams_list_model.dart';
 export 'mod_teams_list_model.dart';
 
@@ -121,30 +120,17 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'w1mdn21g' /* Liste des équipes */,
-                                  ),
+                                  'Liste des équipes',
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        font: GoogleFonts.montserrat(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .displaySmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displaySmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .displaySmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -186,27 +172,13 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       'sports.meca'
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        'zh3wnsu4' /* Football */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'tm7n5iei' /* Basketball */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'mrms5nl0' /* Tennis */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'k5rdvmrj' /* Hockey */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '0dabvc8t' /* MMA */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '2l5koq7r' /* Rugby */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'lzqcg48g' /* Sports Méca. */,
-                                      )
+                                      'Football',
+                                      'Basketball',
+                                      'Tennis',
+                                      'Hockey',
+                                      'MMA',
+                                      'Rugby',
+                                      'Sports Méca.'
                                     ],
                                     onChanged: (val) => safeSetState(
                                         () => _model.dropSportValue = val),
@@ -215,30 +187,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'liyqw4bv' /* Sports */,
-                                    ),
+                                    hintText: 'Sports',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -310,42 +267,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                               ''
                                             ]),
                                             optionLabels: [
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'sge3mvw2' /* Premier League */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '5nh6zroe' /* LaLiga */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'urm0u0zc' /* Bundesliga */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'zba2htqs' /* Serie A */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'bw1m2old' /* Ligue 1 */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'e6o0p2wu' /* Autres */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ozmhcu37' /* Pays Football */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '36d1gdtq' /* Autres- France */,
-                                              ),
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'fx8dm1an' /* Retirer filtre */,
-                                              )
+                                              'Premier League',
+                                              'LaLiga',
+                                              'Bundesliga',
+                                              'Serie A',
+                                              'Ligue 1',
+                                              'Autres',
+                                              'Pays Football',
+                                              'Autres- France',
+                                              'Retirer filtre'
                                             ],
                                             onChanged: (val) async {
                                               safeSetState(() => _model
@@ -360,35 +290,17 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
+                                                              .bodyMediumIsCustom,
                                                     ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'q2n3k9n5' /* Ligues */,
-                                            ),
+                                            hintText: 'Ligues',
                                             icon: Icon(
                                               Icons.keyboard_arrow_down_rounded,
                                               color:
@@ -430,21 +342,11 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       ''
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        '26h5dnoo' /* NBA */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'knsowm4z' /* Euro League */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'yjym4s7f' /* Autres */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'vcchscdt' /* Nations */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'u3cmio86' /* Retirer filtre */,
-                                      )
+                                      'NBA',
+                                      'Euro League',
+                                      'Autres',
+                                      'Nations',
+                                      'Retirer filtre'
                                     ],
                                     onChanged: (val) async {
                                       safeSetState(() =>
@@ -458,30 +360,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '7u5qrujo' /* Ligues */,
-                                    ),
+                                    hintText: 'Ligues',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -511,15 +398,9 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                     options: List<String>.from(
                                         ['atp', 'wta', 'empty']),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        '16j7n0jm' /* ATP */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'zvqg9jm6' /* WTA */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'upr2pnt7' /* Retirer filtre */,
-                                      )
+                                      'ATP',
+                                      'WTA',
+                                      'Retirer filtre'
                                     ],
                                     onChanged: (val) async {
                                       safeSetState(() =>
@@ -533,30 +414,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'nautgca8' /* Ligues */,
-                                    ),
+                                    hintText: 'Ligues',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -592,24 +458,12 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       'empty'
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        '1l56v4iz' /* NHL */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'zrzpigfa' /* Gazon Elite H */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'oapjpu27' /* Gazon Elite F */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'p0sm067x' /* Salle Elite H */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '8ldfx727' /* Salle Elite F */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        't8dt0g89' /* Retirer filtre */,
-                                      )
+                                      'NHL',
+                                      'Gazon Elite H',
+                                      'Gazon Elite F',
+                                      'Salle Elite H',
+                                      'Salle Elite F',
+                                      'Retirer filtre'
                                     ],
                                     onChanged: (val) async {
                                       safeSetState(() =>
@@ -623,30 +477,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'lcgt3vvl' /* Ligues */,
-                                    ),
+                                    hintText: 'Ligues',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -683,18 +522,10 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                         ''
                                       ]),
                                       optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          '6bhb4w38' /* Top 14 */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'vyjfr9au' /* Autres */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'y5859mzl' /* Nations */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'ayka6830' /* Retirer filtre */,
-                                        )
+                                        'Top 14',
+                                        'Autres',
+                                        'Nations',
+                                        'Retirer filtre'
                                       ],
                                       onChanged: (val) async {
                                         safeSetState(() =>
@@ -708,30 +539,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'zrj5ffdm' /* Ligues */,
-                                      ),
+                                      hintText: 'Ligues',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -770,21 +586,11 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                         ''
                                       ]),
                                       optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          's9g0ilr4' /* Formule 1 */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'qf6sao2m' /* Moto GP */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          's0nhuzn6' /* World Superbike */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          '2gb3033l' /* MX GP */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          '7sfzwlj5' /* Retirer filtre */,
-                                        )
+                                        'Formule 1',
+                                        'Moto GP',
+                                        'World Superbike',
+                                        'MX GP',
+                                        'Retirer filtre'
                                       ],
                                       onChanged: (val) async {
                                         safeSetState(() =>
@@ -798,30 +604,15 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'xlyn33dg' /* Ligues */,
-                                      ),
+                                      hintText: 'Ligues',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -858,12 +649,8 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                           options:
                                               List<String>.from(['ufc', '']),
                                           optionLabels: [
-                                            FFLocalizations.of(context).getText(
-                                              'ca2ne1yd' /* UFC */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'be03f4ps' /* Retirer filtre */,
-                                            )
+                                            'UFC',
+                                            'Retirer filtre'
                                           ],
                                           onChanged: (val) async {
                                             safeSetState(() => _model
@@ -878,32 +665,16 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'itptwx61' /* Ligues */,
-                                          ),
+                                          hintText: 'Ligues',
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -946,30 +717,14 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                             'heavy.weight'
                                           ]),
                                           optionLabels: [
-                                            FFLocalizations.of(context).getText(
-                                              'dvy556g2' /* Flyweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'q9jw1wwo' /* Bantamweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              '8thp0tb6' /* Featherweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'lqq46mic' /* Lightweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'grscs8yh' /* Welterweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'q0lrjqcr' /* Middleweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'axmoewa8' /* Light Heavyweight */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'w6s8k4qm' /* Heavyweight */,
-                                            )
+                                            'Flyweight',
+                                            'Bantamweight',
+                                            'Featherweight',
+                                            'Lightweight',
+                                            'Welterweight',
+                                            'Middleweight',
+                                            'Light Heavyweight',
+                                            'Heavyweight'
                                           ],
                                           onChanged: (val) async {
                                             safeSetState(() => _model
@@ -984,32 +739,16 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'to7y0kak' /* Categories */,
-                                          ),
+                                          hintText: 'Categories',
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -1101,35 +840,21 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   columnTeamsTeamsRecord.name,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                 ),
                                               ),
                                               Padding(
@@ -1436,35 +1161,21 @@ class _ModTeamsListWidgetState extends State<ModTeamsListWidget> {
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   columnTeamsTeamsRecord.name,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumIsCustom,
+                                                          ),
                                                 ),
                                               ),
                                               Padding(

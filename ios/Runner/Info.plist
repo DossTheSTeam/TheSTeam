@@ -16,15 +16,6 @@
     <string>The S Team sport</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
-    <key>CFBundleLocalizations</key>
-    <array>
-      <string>fr</string>
-      <string>en</string>
-      <string>de</string>
-      <string>es</string>
-      <string>it</string>
-      <string>pt</string>
-    </array>
     <key>CFBundleShortVersionString</key>
     <string>$(FLUTTER_BUILD_NAME)</string>
     <key>CFBundleSignature</key>

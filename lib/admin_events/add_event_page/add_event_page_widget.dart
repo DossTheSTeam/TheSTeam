@@ -11,7 +11,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'add_event_page_model.dart';
 export 'add_event_page_model.dart';
 
@@ -128,30 +127,17 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'fhkyy529' /* Créer une rencontre */,
-                                  ),
+                                  'Créer une rencontre',
                                   maxLines: 1,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -169,97 +155,52 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                           safeSetState(() =>
                               _model.calendarSelectedDay = newSelectedDate);
                         },
-                        titleStyle:
-                            FlutterFlowTheme.of(context).labelSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontStyle,
-                                ),
-                        dayOfWeekStyle:
-                            FlutterFlowTheme.of(context).labelSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontStyle,
-                                ),
-                        dateStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                        selectedDateStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: FlutterFlowTheme.of(context).success,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                        inactiveDateStyle:
-                            FlutterFlowTheme.of(context).labelSmall.override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .fontStyle,
-                                ),
+                        titleStyle: FlutterFlowTheme.of(context)
+                            .labelSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).labelSmallFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .labelSmallIsCustom,
+                            ),
+                        dayOfWeekStyle: FlutterFlowTheme.of(context)
+                            .labelSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).labelSmallFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .labelSmallIsCustom,
+                            ),
+                        dateStyle: FlutterFlowTheme.of(context)
+                            .bodyMedium
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodyMediumIsCustom,
+                            ),
+                        selectedDateStyle: FlutterFlowTheme.of(context)
+                            .titleSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
+                              color: FlutterFlowTheme.of(context).success,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .titleSmallIsCustom,
+                            ),
+                        inactiveDateStyle: FlutterFlowTheme.of(context)
+                            .labelSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).labelSmallFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .labelSmallIsCustom,
+                            ),
                         locale: FFLocalizations.of(context).languageCode,
                       ),
                       Row(
@@ -267,51 +208,27 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'xe73tt7q' /* Heure */,
-                            ),
+                            'Heure',
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.montserrat(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelLargeIsCustom,
                                 ),
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              '3hcokkj2' /* Minute */,
-                            ),
+                            'Minute',
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.montserrat(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelLargeIsCustom,
                                 ),
                           ),
                         ],
@@ -353,23 +270,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      font: GoogleFonts.montserrat(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleLargeIsCustom,
                                     ),
                               ),
                               count: _model.countHourValue ??= 19,
@@ -381,27 +289,15 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                             ),
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              '9jolq073' /* H */,
-                            ),
+                            'H',
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.montserrat(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelLargeIsCustom,
                                 ),
                           ),
                           Container(
@@ -437,23 +333,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
-                                      font: GoogleFonts.montserrat(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleLargeFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleLargeIsCustom,
                                     ),
                               ),
                               count: _model.countMinuteValue ??= 0,
@@ -477,29 +364,16 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 11.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'lz1ai74l' /* Journée ou
-Nom Event */
-                                  ,
-                                ),
+                                'Journée ou\nNom Event',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -525,32 +399,17 @@ Nom Event */
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'oelnwwbn' /* ##### */,
-                                        ),
+                                        hintText: '#####',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyLargeIsCustom,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -593,25 +452,13 @@ Nom Event */
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
                                       textAlign: TextAlign.start,
                                       validator: _model
@@ -626,27 +473,16 @@ Nom Event */
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '0awga9i0' /* (facultatif) */,
-                                ),
+                                '(facultatif)',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),
@@ -688,27 +524,13 @@ Nom Event */
                                         'sports.meca'
                                       ]),
                                       optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          'uycqofhy' /* Football */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'drfgnwew' /* Basketball */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'mcrgfi6i' /* Tennis */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'z1zcpewo' /* Hockey */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'kuuuztnf' /* MMA */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'ijz0ct32' /* Rugby */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'rshirdn3' /* Sports Méca. */,
-                                        )
+                                        'Football',
+                                        'Basketball',
+                                        'Tennis',
+                                        'Hockey',
+                                        'MMA',
+                                        'Rugby',
+                                        'Sports Méca.'
                                       ],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropSportValue = val),
@@ -717,30 +539,15 @@ Nom Event */
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        '2ctea7db' /* Sports */,
-                                      ),
+                                      hintText: 'Sports',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -797,81 +604,31 @@ Nom Event */
                                           'nations.basket'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'i8tzgxy2' /* Premier League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'x7zxzviv' /* LaLiga */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'yii10666' /* Bundesliga */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '8uo6spnp' /* Serie A */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'zkevlgzz' /* Ligue 1 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'z00gmfga' /* Autres */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '2g9rtwv5' /* Pays Football */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'a48manj3' /* NBA */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '2cs4chjw' /* ATP */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'yy7lmo7o' /* WTA */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ktyunsm6' /* Champions League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'yivvkwl8' /* Europa League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'qorpz7v5' /* Conference League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '7yk5yp1u' /* nhl */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ket3v7a1' /* UFC */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'iq5sbjw7' /* Autres - France */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'vfca6ffz' /* Top 14 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '1e37dfh2' /* Nations Rugby */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'bm22s7q7' /* Formula 1 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ao47w12q' /* Moto GP */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'mqs9sdh6' /* World Superbike */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'gn93zd0e' /* MX GP */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'wv967ap4' /* Euro League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'j2rtcm7l' /* Champions Cup */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'tf88qakd' /* Nations Basket */,
-                                          )
+                                          'Premier League',
+                                          'LaLiga',
+                                          'Bundesliga',
+                                          'Serie A',
+                                          'Ligue 1',
+                                          'Autres',
+                                          'Pays Football',
+                                          'NBA',
+                                          'ATP',
+                                          'WTA',
+                                          'Champions League',
+                                          'Europa League',
+                                          'Conference League',
+                                          'nhl',
+                                          'UFC',
+                                          'Autres - France',
+                                          'Top 14',
+                                          'Nations Rugby',
+                                          'Formula 1',
+                                          'Moto GP',
+                                          'World Superbike',
+                                          'MX GP',
+                                          'Euro League',
+                                          'Champions Cup',
+                                          'Nations Basket'
                                         ],
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropLigueValue = val),
@@ -880,30 +637,15 @@ Nom Event */
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'bmdhux9w' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -947,30 +689,14 @@ Nom Event */
                                       'heavy.weight'
                                     ]),
                                     optionLabels: [
-                                      FFLocalizations.of(context).getText(
-                                        'kkqc6vu7' /* Fly Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'kbhy3lo2' /* Bantam Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'buxvmsgz' /* Feather Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'ux5hmdnv' /* Light Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'h0ej69mk' /* Welter Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '09gje5jv' /* Middle Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'd743q7vp' /* Light Heavy Weight */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'r9zrgsnf' /* Heavy Weight */,
-                                      )
+                                      'Fly Weight',
+                                      'Bantam Weight',
+                                      'Feather Weight',
+                                      'Light Weight',
+                                      'Welter Weight',
+                                      'Middle Weight',
+                                      'Light Heavy Weight',
+                                      'Heavy Weight'
                                     ],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.dropLigueFightValue1 = val),
@@ -979,30 +705,15 @@ Nom Event */
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .bodyMediumIsCustom,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'p70zc03d' /* Poids */,
-                                    ),
+                                    hintText: 'Poids',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -1105,39 +816,21 @@ Nom Event */
                                                         val),
                                                 width: 200.0,
                                                 height: 40.0,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'f3hz7bep' /* Teams */,
-                                                ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
+                                                        ),
+                                                hintText: 'Teams',
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -1224,35 +917,22 @@ Nom Event */
                                                               ?.name,
                                                           'teamdom',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                      .bodyMediumFamily,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                      .bodyMediumIsCustom,
+                                                            ),
                                                       ),
                                                       if (_model.eventRef
                                                               ?.reference ==
@@ -1384,11 +1064,8 @@ Nom Event */
                                                                 safeSetState(
                                                                     () {});
                                                               },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'v7yv529y' /* Valider Domicile */,
-                                                              ),
+                                                              text:
+                                                                  'Valider Domicile',
                                                               options:
                                                                   FFButtonOptions(
                                                                 width: 130.0,
@@ -1414,15 +1091,9 @@ Nom Event */
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -1430,14 +1101,9 @@ Nom Event */
                                                                           16.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -1543,36 +1209,17 @@ Nom Event */
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'tssw5w3u' /* Teams */,
-                                              ),
+                                              hintText: 'Teams',
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -1657,31 +1304,16 @@ Nom Event */
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                   ),
                                                   Align(
@@ -1755,11 +1387,7 @@ Nom Event */
                                                           );
                                                         },
                                                         text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'tg22twwi' /* Créer l'évennement */,
-                                                        ),
+                                                            'Créer l\'évennement',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 130.0,
@@ -1786,17 +1414,9 @@ Nom Event */
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1804,14 +1424,9 @@ Nom Event */
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -1917,39 +1532,21 @@ Nom Event */
                                                         val),
                                                 width: 200.0,
                                                 height: 40.0,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'ite24t0w' /* Teams */,
-                                                ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
+                                                        ),
+                                                hintText: 'Teams',
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -2037,35 +1634,22 @@ Nom Event */
                                                               ?.name,
                                                           'teamdom',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                      .bodyMediumFamily,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
+                                                                      .bodyMediumIsCustom,
+                                                            ),
                                                       ),
                                                       if (_model.eventFightRef
                                                               ?.reference ==
@@ -2201,11 +1785,8 @@ Nom Event */
                                                                 safeSetState(
                                                                     () {});
                                                               },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'e95uo45x' /* Valider Domicile */,
-                                                              ),
+                                                              text:
+                                                                  'Valider Domicile',
                                                               options:
                                                                   FFButtonOptions(
                                                                 width: 130.0,
@@ -2231,15 +1812,9 @@ Nom Event */
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .poppins(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -2247,14 +1822,9 @@ Nom Event */
                                                                           16.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -2361,36 +1931,17 @@ Nom Event */
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'rfxi5kof' /* Teams */,
-                                              ),
+                                              hintText: 'Teams',
                                               icon: Icon(
                                                 Icons
                                                     .keyboard_arrow_down_rounded,
@@ -2476,31 +2027,16 @@ Nom Event */
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .poppins(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                   ),
                                                   Align(
@@ -2576,11 +2112,7 @@ Nom Event */
                                                           );
                                                         },
                                                         text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          '5ree4omd' /* Créer l'évennement */,
-                                                        ),
+                                                            'Créer l\'évennement',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 130.0,
@@ -2607,17 +2139,9 @@ Nom Event */
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -2625,14 +2149,9 @@ Nom Event */
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -2683,28 +2202,15 @@ Nom Event */
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       Align(
@@ -2771,10 +2277,7 @@ Nom Event */
 
                                               safeSetState(() {});
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '9g3ochfy' /* Ajouter les pilotes */,
-                                            ),
+                                            text: 'Ajouter les pilotes',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 40.0,
@@ -2789,33 +2292,19 @@ Nom Event */
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font: GoogleFonts.poppins(
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     fontSize: 16.0,
                                                     letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
                                                                 context)
-                                                            .titleSmall
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
+                                                            .titleSmallIsCustom,
                                                   ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
@@ -2869,29 +2358,15 @@ Nom Event */
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                           Column(
@@ -2929,61 +2404,17 @@ Nom Event */
                                                       'conference.league'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '2mhoekyk' /* Premier League */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'sy1bdcoi' /* LaLiga */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'btfskhbo' /* Bundesliga */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'favg2lx8' /* Serie A */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'inegvvoa' /* Ligue 1 */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '6d6w86wq' /* Autres France */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'eue7aadg' /* Autres */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'r36r0f2k' /* Nations */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '9iuojbmy' /* Champions League */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '1nhjiq4g' /* Europa League */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'e0cbygge' /* Conference League */,
-                                                      )
+                                                      'Premier League',
+                                                      'LaLiga',
+                                                      'Bundesliga',
+                                                      'Serie A',
+                                                      'Ligue 1',
+                                                      'Autres France',
+                                                      'Autres',
+                                                      'Nations',
+                                                      'Champions League',
+                                                      'Europa League',
+                                                      'Conference League'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -2996,36 +2427,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'frnngwdc' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3078,21 +2491,9 @@ Nom Event */
                                                       'nations.basket'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'jq358vgo' /* NBA */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '63b9nru4' /* Euro League */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'mix21nq8' /* Nations */,
-                                                      )
+                                                      'NBA',
+                                                      'Euro League',
+                                                      'Nations'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3105,36 +2506,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      '8bkysdqf' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3184,16 +2567,8 @@ Nom Event */
                                                     options: List<String>.from(
                                                         ['atp', 'wta']),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'jch2fyv3' /* ATP */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '7olg7s26' /* WTA */,
-                                                      )
+                                                      'ATP',
+                                                      'WTA'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3206,36 +2581,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'zgaox8ad' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3290,31 +2647,11 @@ Nom Event */
                                                       'salle.elite.f'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '3ra9kqls' /* NHL */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '8axu9hdj' /* Gazon Elite H */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'vi4h2ikj' /* Gazon Elite F */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '9xjzuqnp' /* Salle Elite H */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'u5925zxp' /* Salle Elite F */,
-                                                      )
+                                                      'NHL',
+                                                      'Gazon Elite H',
+                                                      'Gazon Elite F',
+                                                      'Salle Elite H',
+                                                      'Salle Elite F'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3327,36 +2664,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'cl8gek19' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3405,13 +2724,7 @@ Nom Event */
                                                     ),
                                                     options: List<String>.from(
                                                         ['ufc']),
-                                                    optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        's90o0jy2' /* UFC */,
-                                                      )
-                                                    ],
+                                                    optionLabels: ['UFC'],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
                                                                 .dropLigueMMAValue =
@@ -3423,36 +2736,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'c7mdlhy3' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3505,21 +2800,9 @@ Nom Event */
                                                       'nations.rugby'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'caggylrs' /* Top 14 */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'st7v8ghf' /* Champions Cup */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'zvi3yz93' /* Nations */,
-                                                      )
+                                                      'Top 14',
+                                                      'Champions Cup',
+                                                      'Nations'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3532,36 +2815,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'svkdsihd' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3615,26 +2880,10 @@ Nom Event */
                                                       'mx.gp'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'eku1fwwc' /* Formule 1 */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'mat4kodf' /* Moto GP */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'wm6vy3k8' /* World Superbike */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'qazu84br' /* MX GP */,
-                                                      )
+                                                      'Formule 1',
+                                                      'Moto GP',
+                                                      'World Superbike',
+                                                      'MX GP'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3647,36 +2896,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      't0y3lh4z' /* Ligues */,
-                                                    ),
+                                                    hintText: 'Ligues',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3734,46 +2965,14 @@ Nom Event */
                                                       'heavy.weight'
                                                     ]),
                                                     optionLabels: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '2j32kcif' /* Fly Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'pum3172n' /* Bantam Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'ipv31fm1' /* Feather Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'm096q0z6' /* Light Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'yzjukkkp' /* Welter Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'tpkxmmme' /* Middle Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'neid92r9' /* Light Heavy Weight */,
-                                                      ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'lxch0v3w' /* Heavy Weight */,
-                                                      )
+                                                      'Fly Weight',
+                                                      'Bantam Weight',
+                                                      'Feather Weight',
+                                                      'Light Weight',
+                                                      'Welter Weight',
+                                                      'Middle Weight',
+                                                      'Light Heavy Weight',
+                                                      'Heavy Weight'
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
@@ -3786,36 +2985,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'yuaxb0xx' /* Poids */,
-                                                    ),
+                                                    hintText: 'Poids',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -3940,36 +3121,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'tnpwtso9' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -4053,34 +3216,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventFootRef
                                                             ?.reference ==
@@ -4208,11 +3358,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'kjmtn2hf' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -4239,27 +3386,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -4364,36 +3500,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'v5uedmg7' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -4477,34 +3595,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventBasketRef
                                                             ?.reference ==
@@ -4632,11 +3737,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'u3jyr8xs' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -4663,27 +3765,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -4788,36 +3879,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'ta1lmg1r' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -4901,34 +3974,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventTennisRef
                                                             ?.reference ==
@@ -5056,11 +4116,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'edba452y' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -5087,27 +4144,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -5212,36 +4258,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'eaqssnwd' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -5325,34 +4353,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventHockeyRef
                                                             ?.reference ==
@@ -5480,11 +4495,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'hjb02dc3' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -5511,27 +4523,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -5642,36 +4643,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'z5jr6uj2' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -5755,34 +4738,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventMMARef
                                                             ?.reference ==
@@ -5915,11 +4885,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'l67oihim' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -5946,27 +4913,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -6079,36 +5035,18 @@ Nom Event */
                                                                 context)
                                                             .bodyMedium
                                                             .override(
-                                                              font: GoogleFonts
-                                                                  .poppins(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                               letterSpacing:
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                      .bodyMediumIsCustom,
                                                             ),
-                                                    hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'y9kyi4ag' /* Teams */,
-                                                    ),
+                                                    hintText: 'Teams',
                                                     icon: Icon(
                                                       Icons
                                                           .keyboard_arrow_down_rounded,
@@ -6192,34 +5130,21 @@ Nom Event */
                                                         columnTeamsRecord?.name,
                                                         'teamdom',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .poppins(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                fontSize: 10.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                     if (_model.eventRugbyRef
                                                             ?.reference ==
@@ -6347,11 +5272,8 @@ Nom Event */
                                                               safeSetState(
                                                                   () {});
                                                             },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'ho17s9lk' /* Valider Domicile */,
-                                                            ),
+                                                            text:
+                                                                'Valider Domicile',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 130.0,
@@ -6378,27 +5300,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -6448,36 +5359,22 @@ Nom Event */
                                                     _model.dropLigueMecaValue,
                                                     'ligue',
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        fontSize: 10.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            fontSize: 10.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                 ),
                                                 if (_model.eventMecaRef
                                                         ?.reference ==
@@ -6564,11 +5461,7 @@ Nom Event */
                                                           safeSetState(() {});
                                                         },
                                                         text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'nntackqx' /* Ajouter les pilotes */,
-                                                        ),
+                                                            'Ajouter les pilotes',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 130.0,
@@ -6595,17 +5488,9 @@ Nom Event */
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -6613,14 +5498,9 @@ Nom Event */
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -6733,40 +5613,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'd7neyn8a' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -6861,29 +5723,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -6945,11 +5795,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'nlgvn1u6' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -6973,27 +5820,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -7094,40 +5930,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'w28erjxk' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -7222,29 +6040,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -7306,11 +6112,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '27x7h671' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -7334,27 +6137,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -7455,40 +6247,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '1mnbjyuf' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -7583,29 +6357,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -7667,11 +6429,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'bv0ycre8' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -7695,27 +6454,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -7816,40 +6564,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'g5da7bzh' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -7944,29 +6674,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -8028,11 +6746,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'ckn869pn' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -8056,27 +6771,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -8183,40 +6887,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    's818rf8o' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -8311,29 +6997,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -8395,11 +7069,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'xplz38w5' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -8423,27 +7094,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -8551,40 +7211,22 @@ Nom Event */
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  hintText: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'nqi4m9eh' /* Teams */,
-                                                  ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                  hintText: 'Teams',
                                                   icon: Icon(
                                                     Icons
                                                         .keyboard_arrow_down_rounded,
@@ -8679,29 +7321,17 @@ Nom Event */
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .poppins(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   fontSize:
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                           Align(
@@ -8763,11 +7393,8 @@ Nom Event */
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '9c7zciyr' /* Créer l'évennement */,
-                                                                ),
+                                                                text:
+                                                                    'Créer l\'évennement',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   width: 130.0,
@@ -8791,27 +7418,16 @@ Nom Event */
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .poppins(
-                                                                          fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontWeight,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .fontStyle,
-                                                                        ),
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,

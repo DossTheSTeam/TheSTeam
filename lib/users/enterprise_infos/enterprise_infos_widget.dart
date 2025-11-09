@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'enterprise_infos_model.dart';
 export 'enterprise_infos_model.dart';
 
@@ -139,31 +138,17 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                         'francais'))
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'kdahdvyx' /* Entreprise */,
-                                      ),
+                                      'Entreprise',
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -175,31 +160,17 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                         'american'))
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'sr8862iy' /* Business */,
-                                      ),
+                                      'Business',
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -208,31 +179,17 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'deutsch')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '902q5pz8' /* Geschäft */,
-                                      ),
+                                      'Geschäft',
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -241,32 +198,18 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'espanol')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'wox8hwtl' /* Negocio */,
-                                      ),
+                                      'Negocio',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -275,32 +218,18 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'italiano')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        '5ktz4bbd' /* Attività commerciale */,
-                                      ),
+                                      'Attività commerciale',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -309,32 +238,18 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'portugues')
                                   AuthUserStreamWidget(
                                     builder: (context) => Text(
-                                      FFLocalizations.of(context).getText(
-                                        'cdaxjz8u' /* Negócios */,
-                                      ),
+                                      'Negócios',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                     ),
                                   ),
@@ -374,29 +289,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'francais'))
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ir1yf3ft' /* Découvrez une nouvelle dimensi... */,
-                                  ),
+                                  'Découvrez une nouvelle dimension de compétition entre collègues !\n\nVous souhaitez savoir comment vous vous situez par rapport à vos collègues passionnés de sport et de paris  sportifs? Indiquez simplement le nom de votre entreprise dans votre profil !\n\nCette fonctionnalité vous offre la possibilité unique de vous mesurer à vos collègues au sein de votre société. Nous tenons à vous garantir que les informations relatives à votre entreprise sont entièrement confidentielles et ne seront en aucun cas divulguées publiquement sur votre profil.\n\nN\'attendez plus, mettez à jour votre profil et lancez la compétition amicale au sein de votre entreprise !',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -408,29 +310,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                     'american'))
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'zphl8jov' /* Discover a new dimension of co... */,
-                                  ),
+                                  'Discover a new dimension of competition between colleagues!\n\nWant to know how you compare to your fellow sports and betting ? Simply enter your company name in your profile!\n\nThis feature offers you the unique opportunity to compete with your colleagues within your company. We assure you that your company information is completely confidential and will never be publicly disclosed on your profile.\n\nDon\'t wait any longer, update your profile, and start some friendly competition within your company!',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -439,29 +328,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                 'deutsch')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'zktqfxwn' /* Entdecken Sie eine neue Dimens... */,
-                                  ),
+                                  'Entdecken Sie eine neue Dimension des Wettbewerbs unter Kollegen!\n\nMöchten Sie wissen, wie Sie im Vergleich zu Ihren Sport-, Wett- oder ? Tragen Sie Ihren Firmennamen einfach in Ihr Profil ein!\n\nDiese Funktion bietet Ihnen die einzigartige Möglichkeit, sich mit Ihren Kollegen innerhalb Ihres Unternehmens zu messen. Wir möchten Ihnen versichern, dass Ihre Unternehmensinformationen absolut vertraulich behandelt werden und unter keinen Umständen öffentlich in Ihrem Profil preisgegeben werden.\n\nWarten Sie nicht länger, aktualisieren Sie Ihr Profil und starten Sie den freundschaftlichen Wettbewerb innerhalb Ihres Unternehmens!',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -470,29 +346,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                 'espanol')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ncby24l2' /* ¡Descubre una nueva dimensión ... */,
-                                  ),
+                                  '¡Descubre una nueva dimensión de competición entre colegas!\n\n¿Quieres saber cómo te comparas con tus compañeros entusiastas de los deportes, las apuestas ? ¡Simplemente incluya el nombre de su empresa en su perfil!\n\nEsta característica le brinda la oportunidad única de competir con sus colegas dentro de su empresa. Queremos asegurarle que la información de su empresa es completamente confidencial y no se divulgará públicamente en su perfil bajo ninguna circunstancia.\n\n¡No esperes más, actualiza tu perfil y comienza la competencia amistosa dentro de tu empresa!',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -501,29 +364,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                 'italiano')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wmuefh7h' /* Scopri una nuova dimensione di... */,
-                                  ),
+                                  'Scopri una nuova dimensione di competizione tra colleghi!\n\nVuoi sapere come ti confronti con i tuoi colleghi appassionati di sport, scommesse ? Basta includere il nome della tua azienda nel tuo profilo!\n\nQuesta funzionalità ti offre l\'opportunità unica di competere con i tuoi colleghi all\'interno della tua azienda. Vogliamo assicurarti che le informazioni sulla tua azienda sono assolutamente riservate e non verranno divulgate pubblicamente sul tuo profilo in nessuna circostanza.\n\nNon aspettare oltre, aggiorna il tuo profilo e inizia la competizione amichevole all\'interno della tua azienda!',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -532,29 +382,16 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                 'portugues')
                               AuthUserStreamWidget(
                                 builder: (context) => Text(
-                                  FFLocalizations.of(context).getText(
-                                    'cdqyse3h' /* Descubra uma nova dimensão de ... */,
-                                  ),
+                                  'Descubra uma nova dimensão de competição entre colegas!\n\nQuer saber como se compara com outros entusiastas de desporto, apostas ? Basta incluir o nome da sua empresa no seu perfil!\n\nEsta funcionalidade dá-lhe uma oportunidade única de competir com os seus colegas dentro da sua empresa. Queremos garantir que as informações da sua empresa são completamente confidenciais e não serão divulgadas publicamente no seu perfil em nenhuma circunstância.\n\nNão espere mais, atualize o seu perfil e inicie a competição amigável dentro da sua empresa!',
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelSmall
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelSmallFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .labelSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -578,32 +415,17 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '106wh7zl' /* ............................. */,
-                                    ),
+                                    hintText: '.............................',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                          ),
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelMediumIsCustom,
                                         ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
@@ -641,23 +463,12 @@ class _EnterpriseInfosWidgetState extends State<EnterpriseInfosWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.poppins(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyMediumIsCustom,
                                       ),
                                   validator: _model
                                       .enterpriseFieldTextControllerValidator

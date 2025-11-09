@@ -9,7 +9,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'add_team_page_model.dart';
 export 'add_team_page_model.dart';
 
@@ -129,28 +128,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '6r1xunwf' /* Add Team */,
-                                ),
+                                'Add Team',
                                 maxLines: 1,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: GoogleFonts.poppins(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .fontStyle,
-                                      ),
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .fontStyle,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineSmallIsCustom,
                                     ),
                               ),
                             ),
@@ -184,31 +172,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 29.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'm9sqoyof' /* Football */,
-                                        ),
+                                        'Football',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -227,31 +201,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '2lv89e8d' /* Basketball */,
-                                        ),
+                                        'Basketball',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -270,31 +230,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '67ulqh5n' /* Tennis */,
-                                        ),
+                                        'Tennis',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -313,31 +259,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          '86c4hxjh' /* Hockey */,
-                                        ),
+                                        'Hockey',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -356,31 +288,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'e0grgz9e' /* Fight Sports */,
-                                        ),
+                                        'Fight Sports',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -399,31 +317,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'oi7cy4m5' /* Rugby */,
-                                        ),
+                                        'Rugby',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -442,31 +346,17 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         0.0, 0.0, 0.0, 26.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
-                                        FFLocalizations.of(context).getText(
-                                          'l1krcajx' /* Sports Méca. */,
-                                        ),
+                                        'Sports Méca.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ),
@@ -511,30 +401,14 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           'autres.france'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            '2mfkc84k' /* Premier League */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'azyevtrz' /* LaLiga */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'i920e9j1' /* Bundesliga */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'xvqsc8os' /* Serie A */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'wqpomk72' /* Ligue 1 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'xuv6awy2' /* Autres */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '57hkqwey' /* Pays Football */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'vmk1icyu' /* Autres - France */,
-                                          )
+                                          'Premier League',
+                                          'LaLiga',
+                                          'Bundesliga',
+                                          'Serie A',
+                                          'Ligue 1',
+                                          'Autres',
+                                          'Pays Football',
+                                          'Autres - France'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueFootValue = val),
@@ -543,30 +417,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'vqpozdbn' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -615,15 +474,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           'other.basket'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            '8pbt5edk' /* NBA */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'ksku6vyc' /* Nations Basketball */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'px8gl8cb' /* Euro League */,
-                                          ),
+                                          'NBA',
+                                          'Nations Basketball',
+                                          'Euro League',
                                           ''
                                         ],
                                         onChanged: (val) => safeSetState(() =>
@@ -633,30 +486,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '09uznwyg' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -700,14 +538,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         ),
                                         options:
                                             List<String>.from(['atp', 'wta']),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'yhos12bs' /* ATP */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'vdg1csgn' /* WTA */,
-                                          )
-                                        ],
+                                        optionLabels: ['ATP', 'WTA'],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueTennisValue = val),
                                         width: 180.0,
@@ -715,30 +546,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '7juug7e3' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -788,21 +604,11 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           'salle.elite.f'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            '6wtxr4yk' /* Glace NHL */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'h97t4lbn' /* Gazon Elite H */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '6dfo4nv1' /* Gazon Elite F */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'w59o7ru9' /* Salle Elite H */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'n2v7aaky' /* Salle Elite F */,
-                                          )
+                                          'Glace NHL',
+                                          'Gazon Elite H',
+                                          'Gazon Elite F',
+                                          'Salle Elite H',
+                                          'Salle Elite F'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueHockeyValue = val),
@@ -811,30 +617,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '66wd1j55' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -877,11 +668,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           _model.dropLigueFightValue1 ??= '',
                                         ),
                                         options: List<String>.from(['ufc']),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'mpv0es9m' /* UFC */,
-                                          )
-                                        ],
+                                        optionLabels: ['UFC'],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueFightValue1 = val),
                                         width: 180.0,
@@ -889,30 +676,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '9g0fcm6z' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -960,15 +732,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           'other.rugby'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            '0j8r8fzb' /* Top 14 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '4aufr3hi' /* Nationss Rugby */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'q5oxljt2' /* Other Rugby */,
-                                          )
+                                          'Top 14',
+                                          'Nationss Rugby',
+                                          'Other Rugby'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueRugbyValue = val),
@@ -977,30 +743,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '2g9g1der' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1049,18 +800,10 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                           'mx.gp'
                                         ]),
                                         optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'qzhsfbg1' /* Formule 1 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'z99eqhev' /* Moto GP */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'h5r36l24' /* World Superbike */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'fqljkoau' /* MX GP */,
-                                          )
+                                          'Formule 1',
+                                          'Moto GP',
+                                          'World Superbike',
+                                          'MX GP'
                                         ],
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropLigueMecaValue = val),
@@ -1069,30 +812,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '6jgz45d6' /* Ligues */,
-                                        ),
+                                        hintText: 'Ligues',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -1128,27 +856,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
-                            hintText: FFLocalizations.of(context).getText(
-                              'w7qe6vz2' /* Team Name */,
-                            ),
+                            hintText: 'Team Name',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
                                 ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -1180,24 +896,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
                           validator: _model.teamNameFieldTextControllerValidator
                               .asValidator(context),
                         ),
@@ -1211,27 +918,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                           autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
-                            hintText: FFLocalizations.of(context).getText(
-                              '51xe3imq' /* teamvalue */,
-                            ),
+                            hintText: 'teamvalue',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  font: GoogleFonts.poppins(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
-                                  ),
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .fontStyle,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
                                 ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -1263,24 +958,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.poppins(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
+                              ),
                           validator: _model
                               .teamvalueFieldTextControllerValidator
                               .asValidator(context),
@@ -1421,15 +1107,9 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                             'conference.league'
                                           ]),
                                           optionLabels: [
-                                            FFLocalizations.of(context).getText(
-                                              'zzaczw7m' /* Champions League */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'fldfp0ba' /* Europa League */,
-                                            ),
-                                            FFLocalizations.of(context).getText(
-                                              'sakg2tf1' /* Conference League */,
-                                            )
+                                            'Champions League',
+                                            'Europa League',
+                                            'Conference League'
                                           ],
                                           onChanged: (val) => safeSetState(() =>
                                               _model.dropFootCupValue = val),
@@ -1439,32 +1119,16 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'sp8mmf6p' /* Coupes */,
-                                          ),
+                                          hintText: 'Coupes',
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -1513,10 +1177,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   points: 0,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'mahxhxbr' /* Valider Foot */,
-                                          ),
+                                          text: 'Valider Foot',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -1532,33 +1193,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -1617,10 +1264,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   points: 0,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            's4yflls1' /* Valider Basket */,
-                                          ),
+                                          text: 'Valider Basket',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -1636,33 +1280,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -1721,10 +1351,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   points: 0,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'jtlwervl' /* Valider Tennis */,
-                                          ),
+                                          text: 'Valider Tennis',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -1740,33 +1367,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -1825,10 +1438,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   points: 0,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '87a6fcli' /* Valider Hockey */,
-                                          ),
+                                          text: 'Valider Hockey',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -1844,33 +1454,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -1922,30 +1518,14 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                         'heavy.weight'
                                       ]),
                                       optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          '2lg0tkks' /* Fly Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'ulbl7imv' /* Bantam Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'u8y7575s' /* Feather Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          '250u980n' /* Light Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'zkw5t40j' /* Welter Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'uo1il81h' /* Middle Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'x44vt9en' /* Light Heavy Weight */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          '0d9uo7qz' /* Heavy Weight */,
-                                        )
+                                        'Fly Weight',
+                                        'Bantam Weight',
+                                        'Feather Weight',
+                                        'Light Weight',
+                                        'Welter Weight',
+                                        'Middle Weight',
+                                        'Light Heavy Weight',
+                                        'Heavy Weight'
                                       ],
                                       onChanged: (val) => safeSetState(() =>
                                           _model.dropLigueFightValue2 = val),
@@ -1954,30 +1534,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        't4xsaaqh' /* Poids */,
-                                      ),
+                                      hintText: 'Poids',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -2027,10 +1592,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       .dropLigueFightValue2,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'bv1e6pnb' /* Valider */,
-                                          ),
+                                          text: 'Valider',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -2046,33 +1608,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -2115,11 +1663,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                       ),
                                       options:
                                           List<String>.from(['champions.cup']),
-                                      optionLabels: [
-                                        FFLocalizations.of(context).getText(
-                                          'v103b5p0' /* Champions Cup */,
-                                        )
-                                      ],
+                                      optionLabels: ['Champions Cup'],
                                       onChanged: (val) => safeSetState(
                                           () => _model.dropRugbyCupValue = val),
                                       width: 170.0,
@@ -2127,30 +1671,15 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.poppins(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'olix285k' /* Coupes */,
-                                      ),
+                                      hintText: 'Coupes',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -2200,10 +1729,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                       _model.dropRugbyCupValue,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'idsyk9ja' /* Valider Rugby */,
-                                          ),
+                                          text: 'Valider Rugby',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -2219,33 +1745,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -2304,10 +1816,7 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                   points: 0,
                                                 ));
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'dmc79c8l' /* Valider Sport Méca */,
-                                          ),
+                                          text: 'Valider Sport Méca',
                                           options: FFButtonOptions(
                                             width: 180.0,
                                             height: 40.0,
@@ -2323,33 +1832,19 @@ class _AddTeamPageWidgetState extends State<AddTeamPageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(

@@ -119,19 +119,12 @@ class _MyAppState extends State<MyApp> {
       locale: _locale,
       supportedLocales: const [
         Locale('fr'),
-        Locale('en'),
-        Locale('de'),
-        Locale('es'),
-        Locale('it'),
-        Locale('pt'),
       ],
       theme: ThemeData(
         brightness: Brightness.light,
-        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
