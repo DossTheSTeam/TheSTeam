@@ -655,6 +655,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget> {
                                                   displayName: _model
                                                       .pseudoFieldTextController
                                                       .text,
+                                                  helpNav: true,
                                                 ));
                                               },
                                               child: Column(
