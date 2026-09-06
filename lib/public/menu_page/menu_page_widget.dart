@@ -4008,7 +4008,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                       .fromSTEB(
                                                           23.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'v 1.4.8',
+                                                    'v 1.4.9',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
