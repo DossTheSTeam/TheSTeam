@@ -3,12 +3,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/users/langage/langage_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'my_bests_rank_page_model.dart';
 export 'my_bests_rank_page_model.dart';
 
@@ -77,7 +75,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -264,7 +262,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                     context.pushNamed(
                                       RankPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.bottomToTop,
@@ -568,7 +566,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -1259,7 +1257,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -1386,7 +1384,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -1499,7 +1497,7 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                           .routeName,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,
@@ -1597,7 +1595,8 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                         context.pushNamed(
                                           RankPageMyEnterpriseWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -2870,199 +2869,161 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return WebViewAware(
-                                                          child:
-                                                              GestureDetector(
-                                                            onTap: () {
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus();
-                                                              FocusManager
-                                                                  .instance
-                                                                  .primaryFocus
-                                                                  ?.unfocus();
-                                                            },
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  LangageWidget(),
-                                                            ),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      if ((valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.langage,
-                                                                      '') ==
-                                                                  '') ||
-                                                          (valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'francais'))
-                                                        Text(
-                                                          'Etre suivis  par des utilisateurs pour augmenter le contenu du classement',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if ((valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'english') ||
-                                                          (valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'american'))
-                                                        Text(
-                                                          'Being followed by users to increase content ranking',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'deutsch')
-                                                        Text(
-                                                          'Von Benutzern verfolgt werden, um das Inhaltsranking zu verbessern',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'espanol')
-                                                        Text(
-                                                          'Ser seguido por los usuarios para aumentar la clasificación del contenido',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'italiano')
-                                                        Text(
-                                                          'Essere seguiti dagli utenti per aumentare il posizionamento dei contenuti',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'portugues')
-                                                        Text(
-                                                          'Ser seguido pelos utilizadores para aumentar a classificação do conteúdo',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                    ],
-                                                  ),
+                                                builder: (context) => Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    if ((valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                '') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'francais'))
+                                                      Text(
+                                                        'Etre suivis  par des utilisateurs pour augmenter le contenu du classement',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if ((valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'english') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'american'))
+                                                      Text(
+                                                        'Being followed by users to increase content ranking',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'deutsch')
+                                                      Text(
+                                                        'Von Benutzern verfolgt werden, um das Inhaltsranking zu verbessern',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'espanol')
+                                                      Text(
+                                                        'Ser seguido por los usuarios para aumentar la clasificación del contenido',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'italiano')
+                                                      Text(
+                                                        'Essere seguiti dagli utenti per aumentare il posizionamento dei contenuti',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'portugues')
+                                                      Text(
+                                                        'Ser seguido pelos utilizadores para aumentar a classificação do conteúdo',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -3075,199 +3036,161 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                               alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return WebViewAware(
-                                                          child:
-                                                              GestureDetector(
-                                                            onTap: () {
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus();
-                                                              FocusManager
-                                                                  .instance
-                                                                  .primaryFocus
-                                                                  ?.unfocus();
-                                                            },
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  LangageWidget(),
-                                                            ),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  },
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      if ((valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.langage,
-                                                                      '') ==
-                                                                  '') ||
-                                                          (valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'francais'))
-                                                        Text(
-                                                          'Suivre des utilisateurs pour augmenter le contenu du classement',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if ((valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'english') ||
-                                                          (valueOrDefault(
-                                                                  currentUserDocument
-                                                                      ?.langage,
-                                                                  '') ==
-                                                              'american'))
-                                                        Text(
-                                                          'Follow users to increase content ranking',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'deutsch')
-                                                        Text(
-                                                          'Folgen Sie Benutzern, um das Inhaltsranking zu verbessern',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'espanol')
-                                                        Text(
-                                                          'Seguir a los usuarios para aumentar la clasificación del contenido',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'italiano')
-                                                        Text(
-                                                          'Segui gli utenti per aumentare il posizionamento dei contenuti',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                      if (valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.langage,
-                                                              '') ==
-                                                          'portugues')
-                                                        Text(
-                                                          'Siga os utilizadores para aumentar a classificação do conteúdo',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts:
-                                                                    !FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmallIsCustom,
-                                                              ),
-                                                        ),
-                                                    ],
-                                                  ),
+                                                builder: (context) => Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    if ((valueOrDefault(
+                                                                    currentUserDocument
+                                                                        ?.langage,
+                                                                    '') ==
+                                                                '') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'francais'))
+                                                      Text(
+                                                        'Suivre des utilisateurs pour augmenter le contenu du classement',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if ((valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'english') ||
+                                                        (valueOrDefault(
+                                                                currentUserDocument
+                                                                    ?.langage,
+                                                                '') ==
+                                                            'american'))
+                                                      Text(
+                                                        'Follow users to increase content ranking',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'deutsch')
+                                                      Text(
+                                                        'Folgen Sie Benutzern, um das Inhaltsranking zu verbessern',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'espanol')
+                                                      Text(
+                                                        'Seguir a los usuarios para aumentar la clasificación del contenido',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'italiano')
+                                                      Text(
+                                                        'Segui gli utenti per aumentare il posizionamento dei contenuti',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.langage,
+                                                            '') ==
+                                                        'portugues')
+                                                      Text(
+                                                        'Siga os utilizadores para aumentar a classificação do conteúdo',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
+                                                                ),
+                                                      ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -4074,12 +3997,6 @@ class _MyBestsRankPageWidgetState extends State<MyBestsRankPageWidget> {
                                                                             .primaryBackground,
                                                                         borderRadius:
                                                                             BorderRadius.only(
-                                                                          bottomLeft:
-                                                                              Radius.circular(0.0),
-                                                                          bottomRight:
-                                                                              Radius.circular(0.0),
-                                                                          topLeft:
-                                                                              Radius.circular(0.0),
                                                                           topRight:
                                                                               Radius.circular(1.0),
                                                                         ),

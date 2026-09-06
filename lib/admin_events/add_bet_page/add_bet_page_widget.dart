@@ -133,7 +133,7 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -2266,6 +2266,94 @@ class _AddBetPageWidgetState extends State<AddBetPageWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                   ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'pas de cote',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
+                                          ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 10.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            await widget.eventRef!
+                                                .update(createEventsRecordData(
+                                              statut: false,
+                                            ));
+
+                                            context.pushNamed(
+                                                ListEventsAdminWidget
+                                                    .routeName);
+                                          },
+                                          text: 'Début du match',
+                                          options: FFButtonOptions(
+                                            width: 150.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      fontSize: 16.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .error,
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

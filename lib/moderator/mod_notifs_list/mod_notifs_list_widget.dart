@@ -73,7 +73,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -259,7 +259,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -617,7 +617,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     }.withoutNulls,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -947,7 +947,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
@@ -1268,7 +1268,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                       }.withoutNulls,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,
@@ -1494,7 +1494,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           6.0,
                                                                           0.0),
                                                               child: Container(
-                                                                width: 35.0,
+                                                                width: 55.0,
                                                                 height: 35.0,
                                                                 decoration:
                                                                     BoxDecoration(
@@ -1502,7 +1502,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                           context)
                                                                       .primaryBackground,
                                                                   shape: BoxShape
-                                                                      .circle,
+                                                                      .rectangle,
                                                                 ),
                                                                 child:
                                                                     ClipRRect(
@@ -1519,7 +1519,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .cover,
+                                                                        .scaleDown,
                                                                   ),
                                                                 ),
                                                               ),
@@ -1551,7 +1551,7 @@ class _ModNotifsListWidgetState extends State<ModNotifsListWidget> {
                                                                   }.withoutNulls,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,

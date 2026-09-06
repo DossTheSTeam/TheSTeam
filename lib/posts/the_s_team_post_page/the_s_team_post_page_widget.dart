@@ -1786,7 +1786,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -2694,7 +2694,7 @@ class _TheSTeamPostPageWidgetState extends State<TheSTeamPostPageWidget> {
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:

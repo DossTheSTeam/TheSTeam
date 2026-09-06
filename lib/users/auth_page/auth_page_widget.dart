@@ -615,13 +615,12 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 EdgeInsets.all(
                                                                     24.0),
                                                             suffixIcon: InkWell(
-                                                              onTap: () =>
-                                                                  safeSetState(
-                                                                () => _model
-                                                                        .passwordCreateVisibility =
-                                                                    !_model
-                                                                        .passwordCreateVisibility,
-                                                              ),
+                                                              onTap: () async {
+                                                                safeSetState(() =>
+                                                                    _model.passwordCreateVisibility =
+                                                                        !_model
+                                                                            .passwordCreateVisibility);
+                                                              },
                                                               focusNode: FocusNode(
                                                                   skipTraversal:
                                                                       true),
@@ -763,13 +762,12 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                 EdgeInsets.all(
                                                                     24.0),
                                                             suffixIcon: InkWell(
-                                                              onTap: () =>
-                                                                  safeSetState(
-                                                                () => _model
-                                                                        .confirmPasswordCreateVisibility =
-                                                                    !_model
-                                                                        .confirmPasswordCreateVisibility,
-                                                              ),
+                                                              onTap: () async {
+                                                                safeSetState(() =>
+                                                                    _model.confirmPasswordCreateVisibility =
+                                                                        !_model
+                                                                            .confirmPasswordCreateVisibility);
+                                                              },
                                                               focusNode: FocusNode(
                                                                   skipTraversal:
                                                                       true),
@@ -1435,13 +1433,12 @@ class _AuthPageWidgetState extends State<AuthPageWidget>
                                                                         0.0,
                                                                         24.0),
                                                             suffixIcon: InkWell(
-                                                              onTap: () =>
-                                                                  safeSetState(
-                                                                () => _model
-                                                                        .passwordVisibility =
-                                                                    !_model
-                                                                        .passwordVisibility,
-                                                              ),
+                                                              onTap: () async {
+                                                                safeSetState(() =>
+                                                                    _model.passwordVisibility =
+                                                                        !_model
+                                                                            .passwordVisibility);
+                                                              },
                                                               focusNode: FocusNode(
                                                                   skipTraversal:
                                                                       true),

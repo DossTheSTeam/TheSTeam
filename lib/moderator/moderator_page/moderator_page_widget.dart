@@ -75,7 +75,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -100,7 +100,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                   context.pushNamed(
                                     TheSTeamPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -487,7 +487,7 @@ class _ModeratorPageWidgetState extends State<ModeratorPageWidget> {
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,

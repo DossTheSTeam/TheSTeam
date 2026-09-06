@@ -92,7 +92,8 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                         context.pushNamed(
                                           MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -289,7 +290,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -553,7 +554,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                             }.withoutNulls,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -708,7 +709,7 @@ class _ListAdvicesWidgetState extends State<ListAdvicesWidget> {
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    '__transition_info__': TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.scale,
                                                                                       alignment: Alignment.bottomCenter,

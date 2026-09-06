@@ -77,7 +77,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                     context.pushNamed(
                                       MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -285,7 +285,7 @@ class _MyNotifsListWidgetState extends State<MyNotifsListWidget> {
                                                                   }.withoutNulls,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,

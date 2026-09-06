@@ -111,7 +111,8 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                         context.pushNamed(
                                           MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -350,7 +351,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                       memberEntryPageTeamsRecord.logo,
                                       width: 300.0,
                                       height: 200.0,
-                                      fit: BoxFit.fitHeight,
+                                      fit: BoxFit.scaleDown,
                                     ),
                                   ),
                                 ),
@@ -1449,7 +1450,7 @@ class _MemberEntryPageWidgetState extends State<MemberEntryPageWidget> {
                                   context.pushNamed(
                                     GeneralsCondidtionsPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.bottomToTop,

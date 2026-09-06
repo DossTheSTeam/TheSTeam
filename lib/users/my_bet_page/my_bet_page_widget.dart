@@ -113,7 +113,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                               context.pushNamed(
                                                 MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -267,7 +267,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -825,7 +825,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
@@ -1947,7 +1947,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
@@ -3014,7 +3014,7 @@ class _MyBetPageWidgetState extends State<MyBetPageWidget> {
                                                                           }.withoutNulls,
                                                                           extra: <String,
                                                                               dynamic>{
-                                                                            kTransitionInfoKey:
+                                                                            '__transition_info__':
                                                                                 TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.bottomToTop,

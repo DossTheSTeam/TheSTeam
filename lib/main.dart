@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
         ? lastMatch.matches
         : _router.routerDelegate.currentConfiguration;
-    return matchList.uri.toString();
+    return matchList.uri.path;
   }
 
   List<String> getRouteStack() =>
@@ -68,7 +68,14 @@ class _MyAppState extends State<MyApp> {
   final authUserSub = authenticatedUserStream.listen((user) {
     revenue_cat.login(user?.uid);
   });
-  final fcmTokenSub = fcmTokenUserStream.listen((_) {});
+  final fcmTokenSub = fcmTokenUserStream.listen(
+    (_) {},
+    // Registering a token can fail for reasons outside the app's control (a
+    // browser without the Notification API, a revoked permission, a blocked
+    // cloud call). Swallow it here so it can't surface as an unhandled zone
+    // error and take down the app on login.
+    onError: (e) => print('Error registering FCM token: $e'),
+  );
 
   @override
   void initState() {

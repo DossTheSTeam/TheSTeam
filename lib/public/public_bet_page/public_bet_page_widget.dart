@@ -136,7 +136,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                   context.pushNamed(
                                                     MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -352,7 +352,7 @@ class _PublicBetPageWidgetState extends State<PublicBetPageWidget> {
                                                                     .routeName,
                                                                 extra: <String,
                                                                     dynamic>{
-                                                                  kTransitionInfoKey:
+                                                                  '__transition_info__':
                                                                       TransitionInfo(
                                                                     hasTransition:
                                                                         true,

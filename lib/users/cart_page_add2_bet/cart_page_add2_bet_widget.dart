@@ -2530,7 +2530,7 @@ class _CartPageAdd2BetWidgetState extends State<CartPageAdd2BetWidget> {
                                                                           .routeName,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,

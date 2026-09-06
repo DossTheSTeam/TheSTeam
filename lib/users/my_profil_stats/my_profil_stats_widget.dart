@@ -85,7 +85,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -221,7 +221,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                 context.pushNamed(
                                                   MyNotifsListWidget.routeName,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -415,7 +415,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                       MyBetsListWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -621,7 +621,7 @@ class _MyProfilStatsWidgetState extends State<MyProfilStatsWidget>
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,

@@ -97,8 +97,6 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -2257,7 +2255,7 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                                 width: 200.0,
                                                                 height: 200.0,
                                                                 fit: BoxFit
-                                                                    .fitHeight,
+                                                                    .scaleDown,
                                                               ),
                                                             ),
                                                           ),
@@ -2689,15 +2687,6 @@ class _RankTeamsEventCupWidgetState extends State<RankTeamsEventCupWidget> {
                                                               .primaryBackground,
                                                           borderRadius:
                                                               BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    0.0),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    0.0),
                                                             topRight:
                                                                 Radius.circular(
                                                                     1.0),

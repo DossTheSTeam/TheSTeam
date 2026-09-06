@@ -81,7 +81,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                       context.pushNamed(
                                         MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -280,7 +280,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                             context.pushNamed(
                                               MyBestsRankPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -367,7 +367,7 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                       MyNotifsListWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -2849,16 +2849,6 @@ class _RankPageWidgetState extends State<RankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),

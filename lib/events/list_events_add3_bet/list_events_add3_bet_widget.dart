@@ -1949,7 +1949,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -2552,7 +2552,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                                         height:
                                                                             35.0,
                                                                         fit: BoxFit
-                                                                            .fitHeight,
+                                                                            .scaleDown,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2626,7 +2626,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,
@@ -2740,7 +2740,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                                         height:
                                                                             35.0,
                                                                         fit: BoxFit
-                                                                            .fitHeight,
+                                                                            .scaleDown,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -2824,7 +2824,7 @@ class _ListEventsAdd3BetWidgetState extends State<ListEventsAdd3BetWidget> {
                                                             }.withoutNulls,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,

@@ -486,7 +486,7 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                                   .routeName,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,
@@ -569,7 +569,7 @@ class _MyImagePageWidgetState extends State<MyImagePageWidget> {
                                                                   .routeName,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,

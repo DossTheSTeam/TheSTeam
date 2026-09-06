@@ -83,7 +83,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -911,28 +911,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          columnTeamDomRefTeamsRecord
-                                                              ?.name,
-                                                          'teamdom',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 35.0,
+                                                              height: 27.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            2.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                ),
+                                                              ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    columnTeamDomRefTeamsRecord!
+                                                                        .logo,
+                                                                    width:
+                                                                        200.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .scaleDown,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              columnTeamDomRefTeamsRecord
+                                                                  .name,
+                                                              'teamdom',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumIsCustom,
-                                                            ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
                                                       ),
                                                       if (_model.eventRef
                                                               ?.reference ==
@@ -969,7 +1032,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       .countMinuteValue,
                                                                   teamdom:
                                                                       columnTeamDomRefTeamsRecord
-                                                                          ?.value,
+                                                                          .value,
                                                                   draw: valueOrDefault<
                                                                       String>(
                                                                     'Match nul',
@@ -994,7 +1057,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       .dropSportValue,
                                                                   teamdomRef:
                                                                       columnTeamDomRefTeamsRecord
-                                                                          ?.reference,
+                                                                          .reference,
                                                                   leagueValue:
                                                                       _model
                                                                           .dropLigueValue,
@@ -1009,7 +1072,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                               date: _model.calendarSelectedDay?.start,
                                                                               hour: _model.countHourValue,
                                                                               minute: _model.countMinuteValue,
-                                                                              teamdom: columnTeamDomRefTeamsRecord?.value,
+                                                                              teamdom: columnTeamDomRefTeamsRecord.value,
                                                                               draw: valueOrDefault<String>(
                                                                                 'Match nul',
                                                                                 'draw',
@@ -1025,7 +1088,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                               adminUser: currentUserReference,
                                                                               statut: false,
                                                                               sportValue: _model.dropSportValue,
-                                                                              teamdomRef: columnTeamDomRefTeamsRecord?.reference,
+                                                                              teamdomRef: columnTeamDomRefTeamsRecord.reference,
                                                                               leagueValue: _model.dropLigueValue,
                                                                               week: _model.numWeekFieldTextController.text,
                                                                             ),
@@ -1034,7 +1097,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                   notificationTitle:
                                                                       'Match bientôt disponible pour ',
                                                                   notificationText:
-                                                                      columnTeamDomRefTeamsRecord!
+                                                                      columnTeamDomRefTeamsRecord
                                                                           .name,
                                                                   notificationImageUrl:
                                                                       columnTeamDomRefTeamsRecord
@@ -1294,27 +1357,86 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                               return Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnTeamExtRefTeamsRecord
-                                                          ?.name,
-                                                      'teamext',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 35.0,
+                                                          height: 27.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        2.0),
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMediumIsCustom,
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.network(
+                                                                columnTeamExtRefTeamsRecord!
+                                                                    .logo,
+                                                                width: 200.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamExtRefTeamsRecord
+                                                              .name,
+                                                          'teamext',
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumIsCustom,
+                                                            ),
+                                                      ),
+                                                    ],
                                                   ),
                                                   Align(
                                                     alignment:
@@ -1338,12 +1460,12 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                 .dropTeamExtValue,
                                                             teamextRef:
                                                                 columnTeamExtRefTeamsRecord
-                                                                    ?.reference,
+                                                                    .reference,
                                                           ));
 
                                                           await TeamEventsRecord
                                                                   .createDoc(
-                                                                      columnTeamExtRefTeamsRecord!
+                                                                      columnTeamExtRefTeamsRecord
                                                                           .reference)
                                                               .set(
                                                                   createTeamEventsRecordData(
@@ -1628,28 +1750,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          columnTeamDomRefTeamsRecord
-                                                              ?.name,
-                                                          'teamdom',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  FlutterFlowTheme.of(
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 35.0,
+                                                              height: 27.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            2.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                ),
+                                                              ),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    columnTeamDomRefTeamsRecord!
+                                                                        .logo,
+                                                                    width:
+                                                                        200.0,
+                                                                    height:
+                                                                        200.0,
+                                                                    fit: BoxFit
+                                                                        .scaleDown,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              columnTeamDomRefTeamsRecord
+                                                                  .name,
+                                                              'teamdom',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              useGoogleFonts:
-                                                                  !FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumIsCustom,
-                                                            ),
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
+                                                                ),
+                                                          ),
+                                                        ],
                                                       ),
                                                       if (_model.eventFightRef
                                                               ?.reference ==
@@ -1686,7 +1871,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       .countMinuteValue,
                                                                   teamdom:
                                                                       columnTeamDomRefTeamsRecord
-                                                                          ?.value,
+                                                                          .value,
                                                                   draw: valueOrDefault<
                                                                       String>(
                                                                     'Match nul',
@@ -1711,7 +1896,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                       .dropSportValue,
                                                                   teamdomRef:
                                                                       columnTeamDomRefTeamsRecord
-                                                                          ?.reference,
+                                                                          .reference,
                                                                   leagueValue:
                                                                       _model
                                                                           .dropLigueValue,
@@ -1729,7 +1914,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                               date: _model.calendarSelectedDay?.start,
                                                                               hour: _model.countHourValue,
                                                                               minute: _model.countMinuteValue,
-                                                                              teamdom: columnTeamDomRefTeamsRecord?.value,
+                                                                              teamdom: columnTeamDomRefTeamsRecord.value,
                                                                               draw: valueOrDefault<String>(
                                                                                 'Match nul',
                                                                                 'draw',
@@ -1745,7 +1930,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                               adminUser: currentUserReference,
                                                                               statut: false,
                                                                               sportValue: _model.dropSportValue,
-                                                                              teamdomRef: columnTeamDomRefTeamsRecord?.reference,
+                                                                              teamdomRef: columnTeamDomRefTeamsRecord.reference,
                                                                               leagueValue: _model.dropLigueValue,
                                                                               week: _model.numWeekFieldTextController.text,
                                                                               divisionValue: _model.dropLigueFightValue1,
@@ -1755,7 +1940,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                   notificationTitle:
                                                                       'Combat bientôt disponible pour ',
                                                                   notificationText:
-                                                                      columnTeamDomRefTeamsRecord!
+                                                                      columnTeamDomRefTeamsRecord
                                                                           .name,
                                                                   notificationImageUrl:
                                                                       columnTeamDomRefTeamsRecord
@@ -2017,27 +2202,86 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                               return Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      columnTeamExtRefTeamsRecord
-                                                          ?.name,
-                                                      'teamext',
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
+                                                        child: Container(
+                                                          width: 35.0,
+                                                          height: 27.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        2.0),
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMediumIsCustom,
+                                                                  .primaryBackground,
+                                                            ),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          0.0),
+                                                              child:
+                                                                  Image.network(
+                                                                columnTeamExtRefTeamsRecord!
+                                                                    .logo,
+                                                                width: 200.0,
+                                                                height: 200.0,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          columnTeamExtRefTeamsRecord
+                                                              .name,
+                                                          'teamext',
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                              fontSize: 10.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumIsCustom,
+                                                            ),
+                                                      ),
+                                                    ],
                                                   ),
                                                   Align(
                                                     alignment:
@@ -2062,12 +2306,12 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                 .dropTeamMMAExtValue,
                                                             teamextRef:
                                                                 columnTeamExtRefTeamsRecord
-                                                                    ?.reference,
+                                                                    .reference,
                                                           ));
 
                                                           await TeamEventsRecord
                                                                   .createDoc(
-                                                                      columnTeamExtRefTeamsRecord!
+                                                                      columnTeamExtRefTeamsRecord
                                                                           .reference)
                                                               .set(
                                                                   createTeamEventsRecordData(
@@ -3211,26 +3455,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventFootRef
                                                             ?.reference ==
@@ -3266,7 +3571,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -3292,7 +3597,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'football',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropLigueFootValue,
                                                                 week: _model
@@ -3310,7 +3615,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -3333,7 +3638,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'football',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropLigueFootValue,
                                                                             week:
@@ -3343,7 +3648,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -3590,26 +3895,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventBasketRef
                                                             ?.reference ==
@@ -3645,7 +4011,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -3671,7 +4037,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'basketball',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropLigueBasketValue,
                                                                 week: _model
@@ -3689,7 +4055,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -3712,7 +4078,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'basketball',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropLigueBasketValue,
                                                                             week:
@@ -3722,7 +4088,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -3969,26 +4335,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventTennisRef
                                                             ?.reference ==
@@ -4024,7 +4451,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -4050,7 +4477,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'tennis',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropLigueTennisValue,
                                                                 week: _model
@@ -4068,7 +4495,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -4091,7 +4518,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'tennis',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropLigueTennisValue,
                                                                             week:
@@ -4101,7 +4528,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -4348,26 +4775,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventHockeyRef
                                                             ?.reference ==
@@ -4403,7 +4891,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -4429,7 +4917,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'hockey',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropTeamDomHockeyValue,
                                                                 week: _model
@@ -4447,7 +4935,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -4470,7 +4958,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'hockey',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropTeamDomHockeyValue,
                                                                             week:
@@ -4480,7 +4968,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -4733,26 +5221,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventMMARef
                                                             ?.reference ==
@@ -4788,7 +5337,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -4814,7 +5363,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'mma',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropLigueMMAValue,
                                                                 week: _model
@@ -4835,7 +5384,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -4858,7 +5407,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'mma',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropLigueMMAValue,
                                                                             week:
@@ -4870,7 +5419,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -5125,26 +5674,87 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        columnTeamsRecord?.name,
-                                                        'teamdom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 35.0,
+                                                            height: 27.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            0.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  columnTeamsRecord!
+                                                                      .logo,
+                                                                  width: 200.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            columnTeamsRecord
+                                                                .name,
+                                                            'teamdom',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                            fontSize: 10.0,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                !FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumIsCustom,
-                                                          ),
+                                                                fontSize: 10.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     if (_model.eventRugbyRef
                                                             ?.reference ==
@@ -5180,7 +5790,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     .countMinuteValue,
                                                                 teamdom:
                                                                     columnTeamsRecord
-                                                                        ?.value,
+                                                                        .value,
                                                                 draw:
                                                                     valueOrDefault<
                                                                         String>(
@@ -5206,7 +5816,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                     'rugby',
                                                                 teamdomRef:
                                                                     columnTeamsRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                 leagueValue: _model
                                                                     .dropLigueRugbyValue,
                                                                 week: _model
@@ -5224,7 +5834,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             minute:
                                                                                 _model.countMinuteValue,
                                                                             teamdom:
-                                                                                columnTeamsRecord?.value,
+                                                                                columnTeamsRecord.value,
                                                                             draw:
                                                                                 valueOrDefault<String>(
                                                                               'Match nul',
@@ -5247,7 +5857,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                             sportValue:
                                                                                 'rugby',
                                                                             teamdomRef:
-                                                                                columnTeamsRecord?.reference,
+                                                                                columnTeamsRecord.reference,
                                                                             leagueValue:
                                                                                 _model.dropLigueRugbyValue,
                                                                             week:
@@ -5257,7 +5867,7 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
 
                                                               await TeamEventsRecord
                                                                       .createDoc(
-                                                                          columnTeamsRecord!
+                                                                          columnTeamsRecord
                                                                               .reference)
                                                                   .set(
                                                                       createTeamEventsRecordData(
@@ -5712,29 +6322,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -5759,14 +6431,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(
@@ -6029,29 +6701,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -6076,14 +6810,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(
@@ -6346,29 +7080,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -6393,14 +7189,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(
@@ -6663,29 +7459,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -6710,14 +7568,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(
@@ -6986,29 +7844,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -7033,14 +7953,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(
@@ -7310,29 +8230,91 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              columnTeamExtRefTeamsRecord
-                                                                  ?.name,
-                                                              'teamext',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      10.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      !FlutterFlowTheme.of(
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 35.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            2.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMediumIsCustom,
+                                                                          .primaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              0.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        columnTeamExtRefTeamsRecord!
+                                                                            .logo,
+                                                                        width:
+                                                                            200.0,
+                                                                        height:
+                                                                            200.0,
+                                                                        fit: BoxFit
+                                                                            .scaleDown,
+                                                                      ),
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  columnTeamExtRefTeamsRecord
+                                                                      .name,
+                                                                  'teamext',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
+                                                                    ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           Align(
                                                             alignment:
@@ -7357,14 +8339,14 @@ class _AddEventPageWidgetState extends State<AddEventPageWidget> {
                                                                           createEventsRecordData(
                                                                     teamextRef:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.reference,
+                                                                            .reference,
                                                                     teamext:
                                                                         columnTeamExtRefTeamsRecord
-                                                                            ?.value,
+                                                                            .value,
                                                                   ));
 
                                                                   await TeamEventsRecord.createDoc(
-                                                                          columnTeamExtRefTeamsRecord!
+                                                                          columnTeamExtRefTeamsRecord
                                                                               .reference)
                                                                       .set(
                                                                           createTeamEventsRecordData(

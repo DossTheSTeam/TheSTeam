@@ -148,7 +148,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                   context.pushNamed(
                                                     MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -274,7 +274,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                             }.withoutNulls,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -746,7 +746,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -1914,7 +1914,7 @@ class _EventMessagePageWidgetState extends State<EventMessagePageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,

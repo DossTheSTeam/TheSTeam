@@ -75,7 +75,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                 context.pushNamed(
                                   MenuPageWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    '__transition_info__': TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -296,7 +296,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                             context.pushNamed(
                                               MyNotifsListWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -1415,7 +1415,7 @@ class _InfosRankPageWidgetState extends State<InfosRankPageWidget> {
                                 context.pushNamed(
                                   GeneralsCondidtionsPageWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    '__transition_info__': TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.bottomToTop,

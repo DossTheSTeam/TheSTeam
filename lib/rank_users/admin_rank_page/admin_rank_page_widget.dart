@@ -78,7 +78,7 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -1546,15 +1546,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -1612,15 +1603,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -1799,15 +1781,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -1895,15 +1868,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -2070,15 +2034,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -2337,15 +2292,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -2586,15 +2532,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -2675,15 +2612,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),
@@ -3308,15 +3236,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -3373,15 +3292,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -3528,15 +3438,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -3621,15 +3522,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -3776,15 +3668,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -4000,15 +3883,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -4224,15 +4098,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -4854,16 +4719,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -4921,16 +4776,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -5090,16 +4935,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -5177,16 +5012,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -5346,16 +5171,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -5603,16 +5418,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),
@@ -5860,16 +5665,6 @@ class _AdminRankPageWidgetState extends State<AdminRankPageWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .only(
-                                                              bottomLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                      0.0),
                                                               topRight: Radius
                                                                   .circular(
                                                                       1.0),

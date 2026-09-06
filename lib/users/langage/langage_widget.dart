@@ -73,8 +73,6 @@ class _LangageWidgetState extends State<LangageWidget> {
                     )
                   ],
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0.0),
-                    bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(16.0),
                     topRight: Radius.circular(16.0),
                   ),

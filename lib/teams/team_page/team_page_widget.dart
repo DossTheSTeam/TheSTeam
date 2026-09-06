@@ -184,7 +184,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                       teamPageTeamsRecord.logo,
                                       width: 130.0,
                                       height: 80.0,
-                                      fit: BoxFit.fitHeight,
+                                      fit: BoxFit.scaleDown,
                                     ),
                                   ),
                                 ),
@@ -317,7 +317,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -366,7 +366,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -490,7 +490,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -2891,7 +2891,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           .routeName,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,
@@ -3905,7 +3905,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                                   context.pushNamed(
                                                                                                     MyProfilSocialWidget.routeName,
                                                                                                     extra: <String, dynamic>{
-                                                                                                      kTransitionInfoKey: TransitionInfo(
+                                                                                                      '__transition_info__': TransitionInfo(
                                                                                                         hasTransition: true,
                                                                                                         transitionType: PageTransitionType.scale,
                                                                                                         alignment: Alignment.bottomCenter,
@@ -4542,7 +4542,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                           .routeName,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,
@@ -4627,7 +4627,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -4835,7 +4835,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -5180,7 +5180,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                       contDomTeamsRecord.logo,
                                                                                       width: 55.0,
                                                                                       height: 35.0,
-                                                                                      fit: BoxFit.fitHeight,
+                                                                                      fit: BoxFit.scaleDown,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -5252,7 +5252,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  '__transition_info__': TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.bottomToTop,
                                                                                     duration: Duration(milliseconds: 400),
@@ -5333,7 +5333,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                       contExtTeamsRecord.logo,
                                                                                       width: 5.0,
                                                                                       height: 35.0,
-                                                                                      fit: BoxFit.fitHeight,
+                                                                                      fit: BoxFit.scaleDown,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -5763,7 +5763,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                              '__transition_info__': TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.bottomToTop,
                                                                                 duration: Duration(milliseconds: 400),
@@ -5840,7 +5840,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -6036,7 +6036,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                     ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -6342,7 +6342,7 @@ class _TeamPageWidgetState extends State<TeamPageWidget>
                                                                                               ),
                                                                                             }.withoutNulls,
                                                                                             extra: <String, dynamic>{
-                                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                              '__transition_info__': TransitionInfo(
                                                                                                 hasTransition: true,
                                                                                                 transitionType: PageTransitionType.scale,
                                                                                                 alignment: Alignment.bottomCenter,

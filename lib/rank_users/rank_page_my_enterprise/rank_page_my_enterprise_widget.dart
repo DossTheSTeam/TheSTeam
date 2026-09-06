@@ -86,7 +86,7 @@ class _RankPageMyEnterpriseWidgetState
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -306,7 +306,7 @@ class _RankPageMyEnterpriseWidgetState
                                                 context.pushNamed(
                                                   RankPageWidget.routeName,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -340,7 +340,7 @@ class _RankPageMyEnterpriseWidgetState
                                               context.pushNamed(
                                                 MyBestsRankPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -430,7 +430,7 @@ class _RankPageMyEnterpriseWidgetState
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -2687,15 +2687,6 @@ class _RankPageMyEnterpriseWidgetState
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .only(
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        0.0),
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        0.0),
                                                                 topRight: Radius
                                                                     .circular(
                                                                         1.0),

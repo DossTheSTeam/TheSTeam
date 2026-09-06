@@ -96,8 +96,6 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -1274,7 +1272,7 @@ class _RankTeamMecaWidgetState extends State<RankTeamMecaWidget> {
                                                               width: 200.0,
                                                               height: 200.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .scaleDown,
                                                             ),
                                                           ),
                                                         ),

@@ -98,8 +98,6 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -246,7 +244,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                         contDomTeamsRecord.logo,
                                                         width: 55.0,
                                                         height: 35.0,
-                                                        fit: BoxFit.fitHeight,
+                                                        fit: BoxFit.scaleDown,
                                                       ),
                                                     ),
                                                   ),
@@ -583,7 +581,7 @@ class _StatsTeamsEventCupWidgetState extends State<StatsTeamsEventCupWidget>
                                                         contExtTeamsRecord.logo,
                                                         width: 55.0,
                                                         height: 35.0,
-                                                        fit: BoxFit.fitHeight,
+                                                        fit: BoxFit.scaleDown,
                                                       ),
                                                     ),
                                                   ),

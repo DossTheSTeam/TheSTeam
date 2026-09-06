@@ -2351,7 +2351,7 @@ class _CartPageWidgetState extends State<CartPageWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,

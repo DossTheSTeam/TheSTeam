@@ -77,7 +77,7 @@ class _GeneralsCondidtionsPageWidgetState
                                 context.pushNamed(
                                   MenuPageWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    '__transition_info__': TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -285,7 +285,8 @@ class _GeneralsCondidtionsPageWidgetState
                                         context.pushNamed(
                                           MyNotifsListWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -993,7 +994,7 @@ class _GeneralsCondidtionsPageWidgetState
                                   context.pushNamed(
                                     InfosRankPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.bottomToTop,
@@ -1680,7 +1681,7 @@ class _GeneralsCondidtionsPageWidgetState
                                   context.pushNamed(
                                     ConfidentialityPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.bottomToTop,

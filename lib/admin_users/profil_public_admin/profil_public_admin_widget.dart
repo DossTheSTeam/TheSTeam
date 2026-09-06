@@ -136,7 +136,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -615,7 +615,7 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -2518,7 +2518,8 @@ class _ProfilPublicAdminWidgetState extends State<ProfilPublicAdminWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 5.0, 0.0, 5.0),
                                         child: Text(
-                                          '00/00/0000',
+                                          profilPublicAdminUsersRecord
+                                              .dateofBirth,
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(

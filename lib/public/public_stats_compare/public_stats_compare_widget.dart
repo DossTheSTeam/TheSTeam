@@ -112,7 +112,7 @@ class _PublicStatsCompareWidgetState extends State<PublicStatsCompareWidget>
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -390,7 +390,7 @@ class _PublicStatsCompareWidgetState extends State<PublicStatsCompareWidget>
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:

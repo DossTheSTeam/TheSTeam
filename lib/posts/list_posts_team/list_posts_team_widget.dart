@@ -175,7 +175,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                       listPostsTeamTeamsRecord.logo,
                                       width: 130.0,
                                       height: 80.0,
-                                      fit: BoxFit.fitHeight,
+                                      fit: BoxFit.scaleDown,
                                     ),
                                   ),
                                 ),
@@ -330,7 +330,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -594,7 +594,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -1079,7 +1079,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                                         ),
                                                                                       }.withoutNulls,
                                                                                       extra: <String, dynamic>{
-                                                                                        kTransitionInfoKey: TransitionInfo(
+                                                                                        '__transition_info__': TransitionInfo(
                                                                                           hasTransition: true,
                                                                                           transitionType: PageTransitionType.scale,
                                                                                           alignment: Alignment.bottomCenter,
@@ -1111,7 +1111,7 @@ class _ListPostsTeamWidgetState extends State<ListPostsTeamWidget> {
                                                                                                   ),
                                                                                                 }.withoutNulls,
                                                                                                 extra: <String, dynamic>{
-                                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                                  '__transition_info__': TransitionInfo(
                                                                                                     hasTransition: true,
                                                                                                     transitionType: PageTransitionType.scale,
                                                                                                     alignment: Alignment.bottomCenter,

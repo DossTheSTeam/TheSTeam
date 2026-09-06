@@ -85,7 +85,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -320,7 +320,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                 context.pushNamed(
                                                   MyPostsListWidget.routeName,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -411,7 +411,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -772,7 +772,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                                   ),
                                                                                                 }.withoutNulls,
                                                                                                 extra: <String, dynamic>{
-                                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                                  '__transition_info__': TransitionInfo(
                                                                                                     hasTransition: true,
                                                                                                     transitionType: PageTransitionType.bottomToTop,
                                                                                                     duration: Duration(milliseconds: 600),
@@ -787,16 +787,13 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                                 color: FlutterFlowTheme.of(context).alternate,
                                                                                                 borderRadius: BorderRadius.circular(3.0),
                                                                                               ),
-                                                                                              child: Visibility(
-                                                                                                visible: (columnTeamsTeamsRecord.sportValue != 'tennis') && (columnTeamsTeamsRecord.sportValue != 'mma') && (columnTeamsTeamsRecord.sportValue != 'sports.meca'),
-                                                                                                child: ClipRRect(
-                                                                                                  borderRadius: BorderRadius.circular(0.0),
-                                                                                                  child: Image.network(
-                                                                                                    columnTeamsTeamsRecord.logo,
-                                                                                                    width: 300.0,
-                                                                                                    height: 200.0,
-                                                                                                    fit: BoxFit.fitHeight,
-                                                                                                  ),
+                                                                                              child: ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                                                child: Image.network(
+                                                                                                  columnTeamsTeamsRecord.logo,
+                                                                                                  width: 300.0,
+                                                                                                  height: 200.0,
+                                                                                                  fit: BoxFit.scaleDown,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -818,7 +815,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                                                                                   ),
                                                                                                 }.withoutNulls,
                                                                                                 extra: <String, dynamic>{
-                                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                                  '__transition_info__': TransitionInfo(
                                                                                                     hasTransition: true,
                                                                                                     transitionType: PageTransitionType.scale,
                                                                                                     alignment: Alignment.bottomCenter,
@@ -1221,7 +1218,7 @@ class _ListPostsMyTeamsWidgetState extends State<ListPostsMyTeamsWidget> {
                                     context.pushNamed(
                                       TeamsListWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.bottomToTop,

@@ -96,8 +96,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -2815,7 +2813,7 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .fitHeight,
+                                                                        .scaleDown,
                                                                   ),
                                                                 ),
                                                               ),
@@ -3258,15 +3256,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -3972,7 +3961,7 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                     height:
                                                                         200.0,
                                                                     fit: BoxFit
-                                                                        .fitHeight,
+                                                                        .scaleDown,
                                                                   ),
                                                                 ),
                                                               ),
@@ -4416,15 +4405,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
                                                                   topRight: Radius
                                                                       .circular(
                                                                           1.0),
@@ -5121,7 +5101,7 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                       height:
                                                                           200.0,
                                                                       fit: BoxFit
-                                                                          .fitHeight,
+                                                                          .scaleDown,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -5527,15 +5507,6 @@ class _RankTeamsEventWidgetState extends State<RankTeamsEventWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            0.0),
                                                                     topRight: Radius
                                                                         .circular(
                                                                             1.0),

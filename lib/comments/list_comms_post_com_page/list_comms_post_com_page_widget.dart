@@ -116,7 +116,7 @@ class _ListCommsPostComPageWidgetState
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -256,7 +256,7 @@ class _ListCommsPostComPageWidgetState
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -445,7 +445,7 @@ class _ListCommsPostComPageWidgetState
                                                       MyNotifsListWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -666,7 +666,7 @@ class _ListCommsPostComPageWidgetState
                                                                                         ),
                                                                                       }.withoutNulls,
                                                                                       extra: <String, dynamic>{
-                                                                                        kTransitionInfoKey: TransitionInfo(
+                                                                                        '__transition_info__': TransitionInfo(
                                                                                           hasTransition: true,
                                                                                           transitionType: PageTransitionType.bottomToTop,
                                                                                           duration: Duration(milliseconds: 400),
@@ -745,7 +745,7 @@ class _ListCommsPostComPageWidgetState
                                                                                           ),
                                                                                         }.withoutNulls,
                                                                                         extra: <String, dynamic>{
-                                                                                          kTransitionInfoKey: TransitionInfo(
+                                                                                          '__transition_info__': TransitionInfo(
                                                                                             hasTransition: true,
                                                                                             transitionType: PageTransitionType.scale,
                                                                                             alignment: Alignment.bottomCenter,

@@ -79,7 +79,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                       context.pushNamed(
                                         MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -274,7 +274,8 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                         context.pushNamed(
                                           MyTeamListWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -6487,9 +6488,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                                               decoration: BoxDecoration(
                                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                 borderRadius: BorderRadius.only(
-                                                                                                  bottomLeft: Radius.circular(0.0),
-                                                                                                  bottomRight: Radius.circular(0.0),
-                                                                                                  topLeft: Radius.circular(0.0),
                                                                                                   topRight: Radius.circular(1.0),
                                                                                                 ),
                                                                                                 border: Border.all(
@@ -7148,7 +7146,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                       height:
                                                                           500.0,
                                                                       fit: BoxFit
-                                                                          .fitHeight,
+                                                                          .scaleDown,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -7434,15 +7432,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            0.0),
                                                                     topRight: Radius
                                                                         .circular(
                                                                             1.0),
@@ -7963,7 +7952,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                       height:
                                                                           50.0,
                                                                       fit: BoxFit
-                                                                          .fitHeight,
+                                                                          .scaleDown,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -8249,15 +8238,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            0.0),
                                                                     topRight: Radius
                                                                         .circular(
                                                                             1.0),
@@ -10454,9 +10434,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                               borderRadius: BorderRadius.only(
-                                                                                                bottomLeft: Radius.circular(0.0),
-                                                                                                bottomRight: Radius.circular(0.0),
-                                                                                                topLeft: Radius.circular(0.0),
                                                                                                 topRight: Radius.circular(1.0),
                                                                                               ),
                                                                                               border: Border.all(
@@ -11144,7 +11121,7 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                         height:
                                                                             50.0,
                                                                         fit: BoxFit
-                                                                            .fitHeight,
+                                                                            .scaleDown,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -11415,15 +11392,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                     borderRadius:
                                                                         BorderRadius
                                                                             .only(
-                                                                      bottomLeft:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      bottomRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              0.0),
                                                                       topRight:
                                                                           Radius.circular(
                                                                               1.0),
@@ -13405,15 +13373,6 @@ class _TeamsListWidgetState extends State<TeamsListWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            0.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            0.0),
                                                                     topRight: Radius
                                                                         .circular(
                                                                             1.0),

@@ -97,8 +97,6 @@ class _DeleteSTeamPostWidgetState extends State<DeleteSTeamPostWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
@@ -366,7 +364,7 @@ class _DeleteSTeamPostWidgetState extends State<DeleteSTeamPostWidget> {
                                               Navigator.pop(context);
 
                                               context.pushNamed(
-                                                  ListPostsWidget.routeName);
+                                                  MenuPageWidget.routeName);
                                             },
                                             child: Icon(
                                               Icons.delete_forever_rounded,

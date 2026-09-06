@@ -389,7 +389,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                     MyNotifsListWidget
                                                         .routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -591,7 +591,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -647,7 +647,7 @@ class _PublicProfilPageWidgetState extends State<PublicProfilPageWidget> {
                                                                   width: 300.0,
                                                                   height: 200.0,
                                                                   fit: BoxFit
-                                                                      .fitHeight,
+                                                                      .scaleDown,
                                                                 ),
                                                               ),
                                                             ),

@@ -106,7 +106,7 @@ class _SearchUsersListWidgetState extends State<SearchUsersListWidget> {
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:

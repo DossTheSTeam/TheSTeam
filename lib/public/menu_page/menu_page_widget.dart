@@ -77,7 +77,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     context.pushNamed(
                                       MyEditProfilWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -131,7 +131,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                     context.pushNamed(
                                       MyProfilPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -189,7 +189,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -243,7 +243,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -292,7 +292,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -341,7 +341,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -390,7 +390,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -439,7 +439,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyEditProfilWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -1549,7 +1549,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                           context.pushNamed(
                                             MyNotifsListWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -1845,7 +1845,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                               context.pushNamed(
                                                 MyNotifsListWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -2110,7 +2110,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -2308,7 +2308,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                         .routeName,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -2362,7 +2362,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                         .routeName,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -2427,7 +2427,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -2623,7 +2623,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -2678,7 +2678,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -2933,7 +2933,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -3129,7 +3129,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3184,7 +3184,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3251,7 +3251,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -3452,7 +3452,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3510,7 +3510,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3577,7 +3577,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -3775,7 +3775,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3833,7 +3833,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3888,7 +3888,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -3967,7 +3967,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                       TheSTeamPageWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -4051,7 +4051,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget> {
                                                       TheSTeamPageWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:

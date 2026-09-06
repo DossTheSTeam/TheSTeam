@@ -247,7 +247,7 @@ class _MyEditProfilWidgetState extends State<MyEditProfilWidget> {
                               context.pushNamed(
                                 MyImagePageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  '__transition_info__': TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.rightToLeft,

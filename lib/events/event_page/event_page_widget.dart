@@ -138,12 +138,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(0.0),
-                                            bottomRight: Radius.circular(0.0),
-                                            topLeft: Radius.circular(0.0),
-                                            topRight: Radius.circular(0.0),
-                                          ),
+                                          borderRadius: BorderRadius.only(),
                                           shape: BoxShape.rectangle,
                                         ),
                                         child: ClipRRect(
@@ -206,12 +201,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                           alignment:
                                               AlignmentDirectional(0.0, -1.0),
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(0.0),
-                                              bottomRight: Radius.circular(0.0),
-                                              topLeft: Radius.circular(0.0),
-                                              topRight: Radius.circular(0.0),
-                                            ),
+                                            borderRadius: BorderRadius.only(),
                                             child: Image.asset(
                                               'assets/images/England.TST.jpg',
                                               width: 320.0,
@@ -565,7 +555,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                     MyNotifsListWidget
                                                         .routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -1137,7 +1127,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                               width: 55.0,
                                                               height: 35.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .scaleDown,
                                                             ),
                                                           ),
                                                         ),
@@ -2870,7 +2860,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                               width: 55.0,
                                                               height: 35.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .scaleDown,
                                                             ),
                                                           ),
                                                         ),
@@ -3775,7 +3765,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                '__transition_info__': TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.scale,
                                                                                   alignment: Alignment.bottomCenter,
@@ -4128,7 +4118,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -4348,7 +4338,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -4964,7 +4954,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                     }.withoutNulls,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -5519,7 +5509,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                       }.withoutNulls,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,
@@ -8767,7 +8757,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -9634,7 +9624,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -10010,7 +10000,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
@@ -10178,7 +10168,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                              '__transition_info__': TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.scale,
                                                                                 alignment: Alignment.bottomCenter,

@@ -126,7 +126,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -529,7 +529,7 @@ class _ModifEventPageWidgetState extends State<ModifEventPageWidget> {
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                  '__transition_info__': TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.scale,
                                                                                     alignment: Alignment.bottomCenter,

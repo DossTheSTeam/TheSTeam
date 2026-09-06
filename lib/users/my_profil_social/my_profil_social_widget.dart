@@ -78,7 +78,7 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                     context.pushNamed(
                                       MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -347,7 +347,8 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                         context.pushNamed(
                                           MyNotifsListWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -654,11 +655,9 @@ class _MyProfilSocialWidgetState extends State<MyProfilSocialWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMediumFamily,
-                                              color: valueOrDefault<Color>(
-                                                currentUserDocument?.color2,
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
                                               letterSpacing: 0.0,
                                               useGoogleFonts:
                                                   !FlutterFlowTheme.of(context)

@@ -132,7 +132,7 @@ class _SignalEventMessagePageWidgetState
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -279,7 +279,7 @@ class _SignalEventMessagePageWidgetState
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -721,7 +721,7 @@ class _SignalEventMessagePageWidgetState
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -1496,7 +1496,7 @@ class _SignalEventMessagePageWidgetState
                                       context.pushNamed(
                                         ModeratorPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.scale,
@@ -1679,7 +1679,7 @@ class _SignalEventMessagePageWidgetState
                                       context.pushNamed(
                                         ModeratorPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.scale,
@@ -1805,7 +1805,7 @@ class _SignalEventMessagePageWidgetState
                                       context.pushNamed(
                                         ModeratorPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.scale,

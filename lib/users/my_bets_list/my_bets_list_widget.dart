@@ -92,7 +92,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                               context.pushNamed(
                                                 MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -240,7 +240,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -950,7 +950,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                             }.withoutNulls,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -2584,7 +2584,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                                       .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -2749,7 +2749,7 @@ class _MyBetsListWidgetState extends State<MyBetsListWidget>
                                                                         .routeName,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,

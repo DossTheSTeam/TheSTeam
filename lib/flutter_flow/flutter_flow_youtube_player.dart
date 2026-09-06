@@ -23,6 +23,8 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -134,10 +136,10 @@ class _FlutterFlowYoutubePlayerState extends State<FlutterFlowYoutubePlayer>
       _controller = _youtubeFullScreenControllerMap[_videoId]!;
       _youtubeFullScreenControllerMap.clear();
     } else {
-      _controller = YoutubePlayerController.fromVideoId(
-        videoId: videoId,
-        autoPlay: widget.autoPlay,
+      _controller = YoutubePlayerController(
+        key: _youtubeControllerKey(videoId),
         params: YoutubePlayerParams(
+          origin: 'https://www.youtube-nocookie.com',
           mute: widget.mute,
           loop: widget.looping,
           showControls: widget.showControls,
@@ -145,6 +147,11 @@ class _FlutterFlowYoutubePlayerState extends State<FlutterFlowYoutubePlayer>
           strictRelatedVideos: widget.strictRelatedVideos,
         ),
       );
+      if (widget.autoPlay) {
+        unawaited(_controller!.loadVideoById(videoId: videoId));
+      } else {
+        unawaited(_controller!.cueVideoById(videoId: videoId));
+      }
     }
     if (handleFullScreen) {
       _controller!.setFullScreenListener((fullScreen) {
@@ -247,3 +254,6 @@ String? _convertUrlToId(String url, {bool trimWhitespaces = true}) {
   }
   return null;
 }
+
+String _youtubeControllerKey(String videoId) =>
+    'Youtube_${videoId.codeUnits.map((code) => code.toRadixString(16).padLeft(2, '0')).join()}';

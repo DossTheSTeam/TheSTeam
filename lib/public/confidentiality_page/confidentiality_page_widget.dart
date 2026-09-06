@@ -72,7 +72,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                             context.pushNamed(
                               MenuPageWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                '__transition_info__': TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.leftToRight,
@@ -281,7 +281,7 @@ class _ConfidentialityPageWidgetState extends State<ConfidentialityPageWidget> {
                                     context.pushNamed(
                                       MyNotifsListWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,

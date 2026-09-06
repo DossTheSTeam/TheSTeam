@@ -105,7 +105,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                       context.pushNamed(
                                         MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -457,7 +457,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                     MyNotifsListWidget
                                                         .routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -622,7 +622,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -853,7 +853,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -979,7 +979,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,
@@ -1191,7 +1191,7 @@ class _PublicStatsWidgetState extends State<PublicStatsWidget>
                                                                 }.withoutNulls,
                                                                 extra: <String,
                                                                     dynamic>{
-                                                                  kTransitionInfoKey:
+                                                                  '__transition_info__':
                                                                       TransitionInfo(
                                                                     hasTransition:
                                                                         true,

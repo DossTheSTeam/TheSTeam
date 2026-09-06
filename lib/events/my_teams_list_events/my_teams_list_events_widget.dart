@@ -78,7 +78,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                     context.pushNamed(
                                       MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -287,7 +287,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                           context.pushNamed(
                                             ListEventsWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -881,7 +881,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                             contDomTeamsRecord.logo,
                                                                                             width: 55.0,
                                                                                             height: 35.0,
-                                                                                            fit: BoxFit.fitHeight,
+                                                                                            fit: BoxFit.scaleDown,
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -943,7 +943,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                           ),
                                                                                         }.withoutNulls,
                                                                                         extra: <String, dynamic>{
-                                                                                          kTransitionInfoKey: TransitionInfo(
+                                                                                          '__transition_info__': TransitionInfo(
                                                                                             hasTransition: true,
                                                                                             transitionType: PageTransitionType.bottomToTop,
                                                                                             duration: Duration(milliseconds: 400),
@@ -1012,7 +1012,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                                                                             contExtTeamsRecord.logo,
                                                                                             width: 55.0,
                                                                                             height: 35.0,
-                                                                                            fit: BoxFit.fitHeight,
+                                                                                            fit: BoxFit.scaleDown,
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -1171,7 +1171,7 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                       context.pushNamed(
                                         TeamsListWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -1372,7 +1372,8 @@ class _MyTeamsListEventsWidgetState extends State<MyTeamsListEventsWidget> {
                                         context.pushNamed(
                                           TeamsListWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,

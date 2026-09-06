@@ -481,6 +481,16 @@
       ]
     },
     {
+      "collectionGroup": "my_notifications",
+      "fieldPath": "mod_seen",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
       "collectionGroup": "team_posts",
       "fieldPath": "posts",
       "indexes": [

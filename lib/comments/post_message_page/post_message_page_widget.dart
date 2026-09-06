@@ -146,7 +146,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                   context.pushNamed(
                                                     MenuPageWidget.routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -278,7 +278,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,
@@ -732,7 +732,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -1886,7 +1886,7 @@ class _PostMessagePageWidgetState extends State<PostMessagePageWidget> {
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:

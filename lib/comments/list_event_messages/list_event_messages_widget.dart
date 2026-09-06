@@ -119,7 +119,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                               context.pushNamed(
                                                 MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -313,163 +313,200 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 5.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    StreamBuilder<TeamsRecord>(
-                                      stream: TeamsRecord.getDocument(
-                                          listEventMessagesEventsRecord
-                                              .teamdomRef!),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .accent4,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-
-                                        final containerTeamsRecord =
-                                            snapshot.data!;
-
-                                        return Container(
-                                          width: 160.0,
-                                          height: 30.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  containerTeamsRecord.name,
-                                                  'teamdom',
-                                                ),
-                                                textAlign: TextAlign.end,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMediumIsCustom,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                    Text(
-                                      '-',
+                              if (listEventMessagesEventsRecord.sportValue ==
+                                  'sports.meca')
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 5.0),
+                                    child: Text(
+                                      listEventMessagesEventsRecord.week,
+                                      textAlign: TextAlign.end,
+                                      maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
+                                          .labelLarge
                                           .override(
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily,
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
                                             useGoogleFonts:
                                                 !FlutterFlowTheme.of(context)
-                                                    .headlineSmallIsCustom,
+                                                    .labelLargeIsCustom,
                                           ),
                                     ),
-                                    StreamBuilder<TeamsRecord>(
-                                      stream: TeamsRecord.getDocument(
-                                          listEventMessagesEventsRecord
-                                              .teamextRef!),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
+                                  ),
+                                ),
+                              if (listEventMessagesEventsRecord.sportValue !=
+                                  'sports.meca')
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 5.0, 0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      StreamBuilder<TeamsRecord>(
+                                        stream: TeamsRecord.getDocument(
+                                            listEventMessagesEventsRecord
+                                                .teamdomRef!),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent4,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+
+                                          final containerTeamsRecord =
+                                              snapshot.data!;
+
+                                          return Container(
+                                            width: 160.0,
+                                            height: 30.0,
+                                            decoration: BoxDecoration(
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent4,
+                                                      .primaryBackground,
+                                            ),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    containerTeamsRecord.name,
+                                                    'teamdom',
+                                                  ),
+                                                  textAlign: TextAlign.end,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                 ),
                                               ),
                                             ),
                                           );
-                                        }
-
-                                        final containerTeamsRecord =
-                                            snapshot.data!;
-
-                                        return Container(
-                                          width: 160.0,
-                                          height: 30.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  containerTeamsRecord.name,
-                                                  'teamext',
-                                                ),
-                                                textAlign: TextAlign.start,
-                                                style:
+                                        },
+                                      ),
+                                      Text(
+                                        '-',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineSmallIsCustom,
+                                            ),
+                                      ),
+                                      StreamBuilder<TeamsRecord>(
+                                        stream: TeamsRecord.getDocument(
+                                            listEventMessagesEventsRecord
+                                                .teamextRef!),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts:
-                                                              !FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMediumIsCustom,
-                                                        ),
+                                                        .accent4,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+
+                                          final containerTeamsRecord =
+                                              snapshot.data!;
+
+                                          return Container(
+                                            width: 160.0,
+                                            height: 30.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    containerTeamsRecord.name,
+                                                    'teamext',
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              if (listEventMessagesEventsRecord.seenScore ==
-                                  true)
+                              if ((listEventMessagesEventsRecord.seenScore ==
+                                      true) &&
+                                  (listEventMessagesEventsRecord.sportValue !=
+                                      'sports.meca'))
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
@@ -697,7 +734,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -918,7 +955,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                           ),
                                                                                         }.withoutNulls,
                                                                                         extra: <String, dynamic>{
-                                                                                          kTransitionInfoKey: TransitionInfo(
+                                                                                          '__transition_info__': TransitionInfo(
                                                                                             hasTransition: true,
                                                                                             transitionType: PageTransitionType.bottomToTop,
                                                                                             duration: Duration(milliseconds: 400),
@@ -995,7 +1032,7 @@ class _ListEventMessagesWidgetState extends State<ListEventMessagesWidget> {
                                                                                             ),
                                                                                           }.withoutNulls,
                                                                                           extra: <String, dynamic>{
-                                                                                            kTransitionInfoKey: TransitionInfo(
+                                                                                            '__transition_info__': TransitionInfo(
                                                                                               hasTransition: true,
                                                                                               transitionType: PageTransitionType.scale,
                                                                                               alignment: Alignment.bottomCenter,

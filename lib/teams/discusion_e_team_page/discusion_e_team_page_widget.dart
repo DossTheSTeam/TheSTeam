@@ -125,7 +125,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                               context.pushNamed(
                                                 MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -287,7 +287,7 @@ class _DiscusionETeamPageWidgetState extends State<DiscusionETeamPageWidget> {
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:

@@ -80,7 +80,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                   context.pushNamed(
                                     MenuPageWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.leftToRight,
@@ -344,7 +344,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -392,7 +392,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                 ListPostsMyTeamsWidget
                                                     .routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -778,7 +778,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                                               ),
                                                                                                             }.withoutNulls,
                                                                                                             extra: <String, dynamic>{
-                                                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                                              '__transition_info__': TransitionInfo(
                                                                                                                 hasTransition: true,
                                                                                                                 transitionType: PageTransitionType.scale,
                                                                                                                 alignment: Alignment.bottomCenter,
@@ -817,7 +817,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                                               ),
                                                                                                             }.withoutNulls,
                                                                                                             extra: <String, dynamic>{
-                                                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                                              '__transition_info__': TransitionInfo(
                                                                                                                 hasTransition: true,
                                                                                                                 transitionType: PageTransitionType.scale,
                                                                                                                 alignment: Alignment.bottomCenter,
@@ -1182,7 +1182,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                                   ),
                                                                                                 }.withoutNulls,
                                                                                                 extra: <String, dynamic>{
-                                                                                                  kTransitionInfoKey: TransitionInfo(
+                                                                                                  '__transition_info__': TransitionInfo(
                                                                                                     hasTransition: true,
                                                                                                     transitionType: PageTransitionType.bottomToTop,
                                                                                                     duration: Duration(milliseconds: 600),
@@ -1342,7 +1342,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                                   contDomTeamsRecord.logo,
                                                                                                   width: 300.0,
                                                                                                   height: 200.0,
-                                                                                                  fit: BoxFit.fitHeight,
+                                                                                                  fit: BoxFit.scaleDown,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -1378,7 +1378,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                                   contDomTeamsRecord.logo,
                                                                                                   width: 300.0,
                                                                                                   height: 200.0,
-                                                                                                  fit: BoxFit.fitWidth,
+                                                                                                  fit: BoxFit.scaleDown,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -1615,7 +1615,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                              '__transition_info__': TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.scale,
                                                                                 alignment: Alignment.bottomCenter,
@@ -1840,7 +1840,7 @@ class _MyPostsListWidgetState extends State<MyPostsListWidget> {
                                                                                             ),
                                                                                           }.withoutNulls,
                                                                                           extra: <String, dynamic>{
-                                                                                            kTransitionInfoKey: TransitionInfo(
+                                                                                            '__transition_info__': TransitionInfo(
                                                                                               hasTransition: true,
                                                                                               transitionType: PageTransitionType.bottomToTop,
                                                                                               duration: Duration(milliseconds: 600),

@@ -88,7 +88,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                               context.pushNamed(
                                                 MenuPageWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -323,7 +323,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                 MyTeamsListEventsWidget
                                                     .routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -2258,7 +2258,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                           }.withoutNulls,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -2897,7 +2897,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                             height:
                                                                                 35.0,
                                                                             fit:
-                                                                                BoxFit.fitHeight,
+                                                                                BoxFit.scaleDown,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -2996,7 +2996,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                     }.withoutNulls,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -3138,7 +3138,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                                             height:
                                                                                 35.0,
                                                                             fit:
-                                                                                BoxFit.fitHeight,
+                                                                                BoxFit.scaleDown,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -3338,7 +3338,7 @@ class _ListEventsWidgetState extends State<ListEventsWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,

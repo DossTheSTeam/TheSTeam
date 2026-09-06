@@ -108,7 +108,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -339,7 +339,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                         contDomTeamsRecord.logo,
                                                         width: 300.0,
                                                         height: 200.0,
-                                                        fit: BoxFit.fitHeight,
+                                                        fit: BoxFit.scaleDown,
                                                       ),
                                                     ),
                                                   ),
@@ -649,7 +649,7 @@ class _RefundPageWidgetState extends State<RefundPageWidget> {
                                                         contExtTeamsRecord.logo,
                                                         width: 300.0,
                                                         height: 200.0,
-                                                        fit: BoxFit.fitHeight,
+                                                        fit: BoxFit.scaleDown,
                                                       ),
                                                     ),
                                                   ),

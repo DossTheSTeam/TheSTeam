@@ -108,7 +108,7 @@ class _AdminMemberEntryPageWidgetState
                                       context.pushNamed(
                                         MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -251,7 +251,7 @@ class _AdminMemberEntryPageWidgetState
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -597,7 +597,7 @@ class _AdminMemberEntryPageWidgetState
                                                 columnTeamsRecord.logo,
                                                 width: 300.0,
                                                 height: 200.0,
-                                                fit: BoxFit.fitHeight,
+                                                fit: BoxFit.scaleDown,
                                               ),
                                             ),
                                           ),

@@ -882,7 +882,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                                 contDomTeamsRecord.logo,
                                                                                 width: 55.0,
                                                                                 height: 35.0,
-                                                                                fit: BoxFit.fitHeight,
+                                                                                fit: BoxFit.scaleDown,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -976,7 +976,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
@@ -1105,7 +1105,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                                 contExtTeamsRecord.logo,
                                                                                 width: 55.0,
                                                                                 height: 35.0,
-                                                                                fit: BoxFit.fitHeight,
+                                                                                fit: BoxFit.scaleDown,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1783,7 +1783,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,
@@ -1933,7 +1933,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                                     }.withoutNulls,
                                                                     extra: <String,
                                                                         dynamic>{
-                                                                      kTransitionInfoKey:
+                                                                      '__transition_info__':
                                                                           TransitionInfo(
                                                                         hasTransition:
                                                                             true,
@@ -3100,7 +3100,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,

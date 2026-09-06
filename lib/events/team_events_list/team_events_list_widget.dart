@@ -171,7 +171,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                     teamEventsListTeamsRecord.logo,
                                     width: 130.0,
                                     height: 80.0,
-                                    fit: BoxFit.fitHeight,
+                                    fit: BoxFit.scaleDown,
                                   ),
                                 ),
                               ),
@@ -326,7 +326,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                               .routeName,
                                                           extra: <String,
                                                               dynamic>{
-                                                            kTransitionInfoKey:
+                                                            '__transition_info__':
                                                                 TransitionInfo(
                                                               hasTransition:
                                                                   true,
@@ -411,7 +411,8 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -598,7 +599,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                               ),
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -1193,7 +1194,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                             height:
                                                                                 35.0,
                                                                             fit:
-                                                                                BoxFit.fitHeight,
+                                                                                BoxFit.scaleDown,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1290,7 +1291,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                   }.withoutNulls,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    kTransitionInfoKey:
+                                                                    '__transition_info__':
                                                                         TransitionInfo(
                                                                       hasTransition:
                                                                           true,
@@ -1433,7 +1434,7 @@ class _TeamEventsListWidgetState extends State<TeamEventsListWidget> {
                                                                             height:
                                                                                 35.0,
                                                                             fit:
-                                                                                BoxFit.fitHeight,
+                                                                                BoxFit.scaleDown,
                                                                           ),
                                                                         ),
                                                                       ),

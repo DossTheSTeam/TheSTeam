@@ -102,7 +102,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                       context.pushNamed(
                                         MenuPageWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.leftToRight,
@@ -215,7 +215,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -378,7 +378,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
@@ -610,7 +610,7 @@ class _ModTeamNotifsListWidgetState extends State<ModTeamNotifsListWidget> {
                                                                         }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
-                                                                          kTransitionInfoKey:
+                                                                          '__transition_info__':
                                                                               TransitionInfo(
                                                                             hasTransition:
                                                                                 true,

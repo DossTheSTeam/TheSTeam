@@ -137,12 +137,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(0.0),
-                                              bottomRight: Radius.circular(0.0),
-                                              topLeft: Radius.circular(0.0),
-                                              topRight: Radius.circular(0.0),
-                                            ),
+                                            borderRadius: BorderRadius.only(),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: ClipRRect(
@@ -210,14 +205,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, -1.0),
                                             child: ClipRRect(
-                                              borderRadius: BorderRadius.only(
-                                                bottomLeft:
-                                                    Radius.circular(0.0),
-                                                bottomRight:
-                                                    Radius.circular(0.0),
-                                                topLeft: Radius.circular(0.0),
-                                                topRight: Radius.circular(0.0),
-                                              ),
+                                              borderRadius: BorderRadius.only(),
                                               child: Image.asset(
                                                 'assets/images/England.TST.jpg',
                                                 width: 320.0,
@@ -566,7 +554,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                       MyNotifsListWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -916,7 +904,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               width: 55.0,
                                                               height: 35.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .scaleDown,
                                                             ),
                                                           ),
                                                         ),
@@ -2515,7 +2503,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                               width: 55.0,
                                                               height: 35.0,
                                                               fit: BoxFit
-                                                                  .fitHeight,
+                                                                  .scaleDown,
                                                             ),
                                                           ),
                                                         ),
@@ -3836,7 +3824,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                 }.withoutNulls,
                                                                 extra: <String,
                                                                     dynamic>{
-                                                                  kTransitionInfoKey:
+                                                                  '__transition_info__':
                                                                       TransitionInfo(
                                                                     hasTransition:
                                                                         true,
@@ -4421,7 +4409,7 @@ class _EventPageAdd3BetWidgetState extends State<EventPageAdd3BetWidget> {
                                                                       }.withoutNulls,
                                                                       extra: <String,
                                                                           dynamic>{
-                                                                        kTransitionInfoKey:
+                                                                        '__transition_info__':
                                                                             TransitionInfo(
                                                                           hasTransition:
                                                                               true,

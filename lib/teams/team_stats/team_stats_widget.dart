@@ -116,7 +116,7 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                             context.pushNamed(
                                               MenuPageWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -188,7 +188,7 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                           teamStatsTeamsRecord.logo,
                                           width: 55.0,
                                           height: 35.0,
-                                          fit: BoxFit.fitHeight,
+                                          fit: BoxFit.scaleDown,
                                         ),
                                       ),
                                     ),
@@ -286,7 +286,7 @@ class _TeamStatsWidgetState extends State<TeamStatsWidget>
                                                             .routeName,
                                                         extra: <String,
                                                             dynamic>{
-                                                          kTransitionInfoKey:
+                                                          '__transition_info__':
                                                               TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:

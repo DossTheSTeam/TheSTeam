@@ -2540,7 +2540,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                           height:
                                                                               35.0,
                                                                           fit: BoxFit
-                                                                              .fitHeight,
+                                                                              .scaleDown,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -2612,7 +2612,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                 }.withoutNulls,
                                                                 extra: <String,
                                                                     dynamic>{
-                                                                  kTransitionInfoKey:
+                                                                  '__transition_info__':
                                                                       TransitionInfo(
                                                                     hasTransition:
                                                                         true,
@@ -2725,7 +2725,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                                           height:
                                                                               35.0,
                                                                           fit: BoxFit
-                                                                              .fitHeight,
+                                                                              .scaleDown,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -2805,7 +2805,7 @@ class _ListEventsAdd2BetWidgetState extends State<ListEventsAdd2BetWidget> {
                                                               }.withoutNulls,
                                                               extra: <String,
                                                                   dynamic>{
-                                                                kTransitionInfoKey:
+                                                                '__transition_info__':
                                                                     TransitionInfo(
                                                                   hasTransition:
                                                                       true,

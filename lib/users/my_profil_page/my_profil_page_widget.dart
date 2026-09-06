@@ -173,7 +173,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                           context.pushNamed(
                                             MenuPageWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -368,7 +368,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                                 .routeName,
                                                             extra: <String,
                                                                 dynamic>{
-                                                              kTransitionInfoKey:
+                                                              '__transition_info__':
                                                                   TransitionInfo(
                                                                 hasTransition:
                                                                     true,
@@ -472,7 +472,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                               context.pushNamed(
                                 MyImagePageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  '__transition_info__': TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.scale,
                                     alignment: Alignment.bottomCenter,
@@ -748,7 +748,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -1802,7 +1802,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -1853,7 +1854,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -1899,7 +1901,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -1945,7 +1948,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -1991,7 +1995,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -2037,7 +2042,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -2083,7 +2089,8 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                         context.pushNamed(
                                           MyEditProfilWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -2193,7 +2200,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                   ),
                                                 }.withoutNulls,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -2236,7 +2243,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                             .logo,
                                                         width: 300.0,
                                                         height: 200.0,
-                                                        fit: BoxFit.fitHeight,
+                                                        fit: BoxFit.scaleDown,
                                                       ),
                                                     ),
                                                   ),
@@ -2576,7 +2583,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                       MyBetsListWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -2752,7 +2759,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                   context.pushNamed(
                                                     MyBetsListWidget.routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -2808,7 +2815,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                       MyProfilStatsWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -2985,7 +2992,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                     MyProfilStatsWidget
                                                         .routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -3041,7 +3048,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                       MyBestsRankPageWidget
                                                           .routeName,
                                                       extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
+                                                        '__transition_info__':
                                                             TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
@@ -3218,7 +3225,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                     MyBestsRankPageWidget
                                                         .routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -3265,7 +3272,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                   context.pushNamed(
                                                     MyTeamListWidget.routeName,
                                                     extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
+                                                      '__transition_info__':
                                                           TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
@@ -3445,7 +3452,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                                 context.pushNamed(
                                                   MyTeamListWidget.routeName,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -3492,7 +3499,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                             context.pushNamed(
                                               MyPostsListWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -3670,7 +3677,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                           context.pushNamed(
                                             MyPostsListWidget.routeName,
                                             extra: <String, dynamic>{
-                                              kTransitionInfoKey:
+                                              '__transition_info__':
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
@@ -3717,7 +3724,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                               context.pushNamed(
                                                 MyProfilSocialWidget.routeName,
                                                 extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
+                                                  '__transition_info__':
                                                       TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
@@ -3889,7 +3896,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                             context.pushNamed(
                                               MyProfilSocialWidget.routeName,
                                               extra: <String, dynamic>{
-                                                kTransitionInfoKey:
+                                                '__transition_info__':
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
@@ -3942,7 +3949,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                   context.pushNamed(
                                     MyEditProfilWidget.routeName,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      '__transition_info__': TransitionInfo(
                                         hasTransition: true,
                                         transitionType:
                                             PageTransitionType.rightToLeft,
@@ -4106,7 +4113,7 @@ class _MyProfilPageWidgetState extends State<MyProfilPageWidget> {
                                       context.pushNamed(
                                         MyEditProfilWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          '__transition_info__': TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.rightToLeft,

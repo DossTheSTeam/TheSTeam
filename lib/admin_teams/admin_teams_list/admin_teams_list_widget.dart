@@ -79,7 +79,7 @@ class _AdminTeamsListWidgetState extends State<AdminTeamsListWidget> {
                                     context.pushNamed(
                                       MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,

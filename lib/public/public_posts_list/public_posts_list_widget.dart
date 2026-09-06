@@ -106,7 +106,8 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                         context.pushNamed(
                                           MenuPageWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .leftToRight,
@@ -168,7 +169,8 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                         context.pushNamed(
                                           ListPostsWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            '__transition_info__':
+                                                TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.scale,
@@ -478,7 +480,7 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                 context.pushNamed(
                                                   MyNotifsListWidget.routeName,
                                                   extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
+                                                    '__transition_info__':
                                                         TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
@@ -1328,95 +1330,50 @@ class _PublicPostsListWidgetState extends State<PublicPostsListWidget> {
                                                                           MainAxisAlignment
                                                                               .spaceBetween,
                                                                       children: [
-                                                                        if ((contDomTeamsRecord.sportValue !=
-                                                                                'mma') &&
-                                                                            (columnEventsRecord.sportValue !=
-                                                                                'tennis'))
-                                                                          InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                TeamPageWidget.routeName,
-                                                                                queryParameters: {
-                                                                                  'teamRef': serializeParam(
-                                                                                    contDomTeamsRecord.reference,
-                                                                                    ParamType.DocumentReference,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
-                                                                            },
-                                                                            child:
-                                                                                Container(
-                                                                              width: 55.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(3.0),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                                child: Image.network(
-                                                                                  contDomTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitHeight,
+                                                                        InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            context.pushNamed(
+                                                                              TeamPageWidget.routeName,
+                                                                              queryParameters: {
+                                                                                'teamRef': serializeParam(
+                                                                                  contDomTeamsRecord.reference,
+                                                                                  ParamType.DocumentReference,
                                                                                 ),
+                                                                              }.withoutNulls,
+                                                                            );
+                                                                          },
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                55.0,
+                                                                            height:
+                                                                                35.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              borderRadius: BorderRadius.circular(3.0),
+                                                                            ),
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(0.0),
+                                                                              child: Image.network(
+                                                                                contDomTeamsRecord.logo,
+                                                                                width: 300.0,
+                                                                                height: 200.0,
+                                                                                fit: BoxFit.scaleDown,
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        if ((contDomTeamsRecord.sportValue ==
-                                                                                'mma') ||
-                                                                            (columnEventsRecord.sportValue ==
-                                                                                'tennis'))
-                                                                          InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                TeamPageWidget.routeName,
-                                                                                queryParameters: {
-                                                                                  'teamRef': serializeParam(
-                                                                                    contDomTeamsRecord.reference,
-                                                                                    ParamType.DocumentReference,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
-                                                                            },
-                                                                            child:
-                                                                                Container(
-                                                                              width: 45.0,
-                                                                              height: 35.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(6.0),
-                                                                                shape: BoxShape.rectangle,
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(10.0),
-                                                                                child: Image.network(
-                                                                                  contDomTeamsRecord.logo,
-                                                                                  width: 300.0,
-                                                                                  height: 200.0,
-                                                                                  fit: BoxFit.fitWidth,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
+                                                                        ),
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
                                                                               0.0,

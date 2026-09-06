@@ -76,7 +76,7 @@ class _TheSTeamPageWidgetState extends State<TheSTeamPageWidget> {
                                     context.pushNamed(
                                       MenuPageWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        '__transition_info__': TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
